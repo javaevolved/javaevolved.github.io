@@ -189,7 +189,8 @@ nav {
 .github-link {
   display: flex;
   align-items: center;
-  padding: 6px 14px;
+  justify-content: center;
+  padding: 8px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--surface);
