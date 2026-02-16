@@ -1,7 +1,7 @@
 ---
 on:
   schedule:
-    - cron: '0 12 15 3,9 *'  # March 15 and September 15 at noon UTC
+    - cron: '0 12 15-21 3,9 5'  # Third Friday of March and September at noon UTC
   workflow_dispatch:
 description: >
   Checks for new OpenJDK releases and proposes new java.evolved snippets

@@ -21,12 +21,12 @@
 #
 # Checks for new OpenJDK releases and proposes new java.evolved snippets covering newly finalized language features and APIs.
 #
-# frontmatter-hash: ae9c28d1ee254fd1ccb2913e662f46468f19a73e16ede16f037793e77fa6463e
+# frontmatter-hash: b2476905fe4edf0c55a76a2238afc4ea0eef32b3eedd8974de20e92bdf27bd04
 
 name: "Check for New OpenJDK Release and Propose New Snippets"
 "on":
   schedule:
-  - cron: "0 12 15 3,9 *"
+  - cron: "0 12 15-21 3,9 5"
   workflow_dispatch:
 
 permissions: {}
