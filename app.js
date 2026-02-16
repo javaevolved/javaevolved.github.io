@@ -202,6 +202,7 @@
       }, { passive: true });
 
       // Handle touch end for swipe or tap
+      // Note: passive:false allows us to preventDefault on tap/swipe while still allowing vertical scrolling
       card.addEventListener('touchend', (e) => {
         // Only handle touches on the card-code area
         if (!e.target.closest('.card-code')) return;
@@ -218,7 +219,7 @@
         const isHorizontalSwipe = absDeltaX > 50 && absDeltaX > absDeltaY;
         
         if (isHorizontalSwipe) {
-          // Prevent default navigation
+          // Prevent default navigation for horizontal swipes
           e.preventDefault();
           // Swipe left = show modern, swipe right = show old
           if (deltaX < 0) {
@@ -233,10 +234,11 @@
           e.preventDefault();
           card.classList.toggle('toggled');
         }
+        // Note: Vertical scrolling (large deltaY, small deltaX) doesn't call preventDefault
       }, { passive: false });
 
-      // Prevent click events on card-code from navigating
-      // (the touch handlers above already handle the interaction)
+      // Prevent click events on card-code from navigating (touch devices only)
+      // This is a safety net in case touch events trigger click as fallback
       card.addEventListener('click', (e) => {
         if (e.target.closest('.card-code')) {
           e.preventDefault();
