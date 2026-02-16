@@ -478,11 +478,13 @@ nav {
   overflow-y: auto;
 }
 
-.tip-card:hover .old-layer {
+.tip-card:hover .old-layer,
+.tip-card.toggled .old-layer {
   opacity: 0;
 }
 
-.tip-card:hover .modern-layer {
+.tip-card:hover .modern-layer,
+.tip-card.toggled .modern-layer {
   opacity: 1;
 }
 
@@ -523,7 +525,8 @@ nav {
   transition: opacity 0.3s;
 }
 
-.tip-card:hover .hover-hint {
+.tip-card:hover .hover-hint,
+.tip-card.toggled .hover-hint {
   opacity: 0;
 }
 

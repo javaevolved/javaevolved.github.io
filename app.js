@@ -181,11 +181,69 @@
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (!isTouchDevice) return;
 
+    // Update hover hints for touch devices
+    document.querySelectorAll('.hover-hint').forEach(hint => {
+      hint.textContent = '👆 tap or swipe →';
+    });
+
     document.querySelectorAll('.tip-card').forEach(card => {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
+
+      // Track touch start
+      card.addEventListener('touchstart', (e) => {
+        // Only track touches on the card-code area
+        if (!e.target.closest('.card-code')) return;
+        
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
+
+      // Handle touch end for swipe or tap
+      // Note: passive:false allows us to preventDefault on tap/swipe while still allowing vertical scrolling
+      card.addEventListener('touchend', (e) => {
+        // Only handle touches on the card-code area
+        if (!e.target.closest('.card-code')) return;
+
+        touchEndX = e.changedTouches[0].clientX;
+        touchEndY = e.changedTouches[0].clientY;
+
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        const absDeltaX = Math.abs(deltaX);
+        const absDeltaY = Math.abs(deltaY);
+
+        // Determine if it's a swipe (horizontal movement > 50px and more horizontal than vertical)
+        const isHorizontalSwipe = absDeltaX > 50 && absDeltaX > absDeltaY;
+        
+        if (isHorizontalSwipe) {
+          // Prevent default navigation for horizontal swipes
+          e.preventDefault();
+          // Swipe left = show modern, swipe right = show old
+          if (deltaX < 0) {
+            // Swipe left - show modern
+            card.classList.add('toggled');
+          } else {
+            // Swipe right - show old
+            card.classList.remove('toggled');
+          }
+        } else if (absDeltaX < 10 && absDeltaY < 10) {
+          // It's a tap (movement under 10px threshold)
+          e.preventDefault();
+          card.classList.toggle('toggled');
+        }
+        // Note: Vertical scrolling (large deltaY, small deltaX) doesn't call preventDefault
+      }, { passive: false });
+
+      // Prevent click events on card-code from navigating (touch devices only)
+      // This is a safety net in case touch events trigger click as fallback
       card.addEventListener('click', (e) => {
-        // Don't toggle if clicking a link inside the card
-        if (e.target.closest('a')) return;
-        card.classList.toggle('toggled');
+        if (e.target.closest('.card-code')) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
       });
     });
   };
