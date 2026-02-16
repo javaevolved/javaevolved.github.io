@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream.mapMulti() | java.evolved</title>
+  <meta name="description" content="Emit zero or more elements per input without creating intermediate streams.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/stream-mapmulti.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Stream.mapMulti() | java.evolved">
+  <meta property="og:description" content="Emit zero or more elements per input without creating intermediate streams.">
+  <meta property="og:url" content="https://javaevolved.github.io/stream-mapmulti.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stream.mapMulti() | java.evolved">
+  <meta name="twitter:description" content="Emit zero or more elements per input without creating intermediate streams.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Stream.mapMulti()",
+    "description": "Emit zero or more elements per input without creating intermediate streams.",
+    "url": "https://javaevolved.github.io/stream-mapmulti.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/stream-mapmulti.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Streams",
+            "item": "https://javaevolved.github.io/?cat=streams"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Stream.mapMulti()"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <a href="/stream-tolist.html" aria-label="Previous pattern">←</a>
+          <a href="/stream-gatherers.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=streams">Streams</a>
+      <span class="sep">/</span>
+      <span>Stream.mapMulti()</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge streams">Streams</span>
+        <span class="badge intermediate">intermediate</span>
+      </div>
+      <h1>Stream.mapMulti()</h1>
+      <p>Emit zero or more elements per input without creating intermediate streams.</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">stream.flatMap(order -&gt;
+    order.items().stream()
+        .map(item -&gt; new OrderItem(
+            order.id(), item)
+        )
+);</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 16+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">stream.&lt;OrderItem&gt;mapMulti(
+    (order, downstream) -&gt; {
+        for (var item : order.items())
+            downstream.accept(
+                new OrderItem(order.id(), item));
+    }
+);</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Less allocation</h3>
+          <p>No intermediate Stream created per element.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>Imperative style</h3>
+          <p>Use loops and conditionals directly.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📐</div>
+          <h3>Flexible</h3>
+          <p>Emit zero, one, or many elements with full control.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">flatMap + List</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">mapMulti()</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">16</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">intermediate</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Stream.mapMulti()</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Widely available since JDK 16 (March 2021)</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>mapMulti() is an imperative alternative to flatMap that avoids creating intermediate Stream objects for each element. It&#x27;s more efficient when the mapping produces a small number of elements.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/stream-iterate-predicate.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge streams">Streams</span>
+                <span class="badge intermediate">intermediate</span>
+              </div>
+            </div>
+            <h3>Stream.iterate() with predicate</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">Stream.iterate(1, n -&gt; n * 2)
+    .limit(10)
+    .forEach(System.out::println);
+// can&#x27;t stop at a condition</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 9+</div>
+              <pre class="code-text">Stream.iterate(
+    1,
+    n -&gt; n &lt; 1000,
+    n -&gt; n * 2
+).forEach(System.out::println);
+// stops when n &gt;= 1000</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 9+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/stream-of-nullable.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge streams">Streams</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Stream.ofNullable()</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">Stream&lt;String&gt; s = val != null
+    ? Stream.of(val)
+    : Stream.empty();</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 9+</div>
+              <pre class="code-text">Stream&lt;String&gt; s =
+    Stream.ofNullable(val);</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 9+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/stream-gatherers.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge streams">Streams</span>
+                <span class="badge advanced">advanced</span>
+              </div>
+            </div>
+            <h3>Stream gatherers</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">// Sliding window: manual implementation
+List&lt;List&lt;T&gt;&gt; windows = new ArrayList&lt;&gt;();
+for (int i = 0; i &lt;= list.size()-3; i++) {
+    windows.add(
+        list.subList(i, i + 3));
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 24+</div>
+              <pre class="code-text">var windows = stream
+    .gather(
+        Gatherers.windowSliding(3)
+    )
+    .toList();</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 24+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Fstream-mapmulti.html&text=Stream.mapMulti%28%29%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Stream.mapMulti%28%29%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Fstream-mapmulti.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Fstream-mapmulti.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Fstream-mapmulti.html&title=Stream.mapMulti%28%29%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

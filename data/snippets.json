@@ -1,0 +1,2892 @@
+[
+  {
+    "id": 1,
+    "slug": "type-inference-with-var",
+    "title": "Type inference with var",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "10",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 10+",
+    "oldApproach": "Explicit Types",
+    "modernApproach": "var keyword",
+    "oldCode": "Map<String, List<Integer>> map =\n    new HashMap<String, List<Integer>>();\nfor (Map.Entry<String, List<Integer>> e\n    : map.entrySet()) {\n    // verbose type noise\n}",
+    "modernCode": "var map = new HashMap<String, List<Integer>>();\nfor (var entry : map.entrySet()) {\n    // clean and readable\n}",
+    "summary": "Use var for local variable type inference \u2014 less noise, same safety.",
+    "explanation": "Since Java 10, the compiler infers local variable types from the right-hand side. This reduces visual noise without sacrificing type safety. Use var when the type is obvious from context.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Less boilerplate",
+        "desc": "No need to repeat complex generic types on both sides of the assignment."
+      },
+      {
+        "icon": "\ud83d\udc41",
+        "title": "Better readability",
+        "desc": "Focus on variable names and values, not type declarations."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Still type-safe",
+        "desc": "The compiler infers and enforces the exact type at compile time."
+      }
+    ],
+    "support": "Widely available since JDK 10 (March 2018)"
+  },
+  {
+    "id": 2,
+    "slug": "text-blocks-for-multiline-strings",
+    "title": "Text blocks for multiline strings",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "15",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 15+",
+    "oldApproach": "String Concatenation",
+    "modernApproach": "Text Blocks",
+    "oldCode": "String json = \"{\\n\" +\n    \"  \\\"name\\\": \\\"Duke\\\",\\n\" +\n    \"  \\\"age\\\": 30\\n\" +\n    \"}\";",
+    "modernCode": "String json = \"\"\"\n    {\n      \"name\": \"Duke\",\n      \"age\": 30\n    }\n    \"\"\";",
+    "summary": "Write multiline strings naturally with triple-quote text blocks.",
+    "explanation": "Text blocks let you write multiline strings exactly as they appear. No more escaping quotes or adding \\n. The compiler strips incidental indentation automatically.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Readable as-is",
+        "desc": "JSON, SQL, and HTML look like real JSON, SQL, and HTML in your source."
+      },
+      {
+        "icon": "\ud83d\udeab",
+        "title": "No escape hell",
+        "desc": "Embedded quotes don't need backslash escaping."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Smart indentation",
+        "desc": "Leading whitespace is trimmed automatically based on the closing delimiter position."
+      }
+    ],
+    "support": "Widely available since JDK 15 (Sept 2020)"
+  },
+  {
+    "id": 3,
+    "slug": "switch-expressions",
+    "title": "Switch expressions",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "14",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 14+",
+    "oldApproach": "Switch Statement",
+    "modernApproach": "Switch Expression",
+    "oldCode": "String msg;\nswitch (day) {\n    case MONDAY:\n        msg = \"Start\";\n        break;\n    case FRIDAY:\n        msg = \"End\";\n        break;\n    default:\n        msg = \"Mid\";\n}",
+    "modernCode": "String msg = switch (day) {\n    case MONDAY  -> \"Start\";\n    case FRIDAY  -> \"End\";\n    default      -> \"Mid\";\n};",
+    "summary": "Switch as an expression that returns a value \u2014 no break, no fall-through.",
+    "explanation": "Switch expressions return a value directly, use arrow syntax to prevent fall-through bugs, and the compiler verifies exhaustiveness. This replaces the error-prone statement form.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Returns a value",
+        "desc": "Assign the switch result directly \u2014 no temporary variable needed."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "No fall-through",
+        "desc": "Arrow syntax eliminates accidental fall-through bugs from missing break."
+      },
+      {
+        "icon": "\u2705",
+        "title": "Exhaustiveness check",
+        "desc": "The compiler ensures all cases are covered."
+      }
+    ],
+    "support": "Widely available since JDK 14 (March 2020)"
+  },
+  {
+    "id": 4,
+    "slug": "pattern-matching-instanceof",
+    "title": "Pattern matching for instanceof",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "16",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 16+",
+    "oldApproach": "instanceof + Cast",
+    "modernApproach": "Pattern Variable",
+    "oldCode": "if (obj instanceof String) {\n    String s = (String) obj;\n    System.out.println(s.length());\n}",
+    "modernCode": "if (obj instanceof String s) {\n    System.out.println(s.length());\n}",
+    "summary": "Combine type check and cast in one step with pattern matching.",
+    "explanation": "Pattern matching for instanceof eliminates the redundant cast after a type check. The variable is automatically scoped to where the pattern matches, making code safer and shorter.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd04",
+        "title": "No redundant cast",
+        "desc": "Type check and variable binding happen in a single expression."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Fewer lines",
+        "desc": "One line instead of two \u2014 the cast line disappears entirely."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Scope safety",
+        "desc": "The pattern variable is only in scope where the type is guaranteed."
+      }
+    ],
+    "support": "Widely available since JDK 16 (March 2021)"
+  },
+  {
+    "id": 5,
+    "slug": "records-for-data-classes",
+    "title": "Records for data classes",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "16",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 16+",
+    "oldApproach": "Verbose POJO",
+    "modernApproach": "record",
+    "oldCode": "public class Point {\n    private final int x, y;\n    public Point(int x, int y) { ... }\n    public int getX() { return x; }\n    public int getY() { return y; }\n    // equals, hashCode, toString\n}",
+    "modernCode": "public record Point(int x, int y) {}",
+    "summary": "One line replaces 30+ lines of boilerplate for immutable data carriers.",
+    "explanation": "Records automatically generate the constructor, accessors (x(), y()), equals(), hashCode(), and toString(). They are immutable by design and ideal for DTOs, value objects, and pattern matching.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "One-line definition",
+        "desc": "A single line replaces constructor, getters, equals, hashCode, toString."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable by default",
+        "desc": "All fields are final \u2014 no setter footguns."
+      },
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Pattern-friendly",
+        "desc": "Records work with destructuring patterns in switch and instanceof."
+      }
+    ],
+    "support": "Widely available since JDK 16 (March 2021)"
+  },
+  {
+    "id": 6,
+    "slug": "sealed-classes",
+    "title": "Sealed classes for type hierarchies",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "17",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 17+",
+    "oldApproach": "Open Hierarchy",
+    "modernApproach": "sealed permits",
+    "oldCode": "// Anyone can extend Shape\npublic abstract class Shape { }\npublic class Circle extends Shape { }\npublic class Rect extends Shape { }\n// unknown subclasses possible",
+    "modernCode": "public sealed interface Shape\n    permits Circle, Rect {}\npublic record Circle(double r)\n    implements Shape {}\npublic record Rect(double w, double h)\n    implements Shape {}",
+    "summary": "Restrict which classes can extend a type \u2014 enabling exhaustive switches.",
+    "explanation": "Sealed classes define a closed set of subtypes. The compiler knows all possible cases, enabling exhaustive pattern matching without a default branch. Combined with records, they model algebraic data types.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd10",
+        "title": "Controlled hierarchy",
+        "desc": "Only permitted subtypes can extend \u2014 no surprise subclasses."
+      },
+      {
+        "icon": "\u2705",
+        "title": "Exhaustive matching",
+        "desc": "The compiler verifies switch covers all cases, no default needed."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Algebraic data types",
+        "desc": "Model sum types naturally \u2014 sealed + records = ADTs in Java."
+      }
+    ],
+    "support": "Widely available since JDK 17 LTS (Sept 2021)"
+  },
+  {
+    "id": 7,
+    "slug": "record-patterns",
+    "title": "Record patterns (destructuring)",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Manual Access",
+    "modernApproach": "Destructuring",
+    "oldCode": "if (obj instanceof Point) {\n    Point p = (Point) obj;\n    int x = p.getX();\n    int y = p.getY();\n    System.out.println(x + y);\n}",
+    "modernCode": "if (obj instanceof Point(int x, int y)) {\n    System.out.println(x + y);\n}",
+    "summary": "Destructure records directly in patterns \u2014 extract fields in one step.",
+    "explanation": "Record patterns let you decompose a record's components directly in instanceof and switch. Nested patterns are supported too, enabling deep matching without intermediate variables.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Direct extraction",
+        "desc": "Access record components without calling accessors manually."
+      },
+      {
+        "icon": "\ud83e\ude86",
+        "title": "Nestable",
+        "desc": "Patterns can nest \u2014 match inner records in a single expression."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Compact code",
+        "desc": "Five lines become two \u2014 less ceremony, same clarity."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 8,
+    "slug": "unnamed-variables",
+    "title": "Unnamed variables with _",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "22",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 22+",
+    "oldApproach": "Unused Variable",
+    "modernApproach": "_ Placeholder",
+    "oldCode": "try {\n    parse(input);\n} catch (Exception ignored) {\n    log(\"parse failed\");\n}\nmap.forEach((key, value) -> {\n    process(value); // key unused\n});",
+    "modernCode": "try {\n    parse(input);\n} catch (Exception _) {\n    log(\"parse failed\");\n}\nmap.forEach((_, value) -> {\n    process(value);\n});",
+    "summary": "Use _ to signal intent when a variable is intentionally unused.",
+    "explanation": "Unnamed variables communicate to readers and tools that a value is deliberately ignored. No more 'ignored' or 'unused' naming conventions, no more IDE warnings.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udce2",
+        "title": "Clear intent",
+        "desc": "_ explicitly says 'this value is not needed here'."
+      },
+      {
+        "icon": "\ud83d\udd07",
+        "title": "No warnings",
+        "desc": "IDEs and linters won't flag intentionally unused variables."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Cleaner lambdas",
+        "desc": "Multi-param lambdas are cleaner when you only need some params."
+      }
+    ],
+    "support": "Finalized in JDK 22 (JEP 456, March 2024)."
+  },
+  {
+    "id": 9,
+    "slug": "compact-source-files",
+    "title": "Compact source files",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25",
+    "oldApproach": "Main Class Ceremony",
+    "modernApproach": "void main()",
+    "oldCode": "public class HelloWorld {\n    public static void main(\n            String[] args) {\n        System.out.println(\n            \"Hello, World!\");\n    }\n}",
+    "modernCode": "void main() {\n    println(\"Hello, World!\");\n}",
+    "summary": "Write a complete program without class declaration or public static void main.",
+    "explanation": "Compact source files remove the ceremony of class declarations and the main method signature for simple programs. Combined with implicit import of java.io.IO, even println is available directly.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\ude80",
+        "title": "Zero ceremony",
+        "desc": "No class, no public static void main, no String[] args."
+      },
+      {
+        "icon": "\ud83c\udf93",
+        "title": "Beginner-friendly",
+        "desc": "New programmers can write useful code from line 1."
+      },
+      {
+        "icon": "\ud83d\udcdd",
+        "title": "Script-like",
+        "desc": "Perfect for quick prototypes, scripts, and examples."
+      }
+    ],
+    "support": "Finalized in JDK 25 LTS (JEP 512, Sept 2025)."
+  },
+  {
+    "id": 10,
+    "slug": "flexible-constructor-bodies",
+    "title": "Flexible constructor bodies",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25+",
+    "oldApproach": "Validate After super()",
+    "modernApproach": "Code Before super()",
+    "oldCode": "class Square extends Shape {\n    Square(double side) {\n        super(side, side);\n        // can't validate BEFORE super!\n        if (side <= 0)\n            throw new IAE(\"bad\");\n    }\n}",
+    "modernCode": "class Square extends Shape {\n    Square(double side) {\n        if (side <= 0)\n            throw new IAE(\"bad\");\n        super(side, side);\n    }\n}",
+    "summary": "Validate and compute values before calling super() or this().",
+    "explanation": "Java 25 lifts the restriction that super() must be the first statement. You can now validate arguments, compute derived values, and set up state before delegating to the parent constructor.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Fail fast",
+        "desc": "Validate arguments before the superclass constructor runs."
+      },
+      {
+        "icon": "\ud83e\uddee",
+        "title": "Compute first",
+        "desc": "Derive values and prepare data before calling super()."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "No workarounds",
+        "desc": "No more static helper methods or factory patterns to work around the restriction."
+      }
+    ],
+    "support": "Finalized in JDK 25 LTS (JEP 513, Sept 2025)."
+  },
+  {
+    "id": 11,
+    "slug": "enhanced-for-with-var",
+    "title": "Enhanced for with var",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "10",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 10+",
+    "oldApproach": "Explicit Loop Type",
+    "modernApproach": "var in for-each",
+    "oldCode": "List<Map.Entry<String, Integer>> list = ...;\nfor (Map.Entry<String, Integer> entry\n        : list) {\n    process(entry);\n}",
+    "modernCode": "var list = getEntries();\nfor (var entry : list) {\n    process(entry);\n}",
+    "summary": "Use var in for-each loops to reduce generic type noise.",
+    "explanation": "When iterating over collections with complex generic types, var in the loop variable reduces clutter while the compiler still knows and enforces the exact type.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udc41",
+        "title": "Less noise",
+        "desc": "Complex generic types in loops obscure the logic."
+      },
+      {
+        "icon": "\ufffd\ufffd",
+        "title": "Same safety",
+        "desc": "Type inference is compile-time \u2014 no runtime penalty."
+      },
+      {
+        "icon": "\ud83d\udd04",
+        "title": "Refactor-friendly",
+        "desc": "Change the collection type and the loop var adjusts automatically."
+      }
+    ],
+    "support": "Widely available since JDK 10 (March 2018)"
+  },
+  {
+    "id": 12,
+    "slug": "diamond-operator",
+    "title": "Diamond operator",
+    "category": "language",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 7/8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Repeat Type Args",
+    "modernApproach": "Diamond <>",
+    "oldCode": "Map<String, List<String>> map =\n    new HashMap<String, List<String>>();\n// anonymous class: no diamond\nPredicate<String> p =\n    new Predicate<String>() {\n        public boolean test(String s) {..}\n    };",
+    "modernCode": "Map<String, List<String>> map =\n    new HashMap<>();\n// Java 9: diamond with anonymous classes\nPredicate<String> p =\n    new Predicate<>() {\n        public boolean test(String s) {..}\n    };",
+    "summary": "Diamond operator now works with anonymous classes too.",
+    "explanation": "Java 7 introduced <> but it didn't work with anonymous inner classes. Java 9 fixed this, so you never need to repeat type arguments on the right-hand side.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Consistent rules",
+        "desc": "Diamond works everywhere \u2014 constructors and anonymous classes alike."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Less redundancy",
+        "desc": "Type arguments are stated once on the left, never repeated."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "DRY principle",
+        "desc": "The compiler already knows the type \u2014 why write it twice?"
+      }
+    ],
+    "support": "Diamond with anonymous classes since JDK 9 (Sept 2017)."
+  },
+  {
+    "id": 13,
+    "slug": "private-interface-methods",
+    "title": "Private interface methods",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Duplicated Logic",
+    "modernApproach": "Private Methods",
+    "oldCode": "interface Logger {\n    default void logInfo(String msg) {\n        System.out.println(\n            \"[INFO] \" + timestamp() + msg);\n    }\n    default void logWarn(String msg) {\n        System.out.println(\n            \"[WARN] \" + timestamp() + msg);\n    }\n}",
+    "modernCode": "interface Logger {\n    private String format(String lvl, String msg) {\n        return \"[\" + lvl + \"] \" + timestamp() + msg;\n    }\n    default void logInfo(String msg) {\n        System.out.println(format(\"INFO\", msg));\n    }\n    default void logWarn(String msg) {\n        System.out.println(format(\"WARN\", msg));\n    }\n}",
+    "summary": "Extract shared logic in interfaces using private methods.",
+    "explanation": "Java 9 allows private methods in interfaces, enabling you to share code between default methods without exposing implementation details to implementing classes.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Code reuse",
+        "desc": "Share logic between default methods without duplication."
+      },
+      {
+        "icon": "\ud83d\udd10",
+        "title": "Encapsulation",
+        "desc": "Implementation details stay hidden from implementing classes."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "DRY interfaces",
+        "desc": "No more copy-paste between default methods."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 14,
+    "slug": "pattern-matching-switch",
+    "title": "Pattern matching in switch",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "if-else Chain",
+    "modernApproach": "Type Patterns",
+    "oldCode": "String format(Object obj) {\n    if (obj instanceof Integer i)\n        return \"int: \" + i;\n    else if (obj instanceof Double d)\n        return \"double: \" + d;\n    else if (obj instanceof String s)\n        return \"str: \" + s;\n    return \"unknown\";\n}",
+    "modernCode": "String format(Object obj) {\n    return switch (obj) {\n        case Integer i -> \"int: \" + i;\n        case Double d  -> \"double: \" + d;\n        case String s  -> \"str: \" + s;\n        default        -> \"unknown\";\n    };\n}",
+    "summary": "Replace if-else instanceof chains with clean switch type patterns.",
+    "explanation": "Pattern matching in switch lets you match on types directly, combining the type test, cast, and binding in one concise case label. The compiler checks completeness.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Structured dispatch",
+        "desc": "Switch makes the branching structure explicit and scannable."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Expression form",
+        "desc": "Returns a value directly \u2014 no mutable variable needed."
+      },
+      {
+        "icon": "\u2705",
+        "title": "Exhaustiveness",
+        "desc": "The compiler ensures all types are handled."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 15,
+    "slug": "guarded-patterns",
+    "title": "Guarded patterns with when",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Nested if",
+    "modernApproach": "when Clause",
+    "oldCode": "if (shape instanceof Circle c) {\n    if (c.radius() > 10) {\n        return \"large circle\";\n    } else {\n        return \"small circle\";\n    }\n} else {\n    return \"not a circle\";\n}",
+    "modernCode": "return switch (shape) {\n    case Circle c\n        when c.radius() > 10\n            -> \"large circle\";\n    case Circle c\n            -> \"small circle\";\n    default -> \"not a circle\";\n};",
+    "summary": "Add conditions to pattern cases using when guards.",
+    "explanation": "Guarded patterns let you refine a type match with an additional boolean condition. This keeps all the branching logic in the switch instead of nesting if statements inside cases.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Precise matching",
+        "desc": "Combine type + condition in a single case label."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Flat structure",
+        "desc": "No nested if/else inside switch cases."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Readable intent",
+        "desc": "The when clause reads like natural language."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 16,
+    "slug": "primitive-types-in-patterns",
+    "title": "Primitive types in patterns",
+    "category": "language",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25 (Preview)",
+    "oldApproach": "Manual Range Checks",
+    "modernApproach": "Primitive Patterns",
+    "oldCode": "String classify(int code) {\n    if (code >= 200 && code < 300)\n        return \"success\";\n    else if (code >= 400 && code < 500)\n        return \"client error\";\n    else\n        return \"other\";\n}",
+    "modernCode": "String classify(int code) {\n    return switch (code) {\n        case int c when c >= 200\n            && c < 300 -> \"success\";\n        case int c when c >= 400\n            && c < 500 -> \"client error\";\n        default -> \"other\";\n    };\n}",
+    "summary": "Pattern matching now works with primitive types, not just objects.",
+    "explanation": "Java 25 extends pattern matching to primitive types. You can use int, long, double etc. in switch patterns with when guards, eliminating the need for boxing or manual range checks.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udce6",
+        "title": "No boxing",
+        "desc": "Match primitives directly \u2014 no Integer wrapper needed."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Pattern consistency",
+        "desc": "Same pattern syntax for objects and primitives."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Better performance",
+        "desc": "Avoid autoboxing overhead in pattern matching."
+      }
+    ],
+    "support": "Preview in JDK 25 (third preview, JEP 507). Requires --enable-preview."
+  },
+  {
+    "id": 17,
+    "slug": "module-import-declarations",
+    "title": "Module import declarations",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25+",
+    "oldApproach": "Many Imports",
+    "modernApproach": "import module",
+    "oldCode": "import java.util.List;\nimport java.util.Map;\nimport java.util.stream.Collectors;\nimport java.io.IOException;\nimport java.nio.file.Files;\nimport java.nio.file.Path;",
+    "modernCode": "import module java.base;\n\n// All of java.util, java.io, java.nio\n// etc. available in one line",
+    "summary": "Import all exported packages of a module with a single declaration.",
+    "explanation": "Module import declarations let you import everything a module exports with one line. This is especially useful for java.base which covers collections, I/O, streams, and more.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "One line",
+        "desc": "Replace a wall of imports with a single module import."
+      },
+      {
+        "icon": "\ud83d\udce6",
+        "title": "Module-aware",
+        "desc": "Leverages the module system to import coherent sets of packages."
+      },
+      {
+        "icon": "\ud83d\ude80",
+        "title": "Quick starts",
+        "desc": "Perfect for scripts and prototypes where import lists are tedious."
+      }
+    ],
+    "support": "Finalized in JDK 25 LTS (JEP 511, Sept 2025)."
+  },
+  {
+    "id": 18,
+    "slug": "exhaustive-switch",
+    "title": "Exhaustive switch without default",
+    "category": "language",
+    "difficulty": "intermediate",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Mandatory default",
+    "modernApproach": "Sealed Exhaustiveness",
+    "oldCode": "// Must add default even though\n// all cases are covered\ndouble area(Shape s) {\n    if (s instanceof Circle c)\n        return Math.PI * c.r() * c.r();\n    else if (s instanceof Rect r)\n        return r.w() * r.h();\n    else throw new IAE();\n}",
+    "modernCode": "// sealed Shape permits Circle, Rect\ndouble area(Shape s) {\n    return switch (s) {\n        case Circle c ->\n            Math.PI * c.r() * c.r();\n        case Rect r ->\n            r.w() * r.h();\n    }; // no default needed!\n}",
+    "summary": "Compiler verifies all sealed subtypes are covered \u2014 no default needed.",
+    "explanation": "When switching over a sealed type, the compiler knows all possible subtypes and verifies every case is handled. If you add a new subtype, the compiler flags every switch that's now incomplete.",
+    "whyModernWins": [
+      {
+        "icon": "\u2705",
+        "title": "Compile-time safety",
+        "desc": "Add a new subtype and the compiler shows every place to update."
+      },
+      {
+        "icon": "\ud83d\udeab",
+        "title": "No dead code",
+        "desc": "No unreachable default branch that masks bugs."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Algebraic types",
+        "desc": "Sealed + records + exhaustive switch = proper ADTs in Java."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 19,
+    "slug": "immutable-list-creation",
+    "title": "Immutable list creation",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Verbose Wrapping",
+    "modernApproach": "List.of()",
+    "oldCode": "List<String> list =\n    Collections.unmodifiableList(\n        new ArrayList<>(\n            Arrays.asList(\"a\", \"b\", \"c\")\n        )\n    );",
+    "modernCode": "List<String> list =\n    List.of(\"a\", \"b\", \"c\");",
+    "summary": "Create immutable lists in one clean expression.",
+    "explanation": "List.of() creates a truly immutable list \u2014 no wrapping, no defensive copy. It's null-hostile (rejects null elements) and structurally immutable. The old way required three nested calls.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "One call",
+        "desc": "Replace three nested calls with a single factory method."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Truly immutable",
+        "desc": "Not just a wrapper \u2014 the list itself is immutable."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Null-safe",
+        "desc": "Rejects null elements at creation time, failing fast."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 20,
+    "slug": "immutable-map-creation",
+    "title": "Immutable map creation",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Map Builder Pattern",
+    "modernApproach": "Map.of()",
+    "oldCode": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"a\", 1);\nmap.put(\"b\", 2);\nmap.put(\"c\", 3);\nmap = Collections.unmodifiableMap(map);",
+    "modernCode": "Map<String, Integer> map =\n    Map.of(\"a\", 1, \"b\", 2, \"c\", 3);",
+    "summary": "Create immutable maps inline without a builder.",
+    "explanation": "Map.of() accepts key-value pairs inline and returns an immutable map. For more than 10 entries, use Map.ofEntries() with Map.entry() pairs.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Inline creation",
+        "desc": "No temporary mutable map needed."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable result",
+        "desc": "The map cannot be modified after creation."
+      },
+      {
+        "icon": "\ud83d\udeab",
+        "title": "No null keys/values",
+        "desc": "Null entries are rejected immediately."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 21,
+    "slug": "immutable-set-creation",
+    "title": "Immutable set creation",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Verbose Wrapping",
+    "modernApproach": "Set.of()",
+    "oldCode": "Set<String> set =\n    Collections.unmodifiableSet(\n        new HashSet<>(\n            Arrays.asList(\"a\", \"b\", \"c\")\n        )\n    );",
+    "modernCode": "Set<String> set =\n    Set.of(\"a\", \"b\", \"c\");",
+    "summary": "Create immutable sets with a single factory call.",
+    "explanation": "Set.of() creates a truly immutable set that rejects nulls and duplicate elements at creation time. No more wrapping mutable sets.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Concise",
+        "desc": "One line instead of three nested calls."
+      },
+      {
+        "icon": "\ud83d\udeab",
+        "title": "Detects duplicates",
+        "desc": "Throws if you accidentally pass duplicate elements."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "No add/remove possible after creation."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 22,
+    "slug": "copying-collections-immutably",
+    "title": "Copying collections immutably",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "10",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 10+",
+    "oldApproach": "Manual Copy + Wrap",
+    "modernApproach": "List.copyOf()",
+    "oldCode": "List<String> copy =\n    Collections.unmodifiableList(\n        new ArrayList<>(original)\n    );",
+    "modernCode": "List<String> copy =\n    List.copyOf(original);",
+    "summary": "Create an immutable copy of any collection in one call.",
+    "explanation": "List.copyOf(), Set.copyOf(), and Map.copyOf() create immutable snapshots of existing collections. If the source is already an immutable collection, no copy is made.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Smart copy",
+        "desc": "Skips the copy if the source is already immutable."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "One call",
+        "desc": "No manual ArrayList construction + wrapping."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Defensive copy",
+        "desc": "Changes to the original don't affect the copy."
+      }
+    ],
+    "support": "Widely available since JDK 10 (March 2018)"
+  },
+  {
+    "id": 23,
+    "slug": "map-entry-factory",
+    "title": "Map.entry() factory",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "SimpleEntry",
+    "modernApproach": "Map.entry()",
+    "oldCode": "Map.Entry<String, Integer> e =\n    new AbstractMap.SimpleEntry<>(\n        \"key\", 42\n    );",
+    "modernCode": "var e = Map.entry(\"key\", 42);",
+    "summary": "Create map entries with a clean factory method.",
+    "explanation": "Map.entry() replaces the verbose AbstractMap.SimpleEntry constructor. It returns an immutable entry, making it ideal for Map.ofEntries() and stream operations.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Concise",
+        "desc": "One line instead of three with a clearer intent."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "The returned entry cannot be modified."
+      },
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Composable",
+        "desc": "Works perfectly with Map.ofEntries() for large maps."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 24,
+    "slug": "sequenced-collections",
+    "title": "Sequenced collections",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Index Arithmetic",
+    "modernApproach": "getFirst/getLast",
+    "oldCode": "// Get last element\nvar last = list.get(list.size() - 1);\n// Get first\nvar first = list.get(0);\n// Reverse iteration: manual",
+    "modernCode": "var last = list.getLast();\nvar first = list.getFirst();\nvar reversed = list.reversed();",
+    "summary": "Access first/last elements and reverse views with clean API methods.",
+    "explanation": "SequencedCollection adds getFirst(), getLast(), reversed(), addFirst(), addLast() to List, Deque, SortedSet, and LinkedHashSet. No more size-1 arithmetic or manual reverse iteration.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Self-documenting",
+        "desc": "getLast() is clearer than get(size()-1)."
+      },
+      {
+        "icon": "\ud83d\udd04",
+        "title": "Reversed view",
+        "desc": "reversed() gives a view \u2014 no copying needed."
+      },
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Uniform API",
+        "desc": "Works the same on List, Deque, SortedSet."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 25,
+    "slug": "stream-tolist-shorthand",
+    "title": "Stream toList() shorthand",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "16",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 16+",
+    "oldApproach": "Collectors.toList()",
+    "modernApproach": ".toList()",
+    "oldCode": "List<String> names = people.stream()\n    .map(Person::name)\n    .collect(Collectors.toList());",
+    "modernCode": "List<String> names = people.stream()\n    .map(Person::name)\n    .toList();",
+    "summary": "Collect a stream to an unmodifiable list without Collectors.",
+    "explanation": "Stream.toList() is a terminal operation that returns an unmodifiable list. It's shorter than .collect(Collectors.toList()) and the result is immutable by default.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Shorter",
+        "desc": ".toList() vs .collect(Collectors.toList())."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable result",
+        "desc": "Returns an unmodifiable list by default."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Reads naturally",
+        "desc": "stream \u2192 map \u2192 toList flows like English."
+      }
+    ],
+    "support": "Widely available since JDK 16 (March 2021)"
+  },
+  {
+    "id": 26,
+    "slug": "collectors-teeing",
+    "title": "Collectors.teeing()",
+    "category": "collections",
+    "difficulty": "intermediate",
+    "jdkVersion": "12",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 12+",
+    "oldApproach": "Two Passes",
+    "modernApproach": "teeing()",
+    "oldCode": "long count = items.stream().count();\ndouble sum = items.stream()\n    .mapToDouble(Item::price)\n    .sum();\nvar result = new Stats(count, sum);",
+    "modernCode": "var result = items.stream().collect(\n    Collectors.teeing(\n        Collectors.counting(),\n        Collectors.summingDouble(Item::price),\n        Stats::new\n    )\n);",
+    "summary": "Compute two aggregations in a single stream pass.",
+    "explanation": "Collectors.teeing() sends each element to two downstream collectors and merges the results. This avoids streaming the data twice or using a mutable accumulator.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Single pass",
+        "desc": "Process the stream once instead of twice."
+      },
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Composable",
+        "desc": "Combine any two collectors with a merger function."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable result",
+        "desc": "Merge into a record or value object directly."
+      }
+    ],
+    "support": "Widely available since JDK 12 (March 2019)"
+  },
+  {
+    "id": 27,
+    "slug": "stream-toarray-typed",
+    "title": "Typed stream toArray",
+    "category": "collections",
+    "difficulty": "beginner",
+    "jdkVersion": "8",
+    "oldLabel": "Pre-Streams",
+    "modernLabel": "Java 8+",
+    "oldApproach": "Manual Array Copy",
+    "modernApproach": "toArray(generator)",
+    "oldCode": "List<String> list = getNames();\nString[] arr = new String[list.size()];\nfor (int i = 0; i < list.size(); i++) {\n    arr[i] = list.get(i);\n}",
+    "modernCode": "String[] arr = getNames().stream()\n    .filter(n -> n.length() > 3)\n    .toArray(String[]::new);",
+    "summary": "Convert streams to typed arrays with a method reference.",
+    "explanation": "The toArray(IntFunction) method creates a properly typed array from a stream. The generator (String[]::new) tells the stream what type of array to create.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Type-safe",
+        "desc": "No Object[] cast \u2014 the array type is correct."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Chainable",
+        "desc": "Works at the end of any stream pipeline."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Concise",
+        "desc": "One expression replaces the manual loop."
+      }
+    ],
+    "support": "Widely available since JDK 8 (March 2014)"
+  },
+  {
+    "id": 28,
+    "slug": "unmodifiable-collectors",
+    "title": "Unmodifiable collectors",
+    "category": "collections",
+    "difficulty": "intermediate",
+    "jdkVersion": "10",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 10+",
+    "oldApproach": "collectingAndThen",
+    "modernApproach": "toUnmodifiable*()",
+    "oldCode": "List<String> list = stream.collect(\n    Collectors.collectingAndThen(\n        Collectors.toList(),\n        Collections::unmodifiableList\n    )\n);",
+    "modernCode": "List<String> list = stream.collect(\n    Collectors.toUnmodifiableList()\n);",
+    "summary": "Collect directly to unmodifiable collections.",
+    "explanation": "Java 10 added toUnmodifiableList(), toUnmodifiableSet(), and toUnmodifiableMap() collectors. No more wrapping with collectingAndThen.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Direct",
+        "desc": "One collector instead of wrapping with collectingAndThen."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "Result cannot be modified \u2014 no accidental mutations."
+      },
+      {
+        "icon": "\ud83d\udeab",
+        "title": "Null-safe",
+        "desc": "Rejects null elements during collection."
+      }
+    ],
+    "support": "Widely available since JDK 10 (March 2018)"
+  },
+  {
+    "id": 29,
+    "slug": "string-isblank",
+    "title": "String.isBlank()",
+    "category": "strings",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "trim().isEmpty()",
+    "modernApproach": "isBlank()",
+    "oldCode": "boolean blank =\n    str.trim().isEmpty();\n// or: str.trim().length() == 0",
+    "modernCode": "boolean blank = str.isBlank();\n// handles Unicode whitespace too",
+    "summary": "Check for blank strings with a single method call.",
+    "explanation": "isBlank() returns true if the string is empty or contains only whitespace, including Unicode whitespace characters that trim() misses.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Self-documenting",
+        "desc": "isBlank() says exactly what it checks."
+      },
+      {
+        "icon": "\ud83c\udf10",
+        "title": "Unicode-aware",
+        "desc": "Handles all Unicode whitespace, not just ASCII."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "No allocation",
+        "desc": "No intermediate trimmed string is created."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 30,
+    "slug": "string-strip",
+    "title": "String.strip() vs trim()",
+    "category": "strings",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "trim()",
+    "modernApproach": "strip()",
+    "oldCode": "// trim() only removes ASCII whitespace\n// (chars <= U+0020)\nString clean = str.trim();",
+    "modernCode": "// strip() removes all Unicode whitespace\nString clean = str.strip();\nString left  = str.stripLeading();\nString right = str.stripTrailing();",
+    "summary": "Use Unicode-aware stripping with strip(), stripLeading(), stripTrailing().",
+    "explanation": "trim() only removes characters \u2264 U+0020 (ASCII control chars and space). strip() uses Character.isWhitespace() which handles Unicode spaces like non-breaking space, ideographic space, etc.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udf10",
+        "title": "Unicode-correct",
+        "desc": "Handles all whitespace characters from every script."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Directional",
+        "desc": "stripLeading() and stripTrailing() for one-sided trimming."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Fewer bugs",
+        "desc": "No surprise whitespace left behind in international text."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 31,
+    "slug": "string-repeat",
+    "title": "String.repeat()",
+    "category": "strings",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "StringBuilder Loop",
+    "modernApproach": "repeat()",
+    "oldCode": "StringBuilder sb = new StringBuilder();\nfor (int i = 0; i < 3; i++) {\n    sb.append(\"abc\");\n}\nString result = sb.toString();",
+    "modernCode": "String result = \"abc\".repeat(3);\n// \"abcabcabc\"",
+    "summary": "Repeat a string n times without a loop.",
+    "explanation": "String.repeat(int) returns the string concatenated with itself n times. Handles edge cases: repeat(0) returns empty string, repeat(1) returns the same string.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "One-liner",
+        "desc": "Replace 5 lines of StringBuilder code with one call."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Optimized",
+        "desc": "Internal implementation is optimized for large repeats."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Clear intent",
+        "desc": "repeat(3) immediately conveys the purpose."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 32,
+    "slug": "string-indent-transform",
+    "title": "String.indent() and transform()",
+    "category": "strings",
+    "difficulty": "beginner",
+    "jdkVersion": "12",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 12+",
+    "oldApproach": "Manual Indentation",
+    "modernApproach": "indent() / transform()",
+    "oldCode": "String[] lines = text.split(\"\\n\");\nStringBuilder sb = new StringBuilder();\nfor (String line : lines) {\n    sb.append(\"    \").append(line)\n      .append(\"\\n\");\n}\nString indented = sb.toString();",
+    "modernCode": "String indented = text.indent(4);\n\nString result = text\n    .transform(String::strip)\n    .transform(s -> s.replace(\" \", \"-\"));",
+    "summary": "Indent text and chain string transformations fluently.",
+    "explanation": "indent(n) adds n spaces to each line. transform(fn) applies any function and returns the result, enabling fluent chaining of string operations.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Built-in",
+        "desc": "Indentation is a common operation \u2014 now it's one call."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Chainable",
+        "desc": "transform() enables fluent pipelines on strings."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Clean code",
+        "desc": "No manual line splitting and StringBuilder loops."
+      }
+    ],
+    "support": "Widely available since JDK 12 (March 2019)"
+  },
+  {
+    "id": 33,
+    "slug": "string-formatted",
+    "title": "String.formatted()",
+    "category": "strings",
+    "difficulty": "beginner",
+    "jdkVersion": "15",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 15+",
+    "oldApproach": "String.format()",
+    "modernApproach": "formatted()",
+    "oldCode": "String msg = String.format(\n    \"Hello %s, you are %d\",\n    name, age\n);",
+    "modernCode": "String msg =\n    \"Hello %s, you are %d\"\n    .formatted(name, age);",
+    "summary": "Call formatted() on the template string itself.",
+    "explanation": "String.formatted() is an instance method equivalent to String.format() but called on the format string. It reads more naturally in a left-to-right flow.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Reads naturally",
+        "desc": "Template.formatted(args) flows better than String.format(template, args)."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Chainable",
+        "desc": "Can be chained with other string methods."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Less verbose",
+        "desc": "Drops the redundant String.format() static call."
+      }
+    ],
+    "support": "Widely available since JDK 15 (Sept 2020)"
+  },
+  {
+    "id": 34,
+    "slug": "multiline-json-sql",
+    "title": "Multiline JSON/SQL/HTML",
+    "category": "strings",
+    "difficulty": "beginner",
+    "jdkVersion": "15",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 15+",
+    "oldApproach": "Escaped Strings",
+    "modernApproach": "Text Blocks",
+    "oldCode": "String sql =\n    \"SELECT u.name, u.email\\n\" +\n    \"FROM users u\\n\" +\n    \"WHERE u.active = true\\n\" +\n    \"ORDER BY u.name\";",
+    "modernCode": "String sql = \"\"\"\n    SELECT u.name, u.email\n    FROM users u\n    WHERE u.active = true\n    ORDER BY u.name\n    \"\"\";",
+    "summary": "Write SQL, JSON, and HTML as they actually look.",
+    "explanation": "Text blocks make embedded languages readable. Copy SQL from your database tool and paste it directly. The closing delimiter position controls indentation stripping.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccb",
+        "title": "Copy-paste",
+        "desc": "Paste SQL/JSON directly from other tools."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Readable",
+        "desc": "The string looks like the actual SQL/JSON output."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "Maintainable",
+        "desc": "Easy to edit \u2014 no hunting for \\n and + operators."
+      }
+    ],
+    "support": "Widely available since JDK 15 (Sept 2020)"
+  },
+  {
+    "id": 35,
+    "slug": "string-chars-stream",
+    "title": "String chars as stream",
+    "category": "strings",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Manual Loop",
+    "modernApproach": "chars() Stream",
+    "oldCode": "for (int i = 0; i < str.length(); i++) {\n    char c = str.charAt(i);\n    if (Character.isDigit(c)) {\n        process(c);\n    }\n}",
+    "modernCode": "str.chars()\n    .filter(Character::isDigit)\n    .forEach(c -> process((char) c));",
+    "summary": "Process string characters as a stream pipeline.",
+    "explanation": "String.chars() returns an IntStream of character values, enabling functional processing. For Unicode support, codePoints() handles supplementary characters correctly.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Chainable",
+        "desc": "Use filter, map, collect on character streams."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Declarative",
+        "desc": "Describe what to do, not how to loop."
+      },
+      {
+        "icon": "\ud83c\udf10",
+        "title": "Unicode-ready",
+        "desc": "codePoints() correctly handles emoji and supplementary chars."
+      }
+    ],
+    "support": "Available since JDK 8+ (improved in 9+)"
+  },
+  {
+    "id": 36,
+    "slug": "stream-of-nullable",
+    "title": "Stream.ofNullable()",
+    "category": "streams",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Null Check",
+    "modernApproach": "ofNullable()",
+    "oldCode": "Stream<String> s = val != null\n    ? Stream.of(val)\n    : Stream.empty();",
+    "modernCode": "Stream<String> s =\n    Stream.ofNullable(val);",
+    "summary": "Create a zero-or-one element stream from a nullable value.",
+    "explanation": "Stream.ofNullable() returns a single-element stream if the value is non-null, or an empty stream if null. Eliminates the ternary null check pattern.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Concise",
+        "desc": "One call replaces the ternary conditional."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Flatmap-friendly",
+        "desc": "Perfect inside flatMap to skip null values."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Null-safe",
+        "desc": "No NPE risk \u2014 null becomes empty stream."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 37,
+    "slug": "stream-iterate-predicate",
+    "title": "Stream.iterate() with predicate",
+    "category": "streams",
+    "difficulty": "intermediate",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "iterate + limit",
+    "modernApproach": "iterate(seed, pred, op)",
+    "oldCode": "Stream.iterate(1, n -> n * 2)\n    .limit(10)\n    .forEach(System.out::println);\n// can't stop at a condition",
+    "modernCode": "Stream.iterate(\n    1,\n    n -> n < 1000,\n    n -> n * 2\n).forEach(System.out::println);\n// stops when n >= 1000",
+    "summary": "Use a predicate to stop iteration \u2014 like a for-loop in stream form.",
+    "explanation": "The three-argument Stream.iterate(seed, hasNext, next) works like a for-loop: seed is the start, hasNext determines when to stop, and next produces the next value.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Natural termination",
+        "desc": "Stop based on a condition, not an arbitrary limit."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "For-loop equivalent",
+        "desc": "Same semantics as for(seed; hasNext; next)."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "No infinite stream risk",
+        "desc": "The predicate guarantees termination."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 38,
+    "slug": "stream-takewhile-dropwhile",
+    "title": "Stream takeWhile / dropWhile",
+    "category": "streams",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Manual Loop",
+    "modernApproach": "takeWhile/dropWhile",
+    "oldCode": "List<Integer> result = new ArrayList<>();\nfor (int n : sorted) {\n    if (n >= 100) break;\n    result.add(n);\n}\n// no stream equivalent in Java 8",
+    "modernCode": "var result = sorted.stream()\n    .takeWhile(n -> n < 100)\n    .toList();\n// or: .dropWhile(n -> n < 10)",
+    "summary": "Take or drop elements from a stream based on a predicate.",
+    "explanation": "takeWhile() returns elements while the predicate is true and stops at the first false. dropWhile() skips elements while true and returns the rest. Both work best on ordered streams.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Short-circuit",
+        "desc": "Stops processing as soon as the predicate fails."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Pipeline-friendly",
+        "desc": "Chain with other stream operations naturally."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Declarative",
+        "desc": "takeWhile reads like English: 'take while less than 100'."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 39,
+    "slug": "collectors-flatmapping",
+    "title": "Collectors.flatMapping()",
+    "category": "streams",
+    "difficulty": "intermediate",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Nested flatMap",
+    "modernApproach": "flatMapping()",
+    "oldCode": "// Flatten within a grouping collector\n// Required complex custom collector\nMap<String, Set<String>> tagsByDept =\n    // no clean way in Java 8",
+    "modernCode": "var tagsByDept = employees.stream()\n    .collect(groupingBy(\n        Emp::dept,\n        flatMapping(\n            e -> e.tags().stream(),\n            toSet()\n        )\n    ));",
+    "summary": "Use flatMapping() to flatten inside a grouping collector.",
+    "explanation": "Collectors.flatMapping() applies a one-to-many mapping as a downstream collector. It's the collector equivalent of Stream.flatMap() \u2014 useful inside groupingBy or partitioningBy.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Composable",
+        "desc": "Works as a downstream collector inside groupingBy."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "One pass",
+        "desc": "Flatten and group in a single stream traversal."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Nestable",
+        "desc": "Combine with other downstream collectors."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 40,
+    "slug": "stream-tolist",
+    "title": "Stream.toList()",
+    "category": "streams",
+    "difficulty": "beginner",
+    "jdkVersion": "16",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 16+",
+    "oldApproach": "Collectors.toList()",
+    "modernApproach": ".toList()",
+    "oldCode": "List<String> result = stream\n    .filter(s -> s.length() > 3)\n    .collect(Collectors.toList());",
+    "modernCode": "List<String> result = stream\n    .filter(s -> s.length() > 3)\n    .toList();",
+    "summary": "Terminal toList() replaces the verbose collect(Collectors.toList()).",
+    "explanation": "Stream.toList() returns an unmodifiable list. It's equivalent to .collect(Collectors.toUnmodifiableList()) but much shorter. Note: the result is immutable, unlike Collectors.toList().",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "7 chars vs 24",
+        "desc": ".toList() replaces .collect(Collectors.toList())."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "The result list cannot be modified."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Fluent",
+        "desc": "Reads naturally at the end of a pipeline."
+      }
+    ],
+    "support": "Widely available since JDK 16 (March 2021)"
+  },
+  {
+    "id": 41,
+    "slug": "stream-mapmulti",
+    "title": "Stream.mapMulti()",
+    "category": "streams",
+    "difficulty": "intermediate",
+    "jdkVersion": "16",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 16+",
+    "oldApproach": "flatMap + List",
+    "modernApproach": "mapMulti()",
+    "oldCode": "stream.flatMap(order ->\n    order.items().stream()\n        .map(item -> new OrderItem(\n            order.id(), item)\n        )\n);",
+    "modernCode": "stream.<OrderItem>mapMulti(\n    (order, downstream) -> {\n        for (var item : order.items())\n            downstream.accept(\n                new OrderItem(order.id(), item));\n    }\n);",
+    "summary": "Emit zero or more elements per input without creating intermediate streams.",
+    "explanation": "mapMulti() is an imperative alternative to flatMap that avoids creating intermediate Stream objects for each element. It's more efficient when the mapping produces a small number of elements.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Less allocation",
+        "desc": "No intermediate Stream created per element."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Imperative style",
+        "desc": "Use loops and conditionals directly."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Flexible",
+        "desc": "Emit zero, one, or many elements with full control."
+      }
+    ],
+    "support": "Widely available since JDK 16 (March 2021)"
+  },
+  {
+    "id": 42,
+    "slug": "stream-gatherers",
+    "title": "Stream gatherers",
+    "category": "streams",
+    "difficulty": "advanced",
+    "jdkVersion": "24",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 24+",
+    "oldApproach": "Custom Collector",
+    "modernApproach": "gather()",
+    "oldCode": "// Sliding window: manual implementation\nList<List<T>> windows = new ArrayList<>();\nfor (int i = 0; i <= list.size()-3; i++) {\n    windows.add(\n        list.subList(i, i + 3));\n}",
+    "modernCode": "var windows = stream\n    .gather(\n        Gatherers.windowSliding(3)\n    )\n    .toList();",
+    "summary": "Use gatherers for custom intermediate stream operations.",
+    "explanation": "Gatherers are a new intermediate stream operation that can express complex transformations like sliding windows, fixed-size groups, and scan operations that were impossible with standard stream ops.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Composable",
+        "desc": "Gatherers compose with other stream operations."
+      },
+      {
+        "icon": "\ud83d\udce6",
+        "title": "Built-in operations",
+        "desc": "windowFixed, windowSliding, fold, scan out of the box."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "Extensible",
+        "desc": "Write custom gatherers for any intermediate transformation."
+      }
+    ],
+    "support": "Finalized in JDK 24 (JEP 485, March 2025)."
+  },
+  {
+    "id": 43,
+    "slug": "virtual-thread-executor",
+    "title": "Virtual thread executor",
+    "category": "streams",
+    "difficulty": "intermediate",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Fixed Thread Pool",
+    "modernApproach": "Virtual Thread Executor",
+    "oldCode": "ExecutorService exec =\n    Executors.newFixedThreadPool(10);\ntry {\n    futures = tasks.stream()\n        .map(t -> exec.submit(t))\n        .toList();\n} finally {\n    exec.shutdown();\n}",
+    "modernCode": "try (var exec = Executors\n        .newVirtualThreadPerTaskExecutor()) {\n    var futures = tasks.stream()\n        .map(exec::submit)\n        .toList();\n}",
+    "summary": "Use virtual thread executors for unlimited lightweight concurrency.",
+    "explanation": "The virtual thread executor creates a new virtual thread for each task. No pool sizing needed \u2014 virtual threads are cheap enough to create millions of them.",
+    "whyModernWins": [
+      {
+        "icon": "\u267e\ufe0f",
+        "title": "No sizing",
+        "desc": "No pool size to tune \u2014 create as many threads as needed."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Lightweight",
+        "desc": "Virtual threads use KB of memory, not MB."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Auto-closeable",
+        "desc": "try-with-resources handles shutdown automatically."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 44,
+    "slug": "optional-ifpresentorelse",
+    "title": "Optional.ifPresentOrElse()",
+    "category": "streams",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "if/else on Optional",
+    "modernApproach": "ifPresentOrElse()",
+    "oldCode": "Optional<User> user = findUser(id);\nif (user.isPresent()) {\n    greet(user.get());\n} else {\n    handleMissing();\n}",
+    "modernCode": "findUser(id).ifPresentOrElse(\n    this::greet,\n    this::handleMissing\n);",
+    "summary": "Handle both present and empty cases of Optional in one call.",
+    "explanation": "ifPresentOrElse() takes a Consumer for the present case and a Runnable for the empty case. It avoids the isPresent/get anti-pattern.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Single expression",
+        "desc": "Both cases handled in one method call."
+      },
+      {
+        "icon": "\ud83d\udeab",
+        "title": "No get()",
+        "desc": "Eliminates the dangerous isPresent() + get() pattern."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Fluent",
+        "desc": "Chains naturally after findUser() or any Optional-returning method."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 45,
+    "slug": "optional-or",
+    "title": "Optional.or() fallback",
+    "category": "streams",
+    "difficulty": "intermediate",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Nested Fallback",
+    "modernApproach": ".or() chain",
+    "oldCode": "Optional<Config> cfg = primary();\nif (!cfg.isPresent()) {\n    cfg = secondary();\n}\nif (!cfg.isPresent()) {\n    cfg = defaults();\n}",
+    "modernCode": "Optional<Config> cfg = primary()\n    .or(this::secondary)\n    .or(this::defaults);",
+    "summary": "Chain Optional fallbacks without nested checks.",
+    "explanation": "Optional.or() returns the original Optional if it has a value, otherwise evaluates the supplier to get an alternative Optional. Suppliers are lazy \u2014 only called when needed.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Chainable",
+        "desc": "Stack fallbacks in a readable pipeline."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Lazy evaluation",
+        "desc": "Fallback suppliers only execute if needed."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Declarative",
+        "desc": "Reads as 'try primary, or secondary, or defaults'."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 46,
+    "slug": "virtual-threads",
+    "title": "Virtual threads",
+    "category": "concurrency",
+    "difficulty": "beginner",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Platform Threads",
+    "modernApproach": "Virtual Threads",
+    "oldCode": "Thread thread = new Thread(() -> {\n    System.out.println(\"hello\");\n});\nthread.start();\nthread.join();",
+    "modernCode": "Thread.startVirtualThread(() -> {\n    System.out.println(\"hello\");\n}).join();",
+    "summary": "Create millions of lightweight virtual threads instead of heavy OS threads.",
+    "explanation": "Virtual threads are lightweight threads managed by the JVM, not the OS. You can create millions of them without tuning thread pools. They're ideal for I/O-bound tasks like HTTP calls and database queries.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Lightweight",
+        "desc": "Virtual threads use KB of memory, platform threads use MB."
+      },
+      {
+        "icon": "\u267e\ufe0f",
+        "title": "Scalable",
+        "desc": "Create millions of threads \u2014 no pool sizing needed."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Simple model",
+        "desc": "Write blocking code that scales like async code."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 47,
+    "slug": "structured-concurrency",
+    "title": "Structured concurrency",
+    "category": "concurrency",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25 (Preview)",
+    "oldApproach": "Manual Thread Lifecycle",
+    "modernApproach": "StructuredTaskScope",
+    "oldCode": "ExecutorService exec =\n    Executors.newFixedThreadPool(2);\nFuture<User> u = exec.submit(this::fetchUser);\nFuture<Order> o = exec.submit(this::fetchOrder);\ntry {\n    return combine(u.get(), o.get());\n} finally { exec.shutdown(); }",
+    "modernCode": "try (var scope = new StructuredTaskScope\n        .ShutdownOnFailure()) {\n    var u = scope.fork(this::fetchUser);\n    var o = scope.fork(this::fetchOrder);\n    scope.join().throwIfFailed();\n    return combine(u.get(), o.get());\n}",
+    "summary": "Manage concurrent task lifetimes as a single unit of work.",
+    "explanation": "Structured concurrency treats a group of concurrent tasks as one operation. If any subtask fails, the others are cancelled. The scope ensures no thread leaks and gives clear parent-child relationships.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "No thread leaks",
+        "desc": "All forked tasks complete before the scope closes."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Fast failure",
+        "desc": "ShutdownOnFailure cancels siblings if one fails."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Clear structure",
+        "desc": "Task lifetime matches the lexical scope in code."
+      }
+    ],
+    "support": "Preview in JDK 25 (fifth preview, JEP 505). Requires --enable-preview."
+  },
+  {
+    "id": 48,
+    "slug": "scoped-values",
+    "title": "Scoped values",
+    "category": "concurrency",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25",
+    "oldApproach": "ThreadLocal",
+    "modernApproach": "ScopedValue",
+    "oldCode": "static final ThreadLocal<User> CURRENT =\n    new ThreadLocal<>();\nvoid handle(Request req) {\n    CURRENT.set(authenticate(req));\n    try { process(); }\n    finally { CURRENT.remove(); }\n}",
+    "modernCode": "static final ScopedValue<User> CURRENT =\n    ScopedValue.newInstance();\nvoid handle(Request req) {\n    ScopedValue.where(CURRENT,\n        authenticate(req)\n    ).run(this::process);\n}",
+    "summary": "Share data across call stacks safely without ThreadLocal pitfalls.",
+    "explanation": "ScopedValue provides immutable, inheritable, scope-limited context. Unlike ThreadLocal, scoped values are automatically cleaned up, work with virtual threads, and can't be mutated by callees.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "Callees can read but never modify the scoped value."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Auto cleanup",
+        "desc": "No manual remove() \u2014 value is scoped to the block."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Virtual-thread safe",
+        "desc": "Works efficiently with millions of virtual threads."
+      }
+    ],
+    "support": "Finalized in JDK 25 LTS (JEP 506, Sept 2025)."
+  },
+  {
+    "id": 49,
+    "slug": "stable-values",
+    "title": "Stable values",
+    "category": "concurrency",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25 (Preview)",
+    "oldApproach": "Double-Checked Locking",
+    "modernApproach": "StableValue",
+    "oldCode": "private volatile Logger logger;\nLogger getLogger() {\n    if (logger == null) {\n        synchronized (this) {\n            if (logger == null)\n                logger = createLogger();\n        }\n    }\n    return logger;\n}",
+    "modernCode": "private final StableValue<Logger> logger =\n    StableValue.of(this::createLogger);\n\nLogger getLogger() {\n    return logger.get();\n}",
+    "summary": "Thread-safe lazy initialization without volatile or synchronized.",
+    "explanation": "StableValue provides a lazily initialized, immutable value with built-in thread safety. No double-checked locking, no volatile fields, no synchronized blocks. The JVM can even optimize the read path after initialization.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Zero boilerplate",
+        "desc": "No volatile, synchronized, or null checks."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "JVM-optimized",
+        "desc": "The JVM can fold the value after initialization."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Guaranteed once",
+        "desc": "The supplier runs exactly once, even under contention."
+      }
+    ],
+    "support": "Preview in JDK 25 (JEP 502). Requires --enable-preview."
+  },
+  {
+    "id": 50,
+    "slug": "completablefuture-chaining",
+    "title": "CompletableFuture chaining",
+    "category": "concurrency",
+    "difficulty": "intermediate",
+    "jdkVersion": "8",
+    "oldLabel": "Pre-Java 8",
+    "modernLabel": "Java 8+",
+    "oldApproach": "Blocking Future.get()",
+    "modernApproach": "CompletableFuture",
+    "oldCode": "Future<String> future =\n    executor.submit(this::fetchData);\nString data = future.get(); // blocks\nString result = transform(data);",
+    "modernCode": "CompletableFuture.supplyAsync(\n    this::fetchData\n)\n.thenApply(this::transform)\n.thenAccept(System.out::println);",
+    "summary": "Chain async operations without blocking, using CompletableFuture.",
+    "explanation": "CompletableFuture enables non-blocking async pipelines. Chain operations with thenApply, thenCompose, thenAccept. Handle errors with exceptionally(). Combine multiple futures with allOf/anyOf.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Chainable",
+        "desc": "Compose async steps into a readable pipeline."
+      },
+      {
+        "icon": "\ud83d\udeab",
+        "title": "Non-blocking",
+        "desc": "No thread sits idle waiting for results."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Error handling",
+        "desc": "exceptionally() and handle() for clean error recovery."
+      }
+    ],
+    "support": "Widely available since JDK 8 (March 2014)"
+  },
+  {
+    "id": 51,
+    "slug": "executor-try-with-resources",
+    "title": "ExecutorService auto-close",
+    "category": "concurrency",
+    "difficulty": "beginner",
+    "jdkVersion": "19",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 19+",
+    "oldApproach": "Manual Shutdown",
+    "modernApproach": "try-with-resources",
+    "oldCode": "ExecutorService exec =\n    Executors.newCachedThreadPool();\ntry {\n    exec.submit(task);\n} finally {\n    exec.shutdown();\n    exec.awaitTermination(\n        1, TimeUnit.MINUTES);\n}",
+    "modernCode": "try (var exec =\n        Executors.newCachedThreadPool()) {\n    exec.submit(task);\n}\n// auto shutdown + await on close",
+    "summary": "Use try-with-resources for automatic executor shutdown.",
+    "explanation": "Since Java 19, ExecutorService implements AutoCloseable. The close() method calls shutdown() and waits for tasks to complete. No more manual try/finally shutdown patterns.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Auto cleanup",
+        "desc": "Shutdown happens automatically when the block exits."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "No leaks",
+        "desc": "Executor always shuts down, even if exceptions occur."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Familiar pattern",
+        "desc": "Same try-with-resources used for files, connections, etc."
+      }
+    ],
+    "support": "Widely available since JDK 19 (Sept 2022)"
+  },
+  {
+    "id": 52,
+    "slug": "thread-sleep-duration",
+    "title": "Thread.sleep with Duration",
+    "category": "concurrency",
+    "difficulty": "beginner",
+    "jdkVersion": "19",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 19+",
+    "oldApproach": "Milliseconds",
+    "modernApproach": "Duration",
+    "oldCode": "// What unit is 5000? ms? us?\nThread.sleep(5000);\n\n// 2.5 seconds: math required\nThread.sleep(2500);",
+    "modernCode": "Thread.sleep(\n    Duration.ofSeconds(5)\n);\nThread.sleep(\n    Duration.ofMillis(2500)\n);",
+    "summary": "Use Duration for self-documenting time values.",
+    "explanation": "Thread.sleep(Duration) makes the time unit explicit. No more guessing whether 5000 means milliseconds or microseconds. Works with Duration.ofSeconds, ofMillis, ofMinutes, etc.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Self-documenting",
+        "desc": "Duration.ofSeconds(5) is unambiguous."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Unit-safe",
+        "desc": "No accidentally passing microseconds as milliseconds."
+      },
+      {
+        "icon": "\ud83e\udde9",
+        "title": "Composable",
+        "desc": "Duration math: plus(), multipliedBy(), etc."
+      }
+    ],
+    "support": "Widely available since JDK 19 (Sept 2022)"
+  },
+  {
+    "id": 53,
+    "slug": "process-api",
+    "title": "Modern Process API",
+    "category": "concurrency",
+    "difficulty": "intermediate",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Runtime.exec()",
+    "modernApproach": "ProcessHandle",
+    "oldCode": "Process p = Runtime.getRuntime()\n    .exec(\"ls -la\");\nint code = p.waitFor();\n// no way to get PID\n// no easy process info",
+    "modernCode": "ProcessHandle ph =\n    ProcessHandle.current();\nlong pid = ph.pid();\nph.info().command()\n    .ifPresent(System.out::println);\nph.children().forEach(\n    c -> System.out.println(c.pid()));",
+    "summary": "Inspect and manage OS processes with ProcessHandle.",
+    "explanation": "ProcessHandle provides PIDs, process info (command, arguments, start time, CPU usage), parent/child relationships, and process destruction. No more undocumented Process internals.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd0d",
+        "title": "Full info",
+        "desc": "Access PID, command, arguments, start time, CPU usage."
+      },
+      {
+        "icon": "\ud83c\udf33",
+        "title": "Process tree",
+        "desc": "Navigate parent, children, and descendants."
+      },
+      {
+        "icon": "\ud83d\udcca",
+        "title": "Monitoring",
+        "desc": "onExit() returns a CompletableFuture for async monitoring."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 54,
+    "slug": "concurrent-http-virtual",
+    "title": "Concurrent HTTP with virtual threads",
+    "category": "concurrency",
+    "difficulty": "intermediate",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Thread Pool + URLConnection",
+    "modernApproach": "Virtual Threads + HttpClient",
+    "oldCode": "ExecutorService pool =\n    Executors.newFixedThreadPool(10);\nList<Future<String>> futures =\n    urls.stream()\n    .map(u -> pool.submit(\n        () -> fetchUrl(u)))\n    .toList();\n// manual shutdown, blocking get()",
+    "modernCode": "try (var exec = Executors\n    .newVirtualThreadPerTaskExecutor()) {\n    var results = urls.stream()\n        .map(u -> exec.submit(\n            () -> client.send(req(u),\n                ofString()).body()))\n        .toList().stream()\n        .map(Future::join).toList();\n}",
+    "summary": "Fetch many URLs concurrently with virtual threads and HttpClient.",
+    "explanation": "Virtual threads make it practical to create a thread per HTTP request. Combined with HttpClient, this replaces complex async callback patterns with simple blocking code that scales.",
+    "whyModernWins": [
+      {
+        "icon": "\u267e\ufe0f",
+        "title": "Thread per request",
+        "desc": "No pool sizing \u2014 one virtual thread per URL."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Simple code",
+        "desc": "Write straightforward blocking code."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "High throughput",
+        "desc": "Thousands of concurrent requests with minimal resources."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 55,
+    "slug": "lock-free-lazy-init",
+    "title": "Lock-free lazy initialization",
+    "category": "concurrency",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25 (Preview)",
+    "oldApproach": "synchronized + volatile",
+    "modernApproach": "StableValue",
+    "oldCode": "class Config {\n    private static volatile Config inst;\n    static Config get() {\n        if (inst == null) {\n            synchronized (Config.class) {\n                if (inst == null)\n                    inst = load();\n            }\n        }\n        return inst;\n    }\n}",
+    "modernCode": "class Config {\n    private static final\n        StableValue<Config> INST =\n            StableValue.of(Config::load);\n\n    static Config get() {\n        return INST.get();\n    }\n}",
+    "summary": "Replace double-checked locking with StableValue for lazy singletons.",
+    "explanation": "StableValue encapsulates the lazy initialization pattern with correct thread safety. The JVM can optimize the read path after initialization, potentially making it faster than volatile reads.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "No boilerplate",
+        "desc": "No volatile, synchronized, or double-null-check."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Faster reads",
+        "desc": "JVM can constant-fold after initialization."
+      },
+      {
+        "icon": "\u2705",
+        "title": "Provably correct",
+        "desc": "No subtle ordering bugs \u2014 the JVM handles it."
+      }
+    ],
+    "support": "Preview in JDK 25 (JEP 502, StableValue). Requires --enable-preview."
+  },
+  {
+    "id": 56,
+    "slug": "http-client",
+    "title": "Modern HTTP client",
+    "category": "io",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "HttpURLConnection",
+    "modernApproach": "HttpClient",
+    "oldCode": "URL url = new URL(\"https://api.com/data\");\nHttpURLConnection con =\n    (HttpURLConnection) url.openConnection();\ncon.setRequestMethod(\"GET\");\nBufferedReader in = new BufferedReader(\n    new InputStreamReader(con.getInputStream()));\n// read lines, close streams...",
+    "modernCode": "var client = HttpClient.newHttpClient();\nvar request = HttpRequest.newBuilder()\n    .uri(URI.create(\"https://api.com/data\"))\n    .build();\nvar response = client.send(\n    request, BodyHandlers.ofString());\nString body = response.body();",
+    "summary": "Use the built-in HttpClient for clean, modern HTTP requests.",
+    "explanation": "HttpClient supports HTTP/1.1 and HTTP/2, async requests, WebSocket, custom executors, and connection pooling. No more casting URLConnection or manually reading InputStreams.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Builder API",
+        "desc": "Fluent builder for requests, headers, and timeouts."
+      },
+      {
+        "icon": "\ud83d\udd04",
+        "title": "HTTP/2 support",
+        "desc": "Built-in HTTP/2 with multiplexing and server push."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Async ready",
+        "desc": "sendAsync() returns CompletableFuture."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 57,
+    "slug": "reading-files",
+    "title": "Reading files",
+    "category": "io",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "BufferedReader",
+    "modernApproach": "Files.readString()",
+    "oldCode": "StringBuilder sb = new StringBuilder();\ntry (BufferedReader br =\n    new BufferedReader(\n        new FileReader(\"data.txt\"))) {\n    String line;\n    while ((line = br.readLine()) != null)\n        sb.append(line).append(\"\\n\");\n}\nString content = sb.toString();",
+    "modernCode": "String content =\n    Files.readString(Path.of(\"data.txt\"));",
+    "summary": "Read an entire file into a String with one line.",
+    "explanation": "Files.readString() reads a file's entire content into a String. It handles encoding (UTF-8 by default) and resource cleanup. For large files, use Files.lines() for lazy streaming.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "One line",
+        "desc": "Replace 8 lines of BufferedReader boilerplate."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "Auto cleanup",
+        "desc": "File handle is closed automatically."
+      },
+      {
+        "icon": "\ud83c\udf10",
+        "title": "UTF-8 default",
+        "desc": "Correct encoding by default \u2014 no charset confusion."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 58,
+    "slug": "writing-files",
+    "title": "Writing files",
+    "category": "io",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "FileWriter + BufferedWriter",
+    "modernApproach": "Files.writeString()",
+    "oldCode": "try (BufferedWriter bw =\n    new BufferedWriter(\n        new FileWriter(\"out.txt\"))) {\n    bw.write(content);\n}",
+    "modernCode": "Files.writeString(\n    Path.of(\"out.txt\"),\n    content\n);",
+    "summary": "Write a String to a file with one line.",
+    "explanation": "Files.writeString() writes content to a file with UTF-8 encoding by default. Options can be passed for appending, creating, etc.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "One line",
+        "desc": "No writer wrapping or try-with-resources needed."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Safe defaults",
+        "desc": "UTF-8 encoding, proper file handle cleanup."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "Options",
+        "desc": "Pass OpenOption flags for append, create, etc."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 59,
+    "slug": "inputstream-transferto",
+    "title": "InputStream.transferTo()",
+    "category": "io",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Manual Copy Loop",
+    "modernApproach": "transferTo()",
+    "oldCode": "byte[] buf = new byte[8192];\nint n;\nwhile ((n = input.read(buf)) != -1) {\n    output.write(buf, 0, n);\n}",
+    "modernCode": "input.transferTo(output);",
+    "summary": "Copy an InputStream to an OutputStream in one call.",
+    "explanation": "transferTo() reads all bytes from the input stream and writes them to the output stream. No buffer management, no loop. It uses an optimized internal buffer.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "One line",
+        "desc": "Replace the entire read/write loop with one method call."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Optimized",
+        "desc": "Internal buffer size is tuned for performance."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "No bugs",
+        "desc": "No off-by-one errors in buffer management."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 60,
+    "slug": "path-of",
+    "title": "Path.of() factory",
+    "category": "io",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "Paths.get()",
+    "modernApproach": "Path.of()",
+    "oldCode": "Path path = Paths.get(\"src\", \"main\",\n    \"java\", \"App.java\");",
+    "modernCode": "Path path = Path.of(\"src\", \"main\",\n    \"java\", \"App.java\");",
+    "summary": "Use Path.of() \u2014 the modern factory method on the Path interface.",
+    "explanation": "Path.of() is a factory method added directly to the Path interface, replacing the separate Paths utility class. It's more discoverable and consistent with List.of(), Map.of(), etc.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Consistent API",
+        "desc": "Follows the .of() factory pattern like List.of(), Set.of()."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Discoverable",
+        "desc": "Found on the Path type itself, not a separate Paths class."
+      },
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "One less class",
+        "desc": "No need to import the Paths utility class."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 61,
+    "slug": "try-with-resources-effectively-final",
+    "title": "Try-with-resources improvement",
+    "category": "io",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Re-declare Variable",
+    "modernApproach": "Effectively Final",
+    "oldCode": "Connection conn = getConnection();\n// Must re-declare in try\ntry (Connection c = conn) {\n    use(c);\n}",
+    "modernCode": "Connection conn = getConnection();\n// Use existing variable directly\ntry (conn) {\n    use(conn);\n}",
+    "summary": "Use existing effectively-final variables directly in try-with-resources.",
+    "explanation": "Java 9 allows effectively-final variables to be used directly in try-with-resources without re-declaration. This is cleaner when the resource was created outside the try block.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "No re-declaration",
+        "desc": "Use the existing variable name directly."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Less confusion",
+        "desc": "No separate variable name inside the try block."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Concise",
+        "desc": "Fewer lines, same resource safety."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 62,
+    "slug": "files-mismatch",
+    "title": "Files.mismatch()",
+    "category": "io",
+    "difficulty": "beginner",
+    "jdkVersion": "12",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 12+",
+    "oldApproach": "Manual Byte Compare",
+    "modernApproach": "Files.mismatch()",
+    "oldCode": "// Compare two files byte by byte\nbyte[] f1 = Files.readAllBytes(path1);\nbyte[] f2 = Files.readAllBytes(path2);\nboolean equal = Arrays.equals(f1, f2);\n// loads both files entirely into memory",
+    "modernCode": "long pos = Files.mismatch(path1, path2);\n// -1 if identical\n// otherwise: position of first difference",
+    "summary": "Compare two files efficiently without loading them into memory.",
+    "explanation": "Files.mismatch() returns the position of the first byte that differs, or -1 if the files are identical. It reads lazily and short-circuits on the first difference.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Memory-efficient",
+        "desc": "Doesn't load entire files into byte arrays."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Pinpoints difference",
+        "desc": "Returns the exact byte position of the first mismatch."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "One call",
+        "desc": "No manual byte array comparison logic."
+      }
+    ],
+    "support": "Widely available since JDK 12 (March 2019)"
+  },
+  {
+    "id": 63,
+    "slug": "deserialization-filters",
+    "title": "Deserialization filters",
+    "category": "io",
+    "difficulty": "advanced",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Accept Everything",
+    "modernApproach": "ObjectInputFilter",
+    "oldCode": "// Dangerous: accepts any class\nObjectInputStream ois =\n    new ObjectInputStream(input);\nObject obj = ois.readObject();\n// deserialization attacks possible!",
+    "modernCode": "ObjectInputFilter filter =\n    ObjectInputFilter.Config\n    .createFilter(\n        \"com.myapp.*;!*\"\n    );\nois.setObjectInputFilter(filter);\nObject obj = ois.readObject();",
+    "summary": "Restrict which classes can be deserialized to prevent attacks.",
+    "explanation": "ObjectInputFilter lets you allowlist/denylist classes, limit object graph depth, array sizes, and reference counts. This defends against deserialization vulnerabilities without external libraries.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Security",
+        "desc": "Prevent deserialization of unexpected/malicious classes."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Fine-grained",
+        "desc": "Control depth, array size, references, and class patterns."
+      },
+      {
+        "icon": "\ud83c\udfd7\ufe0f",
+        "title": "JVM-wide",
+        "desc": "Set a global filter for all deserialization in the JVM."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 64,
+    "slug": "helpful-npe",
+    "title": "Helpful NullPointerExceptions",
+    "category": "errors",
+    "difficulty": "beginner",
+    "jdkVersion": "14",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 14+",
+    "oldApproach": "Cryptic NPE",
+    "modernApproach": "Detailed NPE",
+    "oldCode": "// Old NPE message:\n// \"NullPointerException\"\n// at MyApp.main(MyApp.java:42)\n// Which variable was null?!",
+    "modernCode": "// Modern NPE message:\n// Cannot invoke \"String.length()\"\n// because \"user.address().city()\"\n// is null\n// Exact variable identified!",
+    "summary": "JVM automatically tells you exactly which variable was null.",
+    "explanation": "Helpful NPEs describe which expression was null and what operation failed. This is enabled by default since Java 14 \u2014 no code change needed, just upgrade the JDK.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd0d",
+        "title": "Exact variable",
+        "desc": "The message names the null variable in the chain."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Faster debugging",
+        "desc": "No more guessing which of 5 chained calls was null."
+      },
+      {
+        "icon": "\ud83c\udd93",
+        "title": "Free upgrade",
+        "desc": "No code changes \u2014 just run on JDK 14+."
+      }
+    ],
+    "support": "Widely available since JDK 14 (March 2020)"
+  },
+  {
+    "id": 65,
+    "slug": "optional-chaining",
+    "title": "Optional chaining",
+    "category": "errors",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Nested Null Checks",
+    "modernApproach": "Optional Pipeline",
+    "oldCode": "String city = null;\nif (user != null) {\n    Address addr = user.getAddress();\n    if (addr != null) {\n        city = addr.getCity();\n    }\n}\nif (city == null) city = \"Unknown\";",
+    "modernCode": "String city = Optional.ofNullable(user)\n    .map(User::address)\n    .map(Address::city)\n    .orElse(\"Unknown\");",
+    "summary": "Replace nested null checks with an Optional pipeline.",
+    "explanation": "Optional.map() chains through nullable values, short-circuiting on the first null. orElse() provides the default. This eliminates pyramid-of-doom null checking.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Chainable",
+        "desc": "Each .map() step handles null transparently."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Linear flow",
+        "desc": "Read left-to-right instead of nested if-blocks."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "NPE-proof",
+        "desc": "null is handled at each step \u2014 no crash possible."
+      }
+    ],
+    "support": "Available since JDK 8+ (improved in 9+)"
+  },
+  {
+    "id": 66,
+    "slug": "require-nonnull-else",
+    "title": "Objects.requireNonNullElse()",
+    "category": "errors",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Ternary Null Check",
+    "modernApproach": "requireNonNullElse()",
+    "oldCode": "String name = input != null\n    ? input\n    : \"default\";\n// easy to get the order wrong",
+    "modernCode": "String name = Objects\n    .requireNonNullElse(\n        input, \"default\"\n    );",
+    "summary": "Get a non-null value with a clear default, no ternary needed.",
+    "explanation": "requireNonNullElse returns the first argument if non-null, otherwise the second. The default itself cannot be null \u2014 it throws NPE if both are null, catching bugs early.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Clear intent",
+        "desc": "Method name describes exactly what it does."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Null-safe default",
+        "desc": "The default value is also checked for null."
+      },
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Readable",
+        "desc": "Better than ternary for simple null-or-default logic."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 67,
+    "slug": "multi-catch",
+    "title": "Multi-catch exception handling",
+    "category": "errors",
+    "difficulty": "beginner",
+    "jdkVersion": "7",
+    "oldLabel": "Pre-Java 7",
+    "modernLabel": "Java 7+",
+    "oldApproach": "Separate Catch Blocks",
+    "modernApproach": "Multi-catch",
+    "oldCode": "try {\n    process();\n} catch (IOException e) {\n    log(e);\n} catch (SQLException e) {\n    log(e);\n} catch (ParseException e) {\n    log(e);\n}",
+    "modernCode": "try {\n    process();\n} catch (IOException\n    | SQLException\n    | ParseException e) {\n    log(e);\n}",
+    "summary": "Catch multiple exception types in a single catch block.",
+    "explanation": "Multi-catch handles multiple exception types with the same code. The exception variable is effectively final, so you can rethrow it without wrapping.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "DRY",
+        "desc": "Same handling logic written once instead of three times."
+      },
+      {
+        "icon": "\ud83d\udd04",
+        "title": "Rethrowable",
+        "desc": "The caught exception can be rethrown with its precise type."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Scannable",
+        "desc": "All handled types are visible in one place."
+      }
+    ],
+    "support": "Widely available since JDK 7 (July 2011)"
+  },
+  {
+    "id": 68,
+    "slug": "null-in-switch",
+    "title": "Null case in switch",
+    "category": "errors",
+    "difficulty": "beginner",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Guard Before Switch",
+    "modernApproach": "case null",
+    "oldCode": "// Must check before switch\nif (status == null) {\n    return \"unknown\";\n}\nreturn switch (status) {\n    case ACTIVE  -> \"active\";\n    case PAUSED  -> \"paused\";\n    default      -> \"other\";\n};",
+    "modernCode": "return switch (status) {\n    case null    -> \"unknown\";\n    case ACTIVE  -> \"active\";\n    case PAUSED  -> \"paused\";\n    default      -> \"other\";\n};",
+    "summary": "Handle null directly as a switch case \u2014 no separate guard needed.",
+    "explanation": "Pattern matching switch can match null as a case label. This eliminates the need for a null check before the switch and makes null handling explicit and visible.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Explicit",
+        "desc": "null handling is visible right in the switch."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "No NPE",
+        "desc": "Switch on a null value won't throw NullPointerException."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "All-in-one",
+        "desc": "All cases including null in a single switch expression."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 69,
+    "slug": "record-based-errors",
+    "title": "Record-based error responses",
+    "category": "errors",
+    "difficulty": "intermediate",
+    "jdkVersion": "16",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 16+",
+    "oldApproach": "Map or Verbose Class",
+    "modernApproach": "Error Records",
+    "oldCode": "// Verbose error class\npublic class ErrorResponse {\n    private final int code;\n    private final String message;\n    // constructor, getters, equals,\n    // hashCode, toString...\n}",
+    "modernCode": "public record ApiError(\n    int code,\n    String message,\n    Instant timestamp\n) {\n    public ApiError(int code, String msg) {\n        this(code, msg, Instant.now());\n    }\n}",
+    "summary": "Use records for concise, immutable error response types.",
+    "explanation": "Records are perfect for error responses \u2014 they're immutable, have built-in equals/hashCode for comparison, and toString for logging. Custom constructors add validation or defaults.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udccf",
+        "title": "Concise",
+        "desc": "Define error types in 3 lines instead of 30."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "Error data can't be accidentally modified after creation."
+      },
+      {
+        "icon": "\ud83d\udccb",
+        "title": "Auto toString",
+        "desc": "Perfect for logging \u2014 shows all fields automatically."
+      }
+    ],
+    "support": "Widely available since JDK 16 (March 2021)"
+  },
+  {
+    "id": 70,
+    "slug": "java-time-basics",
+    "title": "java.time API basics",
+    "category": "datetime",
+    "difficulty": "beginner",
+    "jdkVersion": "8",
+    "oldLabel": "Pre-Java 8",
+    "modernLabel": "Java 8+",
+    "oldApproach": "Date + Calendar",
+    "modernApproach": "java.time.*",
+    "oldCode": "// Mutable, confusing, zero-indexed months\nCalendar cal = Calendar.getInstance();\ncal.set(2025, 0, 15); // January = 0!\nDate date = cal.getTime();\n// not thread-safe",
+    "modernCode": "LocalDate date = LocalDate.of(\n    2025, Month.JANUARY, 15);\nLocalTime time = LocalTime.of(14, 30);\nInstant now = Instant.now();\n// immutable, thread-safe",
+    "summary": "Use immutable, clear date/time types instead of Date and Calendar.",
+    "explanation": "java.time provides LocalDate, LocalTime, LocalDateTime, Instant, ZonedDateTime \u2014 all immutable and thread-safe. Months are 1-indexed. No more Calendar.JANUARY = 0 confusion.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "Date/time values can't be accidentally modified."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Clear API",
+        "desc": "Month.JANUARY, not 0. DayOfWeek.MONDAY, not 2."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Thread-safe",
+        "desc": "No synchronization needed \u2014 share freely across threads."
+      }
+    ],
+    "support": "Widely available since JDK 8 (March 2014)"
+  },
+  {
+    "id": 71,
+    "slug": "duration-and-period",
+    "title": "Duration and Period",
+    "category": "datetime",
+    "difficulty": "beginner",
+    "jdkVersion": "8",
+    "oldLabel": "Pre-Java 8",
+    "modernLabel": "Java 8+",
+    "oldApproach": "Millisecond Math",
+    "modernApproach": "Duration / Period",
+    "oldCode": "// How many days between two dates?\nlong diff = date2.getTime()\n    - date1.getTime();\nlong days = diff\n    / (1000 * 60 * 60 * 24);\n// ignores DST, leap seconds",
+    "modernCode": "long days = ChronoUnit.DAYS\n    .between(date1, date2);\nPeriod period = Period.between(\n    date1, date2);\nDuration elapsed = Duration.between(\n    time1, time2);",
+    "summary": "Calculate time differences with type-safe Duration and Period.",
+    "explanation": "Duration is for time-based amounts (hours, minutes, seconds). Period is for date-based amounts (years, months, days). ChronoUnit.between() for simple differences. All handle edge cases correctly.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Type-safe",
+        "desc": "Duration for time, Period for dates \u2014 no confusion."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Correct math",
+        "desc": "Handles DST transitions, leap years, and leap seconds."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Readable",
+        "desc": "ChronoUnit.DAYS.between() reads like English."
+      }
+    ],
+    "support": "Widely available since JDK 8 (March 2014)"
+  },
+  {
+    "id": 72,
+    "slug": "date-formatting",
+    "title": "Date formatting",
+    "category": "datetime",
+    "difficulty": "beginner",
+    "jdkVersion": "8",
+    "oldLabel": "Pre-Java 8",
+    "modernLabel": "Java 8+",
+    "oldApproach": "SimpleDateFormat",
+    "modernApproach": "DateTimeFormatter",
+    "oldCode": "// Not thread-safe!\nSimpleDateFormat sdf =\n    new SimpleDateFormat(\"yyyy-MM-dd\");\nString formatted = sdf.format(date);\n// Must synchronize for concurrent use",
+    "modernCode": "DateTimeFormatter fmt =\n    DateTimeFormatter.ofPattern(\n        \"yyyy-MM-dd\");\nString formatted =\n    LocalDate.now().format(fmt);\n// Thread-safe, immutable",
+    "summary": "Format dates with thread-safe, immutable DateTimeFormatter.",
+    "explanation": "DateTimeFormatter is immutable and thread-safe, unlike SimpleDateFormat. It can be stored as a constant and shared. Predefined formatters like ISO_LOCAL_DATE are available for common formats.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Thread-safe",
+        "desc": "Share formatters across threads without synchronization."
+      },
+      {
+        "icon": "\ud83d\udccb",
+        "title": "Built-in formats",
+        "desc": "ISO_LOCAL_DATE, ISO_INSTANT, etc. for standard formats."
+      },
+      {
+        "icon": "\ud83d\udd12",
+        "title": "Immutable",
+        "desc": "Store as static final constants safely."
+      }
+    ],
+    "support": "Widely available since JDK 8 (March 2014)"
+  },
+  {
+    "id": 73,
+    "slug": "instant-precision",
+    "title": "Instant with nanosecond precision",
+    "category": "datetime",
+    "difficulty": "intermediate",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Milliseconds",
+    "modernApproach": "Nanoseconds",
+    "oldCode": "// Millisecond precision only\nlong millis =\n    System.currentTimeMillis();\n// 1708012345678",
+    "modernCode": "// Microsecond/nanosecond precision\nInstant now = Instant.now();\n// 2025-02-15T20:12:25.678901234Z\nlong nanos = now.getNano();",
+    "summary": "Get timestamps with microsecond or nanosecond precision.",
+    "explanation": "Java 9 improved the clock resolution so Instant.now() captures microsecond precision on most platforms (nanosecond on some). The old currentTimeMillis() only gives milliseconds.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "Higher precision",
+        "desc": "Microsecond/nanosecond vs millisecond timestamps."
+      },
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Type-safe",
+        "desc": "Instant carries its precision \u2014 no ambiguous longs."
+      },
+      {
+        "icon": "\ud83c\udf10",
+        "title": "UTC-based",
+        "desc": "Instant is always in UTC \u2014 no timezone confusion."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 74,
+    "slug": "math-clamp",
+    "title": "Math.clamp()",
+    "category": "datetime",
+    "difficulty": "beginner",
+    "jdkVersion": "21",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 21+",
+    "oldApproach": "Nested min/max",
+    "modernApproach": "Math.clamp()",
+    "oldCode": "// Clamp value between min and max\nint clamped =\n    Math.min(Math.max(value, 0), 100);\n// or: min and max order confusion",
+    "modernCode": "int clamped =\n    Math.clamp(value, 0, 100);\n// value constrained to [0, 100]",
+    "summary": "Clamp a value between bounds with a single clear call.",
+    "explanation": "Math.clamp(value, min, max) constrains a value to the range [min, max]. Clearer than nested Math.min/Math.max and available for int, long, float, and double.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Self-documenting",
+        "desc": "clamp(value, min, max) is unambiguous."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Less error-prone",
+        "desc": "No more swapping min/max order by accident."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "title": "All numeric types",
+        "desc": "Works with int, long, float, and double."
+      }
+    ],
+    "support": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
+  {
+    "id": 75,
+    "slug": "hex-format",
+    "title": "HexFormat",
+    "category": "datetime",
+    "difficulty": "intermediate",
+    "jdkVersion": "17",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 17+",
+    "oldApproach": "Manual Hex Conversion",
+    "modernApproach": "HexFormat",
+    "oldCode": "// Pad to 2 digits, uppercase\nString hex = String.format(\n    \"%02X\", byteValue);\n// Parse hex string\nint val = Integer.parseInt(\n    \"FF\", 16);",
+    "modernCode": "HexFormat hex = HexFormat.of()\n    .withUpperCase();\nString s = hex.toHexDigits(\n    byteValue);\nbyte[] bytes =\n    hex.parseHex(\"48656C6C6F\");",
+    "summary": "Convert between hex strings and byte arrays with HexFormat.",
+    "explanation": "HexFormat provides bidirectional hex encoding/decoding for bytes, ints, and arrays. Configure delimiters, prefix, suffix, and case. No more manual formatting or parsing.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Bidirectional",
+        "desc": "Convert bytes\u2192hex and hex\u2192bytes with one API."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "Configurable",
+        "desc": "Delimiters, prefix, suffix, upper/lower case."
+      },
+      {
+        "icon": "\ud83d\udce6",
+        "title": "Array support",
+        "desc": "Encode/decode entire byte arrays at once."
+      }
+    ],
+    "support": "Widely available since JDK 17 LTS (Sept 2021)"
+  },
+  {
+    "id": 76,
+    "slug": "pem-encoding",
+    "title": "PEM encoding/decoding",
+    "category": "security",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25 (Preview)",
+    "oldApproach": "Manual Base64 + Headers",
+    "modernApproach": "PEM API",
+    "oldCode": "String pem = \"-----BEGIN CERTIFICATE-----\\n\"\n    + Base64.getMimeEncoder()\n        .encodeToString(\n            cert.getEncoded())\n    + \"\\n-----END CERTIFICATE-----\";",
+    "modernCode": "// Encode to PEM\nString pem = PEMEncoder.of()\n    .encodeToString(cert);\n// Decode from PEM\nvar cert = PEMDecoder.of()\n    .decode(pemString);",
+    "summary": "Encode and decode PEM-formatted cryptographic objects natively.",
+    "explanation": "The PEM API provides standard encoding/decoding for certificates, keys, and other cryptographic objects in PEM format. No more manual Base64 wrapping with BEGIN/END headers.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83e\uddf9",
+        "title": "No manual Base64",
+        "desc": "PEM headers, line wrapping, and Base64 handled automatically."
+      },
+      {
+        "icon": "\ud83d\udd04",
+        "title": "Bidirectional",
+        "desc": "Encode to PEM and decode from PEM with one API."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Standard format",
+        "desc": "Produces RFC 7468-compliant PEM output."
+      }
+    ],
+    "support": "Preview in JDK 25 (JEP 470). Requires --enable-preview."
+  },
+  {
+    "id": 77,
+    "slug": "key-derivation-functions",
+    "title": "Key Derivation Functions",
+    "category": "security",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25",
+    "oldApproach": "Manual PBKDF2",
+    "modernApproach": "KDF API",
+    "oldCode": "SecretKeyFactory factory =\n    SecretKeyFactory.getInstance(\n        \"PBKDF2WithHmacSHA256\");\nKeySpec spec = new PBEKeySpec(\n    password, salt, 10000, 256);\nSecretKey key =\n    factory.generateSecret(spec);",
+    "modernCode": "KDF kdf = KDF.getInstance(\"HKDF-SHA256\");\nSecretKey key = kdf.deriveKey(\n    \"AES\",\n    KDF.HKDFParameterSpec\n        .ofExtract()\n        .addIKM(inputKey)\n        .addSalt(salt)\n        .thenExpand(info, 32)\n        .build()\n);",
+    "summary": "Derive cryptographic keys using the standard KDF API.",
+    "explanation": "The KDF API provides a standard interface for key derivation functions including HKDF. It replaces the awkward SecretKeyFactory + PBEKeySpec pattern with a clean builder API.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udcd0",
+        "title": "Clean API",
+        "desc": "Builder pattern instead of awkward KeySpec constructors."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "HKDF support",
+        "desc": "Modern HKDF algorithm alongside PBKDF2."
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Standard",
+        "desc": "Unified API for all key derivation algorithms."
+      }
+    ],
+    "support": "Finalized in JDK 25 LTS (JEP 510, Sept 2025)."
+  },
+  {
+    "id": 78,
+    "slug": "strong-random",
+    "title": "Strong random generation",
+    "category": "security",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "new SecureRandom()",
+    "modernApproach": "getInstanceStrong()",
+    "oldCode": "// Default algorithm \u2014 may not be\n// the strongest available\nSecureRandom random =\n    new SecureRandom();\nbyte[] bytes = new byte[32];\nrandom.nextBytes(bytes);",
+    "modernCode": "// Platform's strongest algorithm\nSecureRandom random =\n    SecureRandom.getInstanceStrong();\nbyte[] bytes = new byte[32];\nrandom.nextBytes(bytes);",
+    "summary": "Get the platform's strongest SecureRandom implementation.",
+    "explanation": "getInstanceStrong() returns the SecureRandom implementation configured as the strongest on the platform. This is controlled by the securerandom.strongAlgorithms security property.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "Strongest available",
+        "desc": "Automatically selects the best algorithm for the platform."
+      },
+      {
+        "icon": "\ud83d\udcd6",
+        "title": "Explicit intent",
+        "desc": "Clearly communicates that strong randomness is required."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "Configurable",
+        "desc": "Administrators can change the strong algorithm via security properties."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 79,
+    "slug": "tls-default",
+    "title": "TLS 1.3 by default",
+    "category": "security",
+    "difficulty": "intermediate",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "Manual TLS Config",
+    "modernApproach": "TLS 1.3 Default",
+    "oldCode": "SSLContext ctx =\n    SSLContext.getInstance(\"TLSv1.2\");\nctx.init(null, trustManagers, null);\nSSLSocketFactory factory =\n    ctx.getSocketFactory();\n// Must specify protocol version",
+    "modernCode": "// TLS 1.3 is the default!\nvar client = HttpClient.newBuilder()\n    .sslContext(SSLContext.getDefault())\n    .build();\n// Already using TLS 1.3",
+    "summary": "TLS 1.3 is enabled by default \u2014 no explicit protocol configuration needed.",
+    "explanation": "Java 11 added TLS 1.3 support and made it the preferred protocol. The HttpClient uses it automatically. No more manually specifying protocol versions for secure connections.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "title": "More secure",
+        "desc": "TLS 1.3 removes obsolete cipher suites and handshake patterns."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Faster handshake",
+        "desc": "TLS 1.3 completes in one round trip vs two."
+      },
+      {
+        "icon": "\ud83c\udd93",
+        "title": "Zero config",
+        "desc": "Secure by default \u2014 no explicit protocol selection needed."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 80,
+    "slug": "jshell-prototyping",
+    "title": "JShell for prototyping",
+    "category": "tooling",
+    "difficulty": "beginner",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "Create File + Compile + Run",
+    "modernApproach": "jshell REPL",
+    "oldCode": "// 1. Create Test.java\n// 2. javac Test.java\n// 3. java Test\n// Just to test one expression!",
+    "modernCode": "$ jshell\njshell> \"hello\".chars().count()\n$1 ==> 5\njshell> List.of(1,2,3).reversed()\n$2 ==> [3, 2, 1]",
+    "summary": "Try Java expressions interactively without creating files.",
+    "explanation": "JShell is a Read-Eval-Print Loop for Java. Test expressions, experiment with APIs, and prototype code without creating files, compiling, or writing a main method. Tab completion and inline docs included.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Instant feedback",
+        "desc": "Type an expression, see the result immediately."
+      },
+      {
+        "icon": "\ud83d\udcdd",
+        "title": "No files needed",
+        "desc": "No .java files, no compilation step."
+      },
+      {
+        "icon": "\ud83d\udd0d",
+        "title": "API exploration",
+        "desc": "Tab completion helps discover methods and parameters."
+      }
+    ],
+    "support": "Widely available since JDK 9 (Sept 2017)"
+  },
+  {
+    "id": 81,
+    "slug": "single-file-execution",
+    "title": "Single-file execution",
+    "category": "tooling",
+    "difficulty": "beginner",
+    "jdkVersion": "11",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 11+",
+    "oldApproach": "Two-Step Compile",
+    "modernApproach": "Direct Launch",
+    "oldCode": "$ javac HelloWorld.java\n$ java HelloWorld\n// Two steps every time",
+    "modernCode": "$ java HelloWorld.java\n// Compiles and runs in one step\n// Also works with shebangs:\n#!/usr/bin/java --source 25",
+    "summary": "Run single-file Java programs directly without javac.",
+    "explanation": "The Java launcher can compile and run a single source file in one command. Combined with shebang support on Unix, Java files can work as scripts. No separate compilation step needed.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "One command",
+        "desc": "java File.java compiles and runs in one step."
+      },
+      {
+        "icon": "\ud83d\udcdd",
+        "title": "Script-like",
+        "desc": "Add a shebang line to make .java files executable scripts."
+      },
+      {
+        "icon": "\ud83c\udf93",
+        "title": "Learning-friendly",
+        "desc": "Newcomers run code immediately without learning build tools."
+      }
+    ],
+    "support": "Widely available since JDK 11 (Sept 2018)"
+  },
+  {
+    "id": 82,
+    "slug": "multi-file-source",
+    "title": "Multi-file source launcher",
+    "category": "tooling",
+    "difficulty": "intermediate",
+    "jdkVersion": "22",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 22+",
+    "oldApproach": "Compile All First",
+    "modernApproach": "Source Launcher",
+    "oldCode": "$ javac *.java\n$ java Main\n// Must compile all files first\n// Need a build tool for dependencies",
+    "modernCode": "$ java Main.java\n// Automatically finds and compiles\n// other source files referenced\n// by Main.java",
+    "summary": "Launch multi-file programs without an explicit compile step.",
+    "explanation": "Java 22+ can automatically compile referenced source files when launching from a .java file. This makes small multi-file programs as easy to run as scripts, without needing Maven or Gradle.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\ude80",
+        "title": "Zero setup",
+        "desc": "No build tool needed for small multi-file programs."
+      },
+      {
+        "icon": "\ud83d\udd17",
+        "title": "Auto-resolve",
+        "desc": "Referenced classes are found and compiled automatically."
+      },
+      {
+        "icon": "\ud83d\udcdd",
+        "title": "Script-like",
+        "desc": "Run multi-file programs like scripts."
+      }
+    ],
+    "support": "Available since JDK 22 (March 2024)"
+  },
+  {
+    "id": 83,
+    "slug": "jfr-profiling",
+    "title": "JFR for profiling",
+    "category": "tooling",
+    "difficulty": "intermediate",
+    "jdkVersion": "9",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 9+",
+    "oldApproach": "External Profiler",
+    "modernApproach": "Java Flight Recorder",
+    "oldCode": "// Install VisualVM / YourKit / JProfiler\n// Attach to running process\n// Configure sampling\n// Export and analyze\n// External tool required",
+    "modernCode": "// Start with profiling enabled\n$ java -XX:StartFlightRecording=\n    filename=rec.jfr MyApp\n\n// Or attach to running app:\n$ jcmd <pid> JFR.start",
+    "summary": "Profile any Java app with the built-in Flight Recorder \u2014 no external tools.",
+    "explanation": "Java Flight Recorder (JFR) is a low-overhead profiling tool built into the JVM. It captures events for CPU, memory, GC, I/O, threads, and custom events with minimal performance impact (~1%).",
+    "whyModernWins": [
+      {
+        "icon": "\ud83c\udd93",
+        "title": "Built-in",
+        "desc": "No external profiler to install or license."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Low overhead",
+        "desc": "~1% performance impact \u2014 safe for production."
+      },
+      {
+        "icon": "\ud83d\udcca",
+        "title": "Rich events",
+        "desc": "CPU, memory, GC, threads, I/O, locks, and custom events."
+      }
+    ],
+    "support": "Widely available since JDK 9/11 (open-sourced in 11)"
+  },
+  {
+    "id": 84,
+    "slug": "compact-object-headers",
+    "title": "Compact object headers",
+    "category": "tooling",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25",
+    "oldApproach": "128-bit Headers",
+    "modernApproach": "64-bit Headers",
+    "oldCode": "// Default: 128-bit object header\n// = 16 bytes overhead per object\n// A boolean field object = 32 bytes!\n// Mark word (64) + Klass pointer (64)",
+    "modernCode": "// -XX:+UseCompactObjectHeaders\n// 64-bit object header\n// = 8 bytes overhead per object\n// 50% less header memory\n// More objects fit in cache",
+    "summary": "Cut object header size in half for better memory density and cache usage.",
+    "explanation": "Compact object headers reduce the per-object overhead from 128 bits to 64 bits on 64-bit platforms. This saves memory and improves cache utilization, especially for applications with many small objects.",
+    "whyModernWins": [
+      {
+        "icon": "\ud83d\udce6",
+        "title": "50% smaller headers",
+        "desc": "8 bytes instead of 16 per object."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Better cache usage",
+        "desc": "More objects fit in CPU cache lines."
+      },
+      {
+        "icon": "\ud83d\udcca",
+        "title": "Higher density",
+        "desc": "Fit more objects in the same heap size."
+      }
+    ],
+    "support": "Finalized in JDK 25 LTS (JEP 519, Sept 2025)."
+  },
+  {
+    "id": 85,
+    "slug": "aot-class-preloading",
+    "title": "AOT class preloading",
+    "category": "tooling",
+    "difficulty": "advanced",
+    "jdkVersion": "25",
+    "oldLabel": "Java 8",
+    "modernLabel": "Java 25",
+    "oldApproach": "Cold Start Every Time",
+    "modernApproach": "AOT Cache",
+    "oldCode": "// Every startup:\n// - Load 10,000+ classes\n// - Verify bytecode\n// - JIT compile hot paths\n// Startup: 2-5 seconds",
+    "modernCode": "// Training run:\n$ java -XX:AOTMode=record \\\n    -XX:AOTConfiguration=app.aotconf \\\n    -cp app.jar com.App\n// Production:\n$ java -XX:AOTMode=on \\\n    -XX:AOTCache=app.aot \\\n    -cp app.jar com.App",
+    "summary": "Cache class loading and compilation for instant startup.",
+    "explanation": "AOT class preloading caches loaded and linked classes from a training run. On subsequent starts, classes are loaded from the cache, skipping verification and linking. Combined with AOT compilation, this dramatically reduces startup time.",
+    "whyModernWins": [
+      {
+        "icon": "\u26a1",
+        "title": "Faster startup",
+        "desc": "Skip class loading, verification, and linking."
+      },
+      {
+        "icon": "\ud83d\udce6",
+        "title": "Cached state",
+        "desc": "Training run captures the ideal class state."
+      },
+      {
+        "icon": "\ud83d\udd27",
+        "title": "No code changes",
+        "desc": "Works with existing applications \u2014 just add JVM flags."
+      }
+    ],
+    "support": "Available in JDK 25 LTS (JEPs 514/515, Sept 2025). Experimental."
+  }
+]

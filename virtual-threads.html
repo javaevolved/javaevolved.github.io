@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual threads | java.evolved</title>
+  <meta name="description" content="Create millions of lightweight virtual threads instead of heavy OS threads.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/virtual-threads.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Virtual threads | java.evolved">
+  <meta property="og:description" content="Create millions of lightweight virtual threads instead of heavy OS threads.">
+  <meta property="og:url" content="https://javaevolved.github.io/virtual-threads.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Virtual threads | java.evolved">
+  <meta name="twitter:description" content="Create millions of lightweight virtual threads instead of heavy OS threads.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Virtual threads",
+    "description": "Create millions of lightweight virtual threads instead of heavy OS threads.",
+    "url": "https://javaevolved.github.io/virtual-threads.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/virtual-threads.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Concurrency",
+            "item": "https://javaevolved.github.io/?cat=concurrency"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Virtual threads"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <a href="/optional-or.html" aria-label="Previous pattern">←</a>
+          <a href="/structured-concurrency.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=concurrency">Concurrency</a>
+      <span class="sep">/</span>
+      <span>Virtual threads</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge concurrency">Concurrency</span>
+        <span class="badge beginner">beginner</span>
+      </div>
+      <h1>Virtual threads</h1>
+      <p>Create millions of lightweight virtual threads instead of heavy OS threads.</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">Thread thread = new Thread(() -&gt; {
+    System.out.println(&quot;hello&quot;);
+});
+thread.start();
+thread.join();</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 21+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">Thread.startVirtualThread(() -&gt; {
+    System.out.println(&quot;hello&quot;);
+}).join();</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Lightweight</h3>
+          <p>Virtual threads use KB of memory, platform threads use MB.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">♾️</div>
+          <h3>Scalable</h3>
+          <p>Create millions of threads — no pool sizing needed.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧹</div>
+          <h3>Simple model</h3>
+          <p>Write blocking code that scales like async code.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">Platform Threads</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">Virtual Threads</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">21</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">beginner</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Virtual threads</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Widely available since JDK 21 LTS (Sept 2023)</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>Virtual threads are lightweight threads managed by the JVM, not the OS. You can create millions of them without tuning thread pools. They&#x27;re ideal for I/O-bound tasks like HTTP calls and database queries.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/thread-sleep-duration.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge concurrency">Concurrency</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Thread.sleep with Duration</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">// What unit is 5000? ms? us?
+Thread.sleep(5000);
+
+// 2.5 seconds: math required
+Thread.sleep(2500);</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 19+</div>
+              <pre class="code-text">Thread.sleep(
+    Duration.ofSeconds(5)
+);
+Thread.sleep(
+    Duration.ofMillis(2500)
+);</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 19+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/scoped-values.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge concurrency">Concurrency</span>
+                <span class="badge advanced">advanced</span>
+              </div>
+            </div>
+            <h3>Scoped values</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">static final ThreadLocal&lt;User&gt; CURRENT =
+    new ThreadLocal&lt;&gt;();
+void handle(Request req) {
+    CURRENT.set(authenticate(req));
+    try { process(); }
+    finally { CURRENT.remove(); }
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 25</div>
+              <pre class="code-text">static final ScopedValue&lt;User&gt; CURRENT =
+    ScopedValue.newInstance();
+void handle(Request req) {
+    ScopedValue.where(CURRENT,
+        authenticate(req)
+    ).run(this::process);
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 25+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/completablefuture-chaining.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge concurrency">Concurrency</span>
+                <span class="badge intermediate">intermediate</span>
+              </div>
+            </div>
+            <h3>CompletableFuture chaining</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Pre-Java 8</div>
+              <pre class="code-text">Future&lt;String&gt; future =
+    executor.submit(this::fetchData);
+String data = future.get(); // blocks
+String result = transform(data);</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 8+</div>
+              <pre class="code-text">CompletableFuture.supplyAsync(
+    this::fetchData
+)
+.thenApply(this::transform)
+.thenAccept(System.out::println);</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 8+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Fvirtual-threads.html&text=Virtual%20threads%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Virtual%20threads%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Fvirtual-threads.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Fvirtual-threads.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Fvirtual-threads.html&title=Virtual%20threads%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

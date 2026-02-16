@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unnamed variables with _ | java.evolved</title>
+  <meta name="description" content="Use _ to signal intent when a variable is intentionally unused.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/unnamed-variables.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Unnamed variables with _ | java.evolved">
+  <meta property="og:description" content="Use _ to signal intent when a variable is intentionally unused.">
+  <meta property="og:url" content="https://javaevolved.github.io/unnamed-variables.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unnamed variables with _ | java.evolved">
+  <meta name="twitter:description" content="Use _ to signal intent when a variable is intentionally unused.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Unnamed variables with _",
+    "description": "Use _ to signal intent when a variable is intentionally unused.",
+    "url": "https://javaevolved.github.io/unnamed-variables.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/unnamed-variables.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Language",
+            "item": "https://javaevolved.github.io/?cat=language"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Unnamed variables with _"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <a href="/record-patterns.html" aria-label="Previous pattern">←</a>
+          <a href="/compact-source-files.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=language">Language</a>
+      <span class="sep">/</span>
+      <span>Unnamed variables with _</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge language">Language</span>
+        <span class="badge beginner">beginner</span>
+      </div>
+      <h1>Unnamed variables with _</h1>
+      <p>Use _ to signal intent when a variable is intentionally unused.</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">try {
+    parse(input);
+} catch (Exception ignored) {
+    log(&quot;parse failed&quot;);
+}
+map.forEach((key, value) -&gt; {
+    process(value); // key unused
+});</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 22+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">try {
+    parse(input);
+} catch (Exception _) {
+    log(&quot;parse failed&quot;);
+}
+map.forEach((_, value) -&gt; {
+    process(value);
+});</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">📢</div>
+          <h3>Clear intent</h3>
+          <p>_ explicitly says &#x27;this value is not needed here&#x27;.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔇</div>
+          <h3>No warnings</h3>
+          <p>IDEs and linters won&#x27;t flag intentionally unused variables.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧹</div>
+          <h3>Cleaner lambdas</h3>
+          <p>Multi-param lambdas are cleaner when you only need some params.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">Unused Variable</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">_ Placeholder</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">22</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">beginner</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Unnamed variables with _</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Finalized in JDK 22 (JEP 456, March 2024).</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>Unnamed variables communicate to readers and tools that a value is deliberately ignored. No more &#x27;ignored&#x27; or &#x27;unused&#x27; naming conventions, no more IDE warnings.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/type-inference-with-var.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Type inference with var</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">Map&lt;String, List&lt;Integer&gt;&gt; map =
+    new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (Map.Entry&lt;String, List&lt;Integer&gt;&gt; e
+    : map.entrySet()) {
+    // verbose type noise
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 10+</div>
+              <pre class="code-text">var map = new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (var entry : map.entrySet()) {
+    // clean and readable
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 10+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/text-blocks-for-multiline-strings.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Text blocks for multiline strings</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">String json = &quot;{\n&quot; +
+    &quot;  \&quot;name\&quot;: \&quot;Duke\&quot;,\n&quot; +
+    &quot;  \&quot;age\&quot;: 30\n&quot; +
+    &quot;}&quot;;</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 15+</div>
+              <pre class="code-text">String json = &quot;&quot;&quot;
+    {
+      &quot;name&quot;: &quot;Duke&quot;,
+      &quot;age&quot;: 30
+    }
+    &quot;&quot;&quot;;</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 15+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/switch-expressions.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Switch expressions</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">String msg;
+switch (day) {
+    case MONDAY:
+        msg = &quot;Start&quot;;
+        break;
+    case FRIDAY:
+        msg = &quot;End&quot;;
+        break;
+    default:
+        msg = &quot;Mid&quot;;
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 14+</div>
+              <pre class="code-text">String msg = switch (day) {
+    case MONDAY  -&gt; &quot;Start&quot;;
+    case FRIDAY  -&gt; &quot;End&quot;;
+    default      -&gt; &quot;Mid&quot;;
+};</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 14+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Funnamed-variables.html&text=Unnamed%20variables%20with%20_%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Unnamed%20variables%20with%20_%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Funnamed-variables.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Funnamed-variables.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Funnamed-variables.html&title=Unnamed%20variables%20with%20_%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

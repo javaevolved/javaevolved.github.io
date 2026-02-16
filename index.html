@@ -1,0 +1,2980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>java.evolved Code Snippets | java.evolved</title>
+  <meta name="description" content="A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io">
+
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:title" content="java.evolved Code Snippets | java.evolved">
+  <meta property="og:description" content="A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.">
+  <meta property="og:url" content="https://javaevolved.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://javaevolved.github.io/apple-touch-icon.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@modernjava">
+  <meta name="twitter:title" content="java.evolved Code Snippets | java.evolved">
+  <meta name="twitter:description" content="A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.">
+  <meta name="twitter:image" content="https://javaevolved.github.io/apple-touch-icon.png">
+
+  <style>
+    @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/assets/fonts/inter.woff2') format('woff2')}
+    @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('/assets/fonts/jetbrains-mono.woff2') format('woff2')}
+  </style>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "java.evolved",
+    "url": "https:\/\/javaevolved.github.io",
+    "description": "A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "java.evolved: Java has evolved. Have you?",
+    "url": "https:\/\/javaevolved.github.io\/",
+    "description": "A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 85,
+      "itemListElement": [
+                {"@type": "ListItem", "position": 1, "url": "https:\/\/javaevolved.github.io\/type-inference-with-var", "name": "Type inference with var"}
+                ,{"@type": "ListItem", "position": 2, "url": "https:\/\/javaevolved.github.io\/text-blocks-for-multiline-strings", "name": "Text blocks for multiline strings"}
+                ,{"@type": "ListItem", "position": 3, "url": "https:\/\/javaevolved.github.io\/switch-expressions", "name": "Switch expressions"}
+                ,{"@type": "ListItem", "position": 4, "url": "https:\/\/javaevolved.github.io\/pattern-matching-instanceof", "name": "Pattern matching for instanceof"}
+                ,{"@type": "ListItem", "position": 5, "url": "https:\/\/javaevolved.github.io\/records-for-data-classes", "name": "Records for data classes"}
+                ,{"@type": "ListItem", "position": 6, "url": "https:\/\/javaevolved.github.io\/sealed-classes", "name": "Sealed classes for type hierarchies"}
+                ,{"@type": "ListItem", "position": 7, "url": "https:\/\/javaevolved.github.io\/record-patterns", "name": "Record patterns (destructuring)"}
+                ,{"@type": "ListItem", "position": 8, "url": "https:\/\/javaevolved.github.io\/unnamed-variables", "name": "Unnamed variables with _"}
+                ,{"@type": "ListItem", "position": 9, "url": "https:\/\/javaevolved.github.io\/compact-source-files", "name": "Compact source files"}
+                ,{"@type": "ListItem", "position": 10, "url": "https:\/\/javaevolved.github.io\/flexible-constructor-bodies", "name": "Flexible constructor bodies"}
+                ,{"@type": "ListItem", "position": 11, "url": "https:\/\/javaevolved.github.io\/enhanced-for-with-var", "name": "Enhanced for with var"}
+                ,{"@type": "ListItem", "position": 12, "url": "https:\/\/javaevolved.github.io\/diamond-operator", "name": "Diamond operator"}
+                ,{"@type": "ListItem", "position": 13, "url": "https:\/\/javaevolved.github.io\/private-interface-methods", "name": "Private interface methods"}
+                ,{"@type": "ListItem", "position": 14, "url": "https:\/\/javaevolved.github.io\/pattern-matching-switch", "name": "Pattern matching in switch"}
+                ,{"@type": "ListItem", "position": 15, "url": "https:\/\/javaevolved.github.io\/guarded-patterns", "name": "Guarded patterns with when"}
+                ,{"@type": "ListItem", "position": 16, "url": "https:\/\/javaevolved.github.io\/primitive-types-in-patterns", "name": "Primitive types in patterns"}
+                ,{"@type": "ListItem", "position": 17, "url": "https:\/\/javaevolved.github.io\/module-import-declarations", "name": "Module import declarations"}
+                ,{"@type": "ListItem", "position": 18, "url": "https:\/\/javaevolved.github.io\/exhaustive-switch", "name": "Exhaustive switch without default"}
+                ,{"@type": "ListItem", "position": 19, "url": "https:\/\/javaevolved.github.io\/immutable-list-creation", "name": "Immutable list creation"}
+                ,{"@type": "ListItem", "position": 20, "url": "https:\/\/javaevolved.github.io\/immutable-map-creation", "name": "Immutable map creation"}
+                ,{"@type": "ListItem", "position": 21, "url": "https:\/\/javaevolved.github.io\/immutable-set-creation", "name": "Immutable set creation"}
+                ,{"@type": "ListItem", "position": 22, "url": "https:\/\/javaevolved.github.io\/copying-collections-immutably", "name": "Copying collections immutably"}
+                ,{"@type": "ListItem", "position": 23, "url": "https:\/\/javaevolved.github.io\/map-entry-factory", "name": "Map.entry() factory"}
+                ,{"@type": "ListItem", "position": 24, "url": "https:\/\/javaevolved.github.io\/sequenced-collections", "name": "Sequenced collections"}
+                ,{"@type": "ListItem", "position": 25, "url": "https:\/\/javaevolved.github.io\/stream-tolist-shorthand", "name": "Stream toList() shorthand"}
+                ,{"@type": "ListItem", "position": 26, "url": "https:\/\/javaevolved.github.io\/collectors-teeing", "name": "Collectors.teeing()"}
+                ,{"@type": "ListItem", "position": 27, "url": "https:\/\/javaevolved.github.io\/stream-toarray-typed", "name": "Typed stream toArray"}
+                ,{"@type": "ListItem", "position": 28, "url": "https:\/\/javaevolved.github.io\/unmodifiable-collectors", "name": "Unmodifiable collectors"}
+                ,{"@type": "ListItem", "position": 29, "url": "https:\/\/javaevolved.github.io\/string-isblank", "name": "String.isBlank()"}
+                ,{"@type": "ListItem", "position": 30, "url": "https:\/\/javaevolved.github.io\/string-strip", "name": "String.strip() vs trim()"}
+                ,{"@type": "ListItem", "position": 31, "url": "https:\/\/javaevolved.github.io\/string-repeat", "name": "String.repeat()"}
+                ,{"@type": "ListItem", "position": 32, "url": "https:\/\/javaevolved.github.io\/string-indent-transform", "name": "String.indent() and transform()"}
+                ,{"@type": "ListItem", "position": 33, "url": "https:\/\/javaevolved.github.io\/string-formatted", "name": "String.formatted()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/multiline-json-sql", "name": "Multiline JSON\/SQL\/HTML"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/string-chars-stream", "name": "String chars as stream"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-of-nullable", "name": "Stream.ofNullable()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-iterate-predicate", "name": "Stream.iterate() with predicate"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-takewhile-dropwhile", "name": "Stream takeWhile \/ dropWhile"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/collectors-flatmapping", "name": "Collectors.flatMapping()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-tolist", "name": "Stream.toList()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-mapmulti", "name": "Stream.mapMulti()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-gatherers", "name": "Stream gatherers"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/virtual-thread-executor", "name": "Virtual thread executor"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/optional-ifpresentorelse", "name": "Optional.ifPresentOrElse()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/optional-or", "name": "Optional.or() fallback"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/virtual-threads", "name": "Virtual threads"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/structured-concurrency", "name": "Structured concurrency"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/scoped-values", "name": "Scoped values"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stable-values", "name": "Stable values"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/completablefuture-chaining", "name": "CompletableFuture chaining"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/executor-try-with-resources", "name": "ExecutorService auto-close"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/thread-sleep-duration", "name": "Thread.sleep with Duration"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/process-api", "name": "Modern Process API"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/concurrent-http-virtual", "name": "Concurrent HTTP with virtual threads"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/lock-free-lazy-init", "name": "Lock-free lazy initialization"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/http-client", "name": "Modern HTTP client"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/reading-files", "name": "Reading files"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/writing-files", "name": "Writing files"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/inputstream-transferto", "name": "InputStream.transferTo()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/path-of", "name": "Path.of() factory"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/try-with-resources-effectively-final", "name": "Try-with-resources improvement"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/files-mismatch", "name": "Files.mismatch()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/deserialization-filters", "name": "Deserialization filters"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/helpful-npe", "name": "Helpful NullPointerExceptions"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/optional-chaining", "name": "Optional chaining"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/require-nonnull-else", "name": "Objects.requireNonNullElse()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/multi-catch", "name": "Multi-catch exception handling"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/null-in-switch", "name": "Null case in switch"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/record-based-errors", "name": "Record-based error responses"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/java-time-basics", "name": "java.time API basics"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/duration-and-period", "name": "Duration and Period"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/date-formatting", "name": "Date formatting"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/instant-precision", "name": "Instant with nanosecond precision"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/math-clamp", "name": "Math.clamp()"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/hex-format", "name": "HexFormat"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/pem-encoding", "name": "PEM encoding\/decoding"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/key-derivation-functions", "name": "Key Derivation Functions"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/strong-random", "name": "Strong random generation"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/tls-default", "name": "TLS 1.3 by default"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/jshell-prototyping", "name": "JShell for prototyping"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/single-file-execution", "name": "Single-file execution"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/multi-file-source", "name": "Multi-file source launcher"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/jfr-profiling", "name": "JFR for profiling"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/compact-object-headers", "name": "Compact object headers"}
+                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/aot-class-preloading", "name": "AOT class preloading"}
+              ]
+    }
+  }
+  </script>
+</head>
+<body data-page="home">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <div class="cmd-bar" id="searchTrigger">Search… <kbd>⌘K</kbd></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">✦ 85 modern patterns · Java 8 → Java 25</div>
+    <h1>Java has evolved.<br><span class="gradient">Have you?</span></h1>
+    <p>Every old Java pattern next to its clean, modern replacement — side by side.</p>
+    <a href="/records-for-data-classes.html" class="hero-compare">
+      <div class="hero-compare-side old">
+        <div class="compare-label old">✕ Old</div>
+        <pre style="margin:0;background:none;border:none;font:inherit;line-height:inherit;padding:0;overflow:visible"><code style="background:none;border:none;padding:0;font:inherit">public class Point {
+    private final int x, y;
+    public Point(int x, int y) { ... }
+    public int getX() { return x; }
+    public int getY() { return y; }
+    // equals, hashCode, toString
+}</code></pre>
+      </div>
+      <div class="hero-compare-side modern">
+        <div class="compare-label modern">✓ Modern</div>
+        <pre style="margin:0;background:none;border:none;font:inherit;line-height:inherit;padding:0;overflow:visible"><code style="background:none;border:none;padding:0;font:inherit">public record Point(int x, int y) {}</code></pre>
+      </div>
+    </a>
+  </section>
+
+  <div class="social-share" id="socialShare">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io&text=java.evolved%20%E2%80%93%20Every%20old%20Java%20pattern%20next%20to%20its%20modern%20replacement%2C%20side%20by%20side." target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=java.evolved%20%E2%80%93%20Every%20old%20Java%20pattern%20next%20to%20its%20modern%20replacement%2C%20side%20by%20side.%20https%3A%2F%2Fjavaevolved.github.io" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io&title=java.evolved%20%E2%80%93%20Old%20Java%20vs%20Modern%20Java%2C%20side%20by%20side" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <section class="copilot-callout">
+    <div class="copilot-callout-inner">
+      <span class="copilot-icon">🤖</span>
+      <div class="copilot-callout-text">
+        <strong>Modernize your Java codebase with GitHub Copilot.</strong>
+        Let Copilot help you migrate legacy patterns to modern Java — automatically.
+      </div>
+      <div class="copilot-callout-links">
+        <a href="https://github.com/solutions/use-case/app-modernization" target="_blank" rel="noopener">App Modernization →</a>
+        <a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/modernize-java-applications" target="_blank" rel="noopener">Java Guide →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="all-comparisons" style="padding-top:24px">
+    <div class="section-header">
+      <h2 class="section-title">All comparisons</h2>
+      <span class="section-badge">85 snippets</span>
+    </div>
+    <div class="filter-pills" id="categoryFilter">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="language">Language</button>
+      <button class="filter-pill" data-filter="collections">Collections</button>
+      <button class="filter-pill" data-filter="strings">Strings</button>
+      <button class="filter-pill" data-filter="streams">Streams</button>
+      <button class="filter-pill" data-filter="concurrency">Concurrency</button>
+      <button class="filter-pill" data-filter="io">I/O</button>
+      <button class="filter-pill" data-filter="errors">Errors</button>
+      <button class="filter-pill" data-filter="datetime">Date/Time</button>
+      <button class="filter-pill" data-filter="security">Security</button>
+      <button class="filter-pill" data-filter="tooling">Tooling</button>
+    </div>
+    <div class="tips-grid" id="tipsGrid">
+      <a href="/type-inference-with-var.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Type inference with var</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Map&lt;String, List&lt;Integer&gt;&gt; map =
+    new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (Map.Entry&lt;String, List&lt;Integer&gt;&gt; e
+    : map.entrySet()) {
+    // verbose type noise
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var map = new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (var entry : map.entrySet()) {
+    // clean and readable
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 10+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/text-blocks-for-multiline-strings.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Text blocks for multiline strings</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String json = &quot;{\n&quot; +
+    &quot;  \&quot;name\&quot;: \&quot;Duke\&quot;,\n&quot; +
+    &quot;  \&quot;age\&quot;: 30\n&quot; +
+    &quot;}&quot;;</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String json = &quot;&quot;&quot;
+    {
+      &quot;name&quot;: &quot;Duke&quot;,
+      &quot;age&quot;: 30
+    }
+    &quot;&quot;&quot;;</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 15+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/switch-expressions.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Switch expressions</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String msg;
+switch (day) {
+    case MONDAY:
+        msg = &quot;Start&quot;;
+        break;
+    case FRIDAY:
+        msg = &quot;End&quot;;
+        break;
+    default:
+        msg = &quot;Mid&quot;;
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String msg = switch (day) {
+    case MONDAY  -&gt; &quot;Start&quot;;
+    case FRIDAY  -&gt; &quot;End&quot;;
+    default      -&gt; &quot;Mid&quot;;
+};</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 14+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/pattern-matching-instanceof.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Pattern matching for instanceof</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">if (obj instanceof String) {
+    String s = (String) obj;
+    System.out.println(s.length());
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">if (obj instanceof String s) {
+    System.out.println(s.length());
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 16+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/records-for-data-classes.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Records for data classes</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">public class Point {
+    private final int x, y;
+    public Point(int x, int y) { ... }
+    public int getX() { return x; }
+    public int getY() { return y; }
+    // equals, hashCode, toString
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">public record Point(int x, int y) {}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 16+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/sealed-classes.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Sealed classes for type hierarchies</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Anyone can extend Shape
+public abstract class Shape { }
+public class Circle extends Shape { }
+public class Rect extends Shape { }
+// unknown subclasses possible</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">public sealed interface Shape
+    permits Circle, Rect {}
+public record Circle(double r)
+    implements Shape {}
+public record Rect(double w, double h)
+    implements Shape {}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 17+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/record-patterns.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Record patterns (destructuring)</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">if (obj instanceof Point) {
+    Point p = (Point) obj;
+    int x = p.getX();
+    int y = p.getY();
+    System.out.println(x + y);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">if (obj instanceof Point(int x, int y)) {
+    System.out.println(x + y);
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/unnamed-variables.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Unnamed variables with _</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">try {
+    parse(input);
+} catch (Exception ignored) {
+    log(&quot;parse failed&quot;);
+}
+map.forEach((key, value) -&gt; {
+    process(value); // key unused
+});</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">try {
+    parse(input);
+} catch (Exception _) {
+    log(&quot;parse failed&quot;);
+}
+map.forEach((_, value) -&gt; {
+    process(value);
+});</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 22+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/compact-source-files.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Compact source files</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">public class HelloWorld {
+    public static void main(
+            String[] args) {
+        System.out.println(
+            &quot;Hello, World!&quot;);
+    }
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">void main() {
+    println(&quot;Hello, World!&quot;);
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/flexible-constructor-bodies.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Flexible constructor bodies</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">class Square extends Shape {
+    Square(double side) {
+        super(side, side);
+        // can&#x27;t validate BEFORE super!
+        if (side &lt;= 0)
+            throw new IAE(&quot;bad&quot;);
+    }
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">class Square extends Shape {
+    Square(double side) {
+        if (side &lt;= 0)
+            throw new IAE(&quot;bad&quot;);
+        super(side, side);
+    }
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/enhanced-for-with-var.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Enhanced for with var</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;Map.Entry&lt;String, Integer&gt;&gt; list = ...;
+for (Map.Entry&lt;String, Integer&gt; entry
+        : list) {
+    process(entry);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var list = getEntries();
+for (var entry : list) {
+    process(entry);
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 10+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/diamond-operator.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Diamond operator</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Map&lt;String, List&lt;String&gt;&gt; map =
+    new HashMap&lt;String, List&lt;String&gt;&gt;();
+// anonymous class: no diamond
+Predicate&lt;String&gt; p =
+    new Predicate&lt;String&gt;() {
+        public boolean test(String s) {..}
+    };</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Map&lt;String, List&lt;String&gt;&gt; map =
+    new HashMap&lt;&gt;();
+// Java 9: diamond with anonymous classes
+Predicate&lt;String&gt; p =
+    new Predicate&lt;&gt;() {
+        public boolean test(String s) {..}
+    };</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/private-interface-methods.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Private interface methods</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">interface Logger {
+    default void logInfo(String msg) {
+        System.out.println(
+            &quot;[INFO] &quot; + timestamp() + msg);
+    }
+    default void logWarn(String msg) {
+        System.out.println(
+            &quot;[WARN] &quot; + timestamp() + msg);
+    }
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">interface Logger {
+    private String format(String lvl, String msg) {
+        return &quot;[&quot; + lvl + &quot;] &quot; + timestamp() + msg;
+    }
+    default void logInfo(String msg) {
+        System.out.println(format(&quot;INFO&quot;, msg));
+    }
+    default void logWarn(String msg) {
+        System.out.println(format(&quot;WARN&quot;, msg));
+    }
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/pattern-matching-switch.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Pattern matching in switch</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String format(Object obj) {
+    if (obj instanceof Integer i)
+        return &quot;int: &quot; + i;
+    else if (obj instanceof Double d)
+        return &quot;double: &quot; + d;
+    else if (obj instanceof String s)
+        return &quot;str: &quot; + s;
+    return &quot;unknown&quot;;
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String format(Object obj) {
+    return switch (obj) {
+        case Integer i -&gt; &quot;int: &quot; + i;
+        case Double d  -&gt; &quot;double: &quot; + d;
+        case String s  -&gt; &quot;str: &quot; + s;
+        default        -&gt; &quot;unknown&quot;;
+    };
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/guarded-patterns.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Guarded patterns with when</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">if (shape instanceof Circle c) {
+    if (c.radius() &gt; 10) {
+        return &quot;large circle&quot;;
+    } else {
+        return &quot;small circle&quot;;
+    }
+} else {
+    return &quot;not a circle&quot;;
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">return switch (shape) {
+    case Circle c
+        when c.radius() &gt; 10
+            -&gt; &quot;large circle&quot;;
+    case Circle c
+            -&gt; &quot;small circle&quot;;
+    default -&gt; &quot;not a circle&quot;;
+};</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/primitive-types-in-patterns.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Primitive types in patterns</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String classify(int code) {
+    if (code &gt;= 200 &amp;&amp; code &lt; 300)
+        return &quot;success&quot;;
+    else if (code &gt;= 400 &amp;&amp; code &lt; 500)
+        return &quot;client error&quot;;
+    else
+        return &quot;other&quot;;
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String classify(int code) {
+    return switch (code) {
+        case int c when c &gt;= 200
+            &amp;&amp; c &lt; 300 -&gt; &quot;success&quot;;
+        case int c when c &gt;= 400
+            &amp;&amp; c &lt; 500 -&gt; &quot;client error&quot;;
+        default -&gt; &quot;other&quot;;
+    };
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25 (Preview)</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/module-import-declarations.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Module import declarations</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">import module java.base;
+
+// All of java.util, java.io, java.nio
+// etc. available in one line</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/exhaustive-switch.html" class="tip-card" data-category="language">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge language">Language</span></div>
+          </div>
+          <h3>Exhaustive switch without default</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Must add default even though
+// all cases are covered
+double area(Shape s) {
+    if (s instanceof Circle c)
+        return Math.PI * c.r() * c.r();
+    else if (s instanceof Rect r)
+        return r.w() * r.h();
+    else throw new IAE();
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// sealed Shape permits Circle, Rect
+double area(Shape s) {
+    return switch (s) {
+        case Circle c -&gt;
+            Math.PI * c.r() * c.r();
+        case Rect r -&gt;
+            r.w() * r.h();
+    }; // no default needed!
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/immutable-list-creation.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Immutable list creation</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;String&gt; list =
+    Collections.unmodifiableList(
+        new ArrayList&lt;&gt;(
+            Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+        )
+    );</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">List&lt;String&gt; list =
+    List.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/immutable-map-creation.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Immutable map creation</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;a&quot;, 1);
+map.put(&quot;b&quot;, 2);
+map.put(&quot;c&quot;, 3);
+map = Collections.unmodifiableMap(map);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Map&lt;String, Integer&gt; map =
+    Map.of(&quot;a&quot;, 1, &quot;b&quot;, 2, &quot;c&quot;, 3);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/immutable-set-creation.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Immutable set creation</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Set&lt;String&gt; set =
+    Collections.unmodifiableSet(
+        new HashSet&lt;&gt;(
+            Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+        )
+    );</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Set&lt;String&gt; set =
+    Set.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/copying-collections-immutably.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Copying collections immutably</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;String&gt; copy =
+    Collections.unmodifiableList(
+        new ArrayList&lt;&gt;(original)
+    );</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">List&lt;String&gt; copy =
+    List.copyOf(original);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 10+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/map-entry-factory.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Map.entry() factory</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Map.Entry&lt;String, Integer&gt; e =
+    new AbstractMap.SimpleEntry&lt;&gt;(
+        &quot;key&quot;, 42
+    );</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var e = Map.entry(&quot;key&quot;, 42);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/sequenced-collections.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Sequenced collections</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Get last element
+var last = list.get(list.size() - 1);
+// Get first
+var first = list.get(0);
+// Reverse iteration: manual</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var last = list.getLast();
+var first = list.getFirst();
+var reversed = list.reversed();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-tolist-shorthand.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Stream toList() shorthand</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;String&gt; names = people.stream()
+    .map(Person::name)
+    .collect(Collectors.toList());</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">List&lt;String&gt; names = people.stream()
+    .map(Person::name)
+    .toList();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 16+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/collectors-teeing.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Collectors.teeing()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">long count = items.stream().count();
+double sum = items.stream()
+    .mapToDouble(Item::price)
+    .sum();
+var result = new Stats(count, sum);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var result = items.stream().collect(
+    Collectors.teeing(
+        Collectors.counting(),
+        Collectors.summingDouble(Item::price),
+        Stats::new
+    )
+);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 12+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-toarray-typed.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Typed stream toArray</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;String&gt; list = getNames();
+String[] arr = new String[list.size()];
+for (int i = 0; i &lt; list.size(); i++) {
+    arr[i] = list.get(i);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String[] arr = getNames().stream()
+    .filter(n -&gt; n.length() &gt; 3)
+    .toArray(String[]::new);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 8+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/unmodifiable-collectors.html" class="tip-card" data-category="collections">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge collections">Collections</span></div>
+          </div>
+          <h3>Unmodifiable collectors</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;String&gt; list = stream.collect(
+    Collectors.collectingAndThen(
+        Collectors.toList(),
+        Collections::unmodifiableList
+    )
+);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">List&lt;String&gt; list = stream.collect(
+    Collectors.toUnmodifiableList()
+);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 10+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/string-isblank.html" class="tip-card" data-category="strings">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge strings">Strings</span></div>
+          </div>
+          <h3>String.isBlank()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">boolean blank =
+    str.trim().isEmpty();
+// or: str.trim().length() == 0</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">boolean blank = str.isBlank();
+// handles Unicode whitespace too</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/string-strip.html" class="tip-card" data-category="strings">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge strings">Strings</span></div>
+          </div>
+          <h3>String.strip() vs trim()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// trim() only removes ASCII whitespace
+// (chars &lt;= U+0020)
+String clean = str.trim();</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// strip() removes all Unicode whitespace
+String clean = str.strip();
+String left  = str.stripLeading();
+String right = str.stripTrailing();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/string-repeat.html" class="tip-card" data-category="strings">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge strings">Strings</span></div>
+          </div>
+          <h3>String.repeat()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">StringBuilder sb = new StringBuilder();
+for (int i = 0; i &lt; 3; i++) {
+    sb.append(&quot;abc&quot;);
+}
+String result = sb.toString();</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String result = &quot;abc&quot;.repeat(3);
+// &quot;abcabcabc&quot;</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/string-indent-transform.html" class="tip-card" data-category="strings">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge strings">Strings</span></div>
+          </div>
+          <h3>String.indent() and transform()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String[] lines = text.split(&quot;\n&quot;);
+StringBuilder sb = new StringBuilder();
+for (String line : lines) {
+    sb.append(&quot;    &quot;).append(line)
+      .append(&quot;\n&quot;);
+}
+String indented = sb.toString();</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String indented = text.indent(4);
+
+String result = text
+    .transform(String::strip)
+    .transform(s -&gt; s.replace(&quot; &quot;, &quot;-&quot;));</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 12+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/string-formatted.html" class="tip-card" data-category="strings">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge strings">Strings</span></div>
+          </div>
+          <h3>String.formatted()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String msg = String.format(
+    &quot;Hello %s, you are %d&quot;,
+    name, age
+);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String msg =
+    &quot;Hello %s, you are %d&quot;
+    .formatted(name, age);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 15+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/multiline-json-sql.html" class="tip-card" data-category="strings">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge strings">Strings</span></div>
+          </div>
+          <h3>Multiline JSON/SQL/HTML</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String sql =
+    &quot;SELECT u.name, u.email\n&quot; +
+    &quot;FROM users u\n&quot; +
+    &quot;WHERE u.active = true\n&quot; +
+    &quot;ORDER BY u.name&quot;;</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String sql = &quot;&quot;&quot;
+    SELECT u.name, u.email
+    FROM users u
+    WHERE u.active = true
+    ORDER BY u.name
+    &quot;&quot;&quot;;</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 15+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/string-chars-stream.html" class="tip-card" data-category="strings">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge strings">Strings</span></div>
+          </div>
+          <h3>String chars as stream</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">for (int i = 0; i &lt; str.length(); i++) {
+    char c = str.charAt(i);
+    if (Character.isDigit(c)) {
+        process(c);
+    }
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">str.chars()
+    .filter(Character::isDigit)
+    .forEach(c -&gt; process((char) c));</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-of-nullable.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Stream.ofNullable()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Stream&lt;String&gt; s = val != null
+    ? Stream.of(val)
+    : Stream.empty();</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Stream&lt;String&gt; s =
+    Stream.ofNullable(val);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-iterate-predicate.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Stream.iterate() with predicate</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Stream.iterate(1, n -&gt; n * 2)
+    .limit(10)
+    .forEach(System.out::println);
+// can&#x27;t stop at a condition</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Stream.iterate(
+    1,
+    n -&gt; n &lt; 1000,
+    n -&gt; n * 2
+).forEach(System.out::println);
+// stops when n &gt;= 1000</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-takewhile-dropwhile.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Stream takeWhile / dropWhile</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;Integer&gt; result = new ArrayList&lt;&gt;();
+for (int n : sorted) {
+    if (n &gt;= 100) break;
+    result.add(n);
+}
+// no stream equivalent in Java 8</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var result = sorted.stream()
+    .takeWhile(n -&gt; n &lt; 100)
+    .toList();
+// or: .dropWhile(n -&gt; n &lt; 10)</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/collectors-flatmapping.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Collectors.flatMapping()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Flatten within a grouping collector
+// Required complex custom collector
+Map&lt;String, Set&lt;String&gt;&gt; tagsByDept =
+    // no clean way in Java 8</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var tagsByDept = employees.stream()
+    .collect(groupingBy(
+        Emp::dept,
+        flatMapping(
+            e -&gt; e.tags().stream(),
+            toSet()
+        )
+    ));</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-tolist.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Stream.toList()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">List&lt;String&gt; result = stream
+    .filter(s -&gt; s.length() &gt; 3)
+    .collect(Collectors.toList());</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">List&lt;String&gt; result = stream
+    .filter(s -&gt; s.length() &gt; 3)
+    .toList();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 16+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-mapmulti.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Stream.mapMulti()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">stream.flatMap(order -&gt;
+    order.items().stream()
+        .map(item -&gt; new OrderItem(
+            order.id(), item)
+        )
+);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">stream.&lt;OrderItem&gt;mapMulti(
+    (order, downstream) -&gt; {
+        for (var item : order.items())
+            downstream.accept(
+                new OrderItem(order.id(), item));
+    }
+);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 16+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stream-gatherers.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Stream gatherers</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Sliding window: manual implementation
+List&lt;List&lt;T&gt;&gt; windows = new ArrayList&lt;&gt;();
+for (int i = 0; i &lt;= list.size()-3; i++) {
+    windows.add(
+        list.subList(i, i + 3));
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var windows = stream
+    .gather(
+        Gatherers.windowSliding(3)
+    )
+    .toList();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 24+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/virtual-thread-executor.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Virtual thread executor</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">ExecutorService exec =
+    Executors.newFixedThreadPool(10);
+try {
+    futures = tasks.stream()
+        .map(t -&gt; exec.submit(t))
+        .toList();
+} finally {
+    exec.shutdown();
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">try (var exec = Executors
+        .newVirtualThreadPerTaskExecutor()) {
+    var futures = tasks.stream()
+        .map(exec::submit)
+        .toList();
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/optional-ifpresentorelse.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Optional.ifPresentOrElse()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Optional&lt;User&gt; user = findUser(id);
+if (user.isPresent()) {
+    greet(user.get());
+} else {
+    handleMissing();
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">findUser(id).ifPresentOrElse(
+    this::greet,
+    this::handleMissing
+);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/optional-or.html" class="tip-card" data-category="streams">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge streams">Streams</span></div>
+          </div>
+          <h3>Optional.or() fallback</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Optional&lt;Config&gt; cfg = primary();
+if (!cfg.isPresent()) {
+    cfg = secondary();
+}
+if (!cfg.isPresent()) {
+    cfg = defaults();
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Optional&lt;Config&gt; cfg = primary()
+    .or(this::secondary)
+    .or(this::defaults);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/virtual-threads.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Virtual threads</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Thread thread = new Thread(() -&gt; {
+    System.out.println(&quot;hello&quot;);
+});
+thread.start();
+thread.join();</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Thread.startVirtualThread(() -&gt; {
+    System.out.println(&quot;hello&quot;);
+}).join();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/structured-concurrency.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Structured concurrency</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">ExecutorService exec =
+    Executors.newFixedThreadPool(2);
+Future&lt;User&gt; u = exec.submit(this::fetchUser);
+Future&lt;Order&gt; o = exec.submit(this::fetchOrder);
+try {
+    return combine(u.get(), o.get());
+} finally { exec.shutdown(); }</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">try (var scope = new StructuredTaskScope
+        .ShutdownOnFailure()) {
+    var u = scope.fork(this::fetchUser);
+    var o = scope.fork(this::fetchOrder);
+    scope.join().throwIfFailed();
+    return combine(u.get(), o.get());
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25 (Preview)</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/scoped-values.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Scoped values</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">static final ThreadLocal&lt;User&gt; CURRENT =
+    new ThreadLocal&lt;&gt;();
+void handle(Request req) {
+    CURRENT.set(authenticate(req));
+    try { process(); }
+    finally { CURRENT.remove(); }
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">static final ScopedValue&lt;User&gt; CURRENT =
+    ScopedValue.newInstance();
+void handle(Request req) {
+    ScopedValue.where(CURRENT,
+        authenticate(req)
+    ).run(this::process);
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/stable-values.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Stable values</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">private volatile Logger logger;
+Logger getLogger() {
+    if (logger == null) {
+        synchronized (this) {
+            if (logger == null)
+                logger = createLogger();
+        }
+    }
+    return logger;
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">private final StableValue&lt;Logger&gt; logger =
+    StableValue.of(this::createLogger);
+
+Logger getLogger() {
+    return logger.get();
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25 (Preview)</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/completablefuture-chaining.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>CompletableFuture chaining</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Future&lt;String&gt; future =
+    executor.submit(this::fetchData);
+String data = future.get(); // blocks
+String result = transform(data);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">CompletableFuture.supplyAsync(
+    this::fetchData
+)
+.thenApply(this::transform)
+.thenAccept(System.out::println);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 8+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/executor-try-with-resources.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>ExecutorService auto-close</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">ExecutorService exec =
+    Executors.newCachedThreadPool();
+try {
+    exec.submit(task);
+} finally {
+    exec.shutdown();
+    exec.awaitTermination(
+        1, TimeUnit.MINUTES);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">try (var exec =
+        Executors.newCachedThreadPool()) {
+    exec.submit(task);
+}
+// auto shutdown + await on close</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 19+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/thread-sleep-duration.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Thread.sleep with Duration</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// What unit is 5000? ms? us?
+Thread.sleep(5000);
+
+// 2.5 seconds: math required
+Thread.sleep(2500);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Thread.sleep(
+    Duration.ofSeconds(5)
+);
+Thread.sleep(
+    Duration.ofMillis(2500)
+);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 19+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/process-api.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Modern Process API</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Process p = Runtime.getRuntime()
+    .exec(&quot;ls -la&quot;);
+int code = p.waitFor();
+// no way to get PID
+// no easy process info</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">ProcessHandle ph =
+    ProcessHandle.current();
+long pid = ph.pid();
+ph.info().command()
+    .ifPresent(System.out::println);
+ph.children().forEach(
+    c -&gt; System.out.println(c.pid()));</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/concurrent-http-virtual.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Concurrent HTTP with virtual threads</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">ExecutorService pool =
+    Executors.newFixedThreadPool(10);
+List&lt;Future&lt;String&gt;&gt; futures =
+    urls.stream()
+    .map(u -&gt; pool.submit(
+        () -&gt; fetchUrl(u)))
+    .toList();
+// manual shutdown, blocking get()</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">try (var exec = Executors
+    .newVirtualThreadPerTaskExecutor()) {
+    var results = urls.stream()
+        .map(u -&gt; exec.submit(
+            () -&gt; client.send(req(u),
+                ofString()).body()))
+        .toList().stream()
+        .map(Future::join).toList();
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/lock-free-lazy-init.html" class="tip-card" data-category="concurrency">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge concurrency">Concurrency</span></div>
+          </div>
+          <h3>Lock-free lazy initialization</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">class Config {
+    private static volatile Config inst;
+    static Config get() {
+        if (inst == null) {
+            synchronized (Config.class) {
+                if (inst == null)
+                    inst = load();
+            }
+        }
+        return inst;
+    }
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">class Config {
+    private static final
+        StableValue&lt;Config&gt; INST =
+            StableValue.of(Config::load);
+
+    static Config get() {
+        return INST.get();
+    }
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25 (Preview)</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/http-client.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>Modern HTTP client</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">URL url = new URL(&quot;https://api.com/data&quot;);
+HttpURLConnection con =
+    (HttpURLConnection) url.openConnection();
+con.setRequestMethod(&quot;GET&quot;);
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+// read lines, close streams...</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">var client = HttpClient.newHttpClient();
+var request = HttpRequest.newBuilder()
+    .uri(URI.create(&quot;https://api.com/data&quot;))
+    .build();
+var response = client.send(
+    request, BodyHandlers.ofString());
+String body = response.body();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/reading-files.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>Reading files</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">StringBuilder sb = new StringBuilder();
+try (BufferedReader br =
+    new BufferedReader(
+        new FileReader(&quot;data.txt&quot;))) {
+    String line;
+    while ((line = br.readLine()) != null)
+        sb.append(line).append(&quot;\n&quot;);
+}
+String content = sb.toString();</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String content =
+    Files.readString(Path.of(&quot;data.txt&quot;));</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/writing-files.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>Writing files</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">try (BufferedWriter bw =
+    new BufferedWriter(
+        new FileWriter(&quot;out.txt&quot;))) {
+    bw.write(content);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Files.writeString(
+    Path.of(&quot;out.txt&quot;),
+    content
+);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/inputstream-transferto.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>InputStream.transferTo()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">byte[] buf = new byte[8192];
+int n;
+while ((n = input.read(buf)) != -1) {
+    output.write(buf, 0, n);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">input.transferTo(output);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/path-of.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>Path.of() factory</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Path path = Paths.get(&quot;src&quot;, &quot;main&quot;,
+    &quot;java&quot;, &quot;App.java&quot;);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Path path = Path.of(&quot;src&quot;, &quot;main&quot;,
+    &quot;java&quot;, &quot;App.java&quot;);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/try-with-resources-effectively-final.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>Try-with-resources improvement</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">Connection conn = getConnection();
+// Must re-declare in try
+try (Connection c = conn) {
+    use(c);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">Connection conn = getConnection();
+// Use existing variable directly
+try (conn) {
+    use(conn);
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/files-mismatch.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>Files.mismatch()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Compare two files byte by byte
+byte[] f1 = Files.readAllBytes(path1);
+byte[] f2 = Files.readAllBytes(path2);
+boolean equal = Arrays.equals(f1, f2);
+// loads both files entirely into memory</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">long pos = Files.mismatch(path1, path2);
+// -1 if identical
+// otherwise: position of first difference</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 12+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/deserialization-filters.html" class="tip-card" data-category="io">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge io">I/O</span></div>
+          </div>
+          <h3>Deserialization filters</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Dangerous: accepts any class
+ObjectInputStream ois =
+    new ObjectInputStream(input);
+Object obj = ois.readObject();
+// deserialization attacks possible!</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">ObjectInputFilter filter =
+    ObjectInputFilter.Config
+    .createFilter(
+        &quot;com.myapp.*;!*&quot;
+    );
+ois.setObjectInputFilter(filter);
+Object obj = ois.readObject();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/helpful-npe.html" class="tip-card" data-category="errors">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge errors">Errors</span></div>
+          </div>
+          <h3>Helpful NullPointerExceptions</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Old NPE message:
+// &quot;NullPointerException&quot;
+// at MyApp.main(MyApp.java:42)
+// Which variable was null?!</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// Modern NPE message:
+// Cannot invoke &quot;String.length()&quot;
+// because &quot;user.address().city()&quot;
+// is null
+// Exact variable identified!</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 14+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/optional-chaining.html" class="tip-card" data-category="errors">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge errors">Errors</span></div>
+          </div>
+          <h3>Optional chaining</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String city = null;
+if (user != null) {
+    Address addr = user.getAddress();
+    if (addr != null) {
+        city = addr.getCity();
+    }
+}
+if (city == null) city = &quot;Unknown&quot;;</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String city = Optional.ofNullable(user)
+    .map(User::address)
+    .map(Address::city)
+    .orElse(&quot;Unknown&quot;);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/require-nonnull-else.html" class="tip-card" data-category="errors">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge errors">Errors</span></div>
+          </div>
+          <h3>Objects.requireNonNullElse()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String name = input != null
+    ? input
+    : &quot;default&quot;;
+// easy to get the order wrong</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">String name = Objects
+    .requireNonNullElse(
+        input, &quot;default&quot;
+    );</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/multi-catch.html" class="tip-card" data-category="errors">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge errors">Errors</span></div>
+          </div>
+          <h3>Multi-catch exception handling</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">try {
+    process();
+} catch (IOException e) {
+    log(e);
+} catch (SQLException e) {
+    log(e);
+} catch (ParseException e) {
+    log(e);
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">try {
+    process();
+} catch (IOException
+    | SQLException
+    | ParseException e) {
+    log(e);
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 7+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/null-in-switch.html" class="tip-card" data-category="errors">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge errors">Errors</span></div>
+          </div>
+          <h3>Null case in switch</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Must check before switch
+if (status == null) {
+    return &quot;unknown&quot;;
+}
+return switch (status) {
+    case ACTIVE  -&gt; &quot;active&quot;;
+    case PAUSED  -&gt; &quot;paused&quot;;
+    default      -&gt; &quot;other&quot;;
+};</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">return switch (status) {
+    case null    -&gt; &quot;unknown&quot;;
+    case ACTIVE  -&gt; &quot;active&quot;;
+    case PAUSED  -&gt; &quot;paused&quot;;
+    default      -&gt; &quot;other&quot;;
+};</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/record-based-errors.html" class="tip-card" data-category="errors">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge errors">Errors</span></div>
+          </div>
+          <h3>Record-based error responses</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Verbose error class
+public class ErrorResponse {
+    private final int code;
+    private final String message;
+    // constructor, getters, equals,
+    // hashCode, toString...
+}</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">public record ApiError(
+    int code,
+    String message,
+    Instant timestamp
+) {
+    public ApiError(int code, String msg) {
+        this(code, msg, Instant.now());
+    }
+}</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 16+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/java-time-basics.html" class="tip-card" data-category="datetime">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge datetime">Date/Time</span></div>
+          </div>
+          <h3>java.time API basics</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Mutable, confusing, zero-indexed months
+Calendar cal = Calendar.getInstance();
+cal.set(2025, 0, 15); // January = 0!
+Date date = cal.getTime();
+// not thread-safe</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">LocalDate date = LocalDate.of(
+    2025, Month.JANUARY, 15);
+LocalTime time = LocalTime.of(14, 30);
+Instant now = Instant.now();
+// immutable, thread-safe</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 8+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/duration-and-period.html" class="tip-card" data-category="datetime">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge datetime">Date/Time</span></div>
+          </div>
+          <h3>Duration and Period</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// How many days between two dates?
+long diff = date2.getTime()
+    - date1.getTime();
+long days = diff
+    / (1000 * 60 * 60 * 24);
+// ignores DST, leap seconds</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">long days = ChronoUnit.DAYS
+    .between(date1, date2);
+Period period = Period.between(
+    date1, date2);
+Duration elapsed = Duration.between(
+    time1, time2);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 8+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/date-formatting.html" class="tip-card" data-category="datetime">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge datetime">Date/Time</span></div>
+          </div>
+          <h3>Date formatting</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Not thread-safe!
+SimpleDateFormat sdf =
+    new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+String formatted = sdf.format(date);
+// Must synchronize for concurrent use</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">DateTimeFormatter fmt =
+    DateTimeFormatter.ofPattern(
+        &quot;yyyy-MM-dd&quot;);
+String formatted =
+    LocalDate.now().format(fmt);
+// Thread-safe, immutable</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 8+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/instant-precision.html" class="tip-card" data-category="datetime">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge datetime">Date/Time</span></div>
+          </div>
+          <h3>Instant with nanosecond precision</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Millisecond precision only
+long millis =
+    System.currentTimeMillis();
+// 1708012345678</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// Microsecond/nanosecond precision
+Instant now = Instant.now();
+// 2025-02-15T20:12:25.678901234Z
+long nanos = now.getNano();</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/math-clamp.html" class="tip-card" data-category="datetime">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge datetime">Date/Time</span></div>
+          </div>
+          <h3>Math.clamp()</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Clamp value between min and max
+int clamped =
+    Math.min(Math.max(value, 0), 100);
+// or: min and max order confusion</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">int clamped =
+    Math.clamp(value, 0, 100);
+// value constrained to [0, 100]</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 21+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/hex-format.html" class="tip-card" data-category="datetime">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge datetime">Date/Time</span></div>
+          </div>
+          <h3>HexFormat</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Pad to 2 digits, uppercase
+String hex = String.format(
+    &quot;%02X&quot;, byteValue);
+// Parse hex string
+int val = Integer.parseInt(
+    &quot;FF&quot;, 16);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">HexFormat hex = HexFormat.of()
+    .withUpperCase();
+String s = hex.toHexDigits(
+    byteValue);
+byte[] bytes =
+    hex.parseHex(&quot;48656C6C6F&quot;);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 17+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/pem-encoding.html" class="tip-card" data-category="security">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge security">Security</span></div>
+          </div>
+          <h3>PEM encoding/decoding</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">String pem = &quot;-----BEGIN CERTIFICATE-----\n&quot;
+    + Base64.getMimeEncoder()
+        .encodeToString(
+            cert.getEncoded())
+    + &quot;\n-----END CERTIFICATE-----&quot;;</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// Encode to PEM
+String pem = PEMEncoder.of()
+    .encodeToString(cert);
+// Decode from PEM
+var cert = PEMDecoder.of()
+    .decode(pemString);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25 (Preview)</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/key-derivation-functions.html" class="tip-card" data-category="security">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge security">Security</span></div>
+          </div>
+          <h3>Key Derivation Functions</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">SecretKeyFactory factory =
+    SecretKeyFactory.getInstance(
+        &quot;PBKDF2WithHmacSHA256&quot;);
+KeySpec spec = new PBEKeySpec(
+    password, salt, 10000, 256);
+SecretKey key =
+    factory.generateSecret(spec);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">KDF kdf = KDF.getInstance(&quot;HKDF-SHA256&quot;);
+SecretKey key = kdf.deriveKey(
+    &quot;AES&quot;,
+    KDF.HKDFParameterSpec
+        .ofExtract()
+        .addIKM(inputKey)
+        .addSalt(salt)
+        .thenExpand(info, 32)
+        .build()
+);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/strong-random.html" class="tip-card" data-category="security">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge security">Security</span></div>
+          </div>
+          <h3>Strong random generation</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Default algorithm — may not be
+// the strongest available
+SecureRandom random =
+    new SecureRandom();
+byte[] bytes = new byte[32];
+random.nextBytes(bytes);</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// Platform&#x27;s strongest algorithm
+SecureRandom random =
+    SecureRandom.getInstanceStrong();
+byte[] bytes = new byte[32];
+random.nextBytes(bytes);</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/tls-default.html" class="tip-card" data-category="security">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge security">Security</span></div>
+          </div>
+          <h3>TLS 1.3 by default</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">SSLContext ctx =
+    SSLContext.getInstance(&quot;TLSv1.2&quot;);
+ctx.init(null, trustManagers, null);
+SSLSocketFactory factory =
+    ctx.getSocketFactory();
+// Must specify protocol version</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// TLS 1.3 is the default!
+var client = HttpClient.newBuilder()
+    .sslContext(SSLContext.getDefault())
+    .build();
+// Already using TLS 1.3</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/jshell-prototyping.html" class="tip-card" data-category="tooling">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge tooling">Tooling</span></div>
+          </div>
+          <h3>JShell for prototyping</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// 1. Create Test.java
+// 2. javac Test.java
+// 3. java Test
+// Just to test one expression!</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">$ jshell
+jshell&gt; &quot;hello&quot;.chars().count()
+$1 ==&gt; 5
+jshell&gt; List.of(1,2,3).reversed()
+$2 ==&gt; [3, 2, 1]</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/single-file-execution.html" class="tip-card" data-category="tooling">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge tooling">Tooling</span></div>
+          </div>
+          <h3>Single-file execution</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">$ javac HelloWorld.java
+$ java HelloWorld
+// Two steps every time</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">$ java HelloWorld.java
+// Compiles and runs in one step
+// Also works with shebangs:
+#!/usr/bin/java --source 25</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 11+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/multi-file-source.html" class="tip-card" data-category="tooling">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge tooling">Tooling</span></div>
+          </div>
+          <h3>Multi-file source launcher</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">$ javac *.java
+$ java Main
+// Must compile all files first
+// Need a build tool for dependencies</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">$ java Main.java
+// Automatically finds and compiles
+// other source files referenced
+// by Main.java</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 22+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/jfr-profiling.html" class="tip-card" data-category="tooling">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge tooling">Tooling</span></div>
+          </div>
+          <h3>JFR for profiling</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Install VisualVM / YourKit / JProfiler
+// Attach to running process
+// Configure sampling
+// Export and analyze
+// External tool required</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// Start with profiling enabled
+$ java -XX:StartFlightRecording=
+    filename=rec.jfr MyApp
+
+// Or attach to running app:
+$ jcmd &lt;pid&gt; JFR.start</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 9+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/compact-object-headers.html" class="tip-card" data-category="tooling">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge tooling">Tooling</span></div>
+          </div>
+          <h3>Compact object headers</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Default: 128-bit object header
+// = 16 bytes overhead per object
+// A boolean field object = 32 bytes!
+// Mark word (64) + Klass pointer (64)</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// -XX:+UseCompactObjectHeaders
+// 64-bit object header
+// = 8 bytes overhead per object
+// 50% less header memory
+// More objects fit in cache</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+      <a href="/aot-class-preloading.html" class="tip-card" data-category="tooling">
+        <div class="tip-card-body">
+          <div class="tip-card-header">
+            <div class="tip-badges"><span class="badge tooling">Tooling</span></div>
+          </div>
+          <h3>AOT class preloading</h3>
+        </div>
+        <div class="card-code">
+          <div class="card-code-layer old-layer">
+            <span class="mini-label">Old</span>
+            <span class="code-text">// Every startup:
+// - Load 10,000+ classes
+// - Verify bytecode
+// - JIT compile hot paths
+// Startup: 2-5 seconds</span>
+          </div>
+          <div class="card-code-layer modern-layer">
+            <span class="mini-label">Modern</span>
+            <span class="code-text">// Training run:
+$ java -XX:AOTMode=record \
+    -XX:AOTConfiguration=app.aotconf \
+    -cp app.jar com.App
+// Production:
+$ java -XX:AOTMode=on \
+    -XX:AOTCache=app.aot \
+    -cp app.jar com.App</span>
+          </div>
+          <span class="hover-hint">hover to see modern →</span>
+        </div>
+        <div class="tip-card-footer">
+          <span class="browser-support"><span class="dot"></span> JDK 25+</span>
+          <span class="arrow-link">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="number orange">85</div>
+      <div class="label">Modern Patterns</div>
+    </div>
+    <div class="stat-card">
+      <div class="number green">17</div>
+      <div class="label">JDK Versions Covered</div>
+    </div>
+    <div class="stat-card">
+      <div class="number blue">10</div>
+      <div class="label">Categories</div>
+    </div>
+    <div class="stat-card">
+      <div class="number pink">0</div>
+      <div class="label">Lines of JS Required</div>
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="/">java.evolved</a> — Java has evolved. Have you?</p>
+  </footer>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="search-input" id="searchInput" type="text" placeholder="Search snippets…" autocomplete="off">
+        <span class="search-esc" id="searchClose">ESC</span>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+      <div class="search-footer">
+        <span><kbd>↑↓</kbd> navigate</span>
+        <span><kbd>↵</kbd> open</span>
+        <span><kbd>esc</kbd> close</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

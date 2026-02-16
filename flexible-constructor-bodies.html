@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible constructor bodies | java.evolved</title>
+  <meta name="description" content="Validate and compute values before calling super() or this().">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/flexible-constructor-bodies.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Flexible constructor bodies | java.evolved">
+  <meta property="og:description" content="Validate and compute values before calling super() or this().">
+  <meta property="og:url" content="https://javaevolved.github.io/flexible-constructor-bodies.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Flexible constructor bodies | java.evolved">
+  <meta name="twitter:description" content="Validate and compute values before calling super() or this().">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Flexible constructor bodies",
+    "description": "Validate and compute values before calling super() or this().",
+    "url": "https://javaevolved.github.io/flexible-constructor-bodies.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/flexible-constructor-bodies.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Language",
+            "item": "https://javaevolved.github.io/?cat=language"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Flexible constructor bodies"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <a href="/compact-source-files.html" aria-label="Previous pattern">←</a>
+          <a href="/enhanced-for-with-var.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=language">Language</a>
+      <span class="sep">/</span>
+      <span>Flexible constructor bodies</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge language">Language</span>
+        <span class="badge intermediate">intermediate</span>
+      </div>
+      <h1>Flexible constructor bodies</h1>
+      <p>Validate and compute values before calling super() or this().</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">class Square extends Shape {
+    Square(double side) {
+        super(side, side);
+        // can&#x27;t validate BEFORE super!
+        if (side &lt;= 0)
+            throw new IAE(&quot;bad&quot;);
+    }
+}</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 25+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">class Square extends Shape {
+    Square(double side) {
+        if (side &lt;= 0)
+            throw new IAE(&quot;bad&quot;);
+        super(side, side);
+    }
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🛡️</div>
+          <h3>Fail fast</h3>
+          <p>Validate arguments before the superclass constructor runs.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧮</div>
+          <h3>Compute first</h3>
+          <p>Derive values and prepare data before calling super().</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧹</div>
+          <h3>No workarounds</h3>
+          <p>No more static helper methods or factory patterns to work around the restriction.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">Validate After super()</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">Code Before super()</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">25</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">intermediate</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Flexible constructor bodies</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Finalized in JDK 25 LTS (JEP 513, Sept 2025).</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>Java 25 lifts the restriction that super() must be the first statement. You can now validate arguments, compute derived values, and set up state before delegating to the parent constructor.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/type-inference-with-var.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Type inference with var</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">Map&lt;String, List&lt;Integer&gt;&gt; map =
+    new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (Map.Entry&lt;String, List&lt;Integer&gt;&gt; e
+    : map.entrySet()) {
+    // verbose type noise
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 10+</div>
+              <pre class="code-text">var map = new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (var entry : map.entrySet()) {
+    // clean and readable
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 10+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/text-blocks-for-multiline-strings.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Text blocks for multiline strings</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">String json = &quot;{\n&quot; +
+    &quot;  \&quot;name\&quot;: \&quot;Duke\&quot;,\n&quot; +
+    &quot;  \&quot;age\&quot;: 30\n&quot; +
+    &quot;}&quot;;</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 15+</div>
+              <pre class="code-text">String json = &quot;&quot;&quot;
+    {
+      &quot;name&quot;: &quot;Duke&quot;,
+      &quot;age&quot;: 30
+    }
+    &quot;&quot;&quot;;</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 15+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/switch-expressions.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Switch expressions</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">String msg;
+switch (day) {
+    case MONDAY:
+        msg = &quot;Start&quot;;
+        break;
+    case FRIDAY:
+        msg = &quot;End&quot;;
+        break;
+    default:
+        msg = &quot;Mid&quot;;
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 14+</div>
+              <pre class="code-text">String msg = switch (day) {
+    case MONDAY  -&gt; &quot;Start&quot;;
+    case FRIDAY  -&gt; &quot;End&quot;;
+    default      -&gt; &quot;Mid&quot;;
+};</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 14+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Fflexible-constructor-bodies.html&text=Flexible%20constructor%20bodies%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Flexible%20constructor%20bodies%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Fflexible-constructor-bodies.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Fflexible-constructor-bodies.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Fflexible-constructor-bodies.html&title=Flexible%20constructor%20bodies%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

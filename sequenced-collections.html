@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sequenced collections | java.evolved</title>
+  <meta name="description" content="Access first/last elements and reverse views with clean API methods.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/sequenced-collections.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Sequenced collections | java.evolved">
+  <meta property="og:description" content="Access first/last elements and reverse views with clean API methods.">
+  <meta property="og:url" content="https://javaevolved.github.io/sequenced-collections.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sequenced collections | java.evolved">
+  <meta name="twitter:description" content="Access first/last elements and reverse views with clean API methods.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Sequenced collections",
+    "description": "Access first/last elements and reverse views with clean API methods.",
+    "url": "https://javaevolved.github.io/sequenced-collections.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/sequenced-collections.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Collections",
+            "item": "https://javaevolved.github.io/?cat=collections"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sequenced collections"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <a href="/map-entry-factory.html" aria-label="Previous pattern">←</a>
+          <a href="/stream-tolist-shorthand.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=collections">Collections</a>
+      <span class="sep">/</span>
+      <span>Sequenced collections</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge collections">Collections</span>
+        <span class="badge beginner">beginner</span>
+      </div>
+      <h1>Sequenced collections</h1>
+      <p>Access first/last elements and reverse views with clean API methods.</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">// Get last element
+var last = list.get(list.size() - 1);
+// Get first
+var first = list.get(0);
+// Reverse iteration: manual</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 21+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">var last = list.getLast();
+var first = list.getFirst();
+var reversed = list.reversed();</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">📖</div>
+          <h3>Self-documenting</h3>
+          <p>getLast() is clearer than get(size()-1).</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔄</div>
+          <h3>Reversed view</h3>
+          <p>reversed() gives a view — no copying needed.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧩</div>
+          <h3>Uniform API</h3>
+          <p>Works the same on List, Deque, SortedSet.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">Index Arithmetic</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">getFirst/getLast</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">21</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">beginner</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Sequenced collections</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Widely available since JDK 21 LTS (Sept 2023)</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>SequencedCollection adds getFirst(), getLast(), reversed(), addFirst(), addLast() to List, Deque, SortedSet, and LinkedHashSet. No more size-1 arithmetic or manual reverse iteration.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/collectors-teeing.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge collections">Collections</span>
+                <span class="badge intermediate">intermediate</span>
+              </div>
+            </div>
+            <h3>Collectors.teeing()</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">long count = items.stream().count();
+double sum = items.stream()
+    .mapToDouble(Item::price)
+    .sum();
+var result = new Stats(count, sum);</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 12+</div>
+              <pre class="code-text">var result = items.stream().collect(
+    Collectors.teeing(
+        Collectors.counting(),
+        Collectors.summingDouble(Item::price),
+        Stats::new
+    )
+);</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 12+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/immutable-set-creation.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge collections">Collections</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Immutable set creation</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">Set&lt;String&gt; set =
+    Collections.unmodifiableSet(
+        new HashSet&lt;&gt;(
+            Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+        )
+    );</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 9+</div>
+              <pre class="code-text">Set&lt;String&gt; set =
+    Set.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 9+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/immutable-map-creation.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge collections">Collections</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Immutable map creation</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;a&quot;, 1);
+map.put(&quot;b&quot;, 2);
+map.put(&quot;c&quot;, 3);
+map = Collections.unmodifiableMap(map);</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 9+</div>
+              <pre class="code-text">Map&lt;String, Integer&gt; map =
+    Map.of(&quot;a&quot;, 1, &quot;b&quot;, 2, &quot;c&quot;, 3);</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 9+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Fsequenced-collections.html&text=Sequenced%20collections%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Sequenced%20collections%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Fsequenced-collections.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Fsequenced-collections.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Fsequenced-collections.html&title=Sequenced%20collections%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

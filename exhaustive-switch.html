@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exhaustive switch without default | java.evolved</title>
+  <meta name="description" content="Compiler verifies all sealed subtypes are covered — no default needed.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/exhaustive-switch.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Exhaustive switch without default | java.evolved">
+  <meta property="og:description" content="Compiler verifies all sealed subtypes are covered — no default needed.">
+  <meta property="og:url" content="https://javaevolved.github.io/exhaustive-switch.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exhaustive switch without default | java.evolved">
+  <meta name="twitter:description" content="Compiler verifies all sealed subtypes are covered — no default needed.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Exhaustive switch without default",
+    "description": "Compiler verifies all sealed subtypes are covered \u2014 no default needed.",
+    "url": "https://javaevolved.github.io/exhaustive-switch.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/exhaustive-switch.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Language",
+            "item": "https://javaevolved.github.io/?cat=language"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Exhaustive switch without default"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <a href="/module-import-declarations.html" aria-label="Previous pattern">←</a>
+          <a href="/immutable-list-creation.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=language">Language</a>
+      <span class="sep">/</span>
+      <span>Exhaustive switch without default</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge language">Language</span>
+        <span class="badge intermediate">intermediate</span>
+      </div>
+      <h1>Exhaustive switch without default</h1>
+      <p>Compiler verifies all sealed subtypes are covered — no default needed.</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">// Must add default even though
+// all cases are covered
+double area(Shape s) {
+    if (s instanceof Circle c)
+        return Math.PI * c.r() * c.r();
+    else if (s instanceof Rect r)
+        return r.w() * r.h();
+    else throw new IAE();
+}</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 21+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">// sealed Shape permits Circle, Rect
+double area(Shape s) {
+    return switch (s) {
+        case Circle c -&gt;
+            Math.PI * c.r() * c.r();
+        case Rect r -&gt;
+            r.w() * r.h();
+    }; // no default needed!
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">✅</div>
+          <h3>Compile-time safety</h3>
+          <p>Add a new subtype and the compiler shows every place to update.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🚫</div>
+          <h3>No dead code</h3>
+          <p>No unreachable default branch that masks bugs.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📐</div>
+          <h3>Algebraic types</h3>
+          <p>Sealed + records + exhaustive switch = proper ADTs in Java.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">Mandatory default</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">Sealed Exhaustiveness</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">21</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">intermediate</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Exhaustive switch without default</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Widely available since JDK 21 LTS (Sept 2023)</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>When switching over a sealed type, the compiler knows all possible subtypes and verifies every case is handled. If you add a new subtype, the compiler flags every switch that&#x27;s now incomplete.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/sealed-classes.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge intermediate">intermediate</span>
+              </div>
+            </div>
+            <h3>Sealed classes for type hierarchies</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">// Anyone can extend Shape
+public abstract class Shape { }
+public class Circle extends Shape { }
+public class Rect extends Shape { }
+// unknown subclasses possible</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 17+</div>
+              <pre class="code-text">public sealed interface Shape
+    permits Circle, Rect {}
+public record Circle(double r)
+    implements Shape {}
+public record Rect(double w, double h)
+    implements Shape {}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 17+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/pattern-matching-instanceof.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Pattern matching for instanceof</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">if (obj instanceof String) {
+    String s = (String) obj;
+    System.out.println(s.length());
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 16+</div>
+              <pre class="code-text">if (obj instanceof String s) {
+    System.out.println(s.length());
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 16+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/enhanced-for-with-var.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Enhanced for with var</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">List&lt;Map.Entry&lt;String, Integer&gt;&gt; list = ...;
+for (Map.Entry&lt;String, Integer&gt; entry
+        : list) {
+    process(entry);
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 10+</div>
+              <pre class="code-text">var list = getEntries();
+for (var entry : list) {
+    process(entry);
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 10+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Fexhaustive-switch.html&text=Exhaustive%20switch%20without%20default%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Exhaustive%20switch%20without%20default%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Fexhaustive-switch.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Fexhaustive-switch.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Fexhaustive-switch.html&title=Exhaustive%20switch%20without%20default%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
