@@ -15,7 +15,7 @@
   <text x="80" y="110" font-family="system-ui,-apple-system,sans-serif" font-size="32" fill="#a1a1aa">java.<tspan fill="#fb923c" font-weight="700">evolved</tspan></text>
   <!-- Main title -->
   <text x="80" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="800" fill="#fafafa">Java has evolved.</text>
-  <text x="80" y="345" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="800" fill="url(#accent)">Have you?</text>
+  <text x="80" y="345" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="800" fill="url(#accent)">Your code can too.</text>
   <!-- Subtitle -->
   <text x="80" y="420" font-family="system-ui,-apple-system,sans-serif" font-size="28" fill="#a1a1aa">Every old Java pattern next to its modern replacement — side by side.</text>
   <!-- Code snippet preview -->
