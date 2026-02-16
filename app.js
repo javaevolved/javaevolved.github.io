@@ -198,6 +198,7 @@
       btn.addEventListener('click', () => {
         // Find adjacent code block
         const codeBlock = btn.closest('.code-header')?.nextElementSibling
+          || btn.closest('.compare-panel-header')?.nextElementSibling?.querySelector('pre, code, .code-text')
           || btn.parentElement?.querySelector('pre, code, .code-text');
         if (!codeBlock) return;
 
