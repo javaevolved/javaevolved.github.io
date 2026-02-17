@@ -30,7 +30,10 @@
       "desc": "Better than ternary for simple null-or-default logic."
     }
   ],
-  "support": "Widely available since JDK 9 (Sept 2017)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 9 (Sept 2017)"
+  },
   "prev": "errors/optional-chaining",
   "next": "errors/multi-catch",
   "related": [

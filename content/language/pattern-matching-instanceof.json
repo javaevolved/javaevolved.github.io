@@ -30,7 +30,10 @@
       "desc": "The pattern variable is only in scope where the type is guaranteed."
     }
   ],
-  "support": "Widely available since JDK 16 (March 2021)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 16 (March 2021)"
+  },
   "prev": "language/switch-expressions",
   "next": "language/records-for-data-classes",
   "related": [

@@ -30,7 +30,10 @@
       "desc": "CPU, memory, GC, threads, I/O, locks, and custom events."
     }
   ],
-  "support": "Widely available since JDK 9/11 (open-sourced in 11)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 9/11 (open-sourced in 11)"
+  },
   "prev": "tooling/multi-file-source",
   "next": "tooling/compact-object-headers",
   "related": [

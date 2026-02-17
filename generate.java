@@ -41,7 +41,8 @@ record Snippet(JsonNode node) {
     String oldApproach()    { return get("oldApproach"); }
     String modernApproach() { return get("modernApproach"); }
     String explanation()    { return get("explanation"); }
-    String support()        { return get("support"); }
+    String supportState()   { return node.get("support").get("state").asText(); }
+    String supportDesc()    { return node.get("support").get("description").asText(); }
     String key()            { return category() + "/" + slug(); }
     String catDisplay()     { return CATEGORY_DISPLAY.get(category()); }
     JsonNode whyModernWins() { return node.get("whyModernWins"); }
@@ -139,6 +140,22 @@ String urlEncode(String s) {
     return URLEncoder.encode(s, StandardCharsets.UTF_8).replace("+", "%20");
 }
 
+String supportBadge(String state) {
+    return switch (state) {
+        case "preview" -> "Preview";
+        case "experimental" -> "Experimental";
+        default -> "Available";
+    };
+}
+
+String supportBadgeClass(String state) {
+    return switch (state) {
+        case "preview" -> "preview";
+        case "experimental" -> "experimental";
+        default -> "widely";
+    };
+}
+
 String renderNavArrows(Snippet snippet) {
     var prev = snippet.optText("prev")
             .map(p -> "<a href=\"/%s.html\" aria-label=\"Previous pattern\">←</a>".formatted(p))
@@ -190,7 +207,10 @@ String generateHtml(Templates tpl, Snippet s, Map<String, Snippet> all) throws I
             Map.entry("oldLabel", escape(s.oldLabel())), Map.entry("modernLabel", escape(s.modernLabel())),
             Map.entry("oldCode", escape(s.oldCode())), Map.entry("modernCode", escape(s.modernCode())),
             Map.entry("oldApproach", escape(s.oldApproach())), Map.entry("modernApproach", escape(s.modernApproach())),
-            Map.entry("explanation", escape(s.explanation())), Map.entry("support", escape(s.support())),
+            Map.entry("explanation", escape(s.explanation())),
+            Map.entry("supportDescription", escape(s.supportDesc())),
+            Map.entry("supportBadge", supportBadge(s.supportState())),
+            Map.entry("supportBadgeClass", supportBadgeClass(s.supportState())),
             Map.entry("canonicalUrl", "%s/%s/%s.html".formatted(BASE_URL, s.category(), s.slug())),
             Map.entry("flatUrl", "%s/%s.html".formatted(BASE_URL, s.slug())),
             Map.entry("titleJson", jsonEscape(s.title())), Map.entry("summaryJson", jsonEscape(s.summary())),

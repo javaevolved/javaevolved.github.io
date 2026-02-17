@@ -30,7 +30,10 @@
       "desc": "Five lines become two — less ceremony, same clarity."
     }
   ],
-  "support": "Widely available since JDK 21 LTS (Sept 2023)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
   "prev": "language/sealed-classes",
   "next": "language/unnamed-variables",
   "related": [

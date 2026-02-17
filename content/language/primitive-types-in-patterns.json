@@ -30,7 +30,10 @@
       "desc": "Avoid autoboxing overhead in pattern matching."
     }
   ],
-  "support": "Preview in JDK 25 (third preview, JEP 507). Requires --enable-preview.",
+  "support": {
+    "state": "preview",
+    "description": "Preview in JDK 25 (third preview, JEP 507). Requires --enable-preview."
+  },
   "prev": "language/guarded-patterns",
   "next": "language/module-import-declarations",
   "related": [

@@ -30,7 +30,10 @@
       "desc": "repeat(3) immediately conveys the purpose."
     }
   ],
-  "support": "Widely available since JDK 11 (Sept 2018)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 11 (Sept 2018)"
+  },
   "prev": "strings/string-strip",
   "next": "strings/string-indent-transform",
   "related": [

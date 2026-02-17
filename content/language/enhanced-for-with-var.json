@@ -30,7 +30,10 @@
       "desc": "Change the collection type and the loop var adjusts automatically."
     }
   ],
-  "support": "Widely available since JDK 10 (March 2018)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 10 (March 2018)"
+  },
   "prev": "language/flexible-constructor-bodies",
   "next": "language/diamond-operator",
   "related": [

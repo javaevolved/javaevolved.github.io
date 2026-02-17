@@ -30,7 +30,10 @@
       "desc": "takeWhile reads like English: 'take while less than 100'."
     }
   ],
-  "support": "Widely available since JDK 9 (Sept 2017)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 9 (Sept 2017)"
+  },
   "prev": "streams/stream-iterate-predicate",
   "next": "streams/collectors-flatmapping",
   "related": [

@@ -30,7 +30,10 @@
       "desc": "Instant is always in UTC — no timezone confusion."
     }
   ],
-  "support": "Widely available since JDK 9 (Sept 2017)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 9 (Sept 2017)"
+  },
   "prev": "datetime/date-formatting",
   "next": "datetime/math-clamp",
   "related": [

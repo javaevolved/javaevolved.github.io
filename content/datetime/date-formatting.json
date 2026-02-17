@@ -30,7 +30,10 @@
       "desc": "Store as static final constants safely."
     }
   ],
-  "support": "Widely available since JDK 8 (March 2014)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 8 (March 2014)"
+  },
   "prev": "datetime/duration-and-period",
   "next": "datetime/instant-precision",
   "related": [

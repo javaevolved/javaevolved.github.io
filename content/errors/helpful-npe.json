@@ -30,7 +30,10 @@
       "desc": "No code changes — just run on JDK 14+."
     }
   ],
-  "support": "Widely available since JDK 14 (March 2020)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 14 (March 2020)"
+  },
   "prev": "io/deserialization-filters",
   "next": "errors/optional-chaining",
   "related": [

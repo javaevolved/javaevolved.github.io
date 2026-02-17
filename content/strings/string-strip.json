@@ -30,7 +30,10 @@
       "desc": "No surprise whitespace left behind in international text."
     }
   ],
-  "support": "Widely available since JDK 11 (Sept 2018)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 11 (Sept 2018)"
+  },
   "prev": "strings/string-isblank",
   "next": "strings/string-repeat",
   "related": [

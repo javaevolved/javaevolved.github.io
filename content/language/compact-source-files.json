@@ -30,7 +30,10 @@
       "desc": "Perfect for quick prototypes, scripts, and examples."
     }
   ],
-  "support": "Finalized in JDK 25 LTS (JEP 512, Sept 2025).",
+  "support": {
+    "state": "available",
+    "description": "Finalized in JDK 25 LTS (JEP 512, Sept 2025)."
+  },
   "prev": "language/unnamed-variables",
   "next": "language/flexible-constructor-bodies",
   "related": [

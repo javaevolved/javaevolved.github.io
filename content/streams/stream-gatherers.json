@@ -30,7 +30,10 @@
       "desc": "Write custom gatherers for any intermediate transformation."
     }
   ],
-  "support": "Finalized in JDK 24 (JEP 485, March 2025).",
+  "support": {
+    "state": "available",
+    "description": "Finalized in JDK 24 (JEP 485, March 2025)."
+  },
   "prev": "streams/stream-mapmulti",
   "next": "streams/virtual-thread-executor",
   "related": [

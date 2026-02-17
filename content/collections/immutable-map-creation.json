@@ -30,7 +30,10 @@
       "desc": "Null entries are rejected immediately."
     }
   ],
-  "support": "Widely available since JDK 9 (Sept 2017)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 9 (Sept 2017)"
+  },
   "prev": "collections/immutable-list-creation",
   "next": "collections/immutable-set-creation",
   "related": [

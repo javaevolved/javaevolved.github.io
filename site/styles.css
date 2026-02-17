@@ -1032,6 +1032,16 @@ nav {
   background: rgba(251, 191, 36, .1);
 }
 
+.baseline-badge.preview {
+  color: var(--blue);
+  background: rgba(96, 165, 250, .1);
+}
+
+.baseline-badge.experimental {
+  color: var(--yellow);
+  background: rgba(251, 191, 36, .1);
+}
+
 /* ---------- Explanation ---------- */
 .explanation {
   margin: 40px 0;

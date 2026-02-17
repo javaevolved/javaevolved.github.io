@@ -30,7 +30,10 @@
       "desc": "Reads as 'try primary, or secondary, or defaults'."
     }
   ],
-  "support": "Widely available since JDK 9 (Sept 2017)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 9 (Sept 2017)"
+  },
   "prev": "streams/optional-ifpresentorelse",
   "next": "concurrency/virtual-threads",
   "related": [

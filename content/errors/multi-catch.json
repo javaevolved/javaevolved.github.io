@@ -30,7 +30,10 @@
       "desc": "All handled types are visible in one place."
     }
   ],
-  "support": "Widely available since JDK 7 (July 2011)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 7 (July 2011)"
+  },
   "prev": "errors/require-nonnull-else",
   "next": "errors/null-in-switch",
   "related": [

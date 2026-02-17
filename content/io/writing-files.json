@@ -30,7 +30,10 @@
       "desc": "Pass OpenOption flags for append, create, etc."
     }
   ],
-  "support": "Widely available since JDK 11 (Sept 2018)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 11 (Sept 2018)"
+  },
   "prev": "io/reading-files",
   "next": "io/inputstream-transferto",
   "related": [

@@ -30,7 +30,10 @@
       "desc": "Fit more objects in the same heap size."
     }
   ],
-  "support": "Finalized in JDK 25 LTS (JEP 519, Sept 2025).",
+  "support": {
+    "state": "available",
+    "description": "Finalized in JDK 25 LTS (JEP 519, Sept 2025)."
+  },
   "prev": "tooling/jfr-profiling",
   "next": "tooling/aot-class-preloading",
   "related": [

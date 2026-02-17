@@ -30,7 +30,10 @@
       "desc": "Works perfectly with Map.ofEntries() for large maps."
     }
   ],
-  "support": "Widely available since JDK 9 (Sept 2017)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 9 (Sept 2017)"
+  },
   "prev": "collections/copying-collections-immutably",
   "next": "collections/sequenced-collections",
   "related": [

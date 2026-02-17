@@ -30,7 +30,10 @@
       "desc": "The when clause reads like natural language."
     }
   ],
-  "support": "Widely available since JDK 21 LTS (Sept 2023)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
   "prev": "language/pattern-matching-switch",
   "next": "language/primitive-types-in-patterns",
   "related": [

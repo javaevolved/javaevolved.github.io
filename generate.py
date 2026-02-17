@@ -151,6 +151,14 @@ def render_social_share(social_share_template, slug, title):
     })
 
 
+def _support_badge(state):
+    return {"preview": "Preview", "experimental": "Experimental"}.get(state, "Available")
+
+
+def _support_badge_class(state):
+    return {"preview": "preview", "experimental": "experimental"}.get(state, "widely")
+
+
 def generate_html(template, why_card_template, related_card_template,
                   social_share_template, data, all_snippets):
     """Generate the full HTML page for a snippet by rendering the template."""
@@ -174,7 +182,9 @@ def generate_html(template, why_card_template, related_card_template,
         "oldApproach": escape(data["oldApproach"]),
         "modernApproach": escape(data["modernApproach"]),
         "explanation": escape(data["explanation"]),
-        "support": escape(data["support"]),
+        "supportDescription": escape(data["support"]["description"]),
+        "supportBadge": _support_badge(data["support"]["state"]),
+        "supportBadgeClass": _support_badge_class(data["support"]["state"]),
         "canonicalUrl": f"{BASE_URL}/{cat}/{slug}.html",
         "flatUrl": f"{BASE_URL}/{slug}.html",
         "titleJson": json_escape(data["title"]),

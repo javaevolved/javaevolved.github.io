@@ -30,7 +30,10 @@
       "desc": "The supplier runs exactly once, even under contention."
     }
   ],
-  "support": "Preview in JDK 25 (JEP 502). Requires --enable-preview.",
+  "support": {
+    "state": "preview",
+    "description": "Preview in JDK 25 (JEP 502). Requires --enable-preview."
+  },
   "prev": "concurrency/scoped-values",
   "next": "concurrency/completablefuture-chaining",
   "related": [

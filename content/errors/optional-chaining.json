@@ -30,7 +30,10 @@
       "desc": "null is handled at each step — no crash possible."
     }
   ],
-  "support": "Available since JDK 8+ (improved in 9+)",
+  "support": {
+    "state": "available",
+    "description": "Available since JDK 8+ (improved in 9+)"
+  },
   "prev": "errors/helpful-npe",
   "next": "errors/require-nonnull-else",
   "related": [

@@ -30,7 +30,10 @@
       "desc": "Reads naturally at the end of a pipeline."
     }
   ],
-  "support": "Widely available since JDK 16 (March 2021)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 16 (March 2021)"
+  },
   "prev": "streams/collectors-flatmapping",
   "next": "streams/stream-mapmulti",
   "related": [

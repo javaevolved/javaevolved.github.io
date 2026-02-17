@@ -30,7 +30,10 @@
       "desc": "Works with int, long, float, and double."
     }
   ],
-  "support": "Widely available since JDK 21 LTS (Sept 2023)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
   "prev": "datetime/instant-precision",
   "next": "datetime/hex-format",
   "related": [

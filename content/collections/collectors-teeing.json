@@ -30,7 +30,10 @@
       "desc": "Merge into a record or value object directly."
     }
   ],
-  "support": "Widely available since JDK 12 (March 2019)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 12 (March 2019)"
+  },
   "prev": "collections/sequenced-collections",
   "next": "collections/stream-toarray-typed",
   "related": [

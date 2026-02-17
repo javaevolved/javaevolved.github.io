@@ -30,7 +30,10 @@
       "desc": "Perfect for logging — shows all fields automatically."
     }
   ],
-  "support": "Widely available since JDK 16 (March 2021)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 16 (March 2021)"
+  },
   "prev": "errors/null-in-switch",
   "next": "datetime/java-time-basics",
   "related": [

@@ -30,7 +30,10 @@
       "desc": "try-with-resources handles shutdown automatically."
     }
   ],
-  "support": "Widely available since JDK 21 LTS (Sept 2023)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
   "prev": "streams/stream-gatherers",
   "next": "streams/optional-ifpresentorelse",
   "related": [

@@ -30,7 +30,10 @@
       "desc": "Emit zero, one, or many elements with full control."
     }
   ],
-  "support": "Widely available since JDK 16 (March 2021)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 16 (March 2021)"
+  },
   "prev": "streams/stream-tolist",
   "next": "streams/stream-gatherers",
   "related": [

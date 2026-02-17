@@ -30,7 +30,10 @@
       "desc": "Produces RFC 7468-compliant PEM output."
     }
   ],
-  "support": "Preview in JDK 25 (JEP 470). Requires --enable-preview.",
+  "support": {
+    "state": "preview",
+    "description": "Preview in JDK 25 (JEP 470). Requires --enable-preview."
+  },
   "prev": "datetime/hex-format",
   "next": "security/key-derivation-functions",
   "related": [

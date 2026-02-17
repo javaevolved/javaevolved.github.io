@@ -30,7 +30,10 @@
       "desc": "No synchronization needed — share freely across threads."
     }
   ],
-  "support": "Widely available since JDK 8 (March 2014)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 8 (March 2014)"
+  },
   "prev": "errors/record-based-errors",
   "next": "datetime/duration-and-period",
   "related": [

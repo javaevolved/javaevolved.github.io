@@ -30,7 +30,10 @@
       "desc": "exceptionally() and handle() for clean error recovery."
     }
   ],
-  "support": "Widely available since JDK 8 (March 2014)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 8 (March 2014)"
+  },
   "prev": "concurrency/stable-values",
   "next": "concurrency/executor-try-with-resources",
   "related": [

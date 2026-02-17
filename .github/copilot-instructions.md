@@ -71,7 +71,10 @@ Each `content/category/slug.json` file has this structure:
     { "icon": "👁", "title": "Short title", "desc": "One sentence." },
     { "icon": "🔒", "title": "Short title", "desc": "One sentence." }
   ],
-  "support": "Widely available since JDK 10 (March 2018)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 10 (March 2018)"
+  },
   "prev": "category/slug-of-previous",
   "next": "category/slug-of-next",
   "related": [

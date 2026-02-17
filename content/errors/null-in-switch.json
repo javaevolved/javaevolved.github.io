@@ -30,7 +30,10 @@
       "desc": "All cases including null in a single switch expression."
     }
   ],
-  "support": "Widely available since JDK 21 LTS (Sept 2023)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 21 LTS (Sept 2023)"
+  },
   "prev": "errors/multi-catch",
   "next": "errors/record-based-errors",
   "related": [

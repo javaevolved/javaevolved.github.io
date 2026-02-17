@@ -30,7 +30,10 @@
       "desc": "Unified API for all key derivation algorithms."
     }
   ],
-  "support": "Finalized in JDK 25 LTS (JEP 510, Sept 2025).",
+  "support": {
+    "state": "available",
+    "description": "Finalized in JDK 25 LTS (JEP 510, Sept 2025)."
+  },
   "prev": "security/pem-encoding",
   "next": "security/strong-random",
   "related": [

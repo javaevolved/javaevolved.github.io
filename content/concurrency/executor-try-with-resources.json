@@ -30,7 +30,10 @@
       "desc": "Same try-with-resources used for files, connections, etc."
     }
   ],
-  "support": "Widely available since JDK 19 (Sept 2022)",
+  "support": {
+    "state": "available",
+    "description": "Widely available since JDK 19 (Sept 2022)"
+  },
   "prev": "concurrency/completablefuture-chaining",
   "next": "concurrency/thread-sleep-duration",
   "related": [
