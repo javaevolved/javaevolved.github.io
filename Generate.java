@@ -36,21 +36,22 @@ static final String SITE_DIR = "site";
 static final Pattern TOKEN_PATTERN = Pattern.compile("\\{\\{(\\w+)}}");
 static final ObjectMapper MAPPER = new ObjectMapper();
 
-static final List<String> CATEGORIES = List.of(
-        "language", "collections", "strings", "streams", "concurrency",
-        "io", "errors", "datetime", "security", "tooling");
+static final SequencedMap<String, String> CATEGORY_DISPLAY = buildCategoryDisplay();
 
-static final Map<String, String> CATEGORY_DISPLAY = Map.ofEntries(
-        Map.entry("language", "Language"),
-        Map.entry("collections", "Collections"),
-        Map.entry("strings", "Strings"),
-        Map.entry("streams", "Streams"),
-        Map.entry("concurrency", "Concurrency"),
-        Map.entry("io", "I/O"),
-        Map.entry("errors", "Errors"),
-        Map.entry("datetime", "Date/Time"),
-        Map.entry("security", "Security"),
-        Map.entry("tooling", "Tooling"));
+static SequencedMap<String, String> buildCategoryDisplay() {
+    var map = new LinkedHashMap<String, String>();
+    map.put("language", "Language");
+    map.put("collections", "Collections");
+    map.put("strings", "Strings");
+    map.put("streams", "Streams");
+    map.put("concurrency", "Concurrency");
+    map.put("io", "I/O");
+    map.put("errors", "Errors");
+    map.put("datetime", "Date/Time");
+    map.put("security", "Security");
+    map.put("tooling", "Tooling");
+    return map;
+}
 
 static final Set<String> EXCLUDED_KEYS = Set.of("_path", "prev", "next", "related");
 
@@ -152,7 +153,7 @@ void main() throws IOException {
 
 SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
     SequencedMap<String, Snippet> snippets = new LinkedHashMap<>();
-    for (var cat : CATEGORIES) {
+    for (var cat : CATEGORY_DISPLAY.sequencedKeySet()) {
         var catDir = Path.of(CONTENT_DIR, cat);
         if (!Files.isDirectory(catDir)) continue;
 
