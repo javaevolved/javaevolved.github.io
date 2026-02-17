@@ -40,5 +40,15 @@
     "datetime/java-time-basics",
     "datetime/date-formatting",
     "datetime/math-clamp"
+  ],
+  "docs": [
+    {
+      "title": "Duration",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html"
+    },
+    {
+      "title": "Period",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Period.html"
+    }
   ]
 }

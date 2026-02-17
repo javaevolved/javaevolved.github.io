@@ -40,5 +40,15 @@
     "strings/string-isblank",
     "strings/string-strip",
     "strings/multiline-json-sql"
+  ],
+  "docs": [
+    {
+      "title": "String.indent()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#indent(int)"
+    },
+    {
+      "title": "String.transform()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#transform(java.util.function.Function)"
+    }
   ]
 }

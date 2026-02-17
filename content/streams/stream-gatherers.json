@@ -40,5 +40,15 @@
     "streams/stream-of-nullable",
     "streams/stream-iterate-predicate",
     "streams/stream-takewhile-dropwhile"
+  ],
+  "docs": [
+    {
+      "title": "Stream Gatherers (JEP 485)",
+      "href": "https://openjdk.org/jeps/485"
+    },
+    {
+      "title": "Gatherers",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Gatherers.html"
+    }
   ]
 }

@@ -13,6 +13,7 @@ TEMPLATE_FILE = "templates/slug-template.html"
 WHY_CARD_TEMPLATE = "templates/why-card.html"
 RELATED_CARD_TEMPLATE = "templates/related-card.html"
 SOCIAL_SHARE_TEMPLATE = "templates/social-share.html"
+DOC_LINK_TEMPLATE = "templates/doc-link.html"
 INDEX_TEMPLATE = "templates/index.html"
 INDEX_CARD_TEMPLATE = "templates/index-card.html"
 CONTENT_DIR = "content"
@@ -153,6 +154,17 @@ def render_social_share(social_share_template, slug, title):
     })
 
 
+def render_doc_links(doc_link_template, docs):
+    """Render documentation links."""
+    return "\n".join(
+        replace_tokens(doc_link_template, {
+            "docTitle": escape(d["title"]),
+            "docHref": d["href"],
+        })
+        for d in docs
+    )
+
+
 def _support_badge(state):
     return {"preview": "Preview", "experimental": "Experimental"}.get(state, "Available")
 
@@ -176,7 +188,7 @@ def render_index_card(index_card_template, data):
 
 
 def generate_html(template, why_card_template, related_card_template,
-                  social_share_template, data, all_snippets):
+                  social_share_template, doc_link_template, data, all_snippets):
     """Generate the full HTML page for a snippet by rendering the template."""
     cat = data["category"]
     slug = data["slug"]
@@ -208,6 +220,7 @@ def generate_html(template, why_card_template, related_card_template,
         "categoryDisplayJson": json_escape(cat_display),
         "navArrows": render_nav_arrows(data),
         "whyCards": render_why_cards(why_card_template, data["whyModernWins"]),
+        "docLinks": render_doc_links(doc_link_template, data.get("docs", [])),
         "relatedCards": render_related_section(related_card_template, data.get("related", []), all_snippets),
         "socialShare": render_social_share(social_share_template, slug, data["title"]),
     }
@@ -220,6 +233,7 @@ def main():
     why_card_template = open(WHY_CARD_TEMPLATE).read()
     related_card_template = open(RELATED_CARD_TEMPLATE).read()
     social_share_template = open(SOCIAL_SHARE_TEMPLATE).read()
+    doc_link_template = open(DOC_LINK_TEMPLATE).read()
     index_template = open(INDEX_TEMPLATE).read()
     index_card_template = open(INDEX_CARD_TEMPLATE).read()
     all_snippets = load_all_snippets()
@@ -228,7 +242,7 @@ def main():
     for key, data in all_snippets.items():
         html_content = generate_html(
             template, why_card_template, related_card_template,
-            social_share_template, data, all_snippets
+            social_share_template, doc_link_template, data, all_snippets
         ).strip()
         out_dir = os.path.join(SITE_DIR, data['category'])
         os.makedirs(out_dir, exist_ok=True)

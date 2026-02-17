@@ -40,5 +40,11 @@
     "tooling/jshell-prototyping",
     "tooling/single-file-execution",
     "tooling/multi-file-source"
+  ],
+  "docs": [
+    {
+      "title": "Compact Object Headers (JEP 519)",
+      "href": "https://openjdk.org/jeps/519"
+    }
   ]
 }

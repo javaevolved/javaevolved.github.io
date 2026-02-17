@@ -40,5 +40,11 @@
     "errors/null-in-switch",
     "errors/multi-catch",
     "errors/require-nonnull-else"
+  ],
+  "docs": [
+    {
+      "title": "Helpful NullPointerExceptions (JEP 358)",
+      "href": "https://openjdk.org/jeps/358"
+    }
   ]
 }

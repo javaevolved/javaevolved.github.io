@@ -14,9 +14,21 @@
   "summary": "Use the RandomGenerator interface to choose random number algorithms by name without coupling to a specific class.",
   "explanation": "JDK 17 introduced RandomGenerator as a common interface for all RNG implementations. Instead of hard-coding new Random() or ThreadLocalRandom, you can select algorithms by name via a factory, making it easy to swap between algorithms optimized for different use cases (speed, statistical quality, splittability).",
   "whyModernWins": [
-    { "icon": "🔧", "title": "Algorithm-agnostic", "desc": "Choose the best RNG algorithm by name without changing code structure." },
-    { "icon": "⚡", "title": "Better algorithms", "desc": "Access to modern LXM generators with superior statistical properties." },
-    { "icon": "🔗", "title": "Unified API", "desc": "One interface covers Random, ThreadLocalRandom, SplittableRandom, and more." }
+    {
+      "icon": "🔧",
+      "title": "Algorithm-agnostic",
+      "desc": "Choose the best RNG algorithm by name without changing code structure."
+    },
+    {
+      "icon": "⚡",
+      "title": "Better algorithms",
+      "desc": "Access to modern LXM generators with superior statistical properties."
+    },
+    {
+      "icon": "🔗",
+      "title": "Unified API",
+      "desc": "One interface covers Random, ThreadLocalRandom, SplittableRandom, and more."
+    }
   ],
   "support": {
     "state": "available",
@@ -28,5 +40,15 @@
     "security/strong-random",
     "security/key-derivation-functions",
     "concurrency/virtual-threads"
+  ],
+  "docs": [
+    {
+      "title": "RandomGenerator",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/random/RandomGenerator.html"
+    },
+    {
+      "title": "New Random Generator API (JEP 356)",
+      "href": "https://openjdk.org/jeps/356"
+    }
   ]
 }

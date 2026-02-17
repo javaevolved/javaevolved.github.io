@@ -40,5 +40,15 @@
     "concurrency/virtual-threads",
     "concurrency/scoped-values",
     "concurrency/stable-values"
+  ],
+  "docs": [
+    {
+      "title": "Structured Concurrency (JEP 499)",
+      "href": "https://openjdk.org/jeps/499"
+    },
+    {
+      "title": "StructuredTaskScope",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/StructuredTaskScope.html"
+    }
   ]
 }

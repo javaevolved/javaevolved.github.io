@@ -40,5 +40,15 @@
     "tooling/jshell-prototyping",
     "tooling/single-file-execution",
     "tooling/multi-file-source"
+  ],
+  "docs": [
+    {
+      "title": "Ahead-of-Time Command-Line Ergonomics (JEP 514)",
+      "href": "https://openjdk.org/jeps/514"
+    },
+    {
+      "title": "AOT Cache (JEP 515)",
+      "href": "https://openjdk.org/jeps/515"
+    }
   ]
 }

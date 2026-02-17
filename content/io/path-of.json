@@ -40,5 +40,11 @@
     "io/inputstream-transferto",
     "io/reading-files",
     "io/try-with-resources-effectively-final"
+  ],
+  "docs": [
+    {
+      "title": "Path.of()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Path.html#of(java.lang.String,java.lang.String...)"
+    }
   ]
 }

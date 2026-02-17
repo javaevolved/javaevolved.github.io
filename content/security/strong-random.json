@@ -40,5 +40,11 @@
     "security/pem-encoding",
     "security/key-derivation-functions",
     "security/tls-default"
+  ],
+  "docs": [
+    {
+      "title": "SecureRandom",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/security/SecureRandom.html"
+    }
   ]
 }

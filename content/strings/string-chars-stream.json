@@ -40,5 +40,15 @@
     "strings/string-repeat",
     "strings/string-isblank",
     "strings/string-formatted"
+  ],
+  "docs": [
+    {
+      "title": "String.chars()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#chars()"
+    },
+    {
+      "title": "CharSequence.codePoints()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/CharSequence.html#codePoints()"
+    }
   ]
 }

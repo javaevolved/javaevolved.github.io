@@ -40,5 +40,11 @@
     "tooling/multi-file-source",
     "tooling/compact-object-headers",
     "tooling/jfr-profiling"
+  ],
+  "docs": [
+    {
+      "title": "Launch Single-File Source-Code Programs (JEP 330)",
+      "href": "https://openjdk.org/jeps/330"
+    }
   ]
 }

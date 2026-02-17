@@ -40,5 +40,15 @@
     "errors/helpful-npe",
     "errors/record-based-errors",
     "errors/optional-chaining"
+  ],
+  "docs": [
+    {
+      "title": "Objects.requireNonNullElse()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Objects.html#requireNonNullElse(T,T)"
+    },
+    {
+      "title": "Objects.requireNonNullElseGet()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Objects.html#requireNonNullElseGet(T,java.util.function.Supplier)"
+    }
   ]
 }

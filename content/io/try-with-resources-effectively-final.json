@@ -40,5 +40,11 @@
     "io/path-of",
     "io/reading-files",
     "io/http-client"
+  ],
+  "docs": [
+    {
+      "title": "The try-with-resources Statement",
+      "href": "https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html"
+    }
   ]
 }

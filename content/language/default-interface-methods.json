@@ -40,5 +40,11 @@
     "language/private-interface-methods",
     "language/pattern-matching-instanceof",
     "language/sealed-classes"
+  ],
+  "docs": [
+    {
+      "title": "Default Methods (Java Tutorial)",
+      "href": "https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html"
+    }
   ]
 }

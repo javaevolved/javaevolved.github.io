@@ -40,5 +40,11 @@
     "language/switch-expressions",
     "language/module-import-declarations",
     "language/pattern-matching-switch"
+  ],
+  "docs": [
+    {
+      "title": "Sealed Classes (JEP 409)",
+      "href": "https://openjdk.org/jeps/409"
+    }
   ]
 }

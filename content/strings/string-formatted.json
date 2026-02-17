@@ -40,5 +40,11 @@
     "strings/multiline-json-sql",
     "strings/string-strip",
     "strings/multiline-json-sql"
+  ],
+  "docs": [
+    {
+      "title": "String.formatted()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...)"
+    }
   ]
 }

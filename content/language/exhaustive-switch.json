@@ -40,5 +40,15 @@
     "language/sealed-classes",
     "language/pattern-matching-instanceof",
     "language/type-inference-with-var"
+  ],
+  "docs": [
+    {
+      "title": "Pattern Matching for switch (JEP 441)",
+      "href": "https://openjdk.org/jeps/441"
+    },
+    {
+      "title": "Sealed Classes (JEP 409)",
+      "href": "https://openjdk.org/jeps/409"
+    }
   ]
 }

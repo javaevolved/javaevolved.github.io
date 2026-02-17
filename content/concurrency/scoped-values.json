@@ -40,5 +40,15 @@
     "concurrency/virtual-threads",
     "concurrency/structured-concurrency",
     "concurrency/stable-values"
+  ],
+  "docs": [
+    {
+      "title": "Scoped Values (JEP 487)",
+      "href": "https://openjdk.org/jeps/487"
+    },
+    {
+      "title": "ScopedValue",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html"
+    }
   ]
 }

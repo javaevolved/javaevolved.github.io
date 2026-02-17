@@ -14,9 +14,21 @@
   "summary": "Use Optional.orElseThrow() as a clearer, intent-revealing alternative to get().",
   "explanation": "Optional.get() is widely considered a code smell because it hides the possibility of failure. The no-arg orElseThrow(), added in Java 10, does exactly the same thing but makes the intent explicit: the developer expects a value and wants an exception if absent.",
   "whyModernWins": [
-    { "icon": "📖", "title": "Self-documenting", "desc": "orElseThrow() clearly signals that absence is unexpected." },
-    { "icon": "🔒", "title": "Avoids get()", "desc": "Static analysis tools flag get() as risky; orElseThrow() is idiomatic." },
-    { "icon": "⚡", "title": "Less boilerplate", "desc": "No need to pass a supplier for the default NoSuchElementException." }
+    {
+      "icon": "📖",
+      "title": "Self-documenting",
+      "desc": "orElseThrow() clearly signals that absence is unexpected."
+    },
+    {
+      "icon": "🔒",
+      "title": "Avoids get()",
+      "desc": "Static analysis tools flag get() as risky; orElseThrow() is idiomatic."
+    },
+    {
+      "icon": "⚡",
+      "title": "Less boilerplate",
+      "desc": "No need to pass a supplier for the default NoSuchElementException."
+    }
   ],
   "support": {
     "state": "available",
@@ -28,5 +40,11 @@
     "errors/optional-chaining",
     "streams/optional-or",
     "errors/require-nonnull-else"
+  ],
+  "docs": [
+    {
+      "title": "Optional.orElseThrow()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html#orElseThrow()"
+    }
   ]
 }

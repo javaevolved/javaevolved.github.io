@@ -40,5 +40,11 @@
     "security/pem-encoding",
     "security/strong-random",
     "security/tls-default"
+  ],
+  "docs": [
+    {
+      "title": "Key Derivation Functions (JEP 478)",
+      "href": "https://openjdk.org/jeps/478"
+    }
   ]
 }

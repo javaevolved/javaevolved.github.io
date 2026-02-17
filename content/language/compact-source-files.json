@@ -40,5 +40,11 @@
     "language/type-inference-with-var",
     "language/text-blocks-for-multiline-strings",
     "language/switch-expressions"
+  ],
+  "docs": [
+    {
+      "title": "Simple Source Files and Instance Main Methods (JEP 495)",
+      "href": "https://openjdk.org/jeps/495"
+    }
   ]
 }

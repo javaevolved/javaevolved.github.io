@@ -40,5 +40,15 @@
     "collections/immutable-map-creation",
     "collections/immutable-set-creation",
     "collections/sequenced-collections"
+  ],
+  "docs": [
+    {
+      "title": "List.of()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#of()"
+    },
+    {
+      "title": "Collections Factory Methods (JEP 269)",
+      "href": "https://openjdk.org/jeps/269"
+    }
   ]
 }

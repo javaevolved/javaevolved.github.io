@@ -14,9 +14,21 @@
   "summary": "Java 18 includes a built-in minimal HTTP server for prototyping and file serving.",
   "explanation": "JDK 18 added a simple, zero-dependency HTTP file server accessible via the jwebserver command-line tool or the SimpleFileServer API. It serves static files from a given directory with no configuration needed. The CLI tool is ideal for quick prototyping, testing, and ad-hoc file sharing — no external dependencies or frameworks required. The API allows programmatic use with customizable handlers and output levels.",
   "whyModernWins": [
-    { "icon": "🚀", "title": "Zero setup", "desc": "Run jwebserver in any directory — no installation, config, or dependencies needed." },
-    { "icon": "📦", "title": "Built into the JDK", "desc": "Ships with every JDK 18+ installation, always available on any machine with Java." },
-    { "icon": "🧪", "title": "Great for prototyping", "desc": "Serve static files instantly for testing HTML, APIs, or front-end development." }
+    {
+      "icon": "🚀",
+      "title": "Zero setup",
+      "desc": "Run jwebserver in any directory — no installation, config, or dependencies needed."
+    },
+    {
+      "icon": "📦",
+      "title": "Built into the JDK",
+      "desc": "Ships with every JDK 18+ installation, always available on any machine with Java."
+    },
+    {
+      "icon": "🧪",
+      "title": "Great for prototyping",
+      "desc": "Serve static files instantly for testing HTML, APIs, or front-end development."
+    }
   ],
   "support": {
     "state": "available",
@@ -28,5 +40,19 @@
     "io/http-client",
     "tooling/single-file-execution",
     "tooling/jshell-prototyping"
+  ],
+  "docs": [
+    {
+      "title": "Simple Web Server (JEP 408)",
+      "href": "https://openjdk.org/jeps/408"
+    },
+    {
+      "title": "SimpleFileServer",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/jdk.httpserver/com/sun/net/httpserver/SimpleFileServer.html"
+    },
+    {
+      "title": "jwebserver Tool",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/jwebserver.html"
+    }
   ]
 }

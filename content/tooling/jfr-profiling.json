@@ -40,5 +40,15 @@
     "tooling/multi-file-source",
     "tooling/jshell-prototyping",
     "tooling/single-file-execution"
+  ],
+  "docs": [
+    {
+      "title": "JDK Flight Recorder",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/specs/man/jfr.html"
+    },
+    {
+      "title": "Flight Recorder API (JEP 328)",
+      "href": "https://openjdk.org/jeps/328"
+    }
   ]
 }

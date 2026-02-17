@@ -62,7 +62,7 @@ record Snippet(JsonNode node) {
 }
 
 record Templates(String page, String whyCard, String relatedCard, String socialShare,
-                 String index, String indexCard) {
+                 String index, String indexCard, String docLink) {
     static Templates load() throws IOException {
         return new Templates(
             Files.readString(Path.of("templates/slug-template.html")),
@@ -70,7 +70,8 @@ record Templates(String page, String whyCard, String relatedCard, String socialS
             Files.readString(Path.of("templates/related-card.html")),
             Files.readString(Path.of("templates/social-share.html")),
             Files.readString(Path.of("templates/index.html")),
-            Files.readString(Path.of("templates/index-card.html")));
+            Files.readString(Path.of("templates/index-card.html")),
+            Files.readString(Path.of("templates/doc-link.html")));
     }
 }
 
@@ -202,6 +203,15 @@ String renderRelatedCard(String tpl, Snippet rel) {
             Map.entry("jdkVersion", rel.jdkVersion())));
 }
 
+String renderDocLinks(String tpl, JsonNode docs) {
+    var links = new ArrayList<String>();
+    for (var d : docs)
+        links.add(replaceTokens(tpl, Map.of(
+                "docTitle", escape(d.get("title").asText()),
+                "docHref", d.get("href").asText())));
+    return String.join("\n", links);
+}
+
 String renderRelatedSection(String tpl, Snippet snippet, Map<String, Snippet> all) {
     return snippet.related().stream().filter(all::containsKey)
             .map(p -> renderRelatedCard(tpl, all.get(p)))
@@ -233,6 +243,7 @@ String generateHtml(Templates tpl, Snippet s, Map<String, Snippet> all) throws I
             Map.entry("categoryDisplayJson", jsonEscape(s.catDisplay())),
             Map.entry("navArrows", renderNavArrows(s)),
             Map.entry("whyCards", renderWhyCards(tpl.whyCard(), s.whyModernWins())),
+            Map.entry("docLinks", renderDocLinks(tpl.docLink(), s.node().withArray("docs"))),
             Map.entry("relatedCards", renderRelatedSection(tpl.relatedCard(), s, all)),
             Map.entry("socialShare", renderSocialShare(tpl.socialShare(), s.slug(), s.title()))));
 }

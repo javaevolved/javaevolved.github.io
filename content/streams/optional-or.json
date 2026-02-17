@@ -40,5 +40,11 @@
     "streams/stream-iterate-predicate",
     "streams/stream-gatherers",
     "streams/stream-of-nullable"
+  ],
+  "docs": [
+    {
+      "title": "Optional.or()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html#or(java.util.function.Supplier)"
+    }
   ]
 }

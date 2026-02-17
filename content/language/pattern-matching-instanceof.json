@@ -40,5 +40,11 @@
     "language/compact-source-files",
     "language/type-inference-with-var",
     "language/text-blocks-for-multiline-strings"
+  ],
+  "docs": [
+    {
+      "title": "Pattern Matching for instanceof (JEP 394)",
+      "href": "https://openjdk.org/jeps/394"
+    }
   ]
 }

@@ -40,5 +40,11 @@
     "errors/null-in-switch",
     "errors/helpful-npe",
     "errors/require-nonnull-else"
+  ],
+  "docs": [
+    {
+      "title": "The catch Blocks",
+      "href": "https://docs.oracle.com/javase/tutorial/essential/exceptions/catch.html"
+    }
   ]
 }

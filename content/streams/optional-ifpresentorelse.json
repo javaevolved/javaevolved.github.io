@@ -40,5 +40,11 @@
     "streams/stream-tolist",
     "streams/stream-gatherers",
     "streams/collectors-flatmapping"
+  ],
+  "docs": [
+    {
+      "title": "Optional.ifPresentOrElse()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html#ifPresentOrElse(java.util.function.Consumer,java.lang.Runnable)"
+    }
   ]
 }

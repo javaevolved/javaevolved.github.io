@@ -40,5 +40,15 @@
     "language/sealed-classes",
     "language/pattern-matching-instanceof",
     "language/exhaustive-switch"
+  ],
+  "docs": [
+    {
+      "title": "Local Variable Type Inference (JEP 286)",
+      "href": "https://openjdk.org/jeps/286"
+    },
+    {
+      "title": "Style Guidelines for var",
+      "href": "https://openjdk.org/projects/amber/guides/lvti-style-guide"
+    }
   ]
 }

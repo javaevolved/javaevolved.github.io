@@ -40,5 +40,11 @@
     "strings/string-formatted",
     "strings/string-repeat",
     "strings/string-strip"
+  ],
+  "docs": [
+    {
+      "title": "Text Blocks (JEP 378)",
+      "href": "https://openjdk.org/jeps/378"
+    }
   ]
 }

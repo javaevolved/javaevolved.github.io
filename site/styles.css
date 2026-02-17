@@ -1055,6 +1055,33 @@ nav {
   margin-bottom: 16px;
 }
 
+/* ---------- Documentation Links ---------- */
+.docs-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.doc-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.doc-link:hover {
+  border-color: var(--accent);
+  background: var(--bg);
+}
+
 /* ---------- Related ---------- */
 .related-grid {
   display: grid;

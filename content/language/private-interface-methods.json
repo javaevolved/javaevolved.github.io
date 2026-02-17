@@ -40,5 +40,11 @@
     "language/compact-source-files",
     "language/flexible-constructor-bodies",
     "language/type-inference-with-var"
+  ],
+  "docs": [
+    {
+      "title": "Private Interface Methods",
+      "href": "https://openjdk.org/jeps/213"
+    }
   ]
 }

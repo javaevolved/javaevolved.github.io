@@ -40,5 +40,15 @@
     "concurrency/scoped-values",
     "concurrency/concurrent-http-virtual",
     "concurrency/completablefuture-chaining"
+  ],
+  "docs": [
+    {
+      "title": "ProcessHandle",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ProcessHandle.html"
+    },
+    {
+      "title": "Process API (JEP 102)",
+      "href": "https://openjdk.org/jeps/102"
+    }
   ]
 }

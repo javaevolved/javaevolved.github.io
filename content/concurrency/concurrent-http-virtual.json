@@ -40,5 +40,15 @@
     "concurrency/structured-concurrency",
     "concurrency/stable-values",
     "concurrency/lock-free-lazy-init"
+  ],
+  "docs": [
+    {
+      "title": "Virtual Threads (JEP 444)",
+      "href": "https://openjdk.org/jeps/444"
+    },
+    {
+      "title": "HttpClient",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html"
+    }
   ]
 }

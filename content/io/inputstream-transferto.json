@@ -40,5 +40,11 @@
     "io/writing-files",
     "io/deserialization-filters",
     "io/try-with-resources-effectively-final"
+  ],
+  "docs": [
+    {
+      "title": "InputStream.transferTo()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/InputStream.html#transferTo(java.io.OutputStream)"
+    }
   ]
 }

@@ -40,5 +40,11 @@
     "streams/virtual-thread-executor",
     "streams/optional-or",
     "streams/optional-ifpresentorelse"
+  ],
+  "docs": [
+    {
+      "title": "Stream.iterate()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html#iterate(T,java.util.function.Predicate,java.util.function.UnaryOperator)"
+    }
   ]
 }

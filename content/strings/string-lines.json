@@ -14,9 +14,21 @@
   "summary": "Use String.lines() to split text into a stream of lines without regex overhead.",
   "explanation": "String.lines() returns a Stream<String> of lines split by \\n, \\r, or \\r\\n. It is lazier and more efficient than split(), avoids regex compilation, and integrates naturally with the Stream API for further processing.",
   "whyModernWins": [
-    { "icon": "⚡", "title": "Lazy streaming", "desc": "Lines are produced on demand, not all at once like split()." },
-    { "icon": "🔧", "title": "Universal line endings", "desc": "Handles \\n, \\r, and \\r\\n automatically without regex." },
-    { "icon": "🔗", "title": "Stream integration", "desc": "Returns a Stream for direct use with filter, map, collect." }
+    {
+      "icon": "⚡",
+      "title": "Lazy streaming",
+      "desc": "Lines are produced on demand, not all at once like split()."
+    },
+    {
+      "icon": "🔧",
+      "title": "Universal line endings",
+      "desc": "Handles \\n, \\r, and \\r\\n automatically without regex."
+    },
+    {
+      "icon": "🔗",
+      "title": "Stream integration",
+      "desc": "Returns a Stream for direct use with filter, map, collect."
+    }
   ],
   "support": {
     "state": "available",
@@ -28,5 +40,11 @@
     "strings/string-isblank",
     "strings/string-strip",
     "strings/string-indent-transform"
+  ],
+  "docs": [
+    {
+      "title": "String.lines()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#lines()"
+    }
   ]
 }

@@ -40,5 +40,11 @@
     "collections/copying-collections-immutably",
     "collections/unmodifiable-collectors",
     "collections/stream-toarray-typed"
+  ],
+  "docs": [
+    {
+      "title": "Collectors.teeing()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Collectors.html#teeing(java.util.stream.Collector,java.util.stream.Collector,java.util.function.BiFunction)"
+    }
   ]
 }

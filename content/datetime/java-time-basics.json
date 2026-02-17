@@ -40,5 +40,19 @@
     "datetime/instant-precision",
     "datetime/duration-and-period",
     "datetime/date-formatting"
+  ],
+  "docs": [
+    {
+      "title": "LocalDate",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html"
+    },
+    {
+      "title": "LocalTime",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalTime.html"
+    },
+    {
+      "title": "LocalDateTime",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDateTime.html"
+    }
   ]
 }

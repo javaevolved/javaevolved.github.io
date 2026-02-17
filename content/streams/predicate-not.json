@@ -14,9 +14,21 @@
   "summary": "Use Predicate.not() to negate method references cleanly instead of writing lambda wrappers.",
   "explanation": "Before Java 11, negating a method reference required wrapping it in a lambda. Predicate.not() lets you negate any predicate directly, keeping the code readable and consistent with method reference style throughout the stream pipeline.",
   "whyModernWins": [
-    { "icon": "👁", "title": "Cleaner negation", "desc": "No need to wrap method references in lambdas just to negate them." },
-    { "icon": "🔗", "title": "Composable", "desc": "Works with any Predicate, enabling clean predicate chains." },
-    { "icon": "📖", "title": "Reads naturally", "desc": "Predicate.not(String::isBlank) reads like English." }
+    {
+      "icon": "👁",
+      "title": "Cleaner negation",
+      "desc": "No need to wrap method references in lambdas just to negate them."
+    },
+    {
+      "icon": "🔗",
+      "title": "Composable",
+      "desc": "Works with any Predicate, enabling clean predicate chains."
+    },
+    {
+      "icon": "📖",
+      "title": "Reads naturally",
+      "desc": "Predicate.not(String::isBlank) reads like English."
+    }
   ],
   "support": {
     "state": "available",
@@ -28,5 +40,11 @@
     "streams/stream-tolist",
     "strings/string-isblank",
     "streams/stream-takewhile-dropwhile"
+  ],
+  "docs": [
+    {
+      "title": "Predicate.not()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#not(java.util.function.Predicate)"
+    }
   ]
 }

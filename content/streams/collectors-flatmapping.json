@@ -40,5 +40,11 @@
     "streams/optional-ifpresentorelse",
     "streams/stream-of-nullable",
     "streams/stream-iterate-predicate"
+  ],
+  "docs": [
+    {
+      "title": "Collectors.flatMapping()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Collectors.html#flatMapping(java.util.function.Function,java.util.stream.Collector)"
+    }
   ]
 }

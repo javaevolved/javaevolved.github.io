@@ -82,6 +82,9 @@ Each `content/category/slug.json` file has this structure:
     "category/slug-1",
     "category/slug-2",
     "category/slug-3"
+  ],
+  "docs": [
+    { "title": "Javadoc or Guide Title", "href": "https://docs.oracle.com/..." }
   ]
 }
 ```
@@ -92,6 +95,7 @@ Each `content/category/slug.json` file has this structure:
 - `category` must match the parent folder name
 - `whyModernWins` must have exactly **3** entries
 - `related` must have exactly **3** entries (as `category/slug` paths)
+- `docs` must have at least **1** entry linking to Javadoc or Oracle documentation
 - `prev`/`next` are `category/slug` paths or `null` for first/last
 - Code in `oldCode`/`modernCode` uses `\n` for newlines
 

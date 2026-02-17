@@ -40,5 +40,15 @@
     "concurrency/virtual-threads",
     "concurrency/structured-concurrency",
     "concurrency/scoped-values"
+  ],
+  "docs": [
+    {
+      "title": "Stable Values (JEP 502)",
+      "href": "https://openjdk.org/jeps/502"
+    },
+    {
+      "title": "StableValue",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StableValue.html"
+    }
   ]
 }

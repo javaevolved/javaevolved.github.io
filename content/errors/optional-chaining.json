@@ -40,5 +40,11 @@
     "errors/helpful-npe",
     "errors/multi-catch",
     "errors/require-nonnull-else"
+  ],
+  "docs": [
+    {
+      "title": "Optional",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html"
+    }
   ]
 }

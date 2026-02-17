@@ -40,5 +40,15 @@
     "io/try-with-resources-effectively-final",
     "io/writing-files",
     "io/files-mismatch"
+  ],
+  "docs": [
+    {
+      "title": "Files.readString()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Files.html#readString(java.nio.file.Path)"
+    },
+    {
+      "title": "Files.readAllLines()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Files.html#readAllLines(java.nio.file.Path)"
+    }
   ]
 }
