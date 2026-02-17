@@ -4,9 +4,9 @@ on:
   push:
     branches: [main]
     paths:
-      - 'content/*/**.json'
+      - 'content/**/*.json'
       - 'templates/**'
-      - 'generate.java'
+      - 'html-generators/generate.jar'
       - 'site/**'
   workflow_dispatch:
 
@@ -30,17 +30,8 @@ jobs:
           distribution: 'temurin'
           java-version: '25'
 
-      - uses: jbangdev/setup-jbang@main
-
-      - name: Cache JBang dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.jbang
-          key: jbang-${{ runner.os }}-${{ hashFiles('generate.java') }}
-          restore-keys: jbang-${{ runner.os }}-
-
       - name: Generate HTML pages and snippets.json
-        run: jbang generate.java
+        run: java -jar html-generators/generate.jar
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

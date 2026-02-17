@@ -1,4 +1,4 @@
-# Generated HTML detail pages (built by generate.java from JSON sources)
+# Generated HTML detail pages (built from JSON sources by html-generators/)
 site/language/*.html
 site/collections/*.html
 site/strings/*.html
@@ -10,5 +10,5 @@ site/datetime/*.html
 site/security/*.html
 site/tooling/*.html
 
-# Generated aggregate file (built by generate.java from individual JSON sources)
+# Generated aggregate file (built from individual JSON sources by html-generators/)
 site/data/snippets.json

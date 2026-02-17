@@ -36,38 +36,33 @@ Each comparison includes an explanation of *why* the modern approach is better, 
 
 This site uses a **JSON-first** build pipeline:
 
-- **Source of truth**: Individual `category/slug.json` files (85 across 10 category folders)
-- **Template**: `slug-template.html` — shared HTML template with `{{placeholder}}` tokens
-- **Generator**: `generate.java` — a [JBang](https://jbang.dev) script that produces all HTML detail pages and `data/snippets.json`
+- **Source of truth**: Individual `content/category/slug.json` files (85 across 10 category folders)
+- **Templates**: `templates/` — shared HTML templates with `{{placeholder}}` tokens
+- **Generator**: `html-generators/generate.jar` — pre-built fat JAR that produces all HTML detail pages and `data/snippets.json`
 - **Deploy**: GitHub Actions runs the generator and deploys to GitHub Pages
 
-Generated files (`category/*.html` and `data/snippets.json`) are in `.gitignore` — never edit them directly.
+Generated files (`site/category/*.html` and `site/data/snippets.json`) are in `.gitignore` — never edit them directly.
 
 ## Build & run locally
 
 ### Prerequisites
 
 - **Java 25+** (e.g. [Temurin](https://adoptium.net/))
-- **[JBang](https://jbang.dev)** (`brew install jbang` / `sdk install jbang` / [other options](https://www.jbang.dev/download/))
 
 ### Generate and serve
 
 ```bash
 # Generate all HTML pages and data/snippets.json into site/
-jbang generate.java
+java -jar html-generators/generate.jar
 
 # Serve locally
 python3 -m http.server -d site 8090
 # Open http://localhost:8090
 ```
 
-The generator is a compact source file (Java 25) that uses Jackson for JSON parsing. On first run, JBang resolves the Jackson dependency (~2s); subsequent runs use a cached jar (~0.8s).
+The fat JAR is a self-contained ~2.2 MB file with all dependencies bundled. No JBang installation needed.
 
-A Python equivalent (`generate.py`) is also available and produces identical output:
-
-```bash
-python3 generate.py
-```
+For development on the generator itself, you can use JBang or Python — see [html-generators/README.md](html-generators/README.md) for details.
 
 ## Contributing
 
@@ -76,7 +71,7 @@ Contributions are welcome! Content is managed as JSON files — never edit gener
 1. Fork the repo
 2. Create or edit a JSON file in the appropriate content folder (e.g. `content/language/my-feature.json`)
 3. Follow the [snippet JSON schema](.github/copilot-instructions.md) for all required fields
-4. Run `jbang generate.java` to verify your changes build correctly
+4. Run `java -jar html-generators/generate.jar` to verify your changes build correctly
 5. Update `site/index.html` with a new preview card if adding a new snippet
 6. Open a pull request
 
