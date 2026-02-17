@@ -36,6 +36,6 @@
   "related": [
     "collections/copying-collections-immutably",
     "collections/sequenced-collections",
-    "collections/stream-tolist-shorthand"
+    "streams/stream-tolist"
   ]
 }

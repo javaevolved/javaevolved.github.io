@@ -32,7 +32,7 @@
   ],
   "support": "Widely available since JDK 21 LTS (Sept 2023)",
   "prev": "collections/map-entry-factory",
-  "next": "collections/stream-tolist-shorthand",
+  "next": "collections/collectors-teeing",
   "related": [
     "collections/collectors-teeing",
     "collections/immutable-set-creation",

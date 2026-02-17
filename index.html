@@ -86,16 +86,15 @@
                 ,{"@type": "ListItem", "position": 22, "url": "https:\/\/javaevolved.github.io\/copying-collections-immutably", "name": "Copying collections immutably"}
                 ,{"@type": "ListItem", "position": 23, "url": "https:\/\/javaevolved.github.io\/map-entry-factory", "name": "Map.entry() factory"}
                 ,{"@type": "ListItem", "position": 24, "url": "https:\/\/javaevolved.github.io\/sequenced-collections", "name": "Sequenced collections"}
-                ,{"@type": "ListItem", "position": 25, "url": "https:\/\/javaevolved.github.io\/stream-tolist-shorthand", "name": "Stream toList() shorthand"}
-                ,{"@type": "ListItem", "position": 26, "url": "https:\/\/javaevolved.github.io\/collectors-teeing", "name": "Collectors.teeing()"}
-                ,{"@type": "ListItem", "position": 27, "url": "https:\/\/javaevolved.github.io\/stream-toarray-typed", "name": "Typed stream toArray"}
-                ,{"@type": "ListItem", "position": 28, "url": "https:\/\/javaevolved.github.io\/unmodifiable-collectors", "name": "Unmodifiable collectors"}
-                ,{"@type": "ListItem", "position": 29, "url": "https:\/\/javaevolved.github.io\/string-isblank", "name": "String.isBlank()"}
-                ,{"@type": "ListItem", "position": 30, "url": "https:\/\/javaevolved.github.io\/string-strip", "name": "String.strip() vs trim()"}
-                ,{"@type": "ListItem", "position": 31, "url": "https:\/\/javaevolved.github.io\/string-repeat", "name": "String.repeat()"}
-                ,{"@type": "ListItem", "position": 32, "url": "https:\/\/javaevolved.github.io\/string-indent-transform", "name": "String.indent() and transform()"}
-                ,{"@type": "ListItem", "position": 33, "url": "https:\/\/javaevolved.github.io\/string-formatted", "name": "String.formatted()"}
-                ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/multiline-json-sql", "name": "Multiline JSON\/SQL\/HTML"}
+                ,{"@type": "ListItem", "position": 25, "url": "https:\/\/javaevolved.github.io\/collectors-teeing", "name": "Collectors.teeing()"}
+                ,{"@type": "ListItem", "position": 26, "url": "https:\/\/javaevolved.github.io\/stream-toarray-typed", "name": "Typed stream toArray"}
+                ,{"@type": "ListItem", "position": 27, "url": "https:\/\/javaevolved.github.io\/unmodifiable-collectors", "name": "Unmodifiable collectors"}
+                ,{"@type": "ListItem", "position": 28, "url": "https:\/\/javaevolved.github.io\/string-isblank", "name": "String.isBlank()"}
+                ,{"@type": "ListItem", "position": 29, "url": "https:\/\/javaevolved.github.io\/string-strip", "name": "String.strip() vs trim()"}
+                ,{"@type": "ListItem", "position": 30, "url": "https:\/\/javaevolved.github.io\/string-repeat", "name": "String.repeat()"}
+                ,{"@type": "ListItem", "position": 31, "url": "https:\/\/javaevolved.github.io\/string-indent-transform", "name": "String.indent() and transform()"}
+                ,{"@type": "ListItem", "position": 32, "url": "https:\/\/javaevolved.github.io\/string-formatted", "name": "String.formatted()"}
+                ,{"@type": "ListItem", "position": 33, "url": "https:\/\/javaevolved.github.io\/multiline-json-sql", "name": "Multiline JSON\/SQL\/HTML"}
                 ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/string-chars-stream", "name": "String chars as stream"}
                 ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-of-nullable", "name": "Stream.ofNullable()"}
                 ,{"@type": "ListItem", "position": 34, "url": "https:\/\/javaevolved.github.io\/stream-iterate-predicate", "name": "Stream.iterate() with predicate"}
@@ -1011,33 +1010,6 @@ var reversed = list.reversed();</span>
         </div>
         <div class="tip-card-footer">
           <span class="browser-support"><span class="dot"></span> JDK 21+</span>
-          <span class="arrow-link">→</span>
-        </div>
-      </a>
-      <a href="/collections/stream-tolist-shorthand.html" class="tip-card" data-category="collections">
-        <div class="tip-card-body">
-          <div class="tip-card-header">
-            <div class="tip-badges"><span class="badge collections">Collections</span></div>
-          </div>
-          <h3>Stream toList() shorthand</h3>
-        </div>
-        <div class="card-code">
-          <div class="card-code-layer old-layer">
-            <span class="mini-label">Old</span>
-            <span class="code-text">List&lt;String&gt; names = people.stream()
-    .map(Person::name)
-    .collect(Collectors.toList());</span>
-          </div>
-          <div class="card-code-layer modern-layer">
-            <span class="mini-label">Modern</span>
-            <span class="code-text">List&lt;String&gt; names = people.stream()
-    .map(Person::name)
-    .toList();</span>
-          </div>
-          <span class="hover-hint">hover to see modern →</span>
-        </div>
-        <div class="tip-card-footer">
-          <span class="browser-support"><span class="dot"></span> JDK 16+</span>
           <span class="arrow-link">→</span>
         </div>
       </a>

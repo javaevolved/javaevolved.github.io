@@ -31,7 +31,7 @@
     }
   ],
   "support": "Widely available since JDK 12 (March 2019)",
-  "prev": "collections/stream-tolist-shorthand",
+  "prev": "collections/sequenced-collections",
   "next": "collections/stream-toarray-typed",
   "related": [
     "collections/copying-collections-immutably",
