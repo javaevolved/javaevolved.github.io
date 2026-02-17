@@ -39,6 +39,6 @@
   "related": [
     "language/sealed-classes",
     "language/pattern-matching-instanceof",
-    "language/enhanced-for-with-var"
+    "language/type-inference-with-var"
   ]
 }

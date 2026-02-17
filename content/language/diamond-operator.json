@@ -34,7 +34,7 @@
     "state": "available",
     "description": "Diamond with anonymous classes since JDK 9 (Sept 2017)."
   },
-  "prev": "language/enhanced-for-with-var",
+  "prev": "language/flexible-constructor-bodies",
   "next": "language/private-interface-methods",
   "related": [
     "language/type-inference-with-var",

@@ -35,7 +35,7 @@
     "description": "Finalized in JDK 25 LTS (JEP 513, Sept 2025)."
   },
   "prev": "language/compact-source-files",
-  "next": "language/enhanced-for-with-var",
+  "next": "language/diamond-operator",
   "related": [
     "language/type-inference-with-var",
     "language/text-blocks-for-multiline-strings",

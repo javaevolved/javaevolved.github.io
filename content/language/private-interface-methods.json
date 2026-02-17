@@ -39,6 +39,6 @@
   "related": [
     "language/compact-source-files",
     "language/flexible-constructor-bodies",
-    "language/enhanced-for-with-var"
+    "language/type-inference-with-var"
   ]
 }
