@@ -9,6 +9,7 @@ This folder contains the build scripts that generate all HTML detail pages and `
 | `generate.java` | JBang script (Java 25) — primary generator |
 | `generate.py` | Python equivalent — produces identical output |
 | `generate.jar` | Pre-built fat JAR (no JBang/JDK setup needed) |
+| `build-cds.sh` | Script to build a platform-specific AOT cache |
 
 ## Running
 
@@ -20,7 +21,19 @@ java -jar html-generators/generate.jar
 
 Requires only a Java 25+ runtime — no JBang installation needed.
 
-### Option 2: JBang (for development)
+### Option 2: Fat JAR with AOT cache (fastest possible)
+
+```bash
+# One-time: build the AOT cache (~21 MB, platform-specific)
+./html-generators/build-cds.sh
+
+# Subsequent runs use the cache
+java -XX:AOTCache=html-generators/generate.aot -jar html-generators/generate.jar
+```
+
+The AOT cache (Java 25, JEP 514/515) pre-loads classes from a training run, reducing startup time by ~30%. The cache is platform-specific and is not committed to git — regenerate it after changing the JAR or JDK version.
+
+### Option 3: JBang (for development)
 
 ```bash
 jbang html-generators/generate.java
@@ -28,7 +41,7 @@ jbang html-generators/generate.java
 
 Requires [JBang](https://jbang.dev) and Java 25+.
 
-### Option 3: Python
+### Option 4: Python
 
 ```bash
 python3 html-generators/generate.py
