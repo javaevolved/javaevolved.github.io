@@ -2,7 +2,7 @@
 
 **Java has evolved. Your code can too.**
 
-A collection of 85 side-by-side code comparisons showing old Java patterns next to their clean, modern replacements — from Java 8 all the way to Java 25.
+A collection of side-by-side code comparisons showing old Java patterns next to their clean, modern replacements — from Java 8 all the way to Java 25.
 
 🔗 **[javaevolved.github.io](https://javaevolved.github.io)**
 
