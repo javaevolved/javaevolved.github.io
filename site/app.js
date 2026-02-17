@@ -157,14 +157,18 @@
     pills.forEach(pill => {
       pill.addEventListener('click', () => {
         const category = pill.dataset.filter || 'all';
+        const wasActive = pill.classList.contains('active');
 
-        // Update active pill
+        // Update active pill (toggle off if re-clicked)
         pills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
+        if (!wasActive) pill.classList.add('active');
+
+        const showAll = (!wasActive && category === 'all');
+        const showCategory = (!wasActive && category !== 'all') ? category : null;
 
         // Filter cards
         cards.forEach(card => {
-          if (category === 'all' || card.dataset.category === category) {
+          if (showAll || card.dataset.category === showCategory) {
             card.classList.remove('filter-hidden');
           } else {
             card.classList.add('filter-hidden');
