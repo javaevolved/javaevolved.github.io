@@ -32,7 +32,7 @@
   ],
   "support": {
     "state": "available",
-    "description": "Available in JDK 25 LTS (JEPs 514/515, Sept 2025). Experimental."
+    "description": "Available as a standard feature in JDK 25 LTS (JEPs 514/515, Sept 2025)."
   },
   "prev": "tooling/built-in-http-server",
   "next": "language/default-interface-methods",
