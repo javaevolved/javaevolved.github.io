@@ -45,7 +45,7 @@
     "oldApproach": "String Concatenation",
     "modernApproach": "Text Blocks",
     "oldCode": "String json = \"{\\n\" +\n    \"  \\\"name\\\": \\\"Duke\\\",\\n\" +\n    \"  \\\"age\\\": 30\\n\" +\n    \"}\";",
-    "modernCode": "String json = \"\"\"\n    {\n      \"name\": \"Duke\",\n      \"age\": 30\n    }\n    \"\"\";",
+    "modernCode": "String json = \"\"\"\n    {\n      \"name\": \"Duke\",\n      \"age\": 30\n    }\"\"\";",
     "summary": "Write multiline strings naturally with triple-quote text blocks.",
     "explanation": "Text blocks let you write multiline strings exactly as they appear. No more escaping quotes or adding \\n. The compiler strips incidental indentation automatically.",
     "whyModernWins": [
@@ -1133,7 +1133,7 @@
     "oldApproach": "Escaped Strings",
     "modernApproach": "Text Blocks",
     "oldCode": "String sql =\n    \"SELECT u.name, u.email\\n\" +\n    \"FROM users u\\n\" +\n    \"WHERE u.active = true\\n\" +\n    \"ORDER BY u.name\";",
-    "modernCode": "String sql = \"\"\"\n    SELECT u.name, u.email\n    FROM users u\n    WHERE u.active = true\n    ORDER BY u.name\n    \"\"\";",
+    "modernCode": "String sql = \"\"\"\n    SELECT u.name, u.email\n    FROM users u\n    WHERE u.active = true\n    ORDER BY u.name\"\"\";",
     "summary": "Write SQL, JSON, and HTML as they actually look.",
     "explanation": "Text blocks make embedded languages readable. Copy SQL from your database tool and paste it directly. The closing delimiter position controls indentation stripping.",
     "whyModernWins": [
@@ -2424,8 +2424,8 @@
     "modernLabel": "Java 8+",
     "oldApproach": "SimpleDateFormat",
     "modernApproach": "DateTimeFormatter",
-    "oldCode": "// Not thread-safe!\nSimpleDateFormat sdf =\n    new SimpleDateFormat(\"yyyy-MM-dd\");\nString formatted = sdf.format(date);\n// Must synchronize for concurrent use",
-    "modernCode": "DateTimeFormatter fmt =\n    DateTimeFormatter.ofPattern(\n        \"yyyy-MM-dd\");\nString formatted =\n    LocalDate.now().format(fmt);\n// Thread-safe, immutable",
+    "oldCode": "// Not thread-safe!\nSimpleDateFormat sdf =\n    new SimpleDateFormat(\"uuuu-MM-dd\");\nString formatted = sdf.format(date);\n// Must synchronize for concurrent use",
+    "modernCode": "DateTimeFormatter fmt =\n    DateTimeFormatter.ofPattern(\n        \"uuuu-MM-dd\");\nString formatted =\n    LocalDate.now().format(fmt);\n// Thread-safe, immutable",
     "summary": "Format dates with thread-safe, immutable DateTimeFormatter.",
     "explanation": "DateTimeFormatter is immutable and thread-safe, unlike SimpleDateFormat. It can be stored as a constant and shared. Predefined formatters like ISO_LOCAL_DATE are available for common formats.",
     "whyModernWins": [

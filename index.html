@@ -2516,7 +2516,7 @@ Duration elapsed = Duration.between(
             <span class="mini-label">Old</span>
             <span class="code-text">// Not thread-safe!
 SimpleDateFormat sdf =
-    new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+    new SimpleDateFormat(&quot;uuuu-MM-dd&quot;);
 String formatted = sdf.format(date);
 // Must synchronize for concurrent use</span>
           </div>
@@ -2524,7 +2524,7 @@ String formatted = sdf.format(date);
             <span class="mini-label">Modern</span>
             <span class="code-text">DateTimeFormatter fmt =
     DateTimeFormatter.ofPattern(
-        &quot;yyyy-MM-dd&quot;);
+        &quot;uuuu-MM-dd&quot;);
 String formatted =
     LocalDate.now().format(fmt);
 // Thread-safe, immutable</span>
