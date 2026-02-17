@@ -6,7 +6,7 @@ on:
     paths:
       - '*/**.json'
       - 'slug-template.html'
-      - 'generate.py'
+      - 'Generate.java'
       - 'index.html'
       - 'styles.css'
       - 'app.js'
@@ -31,12 +31,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-java@v4
         with:
-          python-version: '3.12'
+          distribution: 'temurin'
+          java-version: '25'
+
+      - uses: jbangdev/setup-jbang@main
+
+      - name: Cache JBang dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.jbang
+          key: jbang-${{ runner.os }}-${{ hashFiles('Generate.java') }}
+          restore-keys: jbang-${{ runner.os }}-
 
       - name: Generate HTML pages and snippets.json
-        run: python3 generate.py
+        run: jbang Generate.java
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
