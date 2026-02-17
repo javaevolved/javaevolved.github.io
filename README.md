@@ -2,7 +2,7 @@
 
 **Java has evolved. Your code can too.**
 
-A collection of 86 side-by-side code comparisons showing old Java patterns next to their clean, modern replacements — from Java 8 all the way to Java 25.
+A collection of 85 side-by-side code comparisons showing old Java patterns next to their clean, modern replacements — from Java 8 all the way to Java 25.
 
 🔗 **[javaevolved.github.io](https://javaevolved.github.io)**
 
@@ -32,36 +32,61 @@ Each comparison includes an explanation of *why* the modern approach is better, 
 | **Security** | TLS defaults, `SecureRandom`, PEM encoding, key derivation functions |
 | **Tooling** | JShell, single-file execution, JFR profiling, compact source files, AOT |
 
-## Tech stack
+## Architecture
 
-Plain HTML, CSS, and JavaScript — no frameworks, no build step. Hosted on GitHub Pages.
+This site uses a **JSON-first** build pipeline:
 
-## Run locally
+- **Source of truth**: Individual `category/slug.json` files (85 across 10 category folders)
+- **Template**: `slug-template.html` — shared HTML template with `{{placeholder}}` tokens
+- **Generator**: `Generate.java` — a [JBang](https://jbang.dev) script that produces all HTML detail pages and `data/snippets.json`
+- **Deploy**: GitHub Actions runs the generator and deploys to GitHub Pages
+
+Generated files (`category/*.html` and `data/snippets.json`) are in `.gitignore` — never edit them directly.
+
+## Build & run locally
+
+### Prerequisites
+
+- **Java 25+** (e.g. [Temurin](https://adoptium.net/))
+- **[JBang](https://jbang.dev)** (`brew install jbang` / `sdk install jbang` / [other options](https://www.jbang.dev/download/))
+
+### Generate and serve
 
 ```bash
-cd modern-java
+# Generate all HTML pages and data/snippets.json
+jbang Generate.java
+
+# Serve locally
 python3 -m http.server 8090
 # Open http://localhost:8090
 ```
 
-## Modernize with GitHub Copilot
+The generator is a compact source file (Java 25) that uses Jackson for JSON parsing. On first run, JBang resolves the Jackson dependency (~2s); subsequent runs use a cached jar (~0.8s).
 
-GitHub Copilot can help you migrate legacy Java codebases automatically:
+A Python equivalent (`generate.py`) is also available and produces identical output:
 
-- [App Modernization](https://github.com/solutions/use-case/app-modernization)
-- [Modernize Java Applications with Copilot](https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/modernize-java-applications)
+```bash
+python3 generate.py
+```
 
 ## Contributing
 
-Contributions are welcome! If you'd like to add a new snippet, fix an inaccuracy, or improve the site:
+Contributions are welcome! Content is managed as JSON files — never edit generated HTML.
 
 1. Fork the repo
-2. Add or edit snippets in `data/snippets.json`
-3. Create the corresponding `.html` article page
-4. Update `index.html` with the new card
-5. Open a pull request
+2. Create or edit a JSON file in the appropriate category folder (e.g. `language/my-feature.json`)
+3. Follow the [snippet JSON schema](.github/copilot-instructions.md) for all required fields
+4. Run `jbang Generate.java` to verify your changes build correctly
+5. Update `index.html` with a new preview card if adding a new snippet
+6. Open a pull request
 
 Please ensure JDK version labels only reference the version where a feature became **final** (non-preview).
+
+## Tech stack
+
+- Plain HTML, CSS, and JavaScript — no frontend frameworks
+- [JBang](https://jbang.dev) + [Jackson](https://github.com/FasterXML/jackson) for build-time generation
+- Hosted on GitHub Pages via GitHub Actions
 
 ## Author
 
