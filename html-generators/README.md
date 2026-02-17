@@ -58,3 +58,7 @@ jbang export fatjar --output html-generators/generate.jar html-generators/genera
 ```
 
 This produces a self-contained ~2.2 MB JAR with all dependencies (Jackson) bundled. The `build-generator.yml` GitHub Action does this automatically when `generate.java` changes.
+
+## Benchmark
+
+See [BENCHMARK.md](BENCHMARK.md) for performance comparisons across all four execution methods (AOT, fat JAR, JBang, Python).
