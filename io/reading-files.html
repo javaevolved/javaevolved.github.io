@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading files | java.evolved</title>
+  <meta name="description" content="Read an entire file into a String with one line.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/io/reading-files.html">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Reading files | java.evolved">
+  <meta property="og:description" content="Read an entire file into a String with one line.">
+  <meta property="og:url" content="https://javaevolved.github.io/io/reading-files.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://javaevolved.github.io/images/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reading files | java.evolved">
+  <meta name="twitter:description" content="Read an entire file into a String with one line.">
+  <meta name="twitter:image" content="https://javaevolved.github.io/images/social-card.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Reading files",
+    "description": "Read an entire file into a String with one line.",
+    "url": "https://javaevolved.github.io/reading-files.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/reading-files.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "I/O",
+            "item": "https://javaevolved.github.io/?cat=io"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Reading files"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 3C6.13 3 3 6.13 3 10c0 3.09 2 5.71 4.77 6.63.35.06.48-.15.48-.33v-1.16c-1.95.42-2.36-1.07-2.36-1.07-.32-.81-.78-1.03-.78-1.03-.64-.43.05-.42.05-.42.7.05 1.07.72 1.07.72.63 1.08 1.65.77 2.05.59.06-.46.24-.77.44-.95-1.57-.18-3.22-.78-3.22-3.48 0-.77.27-1.4.72-1.89-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72.56-.16 1.16-.24 1.76-.24s1.2.08 1.76.24c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.49.72 1.12.72 1.89 0 2.71-1.65 3.3-3.23 3.47.25.22.48.65.48 1.31v1.94c0 .19.13.4.48.33C15 15.71 17 13.09 17 10c0-3.87-3.13-7-7-7z"/>
+          </svg>
+        </a>
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <a href="/io/http-client.html" aria-label="Previous pattern">←</a>
+          <a href="/io/writing-files.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=io">I/O</a>
+      <span class="sep">/</span>
+      <span>Reading files</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge io">I/O</span>
+        <span class="badge beginner">beginner</span>
+      </div>
+      <h1>Reading files</h1>
+      <p>Read an entire file into a String with one line.</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">StringBuilder sb = new StringBuilder();
+try (BufferedReader br =
+    new BufferedReader(
+        new FileReader(&quot;data.txt&quot;))) {
+    String line;
+    while ((line = br.readLine()) != null)
+        sb.append(line).append(&quot;\n&quot;);
+}
+String content = sb.toString();</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 11+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">String content =
+    Files.readString(Path.of(&quot;data.txt&quot;));</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">📏</div>
+          <h3>One line</h3>
+          <p>Replace 8 lines of BufferedReader boilerplate.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧹</div>
+          <h3>Auto cleanup</h3>
+          <p>File handle is closed automatically.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌐</div>
+          <h3>UTF-8 default</h3>
+          <p>Correct encoding by default — no charset confusion.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">BufferedReader</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">Files.readString()</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">11</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">beginner</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Reading files</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Widely available since JDK 11 (Sept 2018)</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>Files.readString() reads a file&#x27;s entire content into a String. It handles encoding (UTF-8 by default) and resource cleanup. For large files, use Files.lines() for lazy streaming.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/io/try-with-resources-effectively-final.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge io">I/O</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Try-with-resources improvement</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">Connection conn = getConnection();
+// Must re-declare in try
+try (Connection c = conn) {
+    use(c);
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 9+</div>
+              <pre class="code-text">Connection conn = getConnection();
+// Use existing variable directly
+try (conn) {
+    use(conn);
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 9+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/io/writing-files.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge io">I/O</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Writing files</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">try (BufferedWriter bw =
+    new BufferedWriter(
+        new FileWriter(&quot;out.txt&quot;))) {
+    bw.write(content);
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 11+</div>
+              <pre class="code-text">Files.writeString(
+    Path.of(&quot;out.txt&quot;),
+    content
+);</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 11+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/io/files-mismatch.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge io">I/O</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Files.mismatch()</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">// Compare two files byte by byte
+byte[] f1 = Files.readAllBytes(path1);
+byte[] f2 = Files.readAllBytes(path2);
+boolean equal = Arrays.equals(f1, f2);
+// loads both files entirely into memory</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 12+</div>
+              <pre class="code-text">long pos = Files.mismatch(path1, path2);
+// -1 if identical
+// otherwise: position of first difference</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 12+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Freading-files.html&text=Reading%20files%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Reading%20files%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Freading-files.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Freading-files.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Freading-files.html&title=Reading%20files%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+    <p><a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener">View on GitHub</a></p>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

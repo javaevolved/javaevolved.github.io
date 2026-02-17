@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type inference with var | java.evolved</title>
+  <meta name="description" content="Use var for local variable type inference — less noise, same safety.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://javaevolved.github.io/language/type-inference-with-var.html">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+
+  <meta property="og:title" content="Type inference with var | java.evolved">
+  <meta property="og:description" content="Use var for local variable type inference — less noise, same safety.">
+  <meta property="og:url" content="https://javaevolved.github.io/language/type-inference-with-var.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://javaevolved.github.io/images/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Type inference with var | java.evolved">
+  <meta name="twitter:description" content="Use var for local variable type inference — less noise, same safety.">
+  <meta name="twitter:image" content="https://javaevolved.github.io/images/social-card.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Type inference with var",
+    "description": "Use var for local variable type inference \u2014 less noise, same safety.",
+    "url": "https://javaevolved.github.io/type-inference-with-var.html",
+    "publisher": {
+        "@type": "Organization",
+        "name": "java.evolved",
+        "url": "https://javaevolved.github.io"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://javaevolved.github.io/type-inference-with-var.html"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://javaevolved.github.io/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Language",
+            "item": "https://javaevolved.github.io/?cat=language"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Type inference with var"
+        }
+    ]
+}
+  </script>
+</head>
+<body data-page="single">
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 3C6.13 3 3 6.13 3 10c0 3.09 2 5.71 4.77 6.63.35.06.48-.15.48-.33v-1.16c-1.95.42-2.36-1.07-2.36-1.07-.32-.81-.78-1.03-.78-1.03-.64-.43.05-.42.05-.42.7.05 1.07.72 1.07.72.63 1.08 1.65.77 2.05.59.06-.46.24-.77.44-.95-1.57-.18-3.22-.78-3.22-3.48 0-.77.27-1.4.72-1.89-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72.56-.16 1.16-.24 1.76-.24s1.2.08 1.76.24c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.49.72 1.12.72 1.89 0 2.71-1.65 3.3-3.23 3.47.25.22.48.65.48 1.31v1.94c0 .19.13.4.48.33C15 15.71 17 13.09 17 10c0-3.87-3.13-7-7-7z"/>
+          </svg>
+        </a>
+        <a href="/" class="back-link">← All patterns</a>
+        
+        <div class="nav-arrows">
+          <span class="nav-arrow-disabled">←</span>
+          <a href="/language/text-blocks-for-multiline-strings.html" aria-label="Next pattern">→</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/?cat=language">Language</a>
+      <span class="sep">/</span>
+      <span>Type inference with var</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge language">Language</span>
+        <span class="badge beginner">beginner</span>
+      </div>
+      <h1>Type inference with var</h1>
+      <p>Use var for local variable type inference — less noise, same safety.</p>
+    </div>
+
+    <section class="compare-section">
+      <div class="section-label">Code Comparison</div>
+      <div class="compare-container">
+        <div class="compare-panel old-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag old">✕ Java 8</span>
+            <button class="copy-btn" data-code="old">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">Map&lt;String, List&lt;Integer&gt;&gt; map =
+    new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (Map.Entry&lt;String, List&lt;Integer&gt;&gt; e
+    : map.entrySet()) {
+    // verbose type noise
+}</pre>
+          </div>
+        </div>
+        <div class="compare-panel modern-panel">
+          <div class="compare-panel-header">
+            <span class="compare-tag modern">✓ Java 10+</span>
+            <button class="copy-btn" data-code="modern">Copy</button>
+          </div>
+          <div class="compare-code">
+            <pre class="code-text">var map = new HashMap&lt;String, List&lt;Integer&gt;&gt;();
+for (var entry : map.entrySet()) {
+    // clean and readable
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="section-label">Why the modern way wins</div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Less boilerplate</h3>
+          <p>No need to repeat complex generic types on both sides of the assignment.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">👁</div>
+          <h3>Better readability</h3>
+          <p>Focus on variable names and values, not type declarations.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>Still type-safe</h3>
+          <p>The compiler infers and enforces the exact type at compile time.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">Old Approach</div>
+        <div class="info-value red">Explicit Types</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Modern Approach</div>
+        <div class="info-value green">var keyword</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Since JDK</div>
+        <div class="info-value accent">10</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value blue">beginner</div>
+      </div>
+    </div>
+
+    <section class="bs-section">
+      <div class="section-label">JDK Support</div>
+      <div class="bs-card">
+        <div class="bs-feature-name">Type inference with var</div>
+        <span class="baseline-badge widely">Available</span>
+        <p class="bs-desc">Widely available since JDK 10 (March 2018)</p>
+      </div>
+    </section>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>Since Java 10, the compiler infers local variable types from the right-hand side. This reduces visual noise without sacrificing type safety. Use var when the type is obvious from context.</p>
+    </section>
+
+    <section class="related">
+      <h2>Related patterns</h2>
+      <div class="related-grid">
+        <a href="/language/sealed-classes.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge intermediate">intermediate</span>
+              </div>
+            </div>
+            <h3>Sealed classes for type hierarchies</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">// Anyone can extend Shape
+public abstract class Shape { }
+public class Circle extends Shape { }
+public class Rect extends Shape { }
+// unknown subclasses possible</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 17+</div>
+              <pre class="code-text">public sealed interface Shape
+    permits Circle, Rect {}
+public record Circle(double r)
+    implements Shape {}
+public record Rect(double w, double h)
+    implements Shape {}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 17+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/language/pattern-matching-instanceof.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge beginner">beginner</span>
+              </div>
+            </div>
+            <h3>Pattern matching for instanceof</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">if (obj instanceof String) {
+    String s = (String) obj;
+    System.out.println(s.length());
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 16+</div>
+              <pre class="code-text">if (obj instanceof String s) {
+    System.out.println(s.length());
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 16+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+        <a href="/language/exhaustive-switch.html" class="tip-card">
+          <div class="tip-card-body">
+            <div class="tip-card-header">
+              <div class="tip-badges">
+                <span class="badge language">Language</span>
+                <span class="badge intermediate">intermediate</span>
+              </div>
+            </div>
+            <h3>Exhaustive switch without default</h3>
+          </div>
+          <div class="card-code">
+            <div class="card-code-layer old-layer">
+              <div class="mini-label">Java 8</div>
+              <pre class="code-text">// Must add default even though
+// all cases are covered
+double area(Shape s) {
+    if (s instanceof Circle c)
+        return Math.PI * c.r() * c.r();
+    else if (s instanceof Rect r)
+        return r.w() * r.h();
+    else throw new IAE();
+}</pre>
+            </div>
+            <div class="card-code-layer modern-layer">
+              <div class="mini-label">Java 21+</div>
+              <pre class="code-text">// sealed Shape permits Circle, Rect
+double area(Shape s) {
+    return switch (s) {
+        case Circle c -&gt;
+            Math.PI * c.r() * c.r();
+        case Rect r -&gt;
+            r.w() * r.h();
+    }; // no default needed!
+}</pre>
+            </div>
+            <span class="hover-hint">Hover to see modern ➜</span>
+          </div>
+          <div class="tip-card-footer">
+            <span class="browser-support"><span class="dot"></span>JDK 21+</span>
+            <span class="arrow-link">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</section>
+
+
+  <div class="social-share">
+    <span class="share-label">Share</span>
+    <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io%2Ftype-inference-with-var.html&text=Type%20inference%20with%20var%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
+    <a href="https://bsky.app/intent/compose?text=Type%20inference%20with%20var%20%E2%80%93%20java.evolved%20https%3A%2F%2Fjavaevolved.github.io%2Ftype-inference-with-var.html" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io%2Ftype-inference-with-var.html" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fjavaevolved.github.io%2Ftype-inference-with-var.html&title=Type%20inference%20with%20var%20%E2%80%93%20java.evolved" target="_blank" rel="noopener" class="share-btn share-reddit" aria-label="Share on Reddit">⬡</a>
+  </div>
+
+  <footer>
+    <p>A project by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a></p>
+    <p><a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener">View on GitHub</a></p>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

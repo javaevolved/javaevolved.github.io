@@ -68,7 +68,7 @@
       selectedIndex = visibleResults.length > 0 ? 0 : -1;
 
       resultsContainer.innerHTML = visibleResults.map((s, i) => `
-        <div class="search-result${i === 0 ? ' selected' : ''}" data-slug="${s.slug}">
+        <div class="search-result${i === 0 ? ' selected' : ''}" data-slug="${s.slug}" data-category="${s.category}">
           <div>
             <div class="title">${escapeHtml(s.title)}</div>
             <div class="desc">${escapeHtml(s.summary)}</div>
@@ -80,7 +80,7 @@
       // Click handlers on results
       resultsContainer.querySelectorAll('.search-result').forEach(el => {
         el.addEventListener('click', () => {
-          window.location.href = '/' + el.dataset.slug + '.html';
+          window.location.href = '/' + el.dataset.category + '/' + el.dataset.slug + '.html';
         });
       });
     };
@@ -139,7 +139,7 @@
         } else if (e.key === 'Enter') {
           e.preventDefault();
           if (selectedIndex >= 0 && visibleResults[selectedIndex]) {
-            window.location.href = '/' + visibleResults[selectedIndex].slug + '.html';
+            window.location.href = '/' + visibleResults[selectedIndex].category + '/' + visibleResults[selectedIndex].slug + '.html';
           }
         }
       });
