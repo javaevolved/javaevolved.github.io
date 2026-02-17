@@ -2867,7 +2867,7 @@
     "oldApproach": "Cold Start Every Time",
     "modernApproach": "AOT Cache",
     "oldCode": "// Every startup:\n// - Load 10,000+ classes\n// - Verify bytecode\n// - JIT compile hot paths\n// Startup: 2-5 seconds",
-    "modernCode": "// Training run:\n$ java -XX:AOTMode=record \\\n    -XX:AOTConfiguration=app.aotconf \\\n    -cp app.jar com.App\n// Production:\n$ java -XX:AOTMode=on \\\n    -XX:AOTCache=app.aot \\\n    -cp app.jar com.App",
+    "modernCode": "// Training run:\n$ java -XX:AOTCacheOutput=app.aot \\\n    -cp app.jar com.App\n// Production:\n$ java -XX:AOTCache=app.aot \\\n    -cp app.jar com.App",
     "summary": "Cache class loading and compilation for instant startup.",
     "explanation": "AOT class preloading caches loaded and linked classes from a training run. On subsequent starts, classes are loaded from the cache, skipping verification and linking. Combined with AOT compilation, this dramatically reduces startup time.",
     "whyModernWins": [

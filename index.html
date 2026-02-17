@@ -2928,12 +2928,10 @@ $ jcmd &lt;pid&gt; JFR.start</span>
           <div class="card-code-layer modern-layer">
             <span class="mini-label">Modern</span>
             <span class="code-text">// Training run:
-$ java -XX:AOTMode=record \
-    -XX:AOTConfiguration=app.aotconf \
+$ java -XX:AOTCacheOutput=app.aot \
     -cp app.jar com.App
 // Production:
-$ java -XX:AOTMode=on \
-    -XX:AOTCache=app.aot \
+$ java -XX:AOTCache=app.aot \
     -cp app.jar com.App</span>
           </div>
           <span class="hover-hint">hover to see modern →</span>
