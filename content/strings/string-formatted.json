@@ -35,11 +35,11 @@
     "description": "Widely available since JDK 15 (Sept 2020)"
   },
   "prev": "strings/string-indent-transform",
-  "next": "strings/multiline-json-sql",
+  "next": "strings/string-chars-stream",
   "related": [
-    "strings/multiline-json-sql",
+    "strings/string-lines",
     "strings/string-strip",
-    "strings/multiline-json-sql"
+    "strings/string-indent-transform"
   ],
   "docs": [
     {

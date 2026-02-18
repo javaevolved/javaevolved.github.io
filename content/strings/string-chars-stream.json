@@ -34,7 +34,7 @@
     "state": "available",
     "description": "Available since JDK 8+ (improved in 9+)"
   },
-  "prev": "strings/multiline-json-sql",
+  "prev": "strings/string-formatted",
   "next": "strings/string-lines",
   "related": [
     "strings/string-repeat",

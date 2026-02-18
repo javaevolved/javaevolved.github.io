@@ -39,7 +39,7 @@
   "related": [
     "strings/string-isblank",
     "strings/string-strip",
-    "strings/multiline-json-sql"
+    "strings/string-lines"
   ],
   "docs": [
     {
