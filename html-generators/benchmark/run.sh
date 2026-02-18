@@ -21,14 +21,12 @@ UPDATE_MD=false
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-reset_site() { git checkout -- site/index.html 2>/dev/null || true; }
 
 # Run a command $RUNS times, collect real times into $TIMES array
 bench() {
   local label="$1"; shift
   TIMES=()
   for ((i = 1; i <= RUNS; i++)); do
-    reset_site
     local t
     t=$( { /usr/bin/time -p "$@" > /dev/null; } 2>&1 | awk '/^real/ {print $2}' )
     TIMES+=("$t")
@@ -68,7 +66,6 @@ echo ""
 echo "=== Setup: building AOT cache ==="
 java -XX:AOTCacheOutput="$AOT" -jar "$JAR" > /dev/null 2>&1
 echo "Cache: $AOT ($(du -h "$AOT" | cut -f1 | tr -d ' '))"
-reset_site
 echo ""
 
 # ---------------------------------------------------------------------------
@@ -76,8 +73,8 @@ echo ""
 # ---------------------------------------------------------------------------
 echo "=== Benchmark ($RUNS runs each: 1 cold + $((RUNS - 1)) warm) ==="
 echo ""
-printf "| %-42s | %7s | %10s |\n" "Method" "Cold" "Warm Avg"
-printf "|%-44s|%9s|%12s|\n" "--------------------------------------------" "---------" "------------"
+printf "| %-42s | %6s | %10s |\n" "Method" "Cold" "Warm Avg"
+printf "|%-44s|%7s|%12s|\n" "--------------------------------------------" "--------" "------------"
 
 AOT_COLD="" ; AOT_WARM=""
 JAR_COLD="" ; JAR_WARM=""
@@ -87,7 +84,6 @@ PY_COLD="" ; PY_WARM=""
 # Fat JAR + AOT
 TIMES=()
 for ((i = 1; i <= RUNS; i++)); do
-  reset_site
   t=$( { /usr/bin/time -p java -XX:AOTCache="$AOT" -jar "$JAR" > /dev/null; } 2>&1 | awk '/^real/ {print $2}' )
   TIMES+=("$t")
 done
@@ -99,7 +95,6 @@ printf "| %-42s | %5ss | **%5ss** |\n" "**Fat JAR + AOT** (\`java -XX:AOTCache\`
 # Fat JAR
 TIMES=()
 for ((i = 1; i <= RUNS; i++)); do
-  reset_site
   t=$( { /usr/bin/time -p java -jar "$JAR" > /dev/null; } 2>&1 | awk '/^real/ {print $2}' )
   TIMES+=("$t")
 done
@@ -111,7 +106,6 @@ printf "| %-42s | %5ss | **%5ss** |\n" "**Fat JAR** (\`java -jar\`)" "$JAR_COLD"
 # JBang
 TIMES=()
 for ((i = 1; i <= RUNS; i++)); do
-  reset_site
   t=$( { /usr/bin/time -p jbang html-generators/generate.java > /dev/null; } 2>&1 | awk '/^real/ {print $2}' )
   TIMES+=("$t")
 done
@@ -123,7 +117,6 @@ printf "| %-42s | %5ss | **%5ss** |\n" "**JBang** (\`jbang generate.java\`)" "$J
 # Python
 TIMES=()
 for ((i = 1; i <= RUNS; i++)); do
-  reset_site
   t=$( { /usr/bin/time -p python3 html-generators/generate.py > /dev/null; } 2>&1 | awk '/^real/ {print $2}' )
   TIMES+=("$t")
 done
@@ -133,7 +126,6 @@ PY_WARM=$(echo "scale=2; $sum / ($RUNS - 1)" | bc | sed 's/^\./0./')
 printf "| %-42s | %5ss | **%5ss** |\n" "**Python** (\`python3 generate.py\`)" "$PY_COLD" "$PY_WARM"
 
 echo ""
-reset_site
 
 # ---------------------------------------------------------------------------
 # Optionally update BENCHMARK.md
