@@ -4,12 +4,16 @@ This folder contains the build scripts that generate all HTML detail pages and `
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| `generate.java` | JBang script (Java 25) — primary generator |
-| `generate.py` | Python equivalent — produces identical output |
-| `generate.jar` | Pre-built fat JAR (no JBang/JDK setup needed) |
-| `build-cds.sh` | Script to build a platform-specific AOT cache |
+| File            | Description                                   |
+|-----------------|-----------------------------------------------|
+| `generate.java` | JBang script (Java 25) — primary generator    |
+| `generate.py`   | Python equivalent — produces identical output |
+| `generate.jar`  | Pre-built fat JAR (no JBang/JDK setup needed) |
+| `build-cds.sh`  | Script to build a platform-specific AOT cache |
+
+## Benchmark
+
+See [BENCHMARK.md](BENCHMARK.md) for performance comparisons across all four execution methods (AOT, Fat JAR, JBang, Python).
 
 ## Running
 
@@ -68,7 +72,3 @@ Two GitHub Actions workflows automate the build and deploy pipeline:
 2. **`deploy.yml`** — Triggered when content, templates, the JAR, or site assets change on `main`. Runs `java -jar html-generators/generate.jar` to regenerate all HTML pages, `snippets.json`, and `index.html`, then deploys the `site/` folder to GitHub Pages.
 
 This means the deploy workflow always uses the pre-built fat JAR (no JBang required at deploy time), and the JAR stays in sync with the source automatically.
-
-## Benchmark
-
-See [BENCHMARK.md](BENCHMARK.md) for performance comparisons across all four execution methods (AOT, fat JAR, JBang, Python).
