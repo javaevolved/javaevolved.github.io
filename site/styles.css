@@ -349,7 +349,15 @@ nav {
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 40px;
+}
+
+.filter-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 7px 8px 7px 0;
 }
 
 .filter-pill {
