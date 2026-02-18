@@ -3,11 +3,11 @@
 #
 # Setup: rebuilds the AOT cache before benchmarking.
 # Runs:  6 iterations per method (1 cold + 5 warm).
-# Output: table printed to stdout; optionally updates BENCHMARK.md.
+# Output: table printed to stdout; optionally updates README.md.
 #
 # Usage:
 #   ./html-generators/benchmark/run.sh            # run all methods
-#   ./html-generators/benchmark/run.sh --update    # also update BENCHMARK.md
+#   ./html-generators/benchmark/run.sh --update    # also update README.md
 
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
@@ -39,7 +39,7 @@ bench() {
   local warm
   warm=$(echo "scale=2; $sum / ($RUNS - 1)" | bc | sed 's/^\./0./')
   printf "| %-42s | %5ss | **%5ss** |\n" "$label" "$cold" "$warm"
-  # export for BENCHMARK.md update
+  # export for README.md update
   eval "${2//[^a-zA-Z]/_}_COLD=$cold"
   eval "${2//[^a-zA-Z]/_}_WARM=$warm"
 }
@@ -128,10 +128,10 @@ printf "| %-42s | %5ss | **%5ss** |\n" "**Python** (\`python3 generate.py\`)" "$
 echo ""
 
 # ---------------------------------------------------------------------------
-# Optionally update BENCHMARK.md
+# Optionally update README.md
 # ---------------------------------------------------------------------------
 if $UPDATE_MD; then
-  MD="html-generators/benchmark/BENCHMARK.md"
+  MD="html-generators/benchmark/README.md"
   cat > "$MD" <<EOF
 # Generator Benchmarks
 
