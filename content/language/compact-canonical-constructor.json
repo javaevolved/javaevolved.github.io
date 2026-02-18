@@ -5,8 +5,8 @@
   "category": "language",
   "difficulty": "intermediate",
   "jdkVersion": "16",
-  "oldLabel": "Java 16",
-  "modernLabel": "Java 16+",
+  "oldLabel": "Full syntax",
+  "modernLabel": "Compact",
   "oldApproach": "Explicit constructor validation",
   "modernApproach": "Compact constructor",
   "oldCode": "public record Person(String name,\n                     List<String> pets) {\n    // Full canonical constructor\n    public Person(String name,\n                  List<String> pets) {\n        Objects.requireNonNull(name);\n        this.name = name;\n        this.pets = List.copyOf(pets);\n    }\n}",
@@ -40,5 +40,15 @@
     "language/records-for-data-classes",
     "language/flexible-constructor-bodies",
     "errors/record-based-errors"
+  ],
+  "docs": [
+    {
+      "title": "Records (JEP 395)",
+      "href": "https://openjdk.org/jeps/395"
+    },
+    {
+      "title": "Record class",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html"
+    }
   ]
 }
