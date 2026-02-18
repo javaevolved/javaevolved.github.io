@@ -174,8 +174,19 @@
             card.classList.add('filter-hidden');
           }
         });
+
+        // Update view toggle button state
+        if (window.updateViewToggleState) {
+          window.updateViewToggleState();
+        }
       });
     });
+
+    // Auto-click "All" button on page load to show all cards
+    const allButton = document.querySelector('.filter-pill[data-filter="all"]');
+    if (allButton) {
+      allButton.click();
+    }
   };
 
   /* ==========================================================
@@ -491,12 +502,26 @@
 
     let isExpanded = false;
 
+    const updateButtonState = () => {
+      const visibleCards = document.querySelectorAll('.tip-card:not(.filter-hidden)');
+      const hasVisibleCards = visibleCards.length > 0;
+      
+      toggleBtn.disabled = !hasVisibleCards;
+      if (!hasVisibleCards) {
+        toggleBtn.style.opacity = '0.5';
+        toggleBtn.style.cursor = 'not-allowed';
+      } else {
+        toggleBtn.style.opacity = '1';
+        toggleBtn.style.cursor = 'pointer';
+      }
+    };
+
     toggleBtn.addEventListener('click', () => {
       isExpanded = !isExpanded;
       
       if (isExpanded) {
         tipsGrid.classList.add('expanded');
-        toggleBtn.querySelector('.view-toggle-icon').textContent = '⊞';
+        toggleBtn.querySelector('.view-toggle-icon').textContent = '⊟';
         toggleBtn.querySelector('.view-toggle-text').textContent = 'Collapse All';
         
         // Remove toggled class from all cards when expanding
@@ -505,10 +530,16 @@
         });
       } else {
         tipsGrid.classList.remove('expanded');
-        toggleBtn.querySelector('.view-toggle-icon').textContent = '⊟';
+        toggleBtn.querySelector('.view-toggle-icon').textContent = '⊞';
         toggleBtn.querySelector('.view-toggle-text').textContent = 'Expand All';
       }
     });
+
+    // Check initial state
+    updateButtonState();
+
+    // Make updateButtonState available for filter to call
+    window.updateViewToggleState = updateButtonState;
   };
 
   /* ==========================================================

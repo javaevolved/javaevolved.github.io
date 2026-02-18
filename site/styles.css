@@ -63,8 +63,8 @@ code, pre { font-family: 'JetBrains Mono', monospace; }
   --yellow: #fbbf24;
   --cyan: #22d3ee;
   --red-muted: #ef4444;
-  --old-bg: #11100f;
-  --modern-bg: #0f1117;
+  --old-bg: #1a1412;
+  --modern-bg: #0f1419;
   --radius: 16px;
   --radius-sm: 10px;
   --nav-bg: rgba(11, 11, 15, .8);
@@ -647,6 +647,13 @@ nav {
 
 .tips-grid.expanded .tip-card .old-layer {
   border-top: none;
+}
+
+.tips-grid.expanded .tip-card .mini-label {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-bottom: 8px;
 }
 
 .tips-grid.expanded .tip-card .hover-hint {
