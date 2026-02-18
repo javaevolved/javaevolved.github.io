@@ -74,16 +74,6 @@ jobs:
           JAR_STEADY=$(avg_runs $STEADY_RUNS java -jar "$JAR")
           AOT_STEADY=$(avg_runs $STEADY_RUNS java -XX:AOTCache="$AOT" -jar "$JAR")
 
-          # --- Phase 3: CI cold start (no caches, simulates fresh runner) ---
-          find html-generators -name '__pycache__' -type d -exec rm -rf {} + 2>/dev/null || true
-          PY_CI=$(measure python3 html-generators/generate.py)
-
-          jbang cache clear > /dev/null 2>&1 || true
-          JBANG_CI=$(measure jbang html-generators/generate.java)
-
-          JAR_CI=$(measure java -jar "$JAR")
-          AOT_CI=$(measure java -XX:AOTCache="$AOT" -jar "$JAR")
-
           # Write to GitHub Actions Job Summary
           {
             echo "## Benchmark Results — \`$os_name\`"
@@ -106,17 +96,97 @@ jobs:
             echo "| **Fat JAR** | ${JAR_STEADY}s |"
             echo "| **JBang** | ${JBANG_STEADY}s |"
             echo "| **Python** | ${PY_STEADY}s |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # ---------------------------------------------------------------------------
+  # Phase 3: CI cold start — runs on a completely fresh runner.
+  # JAR and AOT are built once then passed via artifact, simulating
+  # the actions cache restore that happens in the deploy workflow.
+  # Python and JBang start with zero caches, just like real CI.
+  # ---------------------------------------------------------------------------
+  build-jar:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+
+      - uses: jbangdev/setup-jbang@main
+
+      - name: Build fat JAR and AOT cache
+        run: |
+          jbang export fatjar --force --output html-generators/generate.jar html-generators/generate.java
+          java -XX:AOTCacheOutput=html-generators/generate.aot -jar html-generators/generate.jar
+
+      - name: Upload JAR and AOT
+        uses: actions/upload-artifact@v4
+        with:
+          name: generator-${{ matrix.os }}
+          path: |
+            html-generators/generate.jar
+            html-generators/generate.aot
+
+  ci-cold-start:
+    needs: build-jar
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Download JAR and AOT
+        uses: actions/download-artifact@v4
+        with:
+          name: generator-${{ matrix.os }}
+          path: html-generators
+
+      - name: CI cold-start benchmark
+        shell: bash
+        run: |
+          os_name="${{ matrix.os }}"
+          java_ver=$(java -version 2>&1 | head -1 | sed 's/.*"\(.*\)".*/\1/')
+          snippet_count=$(find content -name '*.json' | wc -l | tr -d ' ')
+
+          measure() {
+            TIMEFORMAT='%R'
+            local t
+            t=$( { time "$@" > /dev/null 2>&1; } 2>&1 )
+            echo "$t"
+          }
+
+          # Everything is cold: no __pycache__, no JBang cache, fresh JVM
+          PY_CI=$(measure python3 html-generators/generate.py)
+          JAR_CI=$(measure java -jar html-generators/generate.jar)
+          AOT_CI=$(measure java -XX:AOTCache=html-generators/generate.aot -jar html-generators/generate.jar)
+
+          {
+            echo "## CI Cold Start — \`$os_name\`"
             echo ""
-            echo "### Phase 3: CI Cold Start (fresh runner, no caches)"
+            echo "Java $java_ver · $snippet_count snippets"
             echo ""
-            echo "Simulates a CI environment where every run is the first run."
-            echo "Python has no \`__pycache__\`, JBang has no compilation cache."
-            echo "Java AOT benefits from the pre-built \`.aot\` file restored from actions cache."
+            echo "Fresh runner, no caches. JAR and AOT restored from artifact"
+            echo "(simulates actions cache restore in deploy workflow)."
             echo ""
             echo "| Method | Time |"
             echo "|--------|------|"
             echo "| **Fat JAR + AOT** | **${AOT_CI}s** |"
             echo "| **Fat JAR** | ${JAR_CI}s |"
-            echo "| **JBang** | ${JBANG_CI}s |"
             echo "| **Python** | ${PY_CI}s |"
           } >> "$GITHUB_STEP_SUMMARY"
