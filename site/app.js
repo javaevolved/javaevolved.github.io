@@ -35,7 +35,12 @@
       overlay.classList.add('active');
       if (input) {
         input.value = '';
-        input.focus();
+        // Double requestAnimationFrame ensures focus after visibility transition
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            input.focus();
+          });
+        });
       }
       renderResults('');
     };
