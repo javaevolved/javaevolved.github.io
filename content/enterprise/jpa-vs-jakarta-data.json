@@ -1,0 +1,54 @@
+{
+  "id": 101,
+  "slug": "jpa-vs-jakarta-data",
+  "title": "JPA versus Jakarta Data",
+  "category": "enterprise",
+  "difficulty": "intermediate",
+  "jdkVersion": "21",
+  "oldLabel": "Jakarta EE 8+",
+  "modernLabel": "Jakarta EE 11+",
+  "oldApproach": "JPA EntityManager",
+  "modernApproach": "Jakarta Data Repository",
+  "oldCode": "@PersistenceContext\nEntityManager em;\n\npublic User findById(Long id) {\n    return em.find(User.class, id);\n}\n\npublic List<User> findByName(String name) {\n    return em.createQuery(\n        \"SELECT u FROM User u WHERE u.name = :name\",\n        User.class)\n        .setParameter(\"name\", name)\n        .getResultList();\n}\n\npublic void save(User user) {\n    em.persist(user);\n}",
+  "modernCode": "@Repository\npublic interface Users extends CrudRepository<User, Long> {\n    List<User> findByName(String name);\n}",
+  "summary": "Declare a repository interface and let Jakarta Data generate the DAO implementation automatically.",
+  "explanation": "Jakarta Data (Jakarta EE 11) turns data access into a pure interface declaration. You annotate an interface with @Repository and extend a built-in repository type such as CrudRepository. The runtime generates the implementation — including derived queries from method names like findByName — so there is no EntityManager boilerplate, no JPQL strings, and no hand-written save/find methods.",
+  "whyModernWins": [
+    {
+      "icon": "🪄",
+      "title": "Zero boilerplate",
+      "desc": "Declare the interface; the container generates the full DAO implementation at deploy time."
+    },
+    {
+      "icon": "🔍",
+      "title": "Derived queries",
+      "desc": "Method names like findByNameAndStatus are parsed automatically — no JPQL or SQL needed."
+    },
+    {
+      "icon": "🔌",
+      "title": "Portable",
+      "desc": "Any Jakarta EE 11 compliant runtime provides the repository implementation with no vendor lock-in."
+    }
+  ],
+  "support": {
+    "state": "available",
+    "description": "Available since Jakarta EE 11 / Java 21 (2024)"
+  },
+  "prev": "enterprise/jdbc-vs-jpa",
+  "next": null,
+  "related": [
+    "enterprise/jdbc-vs-jpa",
+    "enterprise/ejb-vs-cdi",
+    "enterprise/servlet-vs-jaxrs"
+  ],
+  "docs": [
+    {
+      "title": "Jakarta Data 1.0 Specification",
+      "href": "https://jakarta.ee/specifications/data/1.0/"
+    },
+    {
+      "title": "Jakarta Data 1.0 API",
+      "href": "https://jakarta.ee/specifications/data/1.0/apidocs/"
+    }
+  ]
+}

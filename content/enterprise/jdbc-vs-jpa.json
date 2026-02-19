@@ -35,7 +35,7 @@
     "description": "Widely available since Jakarta EE 8 / Java 11"
   },
   "prev": "enterprise/ejb-vs-cdi",
-  "next": null,
+  "next": "enterprise/jpa-vs-jakarta-data",
   "related": [
     "enterprise/servlet-vs-jaxrs",
     "enterprise/ejb-vs-cdi",
