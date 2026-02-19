@@ -1,0 +1,54 @@
+{
+  "id": 104,
+  "slug": "manual-transaction-vs-declarative",
+  "title": "Manual JPA Transaction vs Declarative @Transactional",
+  "category": "enterprise",
+  "difficulty": "intermediate",
+  "jdkVersion": "11",
+  "oldLabel": "Java EE",
+  "modernLabel": "Jakarta EE 8+",
+  "oldApproach": "Manual Transaction",
+  "modernApproach": "@Transactional",
+  "oldCode": "@PersistenceContext\nEntityManager em;\n\npublic void transferFunds(Long from, Long to,\n                          BigDecimal amount) {\n    EntityTransaction tx = em.getTransaction();\n    tx.begin();\n    try {\n        Account src = em.find(Account.class, from);\n        Account dst = em.find(Account.class, to);\n        src.debit(amount);\n        dst.credit(amount);\n        tx.commit();\n    } catch (Exception e) {\n        tx.rollback();\n        throw e;\n    }\n}",
+  "modernCode": "@ApplicationScoped\npublic class AccountService {\n    @PersistenceContext\n    EntityManager em;\n\n    @Transactional\n    public void transferFunds(Long from, Long to,\n                              BigDecimal amount) {\n        Account src = em.find(Account.class, from);\n        Account dst = em.find(Account.class, to);\n        src.debit(amount);\n        dst.credit(amount);\n    }\n}",
+  "summary": "Replace verbose begin/commit/rollback blocks with a single @Transactional annotation.",
+  "explanation": "Manual transaction management requires explicit begin(), commit(), and rollback() calls wrapped in try-catch blocks — every service method repeats this boilerplate. The @Transactional annotation delegates lifecycle management to the container: it begins a transaction before the method, commits on success, and rolls back on RuntimeException automatically.",
+  "whyModernWins": [
+    {
+      "icon": "🗑️",
+      "title": "No boilerplate",
+      "desc": "One annotation replaces repetitive begin/commit/rollback try-catch blocks."
+    },
+    {
+      "icon": "🛡️",
+      "title": "Safer rollback",
+      "desc": "The container guarantees rollback on unchecked exceptions — no risk of forgetting the catch block."
+    },
+    {
+      "icon": "📐",
+      "title": "Declarative control",
+      "desc": "Propagation, isolation, and rollback rules are expressed as annotation attributes."
+    }
+  ],
+  "support": {
+    "state": "available",
+    "description": "Widely available since Jakarta EE 8 / Java 11"
+  },
+  "prev": "enterprise/jndi-lookup-vs-cdi-injection",
+  "next": "enterprise/soap-vs-jakarta-rest",
+  "related": [
+    "enterprise/ejb-vs-cdi",
+    "enterprise/jdbc-vs-jpa",
+    "enterprise/jpa-vs-jakarta-data"
+  ],
+  "docs": [
+    {
+      "title": "Jakarta Transactions Specification",
+      "href": "https://jakarta.ee/specifications/transactions/"
+    },
+    {
+      "title": "Jakarta Transactions 2.0 API",
+      "href": "https://jakarta.ee/specifications/transactions/2.0/apidocs/"
+    }
+  ]
+}

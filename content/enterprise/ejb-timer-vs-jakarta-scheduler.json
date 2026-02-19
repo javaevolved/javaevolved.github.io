@@ -1,0 +1,54 @@
+{
+  "id": 102,
+  "slug": "ejb-timer-vs-jakarta-scheduler",
+  "title": "EJB Timer vs Jakarta Scheduler",
+  "category": "enterprise",
+  "difficulty": "intermediate",
+  "jdkVersion": "11",
+  "oldLabel": "Java EE",
+  "modernLabel": "Jakarta EE 10+",
+  "oldApproach": "EJB TimerService",
+  "modernApproach": "ManagedScheduledExecutorService",
+  "oldCode": "@Stateless\npublic class ReportGenerator {\n    @Resource\n    TimerService timerService;\n\n    @PostConstruct\n    public void init() {\n        timerService.createCalendarTimer(\n            new ScheduleExpression()\n                .hour(\"2\").minute(\"0\"));\n    }\n\n    @Timeout\n    public void generateReport(Timer timer) {\n        // runs every day at 02:00\n        buildDailyReport();\n    }\n}",
+  "modernCode": "@ApplicationScoped\npublic class ReportGenerator {\n    @Resource\n    ManagedScheduledExecutorService scheduler;\n\n    @PostConstruct\n    public void init() {\n        scheduler.scheduleAtFixedRate(\n            this::generateReport,\n            0, 24, TimeUnit.HOURS);\n    }\n\n    public void generateReport() {\n        buildDailyReport();\n    }\n}",
+  "summary": "Replace heavyweight EJB timers with Jakarta Concurrency's ManagedScheduledExecutorService for simpler scheduling.",
+  "explanation": "EJB timers require a @Stateless or @Singleton bean with a @Timeout callback and XML or annotation-based schedule expressions. Jakarta Concurrency provides ManagedScheduledExecutorService, which uses the familiar java.util.concurrent scheduling API. The result is less boilerplate, easier unit testing, and no EJB container dependency.",
+  "whyModernWins": [
+    {
+      "icon": "🪶",
+      "title": "Reduced boilerplate",
+      "desc": "No @Timeout callback or ScheduleExpression — use the standard ScheduledExecutorService API."
+    },
+    {
+      "icon": "🧪",
+      "title": "Better testability",
+      "desc": "Plain methods and executor mocks make unit testing straightforward without EJB container."
+    },
+    {
+      "icon": "☁️",
+      "title": "Cloud-native friendly",
+      "desc": "Managed executors integrate with container lifecycle and work in lightweight runtimes."
+    }
+  ],
+  "support": {
+    "state": "available",
+    "description": "Available since Jakarta EE 10 / Concurrency 3.0"
+  },
+  "prev": "enterprise/jpa-vs-jakarta-data",
+  "next": "enterprise/jndi-lookup-vs-cdi-injection",
+  "related": [
+    "enterprise/ejb-vs-cdi",
+    "concurrency/virtual-threads",
+    "concurrency/executor-try-with-resources"
+  ],
+  "docs": [
+    {
+      "title": "Jakarta Concurrency Specification",
+      "href": "https://jakarta.ee/specifications/concurrency/"
+    },
+    {
+      "title": "Jakarta Concurrency 3.0 API",
+      "href": "https://jakarta.ee/specifications/concurrency/3.0/apidocs/"
+    }
+  ]
+}

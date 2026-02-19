@@ -1,0 +1,54 @@
+{
+  "id": 103,
+  "slug": "jndi-lookup-vs-cdi-injection",
+  "title": "JNDI Lookup vs CDI Injection",
+  "category": "enterprise",
+  "difficulty": "intermediate",
+  "jdkVersion": "11",
+  "oldLabel": "Java EE",
+  "modernLabel": "Jakarta EE 8+",
+  "oldApproach": "JNDI Lookup",
+  "modernApproach": "CDI @Inject",
+  "oldCode": "public class OrderService {\n    private DataSource ds;\n\n    public void init() throws NamingException {\n        InitialContext ctx = new InitialContext();\n        ds = (DataSource) ctx.lookup(\n            \"java:comp/env/jdbc/OrderDB\");\n    }\n\n    public List<Order> findAll()\n            throws SQLException {\n        try (Connection con = ds.getConnection()) {\n            // query orders\n        }\n    }\n}",
+  "modernCode": "@ApplicationScoped\npublic class OrderService {\n    @Inject\n    @Resource(name = \"jdbc/OrderDB\")\n    DataSource ds;\n\n    public List<Order> findAll()\n            throws SQLException {\n        try (Connection con = ds.getConnection()) {\n            // query orders\n        }\n    }\n}",
+  "summary": "Replace fragile JNDI string lookups with type-safe CDI injection for container-managed resources.",
+  "explanation": "The traditional JNDI pattern forces you to use string-based resource names, handle NamingException, and manage an InitialContext. CDI injection with @Inject (or @Resource for container resources) lets the container wire dependencies automatically. Typos become compile-time errors, and classes are easier to test because dependencies can be injected directly.",
+  "whyModernWins": [
+    {
+      "icon": "🔒",
+      "title": "Type-safe wiring",
+      "desc": "Injection errors are caught at deployment time, not at runtime via string lookups."
+    },
+    {
+      "icon": "🗑️",
+      "title": "No boilerplate",
+      "desc": "Eliminates InitialContext creation, JNDI name strings, and NamingException handling."
+    },
+    {
+      "icon": "🧪",
+      "title": "Testable",
+      "desc": "Dependencies are injected fields, easily replaced with mocks in unit tests."
+    }
+  ],
+  "support": {
+    "state": "available",
+    "description": "Widely available since Jakarta EE 8 / Java 11"
+  },
+  "prev": "enterprise/ejb-timer-vs-jakarta-scheduler",
+  "next": "enterprise/manual-transaction-vs-declarative",
+  "related": [
+    "enterprise/ejb-vs-cdi",
+    "enterprise/jdbc-vs-jpa",
+    "enterprise/singleton-ejb-vs-cdi-application-scoped"
+  ],
+  "docs": [
+    {
+      "title": "Jakarta CDI Specification",
+      "href": "https://jakarta.ee/specifications/cdi/"
+    },
+    {
+      "title": "Jakarta Annotations — @Resource",
+      "href": "https://jakarta.ee/specifications/annotations/"
+    }
+  ]
+}

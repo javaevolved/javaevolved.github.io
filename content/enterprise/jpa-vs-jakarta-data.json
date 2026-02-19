@@ -35,7 +35,7 @@
     "description": "Available since Jakarta EE 11 / Java 21 (2024)"
   },
   "prev": "enterprise/jdbc-vs-jpa",
-  "next": null,
+  "next": "enterprise/ejb-timer-vs-jakarta-scheduler",
   "related": [
     "enterprise/jdbc-vs-jpa",
     "enterprise/ejb-vs-cdi",
