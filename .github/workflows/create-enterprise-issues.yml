@@ -1,0 +1,173 @@
+name: Create Enterprise Pattern Issues
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create issues for enterprise pattern ideas
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const ideas = [
+              {
+                title: "Add enterprise pattern: EJB Timer vs Jakarta Scheduler",
+                body: [
+                  "## Enterprise Pattern: EJB Timer vs Jakarta Scheduler",
+                  "",
+                  "Show the migration from heavyweight EJB `@Schedule`/`TimerService` timers to Jakarta Concurrency's `ManagedScheduledExecutorService`, highlighting reduced boilerplate and better testability.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/ejb-timer-vs-jakarta-scheduler`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: EJB `@Schedule` annotation / `TimerService` injection",
+                  "- **Modern approach**: `ManagedScheduledExecutorService` from Jakarta Concurrency",
+                  "- Highlight: reduced boilerplate, easier unit testing without an EJB container",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              },
+              {
+                title: "Add enterprise pattern: JNDI Lookup vs CDI Injection",
+                body: [
+                  "## Enterprise Pattern: JNDI Lookup vs CDI Injection",
+                  "",
+                  "Compare the old `InitialContext.lookup()` JNDI pattern with modern CDI injection, demonstrating how container-managed dependencies eliminate fragile string-based resource lookups.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/jndi-lookup-vs-cdi-injection`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: `new InitialContext().lookup(\"java:comp/env/...\")`",
+                  "- **Modern approach**: `@Inject` CDI injection",
+                  "- Highlight: no fragile JNDI name strings, type-safe, container-managed lifecycle",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              },
+              {
+                title: "Add enterprise pattern: Manual JPA Transaction vs Declarative @Transactional",
+                body: [
+                  "## Enterprise Pattern: Manual JPA Transaction vs Declarative @Transactional",
+                  "",
+                  "Contrast the verbose `em.getTransaction().begin()` / `commit()` / `rollback()` boilerplate with the declarative `@Transactional` annotation, showing how AOP-based transactions reduce error-prone manual lifecycle management.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/manual-jpa-transaction-vs-transactional`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: `EntityTransaction` with explicit begin/commit/rollback in try/catch/finally",
+                  "- **Modern approach**: `@Transactional` from Jakarta Transactions",
+                  "- Highlight: AOP-based, no boilerplate, automatic rollback on exception",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              },
+              {
+                title: "Add enterprise pattern: SOAP Web Services vs Jakarta REST",
+                body: [
+                  "## Enterprise Pattern: SOAP Web Services vs Jakarta REST",
+                  "",
+                  "Illustrate the shift from heavyweight SOAP endpoints (with WSDL overhead) to clean Jakarta REST resources using `@Path`, `@GET`, and `@POST`, reflecting how modern microservices favour JSON over XML/SOAP.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/soap-vs-jakarta-rest`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: `@WebService` / `@WebMethod` JAX-WS SOAP endpoint with WSDL",
+                  "- **Modern approach**: `@Path` / `@GET` / `@POST` Jakarta REST resource",
+                  "- Highlight: no WSDL, JSON over XML, simpler client consumption, microservices-friendly",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              },
+              {
+                title: "Add enterprise pattern: Message-Driven Bean vs Reactive Messaging",
+                body: [
+                  "## Enterprise Pattern: Message-Driven Bean vs Reactive Messaging",
+                  "",
+                  "Show how a traditional EJB consuming from a JMS queue compares to a MicroProfile Reactive Messaging method, emphasising the simpler programming model and better cloud-native fit.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/mdb-vs-reactive-messaging`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: `@MessageDriven` EJB implementing `MessageListener.onMessage()`",
+                  "- **Modern approach**: `@Incoming` MicroProfile Reactive Messaging method",
+                  "- Highlight: no EJB container required, simpler model, better cloud-native/Quarkus fit",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              },
+              {
+                title: "Add enterprise pattern: JSF Managed Beans vs CDI Named Beans",
+                body: [
+                  "## Enterprise Pattern: JSF Managed Beans vs CDI Named Beans",
+                  "",
+                  "Replace `@ManagedBean` (deprecated in Jakarta EE 10) with `@Named` + `@RequestScoped` CDI beans, showing how the unified CDI model eliminates the old JSF-specific lifecycle.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/jsf-managed-bean-vs-cdi-named-bean`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: `@ManagedBean` + `@RequestScoped` from `javax.faces.bean`",
+                  "- **Modern approach**: `@Named` + `@RequestScoped` from CDI (`jakarta.inject` / `jakarta.enterprise.context`)",
+                  "- Highlight: `@ManagedBean` deprecated in Jakarta EE 10, unified CDI lifecycle, works outside JSF",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              },
+              {
+                title: "Add enterprise pattern: Singleton EJB vs CDI Application-Scoped Bean",
+                body: [
+                  "## Enterprise Pattern: Singleton EJB vs CDI Application-Scoped Bean",
+                  "",
+                  "Contrast a Singleton EJB (with container-managed concurrency and lock annotations) against a plain `@ApplicationScoped` CDI bean, helping developers choose the right tool for shared state.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/singleton-ejb-vs-application-scoped`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: `@Singleton` EJB with `@Lock(LockType.READ)` / `@Lock(LockType.WRITE)`",
+                  "- **Modern approach**: `@ApplicationScoped` CDI bean with explicit `synchronized` or `ReadWriteLock` if needed",
+                  "- Highlight: no EJB container, lighter weight, explicit concurrency control",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              },
+              {
+                title: "Add enterprise pattern: JDBC ResultSet Mapping vs JPA Criteria API",
+                body: [
+                  "## Enterprise Pattern: JDBC ResultSet Mapping vs JPA Criteria API",
+                  "",
+                  "Move from manual `ResultSet` column-by-column mapping to type-safe JPA Criteria queries, demonstrating how the Criteria API eliminates raw SQL strings and runtime field-mapping errors.",
+                  "",
+                  "### Suggested slug",
+                  "`enterprise/jdbc-resultset-vs-jpa-criteria`",
+                  "",
+                  "### Notes",
+                  "- **Old approach**: `ResultSet.getString(\"column\")` / `ResultSet.getLong(\"id\")` manual mapping",
+                  "- **Modern approach**: `CriteriaBuilder` / `CriteriaQuery` with `Metamodel` for type-safe access",
+                  "- Highlight: no raw SQL strings, compile-time checked field names via metamodel, no runtime mapping errors",
+                  "",
+                  "_Sourced from [#45 ideas comment](https://github.com/javaevolved/javaevolved.github.io/issues/45#issuecomment-3929602375)_"
+                ].join("\n")
+              }
+            ];
+
+            for (const idea of ideas) {
+              const created = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: idea.title,
+                body: idea.body,
+                labels: ["enhancement"]
+              });
+              console.log(`Created issue #${created.data.number}: ${idea.title}`);
+            }
