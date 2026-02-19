@@ -548,6 +548,29 @@
   };
 
   /* ==========================================================
+     7. Theme Toggle
+     ========================================================== */
+  const initThemeToggle = () => {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+
+    const updateButton = (theme) => {
+      btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    };
+
+    // The anti-FOUC inline script already applied the theme; just sync the button state
+    updateButton(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    btn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateButton(next);
+    });
+  };
+
+  /* ==========================================================
      Utilities
      ========================================================== */
   const escapeHtml = (str) => {
@@ -569,5 +592,6 @@
     initCopyButtons();
     initSyntaxHighlighting();
     initNewsletter();
+    initThemeToggle();
   });
 })();

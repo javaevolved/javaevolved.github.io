@@ -96,6 +96,53 @@ code, pre { font-family: 'JetBrains Mono', monospace; }
   }
 }
 
+/* ---------- Manual Theme Override ---------- */
+:root[data-theme="light"] {
+  --bg: #f8f8fa;
+  --surface: #ffffff;
+  --surface-2: #f0f0f4;
+  --border: #d8d8e0;
+  --border-light: #e4e4ea;
+  --text: #1a1a2e;
+  --text-muted: #6b6b80;
+  --accent: #f97316;
+  --accent-dim: #ea580c;
+  --green: #059669;
+  --blue: #2563eb;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --yellow: #ca8a04;
+  --cyan: #0891b2;
+  --red-muted: #dc2626;
+  --old-bg: #fef2f2;
+  --modern-bg: #eff6ff;
+  --nav-bg: rgba(248, 248, 250, .85);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0b0f;
+  --surface: #14141a;
+  --surface-2: #1a1a22;
+  --border: #25252f;
+  --border-light: #2f2f3a;
+  --text: #e4e4e7;
+  --text-muted: #6b6b76;
+  --accent: #fb923c;
+  --accent-dim: #f97316;
+  --green: #34d399;
+  --blue: #60a5fa;
+  --pink: #f472b6;
+  --orange: #fb923c;
+  --yellow: #fbbf24;
+  --cyan: #22d3ee;
+  --red-muted: #ef4444;
+  --old-bg: #1a1412;
+  --modern-bg: #1a2838;
+  --nav-bg: rgba(11, 11, 15, .8);
+  color-scheme: dark;
+}
+
 /* ---------- Base Body ---------- */
 body {
   background: var(--bg);
@@ -200,10 +247,26 @@ nav {
   text-decoration: none;
 }
 
-.github-link:hover {
+.github-link:hover,
+.theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--surface-2);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s;
+  cursor: pointer;
 }
 
 /* ---------- Hero ---------- */
