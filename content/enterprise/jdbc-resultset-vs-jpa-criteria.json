@@ -35,7 +35,7 @@
     "description": "Widely available since Jakarta EE 8 / Java 11"
   },
   "prev": "enterprise/singleton-ejb-vs-cdi-application-scoped",
-  "next": null,
+  "next": "enterprise/spring-null-safety-jspecify",
   "related": [
     "enterprise/jdbc-vs-jpa",
     "enterprise/jpa-vs-jakarta-data",

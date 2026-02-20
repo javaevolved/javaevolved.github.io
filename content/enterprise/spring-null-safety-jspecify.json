@@ -1,0 +1,54 @@
+{
+  "id": 110,
+  "slug": "spring-null-safety-jspecify",
+  "title": "Spring Null Safety with JSpecify",
+  "category": "enterprise",
+  "difficulty": "intermediate",
+  "jdkVersion": "17",
+  "oldLabel": "Spring 5/6",
+  "modernLabel": "Spring 7",
+  "oldApproach": "Spring @NonNull/@Nullable",
+  "modernApproach": "JSpecify @NullMarked",
+  "oldCode": "import org.springframework.lang.NonNull;\nimport org.springframework.lang.Nullable;\n\npublic class UserService {\n\n    @Nullable\n    public User findById(@NonNull String id) {\n        return repository.findById(id).orElse(null);\n    }\n\n    @NonNull\n    public List<User> findAll() {\n        return repository.findAll();\n    }\n\n    @NonNull\n    public User save(@NonNull User user) {\n        return repository.save(user);\n    }\n}",
+  "modernCode": "import org.jspecify.annotations.NullMarked;\nimport org.jspecify.annotations.Nullable;\n\n@NullMarked\npublic class UserService {\n\n    public @Nullable User findById(String id) {\n        return repository.findById(id).orElse(null);\n    }\n\n    public List<User> findAll() {\n        return repository.findAll();\n    }\n\n    public User save(User user) {\n        return repository.save(user);\n    }\n}",
+  "summary": "Spring 7 adopts JSpecify annotations, making non-null the default and reducing annotation noise.",
+  "explanation": "Spring 5 and 6 introduced their own null safety annotations in the `org.springframework.lang` package. While useful, these were framework-specific and required annotating every non-null element explicitly. Spring 7 migrates to JSpecify, a cross-ecosystem standard for null safety. The `@NullMarked` annotation at the class or package level declares that all unannotated types are non-null by default. Only actual nullable types need the `@Nullable` annotation, dramatically reducing verbosity. JSpecify annotations are recognized by major static analysis tools such as NullAway, Error Prone, and IntelliJ IDEA, bringing richer tooling support beyond what Spring-specific annotations provided.",
+  "whyModernWins": [
+    {
+      "icon": "✂️",
+      "title": "Non-null by default",
+      "desc": "@NullMarked makes all unannotated types non-null, so only nullable exceptions need annotation."
+    },
+    {
+      "icon": "🌐",
+      "title": "Ecosystem standard",
+      "desc": "JSpecify annotations are a cross-framework standard recognized by NullAway, Error Prone, and IDEs."
+    },
+    {
+      "icon": "🔍",
+      "title": "Richer tooling",
+      "desc": "Modern static analyzers understand JSpecify's null model and report violations at compile time."
+    }
+  ],
+  "support": {
+    "state": "available",
+    "description": "Available since Spring Framework 7.0 (requires Java 17+)"
+  },
+  "prev": "enterprise/jdbc-resultset-vs-jpa-criteria",
+  "next": null,
+  "related": [
+    "errors/helpful-npe",
+    "errors/optional-orelsethrow",
+    "errors/require-nonnull-else"
+  ],
+  "docs": [
+    {
+      "title": "Spring Framework 7 — Null Safety",
+      "href": "https://docs.spring.io/spring-framework/reference/core/null-safety.html"
+    },
+    {
+      "title": "JSpecify Specification",
+      "href": "https://jspecify.dev/docs/spec"
+    }
+  ]
+}
