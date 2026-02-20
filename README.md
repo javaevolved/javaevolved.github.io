@@ -61,7 +61,7 @@ Generated files (`site/category/*.html` and `site/data/snippets.json`) are in `.
 
 ```bash
 # Generate all HTML pages and data/snippets.json into site/
-java -jar html-generators/generate.jar
+jbang html-generators/generate.java
 
 # Serve locally
 jwebserver -b 0.0.0.0 -d site -p 8090
@@ -80,7 +80,7 @@ Contributions are welcome! Content is managed as JSON files — never edit gener
 2. Create a new JSON file in the appropriate `content/<category>/` folder (e.g. `content/language/my-feature.json`)
 3. Copy [`content/template.json`](content/template.json) to the new file as a starting point for all required fields (see the [snippet JSON schema](.github/copilot-instructions.md) for details)
 4. Update the `prev`/`next` fields in adjacent pattern JSON files to maintain navigation
-5. Run `java -jar html-generators/generate.jar` to verify your changes build correctly
+5. Run `jbang html-generators/generate.java` to verify your changes build correctly
 6. Open a pull request
 
 Please ensure JDK version labels only reference the version where a feature became **final** (non-preview).
