@@ -290,7 +290,7 @@ The `<html>` tag becomes `<html lang="{{locale}}">`.
 
 ## Navigation — Language Selector
 
-Same user-facing design as Plan A (a `<select>` or dropdown in the nav bar).
+A `<select>` dropdown in the nav bar lets users switch locales.
 The list of locales is rendered at build time from `locales.properties`:
 
 ```html
@@ -300,7 +300,7 @@ The list of locales is rendered at build time from `locales.properties`:
 </select>
 ```
 
-`app.js` path-rewrite logic is identical to Plan A.
+`app.js` handles path-rewriting when the user picks a different locale.
 
 ---
 
@@ -381,17 +381,3 @@ Or, with a build-all mode added to the generator:
 | Untranslated-page fallback is explicit and user-visible | `translations/` directory adds a new top-level location to learn |
 | UI strings fall back to English automatically — no silent gaps | `app.js` must be updated to consume `window.i18n` instead of literals |
 | Scales cleanly to many locales | Build time grows linearly with locale count × pattern count |
-
----
-
-## Comparison with Plan A
-
-| | Plan A | Plan B |
-|---|---|---|
-| Translation file format | Overlay (partial JSON) | Full replacement JSON |
-| UI strings | `content/i18n/{locale}/ui.json` | `translations/strings/{locale}.json` |
-| Content location | `content/i18n/{locale}/…` | `translations/content/{locale}/…` |
-| English templates | Keep some literals | Extract all literals to `en.json` |
-| Fallback behaviour | Silent (English shown without notice) | Optional "not yet translated" banner |
-| Generator complexity | Medium — deep-merge algorithm needed | Higher — full resolution pipeline |
-| Translator experience | Must understand overlay semantics | Self-contained files, easier to translate |
