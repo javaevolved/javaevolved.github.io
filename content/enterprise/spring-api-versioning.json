@@ -1,0 +1,54 @@
+{
+  "id": 110,
+  "slug": "spring-api-versioning",
+  "title": "Spring Framework 7 API Versioning",
+  "category": "enterprise",
+  "difficulty": "intermediate",
+  "jdkVersion": "17",
+  "oldLabel": "Spring Boot 2/3",
+  "modernLabel": "Spring Framework 7+",
+  "oldApproach": "Manual URL Path Versioning",
+  "modernApproach": "Native API Versioning",
+  "oldCode": "// Version 1 controller\n@RestController\n@RequestMapping(\"/api/v1/products\")\npublic class ProductControllerV1 {\n    @GetMapping(\"/{id}\")\n    public ProductDtoV1 getProduct(\n            @PathVariable Long id) {\n        return service.getV1(id);\n    }\n}\n\n// Version 2 — duplicated structure\n@RestController\n@RequestMapping(\"/api/v2/products\")\npublic class ProductControllerV2 {\n    @GetMapping(\"/{id}\")\n    public ProductDtoV2 getProduct(\n            @PathVariable Long id) {\n        return service.getV2(id);\n    }\n}",
+  "modernCode": "// Configure versioning once\n@Configuration\npublic class WebConfig implements WebMvcConfigurer {\n    @Override\n    public void configureApiVersioning(\n            ApiVersionConfigurer config) {\n        config.useRequestHeader(\"X-API-Version\");\n    }\n}\n\n// Single controller, version per method\n@RestController\n@RequestMapping(\"/api/products\")\npublic class ProductController {\n    @GetMapping(value = \"/{id}\", version = \"1\")\n    public ProductDtoV1 getV1(@PathVariable Long id) {\n        return service.getV1(id);\n    }\n\n    @GetMapping(value = \"/{id}\", version = \"2\")\n    public ProductDtoV2 getV2(@PathVariable Long id) {\n        return service.getV2(id);\n    }\n}",
+  "summary": "Replace duplicated version-prefixed controllers with Spring Framework 7's native API versioning support.",
+  "explanation": "Before Spring Framework 7, API versioning required separate controller classes per version (e.g., /api/v1/products, /api/v2/products), duplicating request mappings and scattering version logic across many files. Spring Framework 7 introduces native versioning through a new version attribute on @RequestMapping and related annotations, plus a configureApiVersioning hook in WebMvcConfigurer. The version can be resolved from a request header, a URL path segment, or a query parameter — all controlled in one place.",
+  "whyModernWins": [
+    {
+      "icon": "🗂️",
+      "title": "No controller duplication",
+      "desc": "All versions live in one controller class; only the individual handler methods carry a version attribute."
+    },
+    {
+      "icon": "⚙️",
+      "title": "Centralised version strategy",
+      "desc": "Switch from header to URL or query-param versioning in a single configureApiVersioning call."
+    },
+    {
+      "icon": "📈",
+      "title": "Incremental evolution",
+      "desc": "Add a new version to one method without touching unrelated endpoints or creating new controller files."
+    }
+  ],
+  "support": {
+    "state": "available",
+    "description": "Available since Spring Framework 7.0 (requires Java 17+)"
+  },
+  "prev": "enterprise/jdbc-resultset-vs-jpa-criteria",
+  "next": null,
+  "related": [
+    "enterprise/soap-vs-jakarta-rest",
+    "enterprise/servlet-vs-jaxrs",
+    "enterprise/ejb-vs-cdi"
+  ],
+  "docs": [
+    {
+      "title": "Spring Framework 7.0 — API Versioning",
+      "href": "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-version"
+    },
+    {
+      "title": "Spring Framework 7.0 Migration Guide",
+      "href": "https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Migration-Guide"
+    }
+  ]
+}
