@@ -50,7 +50,7 @@ templates/                            # Templates use {{…}} tokens for every U
 
 html-generators/
   locales.properties                  # Ordered list of supported locales + display names
-  generate.java / generate.py         # Extended to iterate all locales
+  generate.java                        # Extended to iterate all locales
 
 site/                                 # Generated output
   index.html                          # English home (path = /)
@@ -337,7 +337,7 @@ The deploy workflow iterates all entries in `locales.properties`:
 
 ```yaml
 - name: Build site
-  run: python3 html-generators/generate.py --all-locales
+  run: jbang html-generators/generate.java --all-locales
 ```
 
 Or explicitly, to support incremental locale addition:
@@ -345,9 +345,9 @@ Or explicitly, to support incremental locale addition:
 ```yaml
 - name: Build site
   run: |
-    python3 html-generators/generate.py
-    python3 html-generators/generate.py --locale pt-BR
-    python3 html-generators/generate.py --locale ja
+    jbang html-generators/generate.java
+    jbang html-generators/generate.java --locale pt-BR
+    jbang html-generators/generate.java --locale ja
 ```
 
 ---
