@@ -1,0 +1,54 @@
+{
+  "id": 110,
+  "slug": "spring-xml-config-vs-annotations",
+  "title": "Spring XML Bean Config vs Annotation-Driven",
+  "category": "enterprise",
+  "difficulty": "intermediate",
+  "jdkVersion": "17",
+  "oldLabel": "Spring (XML)",
+  "modernLabel": "Spring Boot 3+",
+  "oldApproach": "XML Bean Definitions",
+  "modernApproach": "Annotation-Driven Beans",
+  "oldCode": "<!-- applicationContext.xml -->\n<beans xmlns=\"http://www.springframework.org/schema/beans\"\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n    xsi:schemaLocation=\"http://www.springframework.org/schema/beans\n        http://www.springframework.org/schema/beans/spring-beans.xsd\">\n\n    <bean id=\"userRepository\"\n          class=\"com.example.UserRepository\">\n        <property name=\"dataSource\" ref=\"dataSource\"/>\n    </bean>\n\n    <bean id=\"userService\"\n          class=\"com.example.UserService\">\n        <property name=\"repository\" ref=\"userRepository\"/>\n    </bean>\n\n</beans>",
+  "modernCode": "@SpringBootApplication\npublic class Application {\n    public static void main(String[] args) {\n        SpringApplication.run(Application.class, args);\n    }\n}\n\n@Repository\npublic class UserRepository {\n    private final JdbcTemplate jdbc;\n\n    public UserRepository(JdbcTemplate jdbc) {\n        this.jdbc = jdbc;\n    }\n}\n\n@Service\npublic class UserService {\n    private final UserRepository repository;\n\n    public UserService(UserRepository repository) {\n        this.repository = repository;\n    }\n}",
+  "summary": "Replace verbose Spring XML bean definitions with concise annotation-driven configuration in Spring Boot.",
+  "explanation": "Traditional Spring applications wired beans through XML configuration files, declaring each class and its dependencies as verbose <bean> elements. While annotation support existed since Spring 2.5, XML remained the dominant approach until Spring Boot introduced auto-configuration. Spring Boot detects beans annotated with @Component, @Service, @Repository, and @Controller via classpath scanning, satisfies dependencies through constructor injection automatically, and configures infrastructure like DataSource from the classpath — eliminating all XML wiring files.",
+  "whyModernWins": [
+    {
+      "icon": "🚫",
+      "title": "No XML",
+      "desc": "@SpringBootApplication triggers component scanning and auto-configuration, eliminating all XML wiring files."
+    },
+    {
+      "icon": "💉",
+      "title": "Constructor injection",
+      "desc": "Spring injects dependencies through constructors automatically, making beans easier to test and reason about."
+    },
+    {
+      "icon": "⚡",
+      "title": "Auto-configuration",
+      "desc": "Spring Boot configures DataSource, JPA, and other infrastructure from the classpath with zero boilerplate."
+    }
+  ],
+  "support": {
+    "state": "available",
+    "description": "Widely available since Spring Boot 1.0 (April 2014); Spring Boot 3 requires Java 17+"
+  },
+  "prev": "enterprise/jdbc-resultset-vs-jpa-criteria",
+  "next": null,
+  "related": [
+    "enterprise/ejb-vs-cdi",
+    "enterprise/jndi-lookup-vs-cdi-injection",
+    "enterprise/manual-transaction-vs-declarative"
+  ],
+  "docs": [
+    {
+      "title": "Spring Framework — Annotation-based Container Configuration",
+      "href": "https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html"
+    },
+    {
+      "title": "Spring Boot — Auto-configuration",
+      "href": "https://docs.spring.io/spring-boot/reference/using/auto-configuration.html"
+    }
+  ]
+}
