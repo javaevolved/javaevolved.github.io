@@ -561,6 +561,8 @@ nav {
 .code-text {
   white-space: pre;
   display: block;
+  font-variant-ligatures: none !important;
+  font-feature-settings: "liga" 0, "clig" 0, "calt" 0 !important;
 }
 
 .old-layer {
