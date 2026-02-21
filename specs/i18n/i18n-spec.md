@@ -168,7 +168,15 @@ need to include keys that differ from English.
 }
 ```
 
-Missing keys fall back to `en.json` at build time.
+**Key-level fallback rule:** if a key present in `en.json` is absent from a
+locale file, the generator uses the English value and emits a build-time warning:
+
+```
+[WARN] strings/pt-BR.json: missing key "footer.builtWith" — using English fallback
+```
+
+The page is always rendered completely; no key is ever silently blank. The warning
+is purely informational and does **not** abort the build.
 
 ---
 
@@ -229,6 +237,9 @@ For each pattern and locale the generator:
    - **No** → use the English file and inject an "untranslated" banner
      (see next section).
 3. Loads `translations/strings/<locale>.json` deep-merged over `en.json`.
+   Any key present in `en.json` but absent from the locale file falls back to
+   the English value; the generator logs a `[WARN]` for each missing key and
+   continues without aborting.
 4. Renders the template, substituting content tokens (`{{title}}`, …) and
    UI-string tokens (`{{nav.allPatterns}}`, …).
 5. Writes output to `site/<locale>/<cat>/<slug>.html`
