@@ -4,20 +4,20 @@
   "title": "Unmodifiable collectors",
   "category": "collections",
   "difficulty": "intermediate",
-  "jdkVersion": "10",
+  "jdkVersion": "16",
   "oldLabel": "Java 8",
-  "modernLabel": "Java 10+",
+  "modernLabel": "Java 16+",
   "oldApproach": "collectingAndThen",
-  "modernApproach": "toUnmodifiable*()",
+  "modernApproach": "stream.toList()",
   "oldCode": "List<String> list = stream.collect(\n    Collectors.collectingAndThen(\n        Collectors.toList(),\n        Collections::unmodifiableList\n    )\n);",
-  "modernCode": "List<String> list = stream.collect(\n    Collectors.toUnmodifiableList()\n);",
-  "summary": "Collect directly to unmodifiable collections.",
-  "explanation": "Java 10 added toUnmodifiableList(), toUnmodifiableSet(), and toUnmodifiableMap() collectors. No more wrapping with collectingAndThen. For lists specifically, Java 16+ stream.toList() is even simpler — it returns an unmodifiable List without the collect() call.",
+  "modernCode": "List<String> list = stream.toList();",
+  "summary": "Collect directly to an unmodifiable list with stream.toList().",
+  "explanation": "Java 10 added toUnmodifiableList(), toUnmodifiableSet(), and toUnmodifiableMap() to replace the verbose collectingAndThen wrapper. For lists specifically, Java 16's stream.toList() provides an even simpler alternative — no collect() call at all. Use toUnmodifiableSet() and toUnmodifiableMap() for other collection types.",
   "whyModernWins": [
     {
       "icon": "📏",
-      "title": "Direct",
-      "desc": "One collector instead of wrapping with collectingAndThen."
+      "title": "Shortest yet",
+      "desc": "stream.toList() needs no collect() or Collectors import at all."
     },
     {
       "icon": "🔒",
@@ -25,14 +25,14 @@
       "desc": "Result cannot be modified — no accidental mutations."
     },
     {
-      "icon": "🚫",
-      "title": "Null-safe",
-      "desc": "Rejects null elements during collection."
+      "icon": "📖",
+      "title": "Readable",
+      "desc": "Reads naturally as the terminal step of any stream pipeline."
     }
   ],
   "support": {
     "state": "available",
-    "description": "Widely available since JDK 10 (March 2018)"
+    "description": "Widely available since JDK 16 (March 2021)"
   },
   "prev": "collections/reverse-list-iteration",
   "next": "strings/string-isblank",
@@ -42,6 +42,10 @@
     "streams/stream-tolist"
   ],
   "docs": [
+    {
+      "title": "Stream.toList()",
+      "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html#toList()"
+    },
     {
       "title": "Collectors.toUnmodifiableList()",
       "href": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Collectors.html#toUnmodifiableList()"
