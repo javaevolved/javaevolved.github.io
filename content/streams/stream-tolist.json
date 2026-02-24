@@ -37,7 +37,7 @@
   "prev": "streams/collectors-flatmapping",
   "next": "streams/stream-mapmulti",
   "related": [
-    "streams/virtual-thread-executor",
+    "collections/unmodifiable-collectors",
     "streams/stream-gatherers",
     "streams/stream-iterate-predicate"
   ],
