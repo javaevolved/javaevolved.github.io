@@ -294,18 +294,29 @@ The `<html>` opening tag becomes `<html lang="{{locale}}">`.
 
 ## Navigation — Language Selector
 
-A `<select>` dropdown in the nav bar lets users switch locales.
-The list of locales is rendered at build time from `locales.properties`:
+A globe icon button (🌐) is placed in the nav bar immediately next to the
+dark/light theme toggle button. Clicking it opens a dropdown list of available
+locales. The list is rendered at build time from `locales.properties`.
 
 ```html
-<select id="localePicker" aria-label="Select language">
-  <option value="en">English</option>
-  <option value="pt-BR" selected>Português (Brasil)</option>
-</select>
+<!-- inside .nav-right, adjacent to the existing theme-toggle button -->
+<div class="locale-picker" id="localePicker">
+  <button class="locale-toggle" aria-haspopup="listbox" aria-expanded="false"
+          aria-label="Select language">🌐</button>
+  <ul role="listbox" aria-label="Language">
+    <li role="option" data-locale="en"    aria-selected="true">English</li>
+    <li role="option" data-locale="pt-BR" aria-selected="false">Português (Brasil)</li>
+  </ul>
+</div>
 ```
 
-`app.js` rewrites the current URL path to the equivalent page in the selected
-locale when the user changes the selection.
+When the user selects a locale, `app.js` rewrites the current URL path to the
+equivalent page for that locale and persists the choice to `localStorage` so
+subsequent page loads open in the correct language automatically.
+
+The dropdown is hidden by default and toggled via the `.locale-toggle` button.
+Clicking outside the dropdown or pressing `Escape` closes it. The currently
+active locale's `<li>` receives `aria-selected="true"` and a visual highlight.
 
 ---
 
