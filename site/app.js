@@ -15,6 +15,41 @@
   const locale = detectLocale();
   const localePrefix = locale === 'en' ? '' : '/' + locale;
 
+  /* ---------- Browser Locale Auto-Redirect ---------- */
+  const autoRedirectLocale = () => {
+    if (locale !== 'en') return; // already on a non-English locale
+    const available = (window.i18n && window.i18n.availableLocales) || [];
+    if (available.length <= 1) return;
+
+    // Respect explicit user choice (set when using locale picker)
+    const preferred = localStorage.getItem('preferred-locale');
+    if (preferred === 'en') return; // user explicitly chose English
+    if (preferred && available.includes(preferred)) {
+      window.location.replace('/' + preferred + location.pathname + location.search + location.hash);
+      return;
+    }
+
+    // Match browser language to available locales
+    const langs = navigator.languages || [navigator.language];
+    for (const lang of langs) {
+      // Exact match (e.g. pt-BR)
+      if (lang !== 'en' && available.includes(lang)) {
+        window.location.replace('/' + lang + location.pathname + location.search + location.hash);
+        return;
+      }
+      // Prefix match (e.g. pt matches pt-BR)
+      const prefix = lang.split('-')[0];
+      if (prefix !== 'en') {
+        const match = available.find(l => l.startsWith(prefix + '-') || l === prefix);
+        if (match) {
+          window.location.replace('/' + match + location.pathname + location.search + location.hash);
+          return;
+        }
+      }
+    }
+  };
+  autoRedirectLocale();
+
   /* ---------- Snippets Data ---------- */
   let snippets = [];
 

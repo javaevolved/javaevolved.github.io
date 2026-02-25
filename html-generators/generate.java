@@ -471,10 +471,14 @@ String renderLocalePicker(String currentLocale) {
 
 /** Render the i18n script block for client-side JS */
 String renderI18nScript(Map<String, String> strings, String locale) {
+    var localeArray = LOCALES.keySet().stream()
+        .map(l -> "\"" + l + "\"")
+        .collect(java.util.stream.Collectors.joining(", "));
     return """
       <script>
         window.i18n = {
           locale: "%s",
+          availableLocales: [%s],
           searchPlaceholder: "%s",
           noResults: "%s",
           copied: "%s",
@@ -485,6 +489,7 @@ String renderI18nScript(Map<String, String> strings, String locale) {
         };
       </script>""".formatted(
             locale,
+            localeArray,
             jsEscape(strings.getOrDefault("search.placeholder", "Search snippets…")),
             jsEscape(strings.getOrDefault("search.noResults", "No results found.")),
             jsEscape(strings.getOrDefault("copy.copied", "Copied!")),
