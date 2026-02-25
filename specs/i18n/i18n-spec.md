@@ -301,7 +301,7 @@ locales. The list is rendered at build time from `locales.properties`.
 ```html
 <!-- inside .nav-right, adjacent to the existing theme-toggle button -->
 <div class="locale-picker" id="localePicker">
-  <button class="locale-toggle" aria-haspopup="listbox" aria-expanded="false"
+  <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false"
           aria-label="Select language">🌐</button>
   <ul role="listbox" aria-label="Language">
     <li role="option" data-locale="en"    aria-selected="true">English</li>
