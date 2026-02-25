@@ -1,0 +1,93 @@
+{
+  "site": {
+    "tagline": "O Java evoluiu. Seu código também pode.",
+    "tagline_line1": "O Java evoluiu.",
+    "tagline_line2": "Seu código também pode.",
+    "description": "Uma coleção de snippets modernos de Java. Cada padrão antigo ao lado da sua substituição moderna e limpa — lado a lado.",
+    "heroSnippetCount": "✦ {{snippetCount}} padrões modernos · Java 8 → Java 25",
+    "heroOld": "Antigo",
+    "heroModern": "Moderno",
+    "allComparisons": "Todas as comparações",
+    "snippetsBadge": "{{snippetCount}} snippets"
+  },
+  "nav": {
+    "allPatterns": "← Todos os padrões",
+    "toggleTheme": "Alternar tema",
+    "viewOnGitHub": "Ver no GitHub",
+    "selectLanguage": "Selecionar idioma"
+  },
+  "breadcrumb": {
+    "home": "Início"
+  },
+  "sections": {
+    "codeComparison": "Comparação de Código",
+    "whyModernWins": "Por que a forma moderna ganha",
+    "oldApproach": "Abordagem Antiga",
+    "modernApproach": "Abordagem Moderna",
+    "sinceJdk": "Desde o JDK",
+    "difficulty": "Dificuldade",
+    "jdkSupport": "Suporte JDK",
+    "howItWorks": "Como funciona",
+    "relatedDocs": "Documentação Relacionada",
+    "relatedPatterns": "Padrões relacionados"
+  },
+  "filters": {
+    "show": "Mostrar:",
+    "all": "Todos"
+  },
+  "search": {
+    "placeholder": "Buscar padrões…",
+    "noResults": "Nenhum resultado encontrado.",
+    "esc": "ESC",
+    "searchTrigger": "Buscar…",
+    "navigate": "navegar",
+    "open": "abrir",
+    "close": "fechar"
+  },
+  "cards": {
+    "old": "Antigo",
+    "modern": "Moderno",
+    "hoverHint": "passe o mouse para ver o moderno →",
+    "hoverHintRelated": "Passe o mouse para ver o moderno ➜",
+    "touchHint": "👆 toque ou deslize →"
+  },
+  "copy": {
+    "copy": "Copiar",
+    "copied": "Copiado!"
+  },
+  "share": {
+    "label": "Compartilhar"
+  },
+  "view": {
+    "expandAll": "Expandir Tudo",
+    "collapseAll": "Recolher Tudo"
+  },
+  "stats": {
+    "modernPatterns": "Padrões Modernos",
+    "jdkVersions": "Versões do JDK Cobertas",
+    "categories": "Categorias",
+    "linesOfPython": "Linhas de Python Necessárias"
+  },
+  "footer": {
+    "tagline": "O Java evoluiu. Seu código também pode.",
+    "madeWith": "Feito com ❤️ por",
+    "and": "e",
+    "inspiredBy": "Inspirado por",
+    "viewOnGitHub": "Ver no GitHub"
+  },
+  "copilot": {
+    "headline": "Modernize sua base de código Java com o GitHub Copilot.",
+    "description": "Deixe o Copilot ajudá-lo a migrar padrões legados para Java moderno — automaticamente.",
+    "appModernization": "Modernização de Apps →",
+    "javaGuide": "Guia Java →"
+  },
+  "support": {
+    "available": "Disponível",
+    "preview": "Preview",
+    "experimental": "Experimental"
+  },
+  "untranslated": {
+    "notice": "Esta página ainda não foi traduzida para {{localeName}}.",
+    "viewInEnglish": "Ver em Inglês"
+  }
+}

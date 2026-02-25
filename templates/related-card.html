@@ -1,4 +1,4 @@
-        <a href="/{{category}}/{{slug}}.html" class="tip-card">
+        <a href="{{relatedHref}}" class="tip-card">
           <div class="tip-card-body">
             <div class="tip-card-header">
               <div class="tip-badges">
@@ -17,7 +17,7 @@
               <div class="mini-label">{{modernLabel}}</div>
               <pre class="code-text">{{modernCode}}</pre>
             </div>
-            <span class="hover-hint">Hover to see modern ➜</span>
+            <span class="hover-hint">{{cards.hoverHintRelated}}</span>
           </div>
           <div class="tip-card-footer">
             <span class="browser-support"><span class="dot"></span>JDK {{jdkVersion}}+</span>

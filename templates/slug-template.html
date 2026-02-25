@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{locale}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,13 @@
   <meta name="description" content="{{summary}}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{canonicalUrl}}">
-  <link rel="stylesheet" href="../styles.css">
+{{hreflangLinks}}
+  <link rel="stylesheet" href="{{basePrefix}}styles.css">
   <script>
     (function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);})();
   </script>
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="{{basePrefix}}favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="{{basePrefix}}manifest.json">
   <meta name="theme-color" content="#f97316">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -23,7 +24,7 @@
   <meta property="og:url" content="{{canonicalUrl}}">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="java.evolved">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="{{ogLocale}}">
   <meta property="og:image" content="https://javaevolved.github.io/images/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -67,7 +68,7 @@
             "@type": "ListItem",
             "position": 2,
             "name": "{{categoryDisplayJson}}",
-            "item": "https://javaevolved.github.io/?cat={{category}}"
+            "item": "https://javaevolved.github.io/#{{category}}"
         },
         {
             "@type": "ListItem",
@@ -91,16 +92,17 @@
 <body data-page="single">
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo">java.<span>evolved</span></a>
+      <a href="{{homeUrl}}" class="logo">java.<span>evolved</span></a>
       <div class="nav-right">
-        <a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+        <a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener" class="github-link" aria-label="{{nav.viewOnGitHub}}">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
             <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
             <path d="M10 3C6.13 3 3 6.13 3 10c0 3.09 2 5.71 4.77 6.63.35.06.48-.15.48-.33v-1.16c-1.95.42-2.36-1.07-2.36-1.07-.32-.81-.78-1.03-.78-1.03-.64-.43.05-.42.05-.42.7.05 1.07.72 1.07.72.63 1.08 1.65.77 2.05.59.06-.46.24-.77.44-.95-1.57-.18-3.22-.78-3.22-3.48 0-.77.27-1.4.72-1.89-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72.56-.16 1.16-.24 1.76-.24s1.2.08 1.76.24c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.49.72 1.12.72 1.89 0 2.71-1.65 3.3-3.23 3.47.25.22.48.65.48 1.31v1.94c0 .19.13.4.48.33C15 15.71 17 13.09 17 10c0-3.87-3.13-7-7-7z"/>
           </svg>
         </a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
-        <a href="/" class="back-link">← All patterns</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="{{nav.toggleTheme}}">☀️</button>
+{{localePicker}}
+        <a href="{{homeUrl}}" class="back-link">{{nav.allPatterns}}</a>
         
         <div class="nav-arrows">
           {{navArrows}}
@@ -111,9 +113,9 @@
 
   <article class="article">
     <div class="breadcrumb">
-      <a href="/">Home</a>
+      <a href="{{homeUrl}}">{{breadcrumb.home}}</a>
       <span class="sep">/</span>
-      <a href="/?cat={{category}}">{{categoryDisplay}}</a>
+      <a href="{{homeUrl}}#{{category}}">{{categoryDisplay}}</a>
       <span class="sep">/</span>
       <span>{{title}}</span>
     </div>
@@ -128,12 +130,12 @@
     </div>
 
     <section class="compare-section">
-      <div class="section-label">Code Comparison</div>
+      <div class="section-label">{{sections.codeComparison}}</div>
       <div class="compare-container">
         <div class="compare-panel old-panel">
           <div class="compare-panel-header">
             <span class="compare-tag old">✕ {{oldLabel}}</span>
-            <button class="copy-btn" data-code="old">Copy</button>
+            <button class="copy-btn" data-code="old">{{copy.copy}}</button>
           </div>
           <div class="compare-code">
             <pre class="code-text">{{oldCode}}</pre>
@@ -142,7 +144,7 @@
         <div class="compare-panel modern-panel">
           <div class="compare-panel-header">
             <span class="compare-tag modern">✓ {{modernLabel}}</span>
-            <button class="copy-btn" data-code="modern">Copy</button>
+            <button class="copy-btn" data-code="modern">{{copy.copy}}</button>
           </div>
           <div class="compare-code">
             <pre class="code-text">{{modernCode}}</pre>
@@ -152,7 +154,7 @@
     </section>
 
     <section class="why-section">
-      <div class="section-label">Why the modern way wins</div>
+      <div class="section-label">{{sections.whyModernWins}}</div>
       <div class="why-grid">
 {{whyCards}}
       </div>
@@ -160,25 +162,25 @@
 
     <div class="info-grid">
       <div class="info-card">
-        <div class="info-label">Old Approach</div>
+        <div class="info-label">{{sections.oldApproach}}</div>
         <div class="info-value red">{{oldApproach}}</div>
       </div>
       <div class="info-card">
-        <div class="info-label">Modern Approach</div>
+        <div class="info-label">{{sections.modernApproach}}</div>
         <div class="info-value green">{{modernApproach}}</div>
       </div>
       <div class="info-card">
-        <div class="info-label">Since JDK</div>
+        <div class="info-label">{{sections.sinceJdk}}</div>
         <div class="info-value accent">{{jdkVersion}}</div>
       </div>
       <div class="info-card">
-        <div class="info-label">Difficulty</div>
+        <div class="info-label">{{sections.difficulty}}</div>
         <div class="info-value blue">{{difficulty}}</div>
       </div>
     </div>
 
     <section class="bs-section">
-      <div class="section-label">JDK Support</div>
+      <div class="section-label">{{sections.jdkSupport}}</div>
       <div class="bs-card">
         <div class="bs-feature-name">{{title}}</div>
         <span class="baseline-badge {{supportBadgeClass}}">{{supportBadge}}</span>
@@ -187,19 +189,19 @@
     </section>
 
     <section class="explanation">
-      <div class="section-label">How it works</div>
+      <div class="section-label">{{sections.howItWorks}}</div>
       <p>{{explanation}}</p>
     </section>
 
     <section class="docs-section">
-      <div class="section-label">Related Documentation</div>
+      <div class="section-label">{{sections.relatedDocs}}</div>
       <div class="docs-links">
 {{docLinks}}
       </div>
     </section>
 
     <section class="related">
-      <div class="section-label">Related patterns</div>
+      <div class="section-label">{{sections.relatedPatterns}}</div>
       <div class="related-grid">
 {{relatedCards}}
       </div>
@@ -211,12 +213,13 @@
 {{socialShare}}
 
   <footer>
-    <p><a href="/">java.evolved</a> — Java has evolved. Your code can too.</p>
-    <p>Made with ❤️ by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a> and <a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a></p>
-    <p>Inspired by <a href="https://modern-css.com" target="_blank" rel="noopener">modern-css.com</a></p>
-    <p><a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener">View on GitHub</a></p>
+    <p><a href="{{homeUrl}}">java.evolved</a> — {{footer.tagline}}</p>
+    <p>{{footer.madeWith}} <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a> {{footer.and}} <a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a></p>
+    <p>{{footer.inspiredBy}} <a href="https://modern-css.com" target="_blank" rel="noopener">modern-css.com</a></p>
+    <p><a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener">{{footer.viewOnGitHub}}</a></p>
   </footer>
 
-  <script src="../app.js"></script>
+{{i18nScript}}
+  <script src="{{basePrefix}}app.js"></script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+{
+  "site": {
+    "title": "java.evolved",
+    "tagline": "Java has evolved. Your code can too.",
+    "tagline_line1": "Java has evolved.",
+    "tagline_line2": "Your code can too.",
+    "description": "A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.",
+    "heroSnippetCount": "✦ {{snippetCount}} modern patterns · Java 8 → Java 25",
+    "heroOld": "Old",
+    "heroModern": "Modern",
+    "allComparisons": "All comparisons",
+    "snippetsBadge": "{{snippetCount}} snippets"
+  },
+  "nav": {
+    "allPatterns": "← All patterns",
+    "toggleTheme": "Toggle theme",
+    "viewOnGitHub": "View on GitHub",
+    "selectLanguage": "Select language"
+  },
+  "breadcrumb": {
+    "home": "Home"
+  },
+  "sections": {
+    "codeComparison": "Code Comparison",
+    "whyModernWins": "Why the modern way wins",
+    "oldApproach": "Old Approach",
+    "modernApproach": "Modern Approach",
+    "sinceJdk": "Since JDK",
+    "difficulty": "Difficulty",
+    "jdkSupport": "JDK Support",
+    "howItWorks": "How it works",
+    "relatedDocs": "Related Documentation",
+    "relatedPatterns": "Related patterns"
+  },
+  "filters": {
+    "show": "Show:",
+    "all": "All"
+  },
+  "search": {
+    "placeholder": "Search snippets…",
+    "noResults": "No results found.",
+    "esc": "ESC",
+    "searchTrigger": "Search…",
+    "navigate": "navigate",
+    "open": "open",
+    "close": "close"
+  },
+  "cards": {
+    "old": "Old",
+    "modern": "Modern",
+    "hoverHint": "hover to see modern →",
+    "hoverHintRelated": "Hover to see modern ➜",
+    "touchHint": "👆 tap or swipe →"
+  },
+  "copy": {
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "share": {
+    "label": "Share"
+  },
+  "view": {
+    "expandAll": "Expand All",
+    "collapseAll": "Collapse All"
+  },
+  "stats": {
+    "modernPatterns": "Modern Patterns",
+    "jdkVersions": "JDK Versions Covered",
+    "categories": "Categories",
+    "linesOfPython": "Lines of Python Required"
+  },
+  "footer": {
+    "tagline": "Java has evolved. Your code can too.",
+    "madeWith": "Made with ❤️ by",
+    "and": "and",
+    "inspiredBy": "Inspired by",
+    "viewOnGitHub": "View on GitHub"
+  },
+  "copilot": {
+    "headline": "Modernize your Java codebase with GitHub Copilot.",
+    "description": "Let Copilot help you migrate legacy patterns to modern Java — automatically.",
+    "appModernization": "App Modernization →",
+    "javaGuide": "Java Guide →"
+  },
+  "support": {
+    "available": "Available",
+    "preview": "Preview",
+    "experimental": "Experimental"
+  },
+  "untranslated": {
+    "notice": "This page has not yet been translated into {{localeName}}.",
+    "viewInEnglish": "View in English"
+  }
+}

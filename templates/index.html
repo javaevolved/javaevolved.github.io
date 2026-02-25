@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{locale}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>java.evolved Code Snippets | java.evolved</title>
-  <meta name="description" content="A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.">
+  <meta name="description" content="{{site.description}}">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://javaevolved.github.io">
+  <link rel="canonical" href="{{canonicalUrl}}">
+{{hreflangLinks}}
 
   <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
@@ -18,11 +19,11 @@
   <meta name="apple-mobile-web-app-title" content="java.evolved">
 
   <meta property="og:title" content="java.evolved Code Snippets | java.evolved">
-  <meta property="og:description" content="A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.">
-  <meta property="og:url" content="https://javaevolved.github.io">
+  <meta property="og:description" content="{{site.description}}">
+  <meta property="og:url" content="{{canonicalUrl}}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="java.evolved">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="{{ogLocale}}">
   <meta property="og:image" content="https://javaevolved.github.io/images/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -31,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bruaborges">
   <meta name="twitter:title" content="java.evolved Code Snippets | java.evolved">
-  <meta name="twitter:description" content="A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side.">
+  <meta name="twitter:description" content="{{site.description}}">
   <meta name="twitter:image" content="https://javaevolved.github.io/images/social-card.png">
 
   <style>
@@ -39,7 +40,7 @@
     @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('/assets/fonts/jetbrains-mono.woff2') format('woff2')}
   </style>
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{indexBasePrefix}}styles.css">
 
   <script>
     (function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);})();
@@ -168,27 +169,28 @@
 <body data-page="home">
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo">java.<span>evolved</span></a>
+      <a href="{{homeUrl}}" class="logo">java.<span>evolved</span></a>
       <div class="nav-right">
-        <a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+        <a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener" class="github-link" aria-label="{{nav.viewOnGitHub}}">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
             <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
             <path d="M10 3C6.13 3 3 6.13 3 10c0 3.09 2 5.71 4.77 6.63.35.06.48-.15.48-.33v-1.16c-1.95.42-2.36-1.07-2.36-1.07-.32-.81-.78-1.03-.78-1.03-.64-.43.05-.42.05-.42.7.05 1.07.72 1.07.72.63 1.08 1.65.77 2.05.59.06-.46.24-.77.44-.95-1.57-.18-3.22-.78-3.22-3.48 0-.77.27-1.4.72-1.89-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72.56-.16 1.16-.24 1.76-.24s1.2.08 1.76.24c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.49.72 1.12.72 1.89 0 2.71-1.65 3.3-3.23 3.47.25.22.48.65.48 1.31v1.94c0 .19.13.4.48.33C15 15.71 17 13.09 17 10c0-3.87-3.13-7-7-7z"/>
           </svg>
         </a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
-        <div class="cmd-bar" id="searchTrigger">Search… <kbd>⌘K</kbd></div>
+        <button class="theme-toggle" id="themeToggle" aria-label="{{nav.toggleTheme}}">☀️</button>
+{{localePicker}}
+        <div class="cmd-bar" id="searchTrigger">{{search.searchTrigger}} <kbd>⌘K</kbd></div>
       </div>
     </div>
   </nav>
 
   <section class="hero">
-    <div class="hero-badge">✦ {{snippetCount}} modern patterns · Java 8 → Java 25</div>
-    <h1>Java has evolved.<br><span class="gradient">Your code can too.</span></h1>
-    <p>Every old Java pattern next to its clean, modern replacement — side by side.</p>
-    <a href="/language/records-for-data-classes.html" class="hero-compare">
+    <div class="hero-badge">{{site.heroSnippetCount}}</div>
+    <h1>{{site.tagline_line1}}<br><span class="gradient">{{site.tagline_line2}}</span></h1>
+    <p>{{site.description}}</p>
+    <a href="{{homeUrl}}language/records-for-data-classes.html" class="hero-compare">
       <div class="hero-compare-side old">
-        <div class="compare-label old">✕ Old</div>
+        <div class="compare-label old">✕ {{site.heroOld}}</div>
         <pre class="code-text" style="margin:0;background:none;border:none;font:inherit;line-height:inherit;padding:0;overflow:visible"><code style="background:none;border:none;padding:0;font:inherit">public class Point {
     private final int x, y;
     public Point(int x, int y) { ... }
@@ -198,14 +200,14 @@
 }</code></pre>
       </div>
       <div class="hero-compare-side modern">
-        <div class="compare-label modern">✓ Modern</div>
+        <div class="compare-label modern">✓ {{site.heroModern}}</div>
         <pre class="code-text" style="margin:0;background:none;border:none;font:inherit;line-height:inherit;padding:0;overflow:visible"><code style="background:none;border:none;padding:0;font:inherit">public record Point(int x, int y) {}</code></pre>
       </div>
     </a>
   </section>
 
   <div class="social-share" id="socialShare">
-    <span class="share-label">Share</span>
+    <span class="share-label">{{share.label}}</span>
     <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fjavaevolved.github.io&text=java.evolved%20%E2%80%93%20Every%20old%20Java%20pattern%20next%20to%20its%20modern%20replacement%2C%20side%20by%20side." target="_blank" rel="noopener" class="share-btn share-x" aria-label="Share on X">𝕏</a>
     <a href="https://bsky.app/intent/compose?text=java.evolved%20%E2%80%93%20Every%20old%20Java%20pattern%20next%20to%20its%20modern%20replacement%2C%20side%20by%20side.%20https%3A%2F%2Fjavaevolved.github.io" target="_blank" rel="noopener" class="share-btn share-bsky" aria-label="Share on Bluesky">🦋</a>
     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjavaevolved.github.io" target="_blank" rel="noopener" class="share-btn share-li" aria-label="Share on LinkedIn">in</a>
@@ -216,24 +218,24 @@
     <div class="copilot-callout-inner">
       <span class="copilot-icon">🤖</span>
       <div class="copilot-callout-text">
-        <strong>Modernize your Java codebase with GitHub Copilot.</strong>
-        Let Copilot help you migrate legacy patterns to modern Java — automatically.
+        <strong>{{copilot.headline}}</strong>
+        {{copilot.description}}
       </div>
       <div class="copilot-callout-links">
-        <a href="https://github.com/solutions/use-case/app-modernization" target="_blank" rel="noopener">App Modernization →</a>
-        <a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/modernize-java-applications" target="_blank" rel="noopener">Java Guide →</a>
+        <a href="https://github.com/solutions/use-case/app-modernization" target="_blank" rel="noopener">{{copilot.appModernization}}</a>
+        <a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/modernize-java-applications" target="_blank" rel="noopener">{{copilot.javaGuide}}</a>
       </div>
     </div>
   </section>
 
   <section class="section" id="all-comparisons" style="padding-top:24px">
     <div class="section-header">
-      <h2 class="section-title">All comparisons</h2>
-      <span class="section-badge">{{snippetCount}} snippets</span>
+      <h2 class="section-title">{{site.allComparisons}}</h2>
+      <span class="section-badge">{{site.snippetsBadge}}</span>
     </div>
     <div class="filter-pills" id="categoryFilter">
-      <span class="filter-label">Show:</span>
-      <button class="filter-pill" data-filter="all">All</button>
+      <span class="filter-label">{{filters.show}}</span>
+      <button class="filter-pill" data-filter="all">{{filters.all}}</button>
       <button class="filter-pill" data-filter="language">Language</button>
       <button class="filter-pill" data-filter="collections">Collections</button>
       <button class="filter-pill" data-filter="strings">Strings</button>
@@ -249,7 +251,7 @@
     <div class="view-toggle-wrap">
       <button class="view-toggle-btn" id="viewToggle" aria-label="Toggle view mode">
         <span class="view-toggle-icon">⊞</span>
-        <span class="view-toggle-text">Expand All</span>
+        <span class="view-toggle-text">{{view.expandAll}}</span>
       </button>
     </div>
     <div class="tips-grid" id="tipsGrid">
@@ -260,45 +262,46 @@
   <div class="stats-bar">
     <div class="stat-card">
       <div class="number orange">{{snippetCount}}</div>
-      <div class="label">Modern Patterns</div>
+      <div class="label">{{stats.modernPatterns}}</div>
     </div>
     <div class="stat-card">
       <div class="number green">17</div>
-      <div class="label">JDK Versions Covered</div>
+      <div class="label">{{stats.jdkVersions}}</div>
     </div>
     <div class="stat-card">
       <div class="number blue">10</div>
-      <div class="label">Categories</div>
+      <div class="label">{{stats.categories}}</div>
     </div>
     <div class="stat-card">
       <div class="number pink">0</div>
-      <div class="label">Lines of Python Required</div>
+      <div class="label">{{stats.linesOfPython}}</div>
     </div>
   </div>
 
   <footer>
-    <p><a href="/">java.evolved</a> — Java has evolved. Your code can too.</p>
-    <p>Made with ❤️ by <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a> and <a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a></p>
-    <p>Inspired by <a href="https://modern-css.com" target="_blank" rel="noopener">modern-css.com</a></p>
-    <p><a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener">View on GitHub</a></p>
+    <p><a href="{{homeUrl}}">java.evolved</a> — {{footer.tagline}}</p>
+    <p>{{footer.madeWith}} <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a> {{footer.and}} <a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a></p>
+    <p>{{footer.inspiredBy}} <a href="https://modern-css.com" target="_blank" rel="noopener">modern-css.com</a></p>
+    <p><a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener">{{footer.viewOnGitHub}}</a></p>
   </footer>
 
   <div class="search-overlay" id="searchOverlay">
     <div class="search-modal">
       <div class="search-input-wrap">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input class="search-input" id="searchInput" type="text" placeholder="Search snippets…" autocomplete="off">
-        <span class="search-esc" id="searchClose">ESC</span>
+        <input class="search-input" id="searchInput" type="text" placeholder="{{search.placeholder}}" autocomplete="off">
+        <span class="search-esc" id="searchClose">{{search.esc}}</span>
       </div>
       <div class="search-results" id="searchResults"></div>
       <div class="search-footer">
-        <span><kbd>↑↓</kbd> navigate</span>
-        <span><kbd>↵</kbd> open</span>
-        <span><kbd>esc</kbd> close</span>
+        <span><kbd>↑↓</kbd> {{search.navigate}}</span>
+        <span><kbd>↵</kbd> {{search.open}}</span>
+        <span><kbd>esc</kbd> {{search.close}}</span>
       </div>
     </div>
   </div>
 
-  <script src="app.js"></script>
+{{i18nScript}}
+  <script src="{{indexBasePrefix}}app.js"></script>
 </body>
 </html>

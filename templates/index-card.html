@@ -1,4 +1,4 @@
-      <a href="/{{category}}/{{slug}}.html" class="tip-card filter-hidden" data-category="{{category}}">
+      <a href="{{cardHref}}" class="tip-card filter-hidden" data-category="{{category}}">
         <div class="tip-card-body">
           <div class="tip-card-header">
             <div class="tip-badges"><span class="badge {{category}}">{{catDisplay}}</span></div>
@@ -7,14 +7,14 @@
         </div>
         <div class="card-code">
           <div class="card-code-layer old-layer">
-            <span class="mini-label">Old</span>
+            <span class="mini-label">{{cards.old}}</span>
             <span class="code-text">{{oldCode}}</span>
           </div>
           <div class="card-code-layer modern-layer">
-            <span class="mini-label">Modern</span>
+            <span class="mini-label">{{cards.modern}}</span>
             <span class="code-text">{{modernCode}}</span>
           </div>
-          <span class="hover-hint">hover to see modern →</span>
+          <span class="hover-hint">{{cards.hoverHint}}</span>
         </div>
         <div class="tip-card-footer">
           <span class="browser-support"><span class="dot"></span> JDK {{jdkVersion}}+</span>

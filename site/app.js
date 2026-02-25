@@ -6,12 +6,59 @@
 (() => {
   'use strict';
 
+  /* ---------- Locale Detection ---------- */
+  const detectLocale = () => {
+    const path = location.pathname;
+    const match = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+    return match ? match[1] : 'en';
+  };
+  const locale = detectLocale();
+  const localePrefix = locale === 'en' ? '' : '/' + locale;
+
+  /* ---------- Browser Locale Auto-Redirect ---------- */
+  const autoRedirectLocale = () => {
+    if (locale !== 'en') return; // already on a non-English locale
+    const available = (window.i18n && window.i18n.availableLocales) || [];
+    if (available.length <= 1) return;
+
+    // Respect explicit user choice (set when using locale picker)
+    const preferred = localStorage.getItem('preferred-locale');
+    if (preferred === 'en') return; // user explicitly chose English
+    if (preferred && available.includes(preferred)) {
+      window.location.replace('/' + preferred + location.pathname + location.search + location.hash);
+      return;
+    }
+
+    // Match browser language to available locales
+    const langs = navigator.languages || [navigator.language];
+    for (const lang of langs) {
+      // Exact match (e.g. pt-BR)
+      if (lang !== 'en' && available.includes(lang)) {
+        window.location.replace('/' + lang + location.pathname + location.search + location.hash);
+        return;
+      }
+      // Prefix match (e.g. pt matches pt-BR)
+      const prefix = lang.split('-')[0];
+      if (prefix !== 'en') {
+        const match = available.find(l => l.startsWith(prefix + '-') || l === prefix);
+        if (match) {
+          window.location.replace('/' + match + location.pathname + location.search + location.hash);
+          return;
+        }
+      }
+    }
+  };
+  autoRedirectLocale();
+
   /* ---------- Snippets Data ---------- */
   let snippets = [];
 
   const loadSnippets = async () => {
     try {
-      const res = await fetch('/data/snippets.json');
+      const indexPath = locale === 'en'
+        ? '/data/snippets.json'
+        : '/' + locale + '/data/snippets.json';
+      const res = await fetch(indexPath);
       snippets = await res.json();
     } catch (e) {
       console.warn('Could not load snippets.json:', e);
@@ -85,7 +132,7 @@
       // Click handlers on results
       resultsContainer.querySelectorAll('.search-result').forEach(el => {
         el.addEventListener('click', () => {
-          window.location.href = '/' + el.dataset.category + '/' + el.dataset.slug + '.html';
+          window.location.href = localePrefix + '/' + el.dataset.category + '/' + el.dataset.slug + '.html';
         });
       });
     };
@@ -144,7 +191,7 @@
         } else if (e.key === 'Enter') {
           e.preventDefault();
           if (selectedIndex >= 0 && visibleResults[selectedIndex]) {
-            window.location.href = '/' + visibleResults[selectedIndex].category + '/' + visibleResults[selectedIndex].slug + '.html';
+            window.location.href = localePrefix + '/' + visibleResults[selectedIndex].category + '/' + visibleResults[selectedIndex].slug + '.html';
           }
         }
       });
@@ -202,6 +249,9 @@
         : null;
       if (target) {
         target.click();
+        // Scroll the filter section into view
+        const section = document.getElementById('all-comparisons');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
       } else {
         const allButton = document.querySelector('.filter-pill[data-filter="all"]');
         if (allButton) allButton.click();
@@ -226,7 +276,7 @@
 
     // Update hover hints for touch devices
     document.querySelectorAll('.hover-hint').forEach(hint => {
-      hint.textContent = '👆 tap or swipe →';
+      hint.textContent = (window.i18n && window.i18n.touchHint) || '👆 tap or swipe →';
     });
 
     document.querySelectorAll('.tip-card').forEach(card => {
@@ -318,7 +368,7 @@
         navigator.clipboard.writeText(text).then(() => {
           btn.classList.add('copied');
           const original = btn.textContent;
-          btn.textContent = 'Copied!';
+          btn.textContent = (window.i18n && window.i18n.copied) || 'Copied!';
           setTimeout(() => {
             btn.classList.remove('copied');
             btn.textContent = original;
@@ -335,7 +385,7 @@
           document.body.removeChild(textarea);
           btn.classList.add('copied');
           const original = btn.textContent;
-          btn.textContent = 'Copied!';
+          btn.textContent = (window.i18n && window.i18n.copied) || 'Copied!';
           setTimeout(() => {
             btn.classList.remove('copied');
             btn.textContent = original;
@@ -550,7 +600,7 @@
       if (isExpanded) {
         tipsGrid.classList.add('expanded');
         toggleBtn.querySelector('.view-toggle-icon').textContent = '⊟';
-        toggleBtn.querySelector('.view-toggle-text').textContent = 'Collapse All';
+        toggleBtn.querySelector('.view-toggle-text').textContent = (window.i18n && window.i18n.collapseAll) || 'Collapse All';
         
         // Remove toggled class from all cards when expanding
         document.querySelectorAll('.tip-card').forEach(card => {
@@ -559,7 +609,7 @@
       } else {
         tipsGrid.classList.remove('expanded');
         toggleBtn.querySelector('.view-toggle-icon').textContent = '⊞';
-        toggleBtn.querySelector('.view-toggle-text').textContent = 'Expand All';
+        toggleBtn.querySelector('.view-toggle-text').textContent = (window.i18n && window.i18n.expandAll) || 'Expand All';
       }
     });
 
@@ -594,6 +644,61 @@
   };
 
   /* ==========================================================
+     8. Locale Picker
+     ========================================================== */
+  const initLocalePicker = () => {
+    const picker = document.getElementById('localePicker');
+    if (!picker) return;
+
+    const toggleBtn = picker.querySelector('.locale-toggle');
+    const list = picker.querySelector('ul');
+
+    const open = () => {
+      list.style.display = 'block';
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    const close = () => {
+      list.style.display = 'none';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      list.style.display === 'block' ? close() : open();
+    });
+
+    document.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+
+    list.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetLocale = li.dataset.locale;
+        if (targetLocale === locale) { close(); return; }
+
+        // Rewrite current path for the target locale
+        let path = location.pathname;
+
+        // Strip current locale prefix if present
+        if (locale !== 'en') {
+          path = path.replace(new RegExp('^/' + locale.replace('-', '\\-')), '');
+        }
+
+        // Add target locale prefix
+        if (targetLocale !== 'en') {
+          path = '/' + targetLocale + path;
+        }
+
+        localStorage.setItem('preferred-locale', targetLocale);
+        window.location.href = path;
+      });
+    });
+  };
+
+  /* ==========================================================
      Utilities
      ========================================================== */
   const escapeHtml = (str) => {
@@ -616,5 +721,6 @@
     initSyntaxHighlighting();
     initNewsletter();
     initThemeToggle();
+    initLocalePicker();
   });
 })();

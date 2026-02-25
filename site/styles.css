@@ -1572,3 +1572,84 @@ footer a:hover {
 }
 .share-li { font-family: Georgia, serif; font-weight: 800; font-size: 0.85rem; }
 .share-reddit { font-size: 1.1rem; }
+
+/* ============================
+   Locale Picker
+   ============================ */
+.locale-picker {
+  position: relative;
+  display: inline-flex;
+}
+.locale-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.locale-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.locale-picker ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 4px 0 0;
+  padding: 4px 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+  min-width: 160px;
+}
+.locale-picker li {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.locale-picker li:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.locale-picker li.active {
+  font-weight: 600;
+  color: var(--accent);
+}
+.locale-picker li.active:hover {
+  color: #fff;
+}
+
+/* ============================
+   Untranslated Notice Banner
+   ============================ */
+.untranslated-notice {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 12px 16px;
+  margin: 0 auto 24px;
+  max-width: 800px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.untranslated-notice a {
+  color: var(--accent);
+  text-decoration: underline;
+  margin-left: 8px;
+}
