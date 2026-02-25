@@ -172,7 +172,7 @@ need to include keys that differ from English.
 locale file, the generator uses the English value and emits a build-time warning:
 
 ```
-[WARN] strings/pt-BR.json: missing key "footer.builtWith" — using English fallback
+[WARN] strings/pt-BR.json: missing key "footer.madeWith" — using English fallback
 ```
 
 The page is always rendered completely; no key is ever silently blank. The warning
