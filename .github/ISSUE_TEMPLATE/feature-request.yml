@@ -1,0 +1,32 @@
+---
+name: Feature Request
+description: Suggest a new feature or improvement for the site
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Suggest a feature
+
+        Have an idea to improve java.evolved? We'd love to hear it!
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature
+      description: "A clear description of what you'd like to see"
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why would this be useful?
+      description: "Explain the problem it solves or the value it adds"
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: "Have you considered any alternative solutions or workarounds?"
