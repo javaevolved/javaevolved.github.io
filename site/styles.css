@@ -1458,6 +1458,10 @@ footer a:hover {
   .newsletter-form {
     flex-direction: column;
   }
+
+  .cmd-bar kbd {
+    display: none;
+  }
 }
 
 /* ---------- Responsive: ≤ 500px ---------- */
