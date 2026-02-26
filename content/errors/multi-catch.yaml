@@ -1,0 +1,54 @@
+---
+id: 67
+slug: "multi-catch"
+title: "Multi-catch exception handling"
+category: "errors"
+difficulty: "beginner"
+jdkVersion: "7"
+oldLabel: "Pre-Java 7"
+modernLabel: "Java 7+"
+oldApproach: "Separate Catch Blocks"
+modernApproach: "Multi-catch"
+oldCode: |-
+  try {
+      process();
+  } catch (IOException e) {
+      log(e);
+  } catch (SQLException e) {
+      log(e);
+  } catch (ParseException e) {
+      log(e);
+  }
+modernCode: |-
+  try {
+      process();
+  } catch (IOException
+      | SQLException
+      | ParseException e) {
+      log(e);
+  }
+summary: "Catch multiple exception types in a single catch block."
+explanation: "Multi-catch handles multiple exception types with the same code. The\
+  \ exception variable is effectively final, so you can rethrow it without wrapping."
+whyModernWins:
+- icon: "📏"
+  title: "DRY"
+  desc: "Same handling logic written once instead of three times."
+- icon: "🔄"
+  title: "Rethrowable"
+  desc: "The caught exception can be rethrown with its precise type."
+- icon: "📖"
+  title: "Scannable"
+  desc: "All handled types are visible in one place."
+support:
+  state: "available"
+  description: "Widely available since JDK 7 (July 2011)"
+prev: "errors/require-nonnull-else"
+next: "errors/null-in-switch"
+related:
+- "errors/null-in-switch"
+- "errors/helpful-npe"
+- "errors/require-nonnull-else"
+docs:
+- title: "The catch Blocks"
+  href: "https://docs.oracle.com/javase/tutorial/essential/exceptions/catch.html"

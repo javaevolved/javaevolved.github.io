@@ -1,0 +1,50 @@
+---
+id: 72
+slug: "date-formatting"
+title: "Date formatting"
+category: "datetime"
+difficulty: "beginner"
+jdkVersion: "8"
+oldLabel: "Pre-Java 8"
+modernLabel: "Java 8+"
+oldApproach: "SimpleDateFormat"
+modernApproach: "DateTimeFormatter"
+oldCode: |-
+  // Not thread-safe!
+  SimpleDateFormat sdf =
+      new SimpleDateFormat("yyyy-MM-dd");
+  String formatted = sdf.format(date);
+  // Must synchronize for concurrent use
+modernCode: |-
+  DateTimeFormatter fmt =
+      DateTimeFormatter.ofPattern(
+          "uuuu-MM-dd");
+  String formatted =
+      LocalDate.now().format(fmt);
+  // Thread-safe, immutable
+summary: "Format dates with thread-safe, immutable DateTimeFormatter."
+explanation: "DateTimeFormatter is immutable and thread-safe, unlike SimpleDateFormat.\
+  \ It can be stored as a constant and shared. Predefined formatters like ISO_LOCAL_DATE\
+  \ are available for common formats."
+whyModernWins:
+- icon: "🛡️"
+  title: "Thread-safe"
+  desc: "Share formatters across threads without synchronization."
+- icon: "📋"
+  title: "Built-in formats"
+  desc: "ISO_LOCAL_DATE, ISO_INSTANT, etc. for standard formats."
+- icon: "🔒"
+  title: "Immutable"
+  desc: "Store as static final constants safely."
+support:
+  state: "available"
+  description: "Widely available since JDK 8 (March 2014)"
+prev: "datetime/duration-and-period"
+next: "datetime/instant-precision"
+related:
+- "datetime/instant-precision"
+- "datetime/java-time-basics"
+- "datetime/hex-format"
+docs:
+- title: "DateTimeFormatter"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/format/DateTimeFormatter.html"

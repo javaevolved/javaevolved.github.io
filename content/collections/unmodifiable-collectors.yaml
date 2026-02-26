@@ -1,0 +1,48 @@
+---
+id: 28
+slug: "unmodifiable-collectors"
+title: "Unmodifiable collectors"
+category: "collections"
+difficulty: "intermediate"
+jdkVersion: "16"
+oldLabel: "Java 8"
+modernLabel: "Java 16+"
+oldApproach: "collectingAndThen"
+modernApproach: "stream.toList()"
+oldCode: |-
+  List<String> list = stream.collect(
+      Collectors.collectingAndThen(
+          Collectors.toList(),
+          Collections::unmodifiableList
+      )
+  );
+modernCode: "List<String> list = stream.toList();"
+summary: "Collect directly to an unmodifiable list with stream.toList()."
+explanation: "Java 10 added toUnmodifiableList(), toUnmodifiableSet(), and toUnmodifiableMap()\
+  \ to replace the verbose collectingAndThen wrapper. For lists specifically, Java\
+  \ 16's stream.toList() provides an even simpler alternative — no collect() call\
+  \ at all. Use toUnmodifiableSet() and toUnmodifiableMap() for other collection types."
+whyModernWins:
+- icon: "📏"
+  title: "Shortest yet"
+  desc: "stream.toList() needs no collect() or Collectors import at all."
+- icon: "🔒"
+  title: "Immutable"
+  desc: "Result cannot be modified — no accidental mutations."
+- icon: "📖"
+  title: "Readable"
+  desc: "Reads naturally as the terminal step of any stream pipeline."
+support:
+  state: "available"
+  description: "Widely available since JDK 16 (March 2021)"
+prev: "collections/reverse-list-iteration"
+next: "strings/string-isblank"
+related:
+- "collections/immutable-map-creation"
+- "collections/immutable-set-creation"
+- "streams/stream-tolist"
+docs:
+- title: "Stream.toList()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html#toList()"
+- title: "Collectors.toUnmodifiableList()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Collectors.html#toUnmodifiableList()"

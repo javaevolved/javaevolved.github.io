@@ -1,0 +1,77 @@
+---
+id: 109
+slug: "jdbc-resultset-vs-jpa-criteria"
+title: "JDBC ResultSet Mapping vs JPA Criteria API"
+category: "enterprise"
+difficulty: "advanced"
+jdkVersion: "11"
+oldLabel: "Java EE"
+modernLabel: "Jakarta EE 8+"
+oldApproach: "JDBC ResultSet"
+modernApproach: "JPA Criteria API"
+oldCode: |-
+  String sql = "SELECT * FROM users"
+      + " WHERE status = ? AND age > ?";
+  try (Connection con = ds.getConnection();
+       PreparedStatement ps =
+               con.prepareStatement(sql)) {
+      ps.setString(1, status);
+      ps.setInt(2, minAge);
+      ResultSet rs = ps.executeQuery();
+      List<User> users = new ArrayList<>();
+      while (rs.next()) {
+          User u = new User();
+          u.setId(rs.getLong("id"));
+          u.setName(rs.getString("name"));
+          u.setAge(rs.getInt("age"));
+          users.add(u);
+      }
+  }
+modernCode: |-
+  @PersistenceContext
+  EntityManager em;
+
+  public List<User> findActiveAboveAge(
+          String status, int minAge) {
+      CriteriaBuilder cb = em.getCriteriaBuilder();
+      CriteriaQuery<User> cq =
+          cb.createQuery(User.class);
+      Root<User> root = cq.from(User.class);
+      cq.select(root).where(
+          cb.equal(root.get("status"), status),
+          cb.greaterThan(root.get("age"), minAge));
+      return em.createQuery(cq).getResultList();
+  }
+summary: "Replace manual JDBC ResultSet mapping with JPA's type-safe Criteria API\
+  \ for dynamic queries."
+explanation: "Raw JDBC requires building SQL strings, setting parameters by index,\
+  \ and mapping each ResultSet column manually — a process that is error-prone and\
+  \ breaks silently when columns change. The JPA Criteria API builds queries programmatically\
+  \ using a type-safe builder pattern. Column names are validated against the entity\
+  \ model, result mapping is automatic, and complex dynamic queries compose cleanly\
+  \ without string concatenation."
+whyModernWins:
+- icon: "🔒"
+  title: "Type-safe queries"
+  desc: "The Criteria builder catches field name and type mismatches at compile time."
+- icon: "🗺️"
+  title: "Automatic mapping"
+  desc: "JPA maps result rows to entity objects — no manual column-by-column extraction."
+- icon: "🧩"
+  title: "Composable predicates"
+  desc: "Dynamic where-clauses build cleanly with and(), or(), and reusable Predicate\
+    \ objects."
+support:
+  state: "available"
+  description: "Widely available since Jakarta EE 8 / Java 11"
+prev: "enterprise/singleton-ejb-vs-cdi-application-scoped"
+next: "enterprise/spring-xml-config-vs-annotations"
+related:
+- "enterprise/jdbc-vs-jpa"
+- "enterprise/jpa-vs-jakarta-data"
+- "enterprise/manual-transaction-vs-declarative"
+docs:
+- title: "Jakarta Persistence Specification"
+  href: "https://jakarta.ee/specifications/persistence/"
+- title: "Jakarta Persistence 3.1 — Criteria API"
+  href: "https://jakarta.ee/specifications/persistence/3.1/apidocs/"

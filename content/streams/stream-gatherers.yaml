@@ -1,0 +1,52 @@
+---
+id: 42
+slug: "stream-gatherers"
+title: "Stream gatherers"
+category: "streams"
+difficulty: "advanced"
+jdkVersion: "24"
+oldLabel: "Java 8"
+modernLabel: "Java 24+"
+oldApproach: "Custom Collector"
+modernApproach: "gather()"
+oldCode: |-
+  // Sliding window: manual implementation
+  List<List<T>> windows = new ArrayList<>();
+  for (int i = 0; i <= list.size()-3; i++) {
+      windows.add(
+          list.subList(i, i + 3));
+  }
+modernCode: |-
+  var windows = stream
+      .gather(
+          Gatherers.windowSliding(3)
+      )
+      .toList();
+summary: "Use gatherers for custom intermediate stream operations."
+explanation: "Gatherers are a new intermediate stream operation that can express complex\
+  \ transformations like sliding windows, fixed-size groups, and scan operations that\
+  \ were impossible with standard stream ops."
+whyModernWins:
+- icon: "🧩"
+  title: "Composable"
+  desc: "Gatherers compose with other stream operations."
+- icon: "📦"
+  title: "Built-in operations"
+  desc: "windowFixed, windowSliding, fold, scan out of the box."
+- icon: "🔧"
+  title: "Extensible"
+  desc: "Write custom gatherers for any intermediate transformation."
+support:
+  state: "available"
+  description: "Finalized in JDK 24 (JEP 485, March 2025)."
+prev: "streams/stream-mapmulti"
+next: "streams/virtual-thread-executor"
+related:
+- "streams/stream-of-nullable"
+- "streams/stream-iterate-predicate"
+- "streams/stream-takewhile-dropwhile"
+docs:
+- title: "Stream Gatherers (JEP 485)"
+  href: "https://openjdk.org/jeps/485"
+- title: "Gatherers"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Gatherers.html"

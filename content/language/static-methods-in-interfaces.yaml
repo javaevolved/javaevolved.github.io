@@ -1,0 +1,60 @@
+---
+id: 93
+slug: "static-methods-in-interfaces"
+title: "Static methods in interfaces"
+category: "language"
+difficulty: "beginner"
+jdkVersion: "8"
+oldLabel: "Java 7"
+modernLabel: "Java 8+"
+oldApproach: "Utility classes"
+modernApproach: "Interface static methods"
+oldCode: |-
+  // Separate utility class needed
+  public class ValidatorUtils {
+      public static boolean isBlank(
+          String s) {
+          return s == null ||
+                 s.trim().isEmpty();
+      }
+  }
+
+  // Usage
+  if (ValidatorUtils.isBlank(input)) { ... }
+modernCode: |-
+  public interface Validator {
+      boolean validate(String s);
+
+      static boolean isBlank(String s) {
+          return s == null ||
+                 s.trim().isEmpty();
+      }
+  }
+
+  // Usage
+  if (Validator.isBlank(input)) { ... }
+summary: "Add static utility methods directly to interfaces instead of separate utility\
+  \ classes."
+explanation: "Before Java 8, utility methods related to an interface had to live in\
+  \ a separate class (e.g., Collections for Collection). Static methods in interfaces\
+  \ let you keep related utilities together. Common in modern APIs like Comparator.comparing(),\
+  \ Stream.of(), and List.of()."
+whyModernWins:
+- icon: "📦"
+  title: "Better organization"
+  desc: "Keep related utilities with the interface, not in a separate class."
+- icon: "🔍"
+  title: "Discoverability"
+  desc: "Factory and helper methods are found where you'd expect them."
+- icon: "🧩"
+  title: "API cohesion"
+  desc: "No need for separate *Utils or *Helper classes."
+support:
+  state: "available"
+  description: "Available since JDK 8 (March 2014)"
+prev: "language/markdown-javadoc-comments"
+next: "language/static-members-in-inner-classes"
+related:
+- "language/default-interface-methods"
+- "language/private-interface-methods"
+- "collections/immutable-list-creation"

@@ -1,0 +1,70 @@
+---
+id: 105
+slug: "soap-vs-jakarta-rest"
+title: "SOAP Web Services vs Jakarta REST"
+category: "enterprise"
+difficulty: "intermediate"
+jdkVersion: "11"
+oldLabel: "Java EE"
+modernLabel: "Jakarta EE 8+"
+oldApproach: "JAX-WS / SOAP"
+modernApproach: "Jakarta REST / JSON"
+oldCode: |-
+  @WebService
+  public class UserWebService {
+      @WebMethod
+      public UserResponse getUser(
+              @WebParam(name = "id") String id) {
+          User user = findUser(id);
+          UserResponse res = new UserResponse();
+          res.setId(user.getId());
+          res.setName(user.getName());
+          return res;
+      }
+  }
+modernCode: |-
+  @Path("/users")
+  @Produces(MediaType.APPLICATION_JSON)
+  public class UserResource {
+      @Inject
+      UserService userService;
+
+      @GET
+      @Path("/{id}")
+      public User getUser(@PathParam("id") String id) {
+          return userService.findById(id);
+      }
+  }
+summary: "Replace heavyweight SOAP/WSDL endpoints with clean Jakarta REST resources\
+  \ returning JSON."
+explanation: "SOAP-based web services rely on WSDL contracts, XML marshalling, and\
+  \ JAX-WS annotations that add significant overhead. Jakarta REST (formerly JAX-RS)\
+  \ uses intuitive annotations like @GET, @Path, and @Produces to expose RESTful JSON\
+  \ APIs. The programming model is simpler, the payloads are smaller, and the approach\
+  \ aligns with how modern microservices communicate."
+whyModernWins:
+- icon: "🪶"
+  title: "Lighter payloads"
+  desc: "JSON is more compact than SOAP XML envelopes, reducing bandwidth and parsing\
+    \ overhead."
+- icon: "📐"
+  title: "Simple annotations"
+  desc: "@GET, @Path, and @Produces replace WSDL, @WebService, and @WebMethod ceremony."
+- icon: "🔌"
+  title: "Microservice-ready"
+  desc: "REST/JSON is the standard for service-to-service communication in cloud-native\
+    \ architectures."
+support:
+  state: "available"
+  description: "Widely available since Jakarta EE 8 / Java 11"
+prev: "enterprise/manual-transaction-vs-declarative"
+next: "enterprise/mdb-vs-reactive-messaging"
+related:
+- "enterprise/servlet-vs-jaxrs"
+- "io/http-client"
+- "enterprise/ejb-vs-cdi"
+docs:
+- title: "Jakarta RESTful Web Services Specification"
+  href: "https://jakarta.ee/specifications/restful-ws/"
+- title: "Jakarta JSON Binding Specification"
+  href: "https://jakarta.ee/specifications/jsonb/"

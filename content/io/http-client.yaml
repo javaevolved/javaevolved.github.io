@@ -1,0 +1,55 @@
+---
+id: 56
+slug: "http-client"
+title: "Modern HTTP client"
+category: "io"
+difficulty: "beginner"
+jdkVersion: "11"
+oldLabel: "Java 8"
+modernLabel: "Java 11+"
+oldApproach: "HttpURLConnection"
+modernApproach: "HttpClient"
+oldCode: |-
+  URL url = new URL("https://api.com/data");
+  HttpURLConnection con =
+      (HttpURLConnection) url.openConnection();
+  con.setRequestMethod("GET");
+  BufferedReader in = new BufferedReader(
+      new InputStreamReader(con.getInputStream()));
+  // read lines, close streams...
+modernCode: |-
+  var client = HttpClient.newHttpClient();
+  var request = HttpRequest.newBuilder()
+      .uri(URI.create("https://api.com/data"))
+      .build();
+  var response = client.send(
+      request, BodyHandlers.ofString());
+  String body = response.body();
+summary: "Use the built-in HttpClient for clean, modern HTTP requests."
+explanation: "HttpClient supports HTTP/1.1 and HTTP/2, async requests, WebSocket,\
+  \ custom executors, and connection pooling. No more casting URLConnection or manually\
+  \ reading InputStreams."
+whyModernWins:
+- icon: "📐"
+  title: "Builder API"
+  desc: "Fluent builder for requests, headers, and timeouts."
+- icon: "🔄"
+  title: "HTTP/2 support"
+  desc: "Built-in HTTP/2 with multiplexing and server push."
+- icon: "⚡"
+  title: "Async ready"
+  desc: "sendAsync() returns CompletableFuture."
+support:
+  state: "available"
+  description: "Widely available since JDK 11 (Sept 2018)"
+prev: "concurrency/lock-free-lazy-init"
+next: "io/io-class-console-io"
+related:
+- "io/reading-files"
+- "io/inputstream-transferto"
+- "io/try-with-resources-effectively-final"
+docs:
+- title: "HttpClient (JEP 321)"
+  href: "https://openjdk.org/jeps/321"
+- title: "HttpClient"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html"

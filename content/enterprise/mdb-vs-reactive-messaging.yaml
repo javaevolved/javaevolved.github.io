@@ -1,0 +1,71 @@
+---
+id: 106
+slug: "mdb-vs-reactive-messaging"
+title: "Message-Driven Bean vs Reactive Messaging"
+category: "enterprise"
+difficulty: "advanced"
+jdkVersion: "11"
+oldLabel: "Java EE"
+modernLabel: "MicroProfile 4+"
+oldApproach: "Message-Driven Bean"
+modernApproach: "Reactive Messaging"
+oldCode: |-
+  @MessageDriven(activationConfig = {
+      @ActivationConfigProperty(
+          propertyName = "destinationType",
+          propertyValue = "jakarta.jms.Queue"),
+      @ActivationConfigProperty(
+          propertyName = "destination",
+          propertyValue = "java:/jms/OrderQueue")
+  })
+  public class OrderMDB implements MessageListener {
+      @Override
+      public void onMessage(Message message) {
+          TextMessage txt = (TextMessage) message;
+          processOrder(txt.getText());
+      }
+  }
+modernCode: |-
+  @ApplicationScoped
+  public class OrderProcessor {
+      @Incoming("orders")
+      public void process(Order order) {
+          // automatically deserialized from
+          // the "orders" channel
+          fulfillOrder(order);
+      }
+  }
+summary: "Replace JMS Message-Driven Beans with MicroProfile Reactive Messaging for\
+  \ simpler event processing."
+explanation: "Message-Driven Beans require implementing MessageListener, configuring\
+  \ activation properties, and manually deserializing JMS messages. MicroProfile Reactive\
+  \ Messaging uses a simple @Incoming annotation on a method that receives typed objects\
+  \ directly. The channel configuration is externalised, making the code broker-agnostic\
+  \ and far easier to test."
+whyModernWins:
+- icon: "🪶"
+  title: "Minimal code"
+  desc: "A single @Incoming method replaces the MDB class, MessageListener interface,\
+    \ and activation config."
+- icon: "🔌"
+  title: "Broker-agnostic"
+  desc: "Swap Kafka, AMQP, or JMS connectors via configuration without changing application\
+    \ code."
+- icon: "☁️"
+  title: "Cloud-native fit"
+  desc: "Reactive streams backpressure and lightweight runtime make it ideal for containerised\
+    \ deployments."
+support:
+  state: "available"
+  description: "Available since MicroProfile 4.0 / SmallRye Reactive Messaging"
+prev: "enterprise/soap-vs-jakarta-rest"
+next: "enterprise/jsf-managed-bean-vs-cdi-named"
+related:
+- "enterprise/ejb-vs-cdi"
+- "concurrency/structured-concurrency"
+- "concurrency/virtual-threads"
+docs:
+- title: "MicroProfile Reactive Messaging Specification"
+  href: "https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html"
+- title: "SmallRye Reactive Messaging Documentation"
+  href: "https://smallrye.io/smallrye-reactive-messaging/"

@@ -1,0 +1,58 @@
+---
+id: 54
+slug: "concurrent-http-virtual"
+title: "Concurrent HTTP with virtual threads"
+category: "concurrency"
+difficulty: "intermediate"
+jdkVersion: "21"
+oldLabel: "Java 8"
+modernLabel: "Java 21+"
+oldApproach: "Thread Pool + URLConnection"
+modernApproach: "Virtual Threads + HttpClient"
+oldCode: |-
+  ExecutorService pool =
+      Executors.newFixedThreadPool(10);
+  List<Future<String>> futures =
+      urls.stream()
+      .map(u -> pool.submit(
+          () -> fetchUrl(u)))
+      .toList();
+  // manual shutdown, blocking get()
+modernCode: |-
+  try (var exec = Executors
+      .newVirtualThreadPerTaskExecutor()) {
+      var results = urls.stream()
+          .map(u -> exec.submit(
+              () -> client.send(req(u),
+                  ofString()).body()))
+          .toList().stream()
+          .map(Future::join).toList();
+  }
+summary: "Fetch many URLs concurrently with virtual threads and HttpClient."
+explanation: "Virtual threads make it practical to create a thread per HTTP request.\
+  \ Combined with HttpClient, this replaces complex async callback patterns with simple\
+  \ blocking code that scales."
+whyModernWins:
+- icon: "♾️"
+  title: "Thread per request"
+  desc: "No pool sizing — one virtual thread per URL."
+- icon: "📖"
+  title: "Simple code"
+  desc: "Write straightforward blocking code."
+- icon: "⚡"
+  title: "High throughput"
+  desc: "Thousands of concurrent requests with minimal resources."
+support:
+  state: "available"
+  description: "Widely available since JDK 21 LTS (Sept 2023)"
+prev: "concurrency/process-api"
+next: "concurrency/lock-free-lazy-init"
+related:
+- "concurrency/structured-concurrency"
+- "concurrency/stable-values"
+- "concurrency/lock-free-lazy-init"
+docs:
+- title: "Virtual Threads (JEP 444)"
+  href: "https://openjdk.org/jeps/444"
+- title: "HttpClient"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/HttpClient.html"

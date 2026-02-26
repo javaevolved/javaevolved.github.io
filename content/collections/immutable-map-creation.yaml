@@ -1,0 +1,47 @@
+---
+id: 20
+slug: "immutable-map-creation"
+title: "Immutable map creation"
+category: "collections"
+difficulty: "beginner"
+jdkVersion: "9"
+oldLabel: "Java 8"
+modernLabel: "Java 9+"
+oldApproach: "Map Builder Pattern"
+modernApproach: "Map.of()"
+oldCode: |-
+  Map<String, Integer> map = new HashMap<>();
+  map.put("a", 1);
+  map.put("b", 2);
+  map.put("c", 3);
+  map = Collections.unmodifiableMap(map);
+modernCode: |-
+  Map<String, Integer> map =
+      Map.of("a", 1, "b", 2, "c", 3);
+summary: "Create immutable maps inline without a builder."
+explanation: "Map.of() accepts key-value pairs inline and returns an immutable map.\
+  \ For more than 10 entries, use Map.ofEntries() with Map.entry() pairs."
+whyModernWins:
+- icon: "📏"
+  title: "Inline creation"
+  desc: "No temporary mutable map needed."
+- icon: "🔒"
+  title: "Immutable result"
+  desc: "The map cannot be modified after creation."
+- icon: "🚫"
+  title: "No null keys/values"
+  desc: "Null entries are rejected immediately."
+support:
+  state: "available"
+  description: "Widely available since JDK 9 (Sept 2017)"
+prev: "collections/immutable-list-creation"
+next: "collections/immutable-set-creation"
+related:
+- "collections/copying-collections-immutably"
+- "collections/sequenced-collections"
+- "streams/stream-tolist"
+docs:
+- title: "Map.of()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html#of()"
+- title: "Map.ofEntries()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html#ofEntries(java.util.Map.Entry...)"

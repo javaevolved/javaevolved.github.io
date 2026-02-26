@@ -1,0 +1,57 @@
+---
+id: 69
+slug: "record-based-errors"
+title: "Record-based error responses"
+category: "errors"
+difficulty: "intermediate"
+jdkVersion: "16"
+oldLabel: "Java 8"
+modernLabel: "Java 16+"
+oldApproach: "Map or Verbose Class"
+modernApproach: "Error Records"
+oldCode: |-
+  // Verbose error class
+  public class ErrorResponse {
+      private final int code;
+      private final String message;
+      // constructor, getters, equals,
+      // hashCode, toString...
+  }
+modernCode: |-
+  public record ApiError(
+      int code,
+      String message,
+      Instant timestamp
+  ) {
+      public ApiError(int code, String msg) {
+          this(code, msg, Instant.now());
+      }
+  }
+summary: "Use records for concise, immutable error response types."
+explanation: "Records are perfect for error responses — they're immutable, have built-in\
+  \ equals/hashCode for comparison, and toString for logging. Custom constructors\
+  \ add validation or defaults."
+whyModernWins:
+- icon: "📏"
+  title: "Concise"
+  desc: "Define error types in 3 lines instead of 30."
+- icon: "🔒"
+  title: "Immutable"
+  desc: "Error data can't be accidentally modified after creation."
+- icon: "📋"
+  title: "Auto toString"
+  desc: "Perfect for logging — shows all fields automatically."
+support:
+  state: "available"
+  description: "Widely available since JDK 16 (March 2021)"
+prev: "errors/null-in-switch"
+next: "errors/optional-orelsethrow"
+related:
+- "errors/helpful-npe"
+- "errors/require-nonnull-else"
+- "errors/multi-catch"
+docs:
+- title: "Records (JEP 395)"
+  href: "https://openjdk.org/jeps/395"
+- title: "Record class"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html"

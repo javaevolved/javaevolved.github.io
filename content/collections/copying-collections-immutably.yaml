@@ -1,0 +1,45 @@
+---
+id: 22
+slug: "copying-collections-immutably"
+title: "Copying collections immutably"
+category: "collections"
+difficulty: "beginner"
+jdkVersion: "10"
+oldLabel: "Java 8"
+modernLabel: "Java 10+"
+oldApproach: "Manual Copy + Wrap"
+modernApproach: "List.copyOf()"
+oldCode: |-
+  List<String> copy =
+      Collections.unmodifiableList(
+          new ArrayList<>(original)
+      );
+modernCode: |-
+  List<String> copy =
+      List.copyOf(original);
+summary: "Create an immutable copy of any collection in one call."
+explanation: "List.copyOf(), Set.copyOf(), and Map.copyOf() create immutable snapshots\
+  \ of existing collections. If the source is already an immutable collection, no\
+  \ copy is made."
+whyModernWins:
+- icon: "⚡"
+  title: "Smart copy"
+  desc: "Skips the copy if the source is already immutable."
+- icon: "📏"
+  title: "One call"
+  desc: "No manual ArrayList construction + wrapping."
+- icon: "🛡️"
+  title: "Defensive copy"
+  desc: "Changes to the original don't affect the copy."
+support:
+  state: "available"
+  description: "Widely available since JDK 10 (March 2018)"
+prev: "collections/immutable-set-creation"
+next: "collections/map-entry-factory"
+related:
+- "collections/immutable-set-creation"
+- "collections/map-entry-factory"
+- "collections/immutable-list-creation"
+docs:
+- title: "List.copyOf()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#copyOf(java.util.Collection)"

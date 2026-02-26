@@ -1,0 +1,51 @@
+---
+id: 1
+slug: "type-inference-with-var"
+title: "Type inference with var"
+category: "language"
+difficulty: "beginner"
+jdkVersion: "10"
+oldLabel: "Java 8"
+modernLabel: "Java 10+"
+oldApproach: "Explicit Types"
+modernApproach: "var keyword"
+oldCode: |-
+  Map<String, List<Integer>> map =
+      new HashMap<String, List<Integer>>();
+  for (Map.Entry<String, List<Integer>> e
+      : map.entrySet()) {
+      // verbose type noise
+  }
+modernCode: |-
+  var map = new HashMap<String, List<Integer>>();
+  for (var entry : map.entrySet()) {
+      // clean and readable
+  }
+summary: "Use var for local variable type inference — less noise, same safety."
+explanation: "Since Java 10, the compiler infers local variable types from the right-hand\
+  \ side. This reduces visual noise without sacrificing type safety. Use var when\
+  \ the type is obvious from context."
+whyModernWins:
+- icon: "⚡"
+  title: "Less boilerplate"
+  desc: "No need to repeat complex generic types on both sides of the assignment."
+- icon: "👁"
+  title: "Better readability"
+  desc: "Focus on variable names and values, not type declarations."
+- icon: "🔒"
+  title: "Still type-safe"
+  desc: "The compiler infers and enforces the exact type at compile time."
+support:
+  state: "available"
+  description: "Widely available since JDK 10 (March 2018)"
+prev: null
+next: "language/text-blocks-for-multiline-strings"
+related:
+- "language/sealed-classes"
+- "language/pattern-matching-instanceof"
+- "language/exhaustive-switch"
+docs:
+- title: "Local Variable Type Inference (JEP 286)"
+  href: "https://openjdk.org/jeps/286"
+- title: "Style Guidelines for var"
+  href: "https://openjdk.org/projects/amber/guides/lvti-style-guide"

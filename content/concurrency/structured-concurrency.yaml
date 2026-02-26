@@ -1,0 +1,55 @@
+---
+id: 47
+slug: "structured-concurrency"
+title: "Structured concurrency"
+category: "concurrency"
+difficulty: "advanced"
+jdkVersion: "25"
+oldLabel: "Java 8"
+modernLabel: "Java 25 (Preview)"
+oldApproach: "Manual Thread Lifecycle"
+modernApproach: "StructuredTaskScope"
+oldCode: |-
+  ExecutorService exec =
+      Executors.newFixedThreadPool(2);
+  Future<User> u = exec.submit(this::fetchUser);
+  Future<Order> o = exec.submit(this::fetchOrder);
+  try {
+      return combine(u.get(), o.get());
+  } finally { exec.shutdown(); }
+modernCode: |-
+  try (var scope = new StructuredTaskScope
+          .ShutdownOnFailure()) {
+      var u = scope.fork(this::fetchUser);
+      var o = scope.fork(this::fetchOrder);
+      scope.join().throwIfFailed();
+      return combine(u.get(), o.get());
+  }
+summary: "Manage concurrent task lifetimes as a single unit of work."
+explanation: "Structured concurrency treats a group of concurrent tasks as one operation.\
+  \ If any subtask fails, the others are cancelled. The scope ensures no thread leaks\
+  \ and gives clear parent-child relationships."
+whyModernWins:
+- icon: "🛡️"
+  title: "No thread leaks"
+  desc: "All forked tasks complete before the scope closes."
+- icon: "⚡"
+  title: "Fast failure"
+  desc: "ShutdownOnFailure cancels siblings if one fails."
+- icon: "📐"
+  title: "Clear structure"
+  desc: "Task lifetime matches the lexical scope in code."
+support:
+  state: "preview"
+  description: "Preview in JDK 25 (fifth preview, JEP 505). Requires --enable-preview."
+prev: "concurrency/virtual-threads"
+next: "concurrency/scoped-values"
+related:
+- "concurrency/virtual-threads"
+- "concurrency/scoped-values"
+- "concurrency/stable-values"
+docs:
+- title: "Structured Concurrency (JEP 499)"
+  href: "https://openjdk.org/jeps/499"
+- title: "StructuredTaskScope"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/StructuredTaskScope.html"

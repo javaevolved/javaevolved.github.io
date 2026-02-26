@@ -1,0 +1,69 @@
+---
+id: 101
+slug: "jpa-vs-jakarta-data"
+title: "JPA versus Jakarta Data"
+category: "enterprise"
+difficulty: "intermediate"
+jdkVersion: "21"
+oldLabel: "Jakarta EE 8+"
+modernLabel: "Jakarta EE 11+"
+oldApproach: "JPA EntityManager"
+modernApproach: "Jakarta Data Repository"
+oldCode: |-
+  @PersistenceContext
+  EntityManager em;
+
+  public User findById(Long id) {
+      return em.find(User.class, id);
+  }
+
+  public List<User> findByName(String name) {
+      return em.createQuery(
+          "SELECT u FROM User u WHERE u.name = :name",
+          User.class)
+          .setParameter("name", name)
+          .getResultList();
+  }
+
+  public void save(User user) {
+      em.persist(user);
+  }
+modernCode: |-
+  @Repository
+  public interface Users extends CrudRepository<User, Long> {
+      List<User> findByName(String name);
+  }
+summary: "Declare a repository interface and let Jakarta Data generate the DAO implementation\
+  \ automatically."
+explanation: "Jakarta Data (Jakarta EE 11) turns data access into a pure interface\
+  \ declaration. You annotate an interface with @Repository and extend a built-in\
+  \ repository type such as CrudRepository. The runtime generates the implementation\
+  \ — including derived queries from method names like findByName — so there is no\
+  \ EntityManager boilerplate, no JPQL strings, and no hand-written save/find methods."
+whyModernWins:
+- icon: "🪄"
+  title: "Zero boilerplate"
+  desc: "Declare the interface; the container generates the full DAO implementation\
+    \ at deploy time."
+- icon: "🔍"
+  title: "Derived queries"
+  desc: "Method names like findByNameAndStatus are parsed automatically — no JPQL\
+    \ or SQL needed."
+- icon: "🔌"
+  title: "Portable"
+  desc: "Any Jakarta EE 11 compliant runtime provides the repository implementation\
+    \ with no vendor lock-in."
+support:
+  state: "available"
+  description: "Available since Jakarta EE 11 / Java 21 (2024)"
+prev: "enterprise/jdbc-vs-jpa"
+next: "enterprise/ejb-timer-vs-jakarta-scheduler"
+related:
+- "enterprise/jdbc-vs-jpa"
+- "enterprise/ejb-vs-cdi"
+- "enterprise/servlet-vs-jaxrs"
+docs:
+- title: "Jakarta Data 1.0 Specification"
+  href: "https://jakarta.ee/specifications/data/1.0/"
+- title: "Jakarta Data 1.0 API"
+  href: "https://jakarta.ee/specifications/data/1.0/apidocs/"

@@ -1,0 +1,50 @@
+---
+id: 6
+slug: "sealed-classes"
+title: "Sealed classes for type hierarchies"
+category: "language"
+difficulty: "intermediate"
+jdkVersion: "17"
+oldLabel: "Java 8"
+modernLabel: "Java 17+"
+oldApproach: "Open Hierarchy"
+modernApproach: "sealed permits"
+oldCode: |-
+  // Anyone can extend Shape
+  public abstract class Shape { }
+  public class Circle extends Shape { }
+  public class Rect extends Shape { }
+  // unknown subclasses possible
+modernCode: |-
+  public sealed interface Shape
+      permits Circle, Rect {}
+  public record Circle(double r)
+      implements Shape {}
+  public record Rect(double w, double h)
+      implements Shape {}
+summary: "Restrict which classes can extend a type — enabling exhaustive switches."
+explanation: "Sealed classes define a closed set of subtypes. The compiler knows all\
+  \ possible cases, enabling exhaustive pattern matching without a default branch.\
+  \ Combined with records, they model algebraic data types."
+whyModernWins:
+- icon: "🔐"
+  title: "Controlled hierarchy"
+  desc: "Only permitted subtypes can extend — no surprise subclasses."
+- icon: "✅"
+  title: "Exhaustive matching"
+  desc: "The compiler verifies switch covers all cases, no default needed."
+- icon: "📐"
+  title: "Algebraic data types"
+  desc: "Model sum types naturally — sealed + records = ADTs in Java."
+support:
+  state: "available"
+  description: "Widely available since JDK 17 LTS (Sept 2021)"
+prev: "language/records-for-data-classes"
+next: "language/record-patterns"
+related:
+- "language/switch-expressions"
+- "language/module-import-declarations"
+- "language/pattern-matching-switch"
+docs:
+- title: "Sealed Classes (JEP 409)"
+  href: "https://openjdk.org/jeps/409"

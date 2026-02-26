@@ -1,0 +1,53 @@
+---
+id: 63
+slug: "deserialization-filters"
+title: "Deserialization filters"
+category: "io"
+difficulty: "advanced"
+jdkVersion: "9"
+oldLabel: "Java 8"
+modernLabel: "Java 9+"
+oldApproach: "Accept Everything"
+modernApproach: "ObjectInputFilter"
+oldCode: |-
+  // Dangerous: accepts any class
+  ObjectInputStream ois =
+      new ObjectInputStream(input);
+  Object obj = ois.readObject();
+  // deserialization attacks possible!
+modernCode: |-
+  ObjectInputFilter filter =
+      ObjectInputFilter.Config
+      .createFilter(
+          "com.myapp.*;!*"
+      );
+  ois.setObjectInputFilter(filter);
+  Object obj = ois.readObject();
+summary: "Restrict which classes can be deserialized to prevent attacks."
+explanation: "ObjectInputFilter lets you allowlist/denylist classes, limit object\
+  \ graph depth, array sizes, and reference counts. This defends against deserialization\
+  \ vulnerabilities without external libraries."
+whyModernWins:
+- icon: "🛡️"
+  title: "Security"
+  desc: "Prevent deserialization of unexpected/malicious classes."
+- icon: "📐"
+  title: "Fine-grained"
+  desc: "Control depth, array size, references, and class patterns."
+- icon: "🏗️"
+  title: "JVM-wide"
+  desc: "Set a global filter for all deserialization in the JVM."
+support:
+  state: "available"
+  description: "Widely available since JDK 9 (Sept 2017)"
+prev: "io/files-mismatch"
+next: "errors/helpful-npe"
+related:
+- "io/inputstream-transferto"
+- "io/http-client"
+- "io/path-of"
+docs:
+- title: "ObjectInputFilter"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/ObjectInputFilter.html"
+- title: "Deserialization Filtering Guide"
+  href: "https://docs.oracle.com/en/java/javase/25/core/serialization-filtering1.html"

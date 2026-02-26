@@ -1,0 +1,53 @@
+---
+id: 70
+slug: "java-time-basics"
+title: "java.time API basics"
+category: "datetime"
+difficulty: "beginner"
+jdkVersion: "8"
+oldLabel: "Pre-Java 8"
+modernLabel: "Java 8+"
+oldApproach: "Date + Calendar"
+modernApproach: "java.time.*"
+oldCode: |-
+  // Mutable, confusing, zero-indexed months
+  Calendar cal = Calendar.getInstance();
+  cal.set(2025, 0, 15); // January = 0!
+  Date date = cal.getTime();
+  // not thread-safe
+modernCode: |-
+  LocalDate date = LocalDate.of(
+      2025, Month.JANUARY, 15);
+  LocalTime time = LocalTime.of(14, 30);
+  Instant now = Instant.now();
+  // immutable, thread-safe
+summary: "Use immutable, clear date/time types instead of Date and Calendar."
+explanation: "java.time provides LocalDate, LocalTime, LocalDateTime, Instant, ZonedDateTime\
+  \ — all immutable and thread-safe. Months are 1-indexed. No more Calendar.JANUARY\
+  \ = 0 confusion."
+whyModernWins:
+- icon: "🔒"
+  title: "Immutable"
+  desc: "Date/time values can't be accidentally modified."
+- icon: "📖"
+  title: "Clear API"
+  desc: "Month.JANUARY, not 0. DayOfWeek.MONDAY, not 2."
+- icon: "🛡️"
+  title: "Thread-safe"
+  desc: "No synchronization needed — share freely across threads."
+support:
+  state: "available"
+  description: "Widely available since JDK 8 (March 2014)"
+prev: "errors/record-based-errors"
+next: "datetime/duration-and-period"
+related:
+- "datetime/instant-precision"
+- "datetime/duration-and-period"
+- "datetime/date-formatting"
+docs:
+- title: "LocalDate"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html"
+- title: "LocalTime"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalTime.html"
+- title: "LocalDateTime"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDateTime.html"

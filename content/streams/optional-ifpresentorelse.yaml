@@ -1,0 +1,48 @@
+---
+id: 44
+slug: "optional-ifpresentorelse"
+title: "Optional.ifPresentOrElse()"
+category: "streams"
+difficulty: "beginner"
+jdkVersion: "9"
+oldLabel: "Java 8"
+modernLabel: "Java 9+"
+oldApproach: "if/else on Optional"
+modernApproach: "ifPresentOrElse()"
+oldCode: |-
+  Optional<User> user = findUser(id);
+  if (user.isPresent()) {
+      greet(user.get());
+  } else {
+      handleMissing();
+  }
+modernCode: |-
+  findUser(id).ifPresentOrElse(
+      this::greet,
+      this::handleMissing
+  );
+summary: "Handle both present and empty cases of Optional in one call."
+explanation: "ifPresentOrElse() takes a Consumer for the present case and a Runnable\
+  \ for the empty case. It avoids the isPresent/get anti-pattern."
+whyModernWins:
+- icon: "📏"
+  title: "Single expression"
+  desc: "Both cases handled in one method call."
+- icon: "🚫"
+  title: "No get()"
+  desc: "Eliminates the dangerous isPresent() + get() pattern."
+- icon: "🔗"
+  title: "Fluent"
+  desc: "Chains naturally after findUser() or any Optional-returning method."
+support:
+  state: "available"
+  description: "Widely available since JDK 9 (Sept 2017)"
+prev: "streams/virtual-thread-executor"
+next: "streams/optional-or"
+related:
+- "streams/stream-tolist"
+- "streams/stream-gatherers"
+- "streams/collectors-flatmapping"
+docs:
+- title: "Optional.ifPresentOrElse()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Optional.html#ifPresentOrElse(java.util.function.Consumer,java.lang.Runnable)"

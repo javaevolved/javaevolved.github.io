@@ -1,0 +1,51 @@
+---
+id: 75
+slug: "hex-format"
+title: "HexFormat"
+category: "datetime"
+difficulty: "intermediate"
+jdkVersion: "17"
+oldLabel: "Java 8"
+modernLabel: "Java 17+"
+oldApproach: "Manual Hex Conversion"
+modernApproach: "HexFormat"
+oldCode: |-
+  // Pad to 2 digits, uppercase
+  String hex = String.format(
+      "%02X", byteValue);
+  // Parse hex string
+  int val = Integer.parseInt(
+      "FF", 16);
+modernCode: |-
+  HexFormat hex = HexFormat.of()
+      .withUpperCase();
+  String s = hex.toHexDigits(
+      byteValue);
+  byte[] bytes =
+      hex.parseHex("48656C6C6F");
+summary: "Convert between hex strings and byte arrays with HexFormat."
+explanation: "HexFormat provides bidirectional hex encoding/decoding for bytes, ints,\
+  \ and arrays. Configure delimiters, prefix, suffix, and case. No more manual formatting\
+  \ or parsing."
+whyModernWins:
+- icon: "📐"
+  title: "Bidirectional"
+  desc: "Convert bytes→hex and hex→bytes with one API."
+- icon: "🔧"
+  title: "Configurable"
+  desc: "Delimiters, prefix, suffix, upper/lower case."
+- icon: "📦"
+  title: "Array support"
+  desc: "Encode/decode entire byte arrays at once."
+support:
+  state: "available"
+  description: "Widely available since JDK 17 LTS (Sept 2021)"
+prev: "datetime/math-clamp"
+next: "security/pem-encoding"
+related:
+- "datetime/date-formatting"
+- "datetime/instant-precision"
+- "datetime/duration-and-period"
+docs:
+- title: "HexFormat"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/HexFormat.html"

@@ -1,0 +1,60 @@
+---
+id: 97
+slug: "file-memory-mapping"
+title: "File memory mapping"
+category: "io"
+difficulty: "advanced"
+jdkVersion: "22"
+oldLabel: "Java 8"
+modernLabel: "Java 22+"
+oldApproach: "MappedByteBuffer"
+modernApproach: "MemorySegment with Arena"
+oldCode: |-
+  try (FileChannel channel =
+      FileChannel.open(path,
+          StandardOpenOption.READ,
+          StandardOpenOption.WRITE)) {
+      MappedByteBuffer buffer =
+          channel.map(
+              FileChannel.MapMode.READ_WRITE,
+              0, (int) channel.size());
+      // Limited to 2GB
+      // Freed by GC, no control
+  }
+modernCode: |-
+  FileChannel channel =
+      FileChannel.open(path,
+          StandardOpenOption.READ,
+          StandardOpenOption.WRITE);
+  try (Arena arena = Arena.ofShared()) {
+      MemorySegment segment =
+          channel.map(
+              FileChannel.MapMode.READ_WRITE,
+              0, channel.size(), arena);
+      // No size limit
+      // ...
+  } // Deterministic cleanup
+summary: "Map files larger than 2GB with deterministic cleanup using MemorySegment."
+explanation: "The Foreign Function & Memory API (JEP 454) introduces MemorySegment\
+  \ for safe and efficient memory access. Unlike MappedByteBuffer, MemorySegment supports\
+  \ files larger than 2GB (Integer.MAX_VALUE), provides deterministic cleanup via\
+  \ Arena, and offers better performance with modern hardware."
+whyModernWins:
+- icon: "📏"
+  title: "No size limit"
+  desc: "Map files larger than 2GB without workarounds."
+- icon: "🔒"
+  title: "Deterministic cleanup"
+  desc: "Arena ensures memory is freed at scope exit, not GC time."
+- icon: "⚡"
+  title: "Better performance"
+  desc: "Aligned with modern memory models and hardware."
+support:
+  state: "available"
+  description: "Available since JDK 22 (March 2024)"
+prev: "io/try-with-resources-effectively-final"
+next: "io/files-mismatch"
+related:
+- "io/http-client"
+- "io/reading-files"
+- "io/writing-files"

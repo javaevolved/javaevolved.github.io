@@ -1,0 +1,54 @@
+---
+id: 68
+slug: "null-in-switch"
+title: "Null case in switch"
+category: "errors"
+difficulty: "beginner"
+jdkVersion: "21"
+oldLabel: "Java 8"
+modernLabel: "Java 21+"
+oldApproach: "Guard Before Switch"
+modernApproach: "case null"
+oldCode: |-
+  // Must check before switch
+  if (status == null) {
+      return "unknown";
+  }
+  return switch (status) {
+      case ACTIVE  -> "active";
+      case PAUSED  -> "paused";
+      default      -> "other";
+  };
+modernCode: |-
+  return switch (status) {
+      case null    -> "unknown";
+      case ACTIVE  -> "active";
+      case PAUSED  -> "paused";
+      default      -> "other";
+  };
+summary: "Handle null directly as a switch case — no separate guard needed."
+explanation: "Pattern matching switch can match null as a case label. This eliminates\
+  \ the need for a null check before the switch and makes null handling explicit and\
+  \ visible."
+whyModernWins:
+- icon: "🎯"
+  title: "Explicit"
+  desc: "null handling is visible right in the switch."
+- icon: "🛡️"
+  title: "No NPE"
+  desc: "Switch on a null value won't throw NullPointerException."
+- icon: "📐"
+  title: "All-in-one"
+  desc: "All cases including null in a single switch expression."
+support:
+  state: "available"
+  description: "Widely available since JDK 21 LTS (Sept 2023)"
+prev: "errors/multi-catch"
+next: "errors/record-based-errors"
+related:
+- "errors/helpful-npe"
+- "errors/record-based-errors"
+- "errors/multi-catch"
+docs:
+- title: "Pattern Matching for switch (JEP 441)"
+  href: "https://openjdk.org/jeps/441"

@@ -1,0 +1,56 @@
+---
+id: 77
+slug: "key-derivation-functions"
+title: "Key Derivation Functions"
+category: "security"
+difficulty: "advanced"
+jdkVersion: "25"
+oldLabel: "Java 8"
+modernLabel: "Java 25"
+oldApproach: "Manual PBKDF2"
+modernApproach: "KDF API"
+oldCode: |-
+  SecretKeyFactory factory =
+      SecretKeyFactory.getInstance(
+          "PBKDF2WithHmacSHA256");
+  KeySpec spec = new PBEKeySpec(
+      password, salt, 10000, 256);
+  SecretKey key =
+      factory.generateSecret(spec);
+modernCode: |-
+  KDF kdf = KDF.getInstance("HKDF-SHA256");
+  SecretKey key = kdf.deriveKey(
+      "AES",
+      KDF.HKDFParameterSpec
+          .ofExtract()
+          .addIKM(inputKey)
+          .addSalt(salt)
+          .thenExpand(info, 32)
+          .build()
+  );
+summary: "Derive cryptographic keys using the standard KDF API."
+explanation: "The KDF API provides a standard interface for key derivation functions\
+  \ including HKDF. It replaces the awkward SecretKeyFactory + PBEKeySpec pattern\
+  \ with a clean builder API."
+whyModernWins:
+- icon: "📐"
+  title: "Clean API"
+  desc: "Builder pattern instead of awkward KeySpec constructors."
+- icon: "🔧"
+  title: "HKDF support"
+  desc: "Modern HKDF algorithm alongside PBKDF2."
+- icon: "🛡️"
+  title: "Standard"
+  desc: "Unified API for all key derivation algorithms."
+support:
+  state: "available"
+  description: "Finalized in JDK 25 LTS (JEP 510, Sept 2025)."
+prev: "security/pem-encoding"
+next: "security/strong-random"
+related:
+- "security/pem-encoding"
+- "security/strong-random"
+- "security/tls-default"
+docs:
+- title: "Key Derivation Functions (JEP 478)"
+  href: "https://openjdk.org/jeps/478"

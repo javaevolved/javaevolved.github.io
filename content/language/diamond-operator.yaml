@@ -1,0 +1,53 @@
+---
+id: 12
+slug: "diamond-operator"
+title: "Diamond with anonymous classes"
+category: "language"
+difficulty: "beginner"
+jdkVersion: "9"
+oldLabel: "Java 7/8"
+modernLabel: "Java 9+"
+oldApproach: "Repeat Type Args"
+modernApproach: "Diamond <>"
+oldCode: |-
+  Map<String, List<String>> map =
+      new HashMap<String, List<String>>();
+  // anonymous class: no diamond
+  Predicate<String> p =
+      new Predicate<String>() {
+          public boolean test(String s) {..}
+      };
+modernCode: |-
+  Map<String, List<String>> map =
+      new HashMap<>();
+  // Java 9: diamond with anonymous classes
+  Predicate<String> p =
+      new Predicate<>() {
+          public boolean test(String s) {..}
+      };
+summary: "Diamond operator now works with anonymous classes too."
+explanation: "Java 7 introduced <> but it didn't work with anonymous inner classes.\
+  \ Java 9 fixed this, so you never need to repeat type arguments on the right-hand\
+  \ side."
+whyModernWins:
+- icon: "📏"
+  title: "Consistent rules"
+  desc: "Diamond works everywhere — constructors and anonymous classes alike."
+- icon: "🧹"
+  title: "Less redundancy"
+  desc: "Type arguments are stated once on the left, never repeated."
+- icon: "🔧"
+  title: "DRY principle"
+  desc: "The compiler already knows the type — why write it twice?"
+support:
+  state: "available"
+  description: "Diamond with anonymous classes since JDK 9 (Sept 2017)."
+prev: "language/flexible-constructor-bodies"
+next: "language/private-interface-methods"
+related:
+- "language/type-inference-with-var"
+- "language/text-blocks-for-multiline-strings"
+- "language/switch-expressions"
+docs:
+- title: "Diamond with Anonymous Classes (JEP 213)"
+  href: "https://openjdk.org/jeps/213"
