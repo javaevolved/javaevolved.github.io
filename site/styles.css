@@ -1653,3 +1653,21 @@ footer a:hover {
   text-decoration: underline;
   margin-left: 8px;
 }
+
+/* ============================
+   RTL overrides — keep code blocks and nav LTR
+   ============================ */
+[dir="rtl"] nav,
+[dir="rtl"] .nav-inner {
+  direction: ltr;
+}
+
+[dir="rtl"] pre,
+[dir="rtl"] code,
+[dir="rtl"] .code-text,
+[dir="rtl"] .card-code,
+[dir="rtl"] .compare-code {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: embed;
+}
