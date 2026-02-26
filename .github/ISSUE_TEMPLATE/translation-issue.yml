@@ -25,7 +25,7 @@ body:
     id: area
     attributes:
       label: What is affected?
-      description: "Pattern content or UI strings (navigation, buttons, labels, footer)?"
+      description: "Pattern content (title, summary, explanation, etc.) or UI strings (navigation, buttons, labels, footer)?"
       placeholder: "Pattern content"
     validations:
       required: true
