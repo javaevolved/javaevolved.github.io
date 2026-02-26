@@ -47,6 +47,7 @@ cards:
   hoverHint: 마우스를 올려 모던 코드 보기 →
   hoverHintRelated: 마우스를 올려 모던 코드 보기 ➜
   touchHint: 👆 탭하거나 스와이프 →
+  learnMore: 자세히 보기
 copy:
   copy: 복사
   copied: 복사됨!

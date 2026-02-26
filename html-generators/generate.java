@@ -366,7 +366,8 @@ String renderIndexCard(String tpl, Snippet s, String locale, Map<String, String>
             Map.entry("jdkVersion", s.jdkVersion()), Map.entry("cardHref", cardHref),
             Map.entry("cards.old", strings.getOrDefault("cards.old", "Old")),
             Map.entry("cards.modern", strings.getOrDefault("cards.modern", "Modern")),
-            Map.entry("cards.hoverHint", strings.getOrDefault("cards.hoverHint", "hover to see modern →"))));
+            Map.entry("cards.hoverHint", strings.getOrDefault("cards.hoverHint", "hover to see modern →")),
+            Map.entry("cards.learnMore", strings.getOrDefault("cards.learnMore", "learn more"))));
 }
 
 String renderWhyCards(String tpl, JsonNode whyList) {
