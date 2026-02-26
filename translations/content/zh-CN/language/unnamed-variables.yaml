@@ -7,7 +7,7 @@ explanation: "未命名变量向读者和工具传达一个值被刻意忽略的
 whyModernWins:
 - icon: 📢
   title: 意图清晰
-  desc: "_ 明确表示"此处不需要这个值"。"
+  desc: '_ 明确表示"此处不需要这个值"。'
 - icon: 🔇
   title: 无警告
   desc: "IDE 和 linter 不会标记有意未使用的变量。"
