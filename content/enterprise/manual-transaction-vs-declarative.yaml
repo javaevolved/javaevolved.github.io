@@ -37,8 +37,8 @@ modernCode: |-
       @Transactional
       public void transferFunds(Long from, Long to,
                                 BigDecimal amount) {
-          Account src = em.find(Account.class, from);
-          Account dst = em.find(Account.class, to);
+          var src = em.find(Account.class, from);
+          var dst = em.find(Account.class, to);
           src.debit(amount);
           dst.credit(amount);
       }

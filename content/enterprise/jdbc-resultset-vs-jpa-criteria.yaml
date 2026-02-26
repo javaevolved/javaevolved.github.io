@@ -33,10 +33,10 @@ modernCode: |-
 
   public List<User> findActiveAboveAge(
           String status, int minAge) {
-      CriteriaBuilder cb = em.getCriteriaBuilder();
-      CriteriaQuery<User> cq =
+      var cb = em.getCriteriaBuilder();
+      var cq =
           cb.createQuery(User.class);
-      Root<User> root = cq.from(User.class);
+      var root = cq.from(User.class);
       cq.select(root).where(
           cb.equal(root.get("status"), status),
           cb.greaterThan(root.get("age"), minAge));

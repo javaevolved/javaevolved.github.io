@@ -17,7 +17,7 @@ oldCode: |-
   int val = Integer.parseInt(
       "FF", 16);
 modernCode: |-
-  HexFormat hex = HexFormat.of()
+  var hex = HexFormat.of()
       .withUpperCase();
   String s = hex.toHexDigits(
       byteValue);

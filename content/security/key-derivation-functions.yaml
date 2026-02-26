@@ -18,7 +18,7 @@ oldCode: |-
   SecretKey key =
       factory.generateSecret(spec);
 modernCode: |-
-  KDF kdf = KDF.getInstance("HKDF-SHA256");
+  var kdf = KDF.getInstance("HKDF-SHA256");
   SecretKey key = kdf.deriveKey(
       "AES",
       KDF.HKDFParameterSpec

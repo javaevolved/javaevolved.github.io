@@ -13,7 +13,7 @@ oldCode: |-
   Path path = Paths.get("src", "main",
       "java", "App.java");
 modernCode: |-
-  Path path = Path.of("src", "main",
+  var path = Path.of("src", "main",
       "java", "App.java");
 summary: "Use Path.of() — the modern factory method on the Path interface."
 explanation: "Path.of() is a factory method added directly to the Path interface,\
