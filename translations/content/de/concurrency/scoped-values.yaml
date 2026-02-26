@@ -1,0 +1,20 @@
+title: Scoped Values
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: Daten über den Aufruf-Stack sicher teilen ohne die Fallstricke von ThreadLocal.
+explanation: "ScopedValue bietet unveränderlichen, vererbbaren, bereichsbegrenzten\
+  \ Kontext. Im Gegensatz zu ThreadLocal werden Scoped Values automatisch bereinigt,\
+  \ funktionieren mit Virtual Threads und können von aufgerufenen Methoden nicht\
+  \ verändert werden."
+whyModernWins:
+- icon: "🔒"
+  title: Unveränderlich
+  desc: Aufgerufene Methoden können den Scoped Value lesen, aber nie ändern.
+- icon: "🧹"
+  title: Automatische Bereinigung
+  desc: "Kein manuelles remove() — der Wert ist auf den Block beschränkt."
+- icon: "⚡"
+  title: Virtual-Thread-sicher
+  desc: Funktioniert effizient mit Millionen von Virtual Threads.
+support:
+  description: "Finalisiert in JDK 25 LTS (JEP 506, Sept. 2025)."

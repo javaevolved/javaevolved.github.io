@@ -1,0 +1,20 @@
+title: Virtual Threads
+oldApproach: Plattform-Threads
+modernApproach: Virtual Threads
+summary: Millionen von leichtgewichtigen Virtual Threads statt schwerer OS-Threads erstellen.
+explanation: "Virtual Threads sind leichtgewichtige Threads, die von der JVM verwaltet\
+  \ werden, nicht vom Betriebssystem. Es können Millionen davon erstellt werden,\
+  \ ohne Thread-Pools zu konfigurieren. Sie sind ideal für E/A-intensive Aufgaben\
+  \ wie HTTP-Aufrufe und Datenbankabfragen."
+whyModernWins:
+- icon: "⚡"
+  title: Leichtgewichtig
+  desc: Virtual Threads verwenden KB an Speicher, Plattform-Threads verwenden MB.
+- icon: "♾️"
+  title: Skalierbar
+  desc: "Millionen von Threads erstellen — kein Pool-Sizing erforderlich."
+- icon: "🧹"
+  title: Einfaches Modell
+  desc: Blockierenden Code schreiben, der wie asynchroner Code skaliert.
+support:
+  description: Weitgehend verfügbar seit JDK 21 LTS (Sept. 2023)

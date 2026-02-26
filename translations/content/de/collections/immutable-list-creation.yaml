@@ -1,0 +1,19 @@
+title: Unveränderliche Listen erstellen
+oldApproach: Ausführliches Verpacken
+modernApproach: "List.of()"
+summary: Unveränderliche Listen in einem einzigen, sauberen Ausdruck erstellen.
+explanation: "List.of() erstellt eine wirklich unveränderliche Liste — kein Verpacken,\
+  \ keine defensive Kopie. Sie ist null-feindlich (lehnt null-Elemente ab) und strukturell\
+  \ unveränderlich. Die alte Methode erforderte drei verschachtelte Aufrufe."
+whyModernWins:
+- icon: "📏"
+  title: Ein einziger Aufruf
+  desc: Drei verschachtelte Aufrufe durch eine einzige Factory-Methode ersetzen.
+- icon: "🔒"
+  title: Wirklich unveränderlich
+  desc: Kein bloßer Wrapper — die Liste selbst ist unveränderlich.
+- icon: "🛡️"
+  title: Null-sicher
+  desc: Lehnt null-Elemente bei der Erstellung ab und schlägt sofort fehl.
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

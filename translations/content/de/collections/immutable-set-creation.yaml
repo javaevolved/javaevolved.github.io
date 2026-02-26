@@ -1,0 +1,18 @@
+title: Unveränderliche Sets erstellen
+oldApproach: Ausführliches Verpacken
+modernApproach: "Set.of()"
+summary: Unveränderliche Sets mit einem einzigen Factory-Aufruf erstellen.
+explanation: "Set.of() erstellt ein wirklich unveränderliches Set, das null-Elemente\
+  \ und Duplikate bei der Erstellung ablehnt. Kein Verpacken von veränderbaren Sets mehr."
+whyModernWins:
+- icon: "📏"
+  title: Prägnant
+  desc: Eine Zeile statt drei verschachtelter Aufrufe.
+- icon: "🚫"
+  title: Erkennt Duplikate
+  desc: Wirft eine Ausnahme, wenn versehentlich doppelte Elemente übergeben werden.
+- icon: "🔒"
+  title: Unveränderlich
+  desc: Kein Hinzufügen oder Entfernen nach der Erstellung möglich.
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

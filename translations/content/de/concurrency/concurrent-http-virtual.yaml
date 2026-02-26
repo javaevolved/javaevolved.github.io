@@ -1,0 +1,19 @@
+title: Parallele HTTP-Anfragen mit Virtual Threads
+oldApproach: Thread-Pool + URLConnection
+modernApproach: Virtual Threads + HttpClient
+summary: Viele URLs gleichzeitig mit Virtual Threads und HttpClient abrufen.
+explanation: "Virtual Threads machen es praktikabel, einen Thread pro HTTP-Anfrage\
+  \ zu erstellen. In Kombination mit HttpClient ersetzt dies komplexe asynchrone\
+  \ Callback-Muster durch einfachen blockierenden Code, der skaliert."
+whyModernWins:
+- icon: "♾️"
+  title: Ein Thread pro Anfrage
+  desc: "Kein Pool-Sizing — ein Virtual Thread pro URL."
+- icon: "📖"
+  title: Einfacher Code
+  desc: Unkomplizierten blockierenden Code schreiben.
+- icon: "⚡"
+  title: Hoher Durchsatz
+  desc: Tausende von gleichzeitigen Anfragen mit minimalen Ressourcen.
+support:
+  description: Weitgehend verfügbar seit JDK 21 LTS (Sept. 2023)
