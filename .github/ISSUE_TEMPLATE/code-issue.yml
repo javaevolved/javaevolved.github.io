@@ -1,0 +1,88 @@
+---
+name: Code Issue in Pattern
+description: Report incorrect, outdated, or broken code in an existing pattern
+title: "[Code Issue] "
+labels: ["bug", "slug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Report a code issue
+
+        Found a bug, compilation error, or inaccuracy in the code examples
+        of an existing pattern? Let us know so we can fix it.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - language
+        - collections
+        - strings
+        - streams
+        - concurrency
+        - io
+        - errors
+        - datetime
+        - security
+        - tooling
+        - enterprise
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Pattern slug
+      description: "The slug of the affected pattern (e.g., `type-inference-with-var`)"
+      placeholder: "type-inference-with-var"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-code
+    attributes:
+      label: Which code is affected?
+      options:
+        - Old code example
+        - Modern code example
+        - Both
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Type of issue
+      options:
+        - Code doesn't compile
+        - Incorrect or misleading output
+        - Outdated API usage
+        - Missing imports or context
+        - Better modern alternative exists
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the issue
+      description: "Explain what's wrong with the current code"
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested fix
+      description: "If you have a fix, paste the corrected code here"
+      render: java
+
+  - type: input
+    id: jdk-version
+    attributes:
+      label: JDK version tested
+      description: "Which JDK version did you use to identify this issue?"
+      placeholder: "21"

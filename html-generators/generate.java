@@ -419,13 +419,11 @@ String renderSocialShare(String tpl, String slug, String title, Map<String, Stri
 static final String GITHUB_ISSUES_URL = "https://github.com/javaevolved/javaevolved.github.io/issues/new";
 
 Map<String, String> buildContributeUrls(Snippet s, String locale, String localeName) {
-    var pageUrl = locale.equals("en")
-            ? "%s/%s/%s.html".formatted(BASE_URL, s.category(), s.slug())
-            : "%s/%s/%s/%s.html".formatted(BASE_URL, locale, s.category(), s.slug());
-
-    var codeTitle = urlEncode("[Code Issue] %s".formatted(s.title()));
-    var codeBody = urlEncode("**Pattern:** %s\n**URL:** %s\n\nDescribe the issue:\n".formatted(s.slug(), pageUrl));
-    var codeUrl = "%s?title=%s&labels=%s&body=%s".formatted(GITHUB_ISSUES_URL, codeTitle, "bug", codeBody);
+    var codeUrl = "%s?template=code-issue.yml&title=%s&category=%s&slug=%s".formatted(
+            GITHUB_ISSUES_URL,
+            urlEncode("[Code Issue] %s".formatted(s.title())),
+            urlEncode(s.category()),
+            urlEncode(s.slug()));
 
     var cleanLocaleName = localeName.replaceFirst("^[^\\p{L}]+", "");
     var transUrl = "%s?template=translation-issue.yml&title=%s&locale=%s&pattern=%s&area=%s".formatted(
