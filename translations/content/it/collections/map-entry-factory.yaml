@@ -1,0 +1,18 @@
+---
+title: Factory Map.entry()
+oldApproach: SimpleEntry
+modernApproach: Map.entry()
+summary: "Crea voci di mappa con un metodo factory pulito."
+explanation: "Map.entry() sostituisce il verboso costruttore AbstractMap.SimpleEntry. Restituisce una voce immutabile, rendendola ideale per Map.ofEntries() e le operazioni stream."
+whyModernWins:
+- icon: 📏
+  title: Conciso
+  desc: "Una riga invece di tre con un'intenzione più chiara."
+- icon: 🔒
+  title: Immutabile
+  desc: "La voce restituita non può essere modificata."
+- icon: 🧩
+  title: Componibile
+  desc: "Funziona perfettamente con Map.ofEntries() per mappe grandi."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

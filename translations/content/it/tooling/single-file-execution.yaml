@@ -1,0 +1,18 @@
+---
+title: Esecuzione di file singoli
+oldApproach: Compilazione in due passi
+modernApproach: Avvio diretto
+summary: "Esegui programmi Java a file singolo direttamente senza javac."
+explanation: "Il launcher Java può compilare ed eseguire un singolo file sorgente in un comando. Combinato con il supporto shebang su Unix, i file Java possono funzionare come script. Nessun passo di compilazione separato necessario."
+whyModernWins:
+- icon: ⚡
+  title: Un comando
+  desc: "java File.java compila ed esegue in un unico passo."
+- icon: 📝
+  title: Simile a script
+  desc: "Aggiungi una riga shebang per rendere i file .java script eseguibili."
+- icon: 🎓
+  title: Adatto all'apprendimento
+  desc: "I principianti eseguono il codice immediatamente senza imparare gli strumenti di build."
+support:
+  description: Ampiamente disponibile dal JDK 11 (settembre 2018)

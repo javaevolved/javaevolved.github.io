@@ -1,0 +1,18 @@
+---
+title: Record per classi di dati
+oldApproach: POJO verboso
+modernApproach: record
+summary: "Una riga sostituisce oltre 30 righe di codice boilerplate per i data carrier immutabili."
+explanation: "I record generano automaticamente il costruttore, gli accessori (x(), y()), equals(), hashCode() e toString(). Sono immutabili per design e ideali per DTO, value object e pattern matching."
+whyModernWins:
+- icon: ⚡
+  title: Definizione in una riga
+  desc: "Una singola riga sostituisce costruttore, getter, equals, hashCode, toString."
+- icon: 🔒
+  title: Immutabile per default
+  desc: "Tutti i campi sono final — nessun setter pericoloso."
+- icon: 🧩
+  title: Pattern-friendly
+  desc: "I record funzionano con i pattern di destrutturazione in switch e instanceof."
+support:
+  description: Ampiamente disponibile dal JDK 16 (marzo 2021)

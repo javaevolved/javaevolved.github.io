@@ -1,0 +1,18 @@
+---
+title: Fallback Optional.or()
+oldApproach: Fallback annidato
+modernApproach: Catena .or()
+summary: "Concatena i fallback Optional senza controlli annidati."
+explanation: "Optional.or() restituisce l'Optional originale se ha un valore, altrimenti valuta il supplier per ottenere un Optional alternativo. I supplier sono lazy — chiamati solo quando necessario."
+whyModernWins:
+- icon: 🔗
+  title: Concatenabile
+  desc: "Impila i fallback in una pipeline leggibile."
+- icon: ⚡
+  title: Valutazione lazy
+  desc: "I supplier di fallback vengono eseguiti solo se necessario."
+- icon: 📖
+  title: Dichiarativo
+  desc: "Si legge come 'prova il primario, o il secondario, o i default'."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

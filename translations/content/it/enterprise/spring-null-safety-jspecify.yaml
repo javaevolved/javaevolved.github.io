@@ -1,0 +1,18 @@
+---
+title: Spring Null Safety con JSpecify
+oldApproach: Spring @NonNull/@Nullable
+modernApproach: JSpecify @NullMarked
+summary: "Spring 7 adotta le annotazioni JSpecify, rendendo non-null il default e riducendo il rumore delle annotazioni."
+explanation: "Spring 5 e 6 hanno introdotto le proprie annotazioni di null safety nel package `org.springframework.lang`. Sebbene utili, erano specifiche del framework e richiedevano l'annotazione esplicita di ogni elemento non-null. Spring 7 migra a JSpecify, uno standard cross-ecosistema per la null safety. L'annotazione `@NullMarked` a livello di classe o package dichiara che tutti i tipi non annotati sono non-null per default. Solo i tipi effettivamente nullable necessitano dell'annotazione `@Nullable`, riducendo drasticamente la verbosità. Le annotazioni JSpecify sono riconosciute dai principali strumenti di analisi statica come NullAway, Error Prone e IntelliJ IDEA."
+whyModernWins:
+- icon: ✂️
+  title: Non-null per default
+  desc: "@NullMarked rende tutti i tipi non annotati non-null, così solo le eccezioni nullable necessitano di annotazione."
+- icon: 🌐
+  title: Standard dell'ecosistema
+  desc: "Le annotazioni JSpecify sono uno standard cross-framework riconosciuto da NullAway, Error Prone e IDE."
+- icon: 🔍
+  title: Strumenti più ricchi
+  desc: "I moderni analizzatori statici comprendono il modello null di JSpecify e segnalano le violazioni in fase di compilazione."
+support:
+  description: "Disponibile da Spring Framework 7.0 (richiede Java 17+)"

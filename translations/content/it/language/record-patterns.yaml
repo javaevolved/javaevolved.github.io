@@ -1,0 +1,18 @@
+---
+title: Pattern record (destrutturazione)
+oldApproach: Accesso manuale
+modernApproach: Destrutturazione
+summary: "Destruttua i record direttamente nei pattern — estrai i campi in un unico passo."
+explanation: "I pattern record permettono di decomporre i componenti di un record direttamente in instanceof e switch. Sono supportati anche i pattern annidati, abilitando il matching profondo senza variabili intermedie."
+whyModernWins:
+- icon: 🎯
+  title: Estrazione diretta
+  desc: "Accedi ai componenti del record senza chiamare manualmente gli accessori."
+- icon: 🪆
+  title: Annidabile
+  desc: "I pattern possono annidarsi — corrisponde ai record interni in un'unica espressione."
+- icon: 📏
+  title: Codice compatto
+  desc: "Cinque righe diventano due — meno cerimonia, stessa chiarezza."
+support:
+  description: Ampiamente disponibile dal JDK 21 LTS (settembre 2023)

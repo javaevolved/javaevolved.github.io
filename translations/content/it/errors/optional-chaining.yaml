@@ -1,0 +1,18 @@
+---
+title: Concatenazione Optional
+oldApproach: Controlli null annidati
+modernApproach: Pipeline Optional
+summary: "Sostituisci i controlli null annidati con una pipeline Optional."
+explanation: "Optional.map() concatena attraverso valori nullable, cortocircuitando al primo null. orElse() fornisce il default. Questo elimina la piramide della morte nei controlli null."
+whyModernWins:
+- icon: 🔗
+  title: Concatenabile
+  desc: "Ogni passo .map() gestisce il null in modo trasparente."
+- icon: 📖
+  title: Flusso lineare
+  desc: "Leggi da sinistra a destra invece di blocchi if annidati."
+- icon: 🛡️
+  title: A prova di NPE
+  desc: "Il null è gestito ad ogni passo — nessun crash possibile."
+support:
+  description: "Disponibile dal JDK 8+ (migliorato in 9+)"

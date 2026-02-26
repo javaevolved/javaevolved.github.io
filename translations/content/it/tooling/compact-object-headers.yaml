@@ -1,0 +1,18 @@
+---
+title: Header oggetto compatti
+oldApproach: Header a 128 bit
+modernApproach: Header a 64 bit
+summary: "Riduci della metà la dimensione dell'header degli oggetti per una migliore densità di memoria e utilizzo della cache."
+explanation: "Gli header oggetto compatti riducono l'overhead per oggetto da 128 bit a 64 bit sulle piattaforme a 64 bit. Questo risparmia memoria e migliora l'utilizzo della cache, specialmente per le applicazioni con molti oggetti piccoli."
+whyModernWins:
+- icon: 📦
+  title: Header più piccoli del 50%
+  desc: "8 byte invece di 16 per oggetto."
+- icon: ⚡
+  title: Migliore utilizzo della cache
+  desc: "Più oggetti entrano nelle linee di cache della CPU."
+- icon: 📊
+  title: Maggiore densità
+  desc: "Più oggetti nello stesso heap."
+support:
+  description: "Finalizzato nel JDK 25 LTS (JEP 519, settembre 2025)."

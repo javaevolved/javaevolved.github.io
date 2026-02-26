@@ -1,0 +1,18 @@
+---
+title: Math.clamp()
+oldApproach: min/max annidati
+modernApproach: Math.clamp()
+summary: "Vincola un valore tra limiti con una singola chiamata chiara."
+explanation: "Math.clamp(value, min, max) vincola un valore all'intervallo [min, max]. Più chiaro dei Math.min/Math.max annidati e disponibile per int, long, float e double."
+whyModernWins:
+- icon: 📖
+  title: Auto-documentante
+  desc: "clamp(value, min, max) è inequivocabile."
+- icon: 🛡️
+  title: Meno soggetto a errori
+  desc: "Nessun rischio di invertire accidentalmente l'ordine min/max."
+- icon: 🎯
+  title: Tutti i tipi numerici
+  desc: "Funziona con int, long, float e double."
+support:
+  description: Ampiamente disponibile dal JDK 21 LTS (settembre 2023)

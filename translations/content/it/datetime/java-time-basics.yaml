@@ -1,0 +1,18 @@
+---
+title: Basi dell'API java.time
+oldApproach: Date + Calendar
+modernApproach: java.time.*
+summary: "Usa tipi di data/ora immutabili e chiari invece di Date e Calendar."
+explanation: "java.time fornisce LocalDate, LocalTime, LocalDateTime, Instant, ZonedDateTime — tutti immutabili e thread-safe. I mesi sono indicizzati a partire da 1. Niente più confusione con Calendar.JANUARY = 0."
+whyModernWins:
+- icon: 🔒
+  title: Immutabile
+  desc: "I valori di data/ora non possono essere modificati accidentalmente."
+- icon: 📖
+  title: API chiara
+  desc: "Month.JANUARY, non 0. DayOfWeek.MONDAY, non 2."
+- icon: 🛡️
+  title: Thread-safe
+  desc: "Nessuna sincronizzazione necessaria — condividi liberamente tra i thread."
+support:
+  description: Ampiamente disponibile dal JDK 8 (marzo 2014)

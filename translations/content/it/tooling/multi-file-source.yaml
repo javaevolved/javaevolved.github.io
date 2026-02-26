@@ -1,0 +1,18 @@
+---
+title: Launcher multi-file sorgente
+oldApproach: Compila tutto prima
+modernApproach: Source Launcher
+summary: "Avvia programmi multi-file senza un passo di compilazione esplicito."
+explanation: "Java 22+ può compilare automaticamente i file sorgente referenziati quando si avvia da un file .java. Questo rende i piccoli programmi multi-file facili da eseguire come script, senza necessità di Maven o Gradle."
+whyModernWins:
+- icon: 🚀
+  title: Zero setup
+  desc: "Nessuno strumento di build necessario per piccoli programmi multi-file."
+- icon: 🔗
+  title: Auto-risoluzione
+  desc: "Le classi referenziate vengono trovate e compilate automaticamente."
+- icon: 📝
+  title: Simile a script
+  desc: "Esegui programmi multi-file come script."
+support:
+  description: "Disponibile dal JDK 22 (marzo 2024)"

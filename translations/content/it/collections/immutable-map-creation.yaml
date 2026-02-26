@@ -1,0 +1,18 @@
+---
+title: Creazione di mappe immutabili
+oldApproach: Pattern Builder per Map
+modernApproach: Map.of()
+summary: "Crea mappe immutabili inline senza un builder."
+explanation: "Map.of() accetta coppie chiave-valore inline e restituisce una mappa immutabile. Per più di 10 voci, usa Map.ofEntries() con coppie Map.entry()."
+whyModernWins:
+- icon: 📏
+  title: Creazione inline
+  desc: "Non serve una mappa mutabile temporanea."
+- icon: 🔒
+  title: Risultato immutabile
+  desc: "La mappa non può essere modificata dopo la creazione."
+- icon: 🚫
+  title: Nessuna chiave/valore null
+  desc: "Le voci null vengono rifiutate immediatamente."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

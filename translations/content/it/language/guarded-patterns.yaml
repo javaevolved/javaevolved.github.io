@@ -1,0 +1,18 @@
+---
+title: Pattern con guardia tramite when
+oldApproach: if annidato
+modernApproach: Clausola when
+summary: "Aggiungi condizioni ai case del pattern usando le guardie when."
+explanation: "I pattern con guardia permettono di affinare una corrispondenza di tipo con una condizione booleana aggiuntiva. Questo mantiene tutta la logica di branching nello switch invece di annidare istruzioni if all'interno dei case."
+whyModernWins:
+- icon: 🎯
+  title: Corrispondenza precisa
+  desc: "Combina tipo + condizione in un'unica etichetta case."
+- icon: 📐
+  title: Struttura piatta
+  desc: "Nessun if/else annidato all'interno dei case dello switch."
+- icon: 📖
+  title: Intento leggibile
+  desc: "La clausola when si legge come linguaggio naturale."
+support:
+  description: Ampiamente disponibile dal JDK 21 LTS (settembre 2023)

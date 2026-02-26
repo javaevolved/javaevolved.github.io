@@ -1,0 +1,18 @@
+---
+title: Caratteri della stringa come stream
+oldApproach: Loop manuale
+modernApproach: Stream chars()
+summary: "Elabora i caratteri della stringa come pipeline stream."
+explanation: "String.chars() restituisce un IntStream di valori carattere, abilitando l'elaborazione funzionale. Per il supporto Unicode, codePoints() gestisce correttamente i caratteri supplementari."
+whyModernWins:
+- icon: 🔗
+  title: Concatenabile
+  desc: "Usa filter, map, collect sugli stream di caratteri."
+- icon: 📐
+  title: Dichiarativo
+  desc: "Descrivi cosa fare, non come fare il loop."
+- icon: 🌐
+  title: Pronto per Unicode
+  desc: "codePoints() gestisce correttamente emoji e caratteri supplementari."
+support:
+  description: "Disponibile dal JDK 8+ (migliorato in 9+)"

@@ -1,0 +1,18 @@
+---
+title: Mapping JDBC ResultSet vs API Criteria JPA
+oldApproach: JDBC ResultSet
+modernApproach: API Criteria JPA
+summary: "Sostituisci il mapping manuale JDBC ResultSet con l'API Criteria type-safe di JPA per le query dinamiche."
+explanation: "Il JDBC grezzo richiede la costruzione di stringhe SQL, l'impostazione dei parametri per indice e il mapping manuale di ogni colonna ResultSet — un processo soggetto a errori che si rompe silenziosamente quando le colonne cambiano. L'API Criteria JPA costruisce query programmaticamente usando un pattern builder type-safe. I nomi delle colonne vengono validati rispetto al modello entità, il mapping dei risultati è automatico e le query dinamiche complesse si compongono in modo pulito senza concatenazione di stringhe."
+whyModernWins:
+- icon: 🔒
+  title: Query type-safe
+  desc: "Il builder Criteria rileva i nomi dei campi e le mancate corrispondenze di tipo in fase di compilazione."
+- icon: 🗺️
+  title: Mapping automatico
+  desc: "JPA mappa le righe dei risultati in oggetti entità — nessuna estrazione manuale colonna per colonna."
+- icon: 🧩
+  title: Predicati componibili
+  desc: "Le clausole where dinamiche si costruiscono in modo pulito con and(), or() e oggetti Predicate riutilizzabili."
+support:
+  description: Ampiamente disponibile da Jakarta EE 8 / Java 11

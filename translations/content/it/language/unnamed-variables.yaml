@@ -1,0 +1,18 @@
+---
+title: Variabili senza nome con _
+oldApproach: Variabile non utilizzata
+modernApproach: Segnaposto _
+summary: "Usa _ per segnalare l'intento quando una variabile è intenzionalmente non utilizzata."
+explanation: "Le variabili senza nome comunicano a lettori e strumenti che un valore viene deliberatamente ignorato. Niente più convenzioni di naming come 'ignored' o 'unused', niente più avvisi IDE."
+whyModernWins:
+- icon: 📢
+  title: Intento chiaro
+  desc: "_ dice esplicitamente 'questo valore non è necessario qui'."
+- icon: 🔇
+  title: Nessun avviso
+  desc: "IDE e linter non segnaleranno variabili intenzionalmente non utilizzate."
+- icon: 🧹
+  title: Lambda più pulite
+  desc: "Le lambda multi-parametro sono più pulite quando si usano solo alcuni parametri."
+support:
+  description: "Finalizzato nel JDK 22 (JEP 456, marzo 2024)."

@@ -1,0 +1,18 @@
+---
+title: Lookup JNDI vs Iniezione CDI
+oldApproach: Lookup JNDI
+modernApproach: CDI @Inject
+summary: "Sostituisci i fragili lookup JNDI basati su stringhe con l'iniezione CDI type-safe per le risorse gestite dal container."
+explanation: "Il pattern JNDI tradizionale ti costringe a usare nomi di risorse basati su stringhe, gestire NamingException e gestire un InitialContext. L'iniezione CDI con @Inject (o @Resource per le risorse container) lascia che il container crei automaticamente le dipendenze. I typo diventano errori di compilazione, e le classi sono più facili da testare perché le dipendenze possono essere iniettate direttamente."
+whyModernWins:
+- icon: 🔒
+  title: Wiring type-safe
+  desc: "Gli errori di iniezione vengono rilevati al momento del deploy, non a runtime tramite lookup di stringhe."
+- icon: 🗑️
+  title: Nessun boilerplate
+  desc: "Elimina la creazione di InitialContext, le stringhe JNDI e la gestione di NamingException."
+- icon: 🧪
+  title: Testabile
+  desc: "Le dipendenze sono campi iniettati, facilmente sostituibili con mock nei test unitari."
+support:
+  description: Ampiamente disponibile da Jakarta EE 8 / Java 11

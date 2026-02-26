@@ -1,0 +1,18 @@
+---
+title: Miglioramento try-with-resources
+oldApproach: Ri-dichiarazione variabile
+modernApproach: Effettivamente final
+summary: "Usa direttamente le variabili effettivamente final nel try-with-resources."
+explanation: "Java 9 consente alle variabili effettivamente final di essere usate direttamente nel try-with-resources senza ri-dichiarazione. Questo è più pulito quando la risorsa è stata creata fuori dal blocco try."
+whyModernWins:
+- icon: 🧹
+  title: Nessuna ri-dichiarazione
+  desc: "Usa direttamente il nome della variabile esistente."
+- icon: 📖
+  title: Meno confusione
+  desc: "Nessun nome di variabile separato all'interno del blocco try."
+- icon: 📏
+  title: Conciso
+  desc: "Meno righe, stessa sicurezza delle risorse."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

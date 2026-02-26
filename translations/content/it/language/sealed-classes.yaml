@@ -1,0 +1,18 @@
+---
+title: Classi sealed per gerarchie di tipi
+oldApproach: Gerarchia aperta
+modernApproach: sealed permits
+summary: "Limita le classi che possono estendere un tipo — abilitando switch esaustivi."
+explanation: "Le classi sealed definiscono un insieme chiuso di sottotipi. Il compilatore conosce tutti i casi possibili, abilitando il pattern matching esaustivo senza un ramo default. Combinate con i record, modellano i tipi di dati algebrici."
+whyModernWins:
+- icon: 🔐
+  title: Gerarchia controllata
+  desc: "Solo i sottotipi consentiti possono estendere — nessuna sottoclasse a sorpresa."
+- icon: ✅
+  title: Matching esaustivo
+  desc: "Il compilatore verifica che lo switch copra tutti i casi, senza default necessario."
+- icon: 📐
+  title: Tipi di dati algebrici
+  desc: "Modella i tipi somma in modo naturale — sealed + record = ADT in Java."
+support:
+  description: Ampiamente disponibile dal JDK 17 LTS (settembre 2021)

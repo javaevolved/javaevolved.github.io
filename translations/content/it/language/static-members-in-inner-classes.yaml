@@ -1,0 +1,18 @@
+---
+title: Membri statici nelle classi interne
+oldApproach: Necessaria la classe nested statica
+modernApproach: Membri statici nelle classi interne
+summary: "Definisci membri statici nelle classi interne senza richiedere classi nested statiche."
+explanation: "Prima di Java 16, solo le classi nested statiche potevano contenere membri statici. Le classi interne (non statiche) non potevano avere statici perché richiedevano un'istanza di enclosing. Java 16 allenta questa restrizione, permettendo campi statici, metodi e anche tipi nested nelle classi interne."
+whyModernWins:
+- icon: 🔓
+  title: Più flessibilità
+  desc: "Le classi interne ora possono avere membri statici quando necessario."
+- icon: 🧩
+  title: Stato condiviso
+  desc: "Traccia lo stato condiviso tra le istanze di una classe interna."
+- icon: 📐
+  title: Libertà di design
+  desc: "Non è necessario promuovere a classe nested statica solo per un campo statico."
+support:
+  description: Ampiamente disponibile dal JDK 16 (marzo 2021)

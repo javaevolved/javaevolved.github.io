@@ -1,0 +1,18 @@
+---
+title: Collectors.teeing()
+oldApproach: Due passaggi
+modernApproach: teeing()
+summary: "Calcola due aggregazioni in un unico passaggio dello stream."
+explanation: "Collectors.teeing() invia ogni elemento a due collector downstream e unisce i risultati. Evita di scorrere i dati due volte o di usare un accumulatore mutabile."
+whyModernWins:
+- icon: ⚡
+  title: Passaggio singolo
+  desc: "Elabora lo stream una volta invece di due."
+- icon: 🧩
+  title: Componibile
+  desc: "Combina qualsiasi due collector con una funzione di unione."
+- icon: 🔒
+  title: Risultato immutabile
+  desc: "Unisci direttamente in un record o value object."
+support:
+  description: Ampiamente disponibile dal JDK 12 (marzo 2019)

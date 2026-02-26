@@ -1,0 +1,18 @@
+---
+title: Costruttore canonico compatto
+oldApproach: Validazione costruttore esplicita
+modernApproach: Costruttore compatto
+summary: "Valida e normalizza i campi del record senza ripetere le liste di parametri."
+explanation: "I record possono dichiarare un costruttore canonico compatto che omette la lista dei parametri e le assegnazioni dei campi. Il compilatore assegna automaticamente i parametri ai campi dopo l'esecuzione della tua logica di validazione. Ideale per controlli preliminari, copie difensive e normalizzazione."
+whyModernWins:
+- icon: ✂️
+  title: Meno ripetizione
+  desc: "Non è necessario ripetere la lista dei parametri o assegnare manualmente ogni campo."
+- icon: 🛡️
+  title: Validazione
+  desc: "Perfetto per controlli null, validazione degli intervalli e copie difensive."
+- icon: 📖
+  title: Intento più chiaro
+  desc: "La sintassi compatta enfatizza la validazione, non il boilerplate."
+support:
+  description: Ampiamente disponibile dal JDK 16 (marzo 2021)

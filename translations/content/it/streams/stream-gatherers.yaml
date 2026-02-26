@@ -1,0 +1,18 @@
+---
+title: Stream gatherer
+oldApproach: Collector personalizzato
+modernApproach: gather()
+summary: "Usa i gatherer per operazioni stream intermedie personalizzate."
+explanation: "I gatherer sono una nuova operazione stream intermedia che può esprimere trasformazioni complesse come finestre scorrevoli, gruppi di dimensioni fisse e operazioni di scansione che erano impossibili con le operazioni stream standard."
+whyModernWins:
+- icon: 🧩
+  title: Componibile
+  desc: "I gatherer si compongono con altre operazioni stream."
+- icon: 📦
+  title: Operazioni integrate
+  desc: "windowFixed, windowSliding, fold, scan pronti all'uso."
+- icon: 🔧
+  title: Estensibile
+  desc: "Scrivi gatherer personalizzati per qualsiasi trasformazione intermedia."
+support:
+  description: "Finalizzato nel JDK 24 (JEP 485, marzo 2025)."

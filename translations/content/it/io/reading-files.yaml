@@ -1,0 +1,18 @@
+---
+title: Lettura di file
+oldApproach: BufferedReader
+modernApproach: Files.readString()
+summary: "Leggi un intero file in una String con una riga."
+explanation: "Files.readString() legge l'intero contenuto di un file in una String. Gestisce la codifica (UTF-8 per default) e la pulizia delle risorse. Per file grandi, usa Files.lines() per lo streaming lazy."
+whyModernWins:
+- icon: 📏
+  title: Una riga
+  desc: "Sostituisci 8 righe di boilerplate BufferedReader."
+- icon: 🧹
+  title: Pulizia automatica
+  desc: "Il file handle viene chiuso automaticamente."
+- icon: 🌐
+  title: UTF-8 per default
+  desc: "Codifica corretta per default — nessuna confusione di charset."
+support:
+  description: Ampiamente disponibile dal JDK 11 (settembre 2018)

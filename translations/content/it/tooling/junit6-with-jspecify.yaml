@@ -1,0 +1,18 @@
+---
+title: JUnit 6 con sicurezza null JSpecify
+oldApproach: API non annotata
+modernApproach: API @NullMarked
+summary: "JUnit 6 adotta JSpecify @NullMarked, rendendo espliciti i contratti null nell'intera API di asserzione."
+explanation: "JUnit 5 è stato rilasciato senza annotazioni di nullabilità standardizzate, lasciando agli sviluppatori il compito di indovinare se i parametri di asserzione o i valori di ritorno potessero essere null. JUnit 6 adotta JSpecify nell'intero modulo: l'annotazione @NullMarked rende tutti i tipi non annotati non-null per default, e @Nullable contrassegna le eccezioni. La classe Assertions annota esplicitamente i parametri come assertNull(@Nullable Object actual) e fail(@Nullable String message), così IDE e analizzatori statici possono rilevare l'uso errato del null in fase di compilazione invece che a runtime."
+whyModernWins:
+- icon: 📜
+  title: Contratti espliciti
+  desc: "@NullMarked sul modulo JUnit 6 documenta la semantica null direttamente nell'API — nessuna lettura del sorgente necessaria."
+- icon: 🛡️
+  title: Sicurezza in fase di compilazione
+  desc: "IDE e analizzatori avvisano quando viene passato null dove è atteso non-null, rilevando i bug prima dell'esecuzione dei test."
+- icon: 🌐
+  title: Standard dell'ecosistema
+  desc: "JSpecify è adottato da Spring, Guava e altri — semantica null coerente nell'intero stack."
+support:
+  description: "Disponibile da JUnit 6.0 (ottobre 2025, richiede Java 17+)"

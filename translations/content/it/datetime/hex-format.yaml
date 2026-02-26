@@ -1,0 +1,18 @@
+---
+title: HexFormat
+oldApproach: Conversione esadecimale manuale
+modernApproach: HexFormat
+summary: "Converti tra stringhe esadecimali e array di byte con HexFormat."
+explanation: "HexFormat fornisce codifica/decodifica esadecimale bidirezionale per byte, interi e array. Configura delimitatori, prefisso, suffisso e maiuscole/minuscole. Niente più formattazione o parsing manuale."
+whyModernWins:
+- icon: 📐
+  title: Bidirezionale
+  desc: "Converti byte→hex e hex→byte con un'unica API."
+- icon: 🔧
+  title: Configurabile
+  desc: "Delimitatori, prefisso, suffisso, maiuscole/minuscole."
+- icon: 📦
+  title: Supporto array
+  desc: "Codifica/decodifica interi array di byte in una volta."
+support:
+  description: Ampiamente disponibile dal JDK 17 LTS (settembre 2021)

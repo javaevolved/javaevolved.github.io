@@ -1,0 +1,18 @@
+---
+title: Stream toArray tipizzato
+oldApproach: Copia manuale dell'array
+modernApproach: toArray(generatore)
+summary: "Converti gli stream in array tipizzati con un riferimento a metodo."
+explanation: "Il metodo toArray(IntFunction) crea un array correttamente tipizzato da uno stream. Il generatore (String[]::new) indica allo stream quale tipo di array creare."
+whyModernWins:
+- icon: 🎯
+  title: Type-safe
+  desc: "Nessun cast a Object[] — il tipo dell'array è corretto."
+- icon: 🔗
+  title: Concatenabile
+  desc: "Funziona alla fine di qualsiasi pipeline stream."
+- icon: 📏
+  title: Conciso
+  desc: "Un'espressione sostituisce il loop manuale."
+support:
+  description: Ampiamente disponibile dal JDK 8 (marzo 2014)

@@ -1,0 +1,18 @@
+---
+title: Iterazione inversa di lista
+oldApproach: ListIterator manuale
+modernApproach: reversed()
+summary: "Itera su una lista in ordine inverso con un ciclo for-each pulito."
+explanation: "Il metodo reversed() di SequencedCollection restituisce una vista ordinata in senso inverso della lista. Questa vista è supportata dalla lista originale, quindi non si verifica alcuna copia. La sintassi del ciclo for potenziato rende l'iterazione inversa leggibile quanto quella diretta."
+whyModernWins:
+- icon: 📖
+  title: Sintassi naturale
+  desc: "Ciclo for potenziato invece del verboso ListIterator."
+- icon: ⚡
+  title: Nessuna copia
+  desc: "reversed() restituisce una vista — nessun overhead di prestazioni."
+- icon: 🧩
+  title: API coerente
+  desc: "Funziona su List, Deque, SortedSet in modo uniforme."
+support:
+  description: Ampiamente disponibile dal JDK 21 LTS (settembre 2023)

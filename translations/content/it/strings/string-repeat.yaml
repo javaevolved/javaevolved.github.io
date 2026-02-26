@@ -1,0 +1,18 @@
+---
+title: String.repeat()
+oldApproach: Loop StringBuilder
+modernApproach: repeat()
+summary: "Ripeti una stringa n volte senza un loop."
+explanation: "String.repeat(int) restituisce la stringa concatenata con se stessa n volte. Gestisce i casi limite: repeat(0) restituisce una stringa vuota, repeat(1) restituisce la stessa stringa."
+whyModernWins:
+- icon: 📏
+  title: Una riga
+  desc: "Sostituisci 5 righe di codice StringBuilder con una chiamata."
+- icon: ⚡
+  title: Ottimizzato
+  desc: "L'implementazione interna è ottimizzata per le ripetizioni grandi."
+- icon: 📖
+  title: Intento chiaro
+  desc: "repeat(3) trasmette immediatamente lo scopo."
+support:
+  description: Ampiamente disponibile dal JDK 11 (settembre 2018)

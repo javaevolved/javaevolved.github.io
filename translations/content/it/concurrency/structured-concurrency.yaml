@@ -1,0 +1,18 @@
+---
+title: Concorrenza strutturata
+oldApproach: Ciclo di vita del thread manuale
+modernApproach: StructuredTaskScope
+summary: "Gestisci i cicli di vita dei task concorrenti come un'unica unità di lavoro."
+explanation: "La concorrenza strutturata tratta un gruppo di task concorrenti come un'unica operazione. Se un subtask fallisce, gli altri vengono annullati. Lo scope garantisce che non ci siano perdite di thread e fornisce chiare relazioni padre-figlio."
+whyModernWins:
+- icon: 🛡️
+  title: Nessuna perdita di thread
+  desc: "Tutti i task biforcati completano prima che lo scope si chiuda."
+- icon: ⚡
+  title: Fallimento rapido
+  desc: "ShutdownOnFailure annulla i fratelli se uno fallisce."
+- icon: 📐
+  title: Struttura chiara
+  desc: "Il ciclo di vita del task corrisponde allo scope lessicale nel codice."
+support:
+  description: "Anteprima nel JDK 25 (quinta anteprima, JEP 505). Richiede --enable-preview."

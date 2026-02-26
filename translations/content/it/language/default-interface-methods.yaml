@@ -1,0 +1,18 @@
+---
+title: Metodi default nelle interfacce
+oldApproach: Classi astratte per comportamento condiviso
+modernApproach: Metodi default nelle interfacce
+summary: "Aggiungi implementazioni di metodi direttamente nelle interfacce, abilitando l'ereditarietà multipla del comportamento."
+explanation: "Prima di Java 8, condividere il comportamento tra classi non correlate richiedeva classi astratte, che limitavano all'ereditarietà singola. I metodi default permettono alle interfacce di fornire implementazioni di metodi, così le classi possono ereditare comportamento da più interfacce. Questo è stato essenziale per evolvere le API Collections (es. List.forEach, Map.getOrDefault) senza rompere le implementazioni esistenti."
+whyModernWins:
+- icon: 🔀
+  title: Ereditarietà multipla
+  desc: "Le classi possono implementare molte interfacce con metodi default, a differenza dell'ereditarietà da una singola classe astratta."
+- icon: 📦
+  title: Evoluzione dell'API
+  desc: "Aggiungi nuovi metodi alle interfacce senza rompere le implementazioni esistenti."
+- icon: 🧩
+  title: Comportamento componibile
+  desc: "Mescola e abbina le capacità di più interfacce liberamente."
+support:
+  description: "Disponibile dal JDK 8 (marzo 2014)."

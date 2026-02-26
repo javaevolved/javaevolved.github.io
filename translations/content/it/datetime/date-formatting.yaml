@@ -1,0 +1,18 @@
+---
+title: Formattazione delle date
+oldApproach: SimpleDateFormat
+modernApproach: DateTimeFormatter
+summary: "Formatta le date con DateTimeFormatter thread-safe e immutabile."
+explanation: "DateTimeFormatter è immutabile e thread-safe, a differenza di SimpleDateFormat. Può essere memorizzato come costante e condiviso. Sono disponibili formatter predefiniti come ISO_LOCAL_DATE per i formati comuni."
+whyModernWins:
+- icon: 🛡️
+  title: Thread-safe
+  desc: "Condividi i formatter tra i thread senza sincronizzazione."
+- icon: 📋
+  title: Formati integrati
+  desc: "ISO_LOCAL_DATE, ISO_INSTANT, ecc. per i formati standard."
+- icon: 🔒
+  title: Immutabile
+  desc: "Memorizza in sicurezza come costante static final."
+support:
+  description: Ampiamente disponibile dal JDK 8 (marzo 2014)

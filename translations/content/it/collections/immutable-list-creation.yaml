@@ -1,0 +1,18 @@
+---
+title: Creazione di liste immutabili
+oldApproach: Wrapping verboso
+modernApproach: List.of()
+summary: "Crea liste immutabili in un'unica espressione pulita."
+explanation: "List.of() crea una lista veramente immutabile — nessun wrapping, nessuna copia difensiva. È ostile ai null (rifiuta elementi null) e strutturalmente immutabile. Il vecchio modo richiedeva tre chiamate annidate."
+whyModernWins:
+- icon: 📏
+  title: Una chiamata
+  desc: "Sostituisci tre chiamate annidate con un singolo metodo factory."
+- icon: 🔒
+  title: Veramente immutabile
+  desc: "Non è solo un wrapper — la lista stessa è immutabile."
+- icon: 🛡️
+  title: Null-safe
+  desc: "Rifiuta gli elementi null al momento della creazione, fallendo rapidamente."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

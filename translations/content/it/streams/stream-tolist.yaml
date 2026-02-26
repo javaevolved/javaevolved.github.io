@@ -1,0 +1,18 @@
+---
+title: Stream.toList()
+oldApproach: Collectors.toList()
+modernApproach: .toList()
+summary: "Il terminale toList() sostituisce il verboso collect(Collectors.toList())."
+explanation: "Stream.toList() restituisce una lista non modificabile. È equivalente a .collect(Collectors.toUnmodifiableList()) ma molto più breve. Nota: il risultato è immutabile, a differenza di Collectors.toList()."
+whyModernWins:
+- icon: 📏
+  title: 7 caratteri vs 24
+  desc: ".toList() sostituisce .collect(Collectors.toList())."
+- icon: 🔒
+  title: Immutabile
+  desc: "La lista risultante non può essere modificata."
+- icon: 📖
+  title: Fluente
+  desc: "Si legge naturalmente alla fine di una pipeline."
+support:
+  description: Ampiamente disponibile dal JDK 16 (marzo 2021)

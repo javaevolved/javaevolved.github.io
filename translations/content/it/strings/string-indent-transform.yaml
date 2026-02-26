@@ -1,0 +1,18 @@
+---
+title: String.indent() e transform()
+oldApproach: Indentazione manuale
+modernApproach: indent() / transform()
+summary: "Indenta il testo e concatena le trasformazioni di stringa in modo fluente."
+explanation: "indent(n) aggiunge n spazi a ogni riga. transform(fn) applica qualsiasi funzione e restituisce il risultato, abilitando la concatenazione fluente delle operazioni sulle stringhe."
+whyModernWins:
+- icon: 📏
+  title: Integrato
+  desc: "L'indentazione è un'operazione comune — ora è una chiamata."
+- icon: 🔗
+  title: Concatenabile
+  desc: "transform() abilita pipeline fluenti sulle stringhe."
+- icon: 🧹
+  title: Codice pulito
+  desc: "Nessuna divisione manuale di righe e loop StringBuilder."
+support:
+  description: Ampiamente disponibile dal JDK 12 (marzo 2019)

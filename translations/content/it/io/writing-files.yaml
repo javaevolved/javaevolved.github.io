@@ -1,0 +1,18 @@
+---
+title: Scrittura di file
+oldApproach: FileWriter + BufferedWriter
+modernApproach: Files.writeString()
+summary: "Scrivi una String su un file con una riga."
+explanation: "Files.writeString() scrive il contenuto su un file con codifica UTF-8 per default. È possibile passare opzioni per l'accodamento, la creazione, ecc."
+whyModernWins:
+- icon: 📏
+  title: Una riga
+  desc: "Nessun wrapping di writer o try-with-resources necessario."
+- icon: 🛡️
+  title: Default sicuri
+  desc: "Codifica UTF-8, pulizia corretta del file handle."
+- icon: 🔧
+  title: Opzioni
+  desc: "Passa flag OpenOption per accodamento, creazione, ecc."
+support:
+  description: Ampiamente disponibile dal JDK 11 (settembre 2018)

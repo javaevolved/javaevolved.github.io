@@ -1,0 +1,18 @@
+---
+title: Dichiarazioni di importazione modulo
+oldApproach: Molte importazioni
+modernApproach: import module
+summary: "Importa tutti i package esportati da un modulo con una singola dichiarazione."
+explanation: "Le dichiarazioni di importazione modulo permettono di importare tutto ciò che un modulo esporta con una riga. Particolarmente utile per java.base che copre collezioni, I/O, stream e altro."
+whyModernWins:
+- icon: 🧹
+  title: Una riga
+  desc: "Sostituisci un muro di importazioni con una singola importazione modulo."
+- icon: 📦
+  title: Consapevole dei moduli
+  desc: "Sfrutta il sistema di moduli per importare insiemi coerenti di package."
+- icon: 🚀
+  title: Avvio rapido
+  desc: "Perfetto per script e prototipi dove le liste di importazioni sono noiose."
+support:
+  description: "Finalizzato nel JDK 25 LTS (JEP 511, settembre 2025)."

@@ -1,0 +1,18 @@
+---
+title: Inferenza di tipo con var
+oldApproach: Tipi espliciti
+modernApproach: Parola chiave var
+summary: "Usa var per l'inferenza di tipo nelle variabili locali — meno rumore, stessa sicurezza."
+explanation: "Da Java 10, il compilatore inferisce i tipi delle variabili locali dal lato destro dell'assegnazione. Questo riduce il rumore visivo senza sacrificare la sicurezza dei tipi. Usa var quando il tipo è ovvio dal contesto."
+whyModernWins:
+- icon: ⚡
+  title: Meno codice ripetitivo
+  desc: "Non è necessario ripetere tipi generici complessi su entrambi i lati dell'assegnazione."
+- icon: 👁
+  title: Migliore leggibilità
+  desc: "Concentrati sui nomi delle variabili e i valori, non sulle dichiarazioni di tipo."
+- icon: 🔒
+  title: Ancora type-safe
+  desc: Il compilatore inferisce e applica il tipo esatto in fase di compilazione.
+support:
+  description: Ampiamente disponibile dal JDK 10 (marzo 2018)

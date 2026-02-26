@@ -1,0 +1,18 @@
+---
+title: Switch esaustivo senza default
+oldApproach: Default obbligatorio
+modernApproach: Esaustività sealed
+summary: "Il compilatore verifica che tutti i sottotipi sealed siano coperti — nessun default necessario."
+explanation: "Quando si usa lo switch su un tipo sealed, il compilatore conosce tutti i possibili sottotipi e verifica che ogni caso sia gestito. Se aggiungi un nuovo sottotipo, il compilatore segnala ogni switch ora incompleto."
+whyModernWins:
+- icon: ✅
+  title: Sicurezza in fase di compilazione
+  desc: "Aggiungi un nuovo sottotipo e il compilatore mostra ogni punto da aggiornare."
+- icon: 🚫
+  title: Nessun codice morto
+  desc: "Nessun ramo default irraggiungibile che maschera i bug."
+- icon: 📐
+  title: Tipi algebrici
+  desc: "Sealed + record + switch esaustivo = ADT propri in Java."
+support:
+  description: Ampiamente disponibile dal JDK 21 LTS (settembre 2023)

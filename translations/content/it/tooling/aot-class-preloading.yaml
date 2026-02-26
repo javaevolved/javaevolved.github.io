@@ -1,0 +1,18 @@
+---
+title: Precaricamento AOT delle classi
+oldApproach: Avvio a freddo ogni volta
+modernApproach: Cache AOT
+summary: "Metti in cache il caricamento delle classi e la compilazione per un avvio istantaneo."
+explanation: "Il precaricamento AOT delle classi mette in cache le classi caricate e collegate da un'esecuzione di addestramento. Agli avvii successivi, le classi vengono caricate dalla cache, saltando la verifica e il collegamento. Combinato con la compilazione AOT, questo riduce drasticamente il tempo di avvio."
+whyModernWins:
+- icon: ⚡
+  title: Avvio più veloce
+  desc: "Salta il caricamento, la verifica e il collegamento delle classi."
+- icon: 📦
+  title: Stato in cache
+  desc: "L'esecuzione di addestramento cattura lo stato ideale delle classi."
+- icon: 🔧
+  title: Nessuna modifica al codice
+  desc: "Funziona con le applicazioni esistenti — basta aggiungere flag JVM."
+support:
+  description: "Disponibile come funzionalità standard nel JDK 25 LTS (JEP 514/515, settembre 2025)."

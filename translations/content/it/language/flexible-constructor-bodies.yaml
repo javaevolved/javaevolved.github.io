@@ -1,0 +1,18 @@
+---
+title: Corpi di costruttore flessibili
+oldApproach: Valida dopo super()
+modernApproach: Codice prima di super()
+summary: "Valida e calcola valori prima di chiamare super() o this()."
+explanation: "Java 25 rimuove la restrizione che super() debba essere la prima istruzione. Ora puoi validare argomenti, calcolare valori derivati e preparare lo stato prima di delegare al costruttore padre."
+whyModernWins:
+- icon: 🛡️
+  title: Fail fast
+  desc: "Valida gli argomenti prima che il costruttore della superclasse venga eseguito."
+- icon: 🧮
+  title: Calcola prima
+  desc: "Deriva valori e prepara i dati prima di chiamare super()."
+- icon: 🧹
+  title: Nessun workaround
+  desc: "Niente più metodi helper statici o factory pattern per aggirare la restrizione."
+support:
+  description: "Finalizzato nel JDK 25 LTS (JEP 513, settembre 2025)."

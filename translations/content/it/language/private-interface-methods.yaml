@@ -1,0 +1,18 @@
+---
+title: Metodi privati nelle interfacce
+oldApproach: Logica duplicata
+modernApproach: Metodi privati
+summary: "Estrai la logica condivisa nelle interfacce usando metodi privati."
+explanation: "Java 9 consente i metodi privati nelle interfacce, permettendo di condividere codice tra i metodi default senza esporre i dettagli di implementazione alle classi implementanti."
+whyModernWins:
+- icon: 🧩
+  title: Riutilizzo del codice
+  desc: "Condividi la logica tra i metodi default senza duplicazione."
+- icon: 🔐
+  title: Incapsulamento
+  desc: "I dettagli di implementazione rimangono nascosti alle classi implementanti."
+- icon: 🧹
+  title: Interfacce DRY
+  desc: "Niente più copia-incolla tra i metodi default."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

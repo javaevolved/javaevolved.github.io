@@ -1,0 +1,18 @@
+---
+title: Valori scoped
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: "Condividi dati attraverso gli stack di chiamate in modo sicuro senza le insidie di ThreadLocal."
+explanation: "ScopedValue fornisce contesto immutabile, ereditabile e limitato allo scope. A differenza di ThreadLocal, i valori scoped vengono puliti automaticamente, funzionano con i thread virtuali e non possono essere mutati dai chiamati."
+whyModernWins:
+- icon: 🔒
+  title: Immutabile
+  desc: "I chiamati possono leggere ma non modificare mai il valore scoped."
+- icon: 🧹
+  title: Pulizia automatica
+  desc: "Nessun remove() manuale — il valore è scoped al blocco."
+- icon: ⚡
+  title: Sicuro per thread virtuali
+  desc: "Funziona efficientemente con milioni di thread virtuali."
+support:
+  description: "Finalizzato nel JDK 25 LTS (JEP 506, settembre 2025)."

@@ -1,0 +1,18 @@
+---
+title: Text block per stringhe multiriga
+oldApproach: Concatenazione di stringhe
+modernApproach: Text Block
+summary: "Scrivi stringhe multiriga in modo naturale con i text block delimitati da triple virgolette."
+explanation: "I text block permettono di scrivere stringhe multiriga esattamente come appaiono. Non serve più eseguire l'escape delle virgolette o aggiungere \n. Il compilatore rimuove automaticamente l'indentazione superflua."
+whyModernWins:
+- icon: 📖
+  title: Leggibile com'è
+  desc: "JSON, SQL e HTML appaiono come vero JSON, SQL e HTML nel codice sorgente."
+- icon: 🚫
+  title: Nessun escape infernale
+  desc: "Le virgolette incorporate non richiedono il backslash di escape."
+- icon: 📐
+  title: Indentazione intelligente
+  desc: "Gli spazi iniziali vengono rimossi automaticamente in base alla posizione del delimitatore di chiusura."
+support:
+  description: Ampiamente disponibile dal JDK 15 (settembre 2020)

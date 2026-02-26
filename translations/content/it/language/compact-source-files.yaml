@@ -1,0 +1,18 @@
+---
+title: File sorgente compatti
+oldApproach: Classe main con cerimonia
+modernApproach: void main()
+summary: "Scrivi un programma completo senza dichiarazione di classe o public static void main."
+explanation: "I file sorgente compatti rimuovono la cerimonia delle dichiarazioni di classe e la firma del metodo main per programmi semplici. Combinati con l'importazione implicita di java.io.IO, anche println è disponibile direttamente."
+whyModernWins:
+- icon: 🚀
+  title: Zero cerimonia
+  desc: "Nessuna classe, nessun public static void main, nessun String[] args."
+- icon: 🎓
+  title: Adatto ai principianti
+  desc: "I nuovi programmatori possono scrivere codice utile dalla prima riga."
+- icon: 📝
+  title: Simile a script
+  desc: "Perfetto per prototipi veloci, script ed esempi."
+support:
+  description: "Finalizzato nel JDK 25 LTS (JEP 512, settembre 2025)."

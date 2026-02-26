@@ -1,0 +1,18 @@
+---
+title: Objects.requireNonNullElse()
+oldApproach: Controllo null ternario
+modernApproach: requireNonNullElse()
+summary: "Ottieni un valore non-null con un default chiaro, senza ternario."
+explanation: "requireNonNullElse restituisce il primo argomento se non-null, altrimenti il secondo. Il default stesso non può essere null — lancia NPE se entrambi sono null, catturando i bug precocemente."
+whyModernWins:
+- icon: 📖
+  title: Intento chiaro
+  desc: "Il nome del metodo descrive esattamente cosa fa."
+- icon: 🛡️
+  title: Default null-safe
+  desc: "Anche il valore di default viene controllato per null."
+- icon: 📏
+  title: Leggibile
+  desc: "Meglio del ternario per la semplice logica null-o-default."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

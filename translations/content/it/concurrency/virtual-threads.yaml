@@ -1,0 +1,18 @@
+---
+title: Thread virtuali
+oldApproach: Thread di piattaforma
+modernApproach: Thread virtuali
+summary: "Crea milioni di thread virtuali leggeri invece di pesanti thread OS."
+explanation: "I thread virtuali sono thread leggeri gestiti dalla JVM, non dal sistema operativo. Puoi crearne milioni senza dover dimensionare i thread pool. Sono ideali per task I/O-bound come chiamate HTTP e query al database."
+whyModernWins:
+- icon: ⚡
+  title: Leggeri
+  desc: "I thread virtuali usano KB di memoria, i thread di piattaforma usano MB."
+- icon: ♾️
+  title: Scalabili
+  desc: "Crea milioni di thread — nessuna necessità di dimensionare i pool."
+- icon: 🧹
+  title: Modello semplice
+  desc: "Scrivi codice bloccante che scala come il codice asincrono."
+support:
+  description: Ampiamente disponibile dal JDK 21 LTS (settembre 2023)

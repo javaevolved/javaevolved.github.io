@@ -1,0 +1,18 @@
+---
+title: Diamond con classi anonime
+oldApproach: Ripeti gli argomenti di tipo
+modernApproach: Diamond <>
+summary: "L'operatore diamond ora funziona anche con le classi anonime."
+explanation: "Java 7 ha introdotto <> ma non funzionava con le classi interne anonime. Java 9 ha corretto questo, quindi non è mai necessario ripetere gli argomenti di tipo sul lato destro."
+whyModernWins:
+- icon: 📏
+  title: Regole coerenti
+  desc: "Diamond funziona ovunque — costruttori e classi anonime allo stesso modo."
+- icon: 🧹
+  title: Meno ridondanza
+  desc: "Gli argomenti di tipo sono indicati una volta a sinistra, mai ripetuti."
+- icon: 🔧
+  title: Principio DRY
+  desc: "Il compilatore conosce già il tipo — perché scriverlo due volte?"
+support:
+  description: "Diamond con classi anonime dal JDK 9 (settembre 2017)."

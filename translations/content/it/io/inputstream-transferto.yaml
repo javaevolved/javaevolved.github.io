@@ -1,0 +1,18 @@
+---
+title: InputStream.transferTo()
+oldApproach: Loop di copia manuale
+modernApproach: transferTo()
+summary: "Copia un InputStream su un OutputStream in una chiamata."
+explanation: "transferTo() legge tutti i byte dal flusso di input e li scrive nel flusso di output. Nessuna gestione del buffer, nessun loop. Usa un buffer interno ottimizzato."
+whyModernWins:
+- icon: 📏
+  title: Una riga
+  desc: "Sostituisci l'intero loop di lettura/scrittura con una chiamata a metodo."
+- icon: ⚡
+  title: Ottimizzato
+  desc: "La dimensione del buffer interno è ottimizzata per le prestazioni."
+- icon: 🛡️
+  title: Nessun bug
+  desc: "Nessun errore off-by-one nella gestione del buffer."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

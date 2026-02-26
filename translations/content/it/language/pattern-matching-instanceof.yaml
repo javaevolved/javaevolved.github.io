@@ -1,0 +1,18 @@
+---
+title: Pattern matching per instanceof
+oldApproach: instanceof + Cast
+modernApproach: Variabile pattern
+summary: "Combina il controllo del tipo e il cast in un unico passo con il pattern matching."
+explanation: "Il pattern matching per instanceof elimina il cast ridondante dopo un controllo del tipo. La variabile è automaticamente scoped dove il pattern corrisponde, rendendo il codice più sicuro e conciso."
+whyModernWins:
+- icon: 🔄
+  title: Nessun cast ridondante
+  desc: "Il controllo del tipo e il binding della variabile avvengono in un'unica espressione."
+- icon: 📏
+  title: Meno righe
+  desc: "Una riga invece di due — la riga del cast sparisce completamente."
+- icon: 🛡️
+  title: Scope sicuro
+  desc: "La variabile pattern è nello scope solo dove il tipo è garantito."
+support:
+  description: Ampiamente disponibile dal JDK 16 (marzo 2021)

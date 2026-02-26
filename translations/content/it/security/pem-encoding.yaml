@@ -1,0 +1,18 @@
+---
+title: Codifica/decodifica PEM
+oldApproach: Base64 manuale + Header
+modernApproach: API PEM
+summary: "Codifica e decodifica oggetti crittografici in formato PEM in modo nativo."
+explanation: "L'API PEM fornisce codifica/decodifica standard per certificati, chiavi e altri oggetti crittografici in formato PEM. Niente più wrapping Base64 manuale con header BEGIN/END."
+whyModernWins:
+- icon: 🧹
+  title: Nessun Base64 manuale
+  desc: "Header PEM, wrapping di riga e Base64 gestiti automaticamente."
+- icon: 🔄
+  title: Bidirezionale
+  desc: "Codifica in PEM e decodifica da PEM con un'unica API."
+- icon: 🛡️
+  title: Formato standard
+  desc: "Produce output PEM conforme a RFC 7468."
+support:
+  description: "Anteprima nel JDK 25 (JEP 470). Richiede --enable-preview."

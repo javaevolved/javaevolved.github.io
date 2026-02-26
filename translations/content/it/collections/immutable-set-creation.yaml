@@ -1,0 +1,18 @@
+---
+title: Creazione di set immutabili
+oldApproach: Wrapping verboso
+modernApproach: Set.of()
+summary: "Crea set immutabili con una singola chiamata factory."
+explanation: "Set.of() crea un set veramente immutabile che rifiuta null e elementi duplicati al momento della creazione. Niente più wrapping di set mutabili."
+whyModernWins:
+- icon: 📏
+  title: Conciso
+  desc: "Una riga invece di tre chiamate annidate."
+- icon: 🚫
+  title: Rileva duplicati
+  desc: "Lancia un'eccezione se passi accidentalmente elementi duplicati."
+- icon: 🔒
+  title: Immutabile
+  desc: "Nessuna aggiunta/rimozione possibile dopo la creazione."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

@@ -1,0 +1,18 @@
+---
+title: Stream.iterate() con predicato
+oldApproach: iterate + limit
+modernApproach: iterate(seed, pred, op)
+summary: "Usa un predicato per fermare l'iterazione — come un ciclo for in forma stream."
+explanation: "Il tre-argomenti Stream.iterate(seed, hasNext, next) funziona come un ciclo for: seed è l'inizio, hasNext determina quando fermarsi e next produce il valore successivo."
+whyModernWins:
+- icon: 🎯
+  title: Terminazione naturale
+  desc: "Fermati in base a una condizione, non a un limite arbitrario."
+- icon: 📐
+  title: Equivalente al ciclo for
+  desc: "Stessa semantica di for(seed; hasNext; next)."
+- icon: 🛡️
+  title: Nessun rischio di stream infinito
+  desc: "Il predicato garantisce la terminazione."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

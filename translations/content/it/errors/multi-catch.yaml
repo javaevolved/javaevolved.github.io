@@ -1,0 +1,18 @@
+---
+title: Gestione multi-catch delle eccezioni
+oldApproach: Blocchi catch separati
+modernApproach: Multi-catch
+summary: "Cattura più tipi di eccezione in un singolo blocco catch."
+explanation: "Multi-catch gestisce più tipi di eccezione con lo stesso codice. La variabile eccezione è effettivamente final, quindi puoi rilanciare senza wrapping."
+whyModernWins:
+- icon: 📏
+  title: DRY
+  desc: "La stessa logica di gestione scritta una volta invece di tre."
+- icon: 🔄
+  title: Rilanciabile
+  desc: "L'eccezione catturata può essere rilanciata con il suo tipo preciso."
+- icon: 📖
+  title: Scansionabile
+  desc: "Tutti i tipi gestiti sono visibili in un posto."
+support:
+  description: Ampiamente disponibile dal JDK 7 (luglio 2011)

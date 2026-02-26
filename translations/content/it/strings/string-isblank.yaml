@@ -1,0 +1,18 @@
+---
+title: String.isBlank()
+oldApproach: trim().isEmpty()
+modernApproach: isBlank()
+summary: "Controlla le stringhe vuote con una singola chiamata a metodo."
+explanation: "isBlank() restituisce true se la stringa è vuota o contiene solo spazi bianchi, inclusi i caratteri di spazio bianco Unicode che trim() non riconosce."
+whyModernWins:
+- icon: ��
+  title: Auto-documentante
+  desc: "isBlank() dice esattamente cosa controlla."
+- icon: 🌐
+  title: Consapevole di Unicode
+  desc: "Gestisce tutti gli spazi bianchi Unicode, non solo ASCII."
+- icon: ⚡
+  title: Nessuna allocazione
+  desc: "Non viene creata alcuna stringa trimmed intermedia."
+support:
+  description: Ampiamente disponibile dal JDK 11 (settembre 2018)

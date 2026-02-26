@@ -1,0 +1,18 @@
+---
+title: Collectors.flatMapping()
+oldApproach: flatMap annidato
+modernApproach: flatMapping()
+summary: "Usa flatMapping() per appiattire all'interno di un collector di raggruppamento."
+explanation: "Collectors.flatMapping() applica una mappatura uno-a-molti come collector downstream. È l'equivalente collector di Stream.flatMap() — utile all'interno di groupingBy o partitioningBy."
+whyModernWins:
+- icon: 🧩
+  title: Componibile
+  desc: "Funziona come collector downstream all'interno di groupingBy."
+- icon: 📐
+  title: Un passaggio
+  desc: "Appiattisci e raggruppa in un'unica traversata dello stream."
+- icon: 🔗
+  title: Annidabile
+  desc: "Combina con altri collector downstream."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

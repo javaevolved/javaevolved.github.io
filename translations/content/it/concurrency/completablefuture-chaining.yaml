@@ -1,0 +1,18 @@
+---
+title: Concatenazione CompletableFuture
+oldApproach: Future.get() bloccante
+modernApproach: CompletableFuture
+summary: "Concatena operazioni asincrone senza bloccare, usando CompletableFuture."
+explanation: "CompletableFuture abilita pipeline asincrone non bloccanti. Concatena le operazioni con thenApply, thenCompose, thenAccept. Gestisci gli errori con exceptionally(). Combina più future con allOf/anyOf."
+whyModernWins:
+- icon: 🔗
+  title: Concatenabile
+  desc: "Componi i passi asincroni in una pipeline leggibile."
+- icon: 🚫
+  title: Non bloccante
+  desc: "Nessun thread rimane inattivo ad aspettare i risultati."
+- icon: 🛡️
+  title: Gestione degli errori
+  desc: "exceptionally() e handle() per un recupero pulito degli errori."
+support:
+  description: Ampiamente disponibile dal JDK 8 (marzo 2014)

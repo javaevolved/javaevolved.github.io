@@ -1,0 +1,18 @@
+---
+title: Metodi statici nelle interfacce
+oldApproach: Classi di utilità
+modernApproach: Metodi statici nelle interfacce
+summary: "Aggiungi metodi di utilità statici direttamente nelle interfacce invece di classi di utilità separate."
+explanation: "Prima di Java 8, i metodi di utilità correlati a un'interfaccia dovevano trovarsi in una classe separata (es. Collections per Collection). I metodi statici nelle interfacce permettono di tenere le utilità correlate insieme. Comune nelle API moderne come Comparator.comparing(), Stream.of() e List.of()."
+whyModernWins:
+- icon: 📦
+  title: Migliore organizzazione
+  desc: "Tieni le utilità correlate con l'interfaccia, non in una classe separata."
+- icon: 🔍
+  title: Rilevabilità
+  desc: "I metodi factory e helper si trovano dove te li aspetti."
+- icon: 🧩
+  title: Coesione dell'API
+  desc: "Nessun bisogno di classi *Utils o *Helper separate."
+support:
+  description: "Disponibile dal JDK 8 (marzo 2014)"

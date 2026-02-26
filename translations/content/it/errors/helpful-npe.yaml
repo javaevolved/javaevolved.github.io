@@ -1,0 +1,18 @@
+---
+title: NullPointerException utili
+oldApproach: NPE criptiche
+modernApproach: NPE dettagliate
+summary: "La JVM indica automaticamente quale variabile era null."
+explanation: "Le NPE utili descrivono quale espressione era null e quale operazione è fallita. Sono abilitate per default da Java 14 — nessuna modifica al codice necessaria, basta aggiornare il JDK."
+whyModernWins:
+- icon: 🔍
+  title: Variabile esatta
+  desc: "Il messaggio nomina la variabile null nella catena."
+- icon: ⚡
+  title: Debug più veloce
+  desc: "Non serve più indovinare quale delle 5 chiamate concatenate era null."
+- icon: 🆓
+  title: Aggiornamento gratuito
+  desc: "Nessuna modifica al codice — basta eseguire su JDK 14+."
+support:
+  description: Ampiamente disponibile dal JDK 14 (marzo 2020)
