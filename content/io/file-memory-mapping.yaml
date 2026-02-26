@@ -58,3 +58,10 @@ related:
 - "io/http-client"
 - "io/reading-files"
 - "io/writing-files"
+docs:
+- title: "MemorySegment (Java 22)"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html"
+- title: "Arena (Java 22)"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html"
+- title: "JEP 454: Foreign Function & Memory API"
+  href: "https://openjdk.org/jeps/454"

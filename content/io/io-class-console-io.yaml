@@ -53,4 +53,4 @@ docs:
 - title: "Simple Source Files (JEP 495)"
   href: "https://openjdk.org/jeps/495"
 - title: "IO"
-  href: "https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/io/IO.html"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IO.html"

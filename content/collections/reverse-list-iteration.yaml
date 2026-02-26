@@ -43,3 +43,8 @@ related:
 - "collections/sequenced-collections"
 - "collections/immutable-list-creation"
 - "streams/stream-tolist"
+docs:
+- title: "SequencedCollection (Java 21)"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/SequencedCollection.html"
+- title: "JEP 431: Sequenced Collections"
+  href: "https://openjdk.org/jeps/431"
