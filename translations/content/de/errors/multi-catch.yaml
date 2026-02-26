@@ -1,0 +1,17 @@
+title: "Multi-Catch-Ausnahmebehandlung"
+oldApproach: "Separate Catch-Blöcke"
+modernApproach: "Multi-Catch"
+summary: "Mehrere Ausnahmetypen in einem einzigen catch-Block abfangen."
+explanation: "Multi-Catch behandelt mehrere Ausnahmetypen mit demselben Code. Die Ausnahmevariable ist effektiv final, sodass sie ohne Einwickeln weitergeworfen werden kann."
+whyModernWins:
+- icon: "📏"
+  title: "DRY"
+  desc: "Dieselbe Behandlungslogik wird einmal statt dreimal geschrieben."
+- icon: "🔄"
+  title: "Wiederauswerfbar"
+  desc: "Die abgefangene Ausnahme kann mit ihrem genauen Typ weitergeworfen werden."
+- icon: "📖"
+  title: "Übersichtlich"
+  desc: "Alle behandelten Typen sind an einer Stelle sichtbar."
+support:
+  description: "Seit JDK 7 allgemein verfügbar (Juli 2011)"

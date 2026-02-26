@@ -1,0 +1,17 @@
+title: HexFormat
+oldApproach: 手動の16進数変換
+modernApproach: HexFormat
+summary: "HexFormatで16進数文字列とバイト配列を相互変換する。"
+explanation: "HexFormatはバイト・int・配列の16進エンコード・デコードを双方向に提供します。区切り文字、プレフィックス、サフィックス、大文字・小文字の設定が可能で、手動のフォーマットや解析は不要です。"
+whyModernWins:
+- icon: "📐"
+  title: 双方向変換
+  desc: "1つのAPIでバイト→16進数・16進数→バイトの変換が可能。"
+- icon: "🔧"
+  title: 設定可能
+  desc: "区切り文字、プレフィックス、サフィックス、大文字・小文字を設定できます。"
+- icon: "📦"
+  title: 配列サポート
+  desc: "バイト配列全体を一度にエンコード・デコードできます。"
+support:
+  description: JDK 17 LTS（2021年9月）以降、広く利用可能

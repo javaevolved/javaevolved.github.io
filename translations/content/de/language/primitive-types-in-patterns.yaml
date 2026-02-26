@@ -1,0 +1,17 @@
+title: "Primitive Typen in Mustern"
+oldApproach: "Manuelle Bereichsprüfungen"
+modernApproach: "Primitive Muster"
+summary: "Pattern Matching funktioniert jetzt auch mit primitiven Typen, nicht nur mit Objekten."
+explanation: "Java 25 erweitert Pattern Matching auf primitive Typen. int, long, double usw. können in Switch-Mustern mit when-Wächtern verwendet werden, wodurch Boxing oder manuelle Bereichsprüfungen entfallen."
+whyModernWins:
+- icon: "📦"
+  title: "Kein Boxing"
+  desc: "Primitive direkt abgleichen – kein Integer-Wrapper erforderlich."
+- icon: "🎯"
+  title: "Muster-Konsistenz"
+  desc: "Dieselbe Muster-Syntax für Objekte und Primitive."
+- icon: "⚡"
+  title: "Bessere Performance"
+  desc: "Autoboxing-Overhead beim Pattern Matching vermeiden."
+support:
+  description: "Vorschau in JDK 25 (dritte Vorschau, JEP 507). Erfordert --enable-preview."

@@ -1,0 +1,19 @@
+title: "Collectors.teeing()"
+oldApproach: Zwei Durchläufe
+modernApproach: "teeing()"
+summary: Zwei Aggregationen in einem einzigen Stream-Durchlauf berechnen.
+explanation: "Collectors.teeing() sendet jedes Element an zwei nachgelagerte Collectors\
+  \ und fasst die Ergebnisse zusammen. Dadurch wird vermieden, die Daten zweimal\
+  \ zu durchlaufen oder einen veränderbaren Akkumulator zu verwenden."
+whyModernWins:
+- icon: "⚡"
+  title: Einzelner Durchlauf
+  desc: Den Stream einmal statt zweimal verarbeiten.
+- icon: "🧩"
+  title: Kombinierbar
+  desc: Zwei beliebige Collectors mit einer Zusammenführungsfunktion verbinden.
+- icon: "🔒"
+  title: Unveränderliches Ergebnis
+  desc: Direkt in einen Record oder Value-Object zusammenführen.
+support:
+  description: Weitgehend verfügbar seit JDK 12 (März 2019)

@@ -1,0 +1,18 @@
+---
+title: String.isBlank()
+oldApproach: trim().isEmpty()
+modernApproach: isBlank()
+summary: Vérifiez si une chaîne est vide avec un seul appel de méthode.
+explanation: "isBlank() retourne true si la chaîne est vide ou ne contient que des espaces blancs, y compris les caractères d'espace Unicode que trim() ne détecte pas."
+whyModernWins:
+- icon: 📖
+  title: Auto-documenté
+  desc: isBlank() dit exactement ce qu'il vérifie.
+- icon: 🌐
+  title: Compatible Unicode
+  desc: Gère tous les espaces blancs Unicode, pas seulement ASCII.
+- icon: ⚡
+  title: Sans allocation
+  desc: Aucune chaîne intermédiaire rognée n'est créée.
+support:
+  description: Disponible depuis JDK 11 (sept. 2018)

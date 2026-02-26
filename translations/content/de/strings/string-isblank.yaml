@@ -1,0 +1,18 @@
+title: String.isBlank()
+oldApproach: trim().isEmpty()
+modernApproach: isBlank()
+summary: Leere Strings mit einem einzigen Methodenaufruf prüfen.
+explanation: isBlank() gibt true zurück, wenn der String leer ist oder nur Leerzeichen
+  enthält, einschließlich Unicode-Leerzeichen, die trim() übersieht.
+whyModernWins:
+- icon: 📖
+  title: Selbstdokumentierend
+  desc: isBlank() sagt genau, was es prüft.
+- icon: 🌐
+  title: Unicode-bewusst
+  desc: Behandelt alle Unicode-Leerzeichen, nicht nur ASCII.
+- icon: ⚡
+  title: Keine Allokation
+  desc: Es wird kein zwischenzeitlicher gekürzter String erstellt.
+support:
+  description: Weitgehend verfügbar seit JDK 11 (Sept. 2018)

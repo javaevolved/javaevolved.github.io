@@ -1,0 +1,18 @@
+---
+title: Threads virtuels
+oldApproach: Threads de plateforme
+modernApproach: Virtual Threads
+summary: Créez des millions de threads virtuels légers au lieu de lourds threads du système d'exploitation.
+explanation: Les threads virtuels sont des threads légers gérés par la JVM, pas par le système d'exploitation. Vous pouvez en créer des millions sans ajuster les pools de threads. Ils sont idéaux pour les tâches avec beaucoup d'E/S comme les appels HTTP et les requêtes de bases de données.
+whyModernWins:
+- icon: ⚡
+  title: Légers
+  desc: Les threads virtuels utilisent des Ko de mémoire, les threads de plateforme utilisent des Mo.
+- icon: ♾️
+  title: Évolutifs
+  desc: Créez des millions de threads — sans besoin de dimensionner les pools.
+- icon: 🧹
+  title: Modèle simple
+  desc: Écrivez du code bloquant qui passe à l'échelle comme du code asynchrone.
+support:
+  description: Disponible depuis JDK 21 LTS (sept. 2023)

@@ -1,0 +1,17 @@
+title: "Bewachte Muster mit when"
+oldApproach: "Verschachteltes if"
+modernApproach: "when-Klausel"
+summary: "Bedingungen zu Pattern-Fällen mit when-Wächtern hinzufügen."
+explanation: "Bewachte Muster ermöglichen es, einen Typ-Match mit einer zusätzlichen booleschen Bedingung zu verfeinern. Dadurch bleibt die gesamte Verzweigungslogik im Switch, anstatt if-Anweisungen in Fällen zu verschachteln."
+whyModernWins:
+- icon: "🎯"
+  title: "Präzises Matching"
+  desc: "Typ + Bedingung in einem einzigen case-Label kombinieren."
+- icon: "📐"
+  title: "Flache Struktur"
+  desc: "Keine verschachtelten if/else in Switch-Fällen."
+- icon: "📖"
+  title: "Lesbare Absicht"
+  desc: "Die when-Klausel liest sich wie natürliche Sprache."
+support:
+  description: "Seit JDK 21 LTS allgemein verfügbar (Sept. 2023)"

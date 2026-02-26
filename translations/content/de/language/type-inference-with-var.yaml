@@ -1,0 +1,17 @@
+title: "Typinferenz mit var"
+oldApproach: "Explizite Typen"
+modernApproach: "var-Schlüsselwort"
+summary: "var für lokale Variablen-Typinferenz verwenden – weniger Rauschen, gleiche Sicherheit."
+explanation: "Seit Java 10 leitet der Compiler lokale Variablentypen aus der rechten Seite ab. Dies reduziert visuelles Rauschen ohne Einbußen bei der Typsicherheit. var empfiehlt sich, wenn der Typ aus dem Kontext offensichtlich ist."
+whyModernWins:
+- icon: "⚡"
+  title: "Weniger Boilerplate"
+  desc: "Komplexe generische Typen müssen nicht auf beiden Seiten der Zuweisung wiederholt werden."
+- icon: "👁"
+  title: "Bessere Lesbarkeit"
+  desc: "Fokus auf Variablennamen und Werte, nicht auf Typdeklarationen."
+- icon: "🔒"
+  title: "Noch typsicher"
+  desc: "Der Compiler leitet den genauen Typ ab und erzwingt ihn zur Compile-Zeit."
+support:
+  description: "Seit JDK 10 allgemein verfügbar (März 2018)"

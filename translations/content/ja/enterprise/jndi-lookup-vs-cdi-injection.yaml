@@ -1,0 +1,17 @@
+title: JNDIルックアップとCDIインジェクションの比較
+oldApproach: JNDIルックアップ
+modernApproach: CDI @Inject
+summary: "不安定なJNDI文字列ルックアップを型安全なCDIインジェクションに置き換える。"
+explanation: "従来のJNDIパターンでは文字列ベースのリソース名を使い、NamingExceptionを処理し、InitialContextを管理する必要があります。CDIの@Inject（またはコンテナリソースには@Resource）によりコンテナが依存関係を自動的に接続します。タイポはコンパイル時エラーになり、依存関係を直接注入できるためクラスのテストも容易です。"
+whyModernWins:
+- icon: "🔒"
+  title: 型安全な接続
+  desc: "インジェクションエラーは文字列ルックアップによる実行時ではなく、デプロイ時に検出されます。"
+- icon: "🗑️"
+  title: ボイラープレートなし
+  desc: "InitialContextの生成・JNDI名文字列・NamingException処理が不要になります。"
+- icon: "🧪"
+  title: テスト容易
+  desc: "依存関係はフィールドインジェクションなので、ユニットテストでモックに簡単に置き換えられます。"
+support:
+  description: Jakarta EE 8 / Java 11以降、広く利用可能

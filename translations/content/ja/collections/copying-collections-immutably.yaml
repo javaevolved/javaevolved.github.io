@@ -1,0 +1,17 @@
+title: コレクションの不変コピー
+oldApproach: 手動コピー＋ラッピング
+modernApproach: List.copyOf()
+summary: "1回の呼び出しでコレクションの不変コピーを作成する。"
+explanation: "List.copyOf()、Set.copyOf()、Map.copyOf()は既存のコレクションの不変スナップショットを作成します。ソースがすでに不変コレクションである場合、コピーは作成されません。"
+whyModernWins:
+- icon: "⚡"
+  title: スマートコピー
+  desc: "ソースがすでに不変の場合はコピーをスキップします。"
+- icon: "📏"
+  title: 1回の呼び出し
+  desc: "ArrayListの手動構築＋ラッピングは不要です。"
+- icon: "🛡️"
+  title: 防御的コピー
+  desc: "元のコレクションへの変更はコピーに影響しません。"
+support:
+  description: "JDK 10（2018年3月）以降、広く利用可能"

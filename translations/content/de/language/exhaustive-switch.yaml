@@ -1,0 +1,17 @@
+title: "Erschöpfender Switch ohne default"
+oldApproach: "Obligatorischer default-Zweig"
+modernApproach: "Sealed Exhaustiveness"
+summary: "Der Compiler prüft, dass alle versiegelten Untertypen abgedeckt sind – kein default erforderlich."
+explanation: "Beim Switch über einen sealed-Typ kennt der Compiler alle möglichen Untertypen und verifiziert, dass jeder Fall behandelt wird. Wird ein neuer Untertyp hinzugefügt, markiert der Compiler jeden Switch, der nun unvollständig ist."
+whyModernWins:
+- icon: "✅"
+  title: "Compile-Zeit-Sicherheit"
+  desc: "Einen neuen Untertyp hinzufügen und der Compiler zeigt jeden Ort, der aktualisiert werden muss."
+- icon: "🚫"
+  title: "Kein toter Code"
+  desc: "Kein unerreichbarer default-Zweig, der Fehler verbirgt."
+- icon: "📐"
+  title: "Algebraische Typen"
+  desc: "Sealed + Records + erschöpfendem Switch = echte ADTs in Java."
+support:
+  description: "Seit JDK 21 LTS allgemein verfügbar (Sept. 2023)"

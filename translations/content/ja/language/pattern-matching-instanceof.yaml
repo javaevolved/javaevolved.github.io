@@ -1,0 +1,17 @@
+title: instanceofのパターンマッチング
+oldApproach: instanceof + キャスト
+modernApproach: パターン変数
+summary: "パターンマッチングで型チェックとキャストを1ステップで行う。"
+explanation: "instanceofのパターンマッチングにより、型チェック後の冗長なキャストが不要になります。パターン変数は型が保証されるスコープ内でのみ有効になるため、コードがより安全かつ簡潔になります。"
+whyModernWins:
+- icon: "✂"
+  title: 冗長なキャストの排除
+  desc: "型チェックと変数バインディングが1つの式で完結します。"
+- icon: "📉"
+  title: 行数の削減
+  desc: "2行が1行になります — キャストの行が完全になくなります。"
+- icon: "🔒"
+  title: スコープの安全性
+  desc: "パターン変数は型が保証されるスコープ内でのみ有効です。"
+support:
+  description: JDK 16（2021年3月）以降、広く利用可能

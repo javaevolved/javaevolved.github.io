@@ -1,0 +1,17 @@
+title: "Verbessertes Try-with-Resources"
+oldApproach: "Variable neu deklarieren"
+modernApproach: "Effektiv finale Variable"
+summary: "Bestehende, effektiv finale Variablen direkt in try-with-resources verwenden."
+explanation: "Java 9 erlaubt die direkte Verwendung effektiv finaler Variablen in try-with-resources ohne Neudeklaration. Dies ist sauberer, wenn die Ressource außerhalb des try-Blocks erstellt wurde."
+whyModernWins:
+- icon: "🧹"
+  title: "Keine Neudeklaration"
+  desc: "Den bestehenden Variablennamen direkt verwenden."
+- icon: "📖"
+  title: "Weniger Verwirrung"
+  desc: "Kein separater Variablenname innerhalb des try-Blocks."
+- icon: "📏"
+  title: "Prägnant"
+  desc: "Weniger Zeilen bei gleicher Ressourcensicherheit."
+support:
+  description: "Seit JDK 9 allgemein verfügbar (Sept. 2017)"

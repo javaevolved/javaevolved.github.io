@@ -1,0 +1,18 @@
+---
+title: Optional.orElseThrow() sans supplier
+oldApproach: get() ou orElseThrow(supplier)
+modernApproach: orElseThrow()
+summary: Utilisez Optional.orElseThrow() comme alternative plus claire et intentionnelle à get().
+explanation: "Optional.get() est largement considéré comme un anti-pattern car il cache la possibilité d'échec. La méthode orElseThrow() sans arguments, ajoutée dans Java 10, fait exactement la même chose mais rend l'intention claire : le développeur attend une valeur et veut une exception si elle est absente."
+whyModernWins:
+- icon: 📖
+  title: Auto-documenté
+  desc: orElseThrow() signale clairement que l'absence est inattendue.
+- icon: 🔒
+  title: Évite get()
+  desc: Les outils d'analyse statique signalent get() comme risqué ; orElseThrow() est idiomatique.
+- icon: ⚡
+  title: Moins de code répétitif
+  desc: Pas besoin de passer un supplier pour la NoSuchElementException par défaut.
+support:
+  description: Disponible depuis JDK 10 (mars 2018)

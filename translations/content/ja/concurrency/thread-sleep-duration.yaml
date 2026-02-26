@@ -1,0 +1,17 @@
+title: "Duration指定のThread.sleep"
+oldApproach: ミリ秒指定
+modernApproach: Duration指定
+summary: "Durationを使って自己文書化された時間値を指定する。"
+explanation: "Thread.sleep(Duration)は時間単位を明示的にします。5000がミリ秒かマイクロ秒か迷う必要はありません。Duration.ofSeconds、ofMillis、ofMinutesなどと組み合わせて使えます。"
+whyModernWins:
+- icon: "📖"
+  title: 自己文書化
+  desc: "Duration.ofSeconds(5)は曖昧さがありません。"
+- icon: "🛡️"
+  title: 単位安全
+  desc: "マイクロ秒をミリ秒として誤って渡すことがなくなります。"
+- icon: "🧩"
+  title: 組み合わせ可能
+  desc: "Duration演算：plus()、multipliedBy()などが使えます。"
+support:
+  description: "JDK 19（2022年9月）以降、広く利用可能"

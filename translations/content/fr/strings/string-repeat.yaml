@@ -1,0 +1,18 @@
+---
+title: String.repeat()
+oldApproach: Boucle avec StringBuilder
+modernApproach: repeat()
+summary: Répète une chaîne n fois sans boucle.
+explanation: "String.repeat(int) retourne la chaîne concaténée avec elle-même n fois. Gère les cas limites : repeat(0) retourne une chaîne vide, repeat(1) retourne la même chaîne."
+whyModernWins:
+- icon: 📏
+  title: Une seule ligne
+  desc: Remplace 5 lignes de code avec StringBuilder par un seul appel.
+- icon: ⚡
+  title: Optimisé
+  desc: L'implémentation interne est optimisée pour les grandes répétitions.
+- icon: 📖
+  title: Intention claire
+  desc: repeat(3) transmet immédiatement l'objectif.
+support:
+  description: Disponible depuis JDK 11 (sept. 2018)

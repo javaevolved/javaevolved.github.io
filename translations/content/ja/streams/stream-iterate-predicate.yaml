@@ -1,0 +1,17 @@
+title: 述語付きStream.iterate()
+oldApproach: iterate + limit
+modernApproach: "iterate(シード, 述語, 操作)"
+summary: "述語でイテレーションを停止する — ストリーム形式のforループ。"
+explanation: "3引数のStream.iterate(seed, hasNext, next)はforループのように動作します。seedが開始値、hasNextが停止条件、nextが次の値を生成します。"
+whyModernWins:
+- icon: "🎯"
+  title: 自然な終了
+  desc: "任意の上限ではなく条件で停止します。"
+- icon: "📐"
+  title: forループ相当
+  desc: "for(seed; hasNext; next)と同じセマンティクスです。"
+- icon: "🛡️"
+  title: 無限ストリームのリスクなし
+  desc: "述語が終了を保証します。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

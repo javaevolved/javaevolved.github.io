@@ -1,0 +1,21 @@
+title: Predicate.not() zur Negation
+oldApproach: Lambda-Negation
+modernApproach: Predicate.not()
+summary: Predicate.not() verwenden, um Methodenreferenzen sauber zu negieren, statt
+  Lambda-Wrapper zu schreiben.
+explanation: Vor Java 11 musste eine Methodenreferenz zur Negation in ein Lambda eingewickelt
+  werden. Predicate.not() ermöglicht die direkte Negation eines beliebigen Prädikats,
+  was den Code lesbar und konsistent mit dem Methodenreferenz-Stil im gesamten Stream-Pipeline
+  hält.
+whyModernWins:
+- icon: 👁
+  title: Sauberere Negation
+  desc: Keine Lambda-Wrapper für Methodenreferenzen nur zur Negation nötig.
+- icon: 🔗
+  title: Kombinierbar
+  desc: Funktioniert mit jedem Predicate und ermöglicht saubere Prädikat-Ketten.
+- icon: 📖
+  title: Natürlich lesbar
+  desc: Predicate.not(String::isBlank) liest sich wie natürliche Sprache.
+support:
+  description: Verfügbar seit JDK 11 (September 2018).

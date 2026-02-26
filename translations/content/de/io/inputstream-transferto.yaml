@@ -1,0 +1,17 @@
+title: "InputStream.transferTo()"
+oldApproach: "Manuelle Kopierschleife"
+modernApproach: "transferTo()"
+summary: "Einen InputStream mit einem einzigen Aufruf in einen OutputStream kopieren."
+explanation: "transferTo() liest alle Bytes aus dem Eingabestream und schreibt sie in den Ausgabestream. Kein Puffer-Management, keine Schleife. Es wird ein optimierter interner Puffer verwendet."
+whyModernWins:
+- icon: "📏"
+  title: "Eine Zeile"
+  desc: "Die gesamte Lese-/Schreibschleife durch einen einzigen Methodenaufruf ersetzen."
+- icon: "⚡"
+  title: "Optimiert"
+  desc: "Die interne Puffergröße ist auf Performance ausgelegt."
+- icon: "🛡️"
+  title: "Keine Fehler"
+  desc: "Keine Off-by-one-Fehler beim Puffer-Management."
+support:
+  description: "Seit JDK 9 allgemein verfügbar (Sept. 2017)"

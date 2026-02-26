@@ -1,0 +1,82 @@
+site:
+  title: java.evolved
+  tagline: Java hat sich weiterentwickelt. Dein Code auch.
+  tagline_line1: Java hat sich weiterentwickelt.
+  tagline_line2: Dein Code auch.
+  description: Eine Sammlung moderner Java-Code-Snippets. Jedes alte Java-Muster neben
+    seiner sauberen, modernen Entsprechung — Seite an Seite.
+  heroSnippetCount: ✦ {{snippetCount}} moderne Muster · Java 8 → Java 25
+  heroOld: Alt
+  heroModern: Modern
+  allComparisons: Alle Vergleiche
+  snippetsBadge: '{{snippetCount}} Snippets'
+nav:
+  allPatterns: ← Alle Muster
+  toggleTheme: Design wechseln
+  viewOnGitHub: Auf GitHub ansehen
+  selectLanguage: Sprache auswählen
+breadcrumb:
+  home: Startseite
+sections:
+  codeComparison: Code-Vergleich
+  whyModernWins: Warum der moderne Weg gewinnt
+  oldApproach: Alter Ansatz
+  modernApproach: Moderner Ansatz
+  sinceJdk: Seit JDK
+  difficulty: Schwierigkeitsgrad
+  jdkSupport: JDK-Unterstützung
+  howItWorks: Wie es funktioniert
+  relatedDocs: Zugehörige Dokumentation
+  relatedPatterns: Verwandte Muster
+filters:
+  show: 'Anzeigen:'
+  all: Alle
+difficulty:
+  beginner: Einsteiger
+  intermediate: Fortgeschritten
+  advanced: Experte
+search:
+  placeholder: Snippets suchen…
+  noResults: Keine Ergebnisse gefunden.
+  esc: ESC
+  searchTrigger: Suchen…
+  navigate: navigieren
+  open: öffnen
+  close: schließen
+cards:
+  old: Alt
+  modern: Modern
+  hoverHint: Hover für Modernes →
+  hoverHintRelated: Hover für Modernes ➜
+  touchHint: 👆 tippen oder wischen →
+copy:
+  copy: Kopieren
+  copied: Kopiert!
+share:
+  label: Teilen
+view:
+  expandAll: Alle ausklappen
+  collapseAll: Alle einklappen
+stats:
+  modernPatterns: Moderne Muster
+  jdkVersions: Abgedeckte JDK-Versionen
+  categories: Kategorien
+  linesOfPython: Benötigte Python-Zeilen
+footer:
+  tagline: Java hat sich weiterentwickelt. Dein Code auch.
+  madeWith: Erstellt mit ❤️ von
+  and: und
+  inspiredBy: Inspiriert von
+  viewOnGitHub: Auf GitHub ansehen
+copilot:
+  headline: Modernisiere deine Java-Codebasis mit GitHub Copilot.
+  description: Lass Copilot dir helfen, veraltete Muster zu modernem Java zu migrieren — automatisch.
+  appModernization: App-Modernisierung →
+  javaGuide: Java-Leitfaden →
+support:
+  available: Verfügbar
+  preview: Vorschau
+  experimental: Experimentell
+untranslated:
+  notice: Diese Seite wurde noch nicht ins {{localeName}} übersetzt.
+  viewInEnglish: Auf Englisch ansehen

@@ -1,0 +1,18 @@
+---
+title: Instant avec précision en nanosecondes
+oldApproach: Millisecondes
+modernApproach: Nanosecondes
+summary: Obtenez des horodatages avec une précision en microsecondes ou nanosecondes.
+explanation: Java 9 a amélioré la résolution de l'horloge pour qu'Instant.now() capture une précision en microsecondes sur la plupart des plateformes (nanosecondes sur certaines). L'ancien currentTimeMillis() ne fournit que des millisecondes.
+whyModernWins:
+- icon: 🎯
+  title: Précision accrue
+  desc: Horodatages en microsecondes/nanosecondes au lieu de millisecondes.
+- icon: 📐
+  title: Sûr en termes de types
+  desc: Instant porte sa précision — sans longs ambigus.
+- icon: 🌐
+  title: Basé sur UTC
+  desc: Instant est toujours en UTC — sans confusion de fuseau horaire.
+support:
+  description: Disponible depuis JDK 9 (septembre 2017)

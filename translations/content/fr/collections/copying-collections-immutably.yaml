@@ -1,0 +1,18 @@
+---
+title: "Copie immutable de collections"
+oldApproach: "Copie manuelle + wrapper"
+modernApproach: "List.copyOf()"
+summary: "Crée une copie immutable de n'importe quelle collection en un seul appel."
+explanation: "List.copyOf(), Set.copyOf() et Map.copyOf() créent des instantanés immutables de collections existantes. Si la source est déjà une collection immutable, aucune copie n'est effectuée."
+whyModernWins:
+- icon: "⚡"
+  title: "Copie intelligente"
+  desc: "Ignore la copie si la source est déjà immutable."
+- icon: "📏"
+  title: "Un seul appel"
+  desc: "Sans construction manuelle d'ArrayList + wrapper."
+- icon: "🛡️"
+  title: "Copie défensive"
+  desc: "Les modifications de l'original n'affectent pas la copie."
+support:
+  description: "Disponible depuis JDK 10 (mars 2018)"

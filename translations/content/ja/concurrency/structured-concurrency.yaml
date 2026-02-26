@@ -1,0 +1,17 @@
+title: 構造化並行処理
+oldApproach: 手動スレッドライフサイクル管理
+modernApproach: StructuredTaskScope
+summary: "並行タスクのライフタイムを単一の作業単位として管理する。"
+explanation: "構造化並行処理は、並行タスクのグループを1つの操作として扱います。いずれかのサブタスクが失敗した場合、他のサブタスクはキャンセルされます。スコープによりスレッドリークがなくなり、明確な親子関係が保たれます。"
+whyModernWins:
+- icon: "🛡️"
+  title: スレッドリークなし
+  desc: "フォークされたタスクはすべてスコープが閉じる前に完了します。"
+- icon: "⚡"
+  title: 高速フェイル
+  desc: "ShutdownOnFailureは1つが失敗すると兄弟タスクをキャンセルします。"
+- icon: "📐"
+  title: 明確な構造
+  desc: "タスクのライフタイムはコードのレキシカルスコープと一致します。"
+support:
+  description: "JDK 25でプレビュー（第5プレビュー、JEP 505）。--enable-previewが必要です。"

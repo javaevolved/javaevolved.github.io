@@ -1,0 +1,18 @@
+---
+title: Filtres de désérialisation
+oldApproach: Tout accepter
+modernApproach: ObjectInputFilter
+summary: Restreignez quelles classes peuvent être désérialisées pour prévenir les attaques.
+explanation: ObjectInputFilter permet de créer des listes de classes autorisées et refusées, de limiter la profondeur du graphe d'objets, la taille des tableaux et le nombre de références. Cela défend contre les vulnérabilités de désérialisation sans avoir besoin de bibliothèques externes.
+whyModernWins:
+- icon: 🛡️
+  title: Sécurité
+  desc: Prévient la désérialisation de classes inattendues ou malveillantes.
+- icon: 📐
+  title: Contrôle granulaire
+  desc: Contrôlez la profondeur, la taille des tableaux, les références et les patterns de classes.
+- icon: 🏗️
+  title: Au niveau JVM
+  desc: Établissez un filtre global pour toute la désérialisation dans la JVM.
+support:
+  description: Disponible depuis JDK 9 (septembre 2017)

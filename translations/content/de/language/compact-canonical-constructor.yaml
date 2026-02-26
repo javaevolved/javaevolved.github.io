@@ -1,0 +1,17 @@
+title: "Kompakter kanonischer Konstruktor"
+oldApproach: "Explizite Konstruktorvalidierung"
+modernApproach: "Kompakter Konstruktor"
+summary: "Record-Felder validieren und normalisieren, ohne die Parameterliste zu wiederholen."
+explanation: "Records können einen kompakten kanonischen Konstruktor deklarieren, der die Parameterliste und Feldzuweisungen weglässt. Der Compiler weist Parameter nach der Ausführung Ihrer Validierungslogik automatisch Feldern zu. Dies ist ideal für Vorbedingungsprüfungen, defensive Kopien und Normalisierung."
+whyModernWins:
+- icon: "✂️"
+  title: "Weniger Wiederholung"
+  desc: "Parameterliste muss nicht wiederholt und jedes Feld nicht manuell zugewiesen werden."
+- icon: "🛡️"
+  title: "Validierung"
+  desc: "Perfekt für Null-Prüfungen, Bereichsvalidierung und defensive Kopien."
+- icon: "📖"
+  title: "Klarere Absicht"
+  desc: "Die kompakte Syntax betont die Validierung, nicht den Boilerplate-Code."
+support:
+  description: "Seit JDK 16 allgemein verfügbar (März 2021)"

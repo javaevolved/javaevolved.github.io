@@ -1,0 +1,17 @@
+title: "Dateien lesen"
+oldApproach: "BufferedReader"
+modernApproach: "Files.readString()"
+summary: "Eine gesamte Datei mit einer Zeile in einen String einlesen."
+explanation: "Files.readString() liest den gesamten Inhalt einer Datei in einen String. Es übernimmt die Zeichenkodierung (standardmäßig UTF-8) und die Ressourcenbereinigung. Für große Dateien empfiehlt sich Files.lines() für lazy Streaming."
+whyModernWins:
+- icon: "📏"
+  title: "Eine Zeile"
+  desc: "8 Zeilen BufferedReader-Boilerplate ersetzen."
+- icon: "🧹"
+  title: "Automatische Bereinigung"
+  desc: "Das Datei-Handle wird automatisch geschlossen."
+- icon: "🌐"
+  title: "UTF-8 als Standard"
+  desc: "Standardmäßig korrekte Kodierung – keine Zeichensatz-Verwirrung."
+support:
+  description: "Seit JDK 11 allgemein verfügbar (Sept. 2018)"

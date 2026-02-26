@@ -1,0 +1,17 @@
+title: "Unbenannte Variablen mit _"
+oldApproach: "Ungenutzte Variable"
+modernApproach: "_ als Platzhalter"
+summary: "_ verwenden, um anzuzeigen, dass eine Variable absichtlich ungenutzt ist."
+explanation: "Unbenannte Variablen teilen Lesern und Werkzeugen mit, dass ein Wert bewusst ignoriert wird. Keine 'ignored'- oder 'unused'-Namenskonventionen mehr, keine IDE-Warnungen mehr."
+whyModernWins:
+- icon: "📢"
+  title: "Klare Absicht"
+  desc: "_ sagt explizit 'dieser Wert wird hier nicht benötigt'."
+- icon: "🔇"
+  title: "Keine Warnungen"
+  desc: "IDEs und Linter markieren absichtlich ungenutzte Variablen nicht mehr."
+- icon: "🧹"
+  title: "Sauberere Lambdas"
+  desc: "Mehrparametrige Lambdas sind sauberer, wenn nur einige Parameter benötigt werden."
+support:
+  description: "Finalisiert in JDK 22 (JEP 456, März 2024)."

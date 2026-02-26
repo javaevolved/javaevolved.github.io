@@ -1,0 +1,18 @@
+title: Unveränderliche Maps erstellen
+oldApproach: Map-Builder-Muster
+modernApproach: "Map.of()"
+summary: Unveränderliche Maps inline ohne Builder erstellen.
+explanation: "Map.of() akzeptiert Schlüssel-Wert-Paare inline und gibt eine unveränderliche\
+  \ Map zurück. Für mehr als 10 Einträge Map.ofEntries() mit Map.entry()-Paaren verwenden."
+whyModernWins:
+- icon: "📏"
+  title: Inline-Erstellung
+  desc: Kein temporäres veränderliches Map erforderlich.
+- icon: "🔒"
+  title: Unveränderliches Ergebnis
+  desc: Die Map kann nach der Erstellung nicht mehr geändert werden.
+- icon: "🚫"
+  title: Keine null-Schlüssel/-Werte
+  desc: Null-Einträge werden sofort abgelehnt.
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

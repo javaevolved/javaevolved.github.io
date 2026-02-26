@@ -1,0 +1,19 @@
+title: Optional.or() als Fallback
+oldApproach: Verschachtelter Fallback
+modernApproach: .or()-Kette
+summary: Optional-Fallbacks ohne verschachtelte Prüfungen verketten.
+explanation: Optional.or() gibt das ursprüngliche Optional zurück, wenn es einen Wert
+  hat, andernfalls wird der Supplier ausgewertet, um ein alternatives Optional zu
+  erhalten. Suppliers sind lazy – sie werden nur bei Bedarf aufgerufen.
+whyModernWins:
+- icon: 🔗
+  title: Verkettbar
+  desc: Fallbacks in einer lesbaren Pipeline stapeln.
+- icon: ⚡
+  title: Lazy-Auswertung
+  desc: Fallback-Supplier werden nur bei Bedarf ausgeführt.
+- icon: 📖
+  title: Deklarativ
+  desc: "Liest sich wie 'versuche primär, oder sekundär, oder Standard'."
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

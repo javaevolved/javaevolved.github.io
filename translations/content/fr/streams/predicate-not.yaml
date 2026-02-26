@@ -1,0 +1,18 @@
+---
+title: Predicate.not() pour la négation
+oldApproach: Négation avec lambda
+modernApproach: Predicate.not()
+summary: Utilisez Predicate.not() pour nier des références de méthodes proprement au lieu d'écrire des lambdas enveloppants.
+explanation: "Avant Java 11, nier une référence de méthode nécessitait de l'envelopper dans une lambda. Predicate.not() permet de nier n'importe quel prédicat directement, gardant le code lisible et cohérent avec le style de références de méthodes dans tout le pipeline de stream."
+whyModernWins:
+- icon: 👁
+  title: Négation plus propre
+  desc: Pas besoin d'envelopper les références de méthodes dans des lambdas juste pour les nier.
+- icon: 🔗
+  title: Composable
+  desc: Fonctionne avec n'importe quel Predicate, permettant des chaînes de prédicats propres.
+- icon: 📖
+  title: Se lit naturellement
+  desc: Predicate.not(String::isBlank) se lit comme un langage naturel.
+support:
+  description: Disponible depuis JDK 11 (septembre 2018).

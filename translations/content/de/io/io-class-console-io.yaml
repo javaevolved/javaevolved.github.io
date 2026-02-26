@@ -1,0 +1,17 @@
+title: "IO-Klasse für Konsolen-E/A"
+oldApproach: "System.out / Scanner"
+modernApproach: "IO-Klasse"
+summary: "Die neue IO-Klasse bietet einfache, prägnante Methoden für Konsoleneingabe und -ausgabe."
+explanation: "Java 25 führt die IO-Klasse (java.io.IO) als Teil der implizit deklarierten Klassen ein. Sie stellt statische Methoden wie println(), print(), readln() und read() bereit, die die umständliche Kombination aus System.out und Scanner ersetzen. IO.readln(prompt) übernimmt Eingabeaufforderung und Lesen in einem einzigen Aufruf. Die Klasse ist in kompakten Quelldateien automatisch verfügbar und kann in herkömmlichen Klassen per Import genutzt werden."
+whyModernWins:
+- icon: "✨"
+  title: "Erheblich einfacher"
+  desc: "Zwei Methoden ersetzen sieben Zeilen für Scanner-Einrichtung, Eingabeaufforderung, Lesen und Bereinigung."
+- icon: "🔒"
+  title: "Keine Ressourcenlecks"
+  desc: "Kein Scanner zum Schließen – IO-Methoden verwalten Ressourcen intern."
+- icon: "🎓"
+  title: "Einsteigerfreundlich"
+  desc: "Neue Entwickler können Konsolen-E/A nutzen, ohne Scanner, System.out oder import-Anweisungen zu kennen."
+support:
+  description: "Vorschau in JDK 25 als Teil implizit deklarierter Klassen (JEP 495)"

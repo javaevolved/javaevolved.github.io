@@ -1,0 +1,17 @@
+title: "Files.mismatch()"
+oldApproach: "Manueller Byte-Vergleich"
+modernApproach: "Files.mismatch()"
+summary: "Zwei Dateien effizient vergleichen, ohne sie in den Speicher zu laden."
+explanation: "Files.mismatch() gibt die Position des ersten abweichenden Bytes zurück oder -1, wenn die Dateien identisch sind. Es liest lazy und bricht beim ersten Unterschied ab."
+whyModernWins:
+- icon: "⚡"
+  title: "Speichereffizient"
+  desc: "Lädt keine vollständigen Dateien in Byte-Arrays."
+- icon: "🎯"
+  title: "Zeigt den Unterschied genau"
+  desc: "Gibt die genaue Byte-Position des ersten Unterschieds zurück."
+- icon: "📏"
+  title: "Ein Aufruf"
+  desc: "Keine manuelle Byte-Array-Vergleichslogik."
+support:
+  description: "Seit JDK 12 allgemein verfügbar (März 2019)"

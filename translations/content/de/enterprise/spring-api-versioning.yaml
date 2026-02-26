@@ -1,0 +1,17 @@
+title: API-Versionierung in Spring Framework 7
+oldApproach: Manuelle URL-Pfad-Versionierung
+modernApproach: Native API-Versionierung
+summary: Ersetze duplizierte, versionspräfixierte Controller durch die native API-Versionierungsunterstützung von Spring Framework 7.
+explanation: Vor Spring Framework 7 erforderte API-Versionierung separate Controller-Klassen pro Version (z. B. /api/v1/products, /api/v2/products), was Request-Mappings duplizierte und Versionslogik über viele Dateien verteilte. Spring Framework 7 führt native Versionierung über ein neues version-Attribut in @RequestMapping und verwandten Annotationen sowie einen configureApiVersioning-Hook in WebMvcConfigurer ein. Die Version kann aus einem Request-Header, einem URL-Pfadsegment oder einem Query-Parameter aufgelöst werden — alles zentral gesteuert.
+whyModernWins:
+- icon: 🗂️
+  title: Keine Controller-Duplizierung
+  desc: Alle Versionen leben in einer Controller-Klasse; nur die einzelnen Handler-Methoden tragen ein version-Attribut.
+- icon: ⚙️
+  title: Zentralisierte Versionsstrategie
+  desc: Wechsle von Header- zu URL- oder Query-Parameter-Versionierung in einem einzigen configureApiVersioning-Aufruf.
+- icon: 📈
+  title: Inkrementelle Weiterentwicklung
+  desc: Füge eine neue Version zu einer Methode hinzu, ohne nicht verwandte Endpunkte zu berühren oder neue Controller-Dateien zu erstellen.
+support:
+  description: "Verfügbar seit Spring Framework 7.0 (erfordert Java 17+)"

@@ -1,0 +1,18 @@
+---
+title: Encodage/décodage PEM
+oldApproach: Base64 manuel + en-têtes
+modernApproach: API PEM
+summary: Encodez et décodez des objets cryptographiques au format PEM nativement.
+explanation: "L'API PEM fournit un encodage/décodage standard pour les certificats, clés et autres objets cryptographiques au format PEM. Fini l'enveloppement manuel de Base64 avec des en-têtes BEGIN/END."
+whyModernWins:
+- icon: 🧹
+  title: Sans Base64 manuel
+  desc: Les en-têtes PEM, le retour à la ligne et Base64 sont gérés automatiquement.
+- icon: 🔄
+  title: Bidirectionnel
+  desc: Encodez vers PEM et décodez depuis PEM avec une seule API.
+- icon: 🛡️
+  title: Format standard
+  desc: Produit une sortie PEM compatible RFC 7468.
+support:
+  description: Aperçu dans JDK 25 (JEP 470). Nécessite --enable-preview.

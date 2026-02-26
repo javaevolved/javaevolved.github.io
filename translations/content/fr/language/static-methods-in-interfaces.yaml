@@ -1,0 +1,18 @@
+---
+title: Méthodes statiques dans les interfaces
+oldApproach: Classes utilitaires
+modernApproach: Méthodes statiques dans les interfaces
+summary: "Ajoutez des méthodes utilitaires statiques directement aux interfaces au lieu de classes utilitaires séparées."
+explanation: "Avant Java 8, les méthodes utilitaires liées à une interface devaient résider dans une classe séparée (ex. Collections pour Collection). Les méthodes statiques dans les interfaces permettent de garder les utilitaires liés ensemble. C'est courant dans les APIs modernes comme Comparator.comparing(), Stream.of() et List.of()."
+whyModernWins:
+- icon: 📦
+  title: Meilleure organisation
+  desc: "Gardez les utilitaires liés à l'interface, pas dans une classe séparée."
+- icon: 🔍
+  title: Découvrabilité
+  desc: Les méthodes factory et auxiliaires se trouvent là où vous les attendez.
+- icon: 🧩
+  title: Cohésion d'API
+  desc: Pas besoin de classes *Utils ou *Helper séparées.
+support:
+  description: Disponible depuis JDK 8 (mars 2014)

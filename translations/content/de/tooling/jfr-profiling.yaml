@@ -1,0 +1,20 @@
+title: JFR für Profiling
+oldApproach: Externer Profiler
+modernApproach: Java Flight Recorder
+summary: Jede Java-App mit dem eingebauten Flight Recorder profilieren – ohne externe
+  Tools.
+explanation: Java Flight Recorder (JFR) ist ein in die JVM integriertes Profiling-Tool
+  mit geringem Overhead. Es erfasst Ereignisse für CPU, Speicher, GC, E/A, Threads
+  und benutzerdefinierte Ereignisse mit minimalem Leistungseinfluss (~1%).
+whyModernWins:
+- icon: 🆓
+  title: Eingebaut
+  desc: Kein externer Profiler zum Installieren oder Lizenzieren.
+- icon: ⚡
+  title: Geringer Overhead
+  desc: ~1% Leistungseinfluss – sicher für den Produktionseinsatz.
+- icon: 📊
+  title: Umfangreiche Ereignisse
+  desc: CPU, Speicher, GC, Threads, E/A, Locks und benutzerdefinierte Ereignisse.
+support:
+  description: Weitgehend verfügbar seit JDK 9/11 (Open-Source in 11)

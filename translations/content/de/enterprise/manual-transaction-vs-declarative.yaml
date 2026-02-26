@@ -1,0 +1,17 @@
+title: Manuelle JPA-Transaktion vs. deklaratives @Transactional
+oldApproach: Manuelle Transaktion
+modernApproach: "@Transactional"
+summary: Ersetze ausführliche begin/commit/rollback-Blöcke durch eine einzige @Transactional-Annotation.
+explanation: Manuelle Transaktionsverwaltung erfordert explizite begin()-, commit()- und rollback()-Aufrufe, die in try-catch-Blöcke eingebettet sind — jede Service-Methode wiederholt diesen Boilerplate. Die @Transactional-Annotation delegiert das Lebenszyklusmanagement an den Container — er startet vor der Methode eine Transaktion, bestätigt bei Erfolg und führt bei RuntimeException automatisch ein Rollback durch.
+whyModernWins:
+- icon: 🗑️
+  title: Kein Boilerplate
+  desc: Eine einzige Annotation ersetzt sich wiederholende begin/commit/rollback-try-catch-Blöcke.
+- icon: 🛡️
+  title: Sichereres Rollback
+  desc: Der Container garantiert Rollback bei ungeprüften Exceptions — kein Risiko, den catch-Block zu vergessen.
+- icon: 📐
+  title: Deklarative Steuerung
+  desc: Propagation, Isolation und Rollback-Regeln werden als Annotationsattribute ausgedrückt.
+support:
+  description: Weitgehend verfügbar seit Jakarta EE 8 / Java 11

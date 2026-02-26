@@ -1,0 +1,83 @@
+site:
+  title: java.evolved
+  tagline: Java a évolué. Votre code aussi peut.
+  tagline_line1: Java a évolué.
+  tagline_line2: Votre code aussi peut.
+  description: Une collection de snippets Java modernes. Chaque ancien pattern Java
+    à côté de son remplacement moderne et propre — côte à côte.
+  heroSnippetCount: ✦ {{snippetCount}} patterns modernes · Java 8 → Java 25
+  heroOld: Ancien
+  heroModern: Moderne
+  allComparisons: Toutes les comparaisons
+  snippetsBadge: '{{snippetCount}} snippets'
+nav:
+  allPatterns: ← Tous les patterns
+  toggleTheme: Changer le thème
+  viewOnGitHub: Voir sur GitHub
+  selectLanguage: Sélectionner la langue
+breadcrumb:
+  home: Accueil
+sections:
+  codeComparison: Comparaison de Code
+  whyModernWins: Pourquoi la méthode moderne gagne
+  oldApproach: Ancienne Approche
+  modernApproach: Approche Moderne
+  sinceJdk: Depuis JDK
+  difficulty: Difficulté
+  jdkSupport: Support JDK
+  howItWorks: Comment ça fonctionne
+  relatedDocs: Documentation Associée
+  relatedPatterns: Patterns associés
+filters:
+  show: 'Afficher :'
+  all: Tous
+difficulty:
+  beginner: Débutant
+  intermediate: Intermédiaire
+  advanced: Avancé
+search:
+  placeholder: Rechercher des snippets…
+  noResults: Aucun résultat trouvé.
+  esc: ESC
+  searchTrigger: Rechercher…
+  navigate: naviguer
+  open: ouvrir
+  close: fermer
+cards:
+  old: Ancien
+  modern: Moderne
+  hoverHint: survolez pour voir le moderne →
+  hoverHintRelated: Survolez pour voir le moderne ➜
+  touchHint: 👆 appuyez ou glissez →
+copy:
+  copy: Copier
+  copied: Copié !
+share:
+  label: Partager
+view:
+  expandAll: Tout développer
+  collapseAll: Tout réduire
+stats:
+  modernPatterns: Patterns Modernes
+  jdkVersions: Versions JDK Couvertes
+  categories: Catégories
+  linesOfPython: Lignes de Python Requises
+footer:
+  tagline: Java a évolué. Votre code aussi peut.
+  madeWith: Fait avec ❤️ par
+  and: et
+  inspiredBy: Inspiré par
+  viewOnGitHub: Voir sur GitHub
+copilot:
+  headline: Modernisez votre code Java avec GitHub Copilot.
+  description: Laissez Copilot vous aider à migrer les patterns legacy vers Java moderne
+    — automatiquement.
+  appModernization: Modernisation d'App →
+  javaGuide: Guide Java →
+support:
+  available: Disponible
+  preview: Aperçu
+  experimental: Expérimental
+untranslated:
+  notice: Cette page n'a pas encore été traduite en {{localeName}}.
+  viewInEnglish: Voir en Anglais

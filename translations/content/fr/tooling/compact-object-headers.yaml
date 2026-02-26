@@ -1,0 +1,18 @@
+---
+title: En-têtes d'objets compacts
+oldApproach: En-têtes de 128 bits
+modernApproach: En-têtes de 64 bits
+summary: Réduit de moitié la taille des en-têtes d'objets pour une meilleure densité mémoire et utilisation du cache.
+explanation: "Les en-têtes d'objets compacts réduisent la surcharge par objet de 128 bits à 64 bits sur les plateformes 64 bits. Cela économise de la mémoire et améliore l'utilisation du cache, surtout pour les applications avec de nombreux petits objets."
+whyModernWins:
+- icon: 📦
+  title: En-têtes 50% plus petits
+  desc: 8 octets au lieu de 16 par objet.
+- icon: ⚡
+  title: Meilleure utilisation du cache
+  desc: Plus d'objets tiennent dans les lignes de cache du CPU.
+- icon: 📊
+  title: Densité accrue
+  desc: Plus d'objets tiennent dans la même taille de heap.
+support:
+  description: Finalisé dans JDK 25 LTS (JEP 519, sept. 2025).

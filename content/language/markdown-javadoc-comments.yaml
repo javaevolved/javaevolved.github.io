@@ -59,3 +59,8 @@ related:
 - "language/text-blocks-for-multiline-strings"
 - "language/records-for-data-classes"
 - "language/type-inference-with-var"
+docs:
+- title: "Markdown Documentation Comments (JEP 467)"
+  href: "https://openjdk.org/jeps/467"
+- title: "JavaDoc Guide - Markdown"
+  href: "https://docs.oracle.com/en/java/javase/25/javadoc/using-markdown-documentation-comments.html"

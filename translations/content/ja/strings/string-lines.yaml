@@ -1,0 +1,17 @@
+title: 行分割のString.lines()
+oldApproach: "split(\"\\\\n\")"
+modernApproach: lines()
+summary: "正規表現のオーバーヘッドなしにString.lines()でテキストを行のストリームに分割する。"
+explanation: "String.lines()は\\n、\\r、\\r\\nで分割した行のStream<String>を返します。split()より遅延評価で効率的であり、正規表現のコンパイルを回避し、Stream APIと自然に統合できます。"
+whyModernWins:
+- icon: "⚡"
+  title: 遅延ストリーミング
+  desc: "split()のように一度にすべてを生成するのではなく、行をオンデマンドで生成します。"
+- icon: "🔧"
+  title: 万能な改行対応
+  desc: "正規表現なしで\\n、\\r、\\r\\nを自動的に処理します。"
+- icon: "🔗"
+  title: ストリーム統合
+  desc: "filter・map・collectと直接組み合わせられるStreamを返します。"
+support:
+  description: JDK 11（2018年9月）以降、利用可能

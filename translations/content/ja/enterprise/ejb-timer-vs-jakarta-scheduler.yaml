@@ -1,0 +1,17 @@
+title: EJBタイマーとJakartaスケジューラーの比較
+oldApproach: EJB TimerService
+modernApproach: ManagedScheduledExecutorService
+summary: "重量級EJBタイマーをJakarta ConcurrencyのManagedScheduledExecutorServiceによるシンプルなスケジューリングに置き換える。"
+explanation: "EJBタイマーは@Statelessまたは@Singletonビーンと@Timeoutコールバック、XMLまたはアノテーションベースのスケジュール式が必要です。Jakarta ConcurrencyはManagedScheduledExecutorServiceを提供し、使い慣れたjava.util.concurrent スケジューリングAPIを使用します。ボイラープレートが少なく、ユニットテストが容易で、EJBコンテナへの依存もありません。"
+whyModernWins:
+- icon: "🪶"
+  title: ボイラープレート削減
+  desc: "@Timeoutコールバックや複雑なScheduleExpressionは不要で、標準のScheduledExecutorService APIを使います。"
+- icon: "🧪"
+  title: テスト容易性の向上
+  desc: "プレーンなメソッドとexecutorモックにより、EJBコンテナなしで直感的にユニットテストできます。"
+- icon: "☁️"
+  title: クラウドネイティブ対応
+  desc: "マネージドエグゼキューターはコンテナのライフサイクルと統合し、軽量ランタイムでも動作します。"
+support:
+  description: Jakarta EE 10 / Concurrency 3.0以降、利用可能

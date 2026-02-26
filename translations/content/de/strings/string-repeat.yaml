@@ -1,0 +1,19 @@
+title: String.repeat()
+oldApproach: Schleife mit StringBuilder
+modernApproach: repeat()
+summary: Einen String n-mal ohne Schleife wiederholen.
+explanation: "String.repeat(int) gibt den String n-mal mit sich selbst verkettet\
+  \ zurück. Behandelt Randfälle: repeat(0) gibt einen leeren String zurück, repeat(1)\
+  \ gibt denselben String zurück."
+whyModernWins:
+- icon: 📏
+  title: Einzeiler
+  desc: Ersetzt 5 Zeilen StringBuilder-Code durch einen einzigen Aufruf.
+- icon: ⚡
+  title: Optimiert
+  desc: Die interne Implementierung ist für große Wiederholungen optimiert.
+- icon: 📖
+  title: Klare Absicht
+  desc: repeat(3) vermittelt den Zweck sofort.
+support:
+  description: Weitgehend verfügbar seit JDK 11 (Sept. 2018)

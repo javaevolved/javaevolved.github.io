@@ -1,0 +1,17 @@
+title: JFRによるプロファイリング
+oldApproach: 外部プロファイラー
+modernApproach: Java Flight Recorder
+summary: "組み込みFlight Recorderで外部ツールなしに任意のJavaアプリをプロファイルする。"
+explanation: "Java Flight Recorder（JFR）はJVM組み込みの低オーバーヘッドなプロファイリングツールです。CPU・メモリ・GC・I/O・スレッド・カスタムイベントを最小限のパフォーマンス影響（約1%）でキャプチャします。"
+whyModernWins:
+- icon: "🆓"
+  title: 組み込み
+  desc: "外部プロファイラーのインストールやライセンスが不要です。"
+- icon: "⚡"
+  title: 低オーバーヘッド
+  desc: "約1%のパフォーマンス影響——本番環境でも安全に使用できます。"
+- icon: "📊"
+  title: 豊富なイベント
+  desc: "CPU・メモリ・GC・スレッド・I/O・ロック・カスタムイベントを記録できます。"
+support:
+  description: JDK 9/11（オープンソース化はJDK 11）以降、広く利用可能

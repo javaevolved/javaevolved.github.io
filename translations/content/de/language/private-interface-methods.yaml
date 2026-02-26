@@ -1,0 +1,17 @@
+title: "Private Interface-Methoden"
+oldApproach: "Duplizierte Logik"
+modernApproach: "Private Methoden"
+summary: "Gemeinsame Logik in Interfaces mithilfe privater Methoden auslagern."
+explanation: "Java 9 erlaubt private Methoden in Interfaces, sodass Code zwischen Default-Methoden geteilt werden kann, ohne Implementierungsdetails an implementierende Klassen preiszugeben."
+whyModernWins:
+- icon: "🧩"
+  title: "Code-Wiederverwendung"
+  desc: "Logik zwischen Default-Methoden ohne Duplizierung teilen."
+- icon: "🔐"
+  title: "Kapselung"
+  desc: "Implementierungsdetails bleiben vor implementierenden Klassen verborgen."
+- icon: "🧹"
+  title: "DRY-Interfaces"
+  desc: "Kein Copy-Paste mehr zwischen Default-Methoden."
+support:
+  description: "Seit JDK 9 allgemein verfügbar (Sept. 2017)"

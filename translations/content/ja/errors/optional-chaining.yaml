@@ -1,0 +1,17 @@
+title: Optionalのチェーン
+oldApproach: ネストされたnullチェック
+modernApproach: Optionalパイプライン
+summary: "ネストされたnullチェックをOptionalパイプラインに置き換える。"
+explanation: "Optional.map()はnullになりうる値をチェーンし、最初のnullで短絡します。orElse()でデフォルト値を提供します。ピラミッド状のnullチェックをなくします。"
+whyModernWins:
+- icon: "🔗"
+  title: チェーン可能
+  desc: "各.map()ステップがnullを透過的に処理します。"
+- icon: "📖"
+  title: 線形な流れ
+  desc: "ネストされたifブロックではなく左から右に読めます。"
+- icon: "🛡️"
+  title: NPE安全
+  desc: "各ステップでnullが処理されるのでクラッシュしません。"
+support:
+  description: "JDK 8以降（9以降で改善）"

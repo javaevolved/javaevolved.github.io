@@ -1,0 +1,18 @@
+---
+title: Opérateur diamond avec les classes anonymes
+oldApproach: Répéter les arguments de type
+modernApproach: Diamond <>
+summary: L'opérateur diamond fonctionne maintenant aussi avec les classes anonymes.
+explanation: "Java 7 a introduit <> mais cela ne fonctionnait pas avec les classes internes anonymes. Java 9 a corrigé cela, de sorte que vous n'avez jamais besoin de répéter les arguments de type côté droit."
+whyModernWins:
+- icon: 📏
+  title: Règles cohérentes
+  desc: "Diamond fonctionne partout : constructeurs et classes anonymes de la même façon."
+- icon: 🧹
+  title: Moins de redondance
+  desc: "Les arguments de type sont déclarés une fois à gauche, sans les répéter."
+- icon: 🔧
+  title: Principe DRY
+  desc: Le compilateur connaît déjà le type — pourquoi l'écrire deux fois ?
+support:
+  description: Diamond avec classes anonymes depuis JDK 9 (sept. 2017).

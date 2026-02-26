@@ -1,0 +1,18 @@
+---
+title: String.formatted()
+oldApproach: String.format()
+modernApproach: formatted()
+summary: Appelez formatted() directement sur la chaîne de modèle.
+explanation: "String.formatted() est une méthode d'instance équivalente à String.format() mais invoquée sur la chaîne de format. Elle se lit plus naturellement dans un flux de gauche à droite."
+whyModernWins:
+- icon: 📖
+  title: Se lit naturellement
+  desc: Template.formatted(args) se déroule mieux que String.format(template, args).
+- icon: 🔗
+  title: Enchaînable
+  desc: Peut être enchaîné avec d'autres méthodes de String.
+- icon: 📏
+  title: Moins verbeux
+  desc: Élimine l'appel statique redondant à String.format().
+support:
+  description: Disponible depuis JDK 15 (sept. 2020)

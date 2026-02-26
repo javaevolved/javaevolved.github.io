@@ -1,0 +1,17 @@
+title: "Textblöcke für mehrzeilige Strings"
+oldApproach: "String-Verkettung"
+modernApproach: "Textblöcke"
+summary: "Mehrzeilige Strings natürlich mit Triple-Quote-Textblöcken schreiben."
+explanation: "Textblöcke erlauben das Schreiben mehrzeiliger Strings genau so, wie sie erscheinen. Keine Escape-Sequenzen für Anführungszeichen oder \\n mehr. Der Compiler entfernt beiläufige Einrückungen automatisch."
+whyModernWins:
+- icon: "📖"
+  title: "Lesbar wie gehabt"
+  desc: "JSON, SQL und HTML sehen im Quellcode wie echtes JSON, SQL und HTML aus."
+- icon: "🚫"
+  title: "Kein Escape-Chaos"
+  desc: "Eingebettete Anführungszeichen brauchen keine Backslash-Escapes."
+- icon: "📐"
+  title: "Intelligente Einrückung"
+  desc: "Führende Leerzeichen werden automatisch anhand der Position des schließenden Trennzeichens gekürzt."
+support:
+  description: "Seit JDK 15 allgemein verfügbar (Sept. 2020)"

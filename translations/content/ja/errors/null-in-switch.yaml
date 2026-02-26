@@ -1,0 +1,17 @@
+title: switchでのnullケース
+oldApproach: switch前のガード
+modernApproach: "case null"
+summary: "nullをswitchのケースとして直接処理する — 別のガードは不要。"
+explanation: "パターンマッチングのswitchはnullをcaseラベルとしてマッチできます。switch前のnullチェックが不要になり、null処理が明示的になります。"
+whyModernWins:
+- icon: "🎯"
+  title: 明示的
+  desc: "nullの処理がswitchの中で見えます。"
+- icon: "🛡️"
+  title: NPEなし
+  desc: "null値でswitchしてもNullPointerExceptionはスローされません。"
+- icon: "📐"
+  title: 一体化
+  desc: "nullを含むすべてのケースが1つのswitch式にまとまります。"
+support:
+  description: "JDK 21 LTS（2023年9月）以降、広く利用可能"

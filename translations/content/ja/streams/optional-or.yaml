@@ -1,0 +1,17 @@
+title: "Optional.or()によるフォールバック"
+oldApproach: ネストされたフォールバック
+modernApproach: .or()チェーン
+summary: "ネストされたチェックなしでOptionalのフォールバックを連鎖する。"
+explanation: "Optional.or()は値が存在する場合は元のOptionalを返し、そうでない場合はサプライヤを評価して代替のOptionalを取得します。サプライヤは遅延評価され、必要なときのみ呼び出されます。"
+whyModernWins:
+- icon: "🔗"
+  title: 連鎖可能
+  desc: "読みやすいパイプラインでフォールバックを積み重ねます。"
+- icon: "⚡"
+  title: 遅延評価
+  desc: "フォールバックサプライヤは必要な場合のみ実行されます。"
+- icon: "📖"
+  title: 宣言的
+  desc: "「プライマリを試し、次にセカンダリ、次にデフォルト」と読めます。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

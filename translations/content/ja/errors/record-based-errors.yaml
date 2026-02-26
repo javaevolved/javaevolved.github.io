@@ -1,0 +1,17 @@
+title: レコードベースのエラーレスポンス
+oldApproach: MapまたはVerboseクラス
+modernApproach: エラーレコード
+summary: "レコードを使って簡潔でイミュータブルなエラーレスポンス型を定義する。"
+explanation: "レコードはエラーレスポンスに最適です — イミュータブルで、比較用のequals/hashCodeが組み込まれており、ロギング用のtoStringが自動生成されます。カスタムコンストラクタでバリデーションやデフォルト値を追加できます。"
+whyModernWins:
+- icon: "📏"
+  title: 簡潔
+  desc: "30行ではなく3行でエラー型を定義できます。"
+- icon: "🔒"
+  title: イミュータブル
+  desc: "エラーデータは作成後に誤って変更されることがありません。"
+- icon: "📋"
+  title: 自動toString
+  desc: "ロギングに最適 — すべてのフィールドが自動的に表示されます。"
+support:
+  description: "JDK 16（2021年3月）以降、広く利用可能"

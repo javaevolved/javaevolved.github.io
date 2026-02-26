@@ -1,0 +1,17 @@
+title: Optional.ifPresentOrElse()
+oldApproach: Optionalに対するif/else
+modernApproach: ifPresentOrElse()
+summary: "1回の呼び出しでOptionalの存在する場合と空の場合の両方を処理する。"
+explanation: "ifPresentOrElse()は存在する場合のConsumerと空の場合のRunnableを受け取ります。isPresent/getのアンチパターンを回避します。"
+whyModernWins:
+- icon: "📏"
+  title: 単一の式
+  desc: "1回のメソッド呼び出しで両方のケースを処理します。"
+- icon: "🚫"
+  title: get()なし
+  desc: "危険なisPresent() + get()パターンを排除します。"
+- icon: "🔗"
+  title: 流暢
+  desc: "findUser()や任意のOptionalを返すメソッドの後に自然に連鎖します。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

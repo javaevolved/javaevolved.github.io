@@ -1,0 +1,18 @@
+---
+title: Blocs de texte pour les chaînes multiligne
+oldApproach: Concaténation de chaînes
+modernApproach: Blocs de texte
+summary: "Écrivez des chaînes multiligne de façon naturelle avec des blocs de texte à triple guillemets."
+explanation: "Les blocs de texte permettent d'écrire des chaînes multiligne exactement comme elles apparaissent. Fini d'échapper les guillemets ou d'ajouter \n. Le compilateur supprime automatiquement l'indentation accidentelle."
+whyModernWins:
+- icon: 📖
+  title: Lisible tel quel
+  desc: "JSON, SQL et HTML ressemblent à de vrais JSON, SQL et HTML dans votre code source."
+- icon: 🚫
+  title: Sans enfer des échappements
+  desc: Les guillemets intégrés n'ont pas besoin d'antislash d'échappement.
+- icon: 📐
+  title: Indentation intelligente
+  desc: "Les espaces blancs initiaux sont rognés automatiquement selon la position du délimiteur de fermeture."
+support:
+  description: Disponible depuis JDK 15 (sept. 2020)

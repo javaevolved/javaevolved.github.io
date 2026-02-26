@@ -1,0 +1,17 @@
+title: "Statische Methoden in Interfaces"
+oldApproach: "Hilfsklassen"
+modernApproach: "Statische Interface-Methoden"
+summary: "Statische Hilfsmethoden direkt in Interfaces hinzufügen, anstatt separate Hilfsklassen zu verwenden."
+explanation: "Vor Java 8 mussten Hilfsmethoden, die sich auf ein Interface bezogen, in einer separaten Klasse leben (z. B. Collections für Collection). Statische Methoden in Interfaces erlauben es, verwandte Hilfsfunktionen zusammenzuhalten. Gängig in modernen APIs wie Comparator.comparing(), Stream.of() und List.of()."
+whyModernWins:
+- icon: "📦"
+  title: "Bessere Organisation"
+  desc: "Verwandte Hilfsfunktionen beim Interface behalten, nicht in einer separaten Klasse."
+- icon: "🔍"
+  title: "Auffindbarkeit"
+  desc: "Factory- und Hilfsmethoden sind dort zu finden, wo man sie erwartet."
+- icon: "🧩"
+  title: "API-Kohäsion"
+  desc: "Keine separaten *Utils- oder *Helper-Klassen mehr erforderlich."
+support:
+  description: "Verfügbar seit JDK 8 (März 2014)"

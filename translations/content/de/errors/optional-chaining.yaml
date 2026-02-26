@@ -1,0 +1,17 @@
+title: "Optional-Verkettung"
+oldApproach: "Verschachtelte Null-Prüfungen"
+modernApproach: "Optional-Pipeline"
+summary: "Verschachtelte Null-Prüfungen durch eine Optional-Pipeline ersetzen."
+explanation: "Optional.map() verkettet nullable-Werte und bricht bei dem ersten null kurz. orElse() liefert den Standardwert. Dies beseitigt die Pyramide der verschachtelten Null-Prüfungen."
+whyModernWins:
+- icon: "🔗"
+  title: "Verkettbar"
+  desc: "Jeder .map()-Schritt behandelt null transparent."
+- icon: "📖"
+  title: "Linearer Fluss"
+  desc: "Von links nach rechts lesen statt verschachtelter if-Blöcke."
+- icon: "🛡️"
+  title: "NPE-sicher"
+  desc: "null wird bei jedem Schritt behandelt – kein Absturz möglich."
+support:
+  description: "Verfügbar seit JDK 8+ (verbessert in 9+)"

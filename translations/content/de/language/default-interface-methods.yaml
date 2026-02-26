@@ -1,0 +1,17 @@
+title: "Default-Methoden in Interfaces"
+oldApproach: "Abstrakte Klassen für gemeinsames Verhalten"
+modernApproach: "Default-Methoden in Interfaces"
+summary: "Methodenimplementierungen direkt in Interfaces einfügen und so Mehrfachvererbung von Verhalten ermöglichen."
+explanation: "Vor Java 8 erforderte das Teilen von Verhalten zwischen unverwandten Klassen abstrakte Klassen, was auf Einfachvererbung beschränkte. Default-Methoden erlauben Interfaces, Methodenimplementierungen bereitzustellen, sodass Klassen Verhalten von mehreren Interfaces erben können. Dies war entscheidend für die Weiterentwicklung der Collections-API (z. B. List.forEach, Map.getOrDefault) ohne bestehende Implementierungen zu brechen."
+whyModernWins:
+- icon: "🔀"
+  title: "Mehrfachvererbung"
+  desc: "Klassen können viele Interfaces mit Default-Methoden implementieren – anders als bei einfacher abstrakter Klassenvererbung."
+- icon: "📦"
+  title: "API-Evolution"
+  desc: "Neue Methoden zu Interfaces hinzufügen, ohne bestehende Implementierungen zu brechen."
+- icon: "🧩"
+  title: "Kombinierbares Verhalten"
+  desc: "Fähigkeiten aus mehreren Interfaces frei kombinieren."
+support:
+  description: "Verfügbar seit JDK 8 (März 2014)."

@@ -1,0 +1,19 @@
+title: Kompakte Objekt-Header
+oldApproach: 128-Bit-Header
+modernApproach: 64-Bit-Header
+summary: Objekt-Header-Größe halbieren für bessere Speicherdichte und Cache-Nutzung.
+explanation: Kompakte Objekt-Header reduzieren den Overhead pro Objekt von 128 Bit
+  auf 64 Bit auf 64-Bit-Plattformen. Dies spart Speicher und verbessert die Cache-Nutzung,
+  insbesondere für Anwendungen mit vielen kleinen Objekten.
+whyModernWins:
+- icon: 📦
+  title: 50 % kleinere Header
+  desc: 8 Bytes statt 16 pro Objekt.
+- icon: ⚡
+  title: Bessere Cache-Nutzung
+  desc: Mehr Objekte passen in CPU-Cache-Zeilen.
+- icon: 📊
+  title: Höhere Dichte
+  desc: Mehr Objekte im gleichen Heap-Bereich.
+support:
+  description: In JDK 25 LTS finalisiert (JEP 519, Sept. 2025).

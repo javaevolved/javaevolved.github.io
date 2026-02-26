@@ -1,0 +1,17 @@
+title: "Pattern Matching für instanceof"
+oldApproach: "instanceof + Cast"
+modernApproach: "Pattern-Variable"
+summary: "Typprüfung und Cast in einem Schritt mit Pattern Matching kombinieren."
+explanation: "Pattern Matching für instanceof eliminiert den überflüssigen Cast nach einer Typprüfung. Die Variable ist automatisch auf den Gültigkeitsbereich beschränkt, in dem das Muster passt, was den Code sicherer und kürzer macht."
+whyModernWins:
+- icon: "🔄"
+  title: "Kein überflüssiger Cast"
+  desc: "Typprüfung und Variablenbindung erfolgen in einem einzigen Ausdruck."
+- icon: "📏"
+  title: "Weniger Zeilen"
+  desc: "Eine Zeile statt zwei – die Cast-Zeile entfällt vollständig."
+- icon: "🛡️"
+  title: "Gültigkeitsbereich-Sicherheit"
+  desc: "Die Pattern-Variable ist nur dort im Gültigkeitsbereich, wo der Typ garantiert ist."
+support:
+  description: "Seit JDK 16 allgemein verfügbar (März 2021)"

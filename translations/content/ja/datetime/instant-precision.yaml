@@ -1,0 +1,17 @@
+title: ナノ秒精度のInstant
+oldApproach: ミリ秒
+modernApproach: ナノ秒
+summary: "マイクロ秒またはナノ秒精度でタイムスタンプを取得する。"
+explanation: "Java 9ではクロック解像度が改善され、Instant.now()はほとんどのプラットフォームでマイクロ秒精度（一部ではナノ秒）のタイムスタンプを取得できます。従来のcurrentTimeMillis()はミリ秒精度しかありませんでした。"
+whyModernWins:
+- icon: "🎯"
+  title: より高い精度
+  desc: "ミリ秒ではなくマイクロ秒・ナノ秒単位のタイムスタンプ。"
+- icon: "📐"
+  title: 型安全
+  desc: "Instantは精度を内包するため、意味が曖昧なlongを使いません。"
+- icon: "🌐"
+  title: UTCベース
+  desc: "InstantはUTCに固定されており、タイムゾーンの混乱がありません。"
+support:
+  description: JDK 9（2017年9月）以降、広く利用可能

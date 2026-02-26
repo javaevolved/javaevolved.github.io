@@ -1,0 +1,19 @@
+title: String-Zeichen als Stream
+oldApproach: Manuelle Schleife
+modernApproach: chars()-Stream
+summary: String-Zeichen als Stream-Pipeline verarbeiten.
+explanation: String.chars() gibt einen IntStream von Zeichenwerten zurück und ermöglicht
+  funktionale Verarbeitung. Für Unicode-Unterstützung behandelt codePoints() ergänzende
+  Zeichen korrekt.
+whyModernWins:
+- icon: 🔗
+  title: Verkettbar
+  desc: Filter, Map, Collect auf Zeichen-Streams anwenden.
+- icon: 📐
+  title: Deklarativ
+  desc: Beschreibt was zu tun ist, nicht wie zu iterieren.
+- icon: 🌐
+  title: Unicode-bereit
+  desc: codePoints() behandelt Emojis und ergänzende Zeichen korrekt.
+support:
+  description: Verfügbar seit JDK 8+ (verbessert in 9+)

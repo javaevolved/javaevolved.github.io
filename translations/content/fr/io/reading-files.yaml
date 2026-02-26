@@ -1,0 +1,18 @@
+---
+title: Lecture de fichiers
+oldApproach: BufferedReader
+modernApproach: Files.readString()
+summary: Lit un fichier entier dans une String avec une seule ligne.
+explanation: Files.readString() lit tout le contenu d'un fichier dans une String. Gère l'encodage (UTF-8 par défaut) et le nettoyage des ressources. Pour les grands fichiers, utilisez Files.lines() pour une lecture paresseuse en streaming.
+whyModernWins:
+- icon: 📏
+  title: Une ligne
+  desc: Remplace 8 lignes de code répétitif avec BufferedReader.
+- icon: 🧹
+  title: Nettoyage automatique
+  desc: Le handle de fichier est fermé automatiquement.
+- icon: 🌐
+  title: UTF-8 par défaut
+  desc: Encodage correct par défaut — sans confusion de charset.
+support:
+  description: Disponible depuis JDK 11 (septembre 2018)

@@ -1,0 +1,21 @@
+title: String.lines() zum Aufteilen von Zeilen
+oldApproach: split("\\n")
+modernApproach: lines()
+summary: String.lines() verwenden, um Text ohne Regex-Overhead in einen Stream von
+  Zeilen aufzuteilen.
+explanation: "String.lines() gibt einen Stream<String> von Zeilen zurück, aufgeteilt\
+  \ nach \\n, \\r oder \\r\\n. Es ist träger und effizienter als split(), vermeidet\
+  \ Regex-Kompilierung und lässt sich natürlich in die Stream-API für weitere Verarbeitung\
+  \ integrieren."
+whyModernWins:
+- icon: ⚡
+  title: Lazy-Streaming
+  desc: Zeilen werden bei Bedarf erzeugt, nicht alle auf einmal wie bei split().
+- icon: 🔧
+  title: Universelle Zeilenendezeichen
+  desc: "Behandelt \\n, \\r und \\r\\n automatisch ohne Regex."
+- icon: 🔗
+  title: Stream-Integration
+  desc: Gibt einen Stream zur direkten Verwendung mit filter, map, collect zurück.
+support:
+  description: Verfügbar seit JDK 11 (September 2018).

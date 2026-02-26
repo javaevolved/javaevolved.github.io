@@ -1,0 +1,17 @@
+title: whenによるガード付きパターン
+oldApproach: ネストしたif
+modernApproach: when句
+summary: "whenガードを使ってパターンのcaseに条件を追加する。"
+explanation: "ガード付きパターンを使うと、型マッチングに追加のboolean条件を付け加えられます。これにより、すべての分岐ロジックをswitch内に収められ、case内にif文をネストする必要がなくなります。"
+whyModernWins:
+- icon: "🎯"
+  title: 精密なマッチング
+  desc: "型と条件を1つのcaseラベルで組み合わせられます。"
+- icon: "📐"
+  title: フラットな構造
+  desc: "switchのcase内にif/elseをネストする必要がありません。"
+- icon: "📖"
+  title: 読みやすい意図
+  desc: "when句は自然な言葉のように読めます。"
+support:
+  description: JDK 21 LTS（2023年9月）以降、広く利用可能

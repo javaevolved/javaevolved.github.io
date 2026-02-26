@@ -1,0 +1,21 @@
+title: AOT-Klassen-Vorabladen
+oldApproach: Jedes Mal Kaltstart
+modernApproach: AOT-Cache
+summary: Klassen-Laden und Kompilierung cachen für sofortigen Start.
+explanation: Das AOT-Klassen-Vorabladen speichert geladene und verknüpfte Klassen
+  aus einem Trainings-Durchlauf im Cache. Bei nachfolgenden Starts werden Klassen
+  aus dem Cache geladen, wobei Verifizierung und Verknüpfung übersprungen werden.
+  In Kombination mit AOT-Kompilierung verkürzt dies die Startzeit drastisch.
+whyModernWins:
+- icon: ⚡
+  title: Schnellerer Start
+  desc: Klassen-Laden, Verifizierung und Verknüpfung überspringen.
+- icon: 📦
+  title: Gecachter Zustand
+  desc: Der Trainings-Durchlauf erfasst den idealen Klassenzustand.
+- icon: 🔧
+  title: Keine Codeänderungen
+  desc: Funktioniert mit bestehenden Anwendungen – einfach JVM-Flags hinzufügen.
+support:
+  description: Als Standardfunktion in JDK 25 LTS verfügbar (JEPs 514/515, Sept.
+    2025).

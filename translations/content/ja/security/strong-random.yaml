@@ -1,0 +1,17 @@
+title: 強力な乱数生成
+oldApproach: new SecureRandom()
+modernApproach: getInstanceStrong()
+summary: "プラットフォームで最も強力なSecureRandomの実装を取得する。"
+explanation: "getInstanceStrong()は、プラットフォームで最も強力と設定されたSecureRandomの実装を返します。これはセキュリティプロパティ securerandom.strongAlgorithms によって制御されます。"
+whyModernWins:
+- icon: "🛡️"
+  title: 最強のアルゴリズム
+  desc: "プラットフォームに最適なアルゴリズムを自動的に選択します。"
+- icon: "📖"
+  title: 明確な意図
+  desc: "強力な乱数が必要であることをコードで明確に伝えます。"
+- icon: "🔧"
+  title: 設定可能
+  desc: "管理者がセキュリティプロパティで強力なアルゴリズムを変更できます。"
+support:
+  description: JDK 9（2017年9月）以降、広く利用可能

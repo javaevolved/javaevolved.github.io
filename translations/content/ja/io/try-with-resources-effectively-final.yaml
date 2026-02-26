@@ -1,0 +1,17 @@
+title: try-with-resourcesの改善
+oldApproach: 変数の再宣言
+modernApproach: 実質的にfinalな変数
+summary: "実質的にfinalな変数をtry-with-resourcesで直接使用する。"
+explanation: "Java 9では実質的にfinalな変数を再宣言なしにtry-with-resourcesで直接使用できるようになりました。tryブロックの外でリソースを作成した場合にすっきりします。"
+whyModernWins:
+- icon: "🧹"
+  title: 再宣言不要
+  desc: "既存の変数名をそのまま使えます。"
+- icon: "📖"
+  title: 混乱が減る
+  desc: "tryブロック内に別の変数名が不要です。"
+- icon: "📏"
+  title: 簡潔
+  desc: "行数が減り、同じリソース安全性が保たれます。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

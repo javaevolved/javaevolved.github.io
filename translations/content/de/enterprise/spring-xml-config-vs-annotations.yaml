@@ -1,0 +1,17 @@
+title: Spring XML-Bean-Konfiguration vs. annotationsbasiert
+oldApproach: XML-Bean-Definitionen
+modernApproach: Annotationsbasierte Beans
+summary: Ersetze ausführliche Spring-XML-Bean-Definitionen durch prägnante annotationsbasierte Konfiguration mit Spring Boot.
+explanation: "Traditionelle Spring-Anwendungen verdrahteten Beans über XML-Konfigurationsdateien und deklarierten jede Klasse mit ihren Abhängigkeiten als ausführliche <bean>-Elemente. Obwohl Annotationsunterstützung seit Spring 2.5 existierte, blieb XML der vorherrschende Ansatz, bis Spring Boot Auto-Konfiguration einführte. Spring Boot erkennt Beans, die mit @Component, @Service, @Repository und @Controller annotiert sind, per Classpath-Scanning, erfüllt Abhängigkeiten automatisch per Konstruktorinjektion und konfiguriert Infrastruktur wie DataSource vom Classpath — was alle XML-Verdrahtungsdateien eliminiert."
+whyModernWins:
+- icon: 🚫
+  title: Kein XML
+  desc: "@SpringBootApplication aktiviert Component-Scanning und Auto-Konfiguration und eliminiert alle XML-Verdrahtungsdateien."
+- icon: 💉
+  title: Konstruktorinjektion
+  desc: Spring injiziert Abhängigkeiten automatisch über Konstruktoren, was Beans einfacher zu testen und nachzuvollziehen macht.
+- icon: ⚡
+  title: Auto-Konfiguration
+  desc: Spring Boot konfiguriert DataSource, JPA und andere Infrastruktur vom Classpath ohne Boilerplate.
+support:
+  description: "Weitgehend verfügbar seit Spring Boot 1.0 (April 2014); Spring Boot 3 erfordert Java 17+"

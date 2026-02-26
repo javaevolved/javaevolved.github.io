@@ -1,0 +1,17 @@
+title: Math.clamp()
+oldApproach: ネストしたmin/max
+modernApproach: Math.clamp()
+summary: "1回の明確な呼び出しで値を指定範囲にクランプする。"
+explanation: "Math.clamp(value, min, max)は値を[min, max]の範囲に制限します。ネストしたMath.min/Math.maxより明確で、int・long・float・doubleに対応しています。"
+whyModernWins:
+- icon: "📖"
+  title: 自己文書化
+  desc: "clamp(value, min, max)は意味が一目瞭然です。"
+- icon: "🛡️"
+  title: エラーが起きにくい
+  desc: "minとmaxの順序を誤って入れ替えることがなくなります。"
+- icon: "🎯"
+  title: 全数値型対応
+  desc: "int、long、float、doubleに対応しています。"
+support:
+  description: JDK 21 LTS（2023年9月）以降、広く利用可能

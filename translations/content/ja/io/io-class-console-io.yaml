@@ -1,0 +1,17 @@
+title: コンソールI/O用IOクラス
+oldApproach: System.out / Scanner
+modernApproach: IOクラス
+summary: "新しいIOクラスはコンソール入出力のためのシンプルで簡潔なメソッドを提供する。"
+explanation: "Java 25では暗黙的に宣言されたクラスの機能の一部としてIOクラス（java.io.IO）が導入されました。println()、print()、readln()、read()などの静的メソッドを提供し、System.outとScannerの冗長な組み合わせを置き換えます。IO.readln(prompt)はプロンプト表示と入力読み取りを1回の呼び出しで処理します。このクラスはコンパクトなソースファイルで自動的に利用可能であり、従来のクラスではインポートして使用できます。"
+whyModernWins:
+- icon: "✨"
+  title: 劇的にシンプル
+  desc: "2つのメソッドがScannerのセットアップ、プロンプト表示、読み取り、クリーンアップの7行を置き換えます。"
+- icon: "🔒"
+  title: リソースリークなし
+  desc: "クローズするScannerなし — IOメソッドが内部でリソース管理を処理します。"
+- icon: "🎓"
+  title: 初心者に優しい
+  desc: "新しい開発者はScanner、System.out、importステートメントを学ばずにコンソールI/Oができます。"
+support:
+  description: "暗黙的に宣言されたクラス（JEP 495）の一部としてJDK 25でプレビュー"

@@ -1,0 +1,17 @@
+title: ServletとJAX-RSの比較
+oldApproach: HttpServlet
+modernApproach: JAX-RSリソース
+summary: "冗長なHttpServletボイラープレートを宣言的なJAX-RSリソースクラスに置き換える。"
+explanation: "JAX-RS（Jakarta RESTful Web Services）では@GET・@Path・@Producesなどのシンプルなアノテーションを使ってRESTエンドポイントを公開できます。リクエストパラメーターの手動解析やレスポンスのコンテンツタイプ設定は不要で、ランタイムがマーシャリングとルーティングを自動的に処理します。"
+whyModernWins:
+- icon: "📐"
+  title: 宣言的ルーティング
+  desc: "HTTPメソッド・パス・コンテンツタイプをアノテーションで定義し、命令型のif/elseディスパッチは不要です。"
+- icon: "🔄"
+  title: 自動マーシャリング
+  desc: "POJOを直接返すだけで、@Producesに基づいてJSONやXMLにシリアライズされます。"
+- icon: "🧪"
+  title: テスト容易
+  desc: "リソースクラスはプレーンなJavaオブジェクトで、サーブレットコンテナなしでテストできます。"
+support:
+  description: Jakarta EE 8 / Java 11以降、広く利用可能

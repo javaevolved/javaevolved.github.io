@@ -1,0 +1,19 @@
+title: Stream.mapMulti()
+oldApproach: flatMap + List
+modernApproach: mapMulti()
+summary: Null oder mehr Elemente pro Eingabe ausgeben, ohne Zwischen-Streams zu erstellen.
+explanation: mapMulti() ist eine imperative Alternative zu flatMap, die das Erstellen
+  von Zwischen-Stream-Objekten für jedes Element vermeidet. Es ist effizienter, wenn
+  die Abbildung eine kleine Anzahl von Elementen erzeugt.
+whyModernWins:
+- icon: ⚡
+  title: Weniger Allokationen
+  desc: Kein Zwischen-Stream pro Element erstellt.
+- icon: 🎯
+  title: Imperativer Stil
+  desc: Schleifen und Bedingungen direkt verwenden.
+- icon: 📐
+  title: Flexibel
+  desc: Null, eins oder viele Elemente mit voller Kontrolle ausgeben.
+support:
+  description: Weitgehend verfügbar seit JDK 16 (März 2021)

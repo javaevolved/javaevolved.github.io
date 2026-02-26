@@ -1,0 +1,18 @@
+---
+title: Stream.mapMulti()
+oldApproach: flatMap + List
+modernApproach: mapMulti()
+summary: Émet zéro ou plusieurs éléments par entrée sans créer de streams intermédiaires.
+explanation: "mapMulti() est une alternative impérative à flatMap qui évite de créer des objets Stream intermédiaires pour chaque élément. C'est plus efficace quand le mapping produit un petit nombre d'éléments."
+whyModernWins:
+- icon: ⚡
+  title: Moins d'allocations
+  desc: Aucun Stream intermédiaire créé par élément.
+- icon: 🎯
+  title: Style impératif
+  desc: Utilisez des boucles et des conditionnels directement.
+- icon: 📐
+  title: Flexible
+  desc: Émettez zéro, un ou plusieurs éléments avec un contrôle total.
+support:
+  description: Disponible depuis JDK 16 (mars 2021)

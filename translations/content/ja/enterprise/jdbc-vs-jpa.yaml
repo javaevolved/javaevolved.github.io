@@ -1,0 +1,17 @@
+title: JDBCとJPAの比較
+oldApproach: JDBC
+modernApproach: JPA EntityManager
+summary: "冗長なJDBCボイラープレートをJPAのオブジェクト関係マッピングとEntityManagerに置き換える。"
+explanation: "JPA（Jakarta Persistence API）はJavaオブジェクトをデータベースの行にマッピングし、手動のResultSet処理やSQL文字列の連結を排除します。EntityManagerはfind()・persist()・JPQLクエリを提供し、ドメインオブジェクトとして作業できます。コネクションプールとトランザクションはコンテナが管理します。"
+whyModernWins:
+- icon: "🗺️"
+  title: オブジェクトマッピング
+  desc: "エンティティはアノテーション付きのプレーンなJavaクラスで、ResultSetから手動でオブジェクトに変換する必要がありません。"
+- icon: "🔒"
+  title: 型安全なクエリ
+  desc: "JPQLは生のテーブル名・カラム名文字列ではなくエンティティの型とフィールドを対象とします。"
+- icon: "⚡"
+  title: 組み込みキャッシュ
+  desc: "第1・第2レベルキャッシュにより、データベースへのラウンドトリップが自動的に削減されます。"
+support:
+  description: Jakarta EE 8 / Java 11以降、広く利用可能

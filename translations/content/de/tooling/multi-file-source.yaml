@@ -1,0 +1,19 @@
+title: Multi-Datei-Quellcode-Launcher
+oldApproach: Zuerst alles kompilieren
+modernApproach: Quellcode-Launcher
+summary: Multi-Datei-Programme ohne expliziten Kompilierungsschritt starten.
+explanation: Java 22+ kann referenzierte Quelldateien beim Start aus einer .java-Datei
+  automatisch kompilieren. Dies macht kleine Multi-Datei-Programme genauso einfach
+  ausführbar wie Skripte, ohne Maven oder Gradle zu benötigen.
+whyModernWins:
+- icon: 🚀
+  title: Kein Setup
+  desc: Kein Build-Tool für kleine Multi-Datei-Programme erforderlich.
+- icon: 🔗
+  title: Automatische Auflösung
+  desc: Referenzierte Klassen werden automatisch gefunden und kompiliert.
+- icon: 📝
+  title: Skript-ähnlich
+  desc: Multi-Datei-Programme wie Skripte ausführen.
+support:
+  description: Verfügbar seit JDK 22 (März 2024)

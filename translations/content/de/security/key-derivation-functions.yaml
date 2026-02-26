@@ -1,0 +1,19 @@
+title: Schlüsselableitungsfunktionen
+oldApproach: Manuelles PBKDF2
+modernApproach: KDF-API
+summary: Kryptografische Schlüssel mit der Standard-KDF-API ableiten.
+explanation: Die KDF-API bietet eine standardisierte Schnittstelle für Schlüsselableitungsfunktionen
+  einschließlich HKDF. Sie ersetzt das umständliche Muster aus SecretKeyFactory und
+  PBEKeySpec durch eine saubere Builder-API.
+whyModernWins:
+- icon: 📐
+  title: Saubere API
+  desc: Builder-Muster statt umständlicher KeySpec-Konstruktoren.
+- icon: 🔧
+  title: HKDF-Unterstützung
+  desc: Moderner HKDF-Algorithmus neben PBKDF2.
+- icon: 🛡️
+  title: Standard
+  desc: Einheitliche API für alle Schlüsselableitungsalgorithmen.
+support:
+  description: In JDK 25 LTS finalisiert (JEP 510, Sept. 2025).

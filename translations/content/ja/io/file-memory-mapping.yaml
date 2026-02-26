@@ -1,0 +1,17 @@
+title: ファイルのメモリマッピング
+oldApproach: MappedByteBuffer
+modernApproach: "MemorySegmentとArena"
+summary: "MemorySegmentを使って2GBを超えるファイルを確定的なクリーンアップでマップする。"
+explanation: "Foreign Function & Memory API（JEP 454）はMemorySegmentを導入し、安全で効率的なメモリアクセスを実現します。MappedByteBufferとは異なり、MemorySegmentは2GB（Integer.MAX_VALUE）を超えるファイルをサポートし、Arenaを通じた確定的なクリーンアップを提供し、モダンなハードウェアでより優れたパフォーマンスを発揮します。"
+whyModernWins:
+- icon: "📏"
+  title: サイズ制限なし
+  desc: "回避策なしに2GBを超えるファイルをマップできます。"
+- icon: "🔒"
+  title: 確定的なクリーンアップ
+  desc: "ArenaはGCのタイミングではなく、スコープ終了時にメモリを解放します。"
+- icon: "⚡"
+  title: 高いパフォーマンス
+  desc: "モダンなメモリモデルとハードウェアに適合しています。"
+support:
+  description: "JDK 22（2024年3月）以降、利用可能"

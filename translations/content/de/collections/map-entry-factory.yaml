@@ -1,0 +1,19 @@
+title: "Map.entry()-Factory"
+oldApproach: SimpleEntry
+modernApproach: "Map.entry()"
+summary: Map-Einträge mit einer sauberen Factory-Methode erstellen.
+explanation: "Map.entry() ersetzt den ausführlichen AbstractMap.SimpleEntry-Konstruktor.\
+  \ Es gibt einen unveränderlichen Eintrag zurück, der ideal für Map.ofEntries()\
+  \ und Stream-Operationen ist."
+whyModernWins:
+- icon: "📏"
+  title: Prägnant
+  desc: Eine Zeile statt drei mit klarerer Absicht.
+- icon: "🔒"
+  title: Unveränderlich
+  desc: Der zurückgegebene Eintrag kann nicht geändert werden.
+- icon: "🧩"
+  title: Kombinierbar
+  desc: "Funktioniert perfekt mit Map.ofEntries() für große Maps."
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

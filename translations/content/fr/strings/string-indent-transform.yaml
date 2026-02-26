@@ -1,0 +1,18 @@
+---
+title: String.indent() et transform()
+oldApproach: Indentation manuelle
+modernApproach: indent() / transform()
+summary: Indentez du texte et enchaînez des transformations de chaînes de façon fluide.
+explanation: "indent(n) ajoute n espaces à chaque ligne. transform(fn) applique n'importe quelle fonction et retourne le résultat, permettant un enchaînement fluide d'opérations sur les chaînes."
+whyModernWins:
+- icon: 📏
+  title: Intégré
+  desc: L'indentation est une opération courante — maintenant c'est un seul appel.
+- icon: 🔗
+  title: Enchaînable
+  desc: transform() permet des pipelines fluides sur les chaînes.
+- icon: 🧹
+  title: Code propre
+  desc: Sans séparation manuelle de lignes ni boucles avec StringBuilder.
+support:
+  description: Disponible depuis JDK 12 (mars 2019)

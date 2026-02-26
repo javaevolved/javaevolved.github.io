@@ -1,0 +1,17 @@
+title: Instant mit Nanosekunden-Präzision
+oldApproach: Millisekunden
+modernApproach: Nanosekunden
+summary: Zeitstempel mit Mikrosekunden- oder Nanosekunden-Präzision ermitteln.
+explanation: Java 9 verbesserte die Uhrenauflösung, sodass Instant.now() auf den meisten Plattformen Mikrosekunden-Präzision liefert (auf manchen sogar Nanosekunden). Das veraltete currentTimeMillis() liefert nur Millisekunden.
+whyModernWins:
+- icon: 🎯
+  title: Höhere Präzision
+  desc: Mikrosekunden-/Nanosekunden-Zeitstempel statt Millisekunden.
+- icon: 📐
+  title: Typsicher
+  desc: Instant trägt seine Präzision — keine mehrdeutigen long-Werte.
+- icon: 🌐
+  title: UTC-basiert
+  desc: Instant ist immer in UTC — keine Zeitzonenverwechslungen.
+support:
+  description: Weitgehend verfügbar seit JDK 9 (September 2017)

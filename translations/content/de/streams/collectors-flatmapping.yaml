@@ -1,0 +1,19 @@
+title: Collectors.flatMapping()
+oldApproach: Verschachteltes flatMap
+modernApproach: flatMapping()
+summary: flatMapping() zum Abflachen innerhalb eines Gruppierungs-Collectors verwenden.
+explanation: Collectors.flatMapping() wendet eine Eins-zu-viele-Abbildung als nachgelagerten
+  Collector an. Es ist das Collector-Äquivalent von Stream.flatMap() – nützlich innerhalb
+  von groupingBy oder partitioningBy.
+whyModernWins:
+- icon: 🧩
+  title: Kombinierbar
+  desc: Funktioniert als nachgelagerter Collector innerhalb von groupingBy.
+- icon: 📐
+  title: Einmaliger Durchlauf
+  desc: Abflachen und Gruppieren in einem einzigen Stream-Durchlauf.
+- icon: 🔗
+  title: Verschachtelbar
+  desc: Lässt sich mit anderen nachgelagerten Collectors kombinieren.
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

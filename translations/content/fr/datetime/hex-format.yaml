@@ -1,0 +1,18 @@
+---
+title: HexFormat
+oldApproach: Conversion hexadécimale manuelle
+modernApproach: HexFormat
+summary: Convertit entre chaînes hexadécimales et tableaux d'octets avec HexFormat.
+explanation: HexFormat fournit un encodage/décodage hexadécimal bidirectionnel pour les octets, entiers et tableaux. Permet de configurer les délimiteurs, préfixe, suffixe et casse. Fini le formatage ou l'analyse manuelle.
+whyModernWins:
+- icon: 📐
+  title: Bidirectionnel
+  desc: Convertit octets→hex et hex→octets avec une seule API.
+- icon: 🔧
+  title: Configurable
+  desc: Délimiteurs, préfixe, suffixe, casse.
+- icon: 📦
+  title: Support de tableaux
+  desc: Encode/décode des tableaux d'octets entiers en une fois.
+support:
+  description: Disponible depuis JDK 17 LTS (septembre 2021)

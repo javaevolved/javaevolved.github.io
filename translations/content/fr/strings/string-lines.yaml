@@ -1,0 +1,18 @@
+---
+title: String.lines() pour diviser les lignes
+oldApproach: split("\\n")
+modernApproach: lines()
+summary: Utilisez String.lines() pour diviser du texte en un stream de lignes sans la surcharge des expressions régulières.
+explanation: "String.lines() retourne un Stream<String> de lignes divisées par \n, \r ou \r\n. C'est plus paresseux et efficace que split(), évite la compilation de regex et s'intègre naturellement avec l'API Stream pour le traitement ultérieur."
+whyModernWins:
+- icon: ⚡
+  title: Streaming paresseux
+  desc: Les lignes sont produites à la demande, pas toutes à la fois comme split().
+- icon: 🔧
+  title: Fins de ligne universelles
+  desc: "Gère \n, \r et \r\n automatiquement sans regex."
+- icon: 🔗
+  title: Intégration avec Stream
+  desc: Retourne un Stream pour utilisation directe avec filter, map, collect.
+support:
+  description: Disponible depuis JDK 11 (septembre 2018).

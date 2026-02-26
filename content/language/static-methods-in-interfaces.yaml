@@ -58,3 +58,6 @@ related:
 - "language/default-interface-methods"
 - "language/private-interface-methods"
 - "collections/immutable-list-creation"
+docs:
+- title: "Default Methods (Oracle Tutorial)"
+  href: "https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html"

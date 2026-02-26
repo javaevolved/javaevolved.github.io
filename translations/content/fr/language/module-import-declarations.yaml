@@ -1,0 +1,18 @@
+---
+title: Déclarations d'import de modules
+oldApproach: Nombreux imports
+modernApproach: import module
+summary: Importez tous les packages exportés d'un module avec une seule déclaration.
+explanation: "Les déclarations d'import de modules permettent d'importer tout ce qu'un module exporte avec une seule ligne. C'est particulièrement utile pour java.base, qui couvre les collections, l'E/S, les streams et plus encore."
+whyModernWins:
+- icon: 🧹
+  title: Une seule ligne
+  desc: Remplace une longue liste d'imports par un seul import de module.
+- icon: 📦
+  title: Compatible avec les modules
+  desc: Tire parti du système de modules pour importer des ensembles cohérents de packages.
+- icon: 🚀
+  title: Démarrage rapide
+  desc: Parfait pour les scripts et prototypes où les listes d'imports sont fastidieuses.
+support:
+  description: Finalisé dans JDK 25 LTS (JEP 511, sept. 2025).

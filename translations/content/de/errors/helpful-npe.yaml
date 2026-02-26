@@ -1,0 +1,17 @@
+title: "Hilfreiche NullPointerExceptions"
+oldApproach: "Kryptische NPE"
+modernApproach: "Detaillierte NPE"
+summary: "Die JVM teilt automatisch mit, welche Variable null war."
+explanation: "Hilfreiche NPEs beschreiben, welcher Ausdruck null war und welche Operation fehlgeschlagen ist. Dies ist seit Java 14 standardmäßig aktiviert – keine Codeänderung erforderlich, nur das JDK aktualisieren."
+whyModernWins:
+- icon: "🔍"
+  title: "Exakte Variable"
+  desc: "Die Meldung nennt die null-Variable in der Aufrufkette."
+- icon: "⚡"
+  title: "Schnelleres Debuggen"
+  desc: "Kein Rätselraten mehr, welcher der fünf verketteten Aufrufe null war."
+- icon: "🆓"
+  title: "Kostenloses Upgrade"
+  desc: "Keine Codeänderungen – einfach auf JDK 14+ ausführen."
+support:
+  description: "Seit JDK 14 allgemein verfügbar (März 2020)"

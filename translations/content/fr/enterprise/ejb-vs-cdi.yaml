@@ -1,0 +1,18 @@
+---
+title: "EJB versus CDI"
+oldApproach: "EJB"
+modernApproach: "Bean CDI"
+summary: "Remplace les lourds EJB par des beans CDI légers pour l'injection de dépendances et les transactions."
+explanation: "CDI (Contexts and Dependency Injection) offre la même injection de dépendances et gestion des transactions que les EJB, mais sous forme de classes Java simples sans interfaces ni superclasses spécifiques au conteneur. Les portées comme @ApplicationScoped et @RequestScoped contrôlent le cycle de vie, et @Transactional remplace la sémantique transactionnelle obligatoire des EJB."
+whyModernWins:
+- icon: "🪶"
+  title: "Léger"
+  desc: "Les beans CDI sont des classes Java simples sans interfaces ni descripteurs EJB spécifiques."
+- icon: "💉"
+  title: "Injection unifiée"
+  desc: "@Inject fonctionne pour n'importe quel bean géré, ressources JAX-RS et composants Jakarta EE de la même façon."
+- icon: "🧪"
+  title: "Tests unitaires simples"
+  desc: "Des classes simples sans la surcharge du proxy EJB sont faciles à instancier et à simuler."
+support:
+  description: "Disponible depuis Jakarta EE 8 / Java 11"

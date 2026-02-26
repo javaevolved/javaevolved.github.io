@@ -1,0 +1,17 @@
+title: "Record-Muster (Destrukturierung)"
+oldApproach: "Manueller Zugriff"
+modernApproach: "Destrukturierung"
+summary: "Records direkt in Mustern destrukturieren – Felder in einem Schritt extrahieren."
+explanation: "Record-Muster ermöglichen die Zerlegung der Komponenten eines Records direkt in instanceof und switch. Verschachtelte Muster werden ebenfalls unterstützt, was tiefes Matching ohne Zwischenvariablen ermöglicht."
+whyModernWins:
+- icon: "🎯"
+  title: "Direkter Zugriff"
+  desc: "Record-Komponenten zugreifen, ohne Accessoren manuell aufzurufen."
+- icon: "🪆"
+  title: "Verschachtelbar"
+  desc: "Muster können verschachtelt werden – innere Records in einem einzigen Ausdruck abgleichen."
+- icon: "📏"
+  title: "Kompakter Code"
+  desc: "Fünf Zeilen werden zu zwei – weniger Zeremonie, gleiche Klarheit."
+support:
+  description: "Seit JDK 21 LTS allgemein verfügbar (Sept. 2023)"

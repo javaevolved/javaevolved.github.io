@@ -1,0 +1,17 @@
+title: "Pattern Matching im switch"
+oldApproach: "if-else-Kette"
+modernApproach: "Typ-Muster"
+summary: "if-else-instanceof-Ketten durch saubere Switch-Typ-Muster ersetzen."
+explanation: "Pattern Matching im switch ermöglicht die direkte Typabgleichung, wobei Typtest, Cast und Bindung in einem prägnanten case-Label kombiniert werden. Der Compiler prüft die Vollständigkeit."
+whyModernWins:
+- icon: "📐"
+  title: "Strukturiertes Dispatch"
+  desc: "Switch macht die Verzweigungsstruktur explizit und übersichtlich."
+- icon: "🎯"
+  title: "Ausdrucksform"
+  desc: "Gibt einen Wert direkt zurück – keine veränderliche Variable nötig."
+- icon: "✅"
+  title: "Erschöpfungsprüfung"
+  desc: "Der Compiler stellt sicher, dass alle Typen behandelt werden."
+support:
+  description: "Seit JDK 21 LTS allgemein verfügbar (Sept. 2023)"

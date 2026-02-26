@@ -1,0 +1,17 @@
+title: "Modul-Import-Deklarationen"
+oldApproach: "Viele Imports"
+modernApproach: "import module"
+summary: "Alle exportierten Pakete eines Moduls mit einer einzigen Deklaration importieren."
+explanation: "Modul-Import-Deklarationen ermöglichen es, alles, was ein Modul exportiert, mit einer Zeile zu importieren. Dies ist besonders nützlich für java.base, das Collections, I/O, Streams und mehr abdeckt."
+whyModernWins:
+- icon: "🧹"
+  title: "Eine Zeile"
+  desc: "Eine Wand von Imports durch einen einzigen Modul-Import ersetzen."
+- icon: "📦"
+  title: "Modulsystem-bewusst"
+  desc: "Nutzt das Modulsystem zum Import zusammenhängender Pakete."
+- icon: "🚀"
+  title: "Schnellstart"
+  desc: "Perfekt für Skripte und Prototypen, bei denen Import-Listen lästig sind."
+support:
+  description: "Finalisiert in JDK 25 LTS (JEP 511, Sept. 2025)."

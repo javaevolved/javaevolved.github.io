@@ -1,0 +1,17 @@
+title: Files.mismatch()
+oldApproach: 手動バイト比較
+modernApproach: Files.mismatch()
+summary: "ファイルをメモリに読み込まずに効率的に比較する。"
+explanation: "Files.mismatch()は最初に異なるバイトの位置を返し、ファイルが同一の場合は-1を返します。遅延読み取りを行い、最初の違いで処理を短絡します。"
+whyModernWins:
+- icon: "⚡"
+  title: メモリ効率的
+  desc: "ファイル全体をバイト配列に読み込みません。"
+- icon: "🎯"
+  title: 差分を特定
+  desc: "最初の不一致の正確なバイト位置を返します。"
+- icon: "📏"
+  title: 1回の呼び出し
+  desc: "手動のバイト配列比較ロジックが不要です。"
+support:
+  description: "JDK 12（2019年3月）以降、広く利用可能"

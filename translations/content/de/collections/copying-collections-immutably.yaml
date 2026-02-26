@@ -1,0 +1,19 @@
+title: Kollektionen unveränderlich kopieren
+oldApproach: Manuelle Kopie + Wrapper
+modernApproach: "List.copyOf()"
+summary: Eine unveränderliche Kopie einer beliebigen Kollektion mit einem einzigen Aufruf erstellen.
+explanation: "List.copyOf(), Set.copyOf() und Map.copyOf() erstellen unveränderliche\
+  \ Momentaufnahmen bestehender Kollektionen. Wenn die Quelle bereits eine unveränderliche\
+  \ Kollektion ist, wird keine Kopie erstellt."
+whyModernWins:
+- icon: "⚡"
+  title: Intelligente Kopie
+  desc: Die Kopie wird übersprungen, wenn die Quelle bereits unveränderlich ist.
+- icon: "📏"
+  title: Ein einziger Aufruf
+  desc: Kein manuelles ArrayList-Erstellen und Verpacken.
+- icon: "🛡️"
+  title: Defensive Kopie
+  desc: Änderungen am Original wirken sich nicht auf die Kopie aus.
+support:
+  description: Weitgehend verfügbar seit JDK 10 (März 2018)

@@ -1,0 +1,18 @@
+---
+title: String.strip() vs trim()
+oldApproach: trim()
+modernApproach: strip()
+summary: "Utilisez la suppression d'espaces compatible Unicode avec strip(), stripLeading(), stripTrailing()."
+explanation: "trim() ne supprime que les caractères ≤ U+0020 (caractères de contrôle ASCII et espace). strip() utilise Character.isWhitespace() qui gère les espaces Unicode comme l'espace insécable, l'espace idéographique, etc."
+whyModernWins:
+- icon: 🌐
+  title: Correct pour Unicode
+  desc: Gère tous les caractères d'espace de tous les scripts.
+- icon: 🎯
+  title: Directionnel
+  desc: stripLeading() et stripTrailing() pour le rognage d'un seul côté.
+- icon: 🛡️
+  title: Moins d'erreurs
+  desc: Sans espaces blancs inattendus dans le texte international.
+support:
+  description: Disponible depuis JDK 11 (sept. 2018)

@@ -1,0 +1,17 @@
+title: JNDI-Lookup vs. CDI-Injektion
+oldApproach: JNDI-Lookup
+modernApproach: CDI @Inject
+summary: Ersetze fragile JNDI-String-Lookups durch typsichere CDI-Injektion für vom Container verwaltete Ressourcen.
+explanation: Das traditionelle JNDI-Muster zwingt zur Verwendung stringbasierter Ressourcennamen, zur Behandlung von NamingException und zur Verwaltung eines InitialContext. CDI-Injektion mit @Inject (oder @Resource für Container-Ressourcen) lässt den Container Abhängigkeiten automatisch verdrahten. Tippfehler werden zu Kompilierfehlern, und Klassen sind leichter zu testen, da Abhängigkeiten direkt injiziert werden können.
+whyModernWins:
+- icon: 🔒
+  title: Typsichere Verdrahtung
+  desc: Injektionsfehler werden zur Deployment-Zeit erkannt, nicht zur Laufzeit über String-Lookups.
+- icon: 🗑️
+  title: Kein Boilerplate
+  desc: Eliminiert InitialContext-Erstellung, JNDI-Namens-Strings und NamingException-Behandlung.
+- icon: 🧪
+  title: Testbar
+  desc: Abhängigkeiten sind injizierte Felder, die in Unit-Tests leicht durch Mocks ersetzt werden können.
+support:
+  description: Weitgehend verfügbar seit Jakarta EE 8 / Java 11

@@ -1,0 +1,18 @@
+---
+title: "toArray typé dans les streams"
+oldApproach: "Copie manuelle de tableau"
+modernApproach: "toArray(generator)"
+summary: "Convertit des streams en tableaux typés avec une référence de méthode."
+explanation: "La méthode toArray(IntFunction) crée un tableau correctement typé à partir d'un stream. Le générateur (String[]::new) indique au stream quel type de tableau créer."
+whyModernWins:
+- icon: "🎯"
+  title: "Sûr en termes de types"
+  desc: "Sans cast vers Object[] — le type du tableau est correct."
+- icon: "🔗"
+  title: "Enchaînable"
+  desc: "Fonctionne à la fin de n'importe quel pipeline de stream."
+- icon: "📏"
+  title: "Concis"
+  desc: "Une seule expression remplace la boucle manuelle."
+support:
+  description: "Disponible depuis JDK 8 (mars 2014)"

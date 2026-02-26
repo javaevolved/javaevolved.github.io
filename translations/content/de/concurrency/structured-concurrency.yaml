@@ -1,0 +1,20 @@
+title: Strukturierte Nebenläufigkeit
+oldApproach: Manueller Thread-Lebenszyklus
+modernApproach: StructuredTaskScope
+summary: Den Lebenszyklus nebenläufiger Aufgaben als eine einzige Arbeitseinheit verwalten.
+explanation: "Strukturierte Nebenläufigkeit behandelt eine Gruppe nebenläufiger\
+  \ Aufgaben als eine einzige Operation. Schlägt eine Teilaufgabe fehl, werden die\
+  \ anderen abgebrochen. Der Scope stellt sicher, dass keine Threads verloren gehen,\
+  \ und schafft klare Eltern-Kind-Beziehungen."
+whyModernWins:
+- icon: "🛡️"
+  title: Keine Thread-Lecks
+  desc: Alle verzweigten Aufgaben werden abgeschlossen, bevor der Scope geschlossen wird.
+- icon: "⚡"
+  title: Schnelles Versagen
+  desc: ShutdownOnFailure bricht Geschwister-Aufgaben ab, wenn eine fehlschlägt.
+- icon: "📐"
+  title: Klare Struktur
+  desc: Der Aufgaben-Lebenszyklus entspricht dem lexikalischen Scope im Code.
+support:
+  description: "Preview in JDK 25 (fünfte Preview, JEP 505). Erfordert --enable-preview."

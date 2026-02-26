@@ -1,0 +1,17 @@
+title: "String.strip() vs trim()"
+oldApproach: trim()
+modernApproach: strip()
+summary: "strip()、stripLeading()、stripTrailing()でUnicode対応のトリミングを行う。"
+explanation: "trim()はU+0020以下の文字（ASCII制御文字とスペース）しか除去しません。strip()はCharacter.isWhitespace()を使用するため、ノーブレークスペース、全角スペースなどUnicodeのあらゆる空白に対応します。"
+whyModernWins:
+- icon: "🌐"
+  title: Unicode対応
+  desc: "あらゆるスクリプトのすべての空白文字を処理できます。"
+- icon: "🎯"
+  title: 方向指定
+  desc: "stripLeading()とstripTrailing()で片側のみのトリミングが可能です。"
+- icon: "🛡️"
+  title: バグを減らせる
+  desc: "多言語テキストで空白が残ってしまうという意図しないバグがなくなります。"
+support:
+  description: JDK 11（2018年9月）以降、広く利用可能

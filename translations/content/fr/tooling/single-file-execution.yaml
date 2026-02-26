@@ -1,0 +1,18 @@
+---
+title: Exécution d'un fichier unique
+oldApproach: Compilation en deux étapes
+modernApproach: Lancement direct
+summary: Exécutez des programmes Java à fichier unique directement sans javac.
+explanation: "Le lanceur Java peut compiler et exécuter un fichier source unique en une seule commande. Combiné avec le support shebang sous Unix, les fichiers Java peuvent fonctionner comme des scripts. Aucune étape de compilation séparée n'est nécessaire."
+whyModernWins:
+- icon: ⚡
+  title: Une seule commande
+  desc: java Fichier.java compile et exécute en une seule étape.
+- icon: 📝
+  title: Comme un script
+  desc: Ajoutez une ligne shebang pour rendre les fichiers .java exécutables comme des scripts.
+- icon: 🎓
+  title: Convivial pour l'apprentissage
+  desc: Les débutants exécutent du code immédiatement sans apprendre les outils de build.
+support:
+  description: Disponible depuis JDK 11 (sept. 2018)

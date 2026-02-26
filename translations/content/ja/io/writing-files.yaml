@@ -1,0 +1,17 @@
+title: ファイルへの書き込み
+oldApproach: FileWriter + BufferedWriter
+modernApproach: Files.writeString()
+summary: "Stringを1行のコードでファイルに書き込む。"
+explanation: "Files.writeString()はデフォルトでUTF-8エンコーディングを使用してコンテンツをファイルに書き込みます。追記や作成などのオプションを渡すこともできます。"
+whyModernWins:
+- icon: "📏"
+  title: 1行で完結
+  desc: "ライターのラッピングやtry-with-resourcesが不要です。"
+- icon: "🛡️"
+  title: 安全なデフォルト
+  desc: "UTF-8エンコーディングと適切なファイルハンドルのクリーンアップ。"
+- icon: "🔧"
+  title: オプション指定可能
+  desc: "追記、作成などのOpenOptionフラグを渡せます。"
+support:
+  description: "JDK 11（2018年9月）以降、広く利用可能"

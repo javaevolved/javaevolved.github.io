@@ -1,0 +1,17 @@
+title: モダンなProcess API
+oldApproach: Runtime.exec()
+modernApproach: ProcessHandle
+summary: "ProcessHandleを使ってOSプロセスを検査・管理する。"
+explanation: "ProcessHandleはPID、プロセス情報（コマンド、引数、開始時刻、CPU使用率）、親子関係、プロセスの終了機能を提供します。undocumentedなProcessの内部機構は不要になります。"
+whyModernWins:
+- icon: "🔍"
+  title: 完全な情報
+  desc: "PID、コマンド、引数、開始時刻、CPU使用率にアクセスできます。"
+- icon: "🌳"
+  title: プロセスツリー
+  desc: "親、子、子孫プロセスをナビゲートできます。"
+- icon: "📊"
+  title: モニタリング
+  desc: "onExit()は非同期モニタリング用のCompletableFutureを返します。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

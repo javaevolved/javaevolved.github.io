@@ -1,0 +1,20 @@
+title: Einzeldatei-Ausführung
+oldApproach: Zweistufige Kompilierung
+modernApproach: Direktstart
+summary: Einzeldatei-Java-Programme direkt ohne javac ausführen.
+explanation: Der Java-Launcher kann eine einzelne Quelldatei in einem Befehl kompilieren
+  und ausführen. In Kombination mit Shebang-Unterstützung unter Unix können Java-Dateien
+  als Skripte fungieren. Kein separater Kompilierungsschritt erforderlich.
+whyModernWins:
+- icon: ⚡
+  title: Ein einziger Befehl
+  desc: java Datei.java kompiliert und führt in einem Schritt aus.
+- icon: 📝
+  title: Skript-ähnlich
+  desc: Eine Shebang-Zeile hinzufügen, um .java-Dateien zu ausführbaren Skripten
+    zu machen.
+- icon: 🎓
+  title: Lernfreundlich
+  desc: Einsteiger führen Code sofort aus, ohne Build-Tools erlernen zu müssen.
+support:
+  description: Weitgehend verfügbar seit JDK 11 (Sept. 2018)

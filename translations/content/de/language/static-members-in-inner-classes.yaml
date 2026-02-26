@@ -1,0 +1,17 @@
+title: "Statische Mitglieder in inneren Klassen"
+oldApproach: "Statisch verschachtelte Klasse erforderlich"
+modernApproach: "Statische Mitglieder in inneren Klassen"
+summary: "Statische Mitglieder in inneren Klassen definieren, ohne statisch verschachtelte Klassen verwenden zu müssen."
+explanation: "Vor Java 16 konnten nur statisch verschachtelte Klassen statische Mitglieder enthalten. Innere (nicht-statische) Klassen durften keine Statics haben, weil sie eine umschließende Instanz erforderten. Java 16 lockert diese Einschränkung und erlaubt statische Felder, Methoden und sogar verschachtelte Typen in inneren Klassen."
+whyModernWins:
+- icon: "🔓"
+  title: "Mehr Flexibilität"
+  desc: "Innere Klassen können bei Bedarf nun statische Mitglieder haben."
+- icon: "🧩"
+  title: "Gemeinsamer Zustand"
+  desc: "Gemeinsamen Zustand über Instanzen einer inneren Klasse hinweg verfolgen."
+- icon: "📐"
+  title: "Designfreiheit"
+  desc: "Kein Hochstufen zu einer statisch verschachtelten Klasse nur wegen eines statischen Felds."
+support:
+  description: "Seit JDK 16 allgemein verfügbar (März 2021)"

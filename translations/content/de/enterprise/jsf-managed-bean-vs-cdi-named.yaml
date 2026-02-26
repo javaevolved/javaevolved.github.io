@@ -1,0 +1,17 @@
+title: JSF Managed Bean vs. CDI Named Bean
+oldApproach: "@ManagedBean"
+modernApproach: "@Named + CDI"
+summary: Ersetze das veraltete JSF-@ManagedBean durch CDI-@Named für ein einheitliches Dependency-Injection-Modell.
+explanation: JSFs @ManagedBean und @ManagedProperty wurden in Jakarta Faces 2.3 als veraltet markiert und in Jakarta EE 10 entfernt. Der CDI-basierte Ersatz verwendet @Named, um den Bean für EL-Ausdrücke verfügbar zu machen, und @Inject für die Abhängigkeitsverdrahtung. Dies vereinheitlicht das Bean-Modell — JSF-Seiten, JAX-RS-Ressourcen und EJBs teilen denselben CDI-Container.
+whyModernWins:
+- icon: 🔗
+  title: Einheitliches Modell
+  desc: Ein einziger CDI-Container verwaltet alle Beans — JSF, REST und Service-Schichten teilen dieselbe Injektion.
+- icon: 🗑️
+  title: Weniger Boilerplate
+  desc: "@Inject ersetzt @ManagedProperty und dessen erforderliche Setter-Methode."
+- icon: 🔮
+  title: Zukunftssicher
+  desc: "@ManagedBean wurde in Jakarta EE 10 entfernt; @Named ist der unterstützte Ersatz."
+support:
+  description: "CDI @Named verfügbar seit Java EE 6; @ManagedBean entfernt in Jakarta EE 10"

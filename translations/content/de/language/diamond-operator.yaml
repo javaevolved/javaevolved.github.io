@@ -1,0 +1,17 @@
+title: "Diamant-Operator mit anonymen Klassen"
+oldApproach: "Typargumente wiederholen"
+modernApproach: "Diamant <>"
+summary: "Der Diamant-Operator funktioniert jetzt auch mit anonymen Klassen."
+explanation: "Java 7 führte <> ein, aber es funktionierte nicht mit anonymen inneren Klassen. Java 9 hat dies behoben, sodass Typargumente auf der rechten Seite nie wiederholt werden müssen."
+whyModernWins:
+- icon: "📏"
+  title: "Konsistente Regeln"
+  desc: "Der Diamant funktioniert überall – bei Konstruktoren und anonymen Klassen gleichermaßen."
+- icon: "🧹"
+  title: "Weniger Redundanz"
+  desc: "Typargumente werden einmal links angegeben und nie wiederholt."
+- icon: "🔧"
+  title: "DRY-Prinzip"
+  desc: "Der Compiler kennt den Typ bereits – warum ihn zweimal schreiben?"
+support:
+  description: "Diamant mit anonymen Klassen seit JDK 9 (Sept. 2017)."

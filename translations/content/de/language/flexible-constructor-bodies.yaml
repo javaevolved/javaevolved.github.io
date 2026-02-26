@@ -1,0 +1,17 @@
+title: "Flexible Konstruktorrümpfe"
+oldApproach: "Validierung nach super()"
+modernApproach: "Code vor super()"
+summary: "Werte validieren und berechnen, bevor super() oder this() aufgerufen wird."
+explanation: "Java 25 hebt die Einschränkung auf, dass super() die erste Anweisung sein muss. Es können nun Argumente validiert, abgeleitete Werte berechnet und Zustände eingerichtet werden, bevor an den Elternkonstruktor delegiert wird."
+whyModernWins:
+- icon: "🛡️"
+  title: "Früh scheitern"
+  desc: "Argumente validieren, bevor der Superklassen-Konstruktor ausgeführt wird."
+- icon: "🧮"
+  title: "Erst berechnen"
+  desc: "Werte ableiten und Daten vorbereiten, bevor super() aufgerufen wird."
+- icon: "🧹"
+  title: "Keine Workarounds"
+  desc: "Keine statischen Hilfsmethoden oder Factory-Muster mehr, um die Einschränkung zu umgehen."
+support:
+  description: "Finalisiert in JDK 25 LTS (JEP 513, Sept. 2025)."

@@ -1,0 +1,18 @@
+---
+title: Classes sealed pour les hiérarchies de types
+oldApproach: Hiérarchie ouverte
+modernApproach: sealed permits
+summary: Restreignez quelles classes peuvent étendre un type — permettant des switchs exhaustifs.
+explanation: "Les classes sealed définissent un ensemble fermé de sous-types. Le compilateur connaît tous les cas possibles, ce qui permet le pattern matching exhaustif sans branche default. Combinées avec les records, elles modélisent des types de données algébriques."
+whyModernWins:
+- icon: 🔐
+  title: Hiérarchie contrôlée
+  desc: Seuls les sous-types autorisés peuvent étendre — sans sous-classes surprises.
+- icon: ✅
+  title: Correspondance exhaustive
+  desc: "Le compilateur vérifie que le switch couvre tous les cas, sans default nécessaire."
+- icon: 📐
+  title: Types de données algébriques
+  desc: Modélisez naturellement les types somme — sealed + records = ADTs en Java.
+support:
+  description: Disponible depuis JDK 17 LTS (sept. 2021)

@@ -1,0 +1,20 @@
+title: String.strip() vs trim()
+oldApproach: trim()
+modernApproach: strip()
+summary: Unicode-bewusstes Entfernen von Leerzeichen mit strip(), stripLeading(),
+  stripTrailing().
+explanation: trim() entfernt nur Zeichen ≤ U+0020 (ASCII-Steuerzeichen und Leerzeichen).
+  strip() verwendet Character.isWhitespace(), das Unicode-Leerzeichen wie geschütztes
+  Leerzeichen, ideografisches Leerzeichen usw. behandelt.
+whyModernWins:
+- icon: 🌐
+  title: Unicode-korrekt
+  desc: Behandelt alle Leerzeichen aus allen Schriftsystemen.
+- icon: 🎯
+  title: Direktional
+  desc: stripLeading() und stripTrailing() für einseitiges Kürzen.
+- icon: 🛡️
+  title: Weniger Fehler
+  desc: Kein unerwartetes Leerzeichen in internationalem Text.
+support:
+  description: Weitgehend verfügbar seit JDK 11 (Sept. 2018)

@@ -1,0 +1,20 @@
+title: TLS 1.3 als Standard
+oldApproach: Manuelle TLS-Konfiguration
+modernApproach: TLS 1.3 als Standard
+summary: "TLS 1.3 ist standardmäßig aktiviert — keine explizite Protokollkonfiguration\
+  \ erforderlich."
+explanation: Java 11 hat TLS 1.3-Unterstützung hinzugefügt und es zum bevorzugten
+  Protokoll gemacht. Der HttpClient verwendet es automatisch. Keine manuelle Angabe
+  von Protokollversionen für sichere Verbindungen mehr.
+whyModernWins:
+- icon: 🛡️
+  title: Sicherer
+  desc: TLS 1.3 entfernt veraltete Cipher-Suites und Handshake-Muster.
+- icon: ⚡
+  title: Schnellerer Handshake
+  desc: TLS 1.3 wird in einem statt zwei Roundtrips abgeschlossen.
+- icon: 🆓
+  title: Keine Konfiguration
+  desc: "Standardmäßig sicher — keine explizite Protokollauswahl erforderlich."
+support:
+  description: Weitgehend verfügbar seit JDK 11 (Sept. 2018)

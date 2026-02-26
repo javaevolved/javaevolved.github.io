@@ -1,0 +1,17 @@
+title: "Kompakte Quelldateien"
+oldApproach: "Klassen-Zeremonie für main"
+modernApproach: "void main()"
+summary: "Ein vollständiges Programm ohne Klassendeklaration oder public static void main schreiben."
+explanation: "Kompakte Quelldateien beseitigen die Zeremonie von Klassendeklarationen und der Main-Methoden-Signatur für einfache Programme. In Kombination mit dem impliziten Import von java.io.IO steht sogar println direkt zur Verfügung."
+whyModernWins:
+- icon: "🚀"
+  title: "Null Zeremonie"
+  desc: "Keine Klasse, kein public static void main, kein String[] args."
+- icon: "🎓"
+  title: "Einsteigerfreundlich"
+  desc: "Neue Programmierer können ab der ersten Zeile nützlichen Code schreiben."
+- icon: "📝"
+  title: "Skriptähnlich"
+  desc: "Perfekt für schnelle Prototypen, Skripte und Beispiele."
+support:
+  description: "Finalisiert in JDK 25 LTS (JEP 512, Sept. 2025)."

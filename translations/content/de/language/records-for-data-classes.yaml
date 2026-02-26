@@ -1,0 +1,17 @@
+title: "Records für Datenklassen"
+oldApproach: "Ausführliches POJO"
+modernApproach: "record"
+summary: "Eine Zeile ersetzt mehr als 30 Zeilen Boilerplate für unveränderliche Datenträger."
+explanation: "Records generieren automatisch den Konstruktor, Accessoren (x(), y()), equals(), hashCode() und toString(). Sie sind von Natur aus unveränderlich und ideal für DTOs, Wertobjekte und Pattern Matching."
+whyModernWins:
+- icon: "⚡"
+  title: "Einzeilige Definition"
+  desc: "Eine einzige Zeile ersetzt Konstruktor, Getter, equals, hashCode, toString."
+- icon: "🔒"
+  title: "Standardmäßig unveränderlich"
+  desc: "Alle Felder sind final – keine Setter-Fallstricke."
+- icon: "🧩"
+  title: "Muster-freundlich"
+  desc: "Records funktionieren mit Destrukturierungsmustern in switch und instanceof."
+support:
+  description: "Seit JDK 16 allgemein verfügbar (März 2021)"

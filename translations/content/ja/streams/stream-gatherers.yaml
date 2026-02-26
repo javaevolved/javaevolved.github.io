@@ -1,0 +1,17 @@
+title: ストリームギャザラー
+oldApproach: カスタムコレクター
+modernApproach: gather()
+summary: "カスタムの中間ストリーム操作にギャザラーを使用する。"
+explanation: "ギャザラーはスライディングウィンドウ、固定サイズグループ、スキャン操作など、標準のストリーム操作では実現できなかった複雑な変換を表現できる新しい中間ストリーム操作です。"
+whyModernWins:
+- icon: "🧩"
+  title: 組み合わせ可能
+  desc: "ギャザラーは他のストリーム操作と組み合わせられます。"
+- icon: "📦"
+  title: 組み込み操作
+  desc: "windowFixed、windowSliding、fold、scanがすぐに使えます。"
+- icon: "🔧"
+  title: 拡張可能
+  desc: "任意の中間変換にカスタムギャザラーを作成できます。"
+support:
+  description: "JDK 24でファイナライズ（JEP 485、2025年3月）"

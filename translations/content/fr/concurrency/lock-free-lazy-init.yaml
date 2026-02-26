@@ -1,0 +1,18 @@
+---
+title: Initialisation paresseuse sans verrous
+oldApproach: synchronized + volatile
+modernApproach: StableValue
+summary: Remplace le double-checked locking par StableValue pour les singletons paresseux.
+explanation: StableValue encapsule le pattern d'initialisation paresseuse avec une sécurité thread correcte. La JVM peut optimiser le chemin de lecture après l'initialisation, le rendant potentiellement plus rapide que les lectures volatile.
+whyModernWins:
+- icon: 🧹
+  title: Sans code répétitif
+  desc: Sans volatile, synchronized ni double-null-check.
+- icon: ⚡
+  title: Lectures plus rapides
+  desc: La JVM peut plier les constantes après l'initialisation.
+- icon: ✅
+  title: Correction démontrable
+  desc: Sans erreurs subtiles d'ordonnancement — la JVM s'en charge.
+support:
+  description: Aperçu dans JDK 25 (JEP 502, StableValue). Nécessite --enable-preview.

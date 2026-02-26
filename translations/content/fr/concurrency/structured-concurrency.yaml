@@ -1,0 +1,18 @@
+---
+title: Concurrence structurée
+oldApproach: Cycle de vie manuel des threads
+modernApproach: StructuredTaskScope
+summary: Gérez le cycle de vie des tâches concurrentes comme une seule unité de travail.
+explanation: La concurrence structurée traite un groupe de tâches concurrentes comme une seule opération. Si une sous-tâche échoue, les autres sont annulées. La portée garantit qu'il n'y a pas de fuites de threads et établit des relations claires parent-enfant.
+whyModernWins:
+- icon: 🛡️
+  title: Sans fuites de threads
+  desc: Toutes les tâches bifurquées se terminent avant la fermeture de la portée.
+- icon: ⚡
+  title: Échec rapide
+  desc: ShutdownOnFailure annule les tâches sœurs si l'une échoue.
+- icon: 📐
+  title: Structure claire
+  desc: Le cycle de vie de la tâche correspond à la portée lexicale dans le code.
+support:
+  description: Aperçu dans JDK 25 (cinquième aperçu, JEP 505). Nécessite --enable-preview.

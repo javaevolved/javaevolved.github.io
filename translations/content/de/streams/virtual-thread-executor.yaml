@@ -1,0 +1,20 @@
+title: Virtual-Thread-Executor
+oldApproach: Fixer Thread-Pool
+modernApproach: Virtual-Thread-Executor
+summary: Virtual-Thread-Executors für unbegrenzte leichtgewichtige Nebenläufigkeit
+  verwenden.
+explanation: Der Virtual-Thread-Executor erstellt für jede Aufgabe einen neuen virtuellen
+  Thread. Keine Pool-Dimensionierung nötig – virtuelle Threads sind günstig genug,
+  um Millionen davon zu erstellen.
+whyModernWins:
+- icon: ♾️
+  title: Keine Dimensionierung
+  desc: Keine Pool-Größe festzulegen – so viele Threads erstellen wie benötigt.
+- icon: ⚡
+  title: Leichtgewichtig
+  desc: Virtuelle Threads verwenden KB statt MB Speicher.
+- icon: 🧹
+  title: Auto-closeable
+  desc: try-with-resources übernimmt das Herunterfahren automatisch.
+support:
+  description: Weitgehend verfügbar seit JDK 21 LTS (Sept. 2023)

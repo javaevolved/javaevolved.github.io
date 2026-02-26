@@ -1,0 +1,17 @@
+title: "Dateien schreiben"
+oldApproach: "FileWriter + BufferedWriter"
+modernApproach: "Files.writeString()"
+summary: "Einen String mit einer Zeile in eine Datei schreiben."
+explanation: "Files.writeString() schreibt Inhalt standardmäßig mit UTF-8-Kodierung in eine Datei. Für Anhängen, Erstellen u.ä. können Optionen übergeben werden."
+whyModernWins:
+- icon: "📏"
+  title: "Eine Zeile"
+  desc: "Kein Writer-Wrapping oder try-with-resources erforderlich."
+- icon: "🛡️"
+  title: "Sichere Standardwerte"
+  desc: "UTF-8-Kodierung, korrekte Bereinigung des Datei-Handles."
+- icon: "🔧"
+  title: "Optionen"
+  desc: "OpenOption-Flags für Anhängen, Erstellen usw. übergeben."
+support:
+  description: "Seit JDK 11 allgemein verfügbar (Sept. 2018)"

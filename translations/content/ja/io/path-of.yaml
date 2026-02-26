@@ -1,0 +1,17 @@
+title: Path.of()ファクトリ
+oldApproach: Paths.get()
+modernApproach: Path.of()
+summary: "PathインターフェースのモダンなファクトリメソッドPath.of()を使う。"
+explanation: "Path.of()はPathインターフェースに直接追加されたファクトリメソッドで、別個のPathsユーティリティクラスを置き換えます。List.of()やMap.of()などとの一貫性があり、より発見しやすいAPIです。"
+whyModernWins:
+- icon: "📐"
+  title: 一貫したAPI
+  desc: "List.of()、Set.of()と同様の.of()ファクトリパターンに従います。"
+- icon: "📖"
+  title: 発見しやすい
+  desc: "別のPathsクラスではなく、Path型そのものにあります。"
+- icon: "🧹"
+  title: クラスが1つ減る
+  desc: "Pathsユーティリティクラスをインポートする必要がなくなります。"
+support:
+  description: "JDK 11（2018年9月）以降、広く利用可能"

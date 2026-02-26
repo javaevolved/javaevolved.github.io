@@ -1,0 +1,17 @@
+title: Collectors.teeing()
+oldApproach: 2回のパス
+modernApproach: teeing()
+summary: "単一のストリームパスで2つの集計を計算する。"
+explanation: "Collectors.teeing()は各要素を2つの下流コレクターに送り、結果をマージします。データを2回ストリーム処理したり、変更可能なアキュムレータを使ったりする必要がなくなります。"
+whyModernWins:
+- icon: "⚡"
+  title: シングルパス
+  desc: "ストリームを2回ではなく1回処理します。"
+- icon: "🧩"
+  title: 組み合わせ可能
+  desc: "マージャー関数で任意の2つのコレクターを組み合わせます。"
+- icon: "🔒"
+  title: 不変な結果
+  desc: "レコードや値オブジェクトに直接マージします。"
+support:
+  description: "JDK 12（2019年3月）以降、広く利用可能"

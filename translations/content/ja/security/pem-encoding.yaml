@@ -1,0 +1,17 @@
+title: PEMエンコード・デコード
+oldApproach: 手動Base64＋ヘッダー
+modernApproach: PEM API
+summary: "PEM形式の暗号オブジェクトをネイティブにエンコード・デコードする。"
+explanation: "PEM APIは証明書・鍵などの暗号オブジェクトをPEM形式で標準的にエンコード・デコードする手段を提供します。BEGIN/ENDヘッダー付きのBase64を手動で組み立てる必要はもうありません。"
+whyModernWins:
+- icon: "🧹"
+  title: Base64の手動処理不要
+  desc: "PEMヘッダー、改行折り返し、Base64が自動的に処理されます。"
+- icon: "🔄"
+  title: 双方向変換
+  desc: "1つのAPIでPEMへのエンコードとPEMからのデコードが可能。"
+- icon: "🛡️"
+  title: 標準形式
+  desc: "RFC 7468準拠のPEM出力を生成します。"
+support:
+  description: JDK 25（JEP 470）でプレビュー。--enable-previewが必要

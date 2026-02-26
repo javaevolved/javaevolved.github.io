@@ -1,0 +1,17 @@
+title: JDBCとjOOQの比較
+oldApproach: 生のJDBC
+modernApproach: jOOQ SQL DSL
+summary: "生のJDBC文字列ベースSQLをjOOQの型安全なフルエントSQL DSLに置き換える。"
+explanation: "jOOQ（Java Object Oriented Querying）はデータベーススキーマからJavaコードを生成し、テーブル名・カラム名を型安全なJava定数に変換します。フルエントDSLはSQL構文を模倣しており、クエリが読みやすく組み合わせやすいです。パラメーターは自動的にバインドされ、SQLインジェクションのリスクが排除されます。JPA/JPQLと異なり、jOOQはSQLを完全に活用でき、ウィンドウ関数・CTE・RETURNING句・ベンダー固有拡張もファーストクラスです。"
+whyModernWins:
+- icon: "🔒"
+  title: 型安全なカラム
+  desc: "カラム名は生成されたJava定数のため、タイポや型の不一致はコンパイルエラーになります。"
+- icon: "📖"
+  title: SQL流暢性
+  desc: "jOOQ DSLはSQL構文に近く、複雑なJOIN・サブクエリ・CTEも読みやすく書けます。"
+- icon: "🛡️"
+  title: インジェクション対策済み設計
+  desc: "パラメーターは常に安全にバインドされ、文字列連結がないためSQLインジェクションのリスクがありません。"
+support:
+  description: jOOQオープンソース版はすべての主要オープンソースデータベースをサポート。古い商用DBは有償ライセンスが必要

@@ -1,0 +1,17 @@
+title: 型付きストリームのtoArray
+oldApproach: 手動配列コピー
+modernApproach: toArray(ジェネレータ)
+summary: "メソッド参照を使ってストリームを型付き配列に変換する。"
+explanation: "toArray(IntFunction)メソッドはストリームから適切に型付けされた配列を作成します。ジェネレータ（String[]::new）は、ストリームが作成する配列の型を指定します。"
+whyModernWins:
+- icon: "🎯"
+  title: 型安全
+  desc: "Object[]のキャストなしで、配列の型が正確です。"
+- icon: "🔗"
+  title: 連鎖可能
+  desc: "任意のストリームパイプラインの末尾で動作します。"
+- icon: "📏"
+  title: 簡潔
+  desc: "手動ループを1つの式に置き換えます。"
+support:
+  description: "JDK 8（2014年3月）以降、広く利用可能"

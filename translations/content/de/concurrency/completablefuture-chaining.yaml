@@ -1,0 +1,19 @@
+title: CompletableFuture-Verkettung
+oldApproach: "Blockierendes Future.get()"
+modernApproach: CompletableFuture
+summary: Asynchrone Operationen ohne Blockierung mit CompletableFuture verketten.
+explanation: "CompletableFuture ermöglicht nicht-blockierende asynchrone Pipelines.\
+  \ Operationen mit thenApply, thenCompose, thenAccept verketten. Fehler mit\
+  \ exceptionally() behandeln. Mehrere Futures mit allOf/anyOf kombinieren."
+whyModernWins:
+- icon: "🔗"
+  title: Verkettbar
+  desc: Asynchrone Schritte zu einer lesbaren Pipeline zusammenfügen.
+- icon: "🚫"
+  title: Nicht-blockierend
+  desc: Kein Thread wartet untätig auf Ergebnisse.
+- icon: "🛡️"
+  title: Fehlerbehandlung
+  desc: "exceptionally() und handle() für saubere Fehlerwiederherstellung."
+support:
+  description: Weitgehend verfügbar seit JDK 8 (März 2014)

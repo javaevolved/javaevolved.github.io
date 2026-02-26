@@ -1,0 +1,17 @@
+title: "Objects.requireNonNullElse()"
+oldApproach: "Ternäre Null-Prüfung"
+modernApproach: "requireNonNullElse()"
+summary: "Einen Non-null-Wert mit einem klaren Standardwert ermitteln – kein ternärer Operator nötig."
+explanation: "requireNonNullElse gibt das erste Argument zurück, wenn es nicht null ist, andernfalls das zweite. Der Standardwert selbst darf nicht null sein – bei zwei null-Werten wird eine NPE geworfen, was Fehler frühzeitig aufdeckt."
+whyModernWins:
+- icon: "📖"
+  title: "Klare Absicht"
+  desc: "Der Methodenname beschreibt genau, was er tut."
+- icon: "🛡️"
+  title: "Null-sicherer Standardwert"
+  desc: "Auch der Standardwert wird auf null geprüft."
+- icon: "📏"
+  title: "Lesbar"
+  desc: "Besser als ein ternärer Operator für einfache Null-oder-Standard-Logik."
+support:
+  description: "Seit JDK 9 allgemein verfügbar (Sept. 2017)"

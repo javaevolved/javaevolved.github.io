@@ -1,0 +1,17 @@
+title: "Record-basierte Fehlerantworten"
+oldApproach: "Map oder ausführliche Klasse"
+modernApproach: "Fehler-Records"
+summary: "Records für prägnante, unveränderliche Fehlerantworttypen verwenden."
+explanation: "Records eignen sich hervorragend für Fehlerantworten – sie sind unveränderlich, besitzen eingebaute equals/hashCode für Vergleiche und toString für das Logging. Benutzerdefinierte Konstruktoren ermöglichen Validierung oder Standardwerte."
+whyModernWins:
+- icon: "📏"
+  title: "Prägnant"
+  desc: "Fehlertypen in 3 Zeilen statt 30 definieren."
+- icon: "🔒"
+  title: "Unveränderlich"
+  desc: "Fehlerdaten können nach der Erstellung nicht versehentlich geändert werden."
+- icon: "📋"
+  title: "Automatisches toString"
+  desc: "Perfekt für das Logging – alle Felder werden automatisch angezeigt."
+support:
+  description: "Seit JDK 16 allgemein verfügbar (März 2021)"

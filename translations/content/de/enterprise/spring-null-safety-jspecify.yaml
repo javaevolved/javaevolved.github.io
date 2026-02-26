@@ -1,0 +1,17 @@
+title: Spring Null-Sicherheit mit JSpecify
+oldApproach: Spring @NonNull/@Nullable
+modernApproach: JSpecify @NullMarked
+summary: Spring 7 übernimmt JSpecify-Annotationen, macht Non-Null zum Standard und reduziert Annotations-Rauschen.
+explanation: "Spring 5 und 6 führten eigene Null-Sicherheits-Annotationen im Paket `org.springframework.lang` ein. Obwohl nützlich, waren diese framework-spezifisch und erforderten die explizite Annotation jedes Non-Null-Elements. Spring 7 migriert zu JSpecify, einem ökosystemübergreifenden Standard für Null-Sicherheit. Die `@NullMarked`-Annotation auf Klassen- oder Paketebene deklariert, dass alle nicht annotierten Typen standardmäßig Non-Null sind. Nur tatsächlich nullable Typen benötigen die `@Nullable`-Annotation, was die Ausführlichkeit drastisch reduziert. JSpecify-Annotationen werden von wichtigen statischen Analysetools wie NullAway, Error Prone und IntelliJ IDEA erkannt und bieten umfangreichere Tooling-Unterstützung als Spring-spezifische Annotationen."
+whyModernWins:
+- icon: ✂️
+  title: Non-Null als Standard
+  desc: "@NullMarked macht alle nicht annotierten Typen zu Non-Null, sodass nur nullable Ausnahmen annotiert werden müssen."
+- icon: 🌐
+  title: Ökosystem-Standard
+  desc: JSpecify-Annotationen sind ein framework-übergreifender Standard, der von NullAway, Error Prone und IDEs erkannt wird.
+- icon: 🔍
+  title: Umfangreicheres Tooling
+  desc: Moderne statische Analysatoren verstehen das Null-Modell von JSpecify und melden Verstöße zur Kompilierzeit.
+support:
+  description: "Verfügbar seit Spring Framework 7.0 (erfordert Java 17+)"

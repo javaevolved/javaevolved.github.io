@@ -1,0 +1,19 @@
+title: String.indent() und transform()
+oldApproach: Manuelle Einrückung
+modernApproach: indent() / transform()
+summary: Text einrücken und String-Transformationen fließend verketten.
+explanation: indent(n) fügt jeder Zeile n Leerzeichen hinzu. transform(fn) wendet
+  eine beliebige Funktion an und gibt das Ergebnis zurück, was fließendes Verketten
+  von String-Operationen ermöglicht.
+whyModernWins:
+- icon: 📏
+  title: Eingebaut
+  desc: Einrückung ist eine häufige Operation – jetzt ein einziger Aufruf.
+- icon: 🔗
+  title: Verkettbar
+  desc: transform() ermöglicht fließende Pipelines auf Strings.
+- icon: 🧹
+  title: Sauberer Code
+  desc: Kein manuelles Aufteilen von Zeilen und StringBuilder-Schleifen.
+support:
+  description: Weitgehend verfügbar seit JDK 12 (März 2019)

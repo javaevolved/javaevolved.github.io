@@ -1,0 +1,18 @@
+---
+title: Records pour les classes de données
+oldApproach: POJO verbeux
+modernApproach: record
+summary: "Une ligne remplace plus de 30 lignes de code répétitif pour les porteurs de données immutables."
+explanation: "Les records génèrent automatiquement le constructeur, les accesseurs (x(), y()), equals(), hashCode() et toString(). Ils sont immutables par conception et idéaux pour les DTOs, objets de valeur et le pattern matching."
+whyModernWins:
+- icon: ⚡
+  title: Définition en une ligne
+  desc: "Une seule ligne remplace constructeur, getters, equals, hashCode et toString."
+- icon: 🔒
+  title: Immutable par défaut
+  desc: Tous les champs sont final — sans risque de setters.
+- icon: 🧩
+  title: Compatible avec les patterns
+  desc: Les records fonctionnent avec les patterns de déstructuration dans switch et instanceof.
+support:
+  description: Disponible depuis JDK 16 (mars 2021)

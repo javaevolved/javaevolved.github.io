@@ -1,0 +1,20 @@
+title: Stream.iterate() mit Prädikat
+oldApproach: iterate + limit
+modernApproach: iterate(seed, pred, op)
+summary: Ein Prädikat zum Beenden der Iteration verwenden – wie eine for-Schleife
+  als Stream.
+explanation: "Das dreiargumented Stream.iterate(seed, hasNext, next) funktioniert\
+  \ wie eine for-Schleife: seed ist der Startwert, hasNext bestimmt den Abbruch und\
+  \ next erzeugt den nächsten Wert."
+whyModernWins:
+- icon: 🎯
+  title: Natürlicher Abbruch
+  desc: Stopp basierend auf einer Bedingung, nicht einem willkürlichen Limit.
+- icon: 📐
+  title: For-Schleifen-Äquivalent
+  desc: Gleiche Semantik wie for(seed; hasNext; next).
+- icon: 🛡️
+  title: Kein Risiko eines unendlichen Streams
+  desc: Das Prädikat garantiert die Terminierung.
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

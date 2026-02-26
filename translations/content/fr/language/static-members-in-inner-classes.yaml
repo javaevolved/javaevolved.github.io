@@ -1,0 +1,18 @@
+---
+title: Membres statiques dans les classes internes
+oldApproach: Classe statique imbriquée requise
+modernApproach: Membres statiques dans les classes internes
+summary: "Définissez des membres statiques dans les classes internes sans avoir besoin de classes statiques imbriquées."
+explanation: "Avant Java 16, seules les classes statiques imbriquées pouvaient contenir des membres statiques. Les classes internes (non statiques) ne pouvaient pas avoir de statiques car elles nécessitaient une instance englobante. Java 16 assouplit cette restriction, permettant des champs statiques, méthodes et même des types imbriqués dans les classes internes."
+whyModernWins:
+- icon: 🔓
+  title: Plus de flexibilité
+  desc: Les classes internes peuvent maintenant avoir des membres statiques quand c'est nécessaire.
+- icon: 🧩
+  title: État partagé
+  desc: Suivez l'état partagé entre les instances d'une classe interne.
+- icon: 🎨
+  title: Liberté de conception
+  desc: Pas besoin de promouvoir en classe statique imbriquée juste pour un champ statique.
+support:
+  description: Disponible depuis JDK 16 (mars 2021)

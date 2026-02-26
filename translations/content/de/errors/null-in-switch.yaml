@@ -1,0 +1,17 @@
+title: "null-Fall im switch"
+oldApproach: "Prüfung vor dem Switch"
+modernApproach: "case null"
+summary: "null direkt als switch-Fall behandeln – keine separate Absicherung nötig."
+explanation: "Pattern-Matching-Switch kann null als case-Label abgleichen. Dadurch entfällt die Null-Prüfung vor dem switch, und die Null-Behandlung wird explizit und sichtbar."
+whyModernWins:
+- icon: "🎯"
+  title: "Explizit"
+  desc: "Die null-Behandlung ist direkt im switch sichtbar."
+- icon: "🛡️"
+  title: "Kein NPE"
+  desc: "Ein Switch auf einen null-Wert wirft keine NullPointerException."
+- icon: "📐"
+  title: "Alles in einem"
+  desc: "Alle Fälle einschließlich null in einem einzigen Switch-Ausdruck."
+support:
+  description: "Seit JDK 21 LTS allgemein verfügbar (Sept. 2023)"

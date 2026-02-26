@@ -1,0 +1,17 @@
+title: Stream.ofNullable()
+oldApproach: nullチェック
+modernApproach: ofNullable()
+summary: "null許容値から0または1要素のストリームを作成する。"
+explanation: "Stream.ofNullable()は値がnull以外の場合は1要素のストリームを、nullの場合は空のストリームを返します。三項演算子によるnullチェックパターンを排除します。"
+whyModernWins:
+- icon: "📏"
+  title: 簡潔
+  desc: "三項条件の代わりに1回の呼び出しで済みます。"
+- icon: "🔗"
+  title: flatMap対応
+  desc: "null値をスキップするflatMap内で最適です。"
+- icon: "🛡️"
+  title: null安全
+  desc: "NPEのリスクなし — nullは空のストリームになります。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

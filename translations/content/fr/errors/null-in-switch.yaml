@@ -1,0 +1,18 @@
+---
+title: Cas null dans switch
+oldApproach: Vérification avant le switch
+modernApproach: case null
+summary: Gérez null directement comme un cas du switch — sans vérification séparée.
+explanation: Le switch avec pattern matching peut correspondre à null comme une étiquette de cas. Cela élimine le besoin d'une vérification de null avant le switch et rend la gestion de null explicite et visible.
+whyModernWins:
+- icon: 🎯
+  title: Explicite
+  desc: La gestion de null est visible directement dans le switch.
+- icon: 🛡️
+  title: Sans NPE
+  desc: Faire un switch sur une valeur null ne lance pas NullPointerException.
+- icon: 📐
+  title: Tout en un
+  desc: Tous les cas, y compris null, dans une seule expression switch.
+support:
+  description: Disponible depuis JDK 21 LTS (septembre 2023)

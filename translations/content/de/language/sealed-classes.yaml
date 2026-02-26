@@ -1,0 +1,17 @@
+title: "Versiegelte Klassen für Typhierarchien"
+oldApproach: "Offene Hierarchie"
+modernApproach: "sealed permits"
+summary: "Einschränken, welche Klassen einen Typ erweitern dürfen – für erschöpfende Switches."
+explanation: "Versiegelte Klassen definieren eine geschlossene Menge von Untertypen. Der Compiler kennt alle möglichen Fälle und ermöglicht erschöpfendes Pattern Matching ohne default-Zweig. In Kombination mit Records modellieren sie algebraische Datentypen."
+whyModernWins:
+- icon: "🔐"
+  title: "Kontrollierte Hierarchie"
+  desc: "Nur erlaubte Untertypen dürfen erweitern – keine überraschenden Unterklassen."
+- icon: "✅"
+  title: "Erschöpfendes Matching"
+  desc: "Der Compiler prüft, dass der Switch alle Fälle abdeckt – kein default nötig."
+- icon: "📐"
+  title: "Algebraische Datentypen"
+  desc: "Summentypen natürlich modellieren – sealed + records = ADTs in Java."
+support:
+  description: "Seit JDK 17 LTS allgemein verfügbar (Sept. 2021)"

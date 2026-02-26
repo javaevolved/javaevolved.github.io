@@ -1,0 +1,17 @@
+title: defaultなしの網羅的switch
+oldApproach: 必須のdefault
+modernApproach: sealedによる網羅性
+summary: "コンパイラがsealedのサブタイプをすべてカバーしているか検証 — defaultは不要。"
+explanation: "sealedな型に対してswitchを行う場合、コンパイラはすべてのサブタイプを把握し、すべてのケースが処理されているかを検証します。新しいサブタイプを追加すると、コンパイラが未対応のすべてのswitchを指摘します。"
+whyModernWins:
+- icon: "🛡"
+  title: コンパイル時の安全性
+  desc: "新しいサブタイプを追加すると、コンパイラが更新が必要なすべての箇所を示します。"
+- icon: "🚫"
+  title: デッドコードなし
+  desc: "バグを隠すような到達不能なdefaultブランチがなくなります。"
+- icon: "🧩"
+  title: 代数的型
+  desc: "sealed + records + 網羅的switch = JavaにおけるADT。"
+support:
+  description: JDK 21 LTS（2023年9月）以降、広く利用可能

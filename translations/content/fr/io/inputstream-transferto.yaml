@@ -1,0 +1,18 @@
+---
+title: InputStream.transferTo()
+oldApproach: Boucle de copie manuelle
+modernApproach: transferTo()
+summary: Copie un InputStream vers un OutputStream en un seul appel.
+explanation: transferTo() lit tous les octets du flux d'entrée et les écrit dans le flux de sortie. Sans gestion de buffer, sans boucle. Utilise un buffer interne optimisé.
+whyModernWins:
+- icon: 📏
+  title: Une ligne
+  desc: Remplace toute la boucle de lecture/écriture par un seul appel.
+- icon: ⚡
+  title: Optimisé
+  desc: La taille du buffer interne est ajustée pour des performances maximales.
+- icon: 🛡️
+  title: Sans erreurs
+  desc: Sans erreurs de décalage dans la gestion du buffer.
+support:
+  description: Disponible depuis JDK 9 (septembre 2017)

@@ -1,0 +1,17 @@
+title: "Switch-Ausdrücke"
+oldApproach: "Switch-Anweisung"
+modernApproach: "Switch-Ausdruck"
+summary: "Switch als Ausdruck, der einen Wert zurückgibt – kein break, kein Fall-Through."
+explanation: "Switch-Ausdrücke geben einen Wert direkt zurück, verwenden Pfeilsyntax zur Vermeidung von Fall-Through-Fehlern, und der Compiler prüft die Erschöpfung. Dies ersetzt die fehleranfällige Anweisungsform."
+whyModernWins:
+- icon: "🎯"
+  title: "Gibt einen Wert zurück"
+  desc: "Das Switch-Ergebnis direkt zuweisen – keine temporäre Variable nötig."
+- icon: "🛡️"
+  title: "Kein Fall-Through"
+  desc: "Pfeilsyntax eliminiert versehentliche Fall-Through-Fehler durch fehlendes break."
+- icon: "✅"
+  title: "Erschöpfungsprüfung"
+  desc: "Der Compiler stellt sicher, dass alle Fälle abgedeckt sind."
+support:
+  description: "Seit JDK 14 allgemein verfügbar (März 2020)"

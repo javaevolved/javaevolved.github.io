@@ -1,0 +1,26 @@
+title: Eingebauter HTTP-Server
+oldApproach: Externer Server / Framework
+modernApproach: jwebserver-CLI
+summary: Java 18 enthält einen eingebauten minimalen HTTP-Server für Prototyping und
+  Dateiauslieferung.
+explanation: JDK 18 hat einen einfachen, abhängigkeitsfreien HTTP-Dateiserver hinzugefügt,
+  der über das Befehlszeilenwerkzeug jwebserver oder die SimpleFileServer-API zugänglich
+  ist. Er liefert statische Dateien aus einem angegebenen Verzeichnis ohne Konfiguration.
+  Das CLI-Tool ist ideal für schnelles Prototyping, Tests und ad-hoc-Dateifreigabe
+  – keine externen Abhängigkeiten oder Frameworks erforderlich. Die API ermöglicht
+  die programmatische Verwendung mit anpassbaren Handlern und Ausgabeebenen.
+whyModernWins:
+- icon: 🚀
+  title: Kein Setup
+  desc: jwebserver in einem beliebigen Verzeichnis ausführen – keine Installation,
+    Konfiguration oder Abhängigkeiten erforderlich.
+- icon: 📦
+  title: Im JDK integriert
+  desc: Wird mit jeder JDK 18+-Installation geliefert, immer verfügbar auf jedem
+    Rechner mit Java.
+- icon: 🧪
+  title: Ideal für Prototyping
+  desc: Statische Dateien sofort für das Testen von HTML, APIs oder Front-End-Entwicklung
+    bereitstellen.
+support:
+  description: Verfügbar seit JDK 18 (März 2022)

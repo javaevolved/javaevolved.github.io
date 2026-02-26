@@ -1,0 +1,17 @@
+title: "Deserialisierungsfilter"
+oldApproach: "Alles akzeptieren"
+modernApproach: "ObjectInputFilter"
+summary: "Einschränken, welche Klassen deserialisiert werden dürfen, um Angriffe zu verhindern."
+explanation: "ObjectInputFilter ermöglicht es, Klassen auf einer Zulassungs- oder Sperrliste einzutragen sowie die Tiefe des Objektgraphen, Array-Größen und Referenzzähler zu begrenzen. Dadurch werden Deserialisierungsschwachstellen ohne externe Bibliotheken abgewehrt."
+whyModernWins:
+- icon: "🛡️"
+  title: "Sicherheit"
+  desc: "Deserialisierung unerwarteter oder bösartiger Klassen verhindern."
+- icon: "📐"
+  title: "Feingranular"
+  desc: "Tiefe, Array-Größe, Referenzen und Klassenmustern kontrollieren."
+- icon: "🏗️"
+  title: "JVM-weit"
+  desc: "Einen globalen Filter für alle Deserialisierungen in der JVM setzen."
+support:
+  description: "Seit JDK 9 allgemein verfügbar (Sept. 2017)"

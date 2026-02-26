@@ -1,0 +1,17 @@
+title: 不変セットの作成
+oldApproach: 冗長なラッピング
+modernApproach: Set.of()
+summary: "単一のファクトリ呼び出しで不変セットを作成する。"
+explanation: "Set.of()はnullと重複要素を作成時に拒否する真の不変セットを作成します。変更可能なセットをラッピングする必要はもうありません。"
+whyModernWins:
+- icon: "📏"
+  title: 簡潔
+  desc: "3つのネストした呼び出しの代わりに1行で済みます。"
+- icon: "🚫"
+  title: 重複検出
+  desc: "誤って重複要素を渡すと例外をスローします。"
+- icon: "🔒"
+  title: 不変
+  desc: "作成後に追加・削除はできません。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

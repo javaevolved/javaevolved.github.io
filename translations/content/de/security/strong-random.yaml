@@ -1,0 +1,20 @@
+title: Starke Zufallszahlengenerierung
+oldApproach: new SecureRandom()
+modernApproach: getInstanceStrong()
+summary: Die stärkste SecureRandom-Implementierung der Plattform abrufen.
+explanation: getInstanceStrong() gibt die SecureRandom-Implementierung zurück, die
+  auf der Plattform als die stärkste konfiguriert ist. Dies wird durch die Sicherheitseigenschaft
+  securerandom.strongAlgorithms gesteuert.
+whyModernWins:
+- icon: 🛡️
+  title: Stärkste verfügbare
+  desc: Wählt automatisch den besten Algorithmus für die Plattform.
+- icon: 📖
+  title: Explizite Absicht
+  desc: Kommuniziert klar, dass starke Zufälligkeit erforderlich ist.
+- icon: 🔧
+  title: Konfigurierbar
+  desc: Administratoren können den starken Algorithmus über Sicherheitseigenschaften
+    ändern.
+support:
+  description: Weitgehend verfügbar seit JDK 9 (Sept. 2017)

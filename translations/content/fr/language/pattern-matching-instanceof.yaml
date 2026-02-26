@@ -1,0 +1,18 @@
+---
+title: Pattern matching pour instanceof
+oldApproach: instanceof + casting
+modernApproach: Variable de pattern
+summary: "Combine la vérification de type et le casting en une seule étape avec le pattern matching."
+explanation: "Le pattern matching pour instanceof élimine le casting redondant après une vérification de type. La variable est automatiquement limitée à la portée où le pattern correspond, rendant le code plus sûr et concis."
+whyModernWins:
+- icon: 🔄
+  title: Sans casting redondant
+  desc: "La vérification de type et la liaison de variable se font en une seule expression."
+- icon: 📏
+  title: Moins de lignes
+  desc: Une ligne au lieu de deux — la ligne de casting disparaît complètement.
+- icon: 🛡️
+  title: Portée sûre
+  desc: La variable de pattern n'est dans la portée que là où le type est garanti.
+support:
+  description: Disponible depuis JDK 16 (mars 2021)

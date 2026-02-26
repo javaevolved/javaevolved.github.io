@@ -1,0 +1,17 @@
+title: Objects.requireNonNullElse()
+oldApproach: 三項演算子によるnullチェック
+modernApproach: requireNonNullElse()
+summary: "三項演算子なしに明確なデフォルトでnull以外の値を取得する。"
+explanation: "requireNonNullElseは第1引数がnull以外であればそれを返し、そうでなければ第2引数を返します。デフォルト値もnullにはなれません — 両方がnullの場合はNPEをスローしてバグを早期に発見します。"
+whyModernWins:
+- icon: "📖"
+  title: 明確な意図
+  desc: "メソッド名がまさに何をするかを説明しています。"
+- icon: "🛡️"
+  title: null安全なデフォルト
+  desc: "デフォルト値もnullチェックされます。"
+- icon: "📏"
+  title: 読みやすい
+  desc: "シンプルなnull-or-defaultロジックでは三項演算子より優れています。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"
