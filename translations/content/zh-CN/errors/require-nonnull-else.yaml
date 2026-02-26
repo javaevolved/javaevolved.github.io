@@ -1,0 +1,18 @@
+---
+title: Objects.requireNonNullElse()
+oldApproach: 三元 null 检查
+modernApproach: requireNonNullElse()
+summary: "获取非 null 值并带有清晰的默认值，无需三元运算符。"
+explanation: "requireNonNullElse 在第一个参数非 null 时返回它，否则返回默认值。与 Objects.requireNonNull() 不同，它不抛出异常——它提供回退值。"
+whyModernWins:
+- icon: 📖
+  title: 意图清晰
+  desc: "方法名准确描述其功能。"
+- icon: 🛡️
+  title: null 安全默认
+  desc: "默认值本身不能为 null——这会抛出 NullPointerException。"
+- icon: 📏
+  title: 更简洁
+  desc: "比三元 null 检查更简洁、更易读。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

@@ -1,0 +1,18 @@
+---
+title: 读取文件
+oldApproach: BufferedReader
+modernApproach: Files.readString()
+summary: "用一行代码将整个文件读入 String。"
+explanation: "Files.readString() 将文件的全部内容读入 String。它处理编码（默认 UTF-8）并管理文件关闭——不需要 BufferedReader 样板代码。"
+whyModernWins:
+- icon: 📏
+  title: 一行代码
+  desc: "替代 8 行 BufferedReader 样板代码。"
+- icon: 🧹
+  title: 自动关闭
+  desc: "文件自动关闭——无需 try-with-resources。"
+- icon: 🌐
+  title: 编码控制
+  desc: "可选的 Charset 参数，默认为 UTF-8。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

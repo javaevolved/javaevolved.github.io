@@ -1,0 +1,18 @@
+---
+title: switch 中的 null case
+oldApproach: switch 前的守卫
+modernApproach: case null
+summary: "直接将 null 作为 switch case 处理——无需单独的守卫。"
+explanation: "模式匹配 switch 可以将 null 作为 case 标签匹配。这消除了在进入 switch 之前的单独 null 检查，使 null 处理在 switch 中清晰可见。"
+whyModernWins:
+- icon: 🎯
+  title: 显式
+  desc: "null 处理直接在 switch 中可见。"
+- icon: 📏
+  title: 更少代码
+  desc: "无需在 switch 之前单独进行 null 检查。"
+- icon: 🔒
+  title: 防止 NPE
+  desc: "将 null 作为 case 处理，防止 NullPointerException。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

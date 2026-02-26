@@ -1,0 +1,18 @@
+---
+title: 纳秒精度的 Instant
+oldApproach: 毫秒
+modernApproach: 纳秒
+summary: "获取微秒或纳秒精度的时间戳。"
+explanation: "Java 9 改进了时钟分辨率，使 Instant.now() 在支持的平台上可以捕获微秒甚至纳秒精度。对于需要高精度计时的基准测试和诊断非常有用。"
+whyModernWins:
+- icon: 🎯
+  title: 更高精度
+  desc: "微秒/纳秒 vs 毫秒时间戳。"
+- icon: 🔧
+  title: 诊断友好
+  desc: "更精确的时间测量，用于性能基准测试。"
+- icon: 📐
+  title: 平台利用
+  desc: "在支持高分辨率的平台上自动使用。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

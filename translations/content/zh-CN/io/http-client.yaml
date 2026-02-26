@@ -1,0 +1,18 @@
+---
+title: 现代 HTTP 客户端
+oldApproach: HttpURLConnection
+modernApproach: HttpClient
+summary: "使用内置 HttpClient 发出简洁、现代的 HTTP 请求。"
+explanation: "HttpClient 支持 HTTP/1.1 和 HTTP/2、异步请求、WebSocket 以及请求/响应的 BodyHandler。与 HttpURLConnection 相比，它是一个重大改进。"
+whyModernWins:
+- icon: 📐
+  title: 构建器 API
+  desc: "用于请求、标头和超时的流畅构建器。"
+- icon: ⚡
+  title: 异步支持
+  desc: "sendAsync() 返回 CompletableFuture，无需阻塞。"
+- icon: 🔒
+  title: HTTP/2 支持
+  desc: "开箱即用支持 HTTP/2 和 TLS。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

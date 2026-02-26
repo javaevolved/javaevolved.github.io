@@ -1,0 +1,18 @@
+---
+title: 文件内存映射
+oldApproach: MappedByteBuffer
+modernApproach: 使用 Arena 的 MemorySegment
+summary: "使用 MemorySegment 映射大于 2GB 的文件，支持确定性清理。"
+explanation: "外部函数与内存 API（JEP 454）引入了带有 Arena 的 MemorySegment，解决了 MappedByteBuffer 的两个主要限制：2GB 大小限制和缺乏确定性清理。"
+whyModernWins:
+- icon: 📏
+  title: 无大小限制
+  desc: "无需变通方案即可映射大于 2GB 的文件。"
+- icon: 🧹
+  title: 确定性清理
+  desc: "Arena 关闭时内存立即释放。"
+- icon: 🔒
+  title: 更安全的 API
+  desc: "MemorySegment 相比 ByteBuffer 提供更强的内存安全保证。"
+support:
+  description: 自 JDK 22 起可用（2024 年 3 月）

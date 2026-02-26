@@ -1,0 +1,18 @@
+---
+title: 写入文件
+oldApproach: FileWriter + BufferedWriter
+modernApproach: Files.writeString()
+summary: "用一行代码将 String 写入文件。"
+explanation: "Files.writeString() 默认使用 UTF-8 编码将内容写入文件。它处理文件创建和关闭——不需要 FileWriter 或 BufferedWriter 包装。"
+whyModernWins:
+- icon: 📏
+  title: 一行代码
+  desc: "无需 writer 包装或 try-with-resources。"
+- icon: 🧹
+  title: 自动关闭
+  desc: "文件自动关闭。"
+- icon: 🔧
+  title: OpenOption 支持
+  desc: "传递 StandardOpenOptions.APPEND 等选项控制行为。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

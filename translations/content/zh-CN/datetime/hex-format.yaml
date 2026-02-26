@@ -1,0 +1,18 @@
+---
+title: HexFormat
+oldApproach: 手动十六进制转换
+modernApproach: HexFormat
+summary: "使用 HexFormat 在十六进制字符串和字节数组之间转换。"
+explanation: "HexFormat 提供字节、整数和长整型的双向十六进制编码/解码。它支持大写/小写、分隔符和前缀/后缀配置。"
+whyModernWins:
+- icon: 📐
+  title: 双向
+  desc: "用一个 API 实现字节→十六进制和十六进制→字节转换。"
+- icon: 🔧
+  title: 可配置
+  desc: "大写、分隔符、前缀/后缀均可自定义。"
+- icon: 📏
+  title: 简洁
+  desc: "替代脆弱的手动 String.format 十六进制代码。"
+support:
+  description: 自 JDK 17 LTS 起广泛可用（2021 年 9 月）

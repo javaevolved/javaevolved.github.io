@@ -1,0 +1,18 @@
+---
+title: Files.mismatch()
+oldApproach: 手动字节比较
+modernApproach: Files.mismatch()
+summary: "高效比较两个文件，无需将其加载到内存中。"
+explanation: "Files.mismatch() 返回第一个字节差异的位置，如果文件相同则返回 -1。它不将文件加载到内存，效率比手动字节数组比较高得多。"
+whyModernWins:
+- icon: ⚡
+  title: 内存高效
+  desc: "不将整个文件加载到字节数组中。"
+- icon: 📏
+  title: 简洁
+  desc: "一行替代复杂的手动比较循环。"
+- icon: 🎯
+  title: 差异位置
+  desc: "返回差异的确切字节偏移量。"
+support:
+  description: 自 JDK 12 起广泛可用（2019 年 3 月）

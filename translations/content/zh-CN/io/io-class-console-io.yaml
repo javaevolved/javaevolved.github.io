@@ -1,0 +1,18 @@
+---
+title: 用于控制台 I/O 的 IO 类
+oldApproach: System.out / Scanner
+modernApproach: IO 类
+summary: "新的 IO 类为控制台输入和输出提供简单、简洁的方法。"
+explanation: "Java 25 引入了 IO 类（java.io.IO），作为隐式声明类的一部分。它提供 println()、print() 和 readln() 方法，无需导入或 Scanner 设置。"
+whyModernWins:
+- icon: ✨
+  title: 极度简化
+  desc: "两个方法替代七行 Scanner 设置、提示、读取和关闭代码。"
+- icon: 🎓
+  title: 对初学者友好
+  desc: "标准 I/O 无需样板代码。"
+- icon: 🧹
+  title: 零导入
+  desc: "在隐式声明类中无需导入 IO。"
+support:
+  description: JDK 25 预览版，作为隐式声明类的一部分（JEP 495）

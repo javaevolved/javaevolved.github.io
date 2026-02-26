@@ -1,0 +1,18 @@
+---
+title: Math.clamp()
+oldApproach: 嵌套 min/max
+modernApproach: Math.clamp()
+summary: "用单个清晰的调用将值限制在边界之间。"
+explanation: "Math.clamp(value, min, max) 将值约束在范围 [min, max] 内。如果 min > max，则抛出 IllegalArgumentException。它适用于 int、long、float 和 double。"
+whyModernWins:
+- icon: 📖
+  title: 自我描述
+  desc: "clamp(value, min, max) 无歧义。"
+- icon: 📏
+  title: 简洁
+  desc: "替代嵌套的 Math.min(max, Math.max(min, value))。"
+- icon: 🔒
+  title: 验证
+  desc: "当 min > max 时抛出，捕获错误范围。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

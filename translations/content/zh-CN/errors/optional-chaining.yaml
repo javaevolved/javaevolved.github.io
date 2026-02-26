@@ -1,0 +1,18 @@
+---
+title: Optional 链式调用
+oldApproach: 嵌套 null 检查
+modernApproach: Optional 管道
+summary: "用 Optional 管道替代嵌套 null 检查。"
+explanation: "Optional.map() 透明地处理 null 值进行链式调用，在第一个 empty 时短路。这消除了嵌套的 if-null 检查，使正确路径清晰可见。"
+whyModernWins:
+- icon: 🔗
+  title: 可链式调用
+  desc: "每个 .map() 步骤透明地处理 null。"
+- icon: 📖
+  title: 快乐路径清晰
+  desc: "正常流程线性可读，无嵌套。"
+- icon: 🚫
+  title: 无显式 null 检查
+  desc: "null 处理内置于 Optional 的行为中。"
+support:
+  description: 自 JDK 8+ 起可用（JDK 9+ 中有所改进）
