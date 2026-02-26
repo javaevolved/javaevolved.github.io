@@ -12,22 +12,12 @@ body:
         Found a bug, compilation error, or inaccuracy in the code examples
         of an existing pattern? Let us know so we can fix it.
 
-  - type: dropdown
+  - type: input
     id: category
     attributes:
       label: Category
-      options:
-        - language
-        - collections
-        - strings
-        - streams
-        - concurrency
-        - io
-        - errors
-        - datetime
-        - security
-        - tooling
-        - enterprise
+      description: "Pattern category (e.g., language, collections, strings, streams, concurrency, io, errors, datetime, security, tooling, enterprise)"
+      placeholder: "security"
     validations:
       required: true
 
