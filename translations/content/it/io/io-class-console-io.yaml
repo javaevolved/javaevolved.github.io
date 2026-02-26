@@ -11,7 +11,7 @@ whyModernWins:
 - icon: 🔒
   title: Nessuna perdita di risorse
   desc: "Nessun Scanner da chiudere — i metodi IO gestiscono internamente le risorse."
-- icon: ��
+- icon: 🎓
   title: Adatto ai principianti
   desc: "I nuovi sviluppatori possono fare I/O da console senza imparare Scanner, System.out o le istruzioni import."
 support:

@@ -5,7 +5,7 @@ modernApproach: isBlank()
 summary: "Controlla le stringhe vuote con una singola chiamata a metodo."
 explanation: "isBlank() restituisce true se la stringa è vuota o contiene solo spazi bianchi, inclusi i caratteri di spazio bianco Unicode che trim() non riconosce."
 whyModernWins:
-- icon: ��
+- icon: 📖
   title: Auto-documentante
   desc: "isBlank() dice esattamente cosa controlla."
 - icon: 🌐
