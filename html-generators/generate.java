@@ -257,7 +257,7 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
 
     // Generate index.html from template
     var tipCards = allSnippets.values().stream()
-            .map(s -> renderIndexCard(templates.indexCard(), s, locale, strings))
+            .map(s -> renderIndexCard(templates.indexCard(), resolveSnippet(s, locale), locale, strings))
             .collect(Collectors.joining("\n"));
 
     var indexTokens = new LinkedHashMap<String, String>();
