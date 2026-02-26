@@ -1,0 +1,18 @@
+---
+title: 匿名类的菱形运算符
+oldApproach: 重复类型参数
+modernApproach: 菱形运算符 <>
+summary: "菱形运算符现在也适用于匿名类。"
+explanation: "Java 7 引入了 <> 但不适用于匿名内部类。Java 9 解除了这一限制，使菱形运算符可以在任何地方使用。"
+whyModernWins:
+- icon: 📏
+  title: 一致的规则
+  desc: "菱形运算符无处不在——构造函数和匿名类均适用。"
+- icon: 🧹
+  title: 减少冗余
+  desc: "类型参数在左侧声明一次，不再重复。"
+- icon: 🔧
+  title: DRY 原则
+  desc: "编译器已经知道类型——为什么要写两遍？"
+support:
+  description: 匿名类的菱形运算符自 JDK 9 起可用（2017 年 9 月）。

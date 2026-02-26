@@ -1,0 +1,18 @@
+---
+title: switch 中的模式匹配
+oldApproach: if-else 链
+modernApproach: 类型模式
+summary: "用简洁的 switch 类型模式替代 if-else instanceof 链。"
+explanation: "switch 中的模式匹配让您直接匹配类型，在单个 case 标签中组合类型检查、转换和绑定。"
+whyModernWins:
+- icon: 📐
+  title: 结构化分派
+  desc: "switch 使分支结构清晰可见且易于扫描。"
+- icon: 🎯
+  title: 表达式形式
+  desc: "直接返回值——无需可变临时变量。"
+- icon: ✅
+  title: 穷举性
+  desc: "编译器确保所有类型均已处理。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

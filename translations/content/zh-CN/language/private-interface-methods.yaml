@@ -1,0 +1,18 @@
+---
+title: 接口私有方法
+oldApproach: 重复逻辑
+modernApproach: 私有方法
+summary: "使用私有方法提取接口中的共享逻辑。"
+explanation: "Java 9 允许在接口中使用私有方法，使您可以在默认方法之间共享代码，而不向实现类暴露实现细节。"
+whyModernWins:
+- icon: 🧩
+  title: 代码复用
+  desc: "在默认方法之间共享逻辑，避免重复。"
+- icon: 🔐
+  title: 封装
+  desc: "实现细节对实现类保持隐藏。"
+- icon: 🧹
+  title: DRY 接口
+  desc: "不再需要在默认方法之间复制粘贴。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

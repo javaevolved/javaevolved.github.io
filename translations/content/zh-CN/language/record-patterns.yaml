@@ -1,0 +1,18 @@
+---
+title: record 模式（解构）
+oldApproach: 手动访问
+modernApproach: 解构
+summary: "直接在模式中解构 record——一步提取字段。"
+explanation: "record 模式让您在 instanceof 和 switch 模式中直接分解 record 的组件。组件在单个表达式中绑定到变量。"
+whyModernWins:
+- icon: 🎯
+  title: 直接提取
+  desc: "无需手动调用访问器即可访问 record 组件。"
+- icon: 🪆
+  title: 可嵌套
+  desc: "模式可以嵌套——在单个表达式中匹配内部 record。"
+- icon: 📏
+  title: 代码紧凑
+  desc: "五行变两行——减少仪式感，保持清晰。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

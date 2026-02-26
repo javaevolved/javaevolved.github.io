@@ -1,0 +1,18 @@
+---
+title: 紧凑规范构造函数
+oldApproach: 显式构造函数验证
+modernApproach: 紧凑构造函数
+summary: "无需重复参数列表即可验证和规范化 record 字段。"
+explanation: "record 可以声明一个省略参数列表的紧凑规范构造函数。编译器在函数体执行后自动将所有参数赋值给对应字段。"
+whyModernWins:
+- icon: ✂️
+  title: 减少重复
+  desc: "无需重复参数列表或手动赋值每个字段。"
+- icon: 🛡️
+  title: 验证
+  desc: "非常适合 null 检查、范围验证和防御性复制。"
+- icon: 📖
+  title: 意图更清晰
+  desc: "紧凑语法强调验证逻辑，而非样板代码。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）

@@ -1,0 +1,18 @@
+---
+title: switch 表达式
+oldApproach: switch 语句
+modernApproach: switch 表达式
+summary: "switch 作为返回值的表达式——无 break，无穿透。"
+explanation: "switch 表达式直接返回值，使用箭头语法防止穿透，并要求穷举性。编译器检查所有情况是否已处理。"
+whyModernWins:
+- icon: 🎯
+  title: 返回值
+  desc: "直接赋值 switch 结果——无需临时变量。"
+- icon: 🛡️
+  title: 无穿透
+  desc: "箭头语法消除因缺少 break 而导致的意外穿透 bug。"
+- icon: ✅
+  title: 穷举性检查
+  desc: "编译器确保所有情况均已覆盖。"
+support:
+  description: 自 JDK 14 起广泛可用（2020 年 3 月）

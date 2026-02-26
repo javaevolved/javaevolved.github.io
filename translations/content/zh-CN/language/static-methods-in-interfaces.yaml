@@ -1,0 +1,18 @@
+---
+title: 接口中的静态方法
+oldApproach: 工具类
+modernApproach: 接口静态方法
+summary: "直接在接口中添加静态工具方法，而非单独的工具类。"
+explanation: "Java 8 之前，与接口相关的工具方法必须放在配套的工具类中。接口上的静态方法将相关 API 聚合在一起。"
+whyModernWins:
+- icon: 📦
+  title: 更好的组织
+  desc: "将相关工具方法与接口放在一起，而非单独的类中。"
+- icon: 🔍
+  title: 可发现性
+  desc: "工厂和辅助方法在您期望的地方找到。"
+- icon: 🧩
+  title: API 内聚性
+  desc: "无需单独的 *Utils 或 *Helper 类。"
+support:
+  description: 自 JDK 8 起可用（2014 年 3 月）

@@ -1,0 +1,18 @@
+---
+title: 用 _ 表示未命名变量
+oldApproach: 未使用变量
+modernApproach: _ 占位符
+summary: "使用 _ 表示变量被有意忽略的意图。"
+explanation: "未命名变量向读者和工具传达一个值被刻意忽略的信息。下划线在 Java 22+ 中是保留标识符。"
+whyModernWins:
+- icon: 📢
+  title: 意图清晰
+  desc: "_ 明确表示"此处不需要这个值"。"
+- icon: 🔇
+  title: 无警告
+  desc: "IDE 和 linter 不会标记有意未使用的变量。"
+- icon: 🧹
+  title: 更简洁的 lambda
+  desc: "当只需要部分参数时，多参数 lambda 更简洁。"
+support:
+  description: 在 JDK 22 中正式发布（JEP 456，2024 年 3 月）。

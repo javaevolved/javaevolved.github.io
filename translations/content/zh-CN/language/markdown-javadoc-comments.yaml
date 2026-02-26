@@ -1,0 +1,18 @@
+---
+title: Javadoc 注释中的 Markdown
+oldApproach: 基于 HTML 的 Javadoc
+modernApproach: Markdown Javadoc
+summary: "用 Markdown 而非 HTML 编写 Javadoc 注释，提高可读性。"
+explanation: "Java 23 引入了 /// Markdown 风格的 Javadoc 注释，作为 /** HTML Javadoc 的替代方案。它们在生成的 HTML 文档中正确渲染。"
+whyModernWins:
+- icon: 📖
+  title: 自然语法
+  desc: "使用反引号表示行内代码，使用 ``` 表示代码块，而非 HTML 标签。"
+- icon: ✍️
+  title: 更易编写
+  desc: '无需 {@code}、<pre>、<p> 标签——直接编写 Markdown。'
+- icon: 👁
+  title: 编辑器中更美观
+  desc: "Markdown 在现代 IDE 和文本编辑器中渲染效果极佳。"
+support:
+  description: 自 JDK 23 起可用（2024 年 9 月）

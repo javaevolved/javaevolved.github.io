@@ -1,0 +1,18 @@
+---
+title: 模式中的原始类型
+oldApproach: 手动范围检查
+modernApproach: 原始类型模式
+summary: "模式匹配现在适用于原始类型，不仅限于对象。"
+explanation: "Java 25 将模式匹配扩展到原始类型。您可以在 instanceof 和 switch 中使用 int、long、double 等作为模式变量。"
+whyModernWins:
+- icon: 📦
+  title: 无装箱
+  desc: "直接匹配原始类型——无需 Integer 包装器。"
+- icon: 🎯
+  title: 模式一致性
+  desc: "对象和原始类型使用相同的模式语法。"
+- icon: ⚡
+  title: 更好的性能
+  desc: "避免模式匹配中的自动装箱开销。"
+support:
+  description: JDK 25 预览版（第三次预览，JEP 507）。需要 --enable-preview。
