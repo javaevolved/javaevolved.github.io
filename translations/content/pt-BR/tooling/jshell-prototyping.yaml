@@ -1,0 +1,19 @@
+title: JShell para prototipagem
+oldApproach: Criar arquivo + compilar + executar
+modernApproach: REPL jshell
+summary: Experimente expressões Java interativamente sem criar arquivos.
+explanation: JShell é um Read-Eval-Print Loop para Java. Teste expressões, experimente
+  APIs e prototipe código sem criar arquivos, compilar ou escrever um método main.
+  Inclui autocompletar com Tab e documentação inline.
+whyModernWins:
+- icon: "⚡"
+  title: Feedback instantâneo
+  desc: Digite uma expressão e veja o resultado imediatamente.
+- icon: "📝"
+  title: Sem arquivos necessários
+  desc: Sem arquivos .java, sem etapa de compilação.
+- icon: "🔍"
+  title: Exploração de APIs
+  desc: O autocompletar com Tab ajuda a descobrir métodos e parâmetros.
+support:
+  description: Amplamente disponível desde o JDK 9 (set 2017)

@@ -1,0 +1,28 @@
+title: JDBC versus jOOQ
+oldApproach: JDBC puro
+modernApproach: jOOQ SQL DSL
+summary: Substitua SQL baseado em strings com JDBC puro pela DSL SQL type-safe e fluente
+  do jOOQ.
+explanation: "jOOQ (Java Object Oriented Querying) gera código Java a partir do esquema\
+  \ do banco de dados, transformando nomes de tabelas e colunas em constantes Java\
+  \ type-safe. A DSL fluente espelha a sintaxe SQL, tornando as consultas legíveis\
+  \ e composíveis. Todos os parâmetros são vinculados automaticamente, eliminando o\
+  \ risco de SQL injection. Diferente do JPA/JPQL, o jOOQ abraça o SQL por completo\
+  \ — window functions, CTEs, cláusulas RETURNING e extensões específicas de cada banco\
+  \ são cidadãos de primeira classe."
+whyModernWins:
+- icon: "🔒"
+  title: Colunas type-safe
+  desc: Nomes de colunas são constantes Java geradas — erros de digitação e incompatibilidades
+    de tipo se tornam erros de compilação em vez de falhas em tempo de execução.
+- icon: "📖"
+  title: Fluência SQL
+  desc: A DSL do jOOQ espelha a sintaxe SQL de perto, então JOINs complexos, subqueries
+    e CTEs continuam legíveis.
+- icon: "🛡️"
+  title: Livre de injection por design
+  desc: Parâmetros são sempre vinculados com segurança — sem concatenação de strings
+    significa sem risco de SQL injection.
+support:
+  description: "A edição open-source do jOOQ suporta todos os principais bancos de\
+    \ dados open-source; bancos comerciais mais antigos requerem licença paga"

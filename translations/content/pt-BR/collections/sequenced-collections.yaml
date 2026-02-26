@@ -1,0 +1,20 @@
+title: Coleções sequenciadas
+oldApproach: Aritmética de índice
+modernApproach: getFirst/getLast
+summary: Acesse o primeiro e o último elemento e obtenha visões reversas com métodos
+  de API limpos.
+explanation: SequencedCollection adiciona getFirst(), getLast(), reversed(), addFirst()
+  e addLast() a List, Deque, SortedSet e LinkedHashSet. Chega de aritmética com size()-1
+  ou iteração reversa manual.
+whyModernWins:
+- icon: "📖"
+  title: Autodocumentado
+  desc: getLast() é mais claro que get(size()-1).
+- icon: "🔄"
+  title: Visão reversa
+  desc: "reversed() fornece uma visão — sem necessidade de cópia."
+- icon: "🧩"
+  title: API uniforme
+  desc: Funciona da mesma forma em List, Deque e SortedSet.
+support:
+  description: Amplamente disponível desde o JDK 21 LTS (setembro de 2023)

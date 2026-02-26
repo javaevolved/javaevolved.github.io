@@ -1,0 +1,19 @@
+title: Cópia imutável de coleções
+oldApproach: Cópia manual + encapsulamento
+modernApproach: List.copyOf()
+summary: Crie uma cópia imutável de qualquer coleção em uma única chamada.
+explanation: List.copyOf(), Set.copyOf() e Map.copyOf() criam snapshots imutáveis
+  de coleções existentes. Se a origem já for uma coleção imutável, nenhuma cópia é
+  feita.
+whyModernWins:
+- icon: "⚡"
+  title: Cópia inteligente
+  desc: Pula a cópia se a origem já for imutável.
+- icon: "📏"
+  title: Uma chamada
+  desc: Sem construção manual de ArrayList + encapsulamento.
+- icon: "🛡️"
+  title: Cópia defensiva
+  desc: Alterações na coleção original não afetam a cópia.
+support:
+  description: Amplamente disponível desde o JDK 10 (março de 2018)

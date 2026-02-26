@@ -1,0 +1,19 @@
+title: Padrões com guardas usando when
+oldApproach: if aninhado
+modernApproach: Cláusula when
+summary: Adicione condições aos cases de padrões usando guardas when.
+explanation: Padrões com guardas permitem refinar uma correspondência de tipo com uma
+  condição booleana adicional. Isso mantém toda a lógica de ramificação no switch em
+  vez de aninhar instruções if dentro dos cases.
+whyModernWins:
+- icon: "🎯"
+  title: Correspondência precisa
+  desc: Combine tipo + condição em um único rótulo de case.
+- icon: "📐"
+  title: Estrutura plana
+  desc: Sem if/else aninhado dentro dos cases do switch.
+- icon: "📖"
+  title: Intenção legível
+  desc: A cláusula when se lê como linguagem natural.
+support:
+  description: Amplamente disponível desde o JDK 21 LTS (set 2023)

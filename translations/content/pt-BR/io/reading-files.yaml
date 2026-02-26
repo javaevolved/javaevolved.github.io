@@ -1,0 +1,19 @@
+modernApproach: Files.readString()
+summary: Leia um arquivo inteiro em uma String com uma única linha.
+title: Leitura de arquivos
+oldApproach: BufferedReader
+explanation: Files.readString() lê todo o conteúdo de um arquivo em uma String. Trata
+  a codificação (UTF-8 por padrão) e a limpeza de recursos. Para arquivos grandes,
+  use Files.lines() para streaming lazy.
+whyModernWins:
+- icon: 📏
+  title: Uma linha
+  desc: Substitua 8 linhas de boilerplate com BufferedReader.
+- icon: 🧹
+  title: Limpeza automática
+  desc: O handle do arquivo é fechado automaticamente.
+- icon: 🌐
+  title: UTF-8 por padrão
+  desc: Codificação correta por padrão — sem confusão de charset.
+support:
+  description: Amplamente disponível desde o JDK 11 (setembro de 2018)

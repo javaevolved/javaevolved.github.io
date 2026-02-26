@@ -1,0 +1,19 @@
+title: Geração de números aleatórios fortes
+oldApproach: new SecureRandom()
+modernApproach: getInstanceStrong()
+summary: Obtenha a implementação mais forte de SecureRandom da plataforma.
+explanation: "getInstanceStrong() retorna a implementação de SecureRandom configurada\
+  \ como a mais forte na plataforma. Isso é controlado pela propriedade de segurança\
+  \ securerandom.strongAlgorithms."
+whyModernWins:
+- icon: "🛡️"
+  title: A mais forte disponível
+  desc: Seleciona automaticamente o melhor algoritmo para a plataforma.
+- icon: "📖"
+  title: Intenção explícita
+  desc: Comunica claramente que aleatoriedade forte é necessária.
+- icon: "🔧"
+  title: Configurável
+  desc: Administradores podem alterar o algoritmo forte via propriedades de segurança.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

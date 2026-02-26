@@ -1,0 +1,19 @@
+title: HTTP concorrente com virtual threads
+oldApproach: Thread Pool + URLConnection
+modernApproach: Virtual Threads + HttpClient
+summary: Busque muitas URLs simultaneamente com virtual threads e HttpClient.
+explanation: Virtual threads tornam prático criar uma thread por requisição HTTP. Combinadas
+  com HttpClient, substituem padrões complexos de callbacks assíncronos por código
+  bloqueante simples que escala.
+whyModernWins:
+- icon: "♾️"
+  title: Uma thread por requisição
+  desc: Sem dimensionamento de pool — uma virtual thread por URL.
+- icon: "📖"
+  title: Código simples
+  desc: Escreva código bloqueante direto e legível.
+- icon: "⚡"
+  title: Alta vazão
+  desc: Milhares de requisições simultâneas com recursos mínimos.
+support:
+  description: Amplamente disponível desde o JDK 21 LTS (setembro de 2023)

@@ -1,0 +1,19 @@
+title: Inicialização lazy sem locks
+oldApproach: synchronized + volatile
+modernApproach: StableValue
+summary: Substitua double-checked locking por StableValue para singletons lazy.
+explanation: StableValue encapsula o padrão de inicialização lazy com segurança de
+  threads correta. A JVM pode otimizar o caminho de leitura após a inicialização,
+  tornando-o potencialmente mais rápido que leituras volatile.
+whyModernWins:
+- icon: "🧹"
+  title: Sem boilerplate
+  desc: Sem volatile, synchronized ou verificação dupla de null.
+- icon: "⚡"
+  title: Leituras mais rápidas
+  desc: A JVM pode fazer constant-fold após a inicialização.
+- icon: "✅"
+  title: Comprovadamente correto
+  desc: Sem bugs sutis de ordenação — a JVM cuida disso.
+support:
+  description: "Preview no JDK 25 (JEP 502, StableValue). Requer --enable-preview."

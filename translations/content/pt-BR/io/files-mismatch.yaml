@@ -1,0 +1,19 @@
+modernApproach: Files.mismatch()
+summary: Compare dois arquivos de forma eficiente sem carregá-los na memória.
+title: Files.mismatch()
+oldApproach: Comparação manual de bytes
+explanation: Files.mismatch() retorna a posição do primeiro byte que difere, ou -1 se
+  os arquivos são idênticos. A leitura é feita de forma lazy e interrompe na primeira
+  diferença encontrada.
+whyModernWins:
+- icon: ⚡
+  title: Eficiente em memória
+  desc: Não carrega arquivos inteiros em arrays de bytes.
+- icon: 🎯
+  title: Localiza a diferença
+  desc: Retorna a posição exata do byte da primeira divergência.
+- icon: 📏
+  title: Uma chamada
+  desc: Sem lógica manual de comparação de arrays de bytes.
+support:
+  description: Amplamente disponível desde o JDK 12 (março de 2019)

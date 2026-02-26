@@ -1,0 +1,18 @@
+title: Criação de mapas imutáveis
+oldApproach: Padrão Builder de Map
+modernApproach: Map.of()
+summary: Crie mapas imutáveis inline sem precisar de um builder.
+explanation: Map.of() aceita pares chave-valor inline e retorna um mapa imutável.
+  Para mais de 10 entradas, use Map.ofEntries() com pares Map.entry().
+whyModernWins:
+- icon: "📏"
+  title: Criação inline
+  desc: Sem necessidade de um mapa mutável temporário.
+- icon: "🔒"
+  title: Resultado imutável
+  desc: O mapa não pode ser modificado após a criação.
+- icon: "🚫"
+  title: Sem chaves/valores nulos
+  desc: Entradas nulas são rejeitadas imediatamente.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

@@ -1,0 +1,19 @@
+title: Stream.iterate() com predicado
+oldApproach: iterate + limit
+modernApproach: iterate(seed, pred, op)
+summary: Use um predicado para encerrar a iteração — como um for-loop em forma de stream.
+explanation: "O Stream.iterate(seed, hasNext, next) com três argumentos funciona como\
+  \ um for-loop: seed é o início, hasNext determina quando parar e next produz o próximo\
+  \ valor."
+whyModernWins:
+- icon: "🎯"
+  title: Terminação natural
+  desc: Pare com base em uma condição, não em um limite arbitrário.
+- icon: "📐"
+  title: Equivalente ao for-loop
+  desc: "Mesma semântica que for(seed; hasNext; next)."
+- icon: "🛡️"
+  title: Sem risco de stream infinito
+  desc: O predicado garante a terminação.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

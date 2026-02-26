@@ -1,0 +1,18 @@
+title: Fábrica Map.entry()
+oldApproach: SimpleEntry
+modernApproach: Map.entry()
+summary: Crie entradas de mapa com um método fábrica limpo.
+explanation: Map.entry() substitui o construtor verboso AbstractMap.SimpleEntry. Ele
+  retorna uma entrada imutável, ideal para Map.ofEntries() e operações com streams.
+whyModernWins:
+- icon: "📏"
+  title: Conciso
+  desc: Uma linha em vez de três, com intenção mais clara.
+- icon: "🔒"
+  title: Imutável
+  desc: A entrada retornada não pode ser modificada.
+- icon: "🧩"
+  title: Componível
+  desc: Funciona perfeitamente com Map.ofEntries() para mapas grandes.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

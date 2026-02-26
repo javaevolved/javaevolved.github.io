@@ -1,0 +1,18 @@
+title: Criação de conjuntos imutáveis
+oldApproach: Encapsulamento verboso
+modernApproach: Set.of()
+summary: Crie conjuntos imutáveis com uma única chamada de método fábrica.
+explanation: Set.of() cria um conjunto verdadeiramente imutável que rejeita nulos e
+  elementos duplicados no momento da criação. Chega de encapsular conjuntos mutáveis.
+whyModernWins:
+- icon: "📏"
+  title: Conciso
+  desc: Uma linha em vez de três chamadas aninhadas.
+- icon: "🚫"
+  title: Detecta duplicatas
+  desc: Lança exceção se você passar elementos duplicados acidentalmente.
+- icon: "🔒"
+  title: Imutável
+  desc: Nenhuma adição ou remoção é possível após a criação.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

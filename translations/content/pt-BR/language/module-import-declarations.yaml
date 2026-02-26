@@ -1,0 +1,19 @@
+title: Declarações de import por módulo
+oldApproach: Muitos imports
+modernApproach: import module
+summary: Importe todos os pacotes exportados de um módulo com uma única declaração.
+explanation: Declarações de import por módulo permitem importar tudo que um módulo exporta
+  com uma linha. Isso é especialmente útil para java.base, que cobre collections,
+  I/O, streams e mais.
+whyModernWins:
+- icon: "🧹"
+  title: Uma linha
+  desc: Substitua uma parede de imports por um único import de módulo.
+- icon: "📦"
+  title: Consciente de módulos
+  desc: Aproveita o sistema de módulos para importar conjuntos coerentes de pacotes.
+- icon: "🚀"
+  title: Início rápido
+  desc: Perfeito para scripts e protótipos onde listas de import são tediosas.
+support:
+  description: Finalizado no JDK 25 LTS (JEP 511, set 2025).

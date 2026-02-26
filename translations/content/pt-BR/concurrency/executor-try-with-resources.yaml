@@ -1,0 +1,19 @@
+title: Fechamento automático do ExecutorService
+oldApproach: Encerramento manual
+modernApproach: try-with-resources
+summary: Use try-with-resources para encerramento automático do executor.
+explanation: Desde o Java 19, ExecutorService implementa AutoCloseable. O método close()
+  chama shutdown() e aguarda a conclusão das tarefas. Chega de padrões manuais de
+  try/finally para encerramento.
+whyModernWins:
+- icon: "🧹"
+  title: Limpeza automática
+  desc: O encerramento acontece automaticamente ao sair do bloco.
+- icon: "🛡️"
+  title: Sem vazamentos
+  desc: O executor sempre é encerrado, mesmo se ocorrerem exceções.
+- icon: "📖"
+  title: Padrão familiar
+  desc: Mesmo try-with-resources usado para arquivos, conexões, etc.
+support:
+  description: Amplamente disponível desde o JDK 19 (setembro de 2022)

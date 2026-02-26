@@ -1,0 +1,21 @@
+title: Concorrência estruturada
+oldApproach: Ciclo de vida manual de threads
+modernApproach: StructuredTaskScope
+summary: Gerencie o ciclo de vida de tarefas concorrentes como uma única unidade de
+  trabalho.
+explanation: A concorrência estruturada trata um grupo de tarefas concorrentes como
+  uma única operação. Se qualquer subtarefa falhar, as demais são canceladas. O escopo
+  garante que não haja vazamento de threads e estabelece relações claras entre pai
+  e filho.
+whyModernWins:
+- icon: "🛡️"
+  title: Sem vazamento de threads
+  desc: Todas as tarefas bifurcadas terminam antes do escopo fechar.
+- icon: "⚡"
+  title: Falha rápida
+  desc: ShutdownOnFailure cancela as demais se uma falhar.
+- icon: "📐"
+  title: Estrutura clara
+  desc: O ciclo de vida da tarefa corresponde ao escopo léxico no código.
+support:
+  description: "Preview no JDK 25 (quinto preview, JEP 505). Requer --enable-preview."

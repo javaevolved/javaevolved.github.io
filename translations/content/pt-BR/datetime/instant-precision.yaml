@@ -1,0 +1,19 @@
+title: Instant com precisão de nanossegundos
+oldApproach: Milissegundos
+modernApproach: Nanossegundos
+summary: Obtenha timestamps com precisão de microssegundos ou nanossegundos.
+explanation: O Java 9 melhorou a resolução do relógio para que Instant.now() capture
+  precisão de microssegundos na maioria das plataformas (nanossegundos em algumas).
+  O antigo currentTimeMillis() fornece apenas milissegundos.
+whyModernWins:
+- icon: "🎯"
+  title: Maior precisão
+  desc: Timestamps em microssegundos/nanossegundos em vez de milissegundos.
+- icon: "📐"
+  title: Tipagem segura
+  desc: "Instant carrega sua precisão — sem longs ambíguos."
+- icon: "🌐"
+  title: Baseado em UTC
+  desc: "Instant é sempre em UTC — sem confusão de fuso horário."
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

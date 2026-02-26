@@ -1,0 +1,21 @@
+title: Pré-carregamento AOT de classes
+oldApproach: Cold Start a cada inicialização
+modernApproach: Cache AOT
+summary: Armazene em cache o carregamento e a compilação de classes para inicialização
+  instantânea.
+explanation: O pré-carregamento AOT de classes armazena em cache as classes carregadas
+  e vinculadas a partir de uma execução de treinamento. Nas inicializações seguintes,
+  as classes são carregadas do cache, pulando a verificação e vinculação. Combinado
+  com a compilação AOT, isso reduz drasticamente o tempo de inicialização.
+whyModernWins:
+- icon: "⚡"
+  title: Inicialização mais rápida
+  desc: Pula o carregamento, verificação e vinculação de classes.
+- icon: "📦"
+  title: Estado em cache
+  desc: A execução de treinamento captura o estado ideal das classes.
+- icon: "🔧"
+  title: Sem alterações no código
+  desc: Funciona com aplicações existentes — basta adicionar flags na JVM.
+support:
+  description: "Disponível como recurso padrão no JDK 25 LTS (JEPs 514/515, set 2025)."

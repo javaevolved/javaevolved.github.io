@@ -1,0 +1,19 @@
+title: Objects.requireNonNullElse()
+oldApproach: Verificação de null com ternário
+modernApproach: requireNonNullElse()
+summary: Obtenha um valor não-null com um padrão claro, sem precisar de ternário.
+explanation: O requireNonNullElse retorna o primeiro argumento se não for null, caso
+  contrário retorna o segundo. O valor padrão também não pode ser null — ele lança
+  NPE se ambos forem null, capturando bugs antecipadamente.
+whyModernWins:
+- icon: "📖"
+  title: Intenção clara
+  desc: O nome do método descreve exatamente o que ele faz.
+- icon: "🛡️"
+  title: Padrão null-safe
+  desc: O valor padrão também é verificado contra null.
+- icon: "📏"
+  title: Legível
+  desc: Melhor que ternário para lógica simples de null-ou-padrão.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

@@ -1,0 +1,20 @@
+modernApproach: MemorySegment com Arena
+summary: Mapeie arquivos maiores que 2GB com limpeza determinística usando MemorySegment.
+title: Mapeamento de arquivos em memória
+oldApproach: MappedByteBuffer
+explanation: A API Foreign Function & Memory (JEP 454) introduz o MemorySegment para
+  acesso seguro e eficiente à memória. Diferente do MappedByteBuffer, o MemorySegment
+  suporta arquivos maiores que 2GB (Integer.MAX_VALUE), oferece limpeza determinística
+  via Arena e melhor desempenho com hardware moderno.
+whyModernWins:
+- icon: 📏
+  title: Sem limite de tamanho
+  desc: Mapeie arquivos maiores que 2GB sem soluções alternativas.
+- icon: 🔒
+  title: Limpeza determinística
+  desc: Arena garante que a memória é liberada ao sair do escopo, não pelo GC.
+- icon: ⚡
+  title: Melhor desempenho
+  desc: Alinhado com modelos de memória e hardware modernos.
+support:
+  description: Disponível desde o JDK 22 (março de 2024)

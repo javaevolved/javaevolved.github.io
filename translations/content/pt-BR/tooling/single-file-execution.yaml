@@ -1,0 +1,19 @@
+title: Execução de arquivo único
+oldApproach: Compilação em duas etapas
+modernApproach: Execução direta
+summary: Execute programas Java de arquivo único diretamente sem javac.
+explanation: O launcher do Java pode compilar e executar um único arquivo-fonte em um
+  só comando. Combinado com suporte a shebang no Unix, arquivos Java podem funcionar
+  como scripts. Nenhuma etapa separada de compilação é necessária.
+whyModernWins:
+- icon: "⚡"
+  title: Um único comando
+  desc: java File.java compila e executa em uma só etapa.
+- icon: "📝"
+  title: Como um script
+  desc: Adicione uma linha shebang para tornar arquivos .java scripts executáveis.
+- icon: "🎓"
+  title: Amigável para iniciantes
+  desc: Iniciantes executam código imediatamente sem aprender ferramentas de build.
+support:
+  description: Amplamente disponível desde o JDK 11 (set 2018)
