@@ -1,0 +1,17 @@
+title: JavadocコメントのMarkdown記法
+oldApproach: HTMLベースのJavadoc
+modernApproach: Markdown形式のJavadoc
+summary: "可読性向上のためにHTMLではなくMarkdownでJavadocコメントを記述する。"
+explanation: "Java 23では///を使ったMarkdownスタイルのJavadocコメントが従来の/** */HTMLベースの形式の代替として導入されました。Markdownの構文はより自然に読み書きでき、コードブロック、強調、リスト、リンクをサポートします。コンパイラはMarkdownをHTMLに変換してjavadoc出力を生成します。"
+whyModernWins:
+- icon: "✍"
+  title: 自然な構文
+  desc: "HTMLタグの代わりにインラインコードにバッククォート、ブロックに```を使います。"
+- icon: "😊"
+  title: 書きやすい
+  desc: "{@code}、<pre>、<p>タグは不要 — Markdownをそのまま書くだけです。"
+- icon: "🖥"
+  title: エディタでの表示が美しい
+  desc: "MarkdownはモダンなIDEやテキストエディタで美しくレンダリングされます。"
+support:
+  description: JDK 23（2024年9月）以降、利用可能

@@ -1,0 +1,17 @@
+title: RandomGeneratorインターフェース
+oldApproach: new Random() / ThreadLocalRandom
+modernApproach: RandomGeneratorファクトリー
+summary: "RandomGeneratorインターフェースを使って、特定クラスに依存せずアルゴリズムを名前で選択する。"
+explanation: "JDK 17ではRandomGeneratorがすべてのRNG実装の共通インターフェースとして導入されました。new Random()やThreadLocalRandomをハードコードする代わりに、ファクトリーを通じてアルゴリズムを名前で選択でき、ユースケース（速度・統計品質・分割可能性）に応じてアルゴリズムを容易に切り替えられます。"
+whyModernWins:
+- icon: "🔧"
+  title: アルゴリズム非依存
+  desc: "コード構造を変えることなく、最適なRNGアルゴリズムを名前で選択できます。"
+- icon: "⚡"
+  title: より優れたアルゴリズム
+  desc: "優れた統計特性を持つ最新のLXMジェネレーターにアクセスできます。"
+- icon: "🔗"
+  title: 統一API
+  desc: "1つのインターフェースでRandom、ThreadLocalRandom、SplittableRandomなどを網羅。"
+support:
+  description: JDK 17（2021年9月、JEP 356）以降、利用可能

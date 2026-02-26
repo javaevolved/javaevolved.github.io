@@ -1,0 +1,80 @@
+site:
+  tagline: Javaは進化した。あなたのコードも。
+  tagline_line1: Javaは進化した。
+  tagline_line2: あなたのコードも。
+  description: モダンなJavaコードスニペットのコレクション。古いパターンとその洗練されたモダンな置き換えを並べて比較。
+  heroSnippetCount: ✦ {{snippetCount}} のモダンパターン · Java 8 → Java 25
+  heroOld: 旧来
+  heroModern: モダン
+  allComparisons: すべての比較
+  snippetsBadge: '{{snippetCount}} スニペット'
+nav:
+  allPatterns: ← すべてのパターン
+  toggleTheme: テーマ切替
+  viewOnGitHub: GitHubで見る
+  selectLanguage: 言語を選択
+breadcrumb:
+  home: ホーム
+sections:
+  codeComparison: コード比較
+  whyModernWins: モダンな方法が優れている理由
+  oldApproach: 旧来のアプローチ
+  modernApproach: モダンなアプローチ
+  sinceJdk: JDKバージョン
+  difficulty: 難易度
+  jdkSupport: JDKサポート
+  howItWorks: 仕組み
+  relatedDocs: 関連ドキュメント
+  relatedPatterns: 関連パターン
+filters:
+  show: '表示:'
+  all: すべて
+difficulty:
+  beginner: 初級
+  intermediate: 中級
+  advanced: 上級
+search:
+  placeholder: スニペットを検索…
+  noResults: 結果が見つかりませんでした。
+  esc: ESC
+  searchTrigger: 検索…
+  navigate: 移動
+  open: 開く
+  close: 閉じる
+cards:
+  old: 旧来
+  modern: モダン
+  hoverHint: ホバーしてモダンを見る →
+  hoverHintRelated: ホバーしてモダンを見る ➜
+  touchHint: 👆 タップまたはスワイプ →
+copy:
+  copy: コピー
+  copied: コピーしました！
+share:
+  label: 共有
+view:
+  expandAll: すべて展開
+  collapseAll: すべて折りたたむ
+stats:
+  modernPatterns: モダンパターン
+  jdkVersions: 対応JDKバージョン
+  categories: カテゴリ
+  linesOfPython: 必要なPython行数
+footer:
+  tagline: Javaは進化した。あなたのコードも。
+  madeWith: ❤️ で作られました by
+  and: と
+  inspiredBy: インスパイアされました by
+  viewOnGitHub: GitHubで見る
+copilot:
+  headline: GitHub CopilotでJavaコードをモダン化しましょう。
+  description: CopilotがレガシーパターンをモダンなJavaに自動的に移行するのを手伝います。
+  appModernization: アプリのモダン化 →
+  javaGuide: Javaガイド →
+support:
+  available: 利用可能
+  preview: プレビュー
+  experimental: 実験的
+untranslated:
+  notice: このページはまだ{{localeName}}に翻訳されていません。
+  viewInEnglish: 英語で見る

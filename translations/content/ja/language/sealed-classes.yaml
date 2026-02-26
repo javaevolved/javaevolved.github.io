@@ -1,0 +1,17 @@
+title: 型階層のためのsealed クラス
+oldApproach: オープンな継承階層
+modernApproach: sealed permits
+summary: "型を拡張できるクラスを制限し、網羅的なswitchを可能にする。"
+explanation: "sealedクラスはサブタイプの閉じた集合を定義します。コンパイラはすべてのケースを把握しているため、defaultブランチなしで網羅的なパターンマッチングが可能です。レコードと組み合わせることで代数的データ型をモデル化できます。"
+whyModernWins:
+- icon: "🏰"
+  title: 制御された継承
+  desc: "許可されたサブタイプのみが拡張可能 — 想定外のサブクラスはありません。"
+- icon: "✅"
+  title: 網羅的なマッチング
+  desc: "コンパイラがすべてのケースをカバーしているか検証 — defaultが不要になります。"
+- icon: "🧩"
+  title: 代数的データ型
+  desc: "sum型を自然に表現できます — sealed + records = JavaのADT。"
+support:
+  description: JDK 17 LTS（2021年9月）以降、広く利用可能

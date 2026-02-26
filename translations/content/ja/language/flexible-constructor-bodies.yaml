@@ -1,0 +1,17 @@
+title: 柔軟なコンストラクタ本体
+oldApproach: super()の後でバリデーション
+modernApproach: super()の前にコードを記述
+summary: "super()またはthis()を呼び出す前に値の検証や計算を行う。"
+explanation: "Java 25はsuper()が最初の文でなければならないという制限を解除します。親コンストラクタに処理を委譲する前に、引数の検証、派生値の計算、状態のセットアップが可能になります。"
+whyModernWins:
+- icon: "⚡"
+  title: フェイルファスト
+  desc: "スーパークラスのコンストラクタが実行される前に引数を検証できます。"
+- icon: "🔢"
+  title: 先に計算
+  desc: "super()を呼び出す前に値を導出してデータを準備できます。"
+- icon: "🚫"
+  title: 回避策不要
+  desc: "制限を回避するための静的ヘルパーメソッドやファクトリパターンが不要になります。"
+support:
+  description: JDK 25 LTSでファイナライズ（JEP 513、2025年9月）

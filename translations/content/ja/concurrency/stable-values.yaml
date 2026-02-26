@@ -1,0 +1,17 @@
+title: 安定した値
+oldApproach: ダブルチェックロッキング
+modernApproach: StableValue
+summary: "volatileやsynchronizedなしにスレッドセーフな遅延初期化を実現する。"
+explanation: "StableValueは組み込みのスレッド安全性を持つ遅延初期化されたイミュータブルな値を提供します。ダブルチェックロッキング、volatileフィールド、synchronizedブロックは不要です。JVMは初期化後の読み取りパスを最適化することもできます。"
+whyModernWins:
+- icon: "🧹"
+  title: ボイラープレートゼロ
+  desc: "volatile、synchronized、nullチェックが不要。"
+- icon: "⚡"
+  title: JVM最適化
+  desc: "JVMは初期化後に値を畳み込める。"
+- icon: "🛡️"
+  title: 確実な1回実行
+  desc: "サプライヤは競合状態でも必ず1回だけ実行されます。"
+support:
+  description: "JDK 25でプレビュー（JEP 502）。--enable-previewが必要です。"

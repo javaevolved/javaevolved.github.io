@@ -1,0 +1,17 @@
+title: マルチキャッチ例外処理
+oldApproach: 個別のcatchブロック
+modernApproach: マルチキャッチ
+summary: "1つのcatchブロックで複数の例外タイプをキャッチする。"
+explanation: "マルチキャッチは同じコードで複数の例外タイプを処理します。例外変数は実質的にfinalなので、ラッピングなしに再スローできます。"
+whyModernWins:
+- icon: "📏"
+  title: DRY原則
+  desc: "同じ処理ロジックを3回書く代わりに1回で済みます。"
+- icon: "🔄"
+  title: 再スロー可能
+  desc: "キャッチした例外を正確な型で再スローできます。"
+- icon: "📖"
+  title: 見やすい
+  desc: "すべての処理対象タイプが1か所にまとまっています。"
+support:
+  description: "JDK 7（2011年7月）以降、広く利用可能"

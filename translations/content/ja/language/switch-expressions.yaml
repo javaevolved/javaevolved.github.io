@@ -1,0 +1,17 @@
+title: switch式
+oldApproach: switch文
+modernApproach: switch式
+summary: "値を返すswitch式 — breakなし、フォールスルーなし。"
+explanation: "switch式は値を直接返し、アロー構文でフォールスルーのバグを防ぎ、コンパイラが網羅性を検証します。これにより、エラーが起きやすい文形式を置き換えられます。"
+whyModernWins:
+- icon: "↩"
+  title: 値を返す
+  desc: "switch結果を直接代入できます — 一時変数は不要です。"
+- icon: "🚫"
+  title: フォールスルーなし
+  desc: "アロー構文により、breakの書き忘れによる意図しないフォールスルーがなくなります。"
+- icon: "✅"
+  title: 網羅性チェック
+  desc: "コンパイラがすべてのケースをカバーしているか確認します。"
+support:
+  description: JDK 14（2020年3月）以降、広く利用可能

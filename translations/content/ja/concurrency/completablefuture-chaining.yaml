@@ -1,0 +1,17 @@
+title: CompletableFutureのチェーン
+oldApproach: ブロッキングFuture.get()
+modernApproach: CompletableFuture
+summary: "CompletableFutureを使ってブロッキングなしに非同期操作をチェーンする。"
+explanation: "CompletableFutureはノンブロッキングな非同期パイプラインを実現します。thenApply、thenCompose、thenAcceptで操作をチェーンし、exceptionally()でエラーを処理します。allOf/anyOfで複数のFutureを組み合わせられます。"
+whyModernWins:
+- icon: "🔗"
+  title: チェーン可能
+  desc: "非同期のステップを可読なパイプラインに組み合わせられます。"
+- icon: "🚫"
+  title: ノンブロッキング
+  desc: "結果待ちでスレッドがアイドルになりません。"
+- icon: "🛡️"
+  title: エラーハンドリング
+  desc: "exceptionally()とhandle()でクリーンなエラー回復が可能です。"
+support:
+  description: "JDK 8（2014年3月）以降、広く利用可能"

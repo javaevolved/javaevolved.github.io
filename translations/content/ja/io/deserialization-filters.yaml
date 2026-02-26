@@ -1,0 +1,17 @@
+title: デシリアライゼーションフィルター
+oldApproach: すべてを受け入れる
+modernApproach: ObjectInputFilter
+summary: "攻撃を防ぐためにデシリアライズ可能なクラスを制限する。"
+explanation: "ObjectInputFilterによりクラスの許可リスト・拒否リスト、オブジェクトグラフの深さ、配列サイズ、参照数の制限ができます。外部ライブラリなしにデシリアライゼーションの脆弱性を防御できます。"
+whyModernWins:
+- icon: "🛡️"
+  title: セキュリティ
+  desc: "予期しない・悪意あるクラスのデシリアライゼーションを防止します。"
+- icon: "📐"
+  title: 細かい制御
+  desc: "深さ、配列サイズ、参照数、クラスパターンを制御できます。"
+- icon: "🏗️"
+  title: JVM全体に適用
+  desc: "JVM内のすべてのデシリアライゼーションにグローバルフィルターを設定できます。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

@@ -1,0 +1,17 @@
+title: データクラスのためのレコード
+oldApproach: 冗長なPOJO
+modernApproach: record
+summary: "イミュータブルなデータ保持クラスの30行以上のボイラープレートが1行に置き換わる。"
+explanation: "レコードはコンストラクタ、アクセサ（x()、y()）、equals()、hashCode()、toString()を自動生成します。設計上イミュータブルであり、DTO、値オブジェクト、パターンマッチングに最適です。"
+whyModernWins:
+- icon: "📏"
+  title: 1行の定義
+  desc: "コンストラクタ、ゲッター、equals、hashCode、toStringが1行に集約されます。"
+- icon: "🔒"
+  title: デフォルトでイミュータブル
+  desc: "すべてのフィールドはfinal — セッターによる罠がありません。"
+- icon: "🔗"
+  title: パターンとの親和性
+  desc: "レコードはswitchとinstanceofの分解パターンで利用できます。"
+support:
+  description: JDK 16（2021年3月）以降、広く利用可能

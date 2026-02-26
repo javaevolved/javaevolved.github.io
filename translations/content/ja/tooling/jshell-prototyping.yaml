@@ -1,0 +1,17 @@
+title: JShellによるプロトタイピング
+oldApproach: ファイル作成・コンパイル・実行
+modernApproach: jshell REPL
+summary: "ファイルを作成せずにJavaの式をインタラクティブに試す。"
+explanation: "JShellはJava用のRead-Eval-Print Loopです。ファイル作成、コンパイル、mainメソッドの記述なしに、式を試したりAPIを探索したりプロトタイピングができます。タブ補完やインラインドキュメントも使えます。"
+whyModernWins:
+- icon: "⚡"
+  title: 即時フィードバック
+  desc: "式を入力するとすぐに結果が表示されます。"
+- icon: "📝"
+  title: ファイル不要
+  desc: ".javaファイルもコンパイル手順も必要ありません。"
+- icon: "🔍"
+  title: API探索
+  desc: "タブ補完でメソッドやパラメーターを発見できます。"
+support:
+  description: JDK 9（2017年9月）以降、広く利用可能

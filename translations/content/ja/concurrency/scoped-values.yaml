@@ -1,0 +1,17 @@
+title: スコープ付き値
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: "ThreadLocalの問題なしにコールスタック間でデータを安全に共有する。"
+explanation: "ScopedValueはイミュータブルで継承可能なスコープ限定のコンテキストを提供します。ThreadLocalとは異なり、スコープ付き値は自動的にクリーンアップされ、バーチャルスレッドで動作し、呼び出し先から変更できません。"
+whyModernWins:
+- icon: "🔒"
+  title: イミュータブル
+  desc: "呼び出し先はスコープ付き値を読み取ることはできますが、変更はできません。"
+- icon: "🧹"
+  title: 自動クリーンアップ
+  desc: "手動のremove()不要 — 値はブロックにスコープされます。"
+- icon: "⚡"
+  title: バーチャルスレッド対応
+  desc: "何百万ものバーチャルスレッドで効率的に動作します。"
+support:
+  description: "JDK 25 LTSで正式リリース（JEP 506、2025年9月）。"

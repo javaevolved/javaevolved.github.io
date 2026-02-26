@@ -1,0 +1,17 @@
+title: SpringのNull安全性とJSpecify
+oldApproach: "Spring @NonNull/@Nullable"
+modernApproach: "JSpecify @NullMarked"
+summary: "Spring 7がJSpecifyアノテーションを採用し、非nullをデフォルトにしてアノテーションの冗長さを削減する。"
+explanation: "Spring 5と6はorg.springframework.langパッケージに独自のnull安全アノテーションを導入しました。便利でしたが、フレームワーク固有であり非nullの要素すべてに明示的なアノテーションが必要でした。Spring 7はクロスエコシステム標準であるJSpecifyに移行しました。クラスまたはパッケージレベルの@NullMarkedアノテーションにより、すべての未アノテートの型がデフォルトで非nullになります。実際にnullになりうる型だけ@Nullableアノテーションが必要となり、冗長さが大幅に削減されます。JSpecifyアノテーションはNullAway・Error Prone・IntelliJ IDEAなどの主要な静的解析ツールに認識され、Spring固有アノテーションより豊かなツールサポートをもたらします。"
+whyModernWins:
+- icon: "✂️"
+  title: 非nullがデフォルト
+  desc: "@NullMarkedにより未アノテートの型は非nullになるため、nullになりうる例外だけにアノテーションが必要です。"
+- icon: "🌐"
+  title: エコシステム標準
+  desc: "JSpecifyアノテーションはNullAway・Error Prone・IDEに認識されるクロスフレームワーク標準です。"
+- icon: "🔍"
+  title: 豊かなツールサポート
+  desc: "最新の静的解析ツールがJSpecifyのnullモデルを理解し、コンパイル時に違反を報告します。"
+support:
+  description: "Spring Framework 7.0（Java 17以上が必要）以降、利用可能"

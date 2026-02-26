@@ -1,0 +1,17 @@
+title: 組み込みHTTPサーバー
+oldApproach: 外部サーバー・フレームワーク
+modernApproach: jwebserver CLI
+summary: "Java 18にはプロトタイピングやファイル配信のための組み込み簡易HTTPサーバーが含まれている。"
+explanation: "JDK 18ではゼロ依存のシンプルなHTTPファイルサーバーがjwebserverコマンドラインツールとSimpleFileServer APIとして追加されました。設定不要で指定ディレクトリの静的ファイルを配信できます。CLIツールは素早いプロトタイピング、テスト、アドホックなファイル共有に最適で、外部依存やフレームワークは不要です。APIはカスタムハンドラーや出力レベルを指定したプログラム的な利用もサポートします。"
+whyModernWins:
+- icon: "🚀"
+  title: ゼロセットアップ
+  desc: "任意のディレクトリでjwebserverを実行するだけ——インストール・設定・依存関係は不要です。"
+- icon: "📦"
+  title: JDK組み込み
+  desc: "JDK 18以降のすべてのインストールに同梱されており、Javaがある環境ならいつでも利用できます。"
+- icon: "🧪"
+  title: プロトタイピングに最適
+  desc: "HTML・API・フロントエンド開発のテストのために静的ファイルを即座に配信できます。"
+support:
+  description: JDK 18（2022年3月）以降、利用可能

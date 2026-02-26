@@ -1,0 +1,17 @@
+title: JDBC ResultSetマッピングとJPA Criteria APIの比較
+oldApproach: JDBC ResultSet
+modernApproach: JPA Criteria API
+summary: "手動のJDBC ResultSetマッピングをJPAの型安全なCriteria APIによる動的クエリに置き換える。"
+explanation: "生のJDBCではSQL文字列の構築・インデックスによるパラメーター設定・ResultSetの各カラムを手動でマッピングが必要であり、エラーが起きやすくカラム変更時にサイレントに壊れます。JPA Criteria APIは型安全なビルダーパターンでプログラム的にクエリを構築します。カラム名はエンティティモデルと照合して検証され、結果マッピングは自動的に行われ、複雑な動的クエリも文字列連結なしでクリーンに組み立てられます。"
+whyModernWins:
+- icon: "🔒"
+  title: 型安全なクエリ
+  desc: "Criteriaビルダーはフィールド名と型の不一致をコンパイル時に検出します。"
+- icon: "🗺️"
+  title: 自動マッピング
+  desc: "JPAが結果行をエンティティオブジェクトにマッピングするため、カラムごとの手動抽出は不要です。"
+- icon: "🧩"
+  title: 組み合わせ可能な述語
+  desc: "動的WHERE句はand()・or()と再利用可能なPredicateオブジェクトでクリーンに構築できます。"
+support:
+  description: Jakarta EE 8 / Java 11以降、広く利用可能

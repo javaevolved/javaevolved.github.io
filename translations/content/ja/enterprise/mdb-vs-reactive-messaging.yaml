@@ -1,0 +1,17 @@
+title: メッセージ駆動BeanとReactive Messagingの比較
+oldApproach: メッセージ駆動Bean
+modernApproach: Reactive Messaging
+summary: "JMSメッセージ駆動BeanをMicroProfile Reactive Messagingによるシンプルなイベント処理に置き換える。"
+explanation: "メッセージ駆動BeanはMessageListenerの実装・アクティベーションプロパティの設定・JMSメッセージの手動デシリアライズが必要です。MicroProfile Reactive Messagingはメソッドに@Incomingアノテーションを付けるだけで、型付きオブジェクトを直接受け取れます。チャネル設定は外部化されており、コードはブローカー非依存でテストも容易です。"
+whyModernWins:
+- icon: "🪶"
+  title: 最小限のコード
+  desc: "単一の@Incomingメソッドが、MDBクラス・MessageListenerインターフェース・アクティベーション設定を置き換えます。"
+- icon: "🔌"
+  title: ブローカー非依存
+  desc: "Kafka・AMQP・JMSコネクターを設定変更だけで切り替えられ、アプリケーションコードを変更する必要がありません。"
+- icon: "☁️"
+  title: クラウドネイティブ対応
+  desc: "リアクティブストリームのバックプレッシャーと軽量ランタイムにより、コンテナ化デプロイに最適です。"
+support:
+  description: MicroProfile 4.0 / SmallRye Reactive Messaging以降、利用可能

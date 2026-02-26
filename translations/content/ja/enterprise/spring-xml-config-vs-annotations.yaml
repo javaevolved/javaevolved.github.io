@@ -1,0 +1,17 @@
+title: Spring XML Bean設定とアノテーション駆動の比較
+oldApproach: XML Beanの定義
+modernApproach: アノテーション駆動Bean
+summary: "冗長なSpring XMLビーン定義をSpring Bootの簡潔なアノテーション駆動設定に置き換える。"
+explanation: "従来のSpringアプリケーションはXML設定ファイルでビーンを配線し、各クラスと依存関係を冗長な<bean>要素で宣言していました。Spring Boot登場後、自動設定が主流になりました。Spring Bootは@Component・@Service・@Repository・@Controllerアノテーションのビーンをクラスパススキャンで検出し、コンストラクターインジェクションで依存関係を自動解決し、クラスパスからDataSourceなどのインフラを設定します。XMLの配線ファイルはすべて不要になります。"
+whyModernWins:
+- icon: "🚫"
+  title: XMLなし
+  desc: "@SpringBootApplicationがコンポーネントスキャンと自動設定を起動し、すべてのXML配線ファイルを排除します。"
+- icon: "💉"
+  title: コンストラクターインジェクション
+  desc: "Springが自動的にコンストラクターで依存関係を注入するため、ビーンのテストと理解が容易になります。"
+- icon: "⚡"
+  title: 自動設定
+  desc: "Spring BootがクラスパスからDataSource・JPA・その他のインフラをゼロボイラープレートで設定します。"
+support:
+  description: "Spring Boot 1.0（2014年4月）以降、広く利用可能。Spring Boot 3はJava 17以上が必要"

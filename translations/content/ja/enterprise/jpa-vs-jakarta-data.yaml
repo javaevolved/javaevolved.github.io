@@ -1,0 +1,17 @@
+title: JPAとJakarta Dataの比較
+oldApproach: JPA EntityManager
+modernApproach: Jakarta Dataリポジトリ
+summary: "リポジトリインターフェースを宣言するだけで、Jakarta DataがDAO実装を自動生成する。"
+explanation: "Jakarta Data（Jakarta EE 11）はデータアクセスを純粋なインターフェース宣言に変えます。@Repositoryアノテーションを付けてCrudRepositoryなどの組み込みリポジトリ型を継承するだけで、ランタイムが実装を生成します。findByNameのようなメソッド名から派生クエリも自動生成されるため、EntityManagerのボイラープレート・JPQL文字列・手書きのsave/findメソッドは不要です。"
+whyModernWins:
+- icon: "🪄"
+  title: ゼロボイラープレート
+  desc: "インターフェースを宣言するだけで、コンテナがデプロイ時に完全なDAO実装を生成します。"
+- icon: "🔍"
+  title: 派生クエリ
+  desc: "findByNameAndStatusのようなメソッド名が自動解析されます——JPQLやSQLは不要です。"
+- icon: "🔌"
+  title: ポータブル
+  desc: "Jakarta EE 11準拠ランタイムならどれでもリポジトリ実装を提供し、ベンダーロックインがありません。"
+support:
+  description: Jakarta EE 11 / Java 21（2024年）以降、利用可能

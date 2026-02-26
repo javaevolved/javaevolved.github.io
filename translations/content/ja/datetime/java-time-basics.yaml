@@ -1,0 +1,17 @@
+title: java.time APIの基本
+oldApproach: DateとCalendar
+modernApproach: "java.time.*"
+summary: "DateとCalendarの代わりに、不変で明確な日付・時刻型を使用する。"
+explanation: "java.timeはLocalDate、LocalTime、LocalDateTime、Instant、ZonedDateTimeを提供します。これらはすべて不変でスレッドセーフです。月は1始まりのため、Calendar.JANUARY = 0 の混乱はもうありません。"
+whyModernWins:
+- icon: "🔒"
+  title: 不変性
+  desc: "日付・時刻の値が誤って変更されることがありません。"
+- icon: "📖"
+  title: 明確なAPI
+  desc: "Month.JANUARYは0ではなく1。DayOfWeek.MONDAYも直感的です。"
+- icon: "🛡️"
+  title: スレッドセーフ
+  desc: "同期不要でスレッド間で自由に共有できます。"
+support:
+  description: JDK 8（2014年3月）以降、広く利用可能

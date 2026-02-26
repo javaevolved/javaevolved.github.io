@@ -1,0 +1,17 @@
+title: 不変リストの作成
+oldApproach: 冗長なラッピング
+modernApproach: List.of()
+summary: "不変リストを一つのシンプルな式で作成する。"
+explanation: "List.of()は真の不変リストを作成します。ラッピングも防御的コピーも不要です。nullを受け付けず（null要素を拒否）、構造的に不変です。従来の方法では3つのネストした呼び出しが必要でした。"
+whyModernWins:
+- icon: "📏"
+  title: 1回の呼び出し
+  desc: "3つのネストした呼び出しを単一のファクトリメソッドに置き換えます。"
+- icon: "🔒"
+  title: 真の不変性
+  desc: "ラッパーではなく、リスト自体が不変です。"
+- icon: "🛡️"
+  title: null安全
+  desc: "作成時にnull要素を拒否し、早期に失敗します。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

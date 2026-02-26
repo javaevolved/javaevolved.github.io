@@ -1,0 +1,17 @@
+title: シーケンスドコレクション
+oldApproach: インデックス算術
+modernApproach: getFirst/getLast
+summary: "クリーンなAPIメソッドで先頭・末尾要素と逆順ビューにアクセスする。"
+explanation: "SequencedCollectionはgetFirst()、getLast()、reversed()、addFirst()、addLast()をList、Deque、SortedSet、LinkedHashSetに追加します。size()-1の計算や手動の逆順イテレーションはもう不要です。"
+whyModernWins:
+- icon: "📖"
+  title: 自己文書化
+  desc: "getLast()はget(size()-1)より明確です。"
+- icon: "🔄"
+  title: 逆順ビュー
+  desc: "reversed()はビューを返すため、コピーは不要です。"
+- icon: "🧩"
+  title: 統一されたAPI
+  desc: "List、Deque、SortedSetで同様に動作します。"
+support:
+  description: "JDK 21 LTS（2023年9月）以降、広く利用可能"

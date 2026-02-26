@@ -1,0 +1,17 @@
+title: "String.indent()とtransform()"
+oldApproach: 手動インデント
+modernApproach: "indent() / transform()"
+summary: "テキストをインデントし、文字列変換を流れるようにチェーンする。"
+explanation: "indent(n)は各行の先頭にnスペースを追加します。transform(fn)は任意の関数を適用して結果を返し、文字列操作のフルエントなチェーンを可能にします。"
+whyModernWins:
+- icon: "📏"
+  title: 組み込み
+  desc: "インデントは一般的な操作で、1回の呼び出しで完結します。"
+- icon: "🔗"
+  title: チェーン可能
+  desc: "transform()で文字列のフルエントなパイプラインが組めます。"
+- icon: "🧹"
+  title: クリーンなコード
+  desc: "行の分割やStringBuilderのループが不要になります。"
+support:
+  description: JDK 12（2019年3月）以降、広く利用可能

@@ -1,0 +1,17 @@
+title: switchのパターンマッチング
+oldApproach: if-elseの連鎖
+modernApproach: 型パターン
+summary: "if-elseのinstanceof連鎖をすっきりしたswitchの型パターンで置き換える。"
+explanation: "switchのパターンマッチングにより、型に直接マッチングでき、型テスト、キャスト、バインディングを1つの簡潔なcaseラベルにまとめられます。コンパイラが網羅性を検証します。"
+whyModernWins:
+- icon: "🏗"
+  title: 構造化されたディスパッチ
+  desc: "switchにより分岐構造が明示的で見やすくなります。"
+- icon: "↩"
+  title: 式形式
+  desc: "値を直接返せます — 可変変数は不要です。"
+- icon: "✅"
+  title: 網羅性
+  desc: "コンパイラがすべての型が処理されているか確認します。"
+support:
+  description: JDK 21 LTS（2023年9月）以降、広く利用可能

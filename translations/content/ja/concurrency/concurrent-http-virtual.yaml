@@ -1,0 +1,17 @@
+title: バーチャルスレッドによる並行HTTP処理
+oldApproach: スレッドプール + URLConnection
+modernApproach: バーチャルスレッド + HttpClient
+summary: "バーチャルスレッドとHttpClientを使って多数のURLを並行取得する。"
+explanation: "バーチャルスレッドにより、HTTPリクエストごとにスレッドを作成することが実用的になります。HttpClientと組み合わせることで、複雑な非同期コールバックパターンを、スケールするシンプルなブロッキングコードに置き換えられます。"
+whyModernWins:
+- icon: "♾️"
+  title: リクエストごとのスレッド
+  desc: "プールのサイジング不要 — URLごとに1バーチャルスレッド。"
+- icon: "📖"
+  title: シンプルなコード
+  desc: "わかりやすいブロッキングコードをそのまま書けます。"
+- icon: "⚡"
+  title: 高スループット
+  desc: "最小限のリソースで何千もの並行リクエストを処理できます。"
+support:
+  description: "JDK 21 LTS（2023年9月）以降、広く利用可能"

@@ -1,0 +1,17 @@
+title: Collectors.flatMapping()
+oldApproach: ネストされたflatMap
+modernApproach: flatMapping()
+summary: "flatMapping()を使ってグルーピングコレクター内でフラット化する。"
+explanation: "Collectors.flatMapping()は下流コレクターとして1対多マッピングを適用します。Stream.flatMap()のコレクター版で、groupingByやpartitioningByの内部で役立ちます。"
+whyModernWins:
+- icon: "🧩"
+  title: 組み合わせ可能
+  desc: "groupingBy内の下流コレクターとして動作します。"
+- icon: "📐"
+  title: シングルパス
+  desc: "単一のストリームトラバーサルでフラット化とグルーピングを実現します。"
+- icon: "🔗"
+  title: ネスト可能
+  desc: "他の下流コレクターと組み合わせられます。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

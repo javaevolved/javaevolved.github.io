@@ -1,0 +1,17 @@
+title: _による無名変数
+oldApproach: 未使用変数
+modernApproach: _プレースホルダー
+summary: "変数を意図的に使用しないことを_で明示する。"
+explanation: "無名変数は、読み手やツールに対して値が意図的に無視されることを伝えます。'ignored'や'unused'といった命名規則も、IDEの警告も不要になります。"
+whyModernWins:
+- icon: "💬"
+  title: 明確な意図
+  desc: "_は「この値はここでは不要」と明示します。"
+- icon: "🔕"
+  title: 警告なし
+  desc: "IDEやリンターが意図的に未使用の変数にフラグを立てなくなります。"
+- icon: "🧹"
+  title: すっきりしたラムダ
+  desc: "複数パラメータのラムダで一部のパラメータだけ必要な場合に簡潔に書けます。"
+support:
+  description: JDK 22でファイナライズ（JEP 456、2024年3月）

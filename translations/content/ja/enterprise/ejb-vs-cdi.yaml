@@ -1,0 +1,17 @@
+title: EJBとCDIの比較
+oldApproach: EJB
+modernApproach: CDI Bean
+summary: "依存性注入とトランザクションのために重量級EJBを軽量CDI Beanに置き換える。"
+explanation: "CDI（Contexts and Dependency Injection）はEJBと同じ依存性注入とトランザクション管理を、コンテナ固有のインターフェースやスーパークラスを持たないプレーンなJavaクラスとして提供します。@ApplicationScoped・@RequestScopedなどのスコープがライフサイクルを制御し、@TransactionalがEJBの必須トランザクションセマンティクスを置き換えます。"
+whyModernWins:
+- icon: "🪶"
+  title: 軽量
+  desc: "CDI BeanはEJB固有のインターフェースやデスクリプターを持たないプレーンなJavaクラスです。"
+- icon: "💉"
+  title: 統一された注入
+  desc: "@Injectはすべてのマネージドビーン・JAX-RSリソース・Jakarta EEコンポーネントで使えます。"
+- icon: "🧪"
+  title: 簡単なユニットテスト
+  desc: "EJBプロキシのオーバーヘッドがないプレーンなクラスは、インスタンス化とモックが容易です。"
+support:
+  description: Jakarta EE 8 / Java 11以降、広く利用可能

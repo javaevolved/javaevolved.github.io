@@ -1,0 +1,17 @@
+title: シングルトンEJBとCDI @ApplicationScopedの比較
+oldApproach: "@Singleton EJB"
+modernApproach: "@ApplicationScoped CDI"
+summary: "シングルトンEJBをCDI @ApplicationScopedビーンに置き換えてシンプルな共有状態管理を実現する。"
+explanation: "シングルトンEJBは並行性管理（@Lock・@ConcurrencyManagement）と即時初期化（@Startup）をEJBコンテナにバンドルします。CDIの@ApplicationScopedビーンははるかに少ない記述量で同じシングルインスタンスのライフサイクルを実現します。並行性制御が必要な場合は、EJBのロックアノテーションよりも標準のjava.util.concurrentユーティリティの方が細かい制御ができます。"
+whyModernWins:
+- icon: "🪶"
+  title: アノテーションノイズの削減
+  desc: "@ConcurrencyManagement・@Lock・@Startupが不要で、@ApplicationScopedの1つだけです。"
+- icon: "🔧"
+  title: 柔軟な並行性制御
+  desc: "java.util.concurrentのロックやvolatileで必要なスレッドセーフティを精密に制御できます。"
+- icon: "🧪"
+  title: テスト容易
+  desc: "プレーンなCDIビーンはEJBコンテナなしでテスト内で直接インスタンス化できます。"
+support:
+  description: Jakarta EE 8 / Java 11以降、広く利用可能

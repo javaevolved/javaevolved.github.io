@@ -1,0 +1,17 @@
+title: ロックフリーな遅延初期化
+oldApproach: synchronized + volatile
+modernApproach: StableValue
+summary: "ダブルチェックロッキングをStableValueで置き換えて遅延シングルトンを実現する。"
+explanation: "StableValueは正しいスレッド安全性を持つ遅延初期化パターンをカプセル化します。JVMは初期化後の読み取りパスを最適化でき、volatileの読み取りより高速になる可能性があります。"
+whyModernWins:
+- icon: "🧹"
+  title: ボイラープレートなし
+  desc: "volatile、synchronized、ダブルnullチェック不要。"
+- icon: "⚡"
+  title: 高速な読み取り
+  desc: "JVMは初期化後に値を定数畳み込みできます。"
+- icon: "✅"
+  title: 証明済みの正確さ
+  desc: "微妙な順序付けバグなし — JVMが処理します。"
+support:
+  description: "JDK 25でプレビュー（JEP 502、StableValue）。--enable-previewが必要です。"

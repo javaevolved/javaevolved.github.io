@@ -1,0 +1,17 @@
+title: モジュールインポート宣言
+oldApproach: 大量のimport文
+modernApproach: import module
+summary: "1つの宣言でモジュールのエクスポートされたすべてのパッケージをインポートする。"
+explanation: "モジュールインポート宣言を使うと、1行でモジュールがエクスポートするすべてをインポートできます。コレクション、I/O、ストリームなどをカバーするjava.baseに特に便利です。"
+whyModernWins:
+- icon: "1️⃣"
+  title: 1行で完結
+  desc: "import文の羅列が1つのモジュールインポートに置き換わります。"
+- icon: "📦"
+  title: モジュール対応
+  desc: "モジュールシステムを活用して一貫したパッケージセットをインポートできます。"
+- icon: "🚀"
+  title: クイックスタート
+  desc: "importリストが煩わしいスクリプトやプロトタイプに最適です。"
+support:
+  description: JDK 25 LTSでファイナライズ（JEP 511、2025年9月）

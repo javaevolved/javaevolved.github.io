@@ -1,0 +1,17 @@
+title: 仮想スレッドエグゼキュータ
+oldApproach: 固定スレッドプール
+modernApproach: 仮想スレッドエグゼキュータ
+summary: "無制限の軽量同時実行に仮想スレッドエグゼキュータを使用する。"
+explanation: "仮想スレッドエグゼキュータは各タスクに新しい仮想スレッドを作成します。プールのサイジングは不要です — 仮想スレッドは数百万個作成できるほど軽量です。"
+whyModernWins:
+- icon: "♾️"
+  title: サイジング不要
+  desc: "チューニングが必要なプールサイズなし — 必要な数だけスレッドを作成できます。"
+- icon: "⚡"
+  title: 軽量
+  desc: "仮想スレッドはMBではなくKBのメモリを使用します。"
+- icon: "🧹"
+  title: 自動クローズ
+  desc: "try-with-resourcesがシャットダウンを自動的に処理します。"
+support:
+  description: "JDK 21 LTS（2023年9月）以降、広く利用可能"

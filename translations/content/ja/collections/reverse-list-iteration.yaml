@@ -1,0 +1,17 @@
+title: リストの逆順イテレーション
+oldApproach: 手動ListIterator
+modernApproach: reversed()
+summary: "クリーンな拡張forループでリストを逆順にイテレートする。"
+explanation: "SequencedCollectionのreversed()メソッドはリストの逆順ビューを返します。このビューは元のリストに裏打ちされているため、コピーは発生しません。拡張forループ構文により、逆順イテレーションが順方向と同じくらい読みやすくなります。"
+whyModernWins:
+- icon: "📖"
+  title: 自然な構文
+  desc: "冗長なListIteratorの代わりに拡張forループを使用します。"
+- icon: "⚡"
+  title: コピーなし
+  desc: "reversed()はビューを返すため、パフォーマンスオーバーヘッドはありません。"
+- icon: "🧩"
+  title: 一貫したAPI
+  desc: "List、Deque、SortedSetに統一して動作します。"
+support:
+  description: "JDK 21 LTS（2023年9月）以降、広く利用可能"

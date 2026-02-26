@@ -1,0 +1,17 @@
+title: DurationとPeriod
+oldApproach: ミリ秒演算
+modernApproach: Duration / Period
+summary: "型安全なDurationとPeriodで時間差を計算する。"
+explanation: "Durationは時間ベースの量（時・分・秒）、Periodは日付ベースの量（年・月・日）に使います。ChronoUnit.between()は単純な差の計算に便利です。いずれもエッジケースを正しく処理します。"
+whyModernWins:
+- icon: "🎯"
+  title: 型安全
+  desc: "時間にはDuration、日付にはPeriodと役割が明確で混乱しません。"
+- icon: "🛡️"
+  title: 正確な計算
+  desc: "サマータイムの移行、うるう年、うるう秒を正しく処理します。"
+- icon: "📖"
+  title: 読みやすさ
+  desc: "ChronoUnit.DAYS.between()は英語のように読めます。"
+support:
+  description: JDK 8（2014年3月）以降、広く利用可能

@@ -1,0 +1,17 @@
+title: 単一ファイル実行
+oldApproach: 2ステップコンパイル
+modernApproach: ダイレクト起動
+summary: "javacなしで単一ファイルのJavaプログラムを直接実行する。"
+explanation: "Javaランチャーはソースファイルをコンパイルしてそのまままたはシングルコマンドで実行できます。Unixのシェバン（shebang）サポートと組み合わせることで、Javaファイルをスクリプトとして利用可能です。コンパイル手順は別途不要です。"
+whyModernWins:
+- icon: "⚡"
+  title: 1コマンド
+  desc: "java File.javaで1ステップでコンパイルと実行が完了します。"
+- icon: "📝"
+  title: スクリプト風
+  desc: "シェバン行を追加するだけで.javaファイルを実行可能スクリプトにできます。"
+- icon: "🎓"
+  title: 学習者向け
+  desc: "ビルドツールを覚えなくてもすぐにコードを実行できます。"
+support:
+  description: JDK 11（2018年9月）以降、広く利用可能

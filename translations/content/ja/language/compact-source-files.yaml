@@ -1,0 +1,17 @@
+title: コンパクトソースファイル
+oldApproach: mainクラスの定型文
+modernApproach: void main()
+summary: "クラス宣言やpublic static void mainなしで完全なプログラムを記述できる。"
+explanation: "コンパクトソースファイルは、シンプルなプログラムにおけるクラス宣言とmainメソッドシグネチャの定型文を取り除きます。java.io.IOの暗黙的なインポートと組み合わせることで、printlnも直接使えます。"
+whyModernWins:
+- icon: "🚀"
+  title: 定型文ゼロ
+  desc: "class宣言も、public static void mainも、String[] argsも不要です。"
+- icon: "🌱"
+  title: 初心者にやさしい
+  desc: "プログラミング初心者が1行目から有用なコードを書けます。"
+- icon: "📝"
+  title: スクリプトのような書き心地
+  desc: "簡単なプロトタイプ、スクリプト、サンプルに最適です。"
+support:
+  description: JDK 25 LTSでファイナライズ（JEP 512、2025年9月）

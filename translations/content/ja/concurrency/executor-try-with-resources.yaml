@@ -1,0 +1,17 @@
+title: ExecutorServiceの自動クローズ
+oldApproach: 手動シャットダウン
+modernApproach: try-with-resources
+summary: "try-with-resourcesを使ってエグゼキュータを自動シャットダウンする。"
+explanation: "Java 19以降、ExecutorServiceはAutoCloseableを実装しています。close()メソッドはshutdown()を呼び出し、タスクの完了を待機します。手動のtry/finallyシャットダウンパターンは不要になりました。"
+whyModernWins:
+- icon: "🧹"
+  title: 自動クリーンアップ
+  desc: "ブロックを抜けると自動的にシャットダウンされます。"
+- icon: "🛡️"
+  title: リークなし
+  desc: "例外が発生してもエグゼキュータは常にシャットダウンされます。"
+- icon: "📖"
+  title: 使い慣れたパターン
+  desc: "ファイルや接続などで使われるtry-with-resourcesと同じです。"
+support:
+  description: "JDK 19（2022年9月）以降、広く利用可能"

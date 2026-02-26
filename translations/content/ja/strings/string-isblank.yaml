@@ -1,0 +1,17 @@
+title: String.isBlank()
+oldApproach: trim().isEmpty()
+modernApproach: isBlank()
+summary: "1回のメソッド呼び出しで空白文字列を判定する。"
+explanation: "isBlank()は文字列が空、またはUnicodeの空白文字のみからなる場合にtrueを返します。trim()では検出できないUnicode空白文字にも対応しています。"
+whyModernWins:
+- icon: "📖"
+  title: 自己文書化
+  desc: "isBlank()は何をチェックしているか一目瞭然です。"
+- icon: "🌐"
+  title: Unicode対応
+  desc: "ASCIIだけでなく、すべてのUnicode空白文字を処理できます。"
+- icon: "⚡"
+  title: アロケーションなし
+  desc: "中間のトリミング済み文字列が生成されません。"
+support:
+  description: JDK 11（2018年9月）以降、広く利用可能

@@ -1,0 +1,17 @@
+title: 手動JPAトランザクションと宣言的@Transactionalの比較
+oldApproach: 手動トランザクション
+modernApproach: "@Transactional"
+summary: "冗長なbegin/commit/rollbackブロックを単一の@Transactionalアノテーションに置き換える。"
+explanation: "手動のトランザクション管理では、try-catchブロックで囲まれた明示的なbegin()・commit()・rollback()呼び出しが必要で、サービスメソッドごとにこのボイラープレートを繰り返します。@Transactionalアノテーションはライフサイクル管理をコンテナに委ねます。メソッド実行前にトランザクションを開始し、成功時にコミット、RuntimeException発生時に自動でロールバックします。"
+whyModernWins:
+- icon: "🗑️"
+  title: ボイラープレートなし
+  desc: "1つのアノテーションが、繰り返されるbegin/commit/rollbackのtry-catchブロックを置き換えます。"
+- icon: "🛡️"
+  title: 安全なロールバック
+  desc: "コンテナが非チェック例外時のロールバックを保証します——catchブロックを忘れるリスクがありません。"
+- icon: "📐"
+  title: 宣言的制御
+  desc: "伝播・分離レベル・ロールバックルールをアノテーション属性で表現できます。"
+support:
+  description: Jakarta EE 8 / Java 11以降、広く利用可能

@@ -1,0 +1,17 @@
+title: インターフェースの静的メソッド
+oldApproach: ユーティリティクラス
+modernApproach: インターフェースの静的メソッド
+summary: "別のユーティリティクラスではなく、インターフェースに静的ユーティリティメソッドを直接追加する。"
+explanation: "Java 8以前、インターフェースに関連するユーティリティメソッドは別クラス（例：CollectionのためのCollections）に置く必要がありました。インターフェースの静的メソッドにより、関連するユーティリティをまとめて配置できます。Comparator.comparing()、Stream.of()、List.of()などのモダンなAPIで広く使われています。"
+whyModernWins:
+- icon: "📦"
+  title: 整理された構成
+  desc: "関連するユーティリティを別クラスではなくインターフェースにまとめられます。"
+- icon: "🔍"
+  title: 発見しやすさ
+  desc: "ファクトリやヘルパーメソッドが期待する場所で見つかります。"
+- icon: "🎯"
+  title: APIの一貫性
+  desc: "*Utilsや*Helperといった別クラスが不要になります。"
+support:
+  description: JDK 8（2014年3月）以降、利用可能

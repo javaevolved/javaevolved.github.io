@@ -1,0 +1,17 @@
+title: Map.entry()ファクトリ
+oldApproach: SimpleEntry
+modernApproach: Map.entry()
+summary: "シンプルなファクトリメソッドでマップエントリを作成する。"
+explanation: "Map.entry()は冗長なAbstractMap.SimpleEntryコンストラクタを置き換えます。不変エントリを返すため、Map.ofEntries()やストリーム操作に最適です。"
+whyModernWins:
+- icon: "📏"
+  title: 簡潔
+  desc: "3行の代わりに1行で、意図がより明確です。"
+- icon: "🔒"
+  title: 不変
+  desc: "返されたエントリは変更できません。"
+- icon: "🧩"
+  title: 組み合わせ可能
+  desc: "大きなマップ向けにMap.ofEntries()と完璧に連携します。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

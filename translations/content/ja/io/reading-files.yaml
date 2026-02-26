@@ -1,0 +1,17 @@
+title: ファイルの読み込み
+oldApproach: BufferedReader
+modernApproach: Files.readString()
+summary: "ファイル全体を1行でStringに読み込む。"
+explanation: "Files.readString()はファイルの全内容をStringに読み込みます。エンコーディング（デフォルトはUTF-8）とリソースのクリーンアップを自動で処理します。大きなファイルには遅延ストリーミングのためにFiles.lines()を使用します。"
+whyModernWins:
+- icon: "📏"
+  title: 1行で完結
+  desc: "BufferedReaderの8行のボイラープレートを置き換えます。"
+- icon: "🧹"
+  title: 自動クリーンアップ
+  desc: "ファイルハンドルは自動的にクローズされます。"
+- icon: "🌐"
+  title: UTF-8がデフォルト
+  desc: "デフォルトで正しいエンコーディング — 文字セットの混乱なし。"
+support:
+  description: "JDK 11（2018年9月）以降、広く利用可能"

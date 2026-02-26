@@ -1,0 +1,17 @@
+title: TLS 1.3がデフォルト
+oldApproach: 手動のTLS設定
+modernApproach: TLS 1.3デフォルト
+summary: "TLS 1.3はデフォルトで有効なため、プロトコルの明示的な設定は不要。"
+explanation: "Java 11でTLS 1.3サポートが追加され、優先プロトコルとなりました。HttpClientは自動的にTLS 1.3を使用します。セキュアな接続にプロトコルバージョンを手動で指定する必要はもうありません。"
+whyModernWins:
+- icon: "🛡️"
+  title: より安全
+  desc: "TLS 1.3は廃止された暗号スイートとハンドシェイクパターンを排除しています。"
+- icon: "⚡"
+  title: 高速なハンドシェイク
+  desc: "TLS 1.3は2ラウンドトリップではなく1ラウンドトリップで完了します。"
+- icon: "🆓"
+  title: ゼロ設定
+  desc: "デフォルトでセキュア——プロトコルを明示的に選択する必要がありません。"
+support:
+  description: JDK 11（2018年9月）以降、広く利用可能

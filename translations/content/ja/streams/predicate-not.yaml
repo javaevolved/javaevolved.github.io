@@ -1,0 +1,17 @@
+title: "Predicate.not()による否定"
+oldApproach: ラムダによる否定
+modernApproach: Predicate.not()
+summary: "ラムダラッパーを書く代わりにPredicate.not()でメソッド参照をクリーンに否定する。"
+explanation: "Java 11以前は、メソッド参照を否定するためにラムダでラップする必要がありました。Predicate.not()を使えば任意の述語を直接否定でき、コードの可読性を保ちつつ、ストリームパイプライン全体でメソッド参照スタイルを一貫して使用できます。"
+whyModernWins:
+- icon: "👁"
+  title: クリーンな否定
+  desc: "否定するためだけにメソッド参照をラムダでラップする必要がありません。"
+- icon: "🔗"
+  title: 組み合わせ可能
+  desc: "任意のPredicateで動作し、クリーンな述語チェーンを実現します。"
+- icon: "📖"
+  title: 自然に読める
+  desc: "Predicate.not(String::isBlank)は英語のように読めます。"
+support:
+  description: "JDK 11（2018年9月）以降、利用可能"

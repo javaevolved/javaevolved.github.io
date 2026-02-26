@@ -1,0 +1,17 @@
+title: "引数なしのOptional.orElseThrow()"
+oldApproach: "get()またはorElseThrow(supplier)"
+modernApproach: orElseThrow()
+summary: "get()の代わりに意図を明確に示すOptional.orElseThrow()を使う。"
+explanation: "Optional.get()は失敗の可能性を隠すためコードの問題とみなされています。Java 10で追加された引数なしのorElseThrow()はまったく同じことをしますが、意図を明確にします。値を期待していて、存在しない場合は例外をスローすることを示します。"
+whyModernWins:
+- icon: "📖"
+  title: 自己文書化
+  desc: "orElseThrow()は値がないことが予期外であることを明示します。"
+- icon: "🔒"
+  title: "get()を避ける"
+  desc: "静的解析ツールはget()をリスクとして指摘します。orElseThrow()は慣用的です。"
+- icon: "⚡"
+  title: ボイラープレート削減
+  desc: "デフォルトのNoSuchElementExceptionのためにサプライヤを渡す必要がありません。"
+support:
+  description: "JDK 10（2018年3月）以降、利用可能"

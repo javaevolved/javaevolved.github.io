@@ -1,0 +1,17 @@
+title: わかりやすいNullPointerException
+oldApproach: 不明瞭なNPE
+modernApproach: 詳細なNPE
+summary: "JVMがどの変数がnullだったかを自動的に教えてくれる。"
+explanation: "わかりやすいNPEはどの式がnullで、どの操作が失敗したかを説明します。Java 14からデフォルトで有効になっています — コードの変更は不要で、JDKのアップグレードだけで利用できます。"
+whyModernWins:
+- icon: "🔍"
+  title: 正確な変数特定
+  desc: "メッセージはチェーン内のnull変数を指定します。"
+- icon: "⚡"
+  title: デバッグが速い
+  desc: "5つのチェーン呼び出しのどれがnullだったか推測不要。"
+- icon: "🆓"
+  title: 無償のアップグレード
+  desc: "コード変更不要 — JDK 14以降で実行するだけ。"
+support:
+  description: "JDK 14（2020年3月）以降、広く利用可能"

@@ -1,0 +1,17 @@
+title: String.repeat()
+oldApproach: StringBuilderループ
+modernApproach: repeat()
+summary: "ループを使わずに文字列をn回繰り返す。"
+explanation: "String.repeat(int)は文字列をn回連結した結果を返します。エッジケースも考慮済みで、repeat(0)は空文字列を返し、repeat(1)は同じ文字列を返します。"
+whyModernWins:
+- icon: "📏"
+  title: ワンライナー
+  desc: "5行のStringBuilderコードを1回の呼び出しに置き換えられます。"
+- icon: "⚡"
+  title: 最適化済み
+  desc: "大きな繰り返しに対して内部実装が最適化されています。"
+- icon: "📖"
+  title: 意図が明確
+  desc: "repeat(3)は目的が一目でわかります。"
+support:
+  description: JDK 11（2018年9月）以降、広く利用可能

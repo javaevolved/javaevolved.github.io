@@ -1,0 +1,17 @@
+title: 日付のフォーマット
+oldApproach: SimpleDateFormat
+modernApproach: DateTimeFormatter
+summary: "スレッドセーフで不変なDateTimeFormatterで日付をフォーマットする。"
+explanation: "DateTimeFormatterはSimpleDateFormatと異なり、不変でスレッドセーフです。定数として保存して共有できます。ISO_LOCAL_DATEなどの定義済みフォーマッターも一般的な書式に利用できます。"
+whyModernWins:
+- icon: "🛡️"
+  title: スレッドセーフ
+  desc: "同期なしでスレッド間でフォーマッターを共有できます。"
+- icon: "📋"
+  title: 組み込みフォーマット
+  desc: "標準書式にはISO_LOCAL_DATE、ISO_INSTANTなどが使えます。"
+- icon: "🔒"
+  title: 不変性
+  desc: "static finalの定数として安全に保存できます。"
+support:
+  description: JDK 8（2014年3月）以降、広く利用可能

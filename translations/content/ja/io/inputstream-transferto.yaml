@@ -1,0 +1,17 @@
+title: InputStream.transferTo()
+oldApproach: 手動コピーループ
+modernApproach: transferTo()
+summary: "InputStreamをOutputStreamへ1回の呼び出しでコピーする。"
+explanation: "transferTo()は入力ストリームからすべてのバイトを読み取り、出力ストリームに書き込みます。バッファ管理もループも不要です。最適化された内部バッファを使用します。"
+whyModernWins:
+- icon: "📏"
+  title: 1行で完結
+  desc: "読み書きループ全体を1つのメソッド呼び出しで置き換えます。"
+- icon: "⚡"
+  title: 最適化済み
+  desc: "内部バッファサイズはパフォーマンスのためにチューニングされています。"
+- icon: "🛡️"
+  title: バグなし
+  desc: "バッファ管理でのオフバイワンエラーが起きません。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

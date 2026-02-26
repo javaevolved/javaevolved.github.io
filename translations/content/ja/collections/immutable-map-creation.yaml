@@ -1,0 +1,17 @@
+title: 不変マップの作成
+oldApproach: マップビルダーパターン
+modernApproach: Map.of()
+summary: "ビルダーなしでインラインに不変マップを作成する。"
+explanation: "Map.of()はキーと値のペアをインラインで受け取り、不変マップを返します。10件を超えるエントリには、Map.entry()ペアと共にMap.ofEntries()を使用します。"
+whyModernWins:
+- icon: "📏"
+  title: インライン作成
+  desc: "一時的な変更可能マップは不要です。"
+- icon: "🔒"
+  title: 不変な結果
+  desc: "作成後にマップは変更できません。"
+- icon: "🚫"
+  title: nullキー・値なし
+  desc: "nullエントリは即座に拒否されます。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

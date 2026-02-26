@@ -1,0 +1,17 @@
+title: モダンHTTPクライアント
+oldApproach: HttpURLConnection
+modernApproach: HttpClient
+summary: "組み込みのHttpClientでクリーンなモダンHTTPリクエストを実行する。"
+explanation: "HttpClientはHTTP/1.1とHTTP/2、非同期リクエスト、WebSocket、カスタムエグゼキュータ、コネクションプーリングをサポートします。URLConnectionのキャストや手動でのInputStream読み取りは不要になりました。"
+whyModernWins:
+- icon: "📐"
+  title: ビルダーAPI
+  desc: "リクエスト、ヘッダー、タイムアウトをフルエントビルダーで設定できます。"
+- icon: "🔄"
+  title: HTTP/2サポート
+  desc: "多重化とサーバープッシュを備えたHTTP/2を内蔵しています。"
+- icon: "⚡"
+  title: 非同期対応
+  desc: "sendAsync()はCompletableFutureを返します。"
+support:
+  description: "JDK 11（2018年9月）以降、広く利用可能"

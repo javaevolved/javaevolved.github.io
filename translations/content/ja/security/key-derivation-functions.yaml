@@ -1,0 +1,17 @@
+title: 鍵導出関数
+oldApproach: 手動PBKDF2
+modernApproach: KDF API
+summary: "標準KDF APIを使って暗号鍵を導出する。"
+explanation: "KDF APIはHKDFを含む鍵導出関数の標準インターフェースを提供します。複雑なSecretKeyFactory + PBEKeySpecのパターンをクリーンなビルダーAPIに置き換えます。"
+whyModernWins:
+- icon: "📐"
+  title: クリーンなAPI
+  desc: "面倒なKeySpecコンストラクターの代わりにビルダーパターンを使用。"
+- icon: "🔧"
+  title: HKDFサポート
+  desc: "PBKDF2に加えて現代的なHKDFアルゴリズムも利用できます。"
+- icon: "🛡️"
+  title: 標準化
+  desc: "すべての鍵導出アルゴリズムに対する統一APIを提供。"
+support:
+  description: JDK 25 LTS（JEP 510、2025年9月）で正式採用

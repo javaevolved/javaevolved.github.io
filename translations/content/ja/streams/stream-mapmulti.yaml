@@ -1,0 +1,17 @@
+title: Stream.mapMulti()
+oldApproach: flatMap＋List
+modernApproach: mapMulti()
+summary: "中間ストリームを作成せずに入力ごとに0個以上の要素を出力する。"
+explanation: "mapMulti()は、各要素に中間Streamオブジェクトを作成しないflatMapの命令型代替手段です。マッピングが少数の要素を生成する場合にはより効率的です。"
+whyModernWins:
+- icon: "⚡"
+  title: アロケーション削減
+  desc: "要素ごとに中間Streamが作成されません。"
+- icon: "🎯"
+  title: 命令型スタイル
+  desc: "ループや条件分岐を直接使用できます。"
+- icon: "📐"
+  title: 柔軟
+  desc: "完全な制御で0個、1個、または複数の要素を出力できます。"
+support:
+  description: "JDK 16（2021年3月）以降、広く利用可能"

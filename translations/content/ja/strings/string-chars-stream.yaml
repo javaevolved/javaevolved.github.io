@@ -1,0 +1,17 @@
+title: 文字列の文字をストリームとして処理
+oldApproach: 手動ループ
+modernApproach: chars()ストリーム
+summary: "文字列の文字をストリームパイプラインとして処理する。"
+explanation: "String.chars()は文字値のIntStreamを返し、関数型処理が可能になります。Unicode対応が必要な場合はcodePoints()が補助文字を正しく処理します。"
+whyModernWins:
+- icon: "🔗"
+  title: チェーン可能
+  desc: "文字ストリームにfilter・map・collectが使えます。"
+- icon: "📐"
+  title: 宣言的
+  desc: "ループの方法ではなく、何をするかを記述します。"
+- icon: "🌐"
+  title: Unicode対応
+  desc: "codePoints()は絵文字や補助文字を正しく処理します。"
+support:
+  description: JDK 8以降（JDK 9以降で改善）、利用可能

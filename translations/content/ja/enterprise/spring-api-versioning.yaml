@@ -1,0 +1,17 @@
+title: Spring Framework 7 APIバージョニング
+oldApproach: 手動URLパスバージョニング
+modernApproach: ネイティブAPIバージョニング
+summary: "バージョンプレフィックスを持つ重複コントローラーをSpring Framework 7のネイティブAPIバージョニングサポートに置き換える。"
+explanation: "Spring Framework 7以前のAPIバージョニングでは、バージョンごとに別々のコントローラークラスが必要（例：/api/v1/products・/api/v2/products）で、リクエストマッピングが重複し、バージョンロジックが多数のファイルに分散していました。Spring Framework 7では@RequestMappingなどのアノテーションにversion属性が追加され、WebMvcConfigurerにconfigureApiVersioningフックが導入されました。バージョンはリクエストヘッダー・URLパスセグメント・クエリパラメーターから解決でき、すべて1か所で制御できます。"
+whyModernWins:
+- icon: "🗂️"
+  title: コントローラーの重複なし
+  desc: "すべてのバージョンが1つのコントローラークラスに収まり、個々のハンドラーメソッドだけにversion属性を付けます。"
+- icon: "⚙️"
+  title: バージョン戦略の集中管理
+  desc: "ヘッダー・URLパス・クエリパラメーターによるバージョニングの切り替えが1つのconfigureApiVersioning呼び出しで完結します。"
+- icon: "📈"
+  title: 段階的な進化
+  desc: "新バージョンを1つのメソッドに追加するだけで、関連のないエンドポイントや新しいコントローラーファイルへの影響はありません。"
+support:
+  description: "Spring Framework 7.0（Java 17以上が必要）以降、利用可能"

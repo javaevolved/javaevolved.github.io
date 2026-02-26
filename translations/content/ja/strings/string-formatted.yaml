@@ -1,0 +1,17 @@
+title: String.formatted()
+oldApproach: String.format()
+modernApproach: formatted()
+summary: "テンプレート文字列自身でformatted()を呼び出す。"
+explanation: "String.formatted()はString.format()と等価なインスタンスメソッドですが、フォーマット文字列自身に対して呼び出します。左から右へのフローとしてより自然に読めます。"
+whyModernWins:
+- icon: "📖"
+  title: 自然な読み方
+  desc: "template.formatted(args)はString.format(template, args)よりも読みやすいです。"
+- icon: "🔗"
+  title: チェーン可能
+  desc: "他の文字列メソッドとメソッドチェーンできます。"
+- icon: "📏"
+  title: 簡潔
+  desc: "冗長なString.format()の静的呼び出しが不要になります。"
+support:
+  description: JDK 15（2020年9月）以降、広く利用可能

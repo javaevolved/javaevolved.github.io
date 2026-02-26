@@ -1,0 +1,17 @@
+title: パターンにおけるプリミティブ型
+oldApproach: 手動の範囲チェック
+modernApproach: プリミティブパターン
+summary: "パターンマッチングがオブジェクトだけでなくプリミティブ型でも動作するようになった。"
+explanation: "Java 25はパターンマッチングをプリミティブ型に拡張します。switchパターンにwhenガードと共にint、long、doubleなどを使用でき、ボクシングや手動の範囲チェックが不要になります。"
+whyModernWins:
+- icon: "⚡"
+  title: ボクシング不要
+  desc: "プリミティブを直接マッチング — Integerラッパーは不要です。"
+- icon: "📏"
+  title: パターンの一貫性
+  desc: "オブジェクトとプリミティブで同じパターン構文が使えます。"
+- icon: "🚀"
+  title: パフォーマンス向上
+  desc: "パターンマッチングにおけるオートボクシングのオーバーヘッドを回避できます。"
+support:
+  description: JDK 25でプレビュー（3回目のプレビュー、JEP 507）。--enable-previewが必要。

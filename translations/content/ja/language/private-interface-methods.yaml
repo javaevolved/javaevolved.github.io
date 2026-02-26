@@ -1,0 +1,17 @@
+title: インターフェースのprivateメソッド
+oldApproach: 重複したロジック
+modernApproach: privateメソッド
+summary: "privateメソッドを使ってインターフェース内の共有ロジックを抽出する。"
+explanation: "Java 9ではインターフェースにprivateメソッドが使えるようになり、実装の詳細を実装クラスに公開することなく、デフォルトメソッド間でコードを共有できます。"
+whyModernWins:
+- icon: "♻"
+  title: コードの再利用
+  desc: "重複なしにデフォルトメソッド間でロジックを共有できます。"
+- icon: "🔒"
+  title: カプセル化
+  desc: "実装の詳細が実装クラスから隠蔽されます。"
+- icon: "🧹"
+  title: DRYなインターフェース
+  desc: "デフォルトメソッド間でのコピー&ペーストがなくなります。"
+support:
+  description: JDK 9（2017年9月）以降、広く利用可能

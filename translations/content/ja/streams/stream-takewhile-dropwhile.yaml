@@ -1,0 +1,17 @@
+title: Stream takeWhile / dropWhile
+oldApproach: 手動ループ
+modernApproach: takeWhile/dropWhile
+summary: "述語に基づいてストリームの要素を取得またはスキップする。"
+explanation: "takeWhile()は述語が真の間は要素を返し、最初に偽になった時点で停止します。dropWhile()は真の間は要素をスキップし、残りを返します。いずれも順序付きストリームで最も効果的です。"
+whyModernWins:
+- icon: "🎯"
+  title: ショートサーキット
+  desc: "述語が失敗した時点で処理を停止します。"
+- icon: "🔗"
+  title: パイプライン対応
+  desc: "他のストリーム操作と自然に連鎖できます。"
+- icon: "📖"
+  title: 宣言的
+  desc: "takeWhileは「100未満の間取得する」と英語のように読めます。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"
