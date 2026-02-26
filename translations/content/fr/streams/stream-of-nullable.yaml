@@ -1,0 +1,18 @@
+---
+title: Stream.ofNullable()
+oldApproach: Vérification de null
+modernApproach: ofNullable()
+summary: Crée un stream de zéro ou un élément à partir d'une valeur qui peut être null.
+explanation: "Stream.ofNullable() retourne un stream d'un seul élément si la valeur n'est pas null, ou un stream vide si elle est null. Élimine le pattern de vérification ternaire de null."
+whyModernWins:
+- icon: 📏
+  title: Concis
+  desc: Un seul appel remplace le conditionnel ternaire.
+- icon: 🔗
+  title: Compatible avec flatMap
+  desc: Parfait à l'intérieur de flatMap pour ignorer les valeurs null.
+- icon: 🛡️
+  title: Sûr contre null
+  desc: Sans risque de NPE — null est converti en stream vide.
+support:
+  description: Disponible depuis JDK 9 (sept. 2017)

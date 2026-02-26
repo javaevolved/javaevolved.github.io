@@ -1,0 +1,18 @@
+---
+title: Patterns de record (déstructuration)
+oldApproach: Accès manuel
+modernApproach: Déstructuration
+summary: Déstructurez des records directement dans les patterns — extrayez les champs en une seule étape.
+explanation: "Les patterns de record permettent de décomposer les composants d'un record directement dans instanceof et switch. Les patterns imbriqués sont également supportés, permettant des correspondances profondes sans variables intermédiaires."
+whyModernWins:
+- icon: 🎯
+  title: Extraction directe
+  desc: Accédez aux composants du record sans appeler les accesseurs manuellement.
+- icon: 🪆
+  title: Imbriquable
+  desc: "Les patterns peuvent être imbriqués — correspondez aux records internes en une seule expression."
+- icon: 📏
+  title: Code compact
+  desc: "Cinq lignes deviennent deux — moins de cérémonie, la même clarté."
+support:
+  description: Disponible depuis JDK 21 LTS (sept. 2023)

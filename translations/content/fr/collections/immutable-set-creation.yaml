@@ -1,0 +1,18 @@
+---
+title: "Création de sets immutables"
+oldApproach: "Wrapper verbeux"
+modernApproach: "Set.of()"
+summary: "Crée des sets immutables avec un unique appel factory."
+explanation: "Set.of() crée un set véritablement immutable qui rejette les éléments null et les doublons à la création. Fini de wrapper des sets mutables."
+whyModernWins:
+- icon: "📏"
+  title: "Concis"
+  desc: "Une ligne au lieu de trois appels imbriqués."
+- icon: "🚫"
+  title: "Détecte les doublons"
+  desc: "Lève une exception si vous passez des éléments dupliqués par accident."
+- icon: "🔒"
+  title: "Immutable"
+  desc: "Impossible d'ajouter ou de supprimer après la création."
+support:
+  description: "Disponible depuis JDK 9 (sept. 2017)"

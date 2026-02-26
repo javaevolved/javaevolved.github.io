@@ -1,0 +1,18 @@
+---
+title: Optional.or() comme alternative
+oldApproach: Alternative imbriquée
+modernApproach: Chaîne .or()
+summary: Enchaînez des alternatives d'Optional sans vérifications imbriquées.
+explanation: "Optional.or() retourne l'Optional original s'il a une valeur, sinon évalue le supplier pour obtenir un Optional alternatif. Les suppliers sont paresseux — ils ne sont invoqués que si nécessaire."
+whyModernWins:
+- icon: 🔗
+  title: Enchaînable
+  desc: Empilez des alternatives dans un pipeline lisible.
+- icon: ⚡
+  title: Évaluation paresseuse
+  desc: Les suppliers alternatifs ne s'exécutent que si nécessaire.
+- icon: 📖
+  title: Déclaratif
+  desc: "Se lit comme 'essayez le primaire, ou le secondaire, ou les valeurs par défaut'."
+support:
+  description: Disponible depuis JDK 9 (sept. 2017)

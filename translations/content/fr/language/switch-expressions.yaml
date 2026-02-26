@@ -1,0 +1,18 @@
+---
+title: Expressions switch
+oldApproach: Instruction switch
+modernApproach: Expression switch
+summary: "switch comme expression qui retourne une valeur — sans break, sans fall-through."
+explanation: "Les expressions switch retournent une valeur directement, utilisent la syntaxe flèche pour éviter les erreurs de fall-through, et le compilateur vérifie l'exhaustivité. Cela remplace la forme d'instruction sujette aux erreurs."
+whyModernWins:
+- icon: 🎯
+  title: Retourne une valeur
+  desc: Affectez le résultat du switch directement — sans variable temporaire.
+- icon: 🛡️
+  title: Sans fall-through
+  desc: "La syntaxe flèche élimine les erreurs accidentelles de fall-through par break manquant."
+- icon: ✅
+  title: Vérification d'exhaustivité
+  desc: Le compilateur s'assure que tous les cas sont couverts.
+support:
+  description: Disponible depuis JDK 14 (mars 2020)

@@ -1,0 +1,18 @@
+---
+title: "Versionnage d'API dans Spring Framework 7"
+oldApproach: "Versionnage manuel par chemin URL"
+modernApproach: "Versionnage natif d'API"
+summary: "Remplace les contrôleurs dupliqués avec préfixe de version par le support natif de versionnage d'API de Spring Framework 7."
+explanation: "Avant Spring Framework 7, le versionnage d'API nécessitait des classes de contrôleur séparées par version (par exemple /api/v1/products, /api/v2/products), dupliquant les mappings de requêtes et dispersant la logique de version dans de nombreux fichiers. Spring Framework 7 introduit le versionnage natif via un nouvel attribut version dans @RequestMapping et les annotations connexes, plus un hook configureApiVersioning dans WebMvcConfigurer. La version peut être résolue depuis un en-tête de requête, un segment de chemin URL ou un paramètre de requête — tout contrôlé en un seul endroit."
+whyModernWins:
+- icon: "🗂️"
+  title: "Sans duplication de contrôleurs"
+  desc: "Toutes les versions vivent dans une seule classe de contrôleur ; seules les méthodes handler individuelles portent un attribut de version."
+- icon: "⚙️"
+  title: "Stratégie de version centralisée"
+  desc: "Changez d'en-tête à URL ou paramètre de requête en un seul appel à configureApiVersioning."
+- icon: "📈"
+  title: "Évolution incrémentale"
+  desc: "Ajoutez une nouvelle version à une méthode sans toucher les endpoints non liés ni créer de nouveaux fichiers de contrôleur."
+support:
+  description: "Disponible depuis Spring Framework 7.0 (nécessite Java 17+)"

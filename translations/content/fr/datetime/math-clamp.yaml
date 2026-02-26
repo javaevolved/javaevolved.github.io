@@ -1,0 +1,18 @@
+---
+title: Math.clamp()
+oldApproach: min/max imbriqués
+modernApproach: Math.clamp()
+summary: Limite une valeur entre des bornes avec un seul appel clair.
+explanation: Math.clamp(value, min, max) restreint une valeur à la plage [min, max]. Plus clair qu'imbriquer Math.min/Math.max et disponible pour int, long, float et double.
+whyModernWins:
+- icon: 📖
+  title: Auto-documenté
+  desc: clamp(value, min, max) est sans ambiguïté.
+- icon: 🛡️
+  title: Moins sujet aux erreurs
+  desc: Plus d'échange accidentel de l'ordre de min/max.
+- icon: 🎯
+  title: Tous les types numériques
+  desc: Fonctionne avec int, long, float et double.
+support:
+  description: Disponible depuis JDK 21 LTS (septembre 2023)

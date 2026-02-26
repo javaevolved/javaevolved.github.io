@@ -1,0 +1,18 @@
+---
+title: Fichiers source compacts
+oldApproach: Cérémonie de classe Main
+modernApproach: void main()
+summary: "Écrivez un programme complet sans déclaration de classe ni public static void main."
+explanation: "Les fichiers source compacts éliminent la cérémonie des déclarations de classe et de la signature de méthode main pour les programmes simples. Combiné avec l'import implicite de java.io.IO, même println est disponible directement."
+whyModernWins:
+- icon: 🚀
+  title: Zéro cérémonie
+  desc: "Sans classe, sans public static void main, sans String[] args."
+- icon: 🎓
+  title: Convivial pour les débutants
+  desc: Les nouveaux programmeurs peuvent écrire du code utile dès la ligne 1.
+- icon: 📝
+  title: Style script
+  desc: Parfait pour les prototypes rapides, les scripts et les exemples.
+support:
+  description: Finalisé dans JDK 25 LTS (JEP 512, sept. 2025).

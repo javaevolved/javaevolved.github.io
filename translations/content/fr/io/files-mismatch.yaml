@@ -1,0 +1,18 @@
+---
+title: Files.mismatch()
+oldApproach: Comparaison manuelle d'octets
+modernApproach: Files.mismatch()
+summary: Compare deux fichiers efficacement sans les charger en mémoire.
+explanation: Files.mismatch() retourne la position du premier octet qui diffère, ou -1 si les fichiers sont identiques. Lit de façon paresseuse et court-circuite à la première différence.
+whyModernWins:
+- icon: ⚡
+  title: Efficace en mémoire
+  desc: Ne charge pas les fichiers entiers dans des tableaux d'octets.
+- icon: 🎯
+  title: Identifie la différence
+  desc: Retourne la position exacte de l'octet de la première divergence.
+- icon: 📏
+  title: Un seul appel
+  desc: Sans logique manuelle de comparaison de tableaux d'octets.
+support:
+  description: Disponible depuis JDK 12 (mars 2019)

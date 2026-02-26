@@ -1,0 +1,18 @@
+---
+title: Variables sans nom avec _
+oldApproach: Variable inutilisée
+modernApproach: Marqueur de position _
+summary: "Utilisez _ pour indiquer l'intention quand une variable est délibérément laissée inutilisée."
+explanation: "Les variables sans nom communiquent aux lecteurs et aux outils qu'une valeur est délibérément ignorée. Fini les conventions de nommage comme 'ignored' ou 'unused', ni les avertissements de l'IDE."
+whyModernWins:
+- icon: 📢
+  title: Intention claire
+  desc: _ dit explicitement 'cette valeur n'est pas nécessaire ici'.
+- icon: 🔇
+  title: Sans avertissements
+  desc: Les IDEs et linters ne signaleront pas les variables intentionnellement inutilisées.
+- icon: 🧹
+  title: Lambdas plus propres
+  desc: "Les lambdas avec plusieurs paramètres sont plus propres quand vous n'en avez besoin que de certains."
+support:
+  description: Finalisé dans JDK 22 (JEP 456, mars 2024).

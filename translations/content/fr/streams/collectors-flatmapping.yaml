@@ -1,0 +1,18 @@
+---
+title: Collectors.flatMapping()
+oldApproach: flatMap imbriqué
+modernApproach: flatMapping()
+summary: Utilisez flatMapping() pour aplatir à l'intérieur d'un collector de regroupement.
+explanation: "Collectors.flatMapping() applique un mapping un-à-plusieurs comme un collector descendant. C'est l'équivalent dans les collectors de Stream.flatMap() — utile à l'intérieur de groupingBy ou partitioningBy."
+whyModernWins:
+- icon: 🧩
+  title: Composable
+  desc: Fonctionne comme collector descendant à l'intérieur de groupingBy.
+- icon: 📐
+  title: Un seul passage
+  desc: Aplatit et regroupe en un seul parcours du stream.
+- icon: 🔗
+  title: Imbriquable
+  desc: Se combine avec d'autres collectors descendants.
+support:
+  description: Disponible depuis JDK 9 (sept. 2017)

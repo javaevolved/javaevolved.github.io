@@ -1,0 +1,18 @@
+---
+title: Patterns avec gardes when
+oldApproach: if imbriqué
+modernApproach: Clause when
+summary: Ajoutez des conditions aux cas d'un pattern en utilisant des gardes when.
+explanation: "Les patterns avec gardes permettent de raffiner une correspondance de type avec une condition booléenne supplémentaire. Cela maintient toute la logique de branchement dans le switch plutôt que d'imbriquer des instructions if dans les cas."
+whyModernWins:
+- icon: 🎯
+  title: Correspondance précise
+  desc: Combine type + condition dans une seule étiquette de cas.
+- icon: ��
+  title: Structure plate
+  desc: Sans if/else imbriqués à l'intérieur des cas du switch.
+- icon: 📖
+  title: Intention lisible
+  desc: La clause when se lit comme un langage naturel.
+support:
+  description: Disponible depuis JDK 21 LTS (sept. 2023)

@@ -1,0 +1,18 @@
+---
+title: Chaînage avec Optional
+oldApproach: Vérifications de null imbriquées
+modernApproach: Pipeline d'Optional
+summary: Remplace les vérifications de null imbriquées par un pipeline d'Optional.
+explanation: Optional.map() enchaîne des valeurs qui peuvent être null, court-circuitant au premier null. orElse() fournit la valeur par défaut. Cela élimine la pyramide de vérifications de null.
+whyModernWins:
+- icon: 🔗
+  title: Enchaînable
+  desc: Chaque étape .map() gère null de façon transparente.
+- icon: 📖
+  title: Flux linéaire
+  desc: Se lit de gauche à droite au lieu de blocs if imbriqués.
+- icon: 🛡️
+  title: Sans risque de NPE
+  desc: null est géré à chaque étape — aucune possibilité d'échec.
+support:
+  description: Disponible depuis JDK 8+ (amélioré en 9+)

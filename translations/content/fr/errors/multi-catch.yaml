@@ -1,0 +1,18 @@
+---
+title: Gestion d'exceptions avec multi-catch
+oldApproach: Blocs catch séparés
+modernApproach: Multi-catch
+summary: Capturez plusieurs types d'exception dans un seul bloc catch.
+explanation: Multi-catch gère plusieurs types d'exception avec le même code. La variable d'exception est effectivement final, donc elle peut être relancée sans avoir besoin de l'envelopper.
+whyModernWins:
+- icon: 📏
+  title: DRY
+  desc: La même logique de gestion écrite une seule fois au lieu de trois.
+- icon: 🔄
+  title: Relançable
+  desc: L'exception capturée peut être relancée avec son type précis.
+- icon: 📖
+  title: Lisible d'un coup d'œil
+  desc: Tous les types gérés sont visibles en un seul endroit.
+support:
+  description: Disponible depuis JDK 7 (juillet 2011)

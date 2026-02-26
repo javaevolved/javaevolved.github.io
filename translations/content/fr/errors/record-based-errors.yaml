@@ -1,0 +1,18 @@
+---
+title: Réponses d'erreur basées sur des records
+oldApproach: Map ou classe verbose
+modernApproach: Records d'erreur
+summary: Utilisez des records pour des types de réponse d'erreur concis et immutables.
+explanation: Les records sont parfaits pour les réponses d'erreur — ils sont immutables, ont equals/hashCode intégrés pour la comparaison, et toString pour la journalisation. Les constructeurs personnalisés permettent d'ajouter de la validation ou des valeurs par défaut.
+whyModernWins:
+- icon: 📏
+  title: Concis
+  desc: Définissez des types d'erreur en 3 lignes au lieu de 30.
+- icon: 🔒
+  title: Immutable
+  desc: Les données d'erreur ne peuvent pas être modifiées accidentellement après leur création.
+- icon: 📋
+  title: toString automatique
+  desc: Parfait pour la journalisation — affiche tous les champs automatiquement.
+support:
+  description: Disponible depuis JDK 16 (mars 2021)

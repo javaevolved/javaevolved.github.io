@@ -1,0 +1,18 @@
+---
+title: API moderne des processus
+oldApproach: Runtime.exec()
+modernApproach: ProcessHandle
+summary: Inspectez et gérez les processus du système d'exploitation avec ProcessHandle.
+explanation: ProcessHandle fournit les PIDs, les informations de processus (commande, arguments, heure de démarrage, utilisation CPU), les relations parent-enfant et la destruction de processus. Fini de dépendre des parties internes non documentées de Process.
+whyModernWins:
+- icon: 🔍
+  title: Informations complètes
+  desc: Accès au PID, commande, arguments, heure de démarrage, utilisation CPU.
+- icon: 🌳
+  title: Arbre de processus
+  desc: Naviguez entre parent, enfants et descendants.
+- icon: 📊
+  title: Surveillance
+  desc: onExit() retourne un CompletableFuture pour la surveillance asynchrone.
+support:
+  description: Disponible depuis JDK 9 (sept. 2017)

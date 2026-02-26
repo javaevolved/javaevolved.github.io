@@ -1,0 +1,18 @@
+---
+title: Préchargement de classes AOT
+oldApproach: Démarrage à froid à chaque fois
+modernApproach: Cache AOT
+summary: Mettez en cache le chargement et la compilation des classes pour un démarrage instantané.
+explanation: "Le préchargement de classes AOT met en cache les classes chargées et liées d'une exécution d'entraînement. Lors des démarrages suivants, les classes sont chargées depuis le cache, sautant la vérification et la liaison. Combiné avec la compilation AOT, cela réduit drastiquement le temps de démarrage."
+whyModernWins:
+- icon: ⚡
+  title: Démarrage plus rapide
+  desc: Saute le chargement, la vérification et la liaison des classes.
+- icon: 📦
+  title: État en cache
+  desc: L'exécution d'entraînement capture l'état idéal des classes.
+- icon: 🔧
+  title: Sans changements de code
+  desc: Fonctionne avec les applications existantes — ajoutez simplement des flags JVM.
+support:
+  description: Disponible comme fonctionnalité standard dans JDK 25 LTS (JEPs 514/515, sept. 2025).

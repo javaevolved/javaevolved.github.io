@@ -1,0 +1,18 @@
+---
+title: "Collectors non modifiables"
+oldApproach: "collectingAndThen"
+modernApproach: "stream.toList()"
+summary: "Collecte directement dans une liste non modifiable avec stream.toList()."
+explanation: "Java 10 a ajouté toUnmodifiableList(), toUnmodifiableSet() et toUnmodifiableMap() pour remplacer le wrapper verbose collectingAndThen. Pour les listes spécifiquement, stream.toList() de Java 16 offre une alternative encore plus simple — sans appel à collect() du tout. Utilisez toUnmodifiableSet() et toUnmodifiableMap() pour les autres types de collections."
+whyModernWins:
+- icon: "📏"
+  title: "Le plus court possible"
+  desc: "stream.toList() ne nécessite pas collect() ni l'import de Collectors."
+- icon: "🔒"
+  title: "Immutable"
+  desc: "Le résultat ne peut pas être modifié — sans mutations accidentelles."
+- icon: "📖"
+  title: "Lisible"
+  desc: "Se lit naturellement comme étape terminale de n'importe quel pipeline de stream."
+support:
+  description: "Disponible depuis JDK 16 (mars 2021)"

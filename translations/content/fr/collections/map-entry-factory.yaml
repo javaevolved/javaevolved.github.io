@@ -1,0 +1,18 @@
+---
+title: "Factory Map.entry()"
+oldApproach: "SimpleEntry"
+modernApproach: "Map.entry()"
+summary: "Crée des entrées de map avec une méthode factory propre."
+explanation: "Map.entry() remplace le constructeur verbeux de AbstractMap.SimpleEntry. Elle retourne une entrée immutable, idéale pour Map.ofEntries() et les opérations de stream."
+whyModernWins:
+- icon: "📏"
+  title: "Concis"
+  desc: "Une ligne au lieu de trois, avec une intention plus claire."
+- icon: "🔒"
+  title: "Immutable"
+  desc: "L'entrée retournée ne peut pas être modifiée."
+- icon: "🧩"
+  title: "Composable"
+  desc: "Fonctionne parfaitement avec Map.ofEntries() pour les grandes maps."
+support:
+  description: "Disponible depuis JDK 9 (sept. 2017)"

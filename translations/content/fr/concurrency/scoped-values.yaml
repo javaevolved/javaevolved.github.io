@@ -1,0 +1,18 @@
+---
+title: Valeurs à portée
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: Partagez des données le long de la pile d'appels en toute sécurité sans les problèmes de ThreadLocal.
+explanation: ScopedValue fournit un contexte immutable, héritable et limité à une portée. Contrairement à ThreadLocal, les valeurs à portée sont nettoyées automatiquement, fonctionnent avec les threads virtuels et ne peuvent pas être modifiées par les méthodes appelées.
+whyModernWins:
+- icon: 🔒
+  title: Immutable
+  desc: Les méthodes appelées peuvent lire mais jamais modifier la valeur à portée.
+- icon: 🧹
+  title: Nettoyage automatique
+  desc: Sans remove() manuel — la valeur est limitée au bloc.
+- icon: ⚡
+  title: Compatible avec les threads virtuels
+  desc: Fonctionne efficacement avec des millions de threads virtuels.
+support:
+  description: Finalisé dans JDK 25 LTS (JEP 506, sept. 2025).

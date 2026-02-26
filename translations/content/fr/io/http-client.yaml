@@ -1,0 +1,18 @@
+---
+title: Client HTTP moderne
+oldApproach: HttpURLConnection
+modernApproach: HttpClient
+summary: Utilisez le HttpClient intégré pour des requêtes HTTP propres et modernes.
+explanation: "HttpClient supporte HTTP/1.1 et HTTP/2, les requêtes asynchrones, WebSocket, les executors personnalisés et le pooling de connexions. Fini le cast d'URLConnection ni la lecture manuelle d'InputStreams."
+whyModernWins:
+- icon: 📐
+  title: API avec builder
+  desc: Builder fluide pour les requêtes, en-têtes et délais d'attente.
+- icon: 🔄
+  title: Support HTTP/2
+  desc: HTTP/2 intégré avec multiplexage et server push.
+- icon: ⚡
+  title: Prêt pour l'asynchrone
+  desc: sendAsync() retourne un CompletableFuture.
+support:
+  description: Disponible depuis JDK 11 (septembre 2018)

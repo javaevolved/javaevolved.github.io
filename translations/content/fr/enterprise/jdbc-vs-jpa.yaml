@@ -1,0 +1,18 @@
+---
+title: "JDBC versus JPA"
+oldApproach: "JDBC"
+modernApproach: "JPA EntityManager"
+summary: "Remplace le vaste code répétitif de JDBC par le mapping objet-relationnel et l'EntityManager de JPA."
+explanation: "JPA (Jakarta Persistence API) mappe les objets Java aux lignes de base de données, éliminant le traitement manuel de ResultSet et la concaténation de chaînes SQL. EntityManager fournit find(), persist() et des requêtes JPQL pour travailler avec des objets de domaine plutôt que du SQL brut, tandis que le conteneur gère le pool de connexions et les transactions."
+whyModernWins:
+- icon: "🗺️"
+  title: "Mapping d'objets"
+  desc: "Les entités sont de simples classes annotées — sans traduction manuelle de ResultSet en objet."
+- icon: "🔒"
+  title: "Requêtes avec sécurité de types"
+  desc: "JPQL opère sur les types et champs d'entités plutôt que sur des chaînes de tables et colonnes brutes."
+- icon: "⚡"
+  title: "Cache intégrée"
+  desc: "Les caches de premier et second niveau réduisent automatiquement les allers-retours vers la base de données."
+support:
+  description: "Disponible depuis Jakarta EE 8 / Java 11"

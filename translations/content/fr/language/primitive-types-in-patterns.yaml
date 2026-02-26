@@ -1,0 +1,18 @@
+---
+title: Types primitifs dans les patterns
+oldApproach: Vérifications de plages manuelles
+modernApproach: Patterns primitifs
+summary: "Le pattern matching fonctionne maintenant avec les types primitifs, pas seulement avec les objets."
+explanation: "Java 25 étend le pattern matching aux types primitifs. Vous pouvez utiliser int, long, double, etc. dans des patterns switch avec des gardes when, éliminant le besoin de boxing ou de vérifications de plages manuelles."
+whyModernWins:
+- icon: 📦
+  title: Sans boxing
+  desc: Correspond à des primitifs directement — sans besoin du wrapper Integer.
+- icon: 🎯
+  title: Cohérence des patterns
+  desc: La même syntaxe de patterns pour les objets et les primitifs.
+- icon: ⚡
+  title: Meilleures performances
+  desc: Évite la surcharge de l'autoboxing dans le pattern matching.
+support:
+  description: "Aperçu dans JDK 25 (troisième aperçu, JEP 507). Nécessite --enable-preview."

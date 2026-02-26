@@ -1,0 +1,18 @@
+---
+title: Constructeur canonique compact
+oldApproach: Validation explicite dans le constructeur
+modernApproach: Constructeur compact
+summary: Validez et normalisez les champs d'un record sans répéter la liste de paramètres.
+explanation: "Les records peuvent déclarer un constructeur canonique compact qui omet la liste de paramètres et les affectations de champs. Le compilateur affecte automatiquement les paramètres aux champs après l'exécution de la logique de validation. Idéal pour les vérifications de préconditions, les copies défensives et la normalisation."
+whyModernWins:
+- icon: ✂️
+  title: Moins de répétition
+  desc: "Pas besoin de répéter la liste de paramètres ni d'affecter chaque champ manuellement."
+- icon: 🛡️
+  title: Validation
+  desc: "Parfait pour les vérifications de null, la validation de plages et les copies défensives."
+- icon: 📖
+  title: Intention plus claire
+  desc: "La syntaxe compacte met l'accent sur la validation, pas sur le code répétitif."
+support:
+  description: Disponible depuis JDK 16 (mars 2021)

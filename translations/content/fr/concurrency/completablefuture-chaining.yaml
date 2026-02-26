@@ -1,0 +1,18 @@
+---
+title: Chaînage avec CompletableFuture
+oldApproach: Future.get() bloquant
+modernApproach: CompletableFuture
+summary: Enchaîne des opérations asynchrones sans blocage avec CompletableFuture.
+explanation: CompletableFuture permet des pipelines asynchrones non bloquants. Enchaînez les opérations avec thenApply, thenCompose, thenAccept. Gérez les erreurs avec exceptionally(). Combinez plusieurs futurs avec allOf/anyOf.
+whyModernWins:
+- icon: 🔗
+  title: Enchaînable
+  desc: Composez des étapes asynchrones dans un pipeline lisible.
+- icon: 🚫
+  title: Sans blocage
+  desc: Aucun thread ne reste inactif en attendant les résultats.
+- icon: 🛡️
+  title: Gestion des erreurs
+  desc: exceptionally() et handle() pour une récupération propre des erreurs.
+support:
+  description: Disponible depuis JDK 8 (mars 2014)

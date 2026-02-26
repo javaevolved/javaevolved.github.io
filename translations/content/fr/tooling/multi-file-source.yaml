@@ -1,0 +1,18 @@
+---
+title: Lanceur de code source multi-fichiers
+oldApproach: Tout compiler d'abord
+modernApproach: Lanceur de code source
+summary: Lancez des programmes multi-fichiers sans étape de compilation explicite.
+explanation: "Java 22+ peut compiler automatiquement les fichiers source référencés lors du lancement depuis un fichier .java. Cela rend les petits programmes multi-fichiers aussi faciles à exécuter que des scripts, sans besoin de Maven ou Gradle."
+whyModernWins:
+- icon: 🚀
+  title: Sans configuration
+  desc: Aucun outil de build nécessaire pour les petits programmes multi-fichiers.
+- icon: 🔗
+  title: Résolution automatique
+  desc: Les classes référencées sont trouvées et compilées automatiquement.
+- icon: 📝
+  title: Comme un script
+  desc: Exécutez des programmes multi-fichiers comme des scripts.
+support:
+  description: Disponible depuis JDK 22 (mars 2024)
