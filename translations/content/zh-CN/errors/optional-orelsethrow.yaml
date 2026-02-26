@@ -1,0 +1,18 @@
+---
+title: 无 supplier 的 Optional.orElseThrow()
+oldApproach: get() 或 orElseThrow(supplier)
+modernApproach: orElseThrow()
+summary: "使用 Optional.orElseThrow() 作为 get() 更清晰的、表达意图的替代方案。"
+explanation: "Optional.get() 被广泛认为是代码异味，因为它隐藏了意外缺失值时会抛出异常的意图。orElseThrow() 让这一意图明确。"
+whyModernWins:
+- icon: 📖
+  title: 自我描述
+  desc: "orElseThrow() 清楚地表明缺失是意外情况。"
+- icon: 🚫
+  title: 无代码异味
+  desc: "避免使用被认为不良实践的 get()。"
+- icon: 🎯
+  title: 意图明确
+  desc: "与 get() 不同，名称传达了语义。"
+support:
+  description: 自 JDK 10 起可用（2018 年 3 月）。

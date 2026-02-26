@@ -1,0 +1,18 @@
+---
+title: 不可变地复制集合
+oldApproach: 手动复制 + 包装
+modernApproach: List.copyOf()
+summary: "一次调用创建任何集合的不可变副本。"
+explanation: "List.copyOf()、Set.copyOf() 和 Map.copyOf() 创建不可变快照。如果源集合已经是不可变的，则跳过复制——这一实现细节对调用者透明。"
+whyModernWins:
+- icon: ⚡
+  title: 智能复制
+  desc: "如果源已经是不可变的，则跳过复制。"
+- icon: 🔒
+  title: 真正不可变
+  desc: "结果集合结构上不可修改。"
+- icon: 📏
+  title: 简洁
+  desc: "一行代码替代多行手动复制和包装。"
+support:
+  description: 自 JDK 10 起广泛可用（2018 年 3 月）

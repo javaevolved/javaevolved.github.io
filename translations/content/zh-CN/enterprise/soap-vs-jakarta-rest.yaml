@@ -1,0 +1,18 @@
+---
+title: SOAP Web Services 与 Jakarta REST
+oldApproach: JAX-WS / SOAP
+modernApproach: Jakarta REST / JSON
+summary: "用简洁的 Jakarta REST 资源和 JSON 替代重量级的 SOAP/WSDL 端点。"
+explanation: "基于 SOAP 的 Web 服务依赖 WSDL 契约、XML 编组和重量级工具。Jakarta REST 使用简单的 HTTP 和 JSON，无需代码生成或 WSDL。"
+whyModernWins:
+- icon: 🪶
+  title: 更轻的负载
+  desc: "JSON 比 SOAP XML 信封更紧凑，减少带宽和解析开销。"
+- icon: 🚀
+  title: 无工具链
+  desc: "无需 WSDL 生成、wsimport 或代码生成步骤。"
+- icon: 🌐
+  title: 更广泛的兼容性
+  desc: "REST/JSON 可从任何语言或前端直接使用。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

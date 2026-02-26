@@ -1,0 +1,18 @@
+---
+title: 带 when 的守卫模式
+oldApproach: 嵌套 if
+modernApproach: when 子句
+summary: "使用 when 守卫向模式 case 添加条件。"
+explanation: "守卫模式让您使用 when 关键字通过额外的布尔条件来细化类型匹配。这替代了 switch 分支内的嵌套 if/else。"
+whyModernWins:
+- icon: 🎯
+  title: 精确匹配
+  desc: "在单个 case 标签中组合类型和条件。"
+- icon: 📐
+  title: 扁平结构
+  desc: "switch case 内无嵌套 if/else。"
+- icon: 📖
+  title: 可读意图
+  desc: "when 子句读起来像自然语言。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

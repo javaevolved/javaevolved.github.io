@@ -1,0 +1,18 @@
+---
+title: JDBC 与 jOOQ
+oldApproach: 原始 JDBC
+modernApproach: jOOQ SQL DSL
+summary: "用 jOOQ 类型安全的流畅 SQL DSL 替代原始 JDBC 字符串 SQL。"
+explanation: "jOOQ（Java Object Oriented Querying）从数据库生成 Java 代码，提供类型安全的 SQL 构建。列名是生成的 Java 常量，因此拼写错误在编译时而非运行时捕获。"
+whyModernWins:
+- icon: 🔒
+  title: 类型安全的列
+  desc: "列名是生成的 Java 常量——拼写错误和类型不匹配成为编译错误。"
+- icon: 📖
+  title: SQL 流畅性
+  desc: "DSL 读起来像 SQL，但具有 Java 的类型安全性。"
+- icon: 🔧
+  title: 数据库模式感知
+  desc: "从实际数据库模式生成，始终与真实列对齐。"
+support:
+  description: jOOQ 开源版支持所有主要开源数据库；商业版支持专有数据库

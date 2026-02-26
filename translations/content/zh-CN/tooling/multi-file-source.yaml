@@ -1,0 +1,18 @@
+---
+title: 多文件源代码启动器
+oldApproach: 先编译所有文件
+modernApproach: 源代码启动器
+summary: "无需显式编译步骤即可启动多文件程序。"
+explanation: "Java 22+ 在启动入口文件时可以自动编译引用的源文件。这对小型多文件程序消除了显式的 javac 步骤。"
+whyModernWins:
+- icon: 🚀
+  title: 零设置
+  desc: "小型多文件程序无需构建工具。"
+- icon: ⚡
+  title: 一个命令
+  desc: "java Main.java——其余依赖自动编译。"
+- icon: 🎓
+  title: 适合学习
+  desc: "非常适合教学示例和小型实用程序。"
+support:
+  description: 自 JDK 22 起可用（2024 年 3 月）

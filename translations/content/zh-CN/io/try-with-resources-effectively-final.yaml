@@ -1,0 +1,18 @@
+---
+title: try-with-resources 改进
+oldApproach: 重新声明变量
+modernApproach: 实际上 final
+summary: "直接在 try-with-resources 中使用现有的实际上 final 变量。"
+explanation: "Java 9 允许在 try-with-resources 中直接使用实际上 final 的变量，无需重新声明新变量。当资源在 try 块之外创建时，这减少了冗余。"
+whyModernWins:
+- icon: 🧹
+  title: 无重新声明
+  desc: "直接使用现有变量名。"
+- icon: 📏
+  title: 更少代码
+  desc: "消除冗余的本地变量声明。"
+- icon: 📖
+  title: 更清晰
+  desc: "try 块中更少的变量混淆作用域。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

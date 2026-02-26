@@ -1,0 +1,18 @@
+---
+title: 无锁延迟初始化
+oldApproach: synchronized + volatile
+modernApproach: StableValue
+summary: "用 StableValue 替代双重检查锁定，实现延迟单例。"
+explanation: "StableValue 以正确的内存语义封装延迟初始化模式。它消除了对 volatile、synchronized 和双重 null 检查的需要。"
+whyModernWins:
+- icon: 🧹
+  title: 无样板代码
+  desc: "无 volatile、synchronized 或双重 null 检查。"
+- icon: 🔒
+  title: 正确的内存语义
+  desc: "JVM 保证正确的可见性，无需手动内存屏障。"
+- icon: 📖
+  title: 意图清晰
+  desc: "StableValue 的名称准确描述了其语义。"
+support:
+  description: JDK 25 预览版（JEP 502，StableValue）。需要 --enable-preview。

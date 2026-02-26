@@ -1,0 +1,18 @@
+---
+title: 使用 var 进行类型推断
+oldApproach: 显式类型声明
+modernApproach: var 关键字
+summary: "使用 var 进行局部变量类型推断——减少噪音，同样安全。"
+explanation: "自 Java 10 起，编译器从右侧表达式推断局部变量类型。这在不牺牲类型安全的情况下减少了视觉噪音。当类型从上下文中显而易见时，使用 var。"
+whyModernWins:
+- icon: ⚡
+  title: 减少样板代码
+  desc: "无需在赋值两侧重复复杂的泛型类型。"
+- icon: 👁
+  title: 提高可读性
+  desc: "专注于变量名和值，而非类型声明。"
+- icon: 🔒
+  title: 仍然类型安全
+  desc: 编译器在编译时推断并强制执行确切类型。
+support:
+  description: 自 JDK 10 起广泛可用（2018 年 3 月）

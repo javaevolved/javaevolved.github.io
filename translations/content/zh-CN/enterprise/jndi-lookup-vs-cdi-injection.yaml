@@ -1,0 +1,18 @@
+---
+title: JNDI 查找与 CDI 注入
+oldApproach: JNDI 查找
+modernApproach: CDI @Inject
+summary: "用类型安全的 CDI 注入替代脆弱的 JNDI 字符串查找，用于容器管理资源。"
+explanation: "传统 JNDI 模式强制使用基于字符串的资源名称，在部署时绑定，导致脆弱的运行时错误。CDI @Inject 在部署时进行类型安全的连接。"
+whyModernWins:
+- icon: 🔒
+  title: 类型安全连接
+  desc: "注入错误在部署时捕获，而非通过字符串查找在运行时捕获。"
+- icon: 🧪
+  title: 可测试
+  desc: "CDI bean 可以在单元测试中注入模拟——JNDI 查找则不行。"
+- icon: 📖
+  title: 显式依赖
+  desc: "@Inject 字段使依赖关系清晰可见。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

@@ -1,0 +1,18 @@
+---
+title: 用 JFR 进行性能分析
+oldApproach: 外部分析器
+modernApproach: Java Flight Recorder
+summary: "使用内置的 Flight Recorder 分析任何 Java 应用——无需外部工具。"
+explanation: "Java Flight Recorder（JFR）是 JVM 内置的低开销分析工具。它记录 JVM、OS 和应用程序事件，可用于性能分析、诊断和监控。"
+whyModernWins:
+- icon: 🆓
+  title: 内置
+  desc: "无需安装或许可外部分析器。"
+- icon: ⚡
+  title: 低开销
+  desc: "生产级分析，开销 < 1%。"
+- icon: 📊
+  title: 丰富数据
+  desc: "CPU、内存、GC、线程、I/O 和自定义事件。"
+support:
+  description: 自 JDK 9/11 起广泛可用（在 11 中开源）

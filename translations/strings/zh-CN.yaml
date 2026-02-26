@@ -1,0 +1,81 @@
+site:
+  title: java.evolved
+  tagline: Java 已进化。您的代码也可以。
+  tagline_line1: Java 已进化。
+  tagline_line2: 您的代码也可以。
+  description: 现代 Java 代码片段集合。每个旧 Java 模式与其简洁的现代替代方案并排展示。
+  heroSnippetCount: ✦ {{snippetCount}} 个现代模式 · Java 8 → Java 25
+  heroOld: 旧版
+  heroModern: 现代
+  allComparisons: 所有对比
+  snippetsBadge: '{{snippetCount}} 个代码片段'
+nav:
+  allPatterns: ← 所有模式
+  toggleTheme: 切换主题
+  viewOnGitHub: 在 GitHub 上查看
+  selectLanguage: 选择语言
+breadcrumb:
+  home: 首页
+sections:
+  codeComparison: 代码对比
+  whyModernWins: 为什么现代方式更好
+  oldApproach: 旧方式
+  modernApproach: 现代方式
+  sinceJdk: 自 JDK
+  difficulty: 难度
+  jdkSupport: JDK 支持
+  howItWorks: 工作原理
+  relatedDocs: 相关文档
+  relatedPatterns: 相关模式
+filters:
+  show: '显示：'
+  all: 全部
+difficulty:
+  beginner: 入门
+  intermediate: 中级
+  advanced: 高级
+search:
+  placeholder: 搜索代码片段…
+  noResults: 未找到结果。
+  esc: ESC
+  searchTrigger: 搜索…
+  navigate: 导航
+  open: 打开
+  close: 关闭
+cards:
+  old: 旧版
+  modern: 现代
+  hoverHint: 悬停查看现代版 →
+  hoverHintRelated: 悬停查看现代版 ➜
+  touchHint: 👆 点击或滑动 →
+copy:
+  copy: 复制
+  copied: 已复制！
+share:
+  label: 分享
+view:
+  expandAll: 展开全部
+  collapseAll: 收起全部
+stats:
+  modernPatterns: 现代模式
+  jdkVersions: 覆盖的 JDK 版本
+  categories: 分类
+  linesOfPython: 所需 Python 代码行数
+footer:
+  tagline: Java 已进化。您的代码也可以。
+  madeWith: 用 ❤️ 制作，作者
+  and: 和
+  inspiredBy: 灵感来自
+  viewOnGitHub: 在 GitHub 上查看
+copilot:
+  headline: 使用 GitHub Copilot 现代化您的 Java 代码库。
+  description: 让 Copilot 帮您自动将遗留模式迁移到现代 Java。
+  appModernization: 应用现代化 →
+  javaGuide: Java 指南 →
+support:
+  available: 可用
+  preview: 预览
+  experimental: 实验性
+untranslated:
+  notice: 此页面尚未翻译为{{localeName}}。
+  viewInEnglish: 查看英文版

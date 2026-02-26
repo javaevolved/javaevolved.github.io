@@ -1,0 +1,18 @@
+---
+title: 反序列化过滤器
+oldApproach: 接受所有内容
+modernApproach: ObjectInputFilter
+summary: "限制哪些类可以被反序列化，以防止攻击。"
+explanation: "ObjectInputFilter 允许您对类进行白名单/黑名单管理，限制对象图深度、数组大小和总字节数。这保护应用程序免受反序列化攻击。"
+whyModernWins:
+- icon: 🛡️
+  title: 安全性
+  desc: "防止反序列化意外或恶意的类。"
+- icon: 📏
+  title: 粒度控制
+  desc: "按类名、包、深度和大小过滤。"
+- icon: 🔧
+  title: 全局或每流
+  desc: "在 JVM 级别或每个 ObjectInputStream 设置过滤器。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

@@ -1,0 +1,18 @@
+---
+title: 模块导入声明
+oldApproach: 大量 import 语句
+modernApproach: import module
+summary: "用单个声明导入模块导出的所有包。"
+explanation: "模块导入声明让您用单个 import module 语句导入模块导出的所有内容，替代大量单独的包导入。"
+whyModernWins:
+- icon: 🧹
+  title: 一行搞定
+  desc: "用单个模块导入替代大量 import 语句。"
+- icon: 📦
+  title: 模块感知
+  desc: "利用模块系统导入一致的包集合。"
+- icon: 🚀
+  title: 快速启动
+  desc: "非常适合脚本和原型，无需繁琐的 import 列表。"
+support:
+  description: 在 JDK 25 LTS 中正式发布（JEP 511，2025 年 9 月）。

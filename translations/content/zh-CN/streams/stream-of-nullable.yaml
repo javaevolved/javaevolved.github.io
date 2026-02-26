@@ -1,0 +1,18 @@
+---
+title: Stream.ofNullable()
+oldApproach: Null 检查
+modernApproach: ofNullable()
+summary: "从可空值创建零或一个元素的流。"
+explanation: "Stream.ofNullable() 在值非 null 时返回单元素流，在 null 时返回空流。这是 flatMap 中处理可空映射的理想选择。"
+whyModernWins:
+- icon: 📏
+  title: 简洁
+  desc: "一次调用替代三元条件表达式。"
+- icon: 🔗
+  title: 可链式调用
+  desc: "在 flatMap 中完美配合可空映射使用。"
+- icon: 🚫
+  title: 无 null 检查
+  desc: "不需要显式 null 守卫。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

@@ -1,0 +1,18 @@
+---
+title: 内置 HTTP 服务器
+oldApproach: 外部服务器/框架
+modernApproach: jwebserver CLI
+summary: "Java 18 内置了一个最小化 HTTP 服务器，用于原型开发和文件服务。"
+explanation: "JDK 18 通过 jwebserver CLI 工具和 com.sun.net.httpserver 包添加了一个简单的、零依赖的 HTTP 文件服务器。"
+whyModernWins:
+- icon: 🚀
+  title: 零设置
+  desc: "在任意目录运行 jwebserver——无需安装、配置或依赖。"
+- icon: 🎓
+  title: 适合演示
+  desc: "无需框架即可提供静态文件和演示原型。"
+- icon: 🔧
+  title: 可编程
+  desc: "通过 Java API 可编程地嵌入最小化 HTTP 服务器。"
+support:
+  description: 自 JDK 18 起可用（2022 年 3 月）

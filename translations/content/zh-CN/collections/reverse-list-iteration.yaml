@@ -1,0 +1,18 @@
+---
+title: 反向列表迭代
+oldApproach: 手动 ListIterator
+modernApproach: reversed()
+summary: "使用简洁的 for-each 循环以相反顺序迭代列表。"
+explanation: "SequencedCollection 中的 reversed() 方法返回一个反向排序的视图，不进行复制。这与 for-each 循环完美配合，无需 ListIterator 样板。"
+whyModernWins:
+- icon: 📖
+  title: 自然语法
+  desc: "增强 for 循环，而非冗长的 ListIterator。"
+- icon: 🔒
+  title: 无复制
+  desc: "reversed() 是视图，不复制列表。"
+- icon: 📏
+  title: 更少代码
+  desc: "六行 ListIterator 样板变为一行。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

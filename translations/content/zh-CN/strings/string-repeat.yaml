@@ -1,0 +1,18 @@
+---
+title: String.repeat()
+oldApproach: StringBuilder 循环
+modernApproach: repeat()
+summary: "无需循环即可重复字符串 n 次。"
+explanation: "String.repeat(int) 返回字符串与自身拼接 n 次的结果。对于 0 返回空字符串，对于负数抛出 IllegalArgumentException。"
+whyModernWins:
+- icon: 📏
+  title: 一行代码
+  desc: "用一次调用替代 5 行 StringBuilder 代码。"
+- icon: 📖
+  title: 意图清晰
+  desc: "\"=-\".repeat(20) 明确表达意图。"
+- icon: 🚫
+  title: 无循环
+  desc: "无需手动维护计数器和 StringBuilder。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

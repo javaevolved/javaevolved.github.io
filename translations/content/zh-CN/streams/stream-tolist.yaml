@@ -1,0 +1,18 @@
+---
+title: Stream.toList()
+oldApproach: Collectors.toList()
+modernApproach: .toList()
+summary: "终端操作 toList() 替代冗长的 collect(Collectors.toList())。"
+explanation: "Stream.toList() 返回不可修改的列表。它等效于 .collect(Collectors.toUnmodifiableList()) 但更简短。注意：结果是不可变的，与 Collectors.toList() 不同。"
+whyModernWins:
+- icon: 📏
+  title: 7 个字符 vs 24 个
+  desc: ".toList() 替代 .collect(Collectors.toList())。"
+- icon: 🔒
+  title: 不可变
+  desc: "结果列表不可修改。"
+- icon: 📖
+  title: 流畅
+  desc: "在管道末尾读起来自然。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）

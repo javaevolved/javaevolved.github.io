@@ -1,0 +1,18 @@
+---
+title: 多行字符串文本块
+oldApproach: 字符串拼接
+modernApproach: 文本块
+summary: "使用三引号文本块自然地编写多行字符串。"
+explanation: "文本块让您以原始形式编写多行字符串。无需拼接，无需对嵌入引号进行转义，并自动去除缩进。"
+whyModernWins:
+- icon: 📖
+  title: 所见即所得
+  desc: "JSON、SQL 和 HTML 在源码中就像真正的 JSON、SQL 和 HTML。"
+- icon: 🚫
+  title: 无转义地狱
+  desc: "嵌入的引号无需反斜杠转义。"
+- icon: 📐
+  title: 智能缩进
+  desc: "根据结束分隔符的位置自动去除前导空白。"
+support:
+  description: 自 JDK 15 起广泛可用（2020 年 9 月）

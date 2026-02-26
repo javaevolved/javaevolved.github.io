@@ -1,0 +1,18 @@
+---
+title: 紧凑源文件
+oldApproach: 主类样板
+modernApproach: void main()
+summary: "无需类声明或 public static void main 即可编写完整程序。"
+explanation: "紧凑源文件去除了类声明和 public static void main 签名的仪式感。顶层的 void main() 足以运行一个程序。"
+whyModernWins:
+- icon: 🚀
+  title: 零仪式
+  desc: "无需 class、无需 public static void main、无需 String[] args。"
+- icon: 🎓
+  title: 对初学者友好
+  desc: "新程序员从第一行就能编写有用的代码。"
+- icon: 📝
+  title: 脚本风格
+  desc: "非常适合快速原型、脚本和示例。"
+support:
+  description: 在 JDK 25 LTS 中正式发布（JEP 512，2025 年 9 月）。

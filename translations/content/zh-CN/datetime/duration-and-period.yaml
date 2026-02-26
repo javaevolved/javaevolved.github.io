@@ -1,0 +1,18 @@
+---
+title: Duration 和 Period
+oldApproach: 毫秒数学
+modernApproach: Duration / Period
+summary: "使用类型安全的 Duration 和 Period 计算时间差。"
+explanation: "Duration 用于基于时间的量（小时、分钟、秒）。Period 用于日期量（年、月、日）。两者都是不可变的，并且支持算术运算。"
+whyModernWins:
+- icon: 🎯
+  title: 类型安全
+  desc: "Duration 用于时间，Period 用于日期——不会混淆。"
+- icon: 📖
+  title: 自我描述
+  desc: "Duration.ofDays(7) 比 7 * 24 * 60 * 60 * 1000L 更清晰。"
+- icon: 🔒
+  title: 不可变
+  desc: "时间量是值类型——不能意外修改。"
+support:
+  description: 自 JDK 8 起广泛可用（2014 年 3 月）

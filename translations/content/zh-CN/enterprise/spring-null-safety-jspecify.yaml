@@ -1,0 +1,18 @@
+---
+title: Spring Null 安全与 JSpecify
+oldApproach: Spring @NonNull/@Nullable
+modernApproach: JSpecify @NullMarked
+summary: "Spring 7 采用 JSpecify 注解，将非 null 设为默认值，减少注解噪音。"
+explanation: "Spring 5 和 6 在 org.springframework.lang 包中引入了自己的 null 安全注解。Spring 7 迁移到 JSpecify，使非 null 成为模块级默认值——只有可空的例外需要注解。"
+whyModernWins:
+- icon: ✂️
+  title: 默认非 null
+  desc: "@NullMarked 使所有未注解类型非 null，只有可空异常需要标注。"
+- icon: 🌐
+  title: 供应商中立
+  desc: "JSpecify 是跨框架的标准，不绑定于 Spring 特定注解。"
+- icon: 🔧
+  title: 工具集成
+  desc: "IDE、分析器和 Kotlin 能够更好地理解 JSpecify 注解。"
+support:
+  description: 自 Spring Framework 7.0 起可用（需要 Java 17+）

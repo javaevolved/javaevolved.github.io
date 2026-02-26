@@ -1,0 +1,18 @@
+---
+title: RandomGenerator 接口
+oldApproach: new Random() / ThreadLocalRandom
+modernApproach: RandomGenerator 工厂
+summary: "使用 RandomGenerator 接口按名称选择随机数算法。"
+explanation: "JDK 17 引入 RandomGenerator 作为所有 RNG 实现的通用接口。通过名称选择算法，可以轻松切换实现而无需更改代码结构。"
+whyModernWins:
+- icon: 🔧
+  title: 算法无关
+  desc: "按名称选择最佳 RNG 算法，无需更改代码结构。"
+- icon: 📐
+  title: 统一接口
+  desc: "所有随机数生成器共享相同的接口。"
+- icon: ⚡
+  title: 更好的算法
+  desc: "访问 L64X128MixRandom 等现代高质量 PRNG。"
+support:
+  description: 自 JDK 17 起可用（2021 年 9 月，JEP 356）。

@@ -1,0 +1,18 @@
+---
+title: JDBC ResultSet 映射与 JPA Criteria API
+oldApproach: JDBC ResultSet
+modernApproach: JPA Criteria API
+summary: "用 JPA 类型安全的 Criteria API 替代手动 JDBC ResultSet 映射。"
+explanation: "原始 JDBC 需要构建 SQL 字符串、按索引设置参数、手动映射每列。JPA Criteria API 在编译时捕获字段名称和类型不匹配。"
+whyModernWins:
+- icon: 🔒
+  title: 类型安全查询
+  desc: "Criteria 构建器在编译时捕获字段名称和类型不匹配。"
+- icon: 🗺️
+  title: 自动映射
+  desc: "结果直接映射到实体对象——无需手动 ResultSet 处理。"
+- icon: 🔧
+  title: 可重构
+  desc: "重命名字段会在 Criteria 查询中产生编译错误。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

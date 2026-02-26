@@ -1,0 +1,18 @@
+---
+title: InputStream.transferTo()
+oldApproach: 手动复制循环
+modernApproach: transferTo()
+summary: "一次调用将 InputStream 复制到 OutputStream。"
+explanation: "transferTo() 从输入流读取所有字节并写入输出流。内部使用高效的缓冲区，无需手动分配缓冲区数组或循环。"
+whyModernWins:
+- icon: 📏
+  title: 一行代码
+  desc: "用一次方法调用替代整个读写循环。"
+- icon: 🧹
+  title: 无手动缓冲区
+  desc: "不需要 byte[] buffer 或循环计数器。"
+- icon: 🛡️
+  title: 正确处理
+  desc: "正确处理部分读取和流结束。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

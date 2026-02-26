@@ -1,0 +1,18 @@
+---
+title: ExecutorService 自动关闭
+oldApproach: 手动关闭
+modernApproach: try-with-resources
+summary: "使用 try-with-resources 实现执行器的自动关闭。"
+explanation: "自 Java 19 起，ExecutorService 实现了 AutoCloseable。close() 方法会等待所有任务完成，然后关闭执行器——无需手动 shutdown() 和 awaitTermination()。"
+whyModernWins:
+- icon: 🧹
+  title: 自动清理
+  desc: "当代码块退出时自动关闭。"
+- icon: 🛡️
+  title: 不会泄漏线程
+  desc: "即使抛出异常，执行器也会正确关闭。"
+- icon: 📏
+  title: 更少样板代码
+  desc: "无需手动 try/finally 来调用 shutdown()。"
+support:
+  description: 自 JDK 19 起广泛可用（2022 年 9 月）

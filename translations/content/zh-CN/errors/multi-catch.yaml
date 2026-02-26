@@ -1,0 +1,18 @@
+---
+title: 多异常捕获
+oldApproach: 单独的 catch 块
+modernApproach: 多重 catch
+summary: "在单个 catch 块中捕获多种异常类型。"
+explanation: "多重 catch 用相同的代码处理多种异常类型。异常变量是实际上 final 的，防止类型不安全的重新赋值。"
+whyModernWins:
+- icon: 📏
+  title: DRY 原则
+  desc: "相同的处理逻辑只写一次，而非三次。"
+- icon: 🔒
+  title: 类型安全
+  desc: "捕获的异常是实际上 final 的——无法被重新赋值。"
+- icon: 🧹
+  title: 更少代码
+  desc: "消除相同 catch 块的重复。"
+support:
+  description: 自 JDK 7 起广泛可用（2011 年 7 月）

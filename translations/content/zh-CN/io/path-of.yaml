@@ -1,0 +1,18 @@
+---
+title: Path.of() 工厂方法
+oldApproach: Paths.get()
+modernApproach: Path.of()
+summary: "使用 Path.of()——Path 接口上的现代工厂方法。"
+explanation: "Path.of() 是直接添加到 Path 接口的工厂方法，遵循与 List.of()、Set.of() 相同的模式。Paths.get() 现在已过时但仍然有效。"
+whyModernWins:
+- icon: 📐
+  title: 一致的 API
+  desc: "遵循 .of() 工厂模式，如 List.of()、Set.of()。"
+- icon: 📖
+  title: 更清晰的意图
+  desc: "Path.of() 读起来比 Paths.get() 更自然。"
+- icon: 🔧
+  title: 相同功能
+  desc: "零迁移成本——行为完全相同。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

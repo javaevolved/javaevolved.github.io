@@ -1,0 +1,18 @@
+---
+title: Servlet 与 JAX-RS
+oldApproach: HttpServlet
+modernApproach: JAX-RS Resource
+summary: "用声明式 JAX-RS 资源类替代冗长的 HttpServlet 样板代码。"
+explanation: "JAX-RS（Jakarta RESTful Web Services）允许您使用注解而非命令式 doGet/doPost 方法来暴露 REST 端点。路由、内容协商和参数绑定都是声明式的。"
+whyModernWins:
+- icon: 📐
+  title: 声明式路由
+  desc: "注解定义 HTTP 方法、路径和内容类型，而非命令式 switch 语句。"
+- icon: 📏
+  title: 更少代码
+  desc: "50 行 Servlet 样板变为 15 行 JAX-RS 资源。"
+- icon: 🔧
+  title: 内置特性
+  desc: "自动内容协商、参数绑定和异常映射。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

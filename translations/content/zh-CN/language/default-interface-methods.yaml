@@ -1,0 +1,18 @@
+---
+title: 接口默认方法
+oldApproach: 用抽象类共享行为
+modernApproach: 接口上的默认方法
+summary: "直接在接口中添加方法实现，支持行为的多重继承。"
+explanation: "Java 8 之前，跨不相关类共享行为需要抽象基类，这限制了灵活性。默认方法允许接口在不破坏现有实现的情况下进行演进。"
+whyModernWins:
+- icon: 🔀
+  title: 多重继承
+  desc: "类可以实现多个带有默认方法的接口，不像单继承的抽象类那样受限。"
+- icon: 📦
+  title: API 演进
+  desc: "向接口添加新方法而不破坏现有实现。"
+- icon: 🧩
+  title: 可组合行为
+  desc: "自由混合和匹配来自多个接口的功能。"
+support:
+  description: 自 JDK 8 起可用（2014 年 3 月）。

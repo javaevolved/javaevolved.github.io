@@ -1,0 +1,18 @@
+---
+title: java.time API 基础
+oldApproach: Date + Calendar
+modernApproach: java.time.*
+summary: "使用不可变、清晰的日期/时间类型替代 Date 和 Calendar。"
+explanation: "java.time 提供 LocalDate、LocalTime、LocalDateTime、Instant、ZonedDateTime 等。它们是不可变的、线程安全的，并且设计清晰——与可变且混乱的 Date/Calendar 不同。"
+whyModernWins:
+- icon: 🔒
+  title: 不可变
+  desc: "日期/时间值不能被意外修改。"
+- icon: 📖
+  title: 语义清晰
+  desc: "LocalDate vs ZonedDateTime vs Instant——每种类型都有明确用途。"
+- icon: 🌐
+  title: 时区安全
+  desc: "时区处理是显式的，而非隐藏的。"
+support:
+  description: 自 JDK 8 起广泛可用（2014 年 3 月）

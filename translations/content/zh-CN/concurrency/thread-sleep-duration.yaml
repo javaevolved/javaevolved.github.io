@@ -1,0 +1,18 @@
+---
+title: 使用 Duration 的 Thread.sleep
+oldApproach: 毫秒
+modernApproach: Duration
+summary: "使用 Duration 表达自文档化的时间值。"
+explanation: "Thread.sleep(Duration) 使时间单位明确。不再需要猜测数字是毫秒、秒还是纳秒——Duration.ofSeconds(5) 一目了然。"
+whyModernWins:
+- icon: 📖
+  title: 自我描述
+  desc: "Duration.ofSeconds(5) 无歧义。"
+- icon: 🛡️
+  title: 无单位混淆
+  desc: "不可能意外地将秒传递给期望毫秒的方法。"
+- icon: 🔧
+  title: 可组合
+  desc: "Duration 与其他 java.time API 无缝配合。"
+support:
+  description: 自 JDK 19 起广泛可用（2022 年 9 月）

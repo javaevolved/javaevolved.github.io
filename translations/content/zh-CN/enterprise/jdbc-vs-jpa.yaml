@@ -1,0 +1,18 @@
+---
+title: JDBC 与 JPA
+oldApproach: JDBC
+modernApproach: JPA EntityManager
+summary: "用 JPA 的对象关系映射和 EntityManager API 替代冗长的 JDBC 样板代码。"
+explanation: "JPA（Jakarta Persistence API）将 Java 对象映射到数据库行，消除了手动 SQL、ResultSet 映射和参数设置。EntityManager 提供高级查询和关系管理。"
+whyModernWins:
+- icon: 🗺️
+  title: 对象映射
+  desc: "实体是带注解的普通类——无需手动 ResultSet 到对象的转换。"
+- icon: 🔧
+  title: 关系处理
+  desc: "一对多、多对多等关系由 JPA 自动处理。"
+- icon: 📏
+  title: 更少代码
+  desc: "消除大量 JDBC 样板——连接、语句、关闭。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

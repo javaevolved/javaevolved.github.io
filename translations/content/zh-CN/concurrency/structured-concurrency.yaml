@@ -1,0 +1,18 @@
+---
+title: 结构化并发
+oldApproach: 手动线程生命周期管理
+modernApproach: StructuredTaskScope
+summary: "将并发任务的生命周期作为单个工作单元管理。"
+explanation: "结构化并发将一组并发任务视为一个操作。如果任何任务失败，其他任务会被取消。所有分支任务在作用域关闭前完成。"
+whyModernWins:
+- icon: 🛡️
+  title: 无线程泄漏
+  desc: "所有分支任务在作用域关闭前完成。"
+- icon: 🔗
+  title: 错误传播
+  desc: "任何任务失败时取消其他任务。"
+- icon: 📖
+  title: 可读结构
+  desc: "并发边界在代码结构中清晰可见。"
+support:
+  description: JDK 25 预览版（第五次预览，JEP 505）。需要 --enable-preview。

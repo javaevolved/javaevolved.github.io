@@ -1,0 +1,18 @@
+---
+title: String.formatted()
+oldApproach: String.format()
+modernApproach: formatted()
+summary: "直接在模板字符串上调用 formatted()。"
+explanation: "String.formatted() 是等效于 String.format() 的实例方法，但在模板字符串上调用。这消除了将同一字符串传递两次的需要。"
+whyModernWins:
+- icon: 📖
+  title: 读起来自然
+  desc: "template.formatted(args) 比 String.format(template, args) 更流畅。"
+- icon: 📏
+  title: 更短
+  desc: "无需重复字符串变量名。"
+- icon: 🔗
+  title: 可链式调用
+  desc: "可与其他字符串方法链式调用。"
+support:
+  description: 自 JDK 15 起广泛可用（2020 年 9 月）

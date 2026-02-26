@@ -1,0 +1,18 @@
+---
+title: Stream.mapMulti()
+oldApproach: flatMap + List
+modernApproach: mapMulti()
+summary: "每个输入元素发出零个或多个元素，无需创建中间流。"
+explanation: "mapMulti() 是 flatMap 的命令式替代方案，避免了为每个元素创建中间 Stream 或集合。使用 Consumer 按需发出元素。"
+whyModernWins:
+- icon: ⚡
+  title: 更少分配
+  desc: "每个元素不创建中间 Stream。"
+- icon: 🎯
+  title: 零或多个输出
+  desc: "每个输入可以映射到任意数量的输出，包括零。"
+- icon: 🔧
+  title: 命令式控制
+  desc: "比 flatMap 更精细地控制元素发出。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）

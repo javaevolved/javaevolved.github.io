@@ -1,0 +1,18 @@
+---
+title: 灵活的构造函数体
+oldApproach: 在 super() 之后验证
+modernApproach: 在 super() 之前编写代码
+summary: "在调用 super() 或 this() 之前验证和计算值。"
+explanation: "Java 25 解除了 super() 必须是第一条语句的限制。现在可以在超类构造函数运行之前验证参数、计算派生值并准备数据。"
+whyModernWins:
+- icon: 🛡️
+  title: 快速失败
+  desc: "在超类构造函数运行之前验证参数。"
+- icon: 🧮
+  title: 预先计算
+  desc: "在调用 super() 之前派生值并准备数据。"
+- icon: 🧹
+  title: 无变通方案
+  desc: "不再需要静态辅助方法或工厂模式来绕过该限制。"
+support:
+  description: 在 JDK 25 LTS 中正式发布（JEP 513，2025 年 9 月）。

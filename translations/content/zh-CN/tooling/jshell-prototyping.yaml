@@ -1,0 +1,18 @@
+---
+title: 用 JShell 进行原型开发
+oldApproach: 创建文件 + 编译 + 运行
+modernApproach: jshell REPL
+summary: "无需创建文件即可交互式尝试 Java 表达式。"
+explanation: "JShell 是 Java 的读取-求值-打印循环（REPL）。无需完整的类定义即可测试表达式、实验 API 并探索库。"
+whyModernWins:
+- icon: ⚡
+  title: 即时反馈
+  desc: "输入表达式，立即看到结果。"
+- icon: 🎓
+  title: 适合学习
+  desc: "非常适合探索 API 和学习 Java 特性。"
+- icon: 🔧
+  title: 无文件
+  desc: "无需创建类或文件即可测试代码片段。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

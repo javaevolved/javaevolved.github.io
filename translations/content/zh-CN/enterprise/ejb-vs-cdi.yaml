@@ -1,0 +1,18 @@
+---
+title: EJB 与 CDI
+oldApproach: EJB
+modernApproach: CDI Bean
+summary: "用轻量级 CDI bean 替代重量级 EJB，实现依赖注入和业务逻辑。"
+explanation: "CDI（上下文和依赖注入）提供与 EJB 相同的依赖注入和生命周期管理，无需 EJB 特定接口或描述符。CDI bean 是普通 Java 类，容器负责其余工作。"
+whyModernWins:
+- icon: 🪶
+  title: 轻量级
+  desc: "CDI bean 是普通 Java 类，无需 EJB 特定接口或描述符。"
+- icon: 🧪
+  title: 更易测试
+  desc: "普通 Java 对象，无需 EJB 容器即可进行单元测试。"
+- icon: 🔧
+  title: 现代标准
+  desc: "CDI 是 Jakarta EE 的推荐注入机制，持续演进。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

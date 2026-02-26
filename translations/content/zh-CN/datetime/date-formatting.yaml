@@ -1,0 +1,18 @@
+---
+title: 日期格式化
+oldApproach: SimpleDateFormat
+modernApproach: DateTimeFormatter
+summary: "使用线程安全、不可变的 DateTimeFormatter 格式化日期。"
+explanation: "DateTimeFormatter 是不可变且线程安全的，与 SimpleDateFormat 不同。它可以作为静态常量安全共享，支持 java.time 类型并提供更丰富的格式化选项。"
+whyModernWins:
+- icon: 🛡️
+  title: 线程安全
+  desc: "跨线程共享格式化器，无需同步。"
+- icon: 🔒
+  title: 不可变
+  desc: "无并发 bug——格式化器不能被修改。"
+- icon: 📐
+  title: 更丰富的 API
+  desc: "支持所有 java.time 类型，具有更好的本地化支持。"
+support:
+  description: 自 JDK 8 起广泛可用（2014 年 3 月）

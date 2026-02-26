@@ -1,0 +1,18 @@
+---
+title: 单文件执行
+oldApproach: 两步编译
+modernApproach: 直接启动
+summary: "无需 javac 直接运行单文件 Java 程序。"
+explanation: "Java 启动器可以在一个命令中编译并运行单个源文件。非常适合脚本、工具和探索，无需构建步骤。"
+whyModernWins:
+- icon: ⚡
+  title: 一个命令
+  desc: "java File.java 在一步中编译并运行。"
+- icon: 🚀
+  title: 无需构建工具
+  desc: "非常适合脚本、工具和快速实验。"
+- icon: 🎓
+  title: 对初学者友好
+  desc: "新开发者无需学习构建系统即可运行 Java。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

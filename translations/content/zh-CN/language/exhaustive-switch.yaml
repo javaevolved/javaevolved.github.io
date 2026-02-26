@@ -1,0 +1,18 @@
+---
+title: 无 default 的穷举 switch
+oldApproach: 强制 default 分支
+modernApproach: 密封类穷举性
+summary: "编译器验证所有密封子类型均已覆盖——无需 default 分支。"
+explanation: "对密封类型进行 switch 时，编译器在编译时知道所有可能的子类型。如果所有情况均已覆盖，则不需要 default 分支。"
+whyModernWins:
+- icon: ✅
+  title: 编译时安全
+  desc: "添加新子类型时，编译器会显示每个需要更新的地方。"
+- icon: 🚫
+  title: 无死代码
+  desc: "没有掩盖 bug 的不可达 default 分支。"
+- icon: 📐
+  title: 代数类型
+  desc: "密封类 + record + 穷举 switch = Java 中的正式 ADT。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

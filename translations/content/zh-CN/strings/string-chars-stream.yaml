@@ -1,0 +1,18 @@
+---
+title: 字符串字符流
+oldApproach: 手动循环
+modernApproach: chars() 流
+summary: "将字符串字符作为流管道处理。"
+explanation: "String.chars() 返回字符值的 IntStream，支持函数式字符处理。使用 (char) 转换或 Character 方法处理各个字符。"
+whyModernWins:
+- icon: 🔗
+  title: 可链式调用
+  desc: "对字符流使用 filter、map、collect。"
+- icon: 📖
+  title: 函数式风格
+  desc: "声明式字符处理，无命令式循环。"
+- icon: 🧩
+  title: 可组合
+  desc: "与其他流操作无缝组合。"
+support:
+  description: 自 JDK 8+ 起可用（JDK 9+ 中有所改进）

@@ -1,0 +1,18 @@
+---
+title: 基于 record 的错误响应
+oldApproach: Map 或冗长的类
+modernApproach: 错误 record
+summary: "使用 record 定义简洁、不可变的错误响应类型。"
+explanation: "record 非常适合错误响应——它们是不可变的，内置 equals/hashCode/toString，并且只需一行定义。非常适合 API 错误、验证结果和失败上下文。"
+whyModernWins:
+- icon: 📏
+  title: 简洁
+  desc: "用 3 行而非 30 行定义错误类型。"
+- icon: 🔒
+  title: 不可变
+  desc: "错误响应在创建后无法修改。"
+- icon: 🧩
+  title: 可组合
+  desc: "error record 可以嵌套并与模式匹配配合使用。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）

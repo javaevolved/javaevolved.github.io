@@ -1,0 +1,18 @@
+---
+title: 用 Predicate.not() 进行否定
+oldApproach: Lambda 否定
+modernApproach: Predicate.not()
+summary: "使用 Predicate.not() 简洁地否定方法引用，而非编写 lambda 包装器。"
+explanation: "Java 11 之前，否定方法引用需要将其包装在 lambda 中。Predicate.not() 允许直接否定方法引用，保持代码简洁。"
+whyModernWins:
+- icon: 👁
+  title: 更简洁的否定
+  desc: "无需仅为否定而将方法引用包装在 lambda 中。"
+- icon: 📖
+  title: 可读性强
+  desc: "Predicate.not(String::isBlank) 清晰地表达意图。"
+- icon: 🔗
+  title: 可组合
+  desc: "与其他 Predicate 方法如 and()、or() 配合使用。"
+support:
+  description: 自 JDK 11 起可用（2018 年 9 月）。

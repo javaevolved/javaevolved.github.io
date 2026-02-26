@@ -1,0 +1,18 @@
+---
+title: 密钥派生函数
+oldApproach: 手动 PBKDF2
+modernApproach: KDF API
+summary: "使用标准 KDF API 派生加密密钥。"
+explanation: "KDF API 为密钥派生函数（如 HKDF 和 PBKDF2）提供标准接口。它使用构建器模式替代笨拙的 KeySpec 构造函数，使密钥派生更加清晰且不易出错。"
+whyModernWins:
+- icon: 📐
+  title: 简洁的 API
+  desc: "构建器模式替代笨拙的 KeySpec 构造函数。"
+- icon: 🔒
+  title: 标准接口
+  desc: "一致的 API 适用于不同的 KDF 算法。"
+- icon: 🛡️
+  title: 更少错误
+  desc: "类型安全的构建器减少参数顺序错误的风险。"
+support:
+  description: 在 JDK 25 LTS 中正式发布（JEP 510，2025 年 9 月）。

@@ -1,0 +1,18 @@
+---
+title: 用密封类定义类型层次
+oldApproach: 开放层次
+modernApproach: sealed permits
+summary: "限制哪些类可以扩展某个类型——支持穷举 switch。"
+explanation: "密封类定义了一组封闭的子类型。编译器在编译时知道所有可能的子类型，从而支持穷举 switch 表达式。"
+whyModernWins:
+- icon: 🔐
+  title: 受控层次
+  desc: "只有允许的子类型可以扩展——没有意外子类。"
+- icon: ✅
+  title: 穷举匹配
+  desc: "编译器验证 switch 覆盖所有情况，无需 default。"
+- icon: 📐
+  title: 代数数据类型
+  desc: "自然建模求和类型——密封类 + record = Java 中的 ADT。"
+support:
+  description: 自 JDK 17 LTS 起广泛可用（2021 年 9 月）

@@ -1,0 +1,18 @@
+---
+title: 有序集合
+oldApproach: 索引运算
+modernApproach: getFirst/getLast
+summary: "使用简洁的 API 方法访问第一个/最后一个元素和反向视图。"
+explanation: "SequencedCollection 添加了 getFirst()、getLast()、reversed()、addFirst()、addLast() 和 removeFirst()/removeLast()。这些方法统一了 List、Deque 和 LinkedHashSet 的 API。"
+whyModernWins:
+- icon: 📖
+  title: 自我描述
+  desc: "getLast() 比 get(size()-1) 更清晰。"
+- icon: 🔗
+  title: 统一 API
+  desc: "List、Deque 和 LinkedHashSet 共享相同的有序操作。"
+- icon: 🔒
+  title: 反向视图
+  desc: "reversed() 返回视图，不复制集合。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

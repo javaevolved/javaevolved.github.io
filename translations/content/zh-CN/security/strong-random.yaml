@@ -1,0 +1,18 @@
+---
+title: 强随机数生成
+oldApproach: new SecureRandom()
+modernApproach: getInstanceStrong()
+summary: "获取平台最强的 SecureRandom 实现。"
+explanation: "getInstanceStrong() 返回由 securerandom.strongAlgorithms 安全属性配置的最强 SecureRandom 实现。它自动选择平台的最佳安全算法。"
+whyModernWins:
+- icon: 🛡️
+  title: 最强可用
+  desc: "自动为平台选择最佳算法。"
+- icon: 🔧
+  title: 可配置
+  desc: "通过安全属性在不同环境中自定义算法。"
+- icon: 📖
+  title: 意图清晰
+  desc: "getInstanceStrong() 明确表明您需要最强的实现。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

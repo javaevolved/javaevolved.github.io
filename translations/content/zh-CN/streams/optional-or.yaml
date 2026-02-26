@@ -1,0 +1,18 @@
+---
+title: Optional.or() 回退
+oldApproach: 嵌套回退
+modernApproach: .or() 链
+summary: "无需嵌套检查即可链式调用 Optional 回退。"
+explanation: "Optional.or() 在有值时返回原始 Optional，否则返回由提供的 Supplier 生成的另一个 Optional。与 orElse() 不同，它保持 Optional 类型。"
+whyModernWins:
+- icon: 🔗
+  title: 可链式调用
+  desc: "在可读的管道中堆叠回退。"
+- icon: 🎯
+  title: 保持 Optional
+  desc: "返回 Optional<T> 而非 T，因此可以继续链式调用。"
+- icon: 📏
+  title: 扁平
+  desc: "无嵌套的 isPresent() 检查。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

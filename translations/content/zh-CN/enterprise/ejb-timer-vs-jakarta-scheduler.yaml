@@ -1,0 +1,18 @@
+---
+title: EJB Timer 与 Jakarta 调度器
+oldApproach: EJB TimerService
+modernApproach: ManagedScheduledExecutorService
+summary: "用 Jakarta Concurrency 的 ManagedScheduledExecutorService 替代重量级 EJB 定时器。"
+explanation: "EJB 定时器需要带有 @Timeout 回调和 ScheduleExpression 配置的 @Stateless 或 @Singleton bean。ManagedScheduledExecutorService 使用标准 ScheduledExecutorService API，语法更简洁。"
+whyModernWins:
+- icon: 🪶
+  title: 减少样板代码
+  desc: "无需 @Timeout 回调或 ScheduleExpression——使用标准 ScheduledExecutorService API。"
+- icon: 🔧
+  title: 标准 API
+  desc: "基于 java.util.concurrent 接口，熟悉且可测试。"
+- icon: 🧪
+  title: 更易测试
+  desc: "可以在单元测试中注入模拟调度器，EJB 定时器则不行。"
+support:
+  description: 自 Jakarta EE 10 / Concurrency 3.0 起可用

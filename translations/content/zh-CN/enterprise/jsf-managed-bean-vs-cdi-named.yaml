@@ -1,0 +1,18 @@
+---
+title: JSF Managed Bean 与 CDI Named Bean
+oldApproach: '@ManagedBean'
+modernApproach: '@Named + CDI'
+summary: "用 CDI @Named 替代已废弃的 JSF @ManagedBean，实现统一的依赖注入模型。"
+explanation: "JSF 的 @ManagedBean 和 @ManagedProperty 在 Jakarta Faces 4.0 中已废弃并移除。CDI @Named bean 提供相同的 EL 访问，并与整个 Jakarta EE 容器集成。"
+whyModernWins:
+- icon: 🔗
+  title: 统一模型
+  desc: "一个 CDI 容器管理所有 bean——JSF、REST 和服务层共享相同的依赖注入机制。"
+- icon: 🔒
+  title: 完整的 CDI 功能
+  desc: "获得拦截器、装饰器、事件和所有 CDI 作用域。"
+- icon: 🧪
+  title: 更易测试
+  desc: "普通 CDI bean，无需模拟 JSF ManagedBean 基础设施。"
+support:
+  description: CDI @Named 自 Java EE 6 起可用；@ManagedBean 在 Jakarta Faces 4.0 中移除

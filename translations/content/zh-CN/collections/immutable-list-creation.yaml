@@ -1,0 +1,18 @@
+---
+title: 创建不可变列表
+oldApproach: 冗长的包装方式
+modernApproach: List.of()
+summary: "用一个简洁的表达式创建不可变列表。"
+explanation: "List.of() 创建真正不可变的列表——无需包装，无需防御性复制。它拒绝 null 元素，在结构上不可变。旧方式需要三层嵌套调用。"
+whyModernWins:
+- icon: 📏
+  title: 一次调用
+  desc: "用单个工厂方法替代三层嵌套调用。"
+- icon: 🔒
+  title: 真正不可变
+  desc: "不只是包装器——列表本身是不可变的。"
+- icon: 🛡️
+  title: null 安全
+  desc: "在创建时拒绝 null 元素，快速失败。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

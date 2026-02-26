@@ -1,0 +1,18 @@
+---
+title: 创建不可变 Map
+oldApproach: Map 构建器模式
+modernApproach: Map.of()
+summary: "无需构建器即可内联创建不可变 Map。"
+explanation: "Map.of() 内联接受键值对并返回不可变 Map。Map.ofEntries() 处理超过 10 个条目的情况。旧方式需要可变的临时 Map 和 Collections.unmodifiableMap()。"
+whyModernWins:
+- icon: 📏
+  title: 内联创建
+  desc: "无需临时可变 Map。"
+- icon: 🔒
+  title: 真正不可变
+  desc: "Map 本身不可修改，不只是视图。"
+- icon: 🛡️
+  title: null 安全
+  desc: "键和值均拒绝 null，快速失败。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

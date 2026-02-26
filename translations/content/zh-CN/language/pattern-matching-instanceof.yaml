@@ -1,0 +1,18 @@
+---
+title: instanceof 的模式匹配
+oldApproach: instanceof + 强制类型转换
+modernApproach: 模式变量
+summary: "通过模式匹配在一步中组合类型检查和转换。"
+explanation: "instanceof 的模式匹配消除了 instanceof 检查后冗余的类型转换。绑定变量自动具有正确的类型和作用域。"
+whyModernWins:
+- icon: 🔄
+  title: 无冗余转换
+  desc: "类型检查和变量绑定在单个表达式中完成。"
+- icon: 📏
+  title: 更少代码行
+  desc: "一行代替两行——转换行完全消失。"
+- icon: 🛡️
+  title: 作用域安全
+  desc: "模式变量仅在保证类型正确的作用域内有效。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）

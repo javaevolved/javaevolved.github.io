@@ -1,0 +1,18 @@
+---
+title: Singleton EJB 与 CDI @ApplicationScoped
+oldApproach: '@Singleton EJB'
+modernApproach: '@ApplicationScoped CDI'
+summary: "用 CDI @ApplicationScoped bean 替代 Singleton EJB，实现更简单的共享状态管理。"
+explanation: "Singleton EJB 捆绑了并发管理（@Lock、@ConcurrencyManagement）和启动（@Startup）。CDI @ApplicationScoped 只需一个注解，将并发策略留给开发者。"
+whyModernWins:
+- icon: 🪶
+  title: 减少注解噪音
+  desc: "无需 @ConcurrencyManagement、@Lock 或 @Startup——只需一个 @ApplicationScoped。"
+- icon: 🧪
+  title: 更易测试
+  desc: "普通 CDI bean，无需 EJB 容器的单例语义。"
+- icon: 🔧
+  title: 标准 CDI
+  desc: "与其他 CDI 特性（拦截器、事件）无缝配合。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

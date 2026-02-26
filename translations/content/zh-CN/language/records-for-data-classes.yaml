@@ -1,0 +1,18 @@
+---
+title: 用 record 定义数据类
+oldApproach: 冗长的 POJO
+modernApproach: record
+summary: "一行代码替代不可变数据载体的 30 多行样板代码。"
+explanation: "record 自动从组件列表生成构造函数、访问器（x()、y()）、equals()、hashCode() 和 toString()。"
+whyModernWins:
+- icon: ⚡
+  title: 一行定义
+  desc: "单行代码替代构造函数、getter、equals、hashCode、toString。"
+- icon: 🔒
+  title: 默认不可变
+  desc: "所有字段均为 final——没有 setter 的隐患。"
+- icon: 🧩
+  title: 模式友好
+  desc: "record 可与 switch 和 instanceof 中的解构模式配合使用。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）

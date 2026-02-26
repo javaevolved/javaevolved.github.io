@@ -1,0 +1,18 @@
+---
+title: 有帮助的 NullPointerException
+oldApproach: 晦涩的 NPE
+modernApproach: 详细的 NPE
+summary: "JVM 自动告诉您哪个变量为 null。"
+explanation: "有帮助的 NPE 描述哪个表达式为 null 以及操作失败的原因。不再需要在链式方法调用中猜测哪个引用为 null。"
+whyModernWins:
+- icon: 🔍
+  title: 精确变量
+  desc: "消息在链中指出 null 变量的名称。"
+- icon: ⚡
+  title: 更快调试
+  desc: "立即知道是哪个链中的引用为 null。"
+- icon: 🆓
+  title: 零代码更改
+  desc: "JVM 自动生成消息，无需代码更改。"
+support:
+  description: 自 JDK 14 起广泛可用（2020 年 3 月）

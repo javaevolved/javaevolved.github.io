@@ -1,0 +1,18 @@
+---
+title: 内部类中的静态成员
+oldApproach: 必须使用静态嵌套类
+modernApproach: 内部类中的静态成员
+summary: "在内部类中定义静态成员，无需使用静态嵌套类。"
+explanation: "Java 16 之前，只有静态嵌套类才能包含静态成员。Java 16 解除了这一限制，允许内部类声明静态字段和方法。"
+whyModernWins:
+- icon: 🔓
+  title: 更大灵活性
+  desc: "内部类现在可以在需要时拥有静态成员。"
+- icon: 🧩
+  title: 共享状态
+  desc: "跨内部类实例追踪共享状态。"
+- icon: 📐
+  title: 设计自由
+  desc: "无需仅为一个静态字段而将类提升为静态嵌套类。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）
