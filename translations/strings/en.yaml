@@ -82,6 +82,8 @@ contribute:
   codeIssue: Report a code issue
   translationIssue: Report a translation issue
   suggestPattern: Suggest a new pattern
+  seeIssue: "See a problem with this code?"
+  reportIt: "Let us know."
 untranslated:
   notice: This page has not yet been translated into {{localeName}}.
   viewInEnglish: View in English

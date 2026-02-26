@@ -81,6 +81,8 @@ contribute:
   codeIssue: 报告代码问题
   translationIssue: 报告翻译问题
   suggestPattern: 建议新模式
+  seeIssue: "发现此代码有问题？"
+  reportIt: "告诉我们。"
 untranslated:
   notice: 此页面尚未翻译为{{localeName}}。
   viewInEnglish: 查看英文版

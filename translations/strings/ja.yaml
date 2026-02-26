@@ -80,6 +80,8 @@ contribute:
   codeIssue: コードの問題を報告
   translationIssue: 翻訳の問題を報告
   suggestPattern: 新しいパターンを提案
+  seeIssue: "このコードに問題がありますか？"
+  reportIt: "お知らせください。"
 untranslated:
   notice: このページはまだ{{localeName}}に翻訳されていません。
   viewInEnglish: 英語で見る

@@ -83,6 +83,8 @@ contribute:
   codeIssue: Signaler un problème de code
   translationIssue: Signaler un problème de traduction
   suggestPattern: Proposer un nouveau pattern
+  seeIssue: "Un problème avec ce code ?"
+  reportIt: "Dites-le nous."
 untranslated:
   notice: Cette page n'a pas encore été traduite en {{localeName}}.
   viewInEnglish: Voir en Anglais

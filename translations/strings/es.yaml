@@ -82,6 +82,8 @@ contribute:
   codeIssue: Reportar un problema de código
   translationIssue: Reportar un problema de traducción
   suggestPattern: Sugerir un nuevo patrón
+  seeIssue: "¿Ves un problema con este código?"
+  reportIt: "Cuéntanos."
 untranslated:
   notice: Esta página aún no ha sido traducida al {{localeName}}.
   viewInEnglish: Ver en Inglés

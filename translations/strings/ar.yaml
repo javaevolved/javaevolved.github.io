@@ -80,6 +80,8 @@ contribute:
   codeIssue: الإبلاغ عن مشكلة في الكود
   translationIssue: الإبلاغ عن مشكلة في الترجمة
   suggestPattern: اقتراح نمط جديد
+  seeIssue: "هل ترى مشكلة في هذا الكود؟"
+  reportIt: "أخبرنا."
 untranslated:
   notice: "هذه الصفحة لم تُترجم بعد إلى {{localeName}}."
   viewInEnglish: عرض بالإنجليزية

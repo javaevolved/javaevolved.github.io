@@ -1593,9 +1593,9 @@ footer a:hover {
   gap: 6px;
   padding: 5px 14px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-muted);
+  border: 1px solid var(--accent);
+  background: rgba(251, 146, 60, 0.1);
+  color: var(--accent);
   font-size: 0.82rem;
   font-weight: 500;
   line-height: 1;
@@ -1607,6 +1607,20 @@ footer a:hover {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
+}
+.contribute-inline {
+  text-align: center;
+  padding: 12px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.contribute-inline a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.contribute-inline a:hover {
+  color: var(--accent-dim);
 }
 .contribute-dropdown ul {
   display: none;
