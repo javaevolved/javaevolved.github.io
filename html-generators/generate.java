@@ -219,6 +219,7 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
         var extraTokens = new LinkedHashMap<String, String>();
         extraTokens.putAll(strings);
         extraTokens.put("locale", locale);
+        extraTokens.put("htmlDir", locale.equals("ar") ? "rtl" : "ltr");
         extraTokens.put("ogLocale", locale.replace("-", "_"));
         extraTokens.put("basePrefix", basePrefix);
         extraTokens.put("homeUrl", homeUrl);
@@ -264,6 +265,7 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
     indexTokens.put("tipCards", tipCards);
     indexTokens.put("snippetCount", String.valueOf(allSnippets.size()));
     indexTokens.put("locale", locale);
+    indexTokens.put("htmlDir", locale.equals("ar") ? "rtl" : "ltr");
     indexTokens.put("ogLocale", locale.replace("-", "_"));
     indexTokens.put("canonicalUrl", isEnglish ? BASE_URL : BASE_URL + "/" + locale);
     indexTokens.put("homeUrl", homeUrl);

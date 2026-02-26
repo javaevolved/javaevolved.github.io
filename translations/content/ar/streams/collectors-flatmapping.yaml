@@ -1,0 +1,17 @@
+title: "Collectors.flatMapping()"
+oldApproach: "flatMap متداخل"
+modernApproach: "flatMapping()"
+summary: "استخدم flatMapping() للتسطيح داخل مُجمِّع grouping."
+explanation: "يُطبّق Collectors.flatMapping() تعييناً من-واحد-إلى-كثير كمُجمِّع فرعي. وهو مكافئ المُجمِّع لـ Stream.flatMap() — مفيد داخل groupingBy أو partitioningBy."
+whyModernWins:
+- icon: "🧩"
+  title: "قابل للتركيب"
+  desc: "يعمل كمُجمِّع فرعي داخل groupingBy."
+- icon: "📐"
+  title: "تمريرة واحدة"
+  desc: "سطّح وجمّع في تمريرة Stream واحدة."
+- icon: "🔗"
+  title: "قابل للتداخل"
+  desc: "ادمجه مع مُجمِّعات فرعية أخرى."
+support:
+  description: "متاح على نطاق واسع منذ JDK 9 (سبتمبر 2017)"

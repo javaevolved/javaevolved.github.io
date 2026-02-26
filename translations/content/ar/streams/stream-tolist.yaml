@@ -1,0 +1,17 @@
+title: "Stream.toList()"
+oldApproach: "Collectors.toList()"
+modernApproach: ".toList()"
+summary: "يستبدل toList() النهائي collect(Collectors.toList()) المطوّل."
+explanation: "تُرجع Stream.toList() قائمةً غير قابلة للتعديل. وهي مكافئة لـ .collect(Collectors.toUnmodifiableList()) لكن أقصر بكثير. ملاحظة: النتيجة غير قابلة للتعديل بخلاف Collectors.toList()."
+whyModernWins:
+- icon: "📏"
+  title: "7 أحرف مقابل 24"
+  desc: ".toList() تستبدل .collect(Collectors.toList())."
+- icon: "🔒"
+  title: "ثابتة"
+  desc: "قائمة النتيجة لا يمكن تعديلها."
+- icon: "📖"
+  title: "سائلة"
+  desc: "تُقرأ بشكل طبيعي في نهاية خط الأنابيب."
+support:
+  description: "متاح على نطاق واسع منذ JDK 16 (مارس 2021)"

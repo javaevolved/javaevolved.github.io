@@ -1,0 +1,17 @@
+title: "Stream.iterate() مع Predicate"
+oldApproach: "iterate + limit"
+modernApproach: "iterate(seed, pred, op)"
+summary: "استخدم Predicate لإيقاف التكرار — مثل حلقة for في صيغة Stream."
+explanation: "تعمل Stream.iterate(seed, hasNext, next) ثلاثية الوسائط كحلقة for: seed هو البداية و hasNext يُحدّد متى تتوقف و next تُنتج القيمة التالية."
+whyModernWins:
+- icon: "🎯"
+  title: "إنهاء طبيعي"
+  desc: "توقف بناءً على شرط لا بحد تعسفي."
+- icon: "📐"
+  title: "مكافئ حلقة for"
+  desc: "نفس دلالات for(seed; hasNext; next)."
+- icon: "🛡️"
+  title: "لا خطر Stream لا نهائي"
+  desc: "Predicate يضمن الإنهاء."
+support:
+  description: "متاح على نطاق واسع منذ JDK 9 (سبتمبر 2017)"

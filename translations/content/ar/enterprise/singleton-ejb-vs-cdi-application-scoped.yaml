@@ -1,0 +1,17 @@
+title: "Singleton EJB مقابل CDI @ApplicationScoped"
+oldApproach: "@Singleton EJB"
+modernApproach: "@ApplicationScoped CDI"
+summary: "استبدل Singleton EJBs بحبّات CDI @ApplicationScoped لإدارة الحالة المشتركة الأبسط."
+explanation: "تجمع Singleton EJBs إدارة التزامن (@Lock و @ConcurrencyManagement) والتهيئة المبكرة (@Startup) في حاوية EJB. تُحقق حبّة CDI @ApplicationScoped نفس دورة حياة المثيل الواحد بطقوس أقل بكثير. عند الحاجة لضبط التزامن توفر أدوات java.util.concurrent تحكماً أدق من تعليقات قفل EJB."
+whyModernWins:
+- icon: "🪶"
+  title: "ضجيج تعليقات توضيحية أقل"
+  desc: "لا @ConcurrencyManagement أو @Lock أو @Startup — مجرد تعليق توضيحي @ApplicationScoped واحد."
+- icon: "🔧"
+  title: "تزامن مرن"
+  desc: "استخدم أقفال java.util.concurrent أو volatile للأمان المطلوب بالضبط للخيوط."
+- icon: "🧪"
+  title: "اختبار سهل"
+  desc: "يمكن إنشاء حبّات CDI العادية مباشرةً في الاختبارات دون حاوية EJB."
+support:
+  description: "متاح على نطاق واسع منذ Jakarta EE 8 / Java 11"

@@ -1,0 +1,80 @@
+site:
+  tagline: "تطوّرت Java. يمكن لكودك ذلك أيضاً."
+  tagline_line1: "تطوّرت Java."
+  tagline_line2: "يمكن لكودك ذلك أيضاً."
+  description: "مجموعة من مقاطع كود Java الحديثة. كل نمط قديم بجانب بديله الحديث والنظيف — جنباً إلى جنب."
+  heroSnippetCount: "✦ {{snippetCount}} نمطاً حديثاً · Java 8 ← Java 25"
+  heroOld: قديم
+  heroModern: حديث
+  allComparisons: جميع المقارنات
+  snippetsBadge: "{{snippetCount}} مقتطفاً"
+nav:
+  allPatterns: "→ جميع الأنماط"
+  toggleTheme: تبديل المظهر
+  viewOnGitHub: عرض على GitHub
+  selectLanguage: اختر اللغة
+breadcrumb:
+  home: الرئيسية
+sections:
+  codeComparison: مقارنة الكود
+  whyModernWins: لماذا يتفوق الأسلوب الحديث
+  oldApproach: الأسلوب القديم
+  modernApproach: الأسلوب الحديث
+  sinceJdk: "منذ JDK"
+  difficulty: الصعوبة
+  jdkSupport: دعم JDK
+  howItWorks: كيف يعمل
+  relatedDocs: توثيق ذو صلة
+  relatedPatterns: أنماط ذات صلة
+filters:
+  show: "عرض:"
+  all: الكل
+difficulty:
+  beginner: مبتدئ
+  intermediate: متوسط
+  advanced: متقدم
+search:
+  placeholder: "البحث في المقتطفات…"
+  noResults: لم يتم العثور على نتائج.
+  esc: ESC
+  searchTrigger: "بحث…"
+  navigate: تنقل
+  open: فتح
+  close: إغلاق
+cards:
+  old: قديم
+  modern: حديث
+  hoverHint: "مرر للرؤية الحديث ←"
+  hoverHintRelated: "مرر للرؤية الحديث ←"
+  touchHint: "👆 انقر أو اسحب ←"
+copy:
+  copy: نسخ
+  copied: "تم النسخ!"
+share:
+  label: مشاركة
+view:
+  expandAll: توسيع الكل
+  collapseAll: طي الكل
+stats:
+  modernPatterns: الأنماط الحديثة
+  jdkVersions: إصدارات JDK المشمولة
+  categories: الفئات
+  linesOfPython: أسطر Python المطلوبة
+footer:
+  tagline: "تطوّرت Java. يمكن لكودك ذلك أيضاً."
+  madeWith: "صُنع بـ ❤️ بواسطة"
+  and: و
+  inspiredBy: مستوحى من
+  viewOnGitHub: عرض على GitHub
+copilot:
+  headline: "حدّث قاعدة كود Java الخاصة بك مع GitHub Copilot."
+  description: "دع Copilot يساعدك في ترحيل الأنماط القديمة إلى Java الحديثة — تلقائياً."
+  appModernization: "تحديث التطبيقات ←"
+  javaGuide: "دليل Java ←"
+support:
+  available: متاح
+  preview: معاينة
+  experimental: تجريبي
+untranslated:
+  notice: "هذه الصفحة لم تُترجم بعد إلى {{localeName}}."
+  viewInEnglish: عرض بالإنجليزية
