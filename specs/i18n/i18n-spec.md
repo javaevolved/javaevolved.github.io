@@ -7,7 +7,7 @@ Internationalization is implemented via two distinct layers:
 
 1. **UI strings layer** — every piece of hard-coded copy in the templates
    (labels, button text, nav, footer, etc.) is extracted into a per-locale
-   `translations/strings/{locale}.json` file and injected at build time.
+   `translations/strings/{locale}.yaml` file and injected at build time.
 
 2. **Content translation layer** — translated pattern JSON files are complete,
    stand-alone replacements stored under `translations/content/{locale}/`.
@@ -37,9 +37,9 @@ content/                              # English content (source of truth)
 
 translations/                         # All i18n artifacts
   strings/
-    en.json                           # English UI strings (extracted from templates)
-    pt-BR.json                        # Partial — missing keys fall back to en.json
-    ja.json
+    en.yaml                           # English UI strings (extracted from templates)
+    pt-BR.yaml                        # Partial — missing keys fall back to en.yaml
+    ja.yaml
   content/
     pt-BR/
       language/
@@ -90,9 +90,15 @@ site/                                 # Generated output
 ```properties
 # html-generators/locales.properties
 # format: locale=Display name  (first entry is the default/primary locale)
-en=English
-pt-BR=Português (Brasil)
-ja=日本語
+en=🇬🇧 English
+de=🇩🇪 Deutsch
+es=🇪🇸 Español
+pt-BR=🇧🇷 Português (Brasil)
+zh-CN=🇨🇳 中文 (简体)
+ar=🇸🇦 العربية
+fr=🇫🇷 Français
+ja=🇯🇵 日本語
+ko=🇰🇷 한국어
 ```
 
 The generator reads this file to know which locales to build and what label
@@ -100,94 +106,126 @@ to show in the language selector.
 
 ---
 
-## `translations/strings/{locale}.json` Schema
+## `translations/strings/{locale}.yaml` Schema
 
 Every user-visible string in the templates is assigned a dot-separated key.
 The English file is the complete reference; locale files are partial and only
 need to include keys that differ from English.
 
-```json
-// translations/strings/en.json
-{
-  "site": {
-    "title": "java.evolved",
-    "tagline": "Java has evolved. Your code can too.",
-    "description": "A collection of modern Java code snippets. Every old Java pattern next to its clean, modern replacement — side by side."
-  },
-  "nav": {
-    "allPatterns": "← All patterns",
-    "toggleTheme": "Toggle theme",
-    "viewOnGitHub": "View on GitHub"
-  },
-  "sections": {
-    "codeComparison": "Code Comparison",
-    "whyModernWins": "Why the modern way wins",
-    "oldApproach": "Old Approach",
-    "modernApproach": "Modern Approach",
-    "sinceJdk": "Since JDK",
-    "difficulty": "Difficulty",
-    "jdkSupport": "JDK Support",
-    "howItWorks": "How it works",
-    "relatedDocs": "Related Documentation",
-    "relatedPatterns": "Related patterns"
-  },
-  "filters": {
-    "show": "Show:",
-    "all": "All",
-    "difficulty": {
-      "beginner": "Beginner",
-      "intermediate": "Intermediate",
-      "advanced": "Advanced"
-    }
-  },
-  "search": {
-    "placeholder": "Search snippets…",
-    "noResults": "No results found.",
-    "esc": "ESC"
-  },
-  "copy": {
-    "copy": "Copy",
-    "copied": "Copied!"
-  },
-  "footer": {
-    "madeWith": "Made with ❤️ by",
-    "inspiredBy": "Inspired by",
-    "viewOnGitHub": "View on GitHub"
-  },
-  "support": {
-    "available": "Available",
-    "preview": "Preview",
-    "experimental": "Experimental"
-  }
-}
+```yaml
+# translations/strings/en.yaml
+site:
+  title: java.evolved
+  tagline: Java has evolved. Your code can too.
+  tagline_line1: Java has evolved.
+  tagline_line2: Your code can too.
+  description: A collection of modern Java code snippets. Every old Java pattern next
+    to its clean, modern replacement — side by side.
+  heroSnippetCount: '✦ {{snippetCount}} modern patterns · Java 8 → Java 25'
+  heroOld: Old
+  heroModern: Modern
+  allComparisons: All comparisons
+  snippetsBadge: '{{snippetCount}} snippets'
+nav:
+  allPatterns: ← All patterns
+  toggleTheme: Toggle theme
+  viewOnGitHub: View on GitHub
+  selectLanguage: Select language
+breadcrumb:
+  home: Home
+sections:
+  codeComparison: Code Comparison
+  whyModernWins: Why the modern way wins
+  oldApproach: Old Approach
+  modernApproach: Modern Approach
+  sinceJdk: Since JDK
+  difficulty: Difficulty
+  jdkSupport: JDK Support
+  howItWorks: How it works
+  relatedDocs: Related Documentation
+  relatedPatterns: Related patterns
+filters:
+  show: 'Show:'
+  all: All
+difficulty:
+  beginner: Beginner
+  intermediate: Intermediate
+  advanced: Advanced
+search:
+  placeholder: Search snippets…
+  noResults: No results found.
+  esc: ESC
+  searchTrigger: Search…
+  navigate: navigate
+  open: open
+  close: close
+cards:
+  old: Old
+  modern: Modern
+  hoverHint: hover to see modern →
+  hoverHintRelated: Hover to see modern ➜
+  touchHint: 👆 tap or swipe →
+copy:
+  copy: Copy
+  copied: Copied!
+share:
+  label: Share
+view:
+  expandAll: Expand All
+  collapseAll: Collapse All
+stats:
+  modernPatterns: Modern Patterns
+  jdkVersions: JDK Versions Covered
+  categories: Categories
+  linesOfPython: Lines of Python Required
+footer:
+  tagline: Java has evolved. Your code can too.
+  madeWith: Made with ❤️ by
+  and: and
+  inspiredBy: Inspired by
+  viewOnGitHub: View on GitHub
+copilot:
+  headline: Modernize your Java codebase with GitHub Copilot.
+  description: Let Copilot help you migrate legacy patterns to modern Java — automatically.
+  appModernization: App Modernization →
+  javaGuide: Java Guide →
+support:
+  available: Available
+  preview: Preview
+  experimental: Experimental
+contribute:
+  button: Contribute
+  codeIssue: Report a code issue
+  translationIssue: Report a translation issue
+  suggestPattern: Suggest a new pattern
+  seeIssue: "See a problem with this code?"
+  reportIt: "Let us know."
+untranslated:
+  notice: This page has not yet been translated into {{localeName}}.
+  viewInEnglish: View in English
 ```
 
-```json
-// translations/strings/pt-BR.json  (partial — only translated keys required)
-{
-  "site": {
-    "tagline": "O Java evoluiu. Seu código também pode.",
-    "description": "Uma coleção de snippets modernos de Java..."
-  },
-  "nav": {
-    "allPatterns": "← Todos os padrões",
-    "toggleTheme": "Alternar tema"
-  },
-  "sections": {
-    "codeComparison": "Comparação de código",
-    "whyModernWins": "Por que a forma moderna ganha",
-    "howItWorks": "Como funciona",
-    "relatedDocs": "Documentação relacionada",
-    "relatedPatterns": "Padrões relacionados"
-  }
-}
+```yaml
+# translations/strings/pt-BR.yaml  (partial — only translated keys required)
+site:
+  tagline: O Java evoluiu. Seu código também pode.
+  description: Uma coleção de snippets modernos de Java...
+nav:
+  allPatterns: ← Todos os padrões
+  toggleTheme: Alternar tema
+sections:
+  codeComparison: Comparação de código
+  whyModernWins: Por que a forma moderna ganha
+  howItWorks: Como funciona
+  relatedDocs: Documentação relacionada
+  relatedPatterns: Padrões relacionados
 ```
 
-**Key-level fallback rule:** if a key present in `en.json` is absent from a
+**Key-level fallback rule:** if a key present in `en.yaml` is absent from a
 locale file, the generator uses the English value and emits a build-time warning:
 
 ```
-[WARN] strings/pt-BR.json: missing key "footer.madeWith" — using English fallback
+[WARN] pt-BR.yaml: missing key "footer.madeWith" — using English fallback
 ```
 
 The page is always rendered completely; no key is ever silently blank. The warning
@@ -210,7 +248,7 @@ Every field in a slug definition file falls into one of three categories:
 |---|---|---|
 | **Translate** (include in translation file) | `title`, `summary`, `explanation`, `oldApproach`, `modernApproach`, `whyModernWins` (full array), `support.description` | These are the **only** fields present in a translation file |
 | **English source of truth** (never in translation file) | `id`, `slug`, `category`, `difficulty`, `jdkVersion`, `oldLabel`, `modernLabel`, `oldCode`, `modernCode`, `prev`, `next`, `related`, `docs` | Always taken from the English content file; any values in the translation file are ignored |
-| **Translated via UI strings** | `difficulty`, `support.state` | Enum values stay in English; display names resolved from `translations/strings/{locale}.json` at build time |
+| **Translated via UI strings** | `difficulty`, `support.state` | Enum values stay in English; display names resolved from `translations/strings/{locale}.yaml` at build time |
 
 **Why enum fields use UI strings instead of content translation:**
 
@@ -267,8 +305,8 @@ For each pattern and locale the generator:
      `whyModernWins`, `support.description`) from the translation file.
    - **No** → use the English file and inject an "untranslated" banner
      (see next section).
-3. Loads `translations/strings/<locale>.json` deep-merged over `en.json`.
-   Any key present in `en.json` but absent from the locale file falls back to
+3. Loads `translations/strings/<locale>.yaml` deep-merged over `en.yaml`.
+   Any key present in `en.yaml` but absent from the locale file falls back to
    the English value; the generator logs a `[WARN]` for each missing key and
    continues without aborting.
 4. Renders the template, substituting content tokens (`{{title}}`, …) and
@@ -295,7 +333,7 @@ The banner is suppressed when the locale is `en` or a translation file exists.
 ## Template Changes
 
 Every hard-coded English string in the templates is replaced with a token whose
-name mirrors the dot-separated key path in `strings/{locale}.json`:
+name mirrors the dot-separated key path in `strings/{locale}.yaml`:
 
 | Before | After |
 |---|---|
@@ -516,9 +554,9 @@ mixed freely (e.g., strings in YAML, some content in JSON).
 
 | Phase | Work |
 |---|---|
-| 1 | Extract every hard-coded string from templates into `translations/strings/en.json`; replace literals with `{{…}}` tokens; verify English output is unchanged |
+| 1 | Extract every hard-coded string from templates into `translations/strings/en.yaml`; replace literals with `{{…}}` tokens; verify English output is unchanged |
 | 2 | Add `locales.properties`; extend generator to load strings, support `--locale`, and fall back gracefully |
 | 3 | Add language selector to nav; implement `app.js` locale detection and path rewrite |
-| 4 | Translate `strings/pt-BR.json` and 2–3 content files as a proof-of-concept; verify fallback banner |
+| 4 | Translate `strings/pt-BR.yaml` and 2–3 content files as a proof-of-concept; verify fallback banner |
 | 5 | Update GitHub Actions; add `hreflang` alternate links |
 | 6 | Wire up AI translation automation; add `translations/` schema documentation |
