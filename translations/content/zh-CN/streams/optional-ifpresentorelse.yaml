@@ -1,0 +1,18 @@
+---
+title: Optional.ifPresentOrElse()
+oldApproach: Optional 上的 if/else
+modernApproach: ifPresentOrElse()
+summary: "在一次调用中处理 Optional 的存在和缺失两种情况。"
+explanation: "ifPresentOrElse() 接受一个用于存在情况的 Consumer 和一个用于缺失情况的 Runnable。这消除了对 Optional 进行 if/else 的需要。"
+whyModernWins:
+- icon: 📏
+  title: 单个表达式
+  desc: "两种情况在一次方法调用中处理。"
+- icon: 📖
+  title: 声明式
+  desc: "直接表达存在和缺失两种处理路径。"
+- icon: 🚫
+  title: 无 isPresent() 检查
+  desc: "避免手动 isPresent() + get() 模式。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

@@ -1,0 +1,18 @@
+---
+title: 虚拟线程执行器
+oldApproach: 固定线程池
+modernApproach: 虚拟线程执行器
+summary: "使用虚拟线程执行器实现无限轻量并发。"
+explanation: "虚拟线程执行器为每个任务创建新的虚拟线程。无需调整池大小——JVM 根据需要管理虚拟线程，开销极低。"
+whyModernWins:
+- icon: ♾️
+  title: 无需调整大小
+  desc: "无需调整池大小——按需创建任意数量的线程。"
+- icon: ⚡
+  title: 轻量级
+  desc: "每个虚拟线程的内存占用仅为千字节。"
+- icon: 🔧
+  title: 熟悉的 API
+  desc: "与现有 ExecutorService 代码无缝配合。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

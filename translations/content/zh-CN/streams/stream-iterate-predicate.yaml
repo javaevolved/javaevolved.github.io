@@ -1,0 +1,18 @@
+---
+title: 带谓词的 Stream.iterate()
+oldApproach: iterate + limit
+modernApproach: iterate(seed, pred, op)
+summary: "使用谓词停止迭代——流形式的 for 循环。"
+explanation: "三参数 Stream.iterate(seed, hasNext, next) 像 for 循环一样工作：从种子值开始，在谓词成立时继续，并按步骤函数递进。"
+whyModernWins:
+- icon: 🎯
+  title: 自然终止
+  desc: "根据条件停止，而非任意 limit。"
+- icon: 📖
+  title: for 循环的流形式
+  desc: "for(int i=0; i<10; i++) 对应的流形式。"
+- icon: 🔗
+  title: 可链式调用
+  desc: "与 map、filter 等其他流操作链式调用。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

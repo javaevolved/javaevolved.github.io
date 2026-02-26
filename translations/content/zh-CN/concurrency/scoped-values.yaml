@@ -1,0 +1,18 @@
+---
+title: 作用域值
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: "安全地跨调用栈共享数据，无 ThreadLocal 的陷阱。"
+explanation: "ScopedValue 提供不可变的、可继承的、作用域受限的上下文。与 ThreadLocal 不同，它适用于虚拟线程，不会泄漏状态，在结构化并发中效果极佳。"
+whyModernWins:
+- icon: 🔒
+  title: 不可变
+  desc: "被调用方可以读取但永远不能修改作用域值。"
+- icon: 🧵
+  title: 虚拟线程友好
+  desc: "与虚拟线程和结构化并发配合良好。"
+- icon: 🧹
+  title: 无泄漏
+  desc: "作用域退出时自动清理——无需 remove()。"
+support:
+  description: 在 JDK 25 LTS 中正式发布（JEP 506，2025 年 9 月）。

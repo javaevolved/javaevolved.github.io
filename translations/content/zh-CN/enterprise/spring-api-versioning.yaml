@@ -1,0 +1,18 @@
+---
+title: Spring Framework 7 API 版本控制
+oldApproach: 手动 URL 路径版本控制
+modernApproach: 原生 API 版本控制
+summary: "用 Spring Framework 7 的原生 API 版本控制支持替代重复的版本前缀控制器。"
+explanation: "在 Spring Framework 7 之前，API 版本控制需要单独的控制器类（每个版本一个），或复杂的路径前缀配置。Spring 7 添加了原生版本控制，所有版本共存于同一个控制器类中。"
+whyModernWins:
+- icon: 🗂️
+  title: 无控制器重复
+  desc: "所有版本在一个控制器类中；只有各个处理方法按版本不同。"
+- icon: 🔧
+  title: 灵活版本策略
+  desc: "支持基于 URL、标头和内容协商的版本控制。"
+- icon: 🧹
+  title: 集中版本逻辑
+  desc: "版本配置集中于一处，易于维护。"
+support:
+  description: 自 Spring Framework 7.0 起可用（需要 Java 17+）

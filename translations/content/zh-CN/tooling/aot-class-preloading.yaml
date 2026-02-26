@@ -1,0 +1,18 @@
+---
+title: AOT 类预加载
+oldApproach: 每次冷启动
+modernApproach: AOT 缓存
+summary: "缓存类加载和编译，实现即时启动。"
+explanation: "AOT 类预加载从训练运行中缓存已加载和链接的类。后续运行直接从缓存加载，跳过类加载、验证和链接。"
+whyModernWins:
+- icon: ⚡
+  title: 更快启动
+  desc: "跳过类加载、验证和链接。"
+- icon: 🔧
+  title: 零代码更改
+  desc: "无需修改应用程序代码。"
+- icon: 📦
+  title: 容器友好
+  desc: "显著改善容器化 Java 应用的启动时间。"
+support:
+  description: 在 JDK 25 LTS 中作为标准特性可用（JEP 514/515，2025 年 9 月）

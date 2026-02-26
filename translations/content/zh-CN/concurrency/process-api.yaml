@@ -1,0 +1,18 @@
+---
+title: 现代 Process API
+oldApproach: Runtime.exec()
+modernApproach: ProcessHandle
+summary: "使用 ProcessHandle 检查和管理操作系统进程。"
+explanation: "ProcessHandle 提供 PID、进程信息（命令、参数、启动时间）以及监控子进程的能力。ProcessBuilder 提供了对 stdin/stdout/stderr 的精细控制。"
+whyModernWins:
+- icon: 🔍
+  title: 完整信息
+  desc: "访问 PID、命令、参数、启动时间、CPU 使用率。"
+- icon: 👶
+  title: 子进程管理
+  desc: "列出和监控子进程。"
+- icon: 🔔
+  title: 终止回调
+  desc: "进程终止时获得通知。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

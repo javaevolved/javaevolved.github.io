@@ -1,0 +1,18 @@
+---
+title: 流的 takeWhile / dropWhile
+oldApproach: 手动循环
+modernApproach: takeWhile/dropWhile
+summary: "根据谓词获取或丢弃流中的元素。"
+explanation: "takeWhile() 在谓词为 true 时返回元素，在第一次失败时停止。dropWhile() 在谓词为 true 时跳过元素，然后返回其余所有元素。"
+whyModernWins:
+- icon: 🎯
+  title: 短路
+  desc: "一旦谓词失败立即停止处理。"
+- icon: 📖
+  title: 声明式
+  desc: "清晰地表达获取/丢弃语义。"
+- icon: 🔗
+  title: 可链式调用
+  desc: "与其他流操作无缝组合。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

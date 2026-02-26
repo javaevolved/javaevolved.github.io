@@ -1,0 +1,18 @@
+---
+title: 使用虚拟线程进行并发 HTTP 请求
+oldApproach: 线程池 + URLConnection
+modernApproach: 虚拟线程 + HttpClient
+summary: "使用虚拟线程和 HttpClient 并发获取多个 URL。"
+explanation: "虚拟线程使每个 HTTP 请求使用一个线程变得切实可行。每个虚拟线程在等待 I/O 时会挂载，不会阻塞平台线程。"
+whyModernWins:
+- icon: ♾️
+  title: 每个请求一个线程
+  desc: "无需调整池大小——每个 URL 一个虚拟线程。"
+- icon: 🔒
+  title: 简单的错误处理
+  desc: "每个任务在自己的线程中处理错误。"
+- icon: 📏
+  title: 简洁代码
+  desc: "现代 HttpClient 与虚拟线程的语义清晰。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

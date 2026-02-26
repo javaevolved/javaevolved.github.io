@@ -1,0 +1,18 @@
+---
+title: Map.entry() 工厂方法
+oldApproach: SimpleEntry
+modernApproach: Map.entry()
+summary: "使用简洁的工厂方法创建 Map 条目。"
+explanation: "Map.entry() 替代冗长的 AbstractMap.SimpleEntry 构造函数。结果条目是不可变的——键和值均不能更改。"
+whyModernWins:
+- icon: 📏
+  title: 简洁
+  desc: "一行代码，意图更清晰。"
+- icon: 🔒
+  title: 不可变
+  desc: "条目创建后无法修改。"
+- icon: 🎯
+  title: 语义清晰
+  desc: "Map.entry() 准确表达您的意图。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

@@ -1,0 +1,18 @@
+---
+title: Message-Driven Bean 与 Reactive Messaging
+oldApproach: Message-Driven Bean
+modernApproach: Reactive Messaging
+summary: "用 MicroProfile Reactive Messaging 替代 JMS Message-Driven Bean，实现事件驱动处理。"
+explanation: "Message-Driven Bean 需要实现 MessageListener，配置 @ActivationConfigProperty 并将所有内容包裹在 EJB 容器中。MicroProfile Reactive Messaging 只需一个 @Incoming 方法注解。"
+whyModernWins:
+- icon: 🪶
+  title: 最少代码
+  desc: "单个 @Incoming 方法替代 MDB 类、MessageListener 接口和 @ActivationConfigProperty。"
+- icon: 🔀
+  title: 多种消息系统
+  desc: "相同的注解适用于 Kafka、AMQP、内存通道等。"
+- icon: 🔗
+  title: 响应式链
+  desc: "轻松将 @Incoming 与 @Outgoing 链接以进行流处理。"
+support:
+  description: 自 MicroProfile 4.0 / SmallRye Reactive Messaging 起可用

@@ -1,0 +1,18 @@
+---
+title: CompletableFuture 链式调用
+oldApproach: 阻塞式 Future.get()
+modernApproach: CompletableFuture
+summary: "使用 CompletableFuture 链式异步操作，无需阻塞。"
+explanation: "CompletableFuture 支持非阻塞异步管道。链式操作使用 thenApply、thenCompose 和 thenCombine，仅在最终结果需要时阻塞。"
+whyModernWins:
+- icon: 🔗
+  title: 可链式调用
+  desc: "将异步步骤组合成可读的管道。"
+- icon: ⚡
+  title: 非阻塞
+  desc: "线程不会等待中间结果——只在需要时阻塞。"
+- icon: 🔀
+  title: 可组合
+  desc: "使用 thenCombine、allOf、anyOf 组合多个 Future。"
+support:
+  description: 自 JDK 8 起广泛可用（2014 年 3 月）

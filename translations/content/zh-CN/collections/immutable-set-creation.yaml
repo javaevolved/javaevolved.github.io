@@ -1,0 +1,18 @@
+---
+title: 创建不可变 Set
+oldApproach: 冗长的包装方式
+modernApproach: Set.of()
+summary: "用单个工厂调用创建不可变 Set。"
+explanation: "Set.of() 创建真正不可变的 Set，拒绝 null 和重复元素。迭代顺序不保证——如果需要顺序，使用 LinkedHashSet 或 List.of()。"
+whyModernWins:
+- icon: 📏
+  title: 简洁
+  desc: "一行代码替代三层嵌套调用。"
+- icon: 🔒
+  title: 真正不可变
+  desc: "Set 本身不可修改。"
+- icon: 🛡️
+  title: null 安全
+  desc: "在创建时拒绝 null 元素。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

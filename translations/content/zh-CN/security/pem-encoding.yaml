@@ -1,0 +1,18 @@
+---
+title: PEM 编码/解码
+oldApproach: 手动 Base64 + 标头
+modernApproach: PEM API
+summary: "原生编码和解码 PEM 格式的加密对象。"
+explanation: "PEM API 为证书、密钥、CSR 等提供标准编码/解码。不再需要手动处理 Base64 编码、PEM 标头和行换行。"
+whyModernWins:
+- icon: 🧹
+  title: 无手动 Base64
+  desc: "PEM 标头、行换行和 Base64 自动处理。"
+- icon: 📐
+  title: 标准格式
+  desc: "符合 RFC 7468 的 PEM 编码。"
+- icon: 🔒
+  title: 类型安全
+  desc: "按类型解码——证书、私钥、公钥等。"
+support:
+  description: JDK 25 预览版（JEP 470）。需要 --enable-preview。

@@ -1,0 +1,18 @@
+---
+title: 默认 TLS 1.3
+oldApproach: 手动 TLS 配置
+modernApproach: TLS 1.3 默认
+summary: "TLS 1.3 默认启用——无需显式协议配置。"
+explanation: "Java 11 添加了 TLS 1.3 支持并将其设为首选协议。SSLContext 自动协商 TLS 1.3（如果双方都支持），使现有代码更加安全，无需更改。"
+whyModernWins:
+- icon: 🛡️
+  title: 更安全
+  desc: "TLS 1.3 删除了过时的密码套件和握手模式。"
+- icon: ⚡
+  title: 更快握手
+  desc: "TLS 1.3 将往返次数从 2 减少到 1。"
+- icon: 🆓
+  title: 无配置
+  desc: "现有 HTTPS 代码自动受益。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

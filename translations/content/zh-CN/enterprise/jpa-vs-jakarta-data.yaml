@@ -1,0 +1,18 @@
+---
+title: JPA 与 Jakarta Data
+oldApproach: JPA EntityManager
+modernApproach: Jakarta Data Repository
+summary: "声明 Repository 接口，让 Jakarta Data 生成 DAO 实现。"
+explanation: "Jakarta Data（Jakarta EE 11）将数据访问变为纯接口声明。容器生成完整的 DAO 实现——无需 EntityManager 样板、查询构建器或手动事务。"
+whyModernWins:
+- icon: 🪄
+  title: 零样板代码
+  desc: "声明接口；容器生成完整的 DAO 实现。"
+- icon: 📖
+  title: 表达性查询
+  desc: "方法名成为查询：findByLastNameOrderByFirstName。"
+- icon: 🔒
+  title: 类型安全
+  desc: "方法签名在编译时验证参数和返回类型。"
+support:
+  description: 自 Jakarta EE 11 / Java 21 起可用（2024 年）

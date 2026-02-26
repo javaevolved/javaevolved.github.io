@@ -1,0 +1,18 @@
+---
+title: Collectors.flatMapping()
+oldApproach: 嵌套 flatMap
+modernApproach: flatMapping()
+summary: "使用 flatMapping() 在分组收集器内部进行扁平化。"
+explanation: "Collectors.flatMapping() 在 groupingBy 等收集器内部将一对多映射作为下游收集器应用。这避免了 groupingBy 和 flatMap 的笨拙嵌套。"
+whyModernWins:
+- icon: 🧩
+  title: 可组合
+  desc: "作为 groupingBy 内的下游收集器使用。"
+- icon: 📏
+  title: 更扁平
+  desc: "避免嵌套的 stream-inside-collector 模式。"
+- icon: 📖
+  title: 表达性强
+  desc: "flatMapping 的意图一目了然。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

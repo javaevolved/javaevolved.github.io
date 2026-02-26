@@ -1,0 +1,18 @@
+---
+title: String.strip() 与 trim()
+oldApproach: trim()
+modernApproach: strip()
+summary: "使用 strip()、stripLeading()、stripTrailing() 进行 Unicode 感知的去空白处理。"
+explanation: "trim() 只删除 ≤ U+0020 的字符（ASCII 控制字符和空格）。strip() 使用 Character.isWhitespace() 删除所有 Unicode 空白字符，包括不间断空格等。"
+whyModernWins:
+- icon: 🌐
+  title: Unicode 正确
+  desc: "处理来自每种文字的所有空白字符。"
+- icon: 🎯
+  title: 精确控制
+  desc: "stripLeading() 和 stripTrailing() 提供单侧去除。"
+- icon: 📖
+  title: 语义更清晰
+  desc: "strip() 的名称更准确地描述了现代空白处理。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

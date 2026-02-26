@@ -1,0 +1,18 @@
+---
+title: Collectors.teeing()
+oldApproach: 两次遍历
+modernApproach: teeing()
+summary: "在单次流遍历中计算两个聚合结果。"
+explanation: "Collectors.teeing() 将每个元素发送到两个下游收集器，然后将结果合并。不再需要对流进行两次遍历或将中间结果存储在可变变量中。"
+whyModernWins:
+- icon: ⚡
+  title: 单次遍历
+  desc: "只处理流一次，而非两次。"
+- icon: 🧹
+  title: 无可变状态
+  desc: "无需用于收集中间结果的临时变量。"
+- icon: 🧩
+  title: 可组合
+  desc: "可与其他收集器组合作为下游收集器。"
+support:
+  description: 自 JDK 12 起广泛可用（2019 年 3 月）

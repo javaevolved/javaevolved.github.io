@@ -1,0 +1,18 @@
+---
+title: 使用 JSpecify null 安全的 JUnit 6
+oldApproach: 未注解的 API
+modernApproach: '@NullMarked API'
+summary: "JUnit 6 采用 JSpecify @NullMarked，使 null 契约在整个测试 API 中显式化。"
+explanation: "JUnit 5 发布时没有标准化的可空性注解，让工具和开发者不得不猜测 null 行为。JUnit 6 使用 JSpecify 的 @NullMarked 将非 null 作为默认值。"
+whyModernWins:
+- icon: 📜
+  title: 显式契约
+  desc: "@NullMarked 在 JUnit 6 模块上直接记录 null 语义。"
+- icon: 🔒
+  title: 工具支持
+  desc: "IDE 和分析器可以在测试代码中标记 null 违规。"
+- icon: 🧹
+  title: 更少 @Nullable
+  desc: "非 null 是默认值——只有异常需要注解。"
+support:
+  description: 自 JUnit 6.0 起可用（2025 年 10 月，需要 Java 17+）

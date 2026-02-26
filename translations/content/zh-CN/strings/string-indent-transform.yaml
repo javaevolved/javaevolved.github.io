@@ -1,0 +1,18 @@
+---
+title: String.indent() 和 transform()
+oldApproach: 手动缩进
+modernApproach: indent() / transform()
+summary: "流畅地缩进文本并链式进行字符串转换。"
+explanation: "indent(n) 为每行添加 n 个空格。transform(fn) 将任意函数应用于字符串，支持在字符串操作管道中链式调用任何转换。"
+whyModernWins:
+- icon: 📏
+  title: 内置方法
+  desc: "缩进是常见操作——现在只需一次调用。"
+- icon: 🔗
+  title: 可链式调用
+  desc: "transform() 允许将自定义函数插入字符串管道。"
+- icon: 🧹
+  title: 更简洁
+  desc: "无需 StringBuilder 循环进行缩进。"
+support:
+  description: 自 JDK 12 起广泛可用（2019 年 3 月）

@@ -1,0 +1,18 @@
+---
+title: 类型化流 toArray
+oldApproach: 手动数组复制
+modernApproach: toArray(generator)
+summary: "使用方法引用将流转换为类型化数组。"
+explanation: "toArray(IntFunction) 方法从流创建正确类型化的数组。传递 String[]::new 获取 String[]，而非 Object[]。"
+whyModernWins:
+- icon: 🎯
+  title: 类型安全
+  desc: "没有 Object[] 转换——数组类型是正确的。"
+- icon: 📏
+  title: 简洁
+  desc: "方法引用语法简洁而具有表达力。"
+- icon: 🚫
+  title: 无 System.arraycopy
+  desc: "不需要中间 Object[] 和数组复制。"
+support:
+  description: 自 JDK 8 起广泛可用（2014 年 3 月）

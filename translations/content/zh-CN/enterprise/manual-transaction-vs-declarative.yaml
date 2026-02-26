@@ -1,0 +1,18 @@
+---
+title: 手动 JPA 事务与声明式 @Transactional
+oldApproach: 手动事务
+modernApproach: '@Transactional'
+summary: "用单个 @Transactional 注解替代冗长的 begin/commit/rollback 块。"
+explanation: "手动事务管理需要显式的 begin()、commit() 和 rollback() 调用，通常包裹在 try/catch/finally 中。@Transactional 注解自动处理所有这些，包括异常时的回滚。"
+whyModernWins:
+- icon: 🗑️
+  title: 无样板代码
+  desc: "一个注解替代重复的 begin/commit/rollback try-catch 块。"
+- icon: 🛡️
+  title: 自动回滚
+  desc: "未检查异常时自动回滚——无需手动 catch 块。"
+- icon: 🔧
+  title: 可配置
+  desc: "传播、隔离、超时和只读通过注解属性控制。"
+support:
+  description: 自 Jakarta EE 8 / Java 11 起广泛可用

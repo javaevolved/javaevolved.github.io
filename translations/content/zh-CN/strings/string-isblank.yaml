@@ -1,0 +1,18 @@
+---
+title: String.isBlank()
+oldApproach: trim().isEmpty()
+modernApproach: isBlank()
+summary: "用单个方法调用检查空白字符串。"
+explanation: "isBlank() 在字符串为空或只包含空白字符时返回 true，使用与 strip() 相同的 Unicode 感知规则——而不像 trim() 那样仅限于 ASCII 空白。"
+whyModernWins:
+- icon: 📖
+  title: 自我描述
+  desc: "isBlank() 准确说明它检查的内容。"
+- icon: 🌐
+  title: Unicode 正确
+  desc: "使用与 strip() 相同的 Unicode 空白定义。"
+- icon: 📏
+  title: 更少链式调用
+  desc: "一个方法替代两个链式调用。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

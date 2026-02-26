@@ -1,0 +1,18 @@
+---
+title: 流 Gatherer
+oldApproach: 自定义 Collector
+modernApproach: gather()
+summary: "使用 Gatherer 实现自定义中间流操作。"
+explanation: "Gatherer 是一种新的中间流操作，可以表达内置操作（如 map 和 filter）无法表达的复杂转换。它们支持有状态处理和提前终止。"
+whyModernWins:
+- icon: 🧩
+  title: 可组合
+  desc: "Gatherer 与其他流操作组合使用。"
+- icon: 🎯
+  title: 有状态
+  desc: "与 map/filter 不同，Gatherer 可以在元素之间维护状态。"
+- icon: 🔀
+  title: 灵活
+  desc: "可以扩展、收缩或转换流，不受内置操作限制。"
+support:
+  description: 在 JDK 24 中正式发布（JEP 485，2025 年 3 月）。

@@ -1,0 +1,18 @@
+---
+title: 虚拟线程
+oldApproach: 平台线程
+modernApproach: 虚拟线程
+summary: "创建数百万个轻量级虚拟线程，而非沉重的操作系统线程。"
+explanation: "虚拟线程是由 JVM 而非操作系统管理的轻量级线程。它们挂起时不会阻塞平台线程，使每个请求一个线程的风格变得可行。"
+whyModernWins:
+- icon: ⚡
+  title: 轻量级
+  desc: "虚拟线程使用 KB 内存，平台线程使用 MB。"
+- icon: ♾️
+  title: 可扩展
+  desc: "每个请求运行一个线程，无需异步代码。"
+- icon: 🔧
+  title: 无需重构
+  desc: "与现有阻塞 API（JDBC、文件 I/O）配合使用。"
+support:
+  description: 自 JDK 21 LTS 起广泛可用（2023 年 9 月）

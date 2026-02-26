@@ -1,0 +1,18 @@
+---
+title: 紧凑对象头
+oldApproach: 128 位头
+modernApproach: 64 位头
+summary: "将对象头大小减半，提高内存密度和缓存利用率。"
+explanation: "紧凑对象头将每个对象的开销从 128 位（16 字节）减少到 64 位（8 字节）。这提高了内存密度，减少了 GC 压力，并提高了缓存局部性。"
+whyModernWins:
+- icon: 📦
+  title: 头部缩小 50%
+  desc: "每个对象 8 字节而非 16 字节。"
+- icon: ⚡
+  title: 更好的缓存
+  desc: "更小的对象意味着每个缓存行容纳更多对象。"
+- icon: 🔧
+  title: 零代码更改
+  desc: "无需修改应用程序代码。"
+support:
+  description: 在 JDK 25 LTS 中正式发布（JEP 519，2025 年 9 月）。

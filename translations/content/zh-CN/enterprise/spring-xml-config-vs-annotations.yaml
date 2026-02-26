@@ -1,0 +1,18 @@
+---
+title: Spring XML Bean 配置与注解驱动
+oldApproach: XML Bean 定义
+modernApproach: 注解驱动 Bean
+summary: "用简洁的注解驱动配置替代冗长的 Spring XML bean 定义。"
+explanation: "传统 Spring 应用通过 XML 配置文件连接 bean，需要大量重复的 <bean> 定义。注解驱动配置（@Component、@Service、@Repository）消除了这些 XML。"
+whyModernWins:
+- icon: 🚫
+  title: 无 XML
+  desc: "@SpringBootApplication 触发组件扫描和自动配置，消除 XML。"
+- icon: 🔍
+  title: 就近配置
+  desc: "依赖项在类本身上声明，而非在外部 XML 中。"
+- icon: 🧩
+  title: 自动配置
+  desc: "Spring Boot 自动配置基于 classpath 内容连接常用功能。"
+support:
+  description: 自 Spring Boot 1.0 起广泛可用（2014 年 4 月）；Spring Boot 3 需要 Java 17+

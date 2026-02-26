@@ -1,0 +1,18 @@
+---
+title: 不可修改收集器
+oldApproach: collectingAndThen
+modernApproach: stream.toList()
+summary: "使用 stream.toList() 直接收集到不可修改列表。"
+explanation: "Java 10 添加了 toUnmodifiableList()、toUnmodifiableSet() 和 toUnmodifiableMap()。Java 16 的 stream.toList() 更进一步，完全不需要 collect() 或 Collectors 导入。"
+whyModernWins:
+- icon: 📏
+  title: 最简洁
+  desc: "stream.toList() 完全不需要 collect() 或 Collectors 导入。"
+- icon: 🔒
+  title: 真正不可变
+  desc: "结果列表在结构上不可修改。"
+- icon: 🧹
+  title: 更少导入
+  desc: "无需导入 java.util.stream.Collectors。"
+support:
+  description: 自 JDK 16 起广泛可用（2021 年 3 月）
