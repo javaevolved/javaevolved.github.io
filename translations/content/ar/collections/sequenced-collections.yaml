@@ -1,0 +1,17 @@
+title: "المجموعات المتسلسلة"
+oldApproach: "حساب الفهارس"
+modernApproach: "getFirst/getLast"
+summary: "الوصول إلى العناصر الأولى والأخيرة والعروض العكسية بدوال API نظيفة."
+explanation: "تضيف SequencedCollection الدوالَ getFirst() و getLast() و reversed() و addFirst() و addLast() إلى List و Deque و SortedSet و LinkedHashSet. لا مزيد من حساب size-1 أو التكرار العكسي اليدوي."
+whyModernWins:
+- icon: "📖"
+  title: "موثّق ذاتياً"
+  desc: "getLast() أوضح من get(size()-1)."
+- icon: "🔄"
+  title: "عرض عكسي"
+  desc: "reversed() تُعطي عرضاً — لا نسخ مطلوب."
+- icon: "🧩"
+  title: "واجهة برمجية موحّدة"
+  desc: "تعمل بنفس الطريقة على List و Deque و SortedSet."
+support:
+  description: "متاح على نطاق واسع منذ JDK 21 LTS (سبتمبر 2023)"

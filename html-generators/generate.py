@@ -223,6 +223,8 @@ def generate_html(template, why_card_template, related_card_template,
         "supportDescription": escape(data["support"]["description"]),
         "supportBadge": _support_badge(data["support"]["state"]),
         "supportBadgeClass": _support_badge_class(data["support"]["state"]),
+        "locale": "en",
+        "htmlDir": "ltr",
         "canonicalUrl": f"{BASE_URL}/{cat}/{slug}.html",
         "flatUrl": f"{BASE_URL}/{slug}.html",
         "titleJson": json_escape(data["title"]),
@@ -285,6 +287,8 @@ def main():
     index_html = replace_tokens(index_template, {
         "tipCards": tip_cards,
         "snippetCount": str(count),
+        "locale": "en",
+        "htmlDir": "ltr",
     })
     with open(os.path.join(SITE_DIR, "index.html"), "w") as f:
         f.write(index_html)

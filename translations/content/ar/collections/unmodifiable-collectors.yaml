@@ -1,0 +1,17 @@
+title: "مُجمِّعات غير قابلة للتعديل"
+oldApproach: "collectingAndThen"
+modernApproach: "stream.toList()"
+summary: "جمّع مباشرةً إلى قائمة غير قابلة للتعديل باستخدام stream.toList()."
+explanation: "أضاف Java 10 الدوالَ toUnmodifiableList() و toUnmodifiableSet() و toUnmodifiableMap() لاستبدال غلاف collectingAndThen المطوّل. بالنسبة للقوائم تحديداً، توفر stream.toList() في Java 16 بديلاً أبسط — دون استدعاء collect() على الإطلاق. استخدم toUnmodifiableSet() و toUnmodifiableMap() لأنواع المجموعات الأخرى."
+whyModernWins:
+- icon: "📏"
+  title: "الأقصر على الإطلاق"
+  desc: "stream.toList() لا تحتاج استدعاء collect() أو استيراد Collectors."
+- icon: "🔒"
+  title: "ثابتة"
+  desc: "لا يمكن تعديل النتيجة — لا طفرات عرضية."
+- icon: "📖"
+  title: "مقروءة"
+  desc: "تُقرأ بشكل طبيعي كخطوة نهائية في أي خط Stream."
+support:
+  description: "متاح على نطاق واسع منذ JDK 16 (مارس 2021)"

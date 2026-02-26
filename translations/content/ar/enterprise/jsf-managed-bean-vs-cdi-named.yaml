@@ -1,0 +1,17 @@
+title: "JSF Managed Bean مقابل CDI Named Bean"
+oldApproach: "@ManagedBean"
+modernApproach: "@Named + CDI"
+summary: "استبدل @ManagedBean المُهمَل في JSF بـ CDI @Named للحصول على نموذج حقن تبعيات موحّد."
+explanation: "تم إهمال @ManagedBean و @ManagedProperty في Jakarta Faces 2.3 وإزالتهما في Jakarta EE 10. يستخدم البديل القائم على CDI @Named لكشف الحبّة لتعبيرات EL و @Inject لتوصيل التبعيات. يوحّد هذا نموذج الحبّة: صفحات JSF وموارد JAX-RS وEJBs تشترك في نفس حاوية CDI."
+whyModernWins:
+- icon: "🔗"
+  title: "نموذج موحّد"
+  desc: "حاوية CDI واحدة تدير جميع الحبّات — JSF والـ REST وطبقات الخدمة تشترك في نفس الحقن."
+- icon: "🗑️"
+  title: "كليشيه أقل"
+  desc: "@Inject تستبدل @ManagedProperty ودالة الضبط المطلوبة."
+- icon: "🔮"
+  title: "مُستقبلي"
+  desc: "تمت إزالة @ManagedBean في Jakarta EE 10؛ @Named هو البديل المدعوم."
+support:
+  description: "CDI @Named متاح منذ Java EE 6؛ تمت إزالة @ManagedBean في Jakarta EE 10"

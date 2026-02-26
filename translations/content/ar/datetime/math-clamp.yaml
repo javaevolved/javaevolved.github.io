@@ -1,0 +1,17 @@
+title: "Math.clamp()"
+oldApproach: "min/max متداخلة"
+modernApproach: "Math.clamp()"
+summary: "قيّد قيمةً بين حدَّين باستدعاء واحد واضح."
+explanation: "تُقيّد Math.clamp(value, min, max) قيمةً بالمجال [min, max]. أوضح من min/max المتداخلة ومتاحة لأنواع int و long و float و double."
+whyModernWins:
+- icon: "📖"
+  title: "موثّقة ذاتياً"
+  desc: "clamp(value, min, max) لا لبس فيه."
+- icon: "🛡️"
+  title: "أقل عرضة للأخطاء"
+  desc: "لا مزيد من عكس ترتيب min/max عن طريق الخطأ."
+- icon: "🎯"
+  title: "جميع الأنواع الرقمية"
+  desc: "تعمل مع int و long و float و double."
+support:
+  description: "متاح على نطاق واسع منذ JDK 21 LTS (سبتمبر 2023)"

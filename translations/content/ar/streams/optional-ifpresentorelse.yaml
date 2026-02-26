@@ -1,0 +1,17 @@
+title: "Optional.ifPresentOrElse()"
+oldApproach: "if/else على Optional"
+modernApproach: "ifPresentOrElse()"
+summary: "تعامل مع الحالة الموجودة والفارغة لـ Optional في استدعاء واحد."
+explanation: "تأخذ ifPresentOrElse() Consumer للحالة الموجودة و Runnable للحالة الفارغة. تتجنّب النمط المضاد isPresent/get."
+whyModernWins:
+- icon: "📏"
+  title: "تعبير واحد"
+  desc: "كلا الحالتين تُعالَجان في استدعاء دالة واحد."
+- icon: "🚫"
+  title: "لا get()"
+  desc: "يُزيل النمط الخطر isPresent() + get()."
+- icon: "🔗"
+  title: "سائل"
+  desc: "يتسلسل بشكل طبيعي بعد findUser() أو أي دالة تُرجع Optional."
+support:
+  description: "متاح على نطاق واسع منذ JDK 9 (سبتمبر 2017)"
