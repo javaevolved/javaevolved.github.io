@@ -1,0 +1,20 @@
+title: Stream.iterate() con predicado
+oldApproach: iterate + limit
+modernApproach: iterate(seed, pred, op)
+summary: Usa un predicado para detener la iteración — como un bucle for en forma de
+  stream.
+explanation: 'El Stream.iterate(seed, hasNext, next) con tres argumentos funciona
+  como un bucle for: seed es el inicio, hasNext determina cuándo detenerse y next
+  produce el siguiente valor.'
+whyModernWins:
+- icon: 🎯
+  title: Terminación natural
+  desc: Se detiene según una condición, no un límite arbitrario.
+- icon: 📐
+  title: Equivalente a for
+  desc: Misma semántica que for(seed; hasNext; next).
+- icon: 🛡️
+  title: Sin riesgo de stream infinito
+  desc: El predicado garantiza la terminación.
+support:
+  description: Ampliamente disponible desde JDK 9 (sept. 2017)

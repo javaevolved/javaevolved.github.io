@@ -1,0 +1,102 @@
+---
+id: 111
+slug: "junit6-with-jspecify"
+title: "JUnit 6 with JSpecify null safety"
+category: "tooling"
+difficulty: "intermediate"
+jdkVersion: "17"
+oldLabel: "JUnit 5"
+modernLabel: "JUnit 6"
+oldApproach: "Unannotated API"
+modernApproach: "@NullMarked API"
+oldCode: |-
+  import org.junit.jupiter.api.Test;
+  import static org.junit.jupiter.api.Assertions.*;
+
+  class UserServiceTest {
+
+      // JUnit 5: no null contracts on the API
+      // Can assertEquals() accept null? Check source...
+      // Does fail(String) allow null message? Unknown.
+
+      @Test
+      void findUser_found() {
+          // Is result nullable? API doesn't say
+          User result = service.findById("u1");
+          assertNotNull(result);
+          assertEquals("Alice", result.name());
+      }
+
+      @Test
+      void findUser_notFound() {
+          // Hope this returns null, not throws...
+          assertNull(service.findById("missing"));
+      }
+  }
+modernCode: |-
+  import org.junit.jupiter.api.Test;
+  import org.jspecify.annotations.NullMarked;
+  import org.jspecify.annotations.Nullable;
+  import static org.junit.jupiter.api.Assertions.*;
+
+  @NullMarked  // all refs non-null unless @Nullable
+  class UserServiceTest {
+
+      // JUnit 6 API is @NullMarked:
+      // assertNull(@Nullable Object actual)
+      // assertEquals(@Nullable Object, @Nullable Object)
+      // fail(@Nullable String message)
+
+      @Test
+      void findUser_found() {
+          // IDE warns: findById returns @Nullable User
+          @Nullable User result = service.findById("u1");
+          assertNotNull(result); // narrows type to non-null
+          assertEquals("Alice", result.name()); // safe
+      }
+
+      @Test
+      void findUser_notFound() {
+          @Nullable User result = service.findById("missing");
+          assertNull(result); // IDE confirms null expectation
+      }
+  }
+summary: "JUnit 6 adopts JSpecify @NullMarked, making null contracts explicit across\
+  \ its assertion API."
+explanation: "JUnit 5 shipped without standardized nullability annotations, leaving\
+  \ developers to guess whether assertion parameters or return values could be null.\
+  \ JUnit 6 adopts JSpecify across its entire module: the @NullMarked annotation makes\
+  \ all unannotated types non-null by default, and @Nullable marks the exceptions.\
+  \ The Assertions class explicitly annotates parameters such as assertNull(@Nullable\
+  \ Object actual) and fail(@Nullable String message), so IDEs and static analyzers\
+  \ like NullAway and Error Prone can catch null misuse at compile time instead of\
+  \ at runtime."
+whyModernWins:
+- icon: "📜"
+  title: "Explicit contracts"
+  desc: "@NullMarked on the JUnit 6 module documents null semantics directly in the\
+    \ API — no source-reading required."
+- icon: "🛡️"
+  title: "Compile-time safety"
+  desc: "IDEs and analyzers warn when null is passed where non-null is expected, catching\
+    \ bugs before tests run."
+- icon: "🌐"
+  title: "Ecosystem standard"
+  desc: "JSpecify is adopted by Spring, Guava, and others — consistent null semantics\
+    \ across your whole stack."
+support:
+  state: "available"
+  description: "Available since JUnit 6.0 (October 2025, requires Java 17+)"
+prev: "tooling/aot-class-preloading"
+next: "language/default-interface-methods"
+related:
+- "enterprise/spring-null-safety-jspecify"
+- "errors/helpful-npe"
+- "errors/require-nonnull-else"
+docs:
+- title: "JUnit 6 Assertions API"
+  href: "https://docs.junit.org/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html"
+- title: "JSpecify Nullness User Guide"
+  href: "https://jspecify.dev/docs/user-guide/"
+- title: "Upgrading to JUnit 6.0"
+  href: "https://github.com/junit-team/junit-framework/wiki/Upgrading-to-JUnit-6.0/Core-Principles"

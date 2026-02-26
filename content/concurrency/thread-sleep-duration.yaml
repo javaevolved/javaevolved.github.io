@@ -1,0 +1,50 @@
+---
+id: 52
+slug: "thread-sleep-duration"
+title: "Thread.sleep with Duration"
+category: "concurrency"
+difficulty: "beginner"
+jdkVersion: "19"
+oldLabel: "Java 8"
+modernLabel: "Java 19+"
+oldApproach: "Milliseconds"
+modernApproach: "Duration"
+oldCode: |-
+  // What unit is 5000? ms? us?
+  Thread.sleep(5000);
+
+  // 2.5 seconds: math required
+  Thread.sleep(2500);
+modernCode: |-
+  Thread.sleep(
+      Duration.ofSeconds(5)
+  );
+  Thread.sleep(
+      Duration.ofMillis(2500)
+  );
+summary: "Use Duration for self-documenting time values."
+explanation: "Thread.sleep(Duration) makes the time unit explicit. No more guessing\
+  \ whether 5000 means milliseconds or microseconds. Works with Duration.ofSeconds,\
+  \ ofMillis, ofMinutes, etc."
+whyModernWins:
+- icon: "📖"
+  title: "Self-documenting"
+  desc: "Duration.ofSeconds(5) is unambiguous."
+- icon: "🛡️"
+  title: "Unit-safe"
+  desc: "No accidentally passing microseconds as milliseconds."
+- icon: "🧩"
+  title: "Composable"
+  desc: "Duration math: plus(), multipliedBy(), etc."
+support:
+  state: "available"
+  description: "Widely available since JDK 19 (Sept 2022)"
+prev: "concurrency/executor-try-with-resources"
+next: "concurrency/process-api"
+related:
+- "concurrency/stable-values"
+- "concurrency/concurrent-http-virtual"
+- "concurrency/completablefuture-chaining"
+docs:
+- title: "Thread.sleep(Duration)"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#sleep(java.time.Duration)"

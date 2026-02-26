@@ -1,0 +1,20 @@
+title: Concurrencia estructurada
+oldApproach: Ciclo de vida manual de hilos
+modernApproach: StructuredTaskScope
+summary: Gestiona el ciclo de vida de tareas concurrentes como una única unidad de
+  trabajo.
+explanation: La concurrencia estructurada trata un grupo de tareas concurrentes como
+  una sola operación. Si alguna subtarea falla, las demás se cancelan. El ámbito
+  garantiza que no haya fugas de hilos y establece relaciones claras padre-hijo.
+whyModernWins:
+- icon: 🛡️
+  title: Sin fugas de hilos
+  desc: Todas las tareas bifurcadas terminan antes de que se cierre el ámbito.
+- icon: ⚡
+  title: Fallo rápido
+  desc: ShutdownOnFailure cancela las tareas hermanas si una falla.
+- icon: 📐
+  title: Estructura clara
+  desc: El ciclo de vida de la tarea coincide con el ámbito léxico en el código.
+support:
+  description: Preview en JDK 25 (quinta preview, JEP 505). Requiere --enable-preview.

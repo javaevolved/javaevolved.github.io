@@ -74,16 +74,7 @@ For development on the generator itself, you can use JBang or Python — see [ht
 
 ## Contributing
 
-Contributions are welcome! Content is managed as JSON files — never edit generated HTML.
-
-1. Fork the repo
-2. Create a new JSON file in the appropriate `content/<category>/` folder (e.g. `content/language/my-feature.json`)
-3. Copy [`content/template.json`](content/template.json) to the new file as a starting point for all required fields (see the [snippet JSON schema](.github/copilot-instructions.md) for details)
-4. Update the `prev`/`next` fields in adjacent pattern JSON files to maintain navigation
-5. Run `jbang html-generators/generate.java` to verify your changes build correctly
-6. Open a pull request
-
-Please ensure JDK version labels only reference the version where a feature became **final** (non-preview).
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on adding patterns and translating the site.
 
 ## Tech stack
 

@@ -1,0 +1,19 @@
+title: String.repeat()
+oldApproach: Bucle con StringBuilder
+modernApproach: repeat()
+summary: Repite un string n veces sin un bucle.
+explanation: 'String.repeat(int) devuelve el string concatenado consigo mismo n veces.
+  Maneja casos límite: repeat(0) devuelve un string vacío, repeat(1) devuelve el mismo
+  string.'
+whyModernWins:
+- icon: 📏
+  title: Una sola línea
+  desc: Reemplaza 5 líneas de código con StringBuilder por una sola llamada.
+- icon: ⚡
+  title: Optimizado
+  desc: La implementación interna está optimizada para repeticiones grandes.
+- icon: 📖
+  title: Intención clara
+  desc: repeat(3) transmite el propósito de inmediato.
+support:
+  description: Ampliamente disponible desde JDK 11 (sept. 2018)

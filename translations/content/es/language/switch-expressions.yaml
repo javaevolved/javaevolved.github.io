@@ -1,0 +1,19 @@
+---
+title: Expresiones switch
+oldApproach: Sentencia switch
+modernApproach: Expresión switch
+summary: "switch como expresión que devuelve un valor — sin break, sin fall-through."
+explanation: "Las expresiones switch devuelven un valor directamente, usan sintaxis de flecha para prevenir errores de fall-through,\
+  \ y el compilador verifica la exhaustividad. Esto reemplaza la forma de sentencia propensa a errores."
+whyModernWins:
+- icon: 🎯
+  title: Devuelve un valor
+  desc: Asigna el resultado del switch directamente — sin variable temporal.
+- icon: 🛡️
+  title: Sin fall-through
+  desc: "La sintaxis de flecha elimina errores accidentales de fall-through por break faltante."
+- icon: ✅
+  title: Comprobación de exhaustividad
+  desc: El compilador asegura que todos los casos están cubiertos.
+support:
+  description: Ampliamente disponible desde JDK 14 (marzo 2020)

@@ -1,0 +1,20 @@
+modernApproach: record
+summary: Uma linha substitui mais de 30 linhas de boilerplate para portadores de dados
+  imutáveis.
+title: Records para classes de dados
+oldApproach: POJO verboso
+explanation: Records geram automaticamente o construtor, acessores (x(), y()), equals(),
+  hashCode() e toString(). São imutáveis por design e ideais para DTOs, objetos de
+  valor e pattern matching.
+whyModernWins:
+- icon: ⚡
+  title: Definição em uma linha
+  desc: Uma única linha substitui construtor, getters, equals, hashCode, toString.
+- icon: 🔒
+  title: Imutável por padrão
+  desc: Todos os campos são final — sem armadilhas de setters.
+- icon: 🧩
+  title: Compatível com patterns
+  desc: Records funcionam com padrões de desestruturação em switch e instanceof.
+support:
+  description: Amplamente disponível desde o JDK 16 (março de 2021)

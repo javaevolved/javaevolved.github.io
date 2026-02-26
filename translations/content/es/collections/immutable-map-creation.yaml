@@ -1,0 +1,19 @@
+---
+title: "Creación de mapas inmutables"
+oldApproach: "Patrón builder de Map"
+modernApproach: "Map.of()"
+summary: "Crea mapas inmutables en línea sin necesidad de un builder."
+explanation: "Map.of() acepta pares clave-valor en línea y devuelve un mapa inmutable.\
+  \ Para más de 10 entradas, usa Map.ofEntries() con pares Map.entry()."
+whyModernWins:
+- icon: "📏"
+  title: "Creación en línea"
+  desc: "No se necesita un mapa mutable temporal."
+- icon: "🔒"
+  title: "Resultado inmutable"
+  desc: "El mapa no puede modificarse después de su creación."
+- icon: "🚫"
+  title: "Sin claves/valores null"
+  desc: "Las entradas null se rechazan de inmediato."
+support:
+  description: "Ampliamente disponible desde JDK 9 (sept 2017)"

@@ -1,0 +1,19 @@
+title: Inicialización perezosa sin bloqueos
+oldApproach: synchronized + volatile
+modernApproach: StableValue
+summary: Reemplaza el double-checked locking con StableValue para singletons perezosos.
+explanation: StableValue encapsula el patrón de inicialización perezosa con seguridad
+  entre hilos correcta. La JVM puede optimizar la ruta de lectura después de la
+  inicialización, haciéndola potencialmente más rápida que las lecturas volatile.
+whyModernWins:
+- icon: 🧹
+  title: Sin código repetitivo
+  desc: Sin volatile, synchronized ni double-null-check.
+- icon: ⚡
+  title: Lecturas más rápidas
+  desc: La JVM puede plegar constantes después de la inicialización.
+- icon: ✅
+  title: Corrección demostrable
+  desc: Sin errores sutiles de ordenamiento — la JVM se encarga.
+support:
+  description: Preview en JDK 25 (JEP 502, StableValue). Requiere --enable-preview.

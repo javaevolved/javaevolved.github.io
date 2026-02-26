@@ -1,0 +1,21 @@
+title: Predicate.not() para negación
+oldApproach: Negación con lambda
+modernApproach: Predicate.not()
+summary: Usa Predicate.not() para negar referencias a métodos de forma limpia en lugar
+  de escribir lambdas envolventes.
+explanation: Antes de Java 11, negar una referencia a método requería envolverla en
+  una lambda. Predicate.not() permite negar cualquier predicado directamente, manteniendo
+  el código legible y consistente con el estilo de referencias a métodos en todo el
+  pipeline del stream.
+whyModernWins:
+- icon: 👁
+  title: Negación más limpia
+  desc: No es necesario envolver referencias a métodos en lambdas solo para negarlas.
+- icon: 🔗
+  title: Componible
+  desc: Funciona con cualquier Predicate, permitiendo cadenas de predicados limpias.
+- icon: 📖
+  title: Se lee naturalmente
+  desc: Predicate.not(String::isBlank) se lee como lenguaje natural.
+support:
+  description: Disponible desde JDK 11 (septiembre 2018).

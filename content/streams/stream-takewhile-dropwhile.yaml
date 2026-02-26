@@ -1,0 +1,51 @@
+---
+id: 38
+slug: "stream-takewhile-dropwhile"
+title: "Stream takeWhile / dropWhile"
+category: "streams"
+difficulty: "beginner"
+jdkVersion: "9"
+oldLabel: "Java 8"
+modernLabel: "Java 9+"
+oldApproach: "Manual Loop"
+modernApproach: "takeWhile/dropWhile"
+oldCode: |-
+  List<Integer> result = new ArrayList<>();
+  for (int n : sorted) {
+      if (n >= 100) break;
+      result.add(n);
+  }
+  // no stream equivalent in Java 8
+modernCode: |-
+  var result = sorted.stream()
+      .takeWhile(n -> n < 100)
+      .toList();
+  // or: .dropWhile(n -> n < 10)
+summary: "Take or drop elements from a stream based on a predicate."
+explanation: "takeWhile() returns elements while the predicate is true and stops at\
+  \ the first false. dropWhile() skips elements while true and returns the rest. Both\
+  \ work best on ordered streams."
+whyModernWins:
+- icon: "🎯"
+  title: "Short-circuit"
+  desc: "Stops processing as soon as the predicate fails."
+- icon: "🔗"
+  title: "Pipeline-friendly"
+  desc: "Chain with other stream operations naturally."
+- icon: "📖"
+  title: "Declarative"
+  desc: "takeWhile reads like English: 'take while less than 100'."
+support:
+  state: "available"
+  description: "Widely available since JDK 9 (Sept 2017)"
+prev: "streams/stream-iterate-predicate"
+next: "streams/collectors-flatmapping"
+related:
+- "streams/stream-tolist"
+- "streams/stream-mapmulti"
+- "streams/optional-or"
+docs:
+- title: "Stream.takeWhile()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html#takeWhile(java.util.function.Predicate)"
+- title: "Stream.dropWhile()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html#dropWhile(java.util.function.Predicate)"

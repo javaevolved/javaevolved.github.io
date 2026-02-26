@@ -1,0 +1,17 @@
+title: Clase IO para entrada/salida de consola
+oldApproach: System.out / Scanner
+modernApproach: Clase IO
+summary: La nueva clase IO proporciona métodos simples y concisos para entrada y salida de consola.
+explanation: Java 25 introduce la clase IO (java.io.IO) como parte de la funcionalidad de clases declaradas implícitamente. Proporciona métodos estáticos como println(), print(), readln() y read() que reemplazan la combinación verbosa de System.out y Scanner. IO.readln(prompt) maneja tanto el mensaje como la lectura en una sola llamada. La clase está disponible automáticamente en archivos fuente compactos y se puede usar en clases tradicionales mediante import.
+whyModernWins:
+- icon: ✨
+  title: Drásticamente más simple
+  desc: Dos métodos reemplazan siete líneas de configuración, lectura y limpieza de Scanner.
+- icon: 🔒
+  title: Sin fugas de recursos
+  desc: Sin Scanner que cerrar — los métodos de IO gestionan los recursos internamente.
+- icon: 🎓
+  title: Amigable para principiantes
+  desc: Los nuevos desarrolladores pueden hacer E/S de consola sin aprender Scanner, System.out ni sentencias import.
+support:
+  description: En vista previa en JDK 25 como parte de clases declaradas implícitamente (JEP 495)

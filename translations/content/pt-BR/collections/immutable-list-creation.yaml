@@ -1,0 +1,19 @@
+modernApproach: List.of()
+summary: Crie listas imutáveis em uma expressão limpa.
+title: Criação de listas imutáveis
+oldApproach: Encapsulamento verboso
+explanation: List.of() cria uma lista verdadeiramente imutável — sem encapsulamento,
+  sem cópia defensiva. Rejeita elementos nulos (null-hostile) e é estruturalmente
+  imutável. O modo antigo exigia três chamadas aninhadas.
+whyModernWins:
+- icon: 📏
+  title: Uma chamada
+  desc: Substitua três chamadas aninhadas por um único método fábrica.
+- icon: 🔒
+  title: Verdadeiramente imutável
+  desc: Não é apenas um wrapper — a lista em si é imutável.
+- icon: 🛡️
+  title: Seguro contra nulos
+  desc: Rejeita elementos nulos no momento da criação, falhando rapidamente.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

@@ -1,0 +1,21 @@
+title: Precarga de clases AOT
+oldApproach: Arranque en frío cada vez
+modernApproach: Caché AOT
+summary: Almacena en caché la carga y compilación de clases para un arranque instantáneo.
+explanation: La precarga de clases AOT almacena en caché las clases cargadas y enlazadas
+  de una ejecución de entrenamiento. En arranques posteriores, las clases se cargan
+  desde la caché, omitiendo la verificación y el enlazado. Combinado con la compilación
+  AOT, esto reduce drásticamente el tiempo de arranque.
+whyModernWins:
+- icon: ⚡
+  title: Arranque más rápido
+  desc: Omite la carga, verificación y enlazado de clases.
+- icon: 📦
+  title: Estado en caché
+  desc: La ejecución de entrenamiento captura el estado ideal de las clases.
+- icon: 🔧
+  title: Sin cambios de código
+  desc: Funciona con aplicaciones existentes — solo agrega flags de JVM.
+support:
+  description: Disponible como característica estándar en JDK 25 LTS (JEPs 514/515,
+    sept. 2025).

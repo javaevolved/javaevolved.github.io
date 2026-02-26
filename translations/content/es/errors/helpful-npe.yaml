@@ -1,0 +1,17 @@
+title: NullPointerExceptions descriptivas
+oldApproach: NPE críptica
+modernApproach: NPE detallada
+summary: La JVM indica automáticamente exactamente qué variable era null.
+explanation: Las NPE descriptivas indican qué expresión era null y qué operación falló. Esto está habilitado por defecto desde Java 14 — no se necesita cambiar el código, solo actualizar el JDK.
+whyModernWins:
+- icon: 🔍
+  title: Variable exacta
+  desc: El mensaje nombra la variable null en la cadena.
+- icon: ⚡
+  title: Depuración más rápida
+  desc: No más adivinanzas sobre cuál de 5 llamadas encadenadas era null.
+- icon: 🆓
+  title: Actualización gratuita
+  desc: Sin cambios de código — solo ejecutar en JDK 14+.
+support:
+  description: Ampliamente disponible desde JDK 14 (marzo de 2020)

@@ -1,0 +1,19 @@
+title: Executor con hilos virtuales
+oldApproach: Pool de hilos fijo
+modernApproach: Executor de hilos virtuales
+summary: Usa executors de hilos virtuales para concurrencia ligera ilimitada.
+explanation: El executor de hilos virtuales crea un nuevo hilo virtual para cada tarea.
+  No es necesario dimensionar el pool — los hilos virtuales son lo suficientemente
+  económicos para crear millones de ellos.
+whyModernWins:
+- icon: ♾️
+  title: Sin dimensionamiento
+  desc: Sin tamaño de pool que ajustar — crea tantos hilos como necesites.
+- icon: ⚡
+  title: Ligero
+  desc: Los hilos virtuales usan KB de memoria, no MB.
+- icon: 🧹
+  title: Auto-closeable
+  desc: try-with-resources maneja el cierre automáticamente.
+support:
+  description: Ampliamente disponible desde JDK 21 LTS (sept. 2023)

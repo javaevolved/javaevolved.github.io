@@ -1,0 +1,17 @@
+title: Mejora de try-with-resources
+oldApproach: Redeclarar variable
+modernApproach: Efectivamente final
+summary: Usa variables efectivamente finales directamente en try-with-resources.
+explanation: Java 9 permite usar variables efectivamente finales directamente en try-with-resources sin necesidad de redeclararlas. Esto es más limpio cuando el recurso fue creado fuera del bloque try.
+whyModernWins:
+- icon: 🧹
+  title: Sin redeclaración
+  desc: Usa el nombre de variable existente directamente.
+- icon: 📖
+  title: Menos confusión
+  desc: Sin un nombre de variable separado dentro del bloque try.
+- icon: 📏
+  title: Conciso
+  desc: Menos líneas, la misma seguridad de recursos.
+support:
+  description: Ampliamente disponible desde JDK 9 (septiembre de 2017)

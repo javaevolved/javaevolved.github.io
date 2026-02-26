@@ -1,0 +1,27 @@
+---
+title: "Búsqueda JNDI vs Inyección CDI"
+oldApproach: "Búsqueda JNDI"
+modernApproach: "CDI @Inject"
+summary: "Reemplaza las frágiles búsquedas JNDI por cadenas con inyección CDI con\
+  \ seguridad de tipos para recursos gestionados por el contenedor."
+explanation: "El patrón JNDI tradicional obliga a usar nombres de recursos basados\
+  \ en cadenas, manejar NamingException y gestionar un InitialContext. La inyección\
+  \ CDI con @Inject (o @Resource para recursos del contenedor) permite que el contenedor\
+  \ conecte las dependencias automáticamente. Los errores tipográficos se convierten\
+  \ en errores en tiempo de compilación, y las clases son más fáciles de probar porque\
+  \ las dependencias se pueden inyectar directamente."
+whyModernWins:
+- icon: "🔒"
+  title: "Cableado con seguridad de tipos"
+  desc: "Los errores de inyección se detectan en tiempo de despliegue, no en tiempo\
+    \ de ejecución mediante búsquedas por cadena."
+- icon: "🗑️"
+  title: "Sin código repetitivo"
+  desc: "Elimina la creación de InitialContext, cadenas de nombres JNDI y el manejo\
+    \ de NamingException."
+- icon: "🧪"
+  title: "Testeable"
+  desc: "Las dependencias son campos inyectados, fácilmente reemplazables con mocks\
+    \ en pruebas unitarias."
+support:
+  description: "Ampliamente disponible desde Jakarta EE 8 / Java 11"

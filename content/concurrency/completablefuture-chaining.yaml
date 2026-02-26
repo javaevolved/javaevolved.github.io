@@ -1,0 +1,48 @@
+---
+id: 50
+slug: "completablefuture-chaining"
+title: "CompletableFuture chaining"
+category: "concurrency"
+difficulty: "intermediate"
+jdkVersion: "8"
+oldLabel: "Pre-Java 8"
+modernLabel: "Java 8+"
+oldApproach: "Blocking Future.get()"
+modernApproach: "CompletableFuture"
+oldCode: |-
+  Future<String> future =
+      executor.submit(this::fetchData);
+  String data = future.get(); // blocks
+  String result = transform(data);
+modernCode: |-
+  CompletableFuture.supplyAsync(
+      this::fetchData
+  )
+  .thenApply(this::transform)
+  .thenAccept(System.out::println);
+summary: "Chain async operations without blocking, using CompletableFuture."
+explanation: "CompletableFuture enables non-blocking async pipelines. Chain operations\
+  \ with thenApply, thenCompose, thenAccept. Handle errors with exceptionally(). Combine\
+  \ multiple futures with allOf/anyOf."
+whyModernWins:
+- icon: "🔗"
+  title: "Chainable"
+  desc: "Compose async steps into a readable pipeline."
+- icon: "🚫"
+  title: "Non-blocking"
+  desc: "No thread sits idle waiting for results."
+- icon: "🛡️"
+  title: "Error handling"
+  desc: "exceptionally() and handle() for clean error recovery."
+support:
+  state: "available"
+  description: "Widely available since JDK 8 (March 2014)"
+prev: "concurrency/stable-values"
+next: "concurrency/executor-try-with-resources"
+related:
+- "concurrency/stable-values"
+- "concurrency/scoped-values"
+- "concurrency/structured-concurrency"
+docs:
+- title: "CompletableFuture"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html"

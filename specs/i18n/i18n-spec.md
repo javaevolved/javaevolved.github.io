@@ -197,25 +197,50 @@ is purely informational and does **not** abort the build.
 
 ## Content Translation Files
 
-Translated content files are **complete** copies of the English pattern JSON
-with translatable fields rendered in the target language. This avoids
-partial-merge edge cases and makes each file self-contained.
+Translated content files are **partial** — they contain **only** the
+translatable fields. The generator overlays them onto the English base at build
+time. This prevents translators from diverging structural data (code,
+navigation, metadata) from the English source of truth.
+
+### Field Translation Reference
+
+Every field in a slug definition file falls into one of three categories:
+
+| Category | Fields | Rule |
+|---|---|---|
+| **Translate** (include in translation file) | `title`, `summary`, `explanation`, `oldApproach`, `modernApproach`, `whyModernWins` (full array), `support.description` | These are the **only** fields present in a translation file |
+| **English source of truth** (never in translation file) | `id`, `slug`, `category`, `difficulty`, `jdkVersion`, `oldLabel`, `modernLabel`, `oldCode`, `modernCode`, `prev`, `next`, `related`, `docs` | Always taken from the English content file; any values in the translation file are ignored |
+| **Translated via UI strings** | `difficulty`, `support.state` | Enum values stay in English; display names resolved from `translations/strings/{locale}.json` at build time |
+
+**Why enum fields use UI strings instead of content translation:**
+
+Fields like `difficulty` (`beginner`, `intermediate`, `advanced`) and
+`support.state` (`available`, `preview`, `experimental`) are enum values used
+programmatically as CSS classes, filter keys, and data attributes. Their
+**display names** are resolved at build time from the UI strings layer:
+
+- `difficulty` → `difficulty.beginner`, `difficulty.intermediate`, `difficulty.advanced`
+- `support.state` → `support.available`, `support.preview`, `support.experimental`
+- `category` → display name from `categories.properties`
+
+This separation ensures enum values remain stable across locales while display
+text is centrally managed and consistently translated.
+
+**Other non-translated fields:**
+
+- `whyModernWins[*].icon` — emoji; typically kept as-is across locales
+- `docs[*].title` — kept in English since the linked documentation is English
+
+### Example Translated File
+
+Translation files contain **only** translatable fields — no structural data:
 
 ```json
 // translations/content/pt-BR/language/type-inference-with-var.json
 {
-  "id": 1,
-  "slug": "type-inference-with-var",
   "title": "Inferência de tipo com var",
-  "category": "language",
-  "difficulty": "beginner",
-  "jdkVersion": "10",
-  "oldLabel": "Java 8",
-  "modernLabel": "Java 10+",
   "oldApproach": "Tipos explícitos",
   "modernApproach": "Palavra-chave var",
-  "oldCode": "...",
-  "modernCode": "...",
   "summary": "Use var para deixar o compilador inferir o tipo local.",
   "explanation": "...",
   "whyModernWins": [
@@ -224,20 +249,10 @@ partial-merge edge cases and makes each file self-contained.
     { "icon": "🔒", "title": "Seguro", "desc": "..." }
   ],
   "support": {
-    "state": "available",
     "description": "Amplamente disponível desde o JDK 10 (março de 2018)"
-  },
-  "prev": "language/...",
-  "next": "language/...",
-  "related": ["..."],
-  "docs": [{ "title": "...", "href": "..." }]
+  }
 }
 ```
-
-`oldCode` and `modernCode` are **always overwritten** with the English values at
-build time, regardless of what appears in the translation file. Translators may
-leave those fields empty or copy the English values verbatim — neither causes
-any harm.
 
 ---
 
@@ -245,10 +260,11 @@ any harm.
 
 For each pattern and locale the generator:
 
-1. Loads the English baseline from `content/<cat>/<slug>.json`.
-2. Checks whether `translations/content/<locale>/<cat>/<slug>.json` exists.
-   - **Yes** → use the translated file, then overwrite `oldCode`/`modernCode`
-     with the English values.
+1. Loads the English baseline from `content/<cat>/<slug>.json` (or `.yaml`/`.yml`).
+2. Checks whether `translations/content/<locale>/<cat>/<slug>.{json,yaml,yml}` exists.
+   - **Yes** → deep-copies the English node, then overlays only the translatable
+     fields (`title`, `summary`, `explanation`, `oldApproach`, `modernApproach`,
+     `whyModernWins`, `support.description`) from the translation file.
    - **No** → use the English file and inject an "untranslated" banner
      (see next section).
 3. Loads `translations/strings/<locale>.json` deep-merged over `en.json`.
@@ -414,14 +430,17 @@ New English slug  →  AI prompt  →  Translated JSON file  →  Schema validat
    `content/<cat>/<slug>.json` (push event or workflow dispatch).
 2. **Translate** — For each supported locale, call the translation model with:
    ```
-   Translate the following Java pattern JSON from English to {locale}.
-   - Keep unchanged: slug, id, category, difficulty, jdkVersion, oldLabel,
-     modernLabel, oldCode, modernCode, docs, related, prev, next, support.state
-   - Translate: title, summary, explanation, oldApproach, modernApproach,
-     whyModernWins[*].title, whyModernWins[*].desc, support.description
-   - Return valid JSON only.
+   Translate the following Java pattern from English to {locale}.
+   Return a JSON file containing ONLY these translated fields:
+   - title, summary, explanation, oldApproach, modernApproach
+   - whyModernWins (full array with icon, title, desc)
+   - support.description (inside a "support" object)
+   Do NOT include: slug, id, category, difficulty, jdkVersion, oldLabel,
+   modernLabel, oldCode, modernCode, docs, related, prev, next, support.state.
+   Return valid JSON only.
    ```
-3. **Validate** — Run JSON schema validation (same rules as English content).
+   See the **Field Translation Reference** table above for the full rationale.
+3. **Validate** — Verify the output contains only translatable fields.
 4. **Commit** — Write the output to
    `translations/content/{locale}/<cat>/<slug>.json` and commit.
 5. **Deploy** — The generator picks it up on next build; the "untranslated"
@@ -430,9 +449,66 @@ New English slug  →  AI prompt  →  Translated JSON file  →  Schema validat
 ### Keeping translations in sync
 
 When an English file is **modified**, the same automation regenerates the
-translated file or opens a PR flagging the diff for human review. A CI check
-can compare `id`, `slug`, and `jdkVersion` between the English and translated
-files to detect stale translations.
+translated file or opens a PR flagging the diff for human review. Since
+translation files only contain translatable text, structural changes to the
+English file (code, navigation, metadata) take effect immediately without
+needing to update the translation.
+
+---
+
+## Practical Guidelines for Translation Files
+
+### YAML quoting
+
+Translation text frequently contains colons (`:`) — especially in Romance
+languages with explanatory phrases like "Nota: el resultado es inmutable" or
+"Ejemplo: seed es el inicio". **Unquoted colons break YAML parsing.**
+
+Always ensure values containing colons are properly quoted:
+
+```yaml
+# ✗ BROKEN — YAML interprets "Nota:" as a mapping key
+explanation: Stream.toList() devuelve una lista. Nota: el resultado es inmutable.
+
+# ✓ CORRECT — value is quoted
+explanation: "Stream.toList() devuelve una lista. Nota: el resultado es inmutable."
+```
+
+When generating translation files programmatically, use a YAML library's
+`dump()` function (which handles quoting automatically) rather than writing
+raw YAML strings by hand.
+
+### Jackson YAML parser compatibility
+
+Jackson's YAML parser (`jackson-dataformat-yaml`) is stricter than Python's
+`PyYAML`. Certain serialization styles that Python accepts can crash Jackson:
+
+- **`---` document markers** combined with backslash line continuations (`\`)
+  can trigger `ArrayIndexOutOfBoundsException` in Jackson's `UTF8Reader`.
+- Always test translation files with `jbang html-generators/generate.java`
+  before committing — Python validation alone is not sufficient.
+
+If a file parses in Python but fails in Jackson, re-serialize it with
+`yaml.dump(..., default_flow_style=False)` to produce a compatible style.
+
+### Validation before commit
+
+Always validate translation files before committing:
+
+```bash
+# Build all locales — will fail fast on any broken file
+jbang html-generators/generate.java
+
+# Or build a single locale for faster iteration
+jbang html-generators/generate.java --locale es
+```
+
+### Format support
+
+Both content translations and UI strings files can be in JSON or YAML format.
+The generator discovers files by trying `.json`, `.yaml`, and `.yml` extensions
+in order via `findWithExtensions()`. Within a single locale, formats can be
+mixed freely (e.g., strings in YAML, some content in JSON).
 
 ---
 

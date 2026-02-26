@@ -1,0 +1,19 @@
+title: Stream takeWhile / dropWhile
+oldApproach: Bucle manual
+modernApproach: takeWhile/dropWhile
+summary: Toma o descarta elementos de un stream según un predicado.
+explanation: takeWhile() devuelve elementos mientras el predicado sea verdadero y
+  se detiene en el primer falso. dropWhile() omite elementos mientras sea verdadero
+  y devuelve el resto. Ambos funcionan mejor en streams ordenados.
+whyModernWins:
+- icon: 🎯
+  title: Cortocircuito
+  desc: Deja de procesar tan pronto como el predicado falla.
+- icon: 🔗
+  title: Compatible con pipelines
+  desc: Se encadena con otras operaciones de stream naturalmente.
+- icon: 📖
+  title: Declarativo
+  desc: 'takeWhile se lee como inglés: ''toma mientras sea menor que 100''.'
+support:
+  description: Ampliamente disponible desde JDK 9 (sept. 2017)

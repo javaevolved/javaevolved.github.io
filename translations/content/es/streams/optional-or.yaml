@@ -1,0 +1,19 @@
+title: Optional.or() como alternativa
+oldApproach: Alternativa anidada
+modernApproach: Cadena .or()
+summary: Encadena alternativas de Optional sin verificaciones anidadas.
+explanation: Optional.or() devuelve el Optional original si tiene valor, de lo contrario
+  evalúa el supplier para obtener un Optional alternativo. Los suppliers son perezosos
+  — solo se invocan cuando es necesario.
+whyModernWins:
+- icon: 🔗
+  title: Encadenable
+  desc: Apila alternativas en un pipeline legible.
+- icon: ⚡
+  title: Evaluación perezosa
+  desc: Los suppliers alternativos solo se ejecutan si es necesario.
+- icon: 📖
+  title: Declarativo
+  desc: Se lee como 'intenta primario, o secundario, o valores por defecto'.
+support:
+  description: Ampliamente disponible desde JDK 9 (sept. 2017)

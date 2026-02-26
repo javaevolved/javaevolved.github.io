@@ -1,0 +1,52 @@
+---
+id: 41
+slug: "stream-mapmulti"
+title: "Stream.mapMulti()"
+category: "streams"
+difficulty: "intermediate"
+jdkVersion: "16"
+oldLabel: "Java 8"
+modernLabel: "Java 16+"
+oldApproach: "flatMap + List"
+modernApproach: "mapMulti()"
+oldCode: |-
+  stream.flatMap(order ->
+      order.items().stream()
+          .map(item -> new OrderItem(
+              order.id(), item)
+          )
+  );
+modernCode: |-
+  stream.<OrderItem>mapMulti(
+      (order, downstream) -> {
+          for (var item : order.items())
+              downstream.accept(
+                  new OrderItem(order.id(), item));
+      }
+  );
+summary: "Emit zero or more elements per input without creating intermediate streams."
+explanation: "mapMulti() is an imperative alternative to flatMap that avoids creating\
+  \ intermediate Stream objects for each element. It's more efficient when the mapping\
+  \ produces a small number of elements."
+whyModernWins:
+- icon: "⚡"
+  title: "Less allocation"
+  desc: "No intermediate Stream created per element."
+- icon: "🎯"
+  title: "Imperative style"
+  desc: "Use loops and conditionals directly."
+- icon: "📐"
+  title: "Flexible"
+  desc: "Emit zero, one, or many elements with full control."
+support:
+  state: "available"
+  description: "Widely available since JDK 16 (March 2021)"
+prev: "streams/stream-tolist"
+next: "streams/stream-gatherers"
+related:
+- "streams/stream-iterate-predicate"
+- "streams/stream-of-nullable"
+- "streams/stream-gatherers"
+docs:
+- title: "Stream.mapMulti()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html#mapMulti(java.util.function.BiConsumer)"

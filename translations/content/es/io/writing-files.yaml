@@ -1,0 +1,17 @@
+title: Escritura de archivos
+oldApproach: FileWriter + BufferedWriter
+modernApproach: Files.writeString()
+summary: Escribe un String en un archivo con una sola línea.
+explanation: Files.writeString() escribe contenido en un archivo con codificación UTF-8 por defecto. Se pueden pasar opciones para añadir al final, crear, etc.
+whyModernWins:
+- icon: 📏
+  title: Una línea
+  desc: Sin necesidad de envolver writers ni usar try-with-resources.
+- icon: 🛡️
+  title: Valores por defecto seguros
+  desc: Codificación UTF-8, limpieza adecuada del identificador de archivo.
+- icon: 🔧
+  title: Opciones
+  desc: Pasa flags de OpenOption para añadir, crear, etc.
+support:
+  description: Ampliamente disponible desde JDK 11 (septiembre de 2018)

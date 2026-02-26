@@ -1,0 +1,55 @@
+---
+id: 48
+slug: "scoped-values"
+title: "Scoped values"
+category: "concurrency"
+difficulty: "advanced"
+jdkVersion: "25"
+oldLabel: "Java 8"
+modernLabel: "Java 25"
+oldApproach: "ThreadLocal"
+modernApproach: "ScopedValue"
+oldCode: |-
+  static final ThreadLocal<User> CURRENT =
+      new ThreadLocal<>();
+  void handle(Request req) {
+      CURRENT.set(authenticate(req));
+      try { process(); }
+      finally { CURRENT.remove(); }
+  }
+modernCode: |-
+  static final ScopedValue<User> CURRENT =
+      ScopedValue.newInstance();
+  void handle(Request req) {
+      ScopedValue.where(CURRENT,
+          authenticate(req)
+      ).run(this::process);
+  }
+summary: "Share data across call stacks safely without ThreadLocal pitfalls."
+explanation: "ScopedValue provides immutable, inheritable, scope-limited context.\
+  \ Unlike ThreadLocal, scoped values are automatically cleaned up, work with virtual\
+  \ threads, and can't be mutated by callees."
+whyModernWins:
+- icon: "🔒"
+  title: "Immutable"
+  desc: "Callees can read but never modify the scoped value."
+- icon: "🧹"
+  title: "Auto cleanup"
+  desc: "No manual remove() — value is scoped to the block."
+- icon: "⚡"
+  title: "Virtual-thread safe"
+  desc: "Works efficiently with millions of virtual threads."
+support:
+  state: "available"
+  description: "Finalized in JDK 25 LTS (JEP 506, Sept 2025)."
+prev: "concurrency/structured-concurrency"
+next: "concurrency/stable-values"
+related:
+- "concurrency/virtual-threads"
+- "concurrency/structured-concurrency"
+- "concurrency/stable-values"
+docs:
+- title: "Scoped Values (JEP 487)"
+  href: "https://openjdk.org/jeps/487"
+- title: "ScopedValue"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html"

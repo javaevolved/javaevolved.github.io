@@ -1,0 +1,20 @@
+---
+title: "Collectors.teeing()"
+oldApproach: "Dos pasadas"
+modernApproach: "teeing()"
+summary: "Calcula dos agregaciones en una sola pasada del stream."
+explanation: "Collectors.teeing() envía cada elemento a dos collectors downstream\
+  \ y combina los resultados. Esto evita recorrer los datos dos veces o usar un\
+  \ acumulador mutable."
+whyModernWins:
+- icon: "⚡"
+  title: "Una sola pasada"
+  desc: "Procesa el stream una vez en lugar de dos."
+- icon: "🧩"
+  title: "Componible"
+  desc: "Combina dos collectors cualesquiera con una función de fusión."
+- icon: "🔒"
+  title: "Resultado inmutable"
+  desc: "Fusiona directamente en un record u objeto de valor."
+support:
+  description: "Ampliamente disponible desde JDK 12 (marzo 2019)"

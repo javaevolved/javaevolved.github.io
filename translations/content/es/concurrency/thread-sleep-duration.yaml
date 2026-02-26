@@ -1,0 +1,19 @@
+title: Thread.sleep con Duration
+oldApproach: Milisegundos
+modernApproach: Duration
+summary: Usa Duration para valores de tiempo autodocumentados.
+explanation: Thread.sleep(Duration) hace explícita la unidad de tiempo. Ya no hay
+  que adivinar si 5000 significa milisegundos o microsegundos. Funciona con Duration.ofSeconds,
+  ofMillis, ofMinutes, etc.
+whyModernWins:
+- icon: 📖
+  title: Autodocumentado
+  desc: Duration.ofSeconds(5) es inequívoco.
+- icon: 🛡️
+  title: Seguro en unidades
+  desc: Sin pasar accidentalmente microsegundos como milisegundos.
+- icon: 🧩
+  title: Componible
+  desc: 'Aritmética con Duration: plus(), multipliedBy(), etc.'
+support:
+  description: Ampliamente disponible desde JDK 19 (sept. 2022)

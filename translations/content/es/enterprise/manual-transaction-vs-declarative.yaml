@@ -1,0 +1,25 @@
+---
+title: "Transacción JPA manual vs @Transactional declarativo"
+oldApproach: "Transacción manual"
+modernApproach: "@Transactional"
+summary: "Reemplaza los bloques extensos de begin/commit/rollback por una sola anotación\
+  \ @Transactional."
+explanation: "La gestión manual de transacciones requiere llamadas explícitas a begin(),\
+  \ commit() y rollback() envueltas en bloques try-catch — cada método de servicio\
+  \ repite este código repetitivo. La anotación @Transactional delega la gestión del\
+  \ ciclo de vida al contenedor: inicia una transacción antes del método, confirma\
+  \ en caso de éxito y revierte en caso de RuntimeException automáticamente."
+whyModernWins:
+- icon: "🗑️"
+  title: "Sin código repetitivo"
+  desc: "Una sola anotación reemplaza los repetitivos bloques try-catch de begin/commit/rollback."
+- icon: "🛡️"
+  title: "Rollback más seguro"
+  desc: "El contenedor garantiza el rollback en excepciones no verificadas — sin riesgo\
+    \ de olvidar el bloque catch."
+- icon: "📐"
+  title: "Control declarativo"
+  desc: "Las reglas de propagación, aislamiento y rollback se expresan como atributos\
+    \ de la anotación."
+support:
+  description: "Ampliamente disponible desde Jakarta EE 8 / Java 11"

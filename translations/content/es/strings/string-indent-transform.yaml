@@ -1,0 +1,19 @@
+title: String.indent() y transform()
+oldApproach: Indentación manual
+modernApproach: indent() / transform()
+summary: Indenta texto y encadena transformaciones de strings de forma fluida.
+explanation: indent(n) agrega n espacios a cada línea. transform(fn) aplica cualquier
+  función y devuelve el resultado, permitiendo el encadenamiento fluido de operaciones
+  sobre strings.
+whyModernWins:
+- icon: 📏
+  title: Integrado
+  desc: La indentación es una operación común — ahora es una sola llamada.
+- icon: 🔗
+  title: Encadenable
+  desc: transform() habilita pipelines fluidos sobre strings.
+- icon: 🧹
+  title: Código limpio
+  desc: Sin separación manual de líneas ni bucles con StringBuilder.
+support:
+  description: Ampliamente disponible desde JDK 12 (marzo 2019)

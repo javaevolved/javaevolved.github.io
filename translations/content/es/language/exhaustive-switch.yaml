@@ -1,0 +1,19 @@
+---
+title: switch exhaustivo sin default
+oldApproach: default obligatorio
+modernApproach: Exhaustividad con sealed
+summary: "El compilador verifica que todos los subtipos sealed están cubiertos — no se necesita default."
+explanation: "Al hacer switch sobre un tipo sealed, el compilador conoce todos los subtipos posibles y verifica que cada caso\
+  \ esté cubierto. Si añades un nuevo subtipo, el compilador señala cada switch que queda incompleto."
+whyModernWins:
+- icon: ✅
+  title: Seguridad en compilación
+  desc: "Añade un nuevo subtipo y el compilador te muestra cada lugar que necesita actualizarse."
+- icon: 🚫
+  title: Sin código muerto
+  desc: Sin rama default inalcanzable que oculte errores.
+- icon: 📐
+  title: Tipos algebraicos
+  desc: sealed + records + switch exhaustivo = ADTs completos en Java.
+support:
+  description: Ampliamente disponible desde JDK 21 LTS (sept. 2023)

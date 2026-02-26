@@ -1,0 +1,18 @@
+title: String.isBlank()
+oldApproach: trim().isEmpty()
+modernApproach: isBlank()
+summary: Verifica si un string está en blanco con una sola llamada al método.
+explanation: isBlank() devuelve true si el string está vacío o contiene solo espacios
+  en blanco, incluyendo caracteres de espacio Unicode que trim() no detecta.
+whyModernWins:
+- icon: 📖
+  title: Autodocumentado
+  desc: isBlank() dice exactamente lo que verifica.
+- icon: 🌐
+  title: Compatible con Unicode
+  desc: Maneja todos los espacios en blanco Unicode, no solo ASCII.
+- icon: ⚡
+  title: Sin asignación
+  desc: No se crea un string intermedio recortado.
+support:
+  description: Ampliamente disponible desde JDK 11 (sept. 2018)

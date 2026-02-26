@@ -1,0 +1,56 @@
+---
+id: 90
+slug: "io-class-console-io"
+title: "IO class for console I/O"
+category: "io"
+difficulty: "beginner"
+jdkVersion: "25"
+oldLabel: "Java 8"
+modernLabel: "Java 25+"
+oldApproach: "System.out / Scanner"
+modernApproach: "IO class"
+oldCode: |-
+  import java.util.Scanner;
+
+  Scanner sc = new Scanner(System.in);
+  System.out.print("Name: ");
+  String name = sc.nextLine();
+  System.out.println("Hello, " + name);
+  sc.close();
+modernCode: |-
+  String name = IO.readln("Name: ");
+  IO.println("Hello, " + name);
+summary: "The new IO class provides simple, concise methods for console input and\
+  \ output."
+explanation: "Java 25 introduces the IO class (java.io.IO) as part of the implicitly\
+  \ declared classes feature. It provides static methods like println(), print(),\
+  \ readln(), and read() that replace the verbose combination of System.out and Scanner.\
+  \ IO.readln(prompt) handles both prompting and reading in a single call. The class\
+  \ is automatically available in compact source files and can be used in traditional\
+  \ classes via import."
+whyModernWins:
+- icon: "✨"
+  title: "Dramatically simpler"
+  desc: "Two methods replace seven lines of Scanner setup, prompting, reading, and\
+    \ cleanup."
+- icon: "🔒"
+  title: "No resource leaks"
+  desc: "No Scanner to close — IO methods handle resource management internally."
+- icon: "🎓"
+  title: "Beginner-friendly"
+  desc: "New developers can do console I/O without learning Scanner, System.out, or\
+    \ import statements."
+support:
+  state: "preview"
+  description: "Preview in JDK 25 as part of implicitly declared classes (JEP 495)"
+prev: "io/http-client"
+next: "io/reading-files"
+related:
+- "language/compact-source-files"
+- "language/module-import-declarations"
+- "io/reading-files"
+docs:
+- title: "Simple Source Files (JEP 495)"
+  href: "https://openjdk.org/jeps/495"
+- title: "IO"
+  href: "https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/io/IO.html"

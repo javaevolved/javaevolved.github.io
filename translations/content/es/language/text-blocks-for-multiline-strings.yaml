@@ -1,0 +1,19 @@
+---
+title: Bloques de texto para cadenas multilínea
+oldApproach: Concatenación de cadenas
+modernApproach: Bloques de texto
+summary: "Escribe cadenas multilínea de forma natural con bloques de texto de triple comilla."
+explanation: "Los bloques de texto permiten escribir cadenas multilínea exactamente como aparecen. No más escapar comillas\
+  \ ni añadir \\n. El compilador elimina automáticamente la indentación accidental."
+whyModernWins:
+- icon: 📖
+  title: Legible tal cual
+  desc: "JSON, SQL y HTML se ven como JSON, SQL y HTML reales en tu código fuente."
+- icon: 🚫
+  title: Sin infierno de escapes
+  desc: Las comillas incrustadas no necesitan barra invertida de escape.
+- icon: 📐
+  title: Indentación inteligente
+  desc: "El espacio en blanco inicial se recorta automáticamente según la posición del delimitador de cierre."
+support:
+  description: Ampliamente disponible desde JDK 15 (sept. 2020)

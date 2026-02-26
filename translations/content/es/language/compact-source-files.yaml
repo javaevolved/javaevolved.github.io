@@ -1,0 +1,19 @@
+---
+title: Archivos fuente compactos
+oldApproach: Ceremonia de clase Main
+modernApproach: void main()
+summary: "Escribe un programa completo sin declaración de clase ni public static void main."
+explanation: "Los archivos fuente compactos eliminan la ceremonia de las declaraciones de clase y la firma del método main\
+  \ para programas sencillos. Combinado con la importación implícita de java.io.IO, incluso println está disponible directamente."
+whyModernWins:
+- icon: 🚀
+  title: Cero ceremonia
+  desc: "Sin clase, sin public static void main, sin String[] args."
+- icon: 🎓
+  title: Amigable para principiantes
+  desc: Los nuevos programadores pueden escribir código útil desde la línea 1.
+- icon: 📝
+  title: Estilo script
+  desc: Perfecto para prototipos rápidos, scripts y ejemplos.
+support:
+  description: Finalizado en JDK 25 LTS (JEP 512, sept. 2025).

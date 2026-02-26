@@ -1,0 +1,27 @@
+---
+title: "JPA versus Jakarta Data"
+oldApproach: "JPA EntityManager"
+modernApproach: "Repositorio Jakarta Data"
+summary: "Declara una interfaz de repositorio y deja que Jakarta Data genere la implementación\
+  \ del DAO automáticamente."
+explanation: "Jakarta Data (Jakarta EE 11) convierte el acceso a datos en una pura\
+  \ declaración de interfaz. Anotas una interfaz con @Repository y extiendes un tipo\
+  \ de repositorio incorporado como CrudRepository. El runtime genera la implementación\
+  \ — incluyendo consultas derivadas de nombres de métodos como findByName — por lo\
+  \ que no hay código repetitivo de EntityManager, ni cadenas JPQL, ni métodos save/find\
+  \ escritos a mano."
+whyModernWins:
+- icon: "🪄"
+  title: "Cero código repetitivo"
+  desc: "Declara la interfaz; el contenedor genera la implementación completa del\
+    \ DAO en tiempo de despliegue."
+- icon: "🔍"
+  title: "Consultas derivadas"
+  desc: "Los nombres de métodos como findByNameAndStatus se analizan automáticamente\
+    \ — sin necesidad de JPQL ni SQL."
+- icon: "🔌"
+  title: "Portable"
+  desc: "Cualquier runtime compatible con Jakarta EE 11 proporciona la implementación\
+    \ del repositorio sin dependencia de proveedor."
+support:
+  description: "Disponible desde Jakarta EE 11 / Java 21 (2024)"

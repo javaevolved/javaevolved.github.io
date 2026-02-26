@@ -1,0 +1,20 @@
+---
+title: Miembros estáticos en clases internas
+oldApproach: Se requiere clase estática anidada
+modernApproach: Miembros estáticos en clases internas
+summary: "Define miembros estáticos en clases internas sin necesidad de clases estáticas anidadas."
+explanation: "Antes de Java 16, solo las clases estáticas anidadas podían contener miembros estáticos. Las clases internas\
+  \ (no estáticas) no podían tener estáticos porque requerían una instancia envolvente. Java 16 relaja esta restricción, permitiendo\
+  \ campos estáticos, métodos e incluso tipos anidados en clases internas."
+whyModernWins:
+- icon: 🔓
+  title: Más flexibilidad
+  desc: Las clases internas ahora pueden tener miembros estáticos cuando sea necesario.
+- icon: 🧩
+  title: Estado compartido
+  desc: Rastrea estado compartido entre instancias de una clase interna.
+- icon: ��
+  title: Libertad de diseño
+  desc: No es necesario promover a clase estática anidada solo por un campo estático.
+support:
+  description: Ampliamente disponible desde JDK 16 (marzo 2021)

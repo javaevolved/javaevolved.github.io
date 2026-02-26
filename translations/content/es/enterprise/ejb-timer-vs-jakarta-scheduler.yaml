@@ -1,0 +1,25 @@
+---
+title: "EJB Timer vs Jakarta Scheduler"
+oldApproach: "EJB TimerService"
+modernApproach: "ManagedScheduledExecutorService"
+summary: "Reemplaza los temporizadores pesados de EJB por ManagedScheduledExecutorService\
+  \ de Jakarta Concurrency para una programación de tareas más sencilla."
+explanation: "Los temporizadores EJB requieren un bean @Stateless o @Singleton con\
+  \ un callback @Timeout y expresiones de programación basadas en XML o anotaciones.\
+  \ Jakarta Concurrency proporciona ManagedScheduledExecutorService, que utiliza la\
+  \ conocida API de programación de java.util.concurrent. El resultado es menos código\
+  \ repetitivo, pruebas unitarias más fáciles y sin dependencia del contenedor EJB."
+whyModernWins:
+- icon: "🪶"
+  title: "Menos código repetitivo"
+  desc: "Sin callback @Timeout ni ScheduleExpression — usa la API estándar de ScheduledExecutorService."
+- icon: "🧪"
+  title: "Mejor testabilidad"
+  desc: "Métodos simples y mocks de executors hacen las pruebas unitarias directas\
+    \ sin contenedor EJB."
+- icon: "☁️"
+  title: "Apto para la nube"
+  desc: "Los executors gestionados se integran con el ciclo de vida del contenedor\
+    \ y funcionan en runtimes ligeros."
+support:
+  description: "Disponible desde Jakarta EE 10 / Concurrency 3.0"

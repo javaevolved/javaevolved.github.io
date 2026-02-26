@@ -1,0 +1,20 @@
+modernApproach: Palavra-chave var
+summary: Use var para inferência de tipo em variáveis locais — menos ruído, mesma
+  segurança.
+title: Inferência de tipo com var
+oldApproach: Tipos explícitos
+explanation: Desde o Java 10, o compilador infere os tipos de variáveis locais a partir
+  do lado direito da atribuição. Isso reduz o ruído visual sem sacrificar a segurança
+  de tipos. Use var quando o tipo for óbvio pelo contexto.
+whyModernWins:
+- icon: ⚡
+  title: Menos boilerplate
+  desc: Não é necessário repetir tipos genéricos complexos em ambos os lados da atribuição.
+- icon: 👁
+  title: Melhor legibilidade
+  desc: Foco nos nomes de variáveis e valores, não nas declarações de tipo.
+- icon: 🔒
+  title: Ainda seguro em tipos
+  desc: O compilador infere e impõe o tipo exato em tempo de compilação.
+support:
+  description: Amplamente disponível desde o JDK 10 (março de 2018)

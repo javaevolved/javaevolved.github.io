@@ -1,0 +1,17 @@
+title: HexFormat
+oldApproach: Conversión hexadecimal manual
+modernApproach: HexFormat
+summary: Convierte entre cadenas hexadecimales y arrays de bytes con HexFormat.
+explanation: HexFormat proporciona codificación/decodificación hexadecimal bidireccional para bytes, enteros y arrays. Permite configurar delimitadores, prefijo, sufijo y mayúsculas/minúsculas. No más formateo o análisis manual.
+whyModernWins:
+- icon: 📐
+  title: Bidireccional
+  desc: Convierte bytes→hex y hex→bytes con una sola API.
+- icon: 🔧
+  title: Configurable
+  desc: Delimitadores, prefijo, sufijo, mayúsculas/minúsculas.
+- icon: 📦
+  title: Soporte de arrays
+  desc: Codifica/decodifica arrays de bytes completos de una vez.
+support:
+  description: Ampliamente disponible desde JDK 17 LTS (septiembre de 2021)

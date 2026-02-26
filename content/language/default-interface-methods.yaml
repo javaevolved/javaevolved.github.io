@@ -1,0 +1,66 @@
+---
+id: 86
+slug: "default-interface-methods"
+title: "Default interface methods"
+category: "language"
+difficulty: "intermediate"
+jdkVersion: "8"
+oldLabel: "Java 7"
+modernLabel: "Java 8+"
+oldApproach: "Abstract classes for shared behavior"
+modernApproach: "Default methods on interfaces"
+oldCode: |-
+  // Need abstract class to share behavior
+  public abstract class AbstractLogger {
+      public void log(String msg) {
+          System.out.println(
+              timestamp() + ": " + msg);
+      }
+      abstract String timestamp();
+  }
+
+  // Single inheritance only
+  public class FileLogger
+      extends AbstractLogger { ... }
+modernCode: |-
+  public interface Logger {
+      default void log(String msg) {
+          System.out.println(
+              timestamp() + ": " + msg);
+      }
+      String timestamp();
+  }
+
+  // Multiple interfaces allowed
+  public class FileLogger
+      implements Logger, Closeable { ... }
+summary: "Add method implementations directly in interfaces, enabling multiple inheritance\
+  \ of behavior."
+explanation: "Before Java 8, sharing behavior across unrelated classes required abstract\
+  \ classes, which limited you to single inheritance. Default methods let interfaces\
+  \ provide method implementations, so classes can inherit behavior from multiple\
+  \ interfaces. This was essential for evolving the Collections API (e.g., List.forEach,\
+  \ Map.getOrDefault) without breaking existing implementations."
+whyModernWins:
+- icon: "🔀"
+  title: "Multiple inheritance"
+  desc: "Classes can implement many interfaces with default methods, unlike single\
+    \ abstract class inheritance."
+- icon: "📦"
+  title: "API evolution"
+  desc: "Add new methods to interfaces without breaking existing implementations."
+- icon: "🧩"
+  title: "Composable behavior"
+  desc: "Mix and match capabilities from multiple interfaces freely."
+support:
+  state: "available"
+  description: "Available since JDK 8 (March 2014)."
+prev: "tooling/junit6-with-jspecify"
+next: "language/markdown-javadoc-comments"
+related:
+- "language/private-interface-methods"
+- "language/pattern-matching-instanceof"
+- "language/sealed-classes"
+docs:
+- title: "Default Methods (Java Tutorial)"
+  href: "https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html"

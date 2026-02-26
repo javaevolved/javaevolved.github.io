@@ -1,0 +1,19 @@
+title: Caracteres de String como stream
+oldApproach: Bucle manual
+modernApproach: Stream de chars()
+summary: Procesa los caracteres de un string como un pipeline de stream.
+explanation: String.chars() devuelve un IntStream de valores de caracteres, permitiendo
+  procesamiento funcional. Para soporte Unicode, codePoints() maneja correctamente
+  los caracteres suplementarios.
+whyModernWins:
+- icon: 🔗
+  title: Encadenable
+  desc: Usa filter, map, collect sobre streams de caracteres.
+- icon: 📐
+  title: Declarativo
+  desc: Describe qué hacer, no cómo iterar.
+- icon: 🌐
+  title: Listo para Unicode
+  desc: codePoints() maneja correctamente emojis y caracteres suplementarios.
+support:
+  description: Disponible desde JDK 8+ (mejorado en 9+)

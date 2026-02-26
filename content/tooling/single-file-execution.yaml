@@ -1,0 +1,46 @@
+---
+id: 81
+slug: "single-file-execution"
+title: "Single-file execution"
+category: "tooling"
+difficulty: "beginner"
+jdkVersion: "11"
+oldLabel: "Java 8"
+modernLabel: "Java 11+"
+oldApproach: "Two-Step Compile"
+modernApproach: "Direct Launch"
+oldCode: |-
+  $ javac HelloWorld.java
+  $ java HelloWorld
+  // Two steps every time
+modernCode: |-
+  $ java HelloWorld.java
+  // Compiles and runs in one step
+  // Also works with shebangs:
+  #!/usr/bin/java --source 25
+summary: "Run single-file Java programs directly without javac."
+explanation: "The Java launcher can compile and run a single source file in one command.\
+  \ Combined with shebang support on Unix, Java files can work as scripts. No separate\
+  \ compilation step needed."
+whyModernWins:
+- icon: "⚡"
+  title: "One command"
+  desc: "java File.java compiles and runs in one step."
+- icon: "📝"
+  title: "Script-like"
+  desc: "Add a shebang line to make .java files executable scripts."
+- icon: "🎓"
+  title: "Learning-friendly"
+  desc: "Newcomers run code immediately without learning build tools."
+support:
+  state: "available"
+  description: "Widely available since JDK 11 (Sept 2018)"
+prev: "tooling/jshell-prototyping"
+next: "tooling/multi-file-source"
+related:
+- "tooling/multi-file-source"
+- "tooling/compact-object-headers"
+- "tooling/jfr-profiling"
+docs:
+- title: "Launch Single-File Source-Code Programs (JEP 330)"
+  href: "https://openjdk.org/jeps/330"

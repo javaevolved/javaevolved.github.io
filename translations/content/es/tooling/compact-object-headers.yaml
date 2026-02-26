@@ -1,0 +1,20 @@
+title: Cabeceras de objetos compactas
+oldApproach: Cabeceras de 128 bits
+modernApproach: Cabeceras de 64 bits
+summary: Reduce a la mitad el tamaño de las cabeceras de objetos para mejor densidad
+  de memoria y uso de caché.
+explanation: Las cabeceras de objetos compactas reducen la sobrecarga por objeto de
+  128 bits a 64 bits en plataformas de 64 bits. Esto ahorra memoria y mejora la utilización
+  de caché, especialmente para aplicaciones con muchos objetos pequeños.
+whyModernWins:
+- icon: 📦
+  title: Cabeceras 50% más pequeñas
+  desc: 8 bytes en lugar de 16 por objeto.
+- icon: ⚡
+  title: Mejor uso de caché
+  desc: Más objetos caben en las líneas de caché de la CPU.
+- icon: 📊
+  title: Mayor densidad
+  desc: Más objetos caben en el mismo tamaño de heap.
+support:
+  description: Finalizado en JDK 25 LTS (JEP 519, sept. 2025).

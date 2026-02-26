@@ -1,0 +1,17 @@
+title: Math.clamp()
+oldApproach: min/max anidados
+modernApproach: Math.clamp()
+summary: Limita un valor entre cotas con una sola llamada clara.
+explanation: Math.clamp(value, min, max) restringe un valor al rango [min, max]. Más claro que anidar Math.min/Math.max y disponible para int, long, float y double.
+whyModernWins:
+- icon: 📖
+  title: Autodocumentado
+  desc: clamp(value, min, max) no es ambiguo.
+- icon: 🛡️
+  title: Menos propenso a errores
+  desc: No más intercambio accidental del orden de min/max.
+- icon: 🎯
+  title: Todos los tipos numéricos
+  desc: Funciona con int, long, float y double.
+support:
+  description: Ampliamente disponible desde JDK 21 LTS (septiembre de 2023)

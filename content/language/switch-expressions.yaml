@@ -1,0 +1,55 @@
+---
+id: 3
+slug: "switch-expressions"
+title: "Switch expressions"
+category: "language"
+difficulty: "beginner"
+jdkVersion: "14"
+oldLabel: "Java 8"
+modernLabel: "Java 14+"
+oldApproach: "Switch Statement"
+modernApproach: "Switch Expression"
+oldCode: |-
+  String msg;
+  switch (day) {
+      case MONDAY:
+          msg = "Start";
+          break;
+      case FRIDAY:
+          msg = "End";
+          break;
+      default:
+          msg = "Mid";
+  }
+modernCode: |-
+  String msg = switch (day) {
+      case MONDAY  -> "Start";
+      case FRIDAY  -> "End";
+      default      -> "Mid";
+  };
+summary: "Switch as an expression that returns a value — no break, no fall-through."
+explanation: "Switch expressions return a value directly, use arrow syntax to prevent\
+  \ fall-through bugs, and the compiler verifies exhaustiveness. This replaces the\
+  \ error-prone statement form."
+whyModernWins:
+- icon: "🎯"
+  title: "Returns a value"
+  desc: "Assign the switch result directly — no temporary variable needed."
+- icon: "🛡️"
+  title: "No fall-through"
+  desc: "Arrow syntax eliminates accidental fall-through bugs from missing break."
+- icon: "✅"
+  title: "Exhaustiveness check"
+  desc: "The compiler ensures all cases are covered."
+support:
+  state: "available"
+  description: "Widely available since JDK 14 (March 2020)"
+prev: "language/text-blocks-for-multiline-strings"
+next: "language/pattern-matching-instanceof"
+related:
+- "language/compact-source-files"
+- "language/sealed-classes"
+- "language/record-patterns"
+docs:
+- title: "Switch Expressions (JEP 361)"
+  href: "https://openjdk.org/jeps/361"

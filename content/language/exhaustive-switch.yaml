@@ -1,0 +1,59 @@
+---
+id: 18
+slug: "exhaustive-switch"
+title: "Exhaustive switch without default"
+category: "language"
+difficulty: "intermediate"
+jdkVersion: "21"
+oldLabel: "Java 8"
+modernLabel: "Java 21+"
+oldApproach: "Mandatory default"
+modernApproach: "Sealed Exhaustiveness"
+oldCode: |-
+  // Must add default even though
+  // all cases are covered
+  double area(Shape s) {
+      if (s instanceof Circle c)
+          return Math.PI * c.r() * c.r();
+      else if (s instanceof Rect r)
+          return r.w() * r.h();
+      else throw new IAE();
+  }
+modernCode: |-
+  // sealed Shape permits Circle, Rect
+  double area(Shape s) {
+      return switch (s) {
+          case Circle c ->
+              Math.PI * c.r() * c.r();
+          case Rect r ->
+              r.w() * r.h();
+      }; // no default needed!
+  }
+summary: "Compiler verifies all sealed subtypes are covered — no default needed."
+explanation: "When switching over a sealed type, the compiler knows all possible subtypes\
+  \ and verifies every case is handled. If you add a new subtype, the compiler flags\
+  \ every switch that's now incomplete."
+whyModernWins:
+- icon: "✅"
+  title: "Compile-time safety"
+  desc: "Add a new subtype and the compiler shows every place to update."
+- icon: "🚫"
+  title: "No dead code"
+  desc: "No unreachable default branch that masks bugs."
+- icon: "📐"
+  title: "Algebraic types"
+  desc: "Sealed + records + exhaustive switch = proper ADTs in Java."
+support:
+  state: "available"
+  description: "Widely available since JDK 21 LTS (Sept 2023)"
+prev: "language/module-import-declarations"
+next: "collections/immutable-list-creation"
+related:
+- "language/sealed-classes"
+- "language/pattern-matching-instanceof"
+- "language/type-inference-with-var"
+docs:
+- title: "Pattern Matching for switch (JEP 441)"
+  href: "https://openjdk.org/jeps/441"
+- title: "Sealed Classes (JEP 409)"
+  href: "https://openjdk.org/jeps/409"

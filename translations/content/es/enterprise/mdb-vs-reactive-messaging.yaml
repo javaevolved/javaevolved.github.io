@@ -1,0 +1,26 @@
+---
+title: "Message-Driven Bean vs Reactive Messaging"
+oldApproach: "Message-Driven Bean"
+modernApproach: "Reactive Messaging"
+summary: "Reemplaza los Message-Driven Beans de JMS por MicroProfile Reactive Messaging\
+  \ para un procesamiento de eventos más simple."
+explanation: "Los Message-Driven Beans requieren implementar MessageListener, configurar\
+  \ propiedades de activación y deserializar manualmente los mensajes JMS. MicroProfile\
+  \ Reactive Messaging usa una simple anotación @Incoming en un método que recibe\
+  \ objetos tipados directamente. La configuración del canal se externaliza, haciendo\
+  \ el código agnóstico al broker y mucho más fácil de probar."
+whyModernWins:
+- icon: "🪶"
+  title: "Código mínimo"
+  desc: "Un solo método @Incoming reemplaza la clase MDB, la interfaz MessageListener\
+    \ y la configuración de activación."
+- icon: "🔌"
+  title: "Agnóstico al broker"
+  desc: "Intercambia conectores de Kafka, AMQP o JMS mediante configuración sin cambiar\
+    \ el código de la aplicación."
+- icon: "☁️"
+  title: "Apto para la nube"
+  desc: "La contrapresión de streams reactivos y el runtime ligero lo hacen ideal\
+    \ para despliegues en contenedores."
+support:
+  description: "Disponible desde MicroProfile 4.0 / SmallRye Reactive Messaging"

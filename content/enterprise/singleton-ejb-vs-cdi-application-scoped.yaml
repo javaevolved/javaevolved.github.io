@@ -1,0 +1,85 @@
+---
+id: 108
+slug: "singleton-ejb-vs-cdi-application-scoped"
+title: "Singleton EJB vs CDI @ApplicationScoped"
+category: "enterprise"
+difficulty: "intermediate"
+jdkVersion: "11"
+oldLabel: "Java EE"
+modernLabel: "Jakarta EE 8+"
+oldApproach: "@Singleton EJB"
+modernApproach: "@ApplicationScoped CDI"
+oldCode: |-
+  @Singleton
+  @Startup
+  @ConcurrencyManagement(
+      ConcurrencyManagementType.CONTAINER)
+  public class ConfigCache {
+      private Map<String, String> cache;
+
+      @PostConstruct
+      public void load() {
+          cache = loadFromDatabase();
+      }
+
+      @Lock(LockType.READ)
+      public String get(String key) {
+          return cache.get(key);
+      }
+
+      @Lock(LockType.WRITE)
+      public void refresh() {
+          cache = loadFromDatabase();
+      }
+  }
+modernCode: |-
+  @ApplicationScoped
+  public class ConfigCache {
+      private volatile Map<String, String> cache;
+
+      @PostConstruct
+      public void load() {
+          cache = loadFromDatabase();
+      }
+
+      public String get(String key) {
+          return cache.get(key);
+      }
+
+      public void refresh() {
+          cache = loadFromDatabase();
+      }
+  }
+summary: "Replace Singleton EJBs with CDI @ApplicationScoped beans for simpler shared-state\
+  \ management."
+explanation: "Singleton EJBs bundle concurrency management (@Lock, @ConcurrencyManagement)\
+  \ and eager initialisation (@Startup) into the EJB container. A CDI @ApplicationScoped\
+  \ bean achieves the same single-instance lifecycle with far less ceremony. When\
+  \ concurrency control is needed, standard java.util.concurrent utilities give you\
+  \ finer-grained control than the EJB lock annotations."
+whyModernWins:
+- icon: "🪶"
+  title: "Less annotation noise"
+  desc: "No @ConcurrencyManagement, @Lock, or @Startup — just a single @ApplicationScoped\
+    \ annotation."
+- icon: "🔧"
+  title: "Flexible concurrency"
+  desc: "Use java.util.concurrent locks or volatile for exactly the thread-safety\
+    \ you need."
+- icon: "🧪"
+  title: "Easy testing"
+  desc: "Plain CDI beans can be instantiated directly in tests without an EJB container."
+support:
+  state: "available"
+  description: "Widely available since Jakarta EE 8 / Java 11"
+prev: "enterprise/jsf-managed-bean-vs-cdi-named"
+next: "enterprise/jdbc-resultset-vs-jpa-criteria"
+related:
+- "enterprise/ejb-vs-cdi"
+- "enterprise/jndi-lookup-vs-cdi-injection"
+- "concurrency/lock-free-lazy-init"
+docs:
+- title: "Jakarta CDI Specification"
+  href: "https://jakarta.ee/specifications/cdi/"
+- title: "Jakarta Enterprise Beans Specification"
+  href: "https://jakarta.ee/specifications/enterprise-beans/"

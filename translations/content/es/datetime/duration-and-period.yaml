@@ -1,0 +1,17 @@
+title: Duration y Period
+oldApproach: Aritmética con milisegundos
+modernApproach: Duration / Period
+summary: Calcula diferencias de tiempo con Duration y Period con tipado seguro.
+explanation: Duration es para cantidades basadas en tiempo (horas, minutos, segundos). Period es para cantidades basadas en fechas (años, meses, días). ChronoUnit.between() para diferencias simples. Todos manejan correctamente los casos límite.
+whyModernWins:
+- icon: 🎯
+  title: Tipado seguro
+  desc: Duration para tiempo, Period para fechas — sin confusión.
+- icon: 🛡️
+  title: Cálculo correcto
+  desc: Maneja transiciones de horario de verano, años bisiestos y segundos intercalares.
+- icon: 📖
+  title: Legible
+  desc: ChronoUnit.DAYS.between() se lee como lenguaje natural.
+support:
+  description: Ampliamente disponible desde JDK 8 (marzo de 2014)

@@ -1,0 +1,17 @@
+title: Método factoría Path.of()
+oldApproach: Paths.get()
+modernApproach: Path.of()
+summary: Usa Path.of() — el método factoría moderno en la interfaz Path.
+explanation: Path.of() es un método factoría añadido directamente a la interfaz Path, reemplazando la clase utilitaria Paths separada. Es más fácil de descubrir y consistente con List.of(), Map.of(), etc.
+whyModernWins:
+- icon: 📐
+  title: API consistente
+  desc: Sigue el patrón factoría .of() como List.of(), Set.of().
+- icon: 📖
+  title: Fácil de descubrir
+  desc: Se encuentra en el propio tipo Path, no en una clase Paths separada.
+- icon: 🧹
+  title: Una clase menos
+  desc: No es necesario importar la clase utilitaria Paths.
+support:
+  description: Ampliamente disponible desde JDK 11 (septiembre de 2018)

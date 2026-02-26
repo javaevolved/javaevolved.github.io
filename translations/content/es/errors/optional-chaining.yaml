@@ -1,0 +1,17 @@
+title: Encadenamiento con Optional
+oldApproach: Verificaciones de null anidadas
+modernApproach: Pipeline de Optional
+summary: Reemplaza las verificaciones de null anidadas con un pipeline de Optional.
+explanation: Optional.map() encadena valores que pueden ser null, cortocircuitando en el primer null. orElse() proporciona el valor por defecto. Esto elimina la pirámide de verificaciones de null.
+whyModernWins:
+- icon: 🔗
+  title: Encadenable
+  desc: Cada paso .map() maneja null de forma transparente.
+- icon: 📖
+  title: Flujo lineal
+  desc: Se lee de izquierda a derecha en lugar de bloques if anidados.
+- icon: 🛡️
+  title: A prueba de NPE
+  desc: null se maneja en cada paso — no hay posibilidad de fallo.
+support:
+  description: Disponible desde JDK 8+ (mejorado en 9+)

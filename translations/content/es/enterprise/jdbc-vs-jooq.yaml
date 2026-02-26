@@ -1,0 +1,31 @@
+---
+title: "JDBC versus jOOQ"
+oldApproach: "JDBC crudo"
+modernApproach: "DSL SQL de jOOQ"
+summary: "Reemplaza el SQL basado en cadenas de JDBC crudo por el DSL SQL con seguridad\
+  \ de tipos y fluido de jOOQ."
+explanation: "jOOQ (Java Object Oriented Querying) genera código Java a partir del\
+  \ esquema de tu base de datos, convirtiendo los nombres de tablas y columnas en\
+  \ constantes Java con seguridad de tipos. El DSL fluido refleja la sintaxis SQL\
+  \ para que las consultas sean legibles y componibles. Todos los parámetros se vinculan\
+  \ automáticamente, eliminando el riesgo de inyección SQL. A diferencia de JPA/JPQL,\
+  \ jOOQ abraza SQL completamente — funciones de ventana, CTEs, cláusulas RETURNING\
+  \ y extensiones específicas del proveedor son de primera clase."
+whyModernWins:
+- icon: "🔒"
+  title: "Columnas con seguridad de tipos"
+  desc: "Los nombres de columnas son constantes Java generadas — errores tipográficos\
+    \ y tipos incompatibles se convierten en errores de compilación en lugar de fallos\
+    \ en tiempo de ejecución."
+- icon: "📖"
+  title: "Fluidez SQL"
+  desc: "El DSL de jOOQ refleja la sintaxis SQL de cerca, por lo que JOINs complejos,\
+    \ subconsultas y CTEs siguen siendo legibles."
+- icon: "🛡️"
+  title: "Libre de inyección por diseño"
+  desc: "Los parámetros siempre se vinculan de forma segura — sin concatenación de\
+    \ cadenas significa sin riesgo de inyección SQL."
+support:
+  description: "La edición open-source de jOOQ soporta todas las bases de datos open-source\
+    \ principales; las bases de datos comerciales antiguas requieren una licencia de\
+    \ pago"

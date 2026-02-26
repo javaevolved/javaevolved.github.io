@@ -1,0 +1,22 @@
+---
+title: Métodos default en interfaces
+oldApproach: Clases abstractas para comportamiento compartido
+modernApproach: Métodos default en interfaces
+summary: "Añade implementaciones de métodos directamente en interfaces, habilitando herencia múltiple de comportamiento."
+explanation: "Antes de Java 8, compartir comportamiento entre clases no relacionadas requería clases abstractas, lo que limitaba\
+  \ a herencia simple. Los métodos default permiten que las interfaces proporcionen implementaciones, de modo que las clases\
+  \ pueden heredar comportamiento de múltiples interfaces. Esto fue esencial para evolucionar la API de Collections (p.ej.,\
+  \ List.forEach, Map.getOrDefault) sin romper las implementaciones existentes."
+whyModernWins:
+- icon: 🔀
+  title: Herencia múltiple
+  desc: "Las clases pueden implementar varias interfaces con métodos default, a diferencia de la herencia simple con clases\
+    \ abstractas."
+- icon: 📦
+  title: Evolución de APIs
+  desc: Añade nuevos métodos a interfaces sin romper las implementaciones existentes.
+- icon: 🧩
+  title: Comportamiento composable
+  desc: Combina capacidades de múltiples interfaces libremente.
+support:
+  description: Disponible desde JDK 8 (marzo 2014).

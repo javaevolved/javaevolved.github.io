@@ -1,0 +1,26 @@
+title: Servidor HTTP integrado
+oldApproach: Servidor externo / framework
+modernApproach: CLI jwebserver
+summary: Java 18 incluye un servidor HTTP mínimo integrado para prototipado y servicio
+  de archivos.
+explanation: JDK 18 añadió un servidor HTTP de archivos simple y sin dependencias,
+  accesible mediante la herramienta de línea de comandos jwebserver o la API SimpleFileServer.
+  Sirve archivos estáticos desde un directorio dado sin necesidad de configuración.
+  La herramienta CLI es ideal para prototipado rápido, pruebas y compartición de archivos
+  ad-hoc — sin dependencias externas ni frameworks necesarios. La API permite uso
+  programático con manejadores personalizables y niveles de salida.
+whyModernWins:
+- icon: 🚀
+  title: Sin configuración
+  desc: Ejecuta jwebserver en cualquier directorio — sin instalación, configuración
+    ni dependencias necesarias.
+- icon: 📦
+  title: Integrado en el JDK
+  desc: Se distribuye con cada instalación de JDK 18+, siempre disponible en cualquier
+    máquina con Java.
+- icon: 🧪
+  title: Ideal para prototipado
+  desc: Sirve archivos estáticos instantáneamente para probar HTML, APIs o desarrollo
+    front-end.
+support:
+  description: Disponible desde JDK 18 (marzo 2022)

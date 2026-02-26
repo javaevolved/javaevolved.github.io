@@ -1,0 +1,48 @@
+---
+id: 7
+slug: "record-patterns"
+title: "Record patterns (destructuring)"
+category: "language"
+difficulty: "intermediate"
+jdkVersion: "21"
+oldLabel: "Java 8"
+modernLabel: "Java 21+"
+oldApproach: "Manual Access"
+modernApproach: "Destructuring"
+oldCode: |-
+  if (obj instanceof Point) {
+      Point p = (Point) obj;
+      int x = p.getX();
+      int y = p.getY();
+      System.out.println(x + y);
+  }
+modernCode: |-
+  if (obj instanceof Point(int x, int y)) {
+      System.out.println(x + y);
+  }
+summary: "Destructure records directly in patterns — extract fields in one step."
+explanation: "Record patterns let you decompose a record's components directly in\
+  \ instanceof and switch. Nested patterns are supported too, enabling deep matching\
+  \ without intermediate variables."
+whyModernWins:
+- icon: "🎯"
+  title: "Direct extraction"
+  desc: "Access record components without calling accessors manually."
+- icon: "🪆"
+  title: "Nestable"
+  desc: "Patterns can nest — match inner records in a single expression."
+- icon: "📏"
+  title: "Compact code"
+  desc: "Five lines become two — less ceremony, same clarity."
+support:
+  state: "available"
+  description: "Widely available since JDK 21 LTS (Sept 2023)"
+prev: "language/sealed-classes"
+next: "language/unnamed-variables"
+related:
+- "language/diamond-operator"
+- "language/records-for-data-classes"
+- "language/unnamed-variables"
+docs:
+- title: "Record Patterns (JEP 440)"
+  href: "https://openjdk.org/jeps/440"

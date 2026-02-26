@@ -1,0 +1,66 @@
+---
+id: 99
+slug: "ejb-vs-cdi"
+title: "EJB versus CDI"
+category: "enterprise"
+difficulty: "intermediate"
+jdkVersion: "11"
+oldLabel: "Java EE"
+modernLabel: "Jakarta EE 8+"
+oldApproach: "EJB"
+modernApproach: "CDI Bean"
+oldCode: |-
+  @Stateless
+  public class OrderEJB {
+      @EJB
+      private InventoryEJB inventory;
+
+      public void placeOrder(Order order) {
+          // container-managed transaction
+          inventory.reserve(order.getItem());
+      }
+  }
+modernCode: |-
+  @ApplicationScoped
+  public class OrderService {
+      @Inject
+      private InventoryService inventory;
+
+      @Transactional
+      public void placeOrder(Order order) {
+          inventory.reserve(order.getItem());
+      }
+  }
+summary: "Replace heavyweight EJBs with lightweight CDI beans for dependency injection\
+  \ and transactions."
+explanation: "CDI (Contexts and Dependency Injection) provides the same dependency\
+  \ injection and transaction management as EJBs, but as plain Java classes with no\
+  \ container-specific interfaces or superclasses. Scopes like @ApplicationScoped\
+  \ and @RequestScoped control lifecycle, and @Transactional replaces mandatory EJB\
+  \ transaction semantics."
+whyModernWins:
+- icon: "🪶"
+  title: "Lightweight"
+  desc: "CDI beans are plain Java classes with no EJB-specific interfaces or descriptors."
+- icon: "💉"
+  title: "Unified injection"
+  desc: "@Inject works for every managed bean, JAX-RS resources, and Jakarta EE components\
+    \ alike."
+- icon: "🧪"
+  title: "Easy unit testing"
+  desc: "Plain classes without EJB proxy overhead are straightforward to instantiate\
+    \ and mock."
+support:
+  state: "available"
+  description: "Widely available since Jakarta EE 8 / Java 11"
+prev: "enterprise/servlet-vs-jaxrs"
+next: "enterprise/jdbc-vs-jpa"
+related:
+- "enterprise/servlet-vs-jaxrs"
+- "enterprise/jdbc-vs-jpa"
+- "language/records-for-data-classes"
+docs:
+- title: "Jakarta CDI Specification"
+  href: "https://jakarta.ee/specifications/cdi/"
+- title: "Jakarta Transactions — @Transactional"
+  href: "https://jakarta.ee/specifications/transactions/"

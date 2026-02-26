@@ -1,0 +1,27 @@
+title: Mapeo de JDBC ResultSet vs API Criteria de JPA
+oldApproach: JDBC ResultSet
+modernApproach: API Criteria de JPA
+summary: Reemplaza el mapeo manual de JDBC ResultSet por la API Criteria de JPA con
+  seguridad de tipos para consultas dinámicas.
+explanation: JDBC crudo requiere construir cadenas SQL, establecer parámetros por
+  índice y mapear cada columna del ResultSet manualmente — un proceso propenso a errores
+  que falla silenciosamente cuando las columnas cambian. La API Criteria de JPA construye
+  consultas programáticamente usando un patrón builder con seguridad de tipos. Los
+  nombres de columnas se validan contra el modelo de entidad, el mapeo de resultados
+  es automático y las consultas dinámicas complejas se componen limpiamente sin concatenación
+  de cadenas.
+whyModernWins:
+- icon: 🔒
+  title: Consultas con seguridad de tipos
+  desc: El builder Criteria detecta errores de nombres de campo y tipos incompatibles
+    en tiempo de compilación.
+- icon: 🗺️
+  title: Mapeo automático
+  desc: JPA mapea las filas del resultado a objetos entidad — sin extracción manual
+    columna por columna.
+- icon: 🧩
+  title: Predicados componibles
+  desc: Las cláusulas where dinámicas se construyen limpiamente con and(), or() y
+    objetos Predicate reutilizables.
+support:
+  description: Ampliamente disponible desde Jakarta EE 8 / Java 11

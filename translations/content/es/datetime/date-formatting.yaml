@@ -1,0 +1,17 @@
+title: Formateo de fechas
+oldApproach: SimpleDateFormat
+modernApproach: DateTimeFormatter
+summary: Formatea fechas con DateTimeFormatter, inmutable y seguro para hilos.
+explanation: DateTimeFormatter es inmutable y seguro para hilos, a diferencia de SimpleDateFormat. Se puede almacenar como constante y compartir. Hay formateadores predefinidos como ISO_LOCAL_DATE disponibles para formatos comunes.
+whyModernWins:
+- icon: 🛡️
+  title: Seguro para hilos
+  desc: Comparte formateadores entre hilos sin necesidad de sincronización.
+- icon: 📋
+  title: Formatos integrados
+  desc: ISO_LOCAL_DATE, ISO_INSTANT, etc. para formatos estándar.
+- icon: 🔒
+  title: Inmutable
+  desc: Se puede almacenar como constante static final de forma segura.
+support:
+  description: Ampliamente disponible desde JDK 8 (marzo de 2014)

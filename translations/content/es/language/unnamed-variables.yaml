@@ -1,0 +1,19 @@
+---
+title: Variables sin nombre con _
+oldApproach: Variable sin usar
+modernApproach: Marcador de posición _
+summary: "Usa _ para indicar la intención cuando una variable se deja sin usar deliberadamente."
+explanation: "Las variables sin nombre comunican a los lectores y herramientas que un valor se ignora deliberadamente. No\
+  \ más convenciones de nombres como 'ignored' o 'unused', ni advertencias del IDE."
+whyModernWins:
+- icon: 📢
+  title: Intención clara
+  desc: _ dice explícitamente 'este valor no se necesita aquí'.
+- icon: 🔇
+  title: Sin advertencias
+  desc: Los IDEs y linters no marcarán variables intencionalmente sin usar.
+- icon: 🧹
+  title: Lambdas más limpias
+  desc: "Las lambdas con múltiples parámetros quedan más limpias cuando solo necesitas algunos."
+support:
+  description: Finalizado en JDK 22 (JEP 456, marzo 2024).

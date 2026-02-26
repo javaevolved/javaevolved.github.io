@@ -2,6 +2,7 @@
 """Generate HTML detail pages from JSON snippet files and slug-template.html."""
 
 import json
+import yaml
 import glob
 import os
 import html
@@ -73,10 +74,16 @@ def load_all_snippets():
     snippets = {}
     json_files = []
     for cat in CATEGORY_DISPLAY:
-        json_files.extend(sorted(glob.glob(f"{CONTENT_DIR}/{cat}/*.json")))
+        json_files.extend(glob.glob(f"{CONTENT_DIR}/{cat}/*.json"))
+        json_files.extend(glob.glob(f"{CONTENT_DIR}/{cat}/*.yaml"))
+        json_files.extend(glob.glob(f"{CONTENT_DIR}/{cat}/*.yml"))
+    json_files.sort()
     for path in json_files:
         with open(path) as f:
-            data = json.load(f)
+            if path.endswith(".yaml") or path.endswith(".yml"):
+                data = yaml.safe_load(f)
+            else:
+                data = json.load(f)
         key = f"{data['category']}/{data['slug']}"
         data["_path"] = key
         snippets[key] = data

@@ -1,0 +1,19 @@
+---
+title: Pattern matching en switch
+oldApproach: Cadena if-else
+modernApproach: Patrones de tipo
+summary: Reemplaza cadenas if-else con instanceof por patrones de tipo limpios en switch.
+explanation: "El pattern matching en switch permite hacer coincidencia de tipos directamente, combinando la comprobación de\
+  \ tipo, el casting y la vinculación en una sola etiqueta de caso concisa. El compilador verifica la completitud."
+whyModernWins:
+- icon: 📐
+  title: Despacho estructurado
+  desc: El switch hace explícita y escaneable la estructura de ramificación.
+- icon: 🎯
+  title: Forma de expresión
+  desc: Devuelve un valor directamente — sin necesidad de variable mutable.
+- icon: ✅
+  title: Exhaustividad
+  desc: El compilador asegura que todos los tipos están cubiertos.
+support:
+  description: Ampliamente disponible desde JDK 21 LTS (sept. 2023)

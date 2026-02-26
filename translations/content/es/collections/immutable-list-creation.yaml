@@ -1,0 +1,20 @@
+---
+title: "Creación de listas inmutables"
+oldApproach: "Envoltorio verboso"
+modernApproach: "List.of()"
+summary: "Crea listas inmutables en una sola expresión limpia."
+explanation: "List.of() crea una lista verdaderamente inmutable — sin envoltorios,\
+  \ sin copias defensivas. Rechaza elementos null y es estructuralmente inmutable.\
+  \ La forma antigua requería tres llamadas anidadas."
+whyModernWins:
+- icon: "📏"
+  title: "Una sola llamada"
+  desc: "Reemplaza tres llamadas anidadas con un único método de fábrica."
+- icon: "🔒"
+  title: "Verdaderamente inmutable"
+  desc: "No es solo un envoltorio — la lista en sí es inmutable."
+- icon: "🛡️"
+  title: "Segura ante null"
+  desc: "Rechaza elementos null en el momento de creación, fallando rápido."
+support:
+  description: "Ampliamente disponible desde JDK 9 (sept 2017)"

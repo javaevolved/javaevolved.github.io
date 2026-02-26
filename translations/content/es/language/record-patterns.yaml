@@ -1,0 +1,19 @@
+---
+title: Patrones de record (desestructuración)
+oldApproach: Acceso manual
+modernApproach: Desestructuración
+summary: Desestructura records directamente en patrones — extrae campos en un solo paso.
+explanation: "Los patrones de record permiten descomponer los componentes de un record directamente en instanceof y switch.\
+  \ También se admiten patrones anidados, lo que permite coincidencias profundas sin variables intermedias."
+whyModernWins:
+- icon: 🎯
+  title: Extracción directa
+  desc: Accede a los componentes del record sin llamar a los accesores manualmente.
+- icon: 🪆
+  title: Anidable
+  desc: "Los patrones se pueden anidar — coincide con records internos en una sola expresión."
+- icon: 📏
+  title: Código compacto
+  desc: "Cinco líneas se convierten en dos — menos ceremonia, la misma claridad."
+support:
+  description: Ampliamente disponible desde JDK 21 LTS (sept. 2023)

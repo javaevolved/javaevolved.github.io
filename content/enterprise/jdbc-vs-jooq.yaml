@@ -1,0 +1,73 @@
+---
+id: 112
+slug: "jdbc-vs-jooq"
+title: "JDBC versus jOOQ"
+category: "enterprise"
+difficulty: "intermediate"
+jdkVersion: "11"
+oldLabel: "Raw JDBC"
+modernLabel: "jOOQ"
+oldApproach: "Raw JDBC"
+modernApproach: "jOOQ SQL DSL"
+oldCode: |-
+  String sql = "SELECT id, name, email FROM users "
+             + "WHERE department = ? AND salary > ?";
+  try (Connection con = ds.getConnection();
+       PreparedStatement ps =
+               con.prepareStatement(sql)) {
+      ps.setString(1, department);
+      ps.setBigDecimal(2, minSalary);
+      ResultSet rs = ps.executeQuery();
+      List<User> result = new ArrayList<>();
+      while (rs.next()) {
+          result.add(new User(
+              rs.getLong("id"),
+              rs.getString("name"),
+              rs.getString("email")));
+      }
+      return result;
+  }
+modernCode: |-
+  DSLContext dsl = DSL.using(ds, SQLDialect.POSTGRES);
+
+  return dsl
+      .select(USERS.ID, USERS.NAME, USERS.EMAIL)
+      .from(USERS)
+      .where(USERS.DEPARTMENT.eq(department)
+          .and(USERS.SALARY.gt(minSalary)))
+      .fetchInto(User.class);
+summary: "Replace raw JDBC string-based SQL with jOOQ's type-safe, fluent SQL DSL."
+explanation: "jOOQ (Java Object Oriented Querying) generates Java code from your database\
+  \ schema, turning table and column names into type-safe Java constants. The fluent\
+  \ DSL mirrors SQL syntax so queries are readable and composable. All parameters\
+  \ are bound automatically, eliminating SQL injection risk. Unlike JPA/JPQL, jOOQ\
+  \ embraces SQL fully — window functions, CTEs, RETURNING clauses, and vendor-specific\
+  \ extensions are all first-class."
+whyModernWins:
+- icon: "🔒"
+  title: "Type-safe columns"
+  desc: "Column names are generated Java constants — typos and type mismatches become\
+    \ compiler errors instead of runtime failures."
+- icon: "📖"
+  title: "SQL fluency"
+  desc: "The jOOQ DSL mirrors SQL syntax closely, so complex JOINs, subqueries, and\
+    \ CTEs stay readable."
+- icon: "🛡️"
+  title: "Injection-free by design"
+  desc: "Parameters are always bound safely — no string concatenation means no SQL\
+    \ injection risk."
+support:
+  state: "available"
+  description: "jOOQ open-source edition supports all major open-source databases;\
+    \ older commercial databases require a paid license"
+prev: "enterprise/spring-xml-config-vs-annotations"
+next: null
+related:
+- "enterprise/jdbc-vs-jpa"
+- "enterprise/jdbc-resultset-vs-jpa-criteria"
+- "enterprise/manual-transaction-vs-declarative"
+docs:
+- title: "jOOQ — Getting Started"
+  href: "https://www.jooq.org/doc/latest/manual/getting-started/"
+- title: "jOOQ — DSL API Reference"
+  href: "https://www.jooq.org/javadoc/latest/"

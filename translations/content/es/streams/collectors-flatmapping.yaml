@@ -1,0 +1,19 @@
+title: Collectors.flatMapping()
+oldApproach: flatMap anidado
+modernApproach: flatMapping()
+summary: Usa flatMapping() para aplanar dentro de un collector de agrupación.
+explanation: Collectors.flatMapping() aplica un mapeo de uno a muchos como un collector
+  descendente. Es el equivalente en collectors de Stream.flatMap() — útil dentro de
+  groupingBy o partitioningBy.
+whyModernWins:
+- icon: 🧩
+  title: Componible
+  desc: Funciona como collector descendente dentro de groupingBy.
+- icon: 📐
+  title: Una sola pasada
+  desc: Aplana y agrupa en un único recorrido del stream.
+- icon: 🔗
+  title: Anidable
+  desc: Se combina con otros collectors descendentes.
+support:
+  description: Ampliamente disponible desde JDK 9 (sept. 2017)

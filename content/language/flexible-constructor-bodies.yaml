@@ -1,0 +1,54 @@
+---
+id: 10
+slug: "flexible-constructor-bodies"
+title: "Flexible constructor bodies"
+category: "language"
+difficulty: "intermediate"
+jdkVersion: "25"
+oldLabel: "Java 8"
+modernLabel: "Java 25+"
+oldApproach: "Validate After super()"
+modernApproach: "Code Before super()"
+oldCode: |-
+  class Square extends Shape {
+      Square(double side) {
+          super(side, side);
+          // can't validate BEFORE super!
+          if (side <= 0)
+              throw new IAE("bad");
+      }
+  }
+modernCode: |-
+  class Square extends Shape {
+      Square(double side) {
+          if (side <= 0)
+              throw new IAE("bad");
+          super(side, side);
+      }
+  }
+summary: "Validate and compute values before calling super() or this()."
+explanation: "Java 25 lifts the restriction that super() must be the first statement.\
+  \ You can now validate arguments, compute derived values, and set up state before\
+  \ delegating to the parent constructor."
+whyModernWins:
+- icon: "🛡️"
+  title: "Fail fast"
+  desc: "Validate arguments before the superclass constructor runs."
+- icon: "🧮"
+  title: "Compute first"
+  desc: "Derive values and prepare data before calling super()."
+- icon: "🧹"
+  title: "No workarounds"
+  desc: "No more static helper methods or factory patterns to work around the restriction."
+support:
+  state: "available"
+  description: "Finalized in JDK 25 LTS (JEP 513, Sept 2025)."
+prev: "language/compact-source-files"
+next: "language/diamond-operator"
+related:
+- "language/type-inference-with-var"
+- "language/text-blocks-for-multiline-strings"
+- "language/switch-expressions"
+docs:
+- title: "Flexible Constructor Bodies (JEP 492)"
+  href: "https://openjdk.org/jeps/492"

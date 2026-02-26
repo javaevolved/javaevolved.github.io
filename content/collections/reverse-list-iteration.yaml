@@ -1,0 +1,45 @@
+---
+id: 96
+slug: "reverse-list-iteration"
+title: "Reverse list iteration"
+category: "collections"
+difficulty: "beginner"
+jdkVersion: "21"
+oldLabel: "Java 8"
+modernLabel: "Java 21+"
+oldApproach: "Manual ListIterator"
+modernApproach: "reversed()"
+oldCode: |-
+  for (ListIterator<String> it =
+          list.listIterator(list.size());
+      it.hasPrevious(); ) {
+      String element = it.previous();
+      System.out.println(element);
+  }
+modernCode: |-
+  for (String element : list.reversed()) {
+      System.out.println(element);
+  }
+summary: "Iterate over a list in reverse order with a clean for-each loop."
+explanation: "The reversed() method from SequencedCollection returns a reverse-ordered\
+  \ view of the list. This view is backed by the original list, so no copying occurs.\
+  \ The enhanced for loop syntax makes reverse iteration as readable as forward iteration."
+whyModernWins:
+- icon: "📖"
+  title: "Natural syntax"
+  desc: "Enhanced for loop instead of verbose ListIterator."
+- icon: "⚡"
+  title: "No copying"
+  desc: "reversed() returns a view — no performance overhead."
+- icon: "🧩"
+  title: "Consistent API"
+  desc: "Works on List, Deque, SortedSet uniformly."
+support:
+  state: "available"
+  description: "Widely available since JDK 21 LTS (Sept 2023)"
+prev: "collections/stream-toarray-typed"
+next: "collections/unmodifiable-collectors"
+related:
+- "collections/sequenced-collections"
+- "collections/immutable-list-creation"
+- "streams/stream-tolist"

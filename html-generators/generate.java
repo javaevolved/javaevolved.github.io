@@ -1,10 +1,12 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //JAVA 25
 //DEPS com.fasterxml.jackson.core:jackson-databind:2.18.3
+//DEPS com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3
 
 import module java.base;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 /**
  * Generate HTML detail pages from JSON snippet files and slug-template.html.
@@ -15,7 +17,13 @@ static final String CONTENT_DIR = "content";
 static final String SITE_DIR = "site";
 static final String TRANSLATIONS_DIR = "translations";
 static final Pattern TOKEN = Pattern.compile("\\{\\{([\\w.]+)}}");
-static final ObjectMapper MAPPER = new ObjectMapper();
+static final ObjectMapper JSON_MAPPER = new ObjectMapper();
+static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());
+static final Map<String, ObjectMapper> MAPPERS = Map.of(
+    "json", JSON_MAPPER,
+    "yaml", YAML_MAPPER,
+    "yml", YAML_MAPPER
+);
 
 static final String CATEGORIES_FILE = "html-generators/categories.properties";
 static final String LOCALES_FILE = "html-generators/locales.properties";
@@ -68,20 +76,37 @@ static Map<String, String> flattenJson(JsonNode node, String prefix) {
     return map;
 }
 
+/** Find a file by base path, trying .json, .yaml, .yml extensions */
+static Optional<Path> findWithExtensions(Path dir, String baseName) {
+    for (var ext : List.of("json", "yaml", "yml")) {
+        var p = dir.resolve(baseName + "." + ext);
+        if (Files.exists(p)) return Optional.of(p);
+    }
+    return Optional.empty();
+}
+
+/** Read a file using the appropriate mapper based on its extension */
+static JsonNode readAuto(Path path) throws IOException {
+    var name = path.getFileName().toString();
+    var ext = name.substring(name.lastIndexOf('.') + 1);
+    return MAPPERS.getOrDefault(ext, JSON_MAPPER).readTree(path.toFile());
+}
+
 /** Load UI strings for a locale, falling back to en.json for missing keys */
 static Map<String, String> loadStrings(String locale) throws IOException {
-    var enPath = Path.of(TRANSLATIONS_DIR, "strings", "en.json");
-    var enStrings = flattenJson(MAPPER.readTree(enPath.toFile()), "");
+    var enFile = findWithExtensions(Path.of(TRANSLATIONS_DIR, "strings"), "en")
+            .orElseThrow(() -> new IOException("No English strings file found"));
+    var enStrings = flattenJson(readAuto(enFile), "");
 
     if (locale.equals("en")) return enStrings;
 
-    var localePath = Path.of(TRANSLATIONS_DIR, "strings", locale + ".json");
-    if (!Files.exists(localePath)) {
-        IO.println("[WARN] strings/%s.json not found — using all English strings".formatted(locale));
+    var localeFile = findWithExtensions(Path.of(TRANSLATIONS_DIR, "strings"), locale);
+    if (localeFile.isEmpty()) {
+        IO.println("[WARN] strings/%s.{json,yaml,yml} not found — using all English strings".formatted(locale));
         return enStrings;
     }
 
-    var localeStrings = flattenJson(MAPPER.readTree(localePath.toFile()), "");
+    var localeStrings = flattenJson(readAuto(localeFile.get()), "");
     var merged = new LinkedHashMap<>(enStrings);
     for (var entry : localeStrings.entrySet()) {
         if (enStrings.containsKey(entry.getKey())) {
@@ -91,7 +116,7 @@ static Map<String, String> loadStrings(String locale) throws IOException {
     // Warn about missing keys
     for (var key : enStrings.keySet()) {
         if (!localeStrings.containsKey(key)) {
-            IO.println("[WARN] strings/%s.json: missing key \"%s\" — using English fallback".formatted(locale, key));
+            IO.println("[WARN] %s: missing key \"%s\" — using English fallback".formatted(localeFile.get().getFileName(), key));
         }
     }
     return merged;
@@ -217,7 +242,7 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
     var snippetsList = allSnippets.values().stream()
             .map(s -> {
                 var resolved = resolveSnippet(s, locale);
-                Map<String, Object> map = MAPPER.convertValue(resolved.node(), new TypeReference<LinkedHashMap<String, Object>>() {});
+                Map<String, Object> map = JSON_MAPPER.convertValue(resolved.node(), new TypeReference<LinkedHashMap<String, Object>>() {});
                 EXCLUDED_KEYS.forEach(map::remove);
                 return map;
             })
@@ -259,14 +284,20 @@ SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
     for (var cat : CATEGORY_DISPLAY.sequencedKeySet()) {
         var catDir = Path.of(CONTENT_DIR, cat);
         if (!Files.isDirectory(catDir)) continue;
-        try (var stream = Files.newDirectoryStream(catDir, "*.json")) {
-            var sorted = new ArrayList<Path>();
-            stream.forEach(sorted::add);
-            sorted.sort(Path::compareTo);
-            for (var path : sorted) {
-                var snippet = new Snippet(MAPPER.readTree(path.toFile()));
-                snippets.put(snippet.key(), snippet);
-            }
+        var sorted = new ArrayList<Path>();
+        // first collect and sortall files
+        for (var ext : MAPPERS.keySet()) {
+          try (var stream = Files.newDirectoryStream(catDir, "*." + ext)) {
+              stream.forEach(sorted::add);
+          }
+        }
+        sorted.sort(Path::compareTo);
+        for (var path : sorted) {
+            var filename = path.getFileName().toString();
+            var ext = filename.substring(filename.lastIndexOf('.') + 1);
+            var json = MAPPERS.get(ext).readTree(path.toFile());
+            var snippet = new Snippet(json);
+            snippets.put(snippet.key(), snippet);
         }
     }
     return snippets;
@@ -277,7 +308,7 @@ String escape(String text) {
 }
 
 String jsonEscape(String text) throws IOException {
-    var quoted = MAPPER.writeValueAsString(text);
+    var quoted = JSON_MAPPER.writeValueAsString(text);
     var inner = quoted.substring(1, quoted.length() - 1);
     var sb = new StringBuilder(inner.length());
     for (int i = 0; i < inner.length(); i++) {
@@ -297,6 +328,10 @@ String supportBadge(String state, Map<String, String> strings) {
         case "experimental" -> strings.getOrDefault("support.experimental", "Experimental");
         default -> strings.getOrDefault("support.available", "Available");
     };
+}
+
+String difficultyDisplay(String difficulty, Map<String, String> strings) {
+    return strings.getOrDefault("difficulty." + difficulty, difficulty);
 }
 
 String supportBadgeClass(String state) {
@@ -349,6 +384,7 @@ String renderRelatedCard(String tpl, Snippet rel, String locale, Map<String, Str
     return replaceTokens(tpl, Map.ofEntries(
             Map.entry("category", rel.category()), Map.entry("slug", rel.slug()),
             Map.entry("catDisplay", rel.catDisplay()), Map.entry("difficulty", rel.difficulty()),
+            Map.entry("difficultyDisplay", difficultyDisplay(rel.difficulty(), strings)),
             Map.entry("title", escape(rel.title())),
             Map.entry("oldLabel", escape(rel.oldLabel())), Map.entry("oldCode", escape(rel.oldCode())),
             Map.entry("modernLabel", escape(rel.modernLabel())), Map.entry("modernCode", escape(rel.modernCode())),
@@ -389,6 +425,7 @@ String generateHtml(Templates tpl, Snippet s, Map<String, Snippet> all, Map<Stri
             Map.entry("title", escape(s.title())), Map.entry("summary", escape(s.summary())),
             Map.entry("slug", s.slug()), Map.entry("category", s.category()),
             Map.entry("categoryDisplay", s.catDisplay()), Map.entry("difficulty", s.difficulty()),
+            Map.entry("difficultyDisplay", difficultyDisplay(s.difficulty(), extraTokens)),
             Map.entry("jdkVersion", s.jdkVersion()),
             Map.entry("oldLabel", escape(s.oldLabel())), Map.entry("modernLabel", escape(s.modernLabel())),
             Map.entry("oldCode", escape(s.oldCode())), Map.entry("modernCode", escape(s.modernCode())),
@@ -409,22 +446,46 @@ String generateHtml(Templates tpl, Snippet s, Map<String, Snippet> all, Map<Stri
     return replaceTokens(tpl.page(), tokens);
 }
 
-/** Load translated content or fall back to English; overwrite code fields from English */
+/** Translatable field names — only these are merged from translation files */
+static final Set<String> TRANSLATABLE_FIELDS = Set.of(
+    "title", "summary", "explanation", "oldApproach", "modernApproach", "whyModernWins", "support"
+);
+
+/**
+ * Overlay translated content onto the English base.
+ * Translation files contain only translatable fields; everything else
+ * (id, slug, category, difficulty, code, navigation, docs, etc.)
+ * is always taken from the English source of truth.
+ */
 Snippet resolveSnippet(Snippet englishSnippet, String locale) {
     if (locale.equals("en")) return englishSnippet;
 
-    var translatedPath = Path.of(TRANSLATIONS_DIR, "content", locale,
-            englishSnippet.category(), englishSnippet.slug() + ".json");
-    if (!Files.exists(translatedPath)) return englishSnippet;
+    var translatedDir = Path.of(TRANSLATIONS_DIR, "content", locale, englishSnippet.category());
+    var translatedFile = findWithExtensions(translatedDir, englishSnippet.slug());
+    if (translatedFile.isEmpty()) return englishSnippet;
 
     try {
-        var translatedNode = (com.fasterxml.jackson.databind.node.ObjectNode) MAPPER.readTree(translatedPath.toFile());
-        // Overwrite code fields with English values
-        translatedNode.put("oldCode", englishSnippet.oldCode());
-        translatedNode.put("modernCode", englishSnippet.modernCode());
-        return new Snippet(translatedNode);
+        var translatedNode = (com.fasterxml.jackson.databind.node.ObjectNode) readAuto(translatedFile.get());
+        // Start from a copy of the English node
+        var merged = englishSnippet.node().deepCopy();
+        // Overlay only translatable fields from the translation file
+        for (var field : TRANSLATABLE_FIELDS) {
+            if (translatedNode.has(field)) {
+                if (field.equals("support") && translatedNode.get("support").isObject()) {
+                    // For support, only merge "description" — keep "state" from English
+                    var translatedSupport = translatedNode.get("support");
+                    if (translatedSupport.has("description")) {
+                        ((com.fasterxml.jackson.databind.node.ObjectNode) merged.get("support"))
+                                .put("description", translatedSupport.get("description").asText());
+                    }
+                } else {
+                    ((com.fasterxml.jackson.databind.node.ObjectNode) merged).set(field, translatedNode.get(field));
+                }
+            }
+        }
+        return new Snippet(merged);
     } catch (IOException e) {
-        IO.println("[WARN] Failed to load %s — using English".formatted(translatedPath));
+        IO.println("[WARN] Failed to load %s — using English".formatted(translatedFile.get()));
         return englishSnippet;
     }
 }

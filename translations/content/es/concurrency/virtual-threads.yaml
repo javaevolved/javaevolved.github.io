@@ -1,0 +1,20 @@
+title: Virtual threads
+oldApproach: Hilos de plataforma
+modernApproach: Virtual Threads
+summary: Crea millones de hilos virtuales ligeros en lugar de pesados hilos del sistema
+  operativo.
+explanation: Los virtual threads son hilos ligeros gestionados por la JVM, no por el
+  sistema operativo. Puedes crear millones de ellos sin ajustar pools de hilos. Son
+  ideales para tareas con mucha E/S como llamadas HTTP y consultas a bases de datos.
+whyModernWins:
+- icon: ⚡
+  title: Ligeros
+  desc: Los virtual threads usan KB de memoria, los hilos de plataforma usan MB.
+- icon: ♾️
+  title: Escalables
+  desc: Crea millones de hilos — sin necesidad de dimensionar pools.
+- icon: 🧹
+  title: Modelo simple
+  desc: Escribe código bloqueante que escala como código asíncrono.
+support:
+  description: Ampliamente disponible desde JDK 21 LTS (sept. 2023)

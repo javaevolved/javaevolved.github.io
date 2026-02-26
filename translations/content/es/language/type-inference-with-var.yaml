@@ -1,0 +1,19 @@
+---
+title: Inferencia de tipos con var
+oldApproach: Tipos explícitos
+modernApproach: Palabra clave var
+summary: "Usa var para inferencia de tipos en variables locales — menos ruido, la misma seguridad."
+explanation: "Desde Java 10, el compilador infiere los tipos de las variables locales a partir del lado derecho. Esto reduce\
+  \ el ruido visual sin sacrificar la seguridad de tipos. Usa var cuando el tipo sea obvio por el contexto."
+whyModernWins:
+- icon: ⚡
+  title: Menos código repetitivo
+  desc: "No es necesario repetir tipos genéricos complejos en ambos lados de la asignación."
+- icon: 👁
+  title: Mejor legibilidad
+  desc: "Concéntrate en los nombres de variables y valores, no en las declaraciones de tipo."
+- icon: 🔒
+  title: Sigue siendo tipado seguro
+  desc: El compilador infiere y aplica el tipo exacto en tiempo de compilación.
+support:
+  description: Ampliamente disponible desde JDK 10 (marzo 2018)

@@ -1,0 +1,19 @@
+title: Lanzador de código fuente multi-archivo
+oldApproach: Compilar todo primero
+modernApproach: Lanzador de código fuente
+summary: Lanza programas multi-archivo sin un paso explícito de compilación.
+explanation: Java 22+ puede compilar automáticamente los archivos fuente referenciados
+  al lanzar desde un archivo .java. Esto hace que los programas pequeños multi-archivo
+  sean tan fáciles de ejecutar como scripts, sin necesitar Maven o Gradle.
+whyModernWins:
+- icon: 🚀
+  title: Sin configuración
+  desc: Sin herramienta de build necesaria para programas pequeños multi-archivo.
+- icon: 🔗
+  title: Resolución automática
+  desc: Las clases referenciadas se encuentran y compilan automáticamente.
+- icon: 📝
+  title: Como un script
+  desc: Ejecuta programas multi-archivo como scripts.
+support:
+  description: Disponible desde JDK 22 (marzo 2024)

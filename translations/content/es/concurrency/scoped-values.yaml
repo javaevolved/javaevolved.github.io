@@ -1,0 +1,20 @@
+title: Valores con ámbito
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: Comparte datos a lo largo de la pila de llamadas de forma segura sin los
+  problemas de ThreadLocal.
+explanation: ScopedValue proporciona contexto inmutable, heredable y limitado a un
+  ámbito. A diferencia de ThreadLocal, los valores con ámbito se limpian automáticamente,
+  funcionan con virtual threads y no pueden ser modificados por los métodos invocados.
+whyModernWins:
+- icon: 🔒
+  title: Inmutable
+  desc: Los métodos invocados pueden leer pero nunca modificar el valor con ámbito.
+- icon: 🧹
+  title: Limpieza automática
+  desc: Sin remove() manual — el valor está limitado al bloque.
+- icon: ⚡
+  title: Compatible con virtual threads
+  desc: Funciona eficientemente con millones de virtual threads.
+support:
+  description: Finalizado en JDK 25 LTS (JEP 506, sept. 2025).

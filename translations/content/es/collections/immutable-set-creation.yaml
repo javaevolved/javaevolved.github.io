@@ -1,0 +1,19 @@
+---
+title: "Creación de conjuntos inmutables"
+oldApproach: "Envoltorio verboso"
+modernApproach: "Set.of()"
+summary: "Crea conjuntos inmutables con una única llamada de fábrica."
+explanation: "Set.of() crea un conjunto verdaderamente inmutable que rechaza elementos\
+  \ null y duplicados en el momento de creación. Se acabó envolver conjuntos mutables."
+whyModernWins:
+- icon: "📏"
+  title: "Conciso"
+  desc: "Una línea en lugar de tres llamadas anidadas."
+- icon: "🚫"
+  title: "Detecta duplicados"
+  desc: "Lanza una excepción si pasas elementos duplicados por accidente."
+- icon: "🔒"
+  title: "Inmutable"
+  desc: "No es posible agregar ni eliminar después de la creación."
+support:
+  description: "Ampliamente disponible desde JDK 9 (sept 2017)"

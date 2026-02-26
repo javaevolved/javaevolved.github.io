@@ -1,0 +1,20 @@
+title: Valores estables
+oldApproach: Double-Checked Locking
+modernApproach: StableValue
+summary: Inicialización perezosa con seguridad entre hilos sin volatile ni synchronized.
+explanation: StableValue proporciona un valor inicializado perezosamente e inmutable
+  con seguridad entre hilos incorporada. Sin double-checked locking, sin campos volatile,
+  sin bloques synchronized. La JVM incluso puede optimizar la ruta de lectura después
+  de la inicialización.
+whyModernWins:
+- icon: 🧹
+  title: Cero código repetitivo
+  desc: Sin volatile, synchronized ni verificaciones de null.
+- icon: ⚡
+  title: Optimizado por la JVM
+  desc: La JVM puede plegar el valor después de la inicialización.
+- icon: 🛡️
+  title: Ejecución única garantizada
+  desc: El proveedor se ejecuta exactamente una vez, incluso bajo contención.
+support:
+  description: Preview en JDK 25 (JEP 502). Requiere --enable-preview.

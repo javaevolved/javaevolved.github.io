@@ -1,0 +1,19 @@
+title: Encadenamiento con CompletableFuture
+oldApproach: Future.get() bloqueante
+modernApproach: CompletableFuture
+summary: Encadena operaciones asíncronas sin bloquear, usando CompletableFuture.
+explanation: CompletableFuture permite pipelines asíncronos sin bloqueo. Encadena
+  operaciones con thenApply, thenCompose, thenAccept. Maneja errores con exceptionally().
+  Combina múltiples futuros con allOf/anyOf.
+whyModernWins:
+- icon: 🔗
+  title: Encadenable
+  desc: Compón pasos asíncronos en un pipeline legible.
+- icon: 🚫
+  title: Sin bloqueo
+  desc: Ningún hilo queda inactivo esperando resultados.
+- icon: 🛡️
+  title: Manejo de errores
+  desc: exceptionally() y handle() para una recuperación limpia de errores.
+support:
+  description: Ampliamente disponible desde JDK 8 (marzo 2014)

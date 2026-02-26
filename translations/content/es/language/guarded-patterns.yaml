@@ -1,0 +1,19 @@
+---
+title: Patrones con guardas when
+oldApproach: if anidado
+modernApproach: Cláusula when
+summary: Añade condiciones a los casos de un patrón usando guardas when.
+explanation: "Los patrones con guardas permiten refinar una coincidencia de tipo con una condición booleana adicional. Esto\
+  \ mantiene toda la lógica de ramificación dentro del switch en lugar de anidar sentencias if dentro de los casos."
+whyModernWins:
+- icon: 🎯
+  title: Coincidencia precisa
+  desc: Combina tipo + condición en una sola etiqueta de caso.
+- icon: 📐
+  title: Estructura plana
+  desc: Sin if/else anidados dentro de los casos del switch.
+- icon: 📖
+  title: Intención legible
+  desc: La cláusula when se lee como lenguaje natural.
+support:
+  description: Ampliamente disponible desde JDK 21 LTS (sept. 2023)

@@ -1,0 +1,23 @@
+title: Interfaz RandomGenerator
+oldApproach: new Random() / ThreadLocalRandom
+modernApproach: Factoría RandomGenerator
+summary: Usa la interfaz RandomGenerator para elegir algoritmos de números aleatorios
+  por nombre sin acoplarse a una clase específica.
+explanation: JDK 17 introdujo RandomGenerator como interfaz común para todas las implementaciones
+  de generadores de números aleatorios. En lugar de codificar new Random() o ThreadLocalRandom,
+  puedes seleccionar algoritmos por nombre a través de una factoría, facilitando el
+  cambio entre algoritmos optimizados para diferentes casos de uso (velocidad, calidad
+  estadística, divisibilidad).
+whyModernWins:
+- icon: 🔧
+  title: Agnóstico al algoritmo
+  desc: Elige el mejor algoritmo de generación aleatoria por nombre sin cambiar la
+    estructura del código.
+- icon: ⚡
+  title: Mejores algoritmos
+  desc: Acceso a generadores LXM modernos con propiedades estadísticas superiores.
+- icon: 🔗
+  title: API unificada
+  desc: Una interfaz cubre Random, ThreadLocalRandom, SplittableRandom y más.
+support:
+  description: Disponible desde JDK 17 (septiembre 2021, JEP 356).

@@ -1,0 +1,17 @@
+title: Objects.requireNonNullElse()
+oldApproach: Verificación ternaria de null
+modernApproach: requireNonNullElse()
+summary: Obtén un valor no nulo con un valor por defecto claro, sin necesidad de operador ternario.
+explanation: requireNonNullElse devuelve el primer argumento si no es null, de lo contrario el segundo. El valor por defecto en sí no puede ser null — lanza NPE si ambos son null, detectando errores tempranamente.
+whyModernWins:
+- icon: 📖
+  title: Intención clara
+  desc: El nombre del método describe exactamente lo que hace.
+- icon: 🛡️
+  title: Valor por defecto seguro
+  desc: El valor por defecto también se verifica que no sea null.
+- icon: 📏
+  title: Legible
+  desc: Mejor que el operador ternario para lógica simple de null o valor por defecto.
+support:
+  description: Ampliamente disponible desde JDK 9 (septiembre de 2017)

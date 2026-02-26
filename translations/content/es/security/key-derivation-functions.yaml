@@ -1,0 +1,19 @@
+title: Funciones de derivación de claves
+oldApproach: PBKDF2 manual
+modernApproach: API KDF
+summary: Deriva claves criptográficas usando la API estándar KDF.
+explanation: La API KDF proporciona una interfaz estándar para funciones de derivación
+  de claves incluyendo HKDF. Reemplaza el incómodo patrón SecretKeyFactory + PBEKeySpec
+  con una API limpia basada en builder.
+whyModernWins:
+- icon: 📐
+  title: API limpia
+  desc: Patrón builder en lugar de constructores incómodos de KeySpec.
+- icon: 🔧
+  title: Soporte HKDF
+  desc: Algoritmo HKDF moderno junto con PBKDF2.
+- icon: 🛡️
+  title: Estándar
+  desc: API unificada para todos los algoritmos de derivación de claves.
+support:
+  description: Finalizado en JDK 25 LTS (JEP 510, sept. 2025).
