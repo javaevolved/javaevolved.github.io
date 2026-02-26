@@ -1,0 +1,19 @@
+title: Valores estáveis
+oldApproach: Double-Checked Locking
+modernApproach: StableValue
+summary: Inicialização lazy thread-safe sem volatile ou synchronized.
+explanation: StableValue fornece um valor inicializado de forma lazy, imutável e com
+  segurança de threads integrada. Sem double-checked locking, sem campos volatile,
+  sem blocos synchronized. A JVM pode até otimizar o caminho de leitura após a inicialização.
+whyModernWins:
+- icon: "🧹"
+  title: Zero boilerplate
+  desc: Sem volatile, synchronized ou verificações de null.
+- icon: "⚡"
+  title: Otimizado pela JVM
+  desc: A JVM pode consolidar o valor após a inicialização.
+- icon: "🛡️"
+  title: Garantia de execução única
+  desc: O supplier executa exatamente uma vez, mesmo sob contenção.
+support:
+  description: "Preview no JDK 25 (JEP 502). Requer --enable-preview."

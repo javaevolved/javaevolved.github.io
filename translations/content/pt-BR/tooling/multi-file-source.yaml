@@ -1,0 +1,20 @@
+title: Launcher de múltiplos arquivos-fonte
+oldApproach: Compilar tudo primeiro
+modernApproach: Source Launcher
+summary: Execute programas com múltiplos arquivos sem uma etapa explícita de compilação.
+explanation: O Java 22+ pode compilar automaticamente arquivos-fonte referenciados
+  ao executar a partir de um arquivo .java. Isso torna programas pequenos com múltiplos
+  arquivos tão fáceis de executar quanto scripts, sem precisar do Maven ou Gradle.
+whyModernWins:
+- icon: "🚀"
+  title: Zero configuração
+  desc: Nenhuma ferramenta de build necessária para pequenos programas com múltiplos
+    arquivos.
+- icon: "🔗"
+  title: Resolução automática
+  desc: Classes referenciadas são encontradas e compiladas automaticamente.
+- icon: "📝"
+  title: Como um script
+  desc: Execute programas com múltiplos arquivos como scripts.
+support:
+  description: Disponível desde o JDK 22 (março de 2024)

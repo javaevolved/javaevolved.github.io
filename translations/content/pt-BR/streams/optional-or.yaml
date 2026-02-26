@@ -1,0 +1,19 @@
+title: Fallback com Optional.or()
+oldApproach: Fallback aninhado
+modernApproach: "Encadeamento com .or()"
+summary: Encadeie fallbacks de Optional sem verificações aninhadas.
+explanation: Optional.or() retorna o Optional original se contiver um valor, caso contrário
+  avalia o supplier para obter um Optional alternativo. Os suppliers são lazy — só
+  são chamados quando necessário.
+whyModernWins:
+- icon: "🔗"
+  title: Encadeável
+  desc: Empilhe fallbacks em um pipeline legível.
+- icon: "⚡"
+  title: Avaliação lazy
+  desc: Os suppliers de fallback só executam quando necessário.
+- icon: "📖"
+  title: Declarativo
+  desc: "Lê-se como 'tente primário, ou secundário, ou padrão'."
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

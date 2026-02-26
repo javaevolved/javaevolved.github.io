@@ -1,0 +1,21 @@
+title: Métodos estáticos em interfaces
+oldApproach: Classes utilitárias
+modernApproach: Métodos estáticos na interface
+summary: Adicione métodos utilitários estáticos diretamente em interfaces em vez de
+  classes utilitárias separadas.
+explanation: "Antes do Java 8, métodos utilitários relacionados a uma interface precisavam\
+  \ ficar em uma classe separada (ex.: Collections para Collection). Métodos estáticos\
+  \ em interfaces permitem manter utilitários relacionados juntos. Comum em APIs modernas\
+  \ como Comparator.comparing(), Stream.of() e List.of()."
+whyModernWins:
+- icon: "📦"
+  title: Melhor organização
+  desc: Mantenha utilitários relacionados na interface, não em uma classe separada.
+- icon: "🔍"
+  title: Descobribilidade
+  desc: Métodos factory e auxiliares são encontrados onde se espera.
+- icon: "🧩"
+  title: Coesão da API
+  desc: Sem necessidade de classes *Utils ou *Helper separadas.
+support:
+  description: Disponível desde o JDK 8 (março de 2014)

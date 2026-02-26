@@ -1,0 +1,19 @@
+title: Record patterns (desestruturação)
+oldApproach: Acesso manual
+modernApproach: Desestruturação
+summary: Desestruture records diretamente em padrões — extraia campos em um único passo.
+explanation: Record patterns permitem decompor os componentes de um record diretamente
+  em instanceof e switch. Padrões aninhados também são suportados, possibilitando correspondência
+  profunda sem variáveis intermediárias.
+whyModernWins:
+- icon: "🎯"
+  title: Extração direta
+  desc: Acesse componentes do record sem chamar acessores manualmente.
+- icon: "🪆"
+  title: Aninhável
+  desc: Padrões podem ser aninhados — corresponda records internos em uma única expressão.
+- icon: "📏"
+  title: Código compacto
+  desc: Cinco linhas viram duas — menos cerimônia, mesma clareza.
+support:
+  description: Amplamente disponível desde o JDK 21 LTS (set 2023)

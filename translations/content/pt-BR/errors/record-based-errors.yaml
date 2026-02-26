@@ -1,0 +1,19 @@
+title: Respostas de erro baseadas em records
+oldApproach: Map ou classe verbosa
+modernApproach: Records de erro
+summary: Use records para tipos de resposta de erro concisos e imutáveis.
+explanation: Records são perfeitos para respostas de erro — são imutáveis, possuem
+  equals/hashCode integrados para comparação e toString para logging. Construtores
+  personalizados adicionam validação ou valores padrão.
+whyModernWins:
+- icon: "📏"
+  title: Conciso
+  desc: Defina tipos de erro em 3 linhas em vez de 30.
+- icon: "🔒"
+  title: Imutável
+  desc: Os dados de erro não podem ser modificados acidentalmente após a criação.
+- icon: "📋"
+  title: toString automático
+  desc: Perfeito para logging — exibe todos os campos automaticamente.
+support:
+  description: Amplamente disponível desde o JDK 16 (março de 2021)

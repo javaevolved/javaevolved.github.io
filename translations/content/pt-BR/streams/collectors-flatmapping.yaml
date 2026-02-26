@@ -1,0 +1,19 @@
+title: Collectors.flatMapping()
+oldApproach: flatMap aninhado
+modernApproach: flatMapping()
+summary: Use flatMapping() para achatar elementos dentro de um collector de agrupamento.
+explanation: Collectors.flatMapping() aplica um mapeamento de um-para-muitos como
+  um collector downstream. É o equivalente em collector do Stream.flatMap() — útil
+  dentro de groupingBy ou partitioningBy.
+whyModernWins:
+- icon: "🧩"
+  title: Componível
+  desc: Funciona como collector downstream dentro de groupingBy.
+- icon: "📐"
+  title: Passagem única
+  desc: Achata e agrupa em uma única travessia do stream.
+- icon: "🔗"
+  title: Aninhável
+  desc: Combine com outros collectors downstream.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

@@ -1,0 +1,19 @@
+title: Math.clamp()
+oldApproach: min/max aninhados
+modernApproach: Math.clamp()
+summary: Limite um valor entre extremos com uma única chamada clara.
+explanation: Math.clamp(value, min, max) restringe um valor ao intervalo [min, max].
+  Mais claro que Math.min/Math.max aninhados e disponível para int, long, float e
+  double.
+whyModernWins:
+- icon: "📖"
+  title: Autodocumentado
+  desc: clamp(value, min, max) é inequívoco.
+- icon: "🛡️"
+  title: Menos propenso a erros
+  desc: Sem mais inversão acidental da ordem de min/max.
+- icon: "🎯"
+  title: Todos os tipos numéricos
+  desc: Funciona com int, long, float e double.
+support:
+  description: Amplamente disponível desde o JDK 21 LTS (setembro de 2023)

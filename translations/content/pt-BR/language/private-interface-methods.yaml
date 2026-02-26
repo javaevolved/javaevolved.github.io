@@ -1,0 +1,19 @@
+title: Métodos privados em interfaces
+oldApproach: Lógica duplicada
+modernApproach: Métodos privados
+summary: Extraia lógica compartilhada em interfaces usando métodos privados.
+explanation: O Java 9 permite métodos privados em interfaces, possibilitando compartilhar
+  código entre métodos default sem expor detalhes de implementação às classes que implementam
+  a interface.
+whyModernWins:
+- icon: "🧩"
+  title: Reuso de código
+  desc: Compartilhe lógica entre métodos default sem duplicação.
+- icon: "🔐"
+  title: Encapsulamento
+  desc: Detalhes de implementação ficam ocultos das classes que implementam a interface.
+- icon: "🧹"
+  title: Interfaces DRY
+  desc: Chega de copiar e colar entre métodos default.
+support:
+  description: Amplamente disponível desde o JDK 9 (set 2017)

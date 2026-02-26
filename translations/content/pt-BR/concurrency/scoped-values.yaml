@@ -1,0 +1,20 @@
+title: Valores com escopo
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: Compartilhe dados entre pilhas de chamadas com segurança, sem as armadilhas
+  do ThreadLocal.
+explanation: ScopedValue fornece contexto imutável, herdável e limitado ao escopo.
+  Diferente de ThreadLocal, valores com escopo são automaticamente limpos, funcionam
+  com virtual threads e não podem ser alterados pelos chamados.
+whyModernWins:
+- icon: "🔒"
+  title: Imutável
+  desc: Os chamados podem ler, mas nunca modificar o valor com escopo.
+- icon: "🧹"
+  title: Limpeza automática
+  desc: Sem remove() manual — o valor é limitado ao bloco.
+- icon: "⚡"
+  title: Seguro para virtual threads
+  desc: Funciona eficientemente com milhões de virtual threads.
+support:
+  description: Finalizado no JDK 25 LTS (JEP 506, setembro de 2025).

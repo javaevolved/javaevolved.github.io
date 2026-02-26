@@ -1,0 +1,22 @@
+title: Membros estáticos em classes internas
+oldApproach: Necessário usar classe aninhada estática
+modernApproach: Membros estáticos em classes internas
+summary: Defina membros estáticos em classes internas sem precisar de classes aninhadas
+  estáticas.
+explanation: Antes do Java 16, apenas classes aninhadas estáticas podiam conter membros
+  estáticos. Classes internas (não estáticas) não podiam ter estáticos porque exigiam
+  uma instância envolvente. O Java 16 flexibiliza essa restrição, permitindo campos
+  estáticos, métodos e até tipos aninhados em classes internas.
+whyModernWins:
+- icon: "🔓"
+  title: Mais flexibilidade
+  desc: Classes internas agora podem ter membros estáticos quando necessário.
+- icon: "🧩"
+  title: Estado compartilhado
+  desc: Rastreie estado compartilhado entre instâncias de uma classe interna.
+- icon: "📐"
+  title: Liberdade de design
+  desc: Não é preciso promover para classe aninhada estática só por causa de um campo
+    estático.
+support:
+  description: Amplamente disponível desde o JDK 16 (março de 2021)

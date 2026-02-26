@@ -1,0 +1,20 @@
+title: Headers de objeto compactos
+oldApproach: Headers de 128 bits
+modernApproach: Headers de 64 bits
+summary: Reduza o tamanho do header de objetos pela metade para melhor densidade de
+  memória e uso de cache.
+explanation: Headers de objeto compactos reduzem o overhead por objeto de 128 bits
+  para 64 bits em plataformas de 64 bits. Isso economiza memória e melhora a utilização
+  do cache, especialmente para aplicações com muitos objetos pequenos.
+whyModernWins:
+- icon: "📦"
+  title: Headers 50% menores
+  desc: 8 bytes em vez de 16 por objeto.
+- icon: "⚡"
+  title: Melhor uso de cache
+  desc: Mais objetos cabem nas linhas de cache da CPU.
+- icon: "📊"
+  title: Maior densidade
+  desc: Acomode mais objetos no mesmo tamanho de heap.
+support:
+  description: Finalizado no JDK 25 LTS (JEP 519, set 2025).

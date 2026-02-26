@@ -1,0 +1,20 @@
+title: Variáveis sem nome com _
+oldApproach: Variável não utilizada
+modernApproach: Placeholder _
+summary: Use _ para sinalizar intenção quando uma variável é intencionalmente não utilizada.
+explanation: Variáveis sem nome comunicam a leitores e ferramentas que um valor é deliberadamente
+  ignorado. Chega de convenções de nomes como 'ignored' ou 'unused', chega de avisos
+  da IDE.
+whyModernWins:
+- icon: "📢"
+  title: Intenção clara
+  desc: "_ diz explicitamente 'este valor não é necessário aqui'."
+- icon: "🔇"
+  title: Sem avisos
+  desc: IDEs e linters não sinalizarão variáveis intencionalmente não utilizadas.
+- icon: "🧹"
+  title: Lambdas mais limpas
+  desc: Lambdas com múltiplos parâmetros ficam mais limpas quando você só precisa de
+    alguns.
+support:
+  description: Finalizado no JDK 22 (JEP 456, março de 2024).

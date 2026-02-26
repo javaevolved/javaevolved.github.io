@@ -1,0 +1,20 @@
+title: Text blocks para strings multilinha
+oldApproach: Concatenação de strings
+modernApproach: Text blocks
+summary: Escreva strings multilinha naturalmente com text blocks de aspas triplas.
+explanation: Text blocks permitem escrever strings multilinha exatamente como elas aparecem.
+  Chega de escapar aspas ou adicionar \n. O compilador remove a indentação acidental
+  automaticamente.
+whyModernWins:
+- icon: "📖"
+  title: Legível como está
+  desc: JSON, SQL e HTML parecem JSON, SQL e HTML reais no seu código-fonte.
+- icon: "🚫"
+  title: Sem inferno de escape
+  desc: Aspas embutidas não precisam de escape com barra invertida.
+- icon: "📐"
+  title: Indentação inteligente
+  desc: Espaços em branco iniciais são removidos automaticamente com base na posição
+    do delimitador de fechamento.
+support:
+  description: Amplamente disponível desde o JDK 15 (set 2020)

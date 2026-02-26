@@ -1,0 +1,24 @@
+title: Servlet versus JAX-RS
+oldApproach: HttpServlet
+modernApproach: JAX-RS Resource
+summary: Substitua o boilerplate verboso de HttpServlet por classes de recurso JAX-RS
+  declarativas.
+explanation: JAX-RS (Jakarta RESTful Web Services) permite expor endpoints REST usando
+  anotações simples como @GET, @Path e @Produces. Sem mais parsing manual de parâmetros
+  de requisição ou definição de content types na resposta — o runtime cuida do marshalling
+  e do roteamento automaticamente.
+whyModernWins:
+- icon: "📐"
+  title: Roteamento declarativo
+  desc: Anotações definem método HTTP, caminho e content type em vez de dispatch imperativo
+    com if/else.
+- icon: "🔄"
+  title: Marshalling automático
+  desc: Retorne POJOs diretamente; o runtime os serializa para JSON ou XML com base
+    em @Produces.
+- icon: "🧪"
+  title: Testes mais fáceis
+  desc: Classes de recurso são objetos Java simples, testáveis sem um container de
+    servlets.
+support:
+  description: Amplamente disponível desde o Jakarta EE 8 / Java 11

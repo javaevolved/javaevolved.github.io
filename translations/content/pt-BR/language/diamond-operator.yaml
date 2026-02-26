@@ -1,0 +1,19 @@
+title: Diamond com classes anônimas
+oldApproach: Repetir argumentos de tipo
+modernApproach: Diamond <>
+summary: O operador diamond agora funciona também com classes anônimas.
+explanation: O Java 7 introduziu o <>, mas ele não funcionava com classes internas anônimas.
+  O Java 9 corrigiu isso, então você nunca mais precisa repetir argumentos de tipo
+  no lado direito.
+whyModernWins:
+- icon: "📏"
+  title: Regras consistentes
+  desc: O diamond funciona em todos os lugares — construtores e classes anônimas.
+- icon: "🧹"
+  title: Menos redundância
+  desc: Argumentos de tipo são declarados uma vez à esquerda, nunca repetidos.
+- icon: "🔧"
+  title: Princípio DRY
+  desc: O compilador já sabe o tipo — por que escrevê-lo duas vezes?
+support:
+  description: Diamond com classes anônimas desde o JDK 9 (set 2017).

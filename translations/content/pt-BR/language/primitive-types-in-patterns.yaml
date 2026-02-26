@@ -1,0 +1,20 @@
+title: Tipos primitivos em padrões
+oldApproach: Verificações manuais de faixa
+modernApproach: Padrões primitivos
+summary: O pattern matching agora funciona com tipos primitivos, não apenas objetos.
+explanation: O Java 25 estende o pattern matching para tipos primitivos. Você pode usar
+  int, long, double etc. em padrões de switch com guardas when, eliminando a necessidade
+  de boxing ou verificações manuais de faixa.
+whyModernWins:
+- icon: "📦"
+  title: Sem boxing
+  desc: Faça correspondência de primitivos diretamente — sem necessidade do wrapper
+    Integer.
+- icon: "🎯"
+  title: Consistência de padrões
+  desc: Mesma sintaxe de padrões para objetos e primitivos.
+- icon: "⚡"
+  title: Melhor desempenho
+  desc: Evite o overhead de autoboxing no pattern matching.
+support:
+  description: Preview no JDK 25 (terceiro preview, JEP 507). Requer --enable-preview.

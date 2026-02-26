@@ -1,0 +1,19 @@
+title: Executor com virtual threads
+oldApproach: Pool fixo de threads
+modernApproach: Virtual Thread Executor
+summary: Use executors de virtual threads para concorrência leve e ilimitada.
+explanation: O executor de virtual threads cria uma nova virtual thread para cada tarefa.
+  Sem necessidade de dimensionar o pool — virtual threads são baratas o suficiente
+  para criar milhões delas.
+whyModernWins:
+- icon: "♾️"
+  title: Sem dimensionamento
+  desc: Sem tamanho de pool para ajustar — crie quantas threads precisar.
+- icon: "⚡"
+  title: Leve
+  desc: Virtual threads usam KB de memória, não MB.
+- icon: "🧹"
+  title: Auto-closeable
+  desc: try-with-resources gerencia o encerramento automaticamente.
+support:
+  description: Amplamente disponível desde o JDK 21 LTS (setembro de 2023)

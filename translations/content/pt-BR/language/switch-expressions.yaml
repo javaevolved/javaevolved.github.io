@@ -1,0 +1,19 @@
+title: Expressões switch
+oldApproach: Instrução switch
+modernApproach: Expressão switch
+summary: Switch como expressão que retorna um valor — sem break, sem fall-through.
+explanation: Expressões switch retornam um valor diretamente, usam sintaxe de seta para
+  evitar bugs de fall-through, e o compilador verifica a exaustividade. Isso substitui
+  a forma de instrução propensa a erros.
+whyModernWins:
+- icon: "🎯"
+  title: Retorna um valor
+  desc: Atribua o resultado do switch diretamente — sem variável temporária necessária.
+- icon: "🛡️"
+  title: Sem fall-through
+  desc: A sintaxe de seta elimina bugs acidentais de fall-through por break esquecido.
+- icon: "✅"
+  title: Verificação de exaustividade
+  desc: O compilador garante que todos os casos estão cobertos.
+support:
+  description: Amplamente disponível desde o JDK 14 (março de 2020)
