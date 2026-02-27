@@ -1,6 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //JAVA 25+
-//DEPS org.junit.jupiter:junit-jupiter-api:5.11.4
+//DEPS org.junit.jupiter:junit-jupiter-api:6.0.3
 //DEPS org.jspecify:jspecify:1.0.0
 
 import org.junit.jupiter.api.Test;
