@@ -18,7 +18,7 @@ oldCode: |-
   }
 modernCode: |-
   if (obj instanceof Point(int x, int y)) {
-      System.out.println(x + y);
+      IO.println(x + y);
   }
 summary: "Destructure records directly in patterns — extract fields in one step."
 explanation: "Record patterns let you decompose a record's components directly in\

@@ -16,7 +16,7 @@ oldCode: |-
   }
 modernCode: |-
   if (obj instanceof String s) {
-      System.out.println(s.length());
+      IO.println(s.length());
   }
 summary: "Combine type check and cast in one step with pattern matching."
 explanation: "Pattern matching for instanceof eliminates the redundant cast after\

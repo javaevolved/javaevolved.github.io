@@ -19,7 +19,7 @@ modernCode: |-
       this::fetchData
   )
   .thenApply(this::transform)
-  .thenAccept(System.out::println);
+  .thenAccept(IO::println);
 summary: "Chain async operations without blocking, using CompletableFuture."
 explanation: "CompletableFuture enables non-blocking async pipelines. Chain operations\
   \ with thenApply, thenCompose, thenAccept. Handle errors with exceptionally(). Combine\

@@ -26,10 +26,10 @@ modernCode: |-
           return "[" + lvl + "] " + timestamp() + msg;
       }
       default void logInfo(String msg) {
-          System.out.println(format("INFO", msg));
+          IO.println(format("INFO", msg));
       }
       default void logWarn(String msg) {
-          System.out.println(format("WARN", msg));
+          IO.println(format("WARN", msg));
       }
   }
 summary: "Extract shared logic in interfaces using private methods."

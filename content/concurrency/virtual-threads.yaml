@@ -17,7 +17,7 @@ oldCode: |-
   thread.join();
 modernCode: |-
   Thread.startVirtualThread(() -> {
-      System.out.println("hello");
+      IO.println("hello");
   }).join();
 summary: "Create millions of lightweight virtual threads instead of heavy OS threads."
 explanation: "Virtual threads are lightweight threads managed by the JVM, not the\

@@ -17,7 +17,7 @@ oldCode: |-
   }
 modernCode: |-
   String text = "one\ntwo\nthree";
-  text.lines().forEach(System.out::println);
+  text.lines().forEach(IO::println);
 summary: "Use String.lines() to split text into a stream of lines without regex overhead."
 explanation: "String.lines() returns a Stream<String> of lines split by \\n, \\r,\
   \ or \\r\\n. It is lazier and more efficient than split(), avoids regex compilation,\

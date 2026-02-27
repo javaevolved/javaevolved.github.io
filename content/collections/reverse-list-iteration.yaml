@@ -18,7 +18,7 @@ oldCode: |-
   }
 modernCode: |-
   for (String element : list.reversed()) {
-      System.out.println(element);
+      IO.println(element);
   }
 summary: "Iterate over a list in reverse order with a clean for-each loop."
 explanation: "The reversed() method from SequencedCollection returns a reverse-ordered\

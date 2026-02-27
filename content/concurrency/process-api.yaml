@@ -20,9 +20,9 @@ modernCode: |-
       ProcessHandle.current();
   long pid = ph.pid();
   ph.info().command()
-      .ifPresent(System.out::println);
+      .ifPresent(IO::println);
   ph.children().forEach(
-      c -> System.out.println(c.pid()));
+      c -> IO.println(c.pid()));
 summary: "Inspect and manage OS processes with ProcessHandle."
 explanation: "ProcessHandle provides PIDs, process info (command, arguments, start\
   \ time, CPU usage), parent/child relationships, and process destruction. No more\

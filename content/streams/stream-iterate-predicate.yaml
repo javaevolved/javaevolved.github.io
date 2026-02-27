@@ -19,7 +19,7 @@ modernCode: |-
       1,
       n -> n < 1000,
       n -> n * 2
-  ).forEach(System.out::println);
+  ).forEach(IO::println);
   // stops when n >= 1000
 summary: "Use a predicate to stop iteration — like a for-loop in stream form."
 explanation: "The three-argument Stream.iterate(seed, hasNext, next) works like a\
