@@ -56,5 +56,5 @@ proofCode: |-
         "age": 30
       }""";
   if (!json.contains("Duke")) throw new AssertionError("text block content missing");
-  if (json.contains("\\n")) throw new AssertionError("should not contain literal \\n");
+  if (!json.contains("\n")) throw new AssertionError("text block should contain real newlines");
   IO.println("text blocks: OK");
