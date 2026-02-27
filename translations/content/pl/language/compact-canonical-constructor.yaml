@@ -1,0 +1,17 @@
+title: Zwarty konstruktor kanoniczny
+oldApproach: Jawna walidacja w konstruktorze
+modernApproach: Konstruktor zwarty
+summary: Waliduj i normalizuj pola rekordów bez powtarzania listy parametrów.
+explanation: Rekordy mogą definiować zwarty konstruktor kanoniczny bez listy parametrów i bez ręcznych przypisań pól. Kompilator automatycznie przypisze parametry do pól po wykonaniu logiki walidacji. To idealne miejsce na preconditions, defensywne kopie i normalizację.
+whyModernWins:
+  - icon: ✂️
+    title: Mniej powtórzeń
+    desc: Nie musisz powtarzać parametrów ani ręcznie przypisywać każdego pola.
+  - icon: 🛡️
+    title: Walidacja
+    desc: Świetne miejsce na null checki, walidację zakresu i defensywne kopie.
+  - icon: 📖
+    title: Czytelniejsza intencja
+    desc: Zwarta składnia podkreśla walidację zamiast boilerplate.
+support:
+  description: Szeroko dostępne od JDK 16 (marzec 2021)

@@ -1,0 +1,17 @@
+title: Pomocne NullPointerException
+oldApproach: Nieczytelny NPE
+modernApproach: Szczegółowy NPE
+summary: JVM automatycznie wskazuje dokładnie, która zmienna miała wartość null.
+explanation: Helpful NPE opisuje, które wyrażenie było null i jaka operacja się nie powiodła. Od Java 14 jest to domyślnie włączone, bez zmian w kodzie, wystarczy nowsze JDK.
+whyModernWins:
+  - icon: 🔍
+    title: Dokładna zmienna
+    desc: Komunikat wskazuje konkretną zmienną null w łańcuchu wywołań.
+  - icon: ⚡
+    title: Szybsze debugowanie
+    desc: Koniec zgadywania, które z wielu wywołań zwróciło null.
+  - icon: 🆓
+    title: Darmowe usprawnienie
+    desc: Bez zmian w kodzie, po prostu uruchamiasz na JDK 14+.
+support:
+  description: Szeroko dostępne od JDK 14 (marzec 2020)

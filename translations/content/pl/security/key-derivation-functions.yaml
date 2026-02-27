@@ -1,0 +1,17 @@
+title: Funkcje wyprowadzania kluczy
+oldApproach: Ręczne PBKDF2
+modernApproach: API KDF
+summary: Wyprowadzaj klucze kryptograficzne przez standardowe API KDF.
+explanation: API KDF udostępnia standardowy interfejs do funkcji wyprowadzania kluczy, w tym HKDF. Zastępuje nieporęczny wzorzec SecretKeyFactory + PBEKeySpec czytelnym API opartym o builder.
+whyModernWins:
+  - icon: 📐
+    title: Czyste API
+    desc: Wzorzec builder zamiast nieporęcznych konstruktorów KeySpec.
+  - icon: 🔧
+    title: Obsługa HKDF
+    desc: Nowoczesny HKDF obok PBKDF2.
+  - icon: 🛡️
+    title: Standard
+    desc: Jednolite API dla różnych algorytmów wyprowadzania kluczy.
+support:
+  description: Ustabilizowane w JDK 25 LTS (JEP 510, wrzesień 2025)

@@ -1,0 +1,17 @@
+title: Collectors.teeing()
+oldApproach: Dwa przebiegi
+modernApproach: teeing()
+summary: Oblicz dwa agregaty w jednym przebiegu strumienia.
+explanation: Collectors.teeing() przekazuje każdy element do dwóch kolektorów downstream i scala wyniki. Dzięki temu nie trzeba przetwarzać danych dwa razy ani używać mutowalnego akumulatora.
+whyModernWins:
+  - icon: ⚡
+    title: Jeden przebieg
+    desc: Przetwarzasz strumień raz zamiast dwa razy.
+  - icon: 🧩
+    title: Kompozycyjność
+    desc: Możesz połączyć dowolne dwa kolektory funkcją scalającą.
+  - icon: 🔒
+    title: Niemutowalny wynik
+    desc: Wynik można od razu scalić do rekordu lub obiektu wartości.
+support:
+  description: Szeroko dostępne od JDK 12 (marzec 2019)

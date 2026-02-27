@@ -1,0 +1,17 @@
+title: Collectors.flatMapping()
+oldApproach: Zagnieżdżone flatMap
+modernApproach: flatMapping()
+summary: Użyj flatMapping() do spłaszczania wewnątrz kolektora grupującego.
+explanation: Collectors.flatMapping() stosuje mapowanie one-to-many jako kolektor downstream. To odpowiednik Stream.flatMap() po stronie kolektorów, przydatny np. wewnątrz groupingBy lub partitioningBy.
+whyModernWins:
+  - icon: 🧩
+    title: Kompozycyjność
+    desc: Działa jako kolektor downstream wewnątrz groupingBy.
+  - icon: 📐
+    title: Jeden przebieg
+    desc: Spłaszczanie i grupowanie wykonujesz w jednym przejściu strumienia.
+  - icon: 🔗
+    title: Zagnieżdżanie
+    desc: Łatwo łączysz z innymi kolektorami downstream.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

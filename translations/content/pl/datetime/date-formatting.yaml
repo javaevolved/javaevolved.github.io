@@ -1,0 +1,17 @@
+title: Formatowanie dat
+oldApproach: SimpleDateFormat
+modernApproach: DateTimeFormatter
+summary: Formatuj daty przez niezmienny i bezpieczny wątkowo DateTimeFormatter.
+explanation: DateTimeFormatter jest niemutowalny i bezpieczny wątkowo, w przeciwieństwie do SimpleDateFormat. Możesz przechowywać go jako stałą i współdzielić. Dla typowych formatów dostępne są gotowe formattery, np. ISO_LOCAL_DATE.
+whyModernWins:
+  - icon: 🛡️
+    title: Bezpieczeństwo wątkowe
+    desc: Możesz współdzielić formattery między wątkami bez synchronizacji.
+  - icon: 📋
+    title: Wbudowane formaty
+    desc: ISO_LOCAL_DATE, ISO_INSTANT i inne standardowe formaty.
+  - icon: 🔒
+    title: Niemutowalność
+    desc: Formatter można bezpiecznie trzymać jako static final.
+support:
+  description: Szeroko dostępne od JDK 8 (marzec 2014)

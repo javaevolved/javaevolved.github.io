@@ -54,7 +54,7 @@ Generated files (`site/category/*.html`, `site/{locale}/`, and `site/data/snippe
 
 ### Internationalization
 
-The site supports 9 languages: English, Deutsch, Español, Português (Brasil), 中文 (简体), العربية, Français, 日本語, and 한국어. See [`specs/i18n/i18n-spec.md`](specs/i18n/i18n-spec.md) for the full specification.
+The site supports 10 languages: English, Deutsch, Español, Português (Brasil), 中文 (简体), العربية, Français, 日本語, 한국어, and Polski. See [`specs/i18n/i18n-spec.md`](specs/i18n/i18n-spec.md) for the full specification.
 
 ## Build & run locally
 

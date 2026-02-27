@@ -1,0 +1,17 @@
+title: AOT preloading klas
+oldApproach: Zimny start za każdym razem
+modernApproach: AOT Cache
+summary: Buforuj ładowanie klas i kompilację, aby uzyskać szybszy start aplikacji.
+explanation: AOT class preloading buforuje załadowane i zlinkowane klasy z przebiegu treningowego. Przy kolejnych uruchomieniach klasy są ładowane z cache, z pominięciem weryfikacji i linkowania. W połączeniu z kompilacją AOT znacząco skraca to czas startu.
+whyModernWins:
+  - icon: ⚡
+    title: Szybszy start
+    desc: Pomijasz ładowanie klas, weryfikację i linkowanie.
+  - icon: 📦
+    title: Stan w cache
+    desc: Przebieg treningowy zapisuje optymalny stan klas.
+  - icon: 🔧
+    title: Bez zmian w kodzie
+    desc: Działa z istniejącymi aplikacjami, wystarczy dodać flagi JVM.
+support:
+  description: Dostępne jako standardowa funkcja w JDK 25 LTS (JEP 514/515, wrzesień 2025)

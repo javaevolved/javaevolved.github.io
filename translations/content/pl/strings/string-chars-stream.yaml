@@ -1,0 +1,17 @@
+title: Znaki String jako strumień
+oldApproach: Ręczna pętla
+modernApproach: chars() Stream
+summary: Przetwarzaj znaki Stringa jako pipeline strumieniowy.
+explanation: String.chars() zwraca IntStream wartości znaków i umożliwia funkcyjne przetwarzanie. Dla pełnego wsparcia Unicode użyj codePoints(), które poprawnie obsługuje znaki uzupełniające.
+whyModernWins:
+  - icon: 🔗
+    title: Łańcuchowanie
+    desc: Możesz używać filter, map i collect na strumieniach znaków.
+  - icon: 📐
+    title: Deklaratywność
+    desc: Opisujesz co chcesz zrobić, a nie jak iterować.
+  - icon: 🌐
+    title: Gotowość na Unicode
+    desc: codePoints() poprawnie obsługuje emoji i znaki uzupełniające.
+support:
+  description: Dostępne od JDK 8+ (ulepszone w 9+)
