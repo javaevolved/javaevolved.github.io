@@ -51,12 +51,3 @@ docs:
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalTime.html"
 - title: "LocalDateTime"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDateTime.html"
-proofCode: |-
-  import java.time.*;
-  var date = LocalDate.of(2025, Month.JANUARY, 15);
-  var time = LocalTime.of(14, 30);
-  if (date.getMonthValue() != 1) throw new AssertionError("expected January=1, got: " + date.getMonthValue());
-  if (time.getHour() != 14) throw new AssertionError("expected hour=14, got: " + time.getHour());
-  var now = Instant.now();
-  if (now == null) throw new AssertionError("Instant.now() returned null");
-  IO.println("java.time basics: OK - " + date + " " + time);

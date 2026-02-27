@@ -122,7 +122,7 @@ static Map<String, String> loadStrings(String locale) throws IOException {
     return merged;
 }
 
-static final Set<String> EXCLUDED_KEYS = Set.of("_path", "prev", "next", "related", "proofCode");
+static final Set<String> EXCLUDED_KEYS = Set.of("_path", "prev", "next", "related");
 
 record Snippet(JsonNode node) {
     String get(String f)    { return node.get(f).asText(); }

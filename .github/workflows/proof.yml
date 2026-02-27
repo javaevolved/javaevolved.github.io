@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'content/**'
+      - 'proof/**'
       - 'html-generators/proof.java'
       - '.github/workflows/proof.yml'
   pull_request:
     paths:
-      - 'content/**'
+      - 'proof/**'
       - 'html-generators/proof.java'
   workflow_dispatch:
 

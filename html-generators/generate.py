@@ -25,7 +25,7 @@ GITHUB_ISSUES_URL = "https://github.com/javaevolved/javaevolved.github.io/issues
 
 TOKEN_RE = re.compile(r"\{\{([\w.]+)\}\}")
 
-EXCLUDED_KEYS = {"_path", "prev", "next", "related", "proofCode"}
+EXCLUDED_KEYS = {"_path", "prev", "next", "related"}
 
 TRANSLATABLE_FIELDS = {
     "title", "summary", "explanation", "oldApproach", "modernApproach",

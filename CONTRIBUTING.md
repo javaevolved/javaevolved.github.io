@@ -9,7 +9,7 @@ Contributions are welcome! Content is managed as YAML files — never edit gener
 3. Copy [`content/template.json`](content/template.json) as a starting point for all required fields (see the [snippet schema](.github/copilot-instructions.md) for details)
 4. Update the `prev`/`next` fields in adjacent pattern files to maintain navigation
 5. Run `jbang html-generators/generate.java` to verify your changes build correctly
-6. Optionally add a `proofCode` field — a self-contained JShell snippet that proves the modern approach works. Run `jbang html-generators/proof.java` to validate it.
+6. Add a proof script at `proof/<category>/SlugName.java` that uses the modern approach and run `jbang html-generators/proof.java` to verify it passes
 7. Open a pull request
 
 Please ensure JDK version labels only reference the version where a feature became **final** (non-preview).

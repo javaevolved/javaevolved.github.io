@@ -49,6 +49,10 @@ Run `jbang html-generators/generate.java` to rebuild all generated files from th
 
 ```
 content/            # English content JSON files (source of truth, one per pattern)
+proof/              # Proof scripts — one JBang .java file per pattern, proving it compiles
+  language/         # e.g. proof/language/TypeInferenceWithVar.java
+  collections/      # e.g. proof/collections/ImmutableListCreation.java
+  ...               # mirrors content/ category structure
 translations/       # All i18n artifacts
   strings/          # UI strings per locale (en.yaml, es.yaml, pt-BR.yaml)
   content/          # Translated pattern files per locale (partial, translatable fields only)
@@ -100,8 +104,7 @@ Each `content/category/slug.json` file has this structure:
   ],
   "docs": [
     { "title": "Javadoc or Guide Title", "href": "https://docs.oracle.com/..." }
-  ],
-  "proofCode": "// Optional: self-contained JShell snippet proving the modern approach works.\n// Run with: jbang html-generators/proof.java"
+  ]
 }
 ```
 
@@ -139,7 +142,8 @@ Categories and their display names are defined in `html-generators/categories.pr
 1. Create `content/category/new-slug.json` with all required fields
 2. Update `prev`/`next` in the adjacent patterns' JSON files
 3. Run `jbang html-generators/generate.java`
-4. (Optional) Create translated content files under `translations/content/{locale}/category/new-slug.json` with only translatable fields — or let the AI translation workflow handle it
+4. Add a proof script at `proof/category/SlugName.java` (JBang, `//JAVA 25+`) — run `jbang html-generators/proof.java` to verify
+5. (Optional) Create translated content files under `translations/content/{locale}/category/new-slug.json` with only translatable fields — or let the AI translation workflow handle it
 
 ## Internationalization (i18n)
 

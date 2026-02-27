@@ -47,11 +47,3 @@ docs:
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#of()"
 - title: "Collections Factory Methods (JEP 269)"
   href: "https://openjdk.org/jeps/269"
-proofCode: |-
-  var list = List.of("a", "b", "c");
-  if (list.size() != 3) throw new AssertionError("expected 3 elements");
-  try {
-      list.add("d");
-      throw new AssertionError("should have thrown UnsupportedOperationException");
-  } catch (UnsupportedOperationException ok) {}
-  IO.println("immutable list: OK - " + list);
