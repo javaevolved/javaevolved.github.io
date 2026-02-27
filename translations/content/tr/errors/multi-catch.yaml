@@ -1,0 +1,18 @@
+---
+title: Çoklu istisna yakalama
+oldApproach: Ayrı Catch Blokları
+modernApproach: Çoklu catch
+summary: "Birden fazla istisna türünü tek bir catch bloğunda yakalayın."
+explanation: "Çoklu catch, aynı kodla birden fazla istisna türünü işler. İstisna değişkeni fiilen final olduğundan, sarmalamaya gerek kalmadan yeniden fırlatılabilir."
+whyModernWins:
+- icon: "📏"
+  title: "DRY"
+  desc: "Aynı işlem mantığı üç kez yerine bir kez yazılır."
+- icon: "🔄"
+  title: "Yeniden fırlatılabilir"
+  desc: "Yakalanan istisna, tam türüyle yeniden fırlatılabilir."
+- icon: "📖"
+  title: "Taranabilir"
+  desc: "Tüm işlenen türler tek bir yerde görünür."
+support:
+  description: JDK 7'den itibaren geniş çapta kullanılabilir (Temmuz 2011)

@@ -1,0 +1,18 @@
+---
+title: Seri duruma getirme filtreleri
+oldApproach: Her Şeyi Kabul Et
+modernApproach: ObjectInputFilter
+summary: "Saldırıları önlemek için hangi sınıfların seri durumdan çıkarılabileceğini kısıtlayın."
+explanation: "ObjectInputFilter, sınıfları izin listesine/reddetme listesine almanıza, nesne grafiği derinliğini, dizi boyutlarını ve referans sayılarını sınırlandırmanıza olanak tanır. Bu, harici kütüphaneler olmadan seri duruma getirme güvenlik açıklarına karşı koruma sağlar."
+whyModernWins:
+- icon: "🛡️"
+  title: "Güvenlik"
+  desc: "Beklenmedik/kötü niyetli sınıfların seri durumdan çıkarılmasını önleyin."
+- icon: "📐"
+  title: "İnce taneli"
+  desc: "Derinlik, dizi boyutu, referanslar ve sınıf örüntülerini kontrol edin."
+- icon: "🏗️"
+  title: "JVM genelinde"
+  desc: "JVM'deki tüm seri duruma getirme işlemleri için global filtre belirleyin."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

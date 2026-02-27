@@ -1,0 +1,18 @@
+---
+title: Varsayılan olarak TLS 1.3
+oldApproach: Manuel TLS Yapılandırması
+modernApproach: Varsayılan TLS 1.3
+summary: "TLS 1.3 varsayılan olarak etkindir — açık protokol yapılandırmasına gerek yoktur."
+explanation: "Java 11, TLS 1.3 desteğini ekledi ve onu tercih edilen protokol yaptı. HttpClient bunu otomatik olarak kullanır. Güvenli bağlantılar için artık protokol sürümlerini manuel olarak belirtmeye gerek yoktur."
+whyModernWins:
+- icon: "🛡️"
+  title: "Daha güvenli"
+  desc: "TLS 1.3, eski şifre paketlerini ve el sıkışma örüntülerini kaldırır."
+- icon: "⚡"
+  title: "Daha hızlı el sıkışma"
+  desc: "TLS 1.3, iki yerine tek bir gidip gelişte tamamlanır."
+- icon: "🆓"
+  title: "Sıfır yapılandırma"
+  desc: "Varsayılan olarak güvenli — açık protokol seçimine gerek yoktur."
+support:
+  description: JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)

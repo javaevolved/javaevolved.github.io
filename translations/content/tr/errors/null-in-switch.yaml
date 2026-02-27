@@ -1,0 +1,18 @@
+---
+title: Switch içinde null durumu
+oldApproach: Switch Öncesi Koruma
+modernApproach: case null
+summary: "null değerini doğrudan bir switch durumu olarak işleyin — ayrı koruma gerekmez."
+explanation: "Örüntü eşleştirme switch, null değerini bir durum etiketi olarak eşleştirebilir. Bu, switch öncesinde null kontrolüne olan ihtiyacı ortadan kaldırır ve null işlemeyi açık ve görünür kılar."
+whyModernWins:
+- icon: "🎯"
+  title: "Açık"
+  desc: "null işleme doğrudan switch içinde görünür."
+- icon: "🛡️"
+  title: "NPE yok"
+  desc: "null değer üzerinde switch, NullPointerException fırlatmaz."
+- icon: "📐"
+  title: "Hepsi bir arada"
+  desc: "null dahil tüm durumlar tek bir switch ifadesinde."
+support:
+  description: JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)

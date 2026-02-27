@@ -1,0 +1,18 @@
+---
+title: Optional zincirleme
+oldApproach: İç İçe Null Kontrolleri
+modernApproach: Optional Pipeline
+summary: "İç içe null kontrollerini Optional pipeline ile değiştirin."
+explanation: "Optional.map(), null değerler üzerinden kısa devre yaparak zincirleme sağlar. orElse() varsayılanı sağlar. Bu, piramit şeklindeki null kontrolünü ortadan kaldırır."
+whyModernWins:
+- icon: "🔗"
+  title: "Zincirlenebilir"
+  desc: "Her .map() adımı null'ı şeffaf biçimde işler."
+- icon: "📖"
+  title: "Doğrusal akış"
+  desc: "İç içe if blokları yerine soldan sağa okunur."
+- icon: "🛡️"
+  title: "NPE'ye karşı korumalı"
+  desc: "Her adımda null işlenir — çökme mümkün değildir."
+support:
+  description: JDK 8+'dan itibaren kullanılabilir (9+'da iyileştirildi)

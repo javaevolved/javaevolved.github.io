@@ -1,0 +1,18 @@
+---
+title: Dosya okuma
+oldApproach: BufferedReader
+modernApproach: Files.readString()
+summary: "Bir dosyanın tamamını tek satırla String'e okuyun."
+explanation: "Files.readString(), bir dosyanın tüm içeriğini String'e okur. Kodlamayı (varsayılan olarak UTF-8) ve kaynak temizliğini halleder. Büyük dosyalar için tembel akış amacıyla Files.lines() kullanın."
+whyModernWins:
+- icon: "📏"
+  title: "Tek satır"
+  desc: "8 satırlık BufferedReader şablon kodunun yerini alır."
+- icon: "🧹"
+  title: "Otomatik temizleme"
+  desc: "Dosya tanıtıcısı otomatik olarak kapatılır."
+- icon: "🌐"
+  title: "Varsayılan UTF-8"
+  desc: "Varsayılan olarak doğru kodlama — karakter kümesi karışıklığı yok."
+support:
+  description: JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)

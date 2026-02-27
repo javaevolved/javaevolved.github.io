@@ -1,0 +1,18 @@
+---
+title: PEM kodlama/çözme
+oldApproach: Manuel Base64 + Başlıklar
+modernApproach: PEM API
+summary: "Kriptografik nesneleri yerel olarak PEM formatında kodlayın ve çözün."
+explanation: "PEM API, sertifikalar, anahtarlar ve diğer kriptografik nesneler için PEM formatında standart kodlama/çözme sağlar. Artık BEGIN/END başlıklarıyla manuel Base64 sarmalamaya gerek yoktur."
+whyModernWins:
+- icon: "🧹"
+  title: "Manuel Base64 yok"
+  desc: "PEM başlıkları, satır sarmalama ve Base64 otomatik olarak işlenir."
+- icon: "🔄"
+  title: "İki yönlü"
+  desc: "Tek bir API ile PEM'e kodlama ve PEM'den çözme."
+- icon: "🛡️"
+  title: "Standart format"
+  desc: "RFC 7468 uyumlu PEM çıktısı üretir."
+support:
+  description: "JDK 25'te önizleme (JEP 470). --enable-preview gerektirir."

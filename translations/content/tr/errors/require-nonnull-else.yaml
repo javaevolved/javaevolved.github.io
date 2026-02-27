@@ -1,0 +1,18 @@
+---
+title: Objects.requireNonNullElse()
+oldApproach: Üçlü Null Kontrolü
+modernApproach: requireNonNullElse()
+summary: "Üçlü operatöre gerek kalmadan net bir varsayılanla null olmayan değer elde edin."
+explanation: "requireNonNullElse, ilk argüman null değilse onu döndürür, aksi takdirde ikinciyi döndürür. Varsayılanın kendisi null olamaz — her ikisi de null ise NPE fırlatarak hataları erken yakalar."
+whyModernWins:
+- icon: "📖"
+  title: "Net niyet"
+  desc: "Metod adı tam olarak ne yaptığını açıklar."
+- icon: "🛡️"
+  title: "Null güvenli varsayılan"
+  desc: "Varsayılan değer de null açısından kontrol edilir."
+- icon: "📏"
+  title: "Okunabilir"
+  desc: "Basit null-ya-da-varsayılan mantığı için üçlü operatörden daha iyidir."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

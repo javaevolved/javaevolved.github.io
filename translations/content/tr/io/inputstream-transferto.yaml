@@ -1,0 +1,18 @@
+---
+title: InputStream.transferTo()
+oldApproach: Manuel Kopyalama Döngüsü
+modernApproach: transferTo()
+summary: "Bir InputStream'i tek çağrıyla OutputStream'e kopyalayın."
+explanation: "transferTo(), giriş akışındaki tüm baytları okur ve çıkış akışına yazar. Tampon yönetimi veya döngü gerekmez. Optimize edilmiş bir iç tampon kullanır."
+whyModernWins:
+- icon: "📏"
+  title: "Tek satır"
+  desc: "Tüm okuma/yazma döngüsünü tek bir metod çağrısıyla değiştirin."
+- icon: "⚡"
+  title: "Optimize edilmiş"
+  desc: "İç tampon boyutu performans için ayarlanmıştır."
+- icon: "🛡️"
+  title: "Hata yok"
+  desc: "Tampon yönetiminde tek tek kayma hatası yoktur."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

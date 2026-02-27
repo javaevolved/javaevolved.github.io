@@ -1,0 +1,18 @@
+---
+title: Modern HTTP istemcisi
+oldApproach: HttpURLConnection
+modernApproach: HttpClient
+summary: "Temiz, modern HTTP istekleri için yerleşik HttpClient'ı kullanın."
+explanation: "HttpClient, HTTP/1.1 ve HTTP/2, asenkron istekler, WebSocket, özel executor'lar ve bağlantı havuzlamayı destekler. Artık URLConnection cast etmeye veya InputStream'leri manuel olarak okumaya gerek yoktur."
+whyModernWins:
+- icon: "📐"
+  title: "Builder API"
+  desc: "İstekler, başlıklar ve zaman aşımları için akıcı builder."
+- icon: "🔄"
+  title: "HTTP/2 desteği"
+  desc: "Çoklama ve sunucu push ile yerleşik HTTP/2."
+- icon: "⚡"
+  title: "Asenkrona hazır"
+  desc: "sendAsync(), CompletableFuture döndürür."
+support:
+  description: JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)

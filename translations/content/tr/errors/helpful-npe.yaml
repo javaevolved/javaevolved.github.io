@@ -1,0 +1,18 @@
+---
+title: Yardımcı NullPointerException'lar
+oldApproach: Belirsiz NPE
+modernApproach: Ayrıntılı NPE
+summary: "JVM, hangi değişkenin null olduğunu otomatik olarak tam olarak söyler."
+explanation: "Yardımcı NPE'ler hangi ifadenin null olduğunu ve hangi işlemin başarısız olduğunu açıklar. Bu özellik Java 14'ten itibaren varsayılan olarak etkindir — herhangi bir kod değişikliğine gerek yoktur, yalnızca JDK'yı yükseltin."
+whyModernWins:
+- icon: "🔍"
+  title: "Tam değişken"
+  desc: "Mesaj, zincirdeki null değişkeni adlandırır."
+- icon: "⚡"
+  title: "Daha hızlı hata ayıklama"
+  desc: "Zincirleme 5 çağrıdan hangisinin null olduğunu artık tahmin etmek gerekmez."
+- icon: "🆓"
+  title: "Ücretsiz yükseltme"
+  desc: "Kod değişikliği gerekmez — sadece JDK 14+ üzerinde çalıştırın."
+support:
+  description: JDK 14'ten itibaren geniş çapta kullanılabilir (Mart 2020)

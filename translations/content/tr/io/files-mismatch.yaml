@@ -1,0 +1,18 @@
+---
+title: Files.mismatch()
+oldApproach: Manuel Bayt Karşılaştırma
+modernApproach: Files.mismatch()
+summary: "İki dosyayı belleğe yüklemeden verimli biçimde karşılaştırın."
+explanation: "Files.mismatch(), farklılık gösteren ilk baytın konumunu döndürür veya dosyalar özdeşse -1 döndürür. Tembel okur ve ilk farklılıkta kısa devre yapar."
+whyModernWins:
+- icon: "⚡"
+  title: "Bellek verimli"
+  desc: "Dosyaların tamamını bayt dizilerine yüklemez."
+- icon: "🎯"
+  title: "Farkı tam olarak bulur"
+  desc: "İlk uyumsuzluğun tam bayt konumunu döndürür."
+- icon: "📏"
+  title: "Tek çağrı"
+  desc: "Manuel bayt dizisi karşılaştırma mantığına gerek yoktur."
+support:
+  description: JDK 12'den itibaren geniş çapta kullanılabilir (Mart 2019)

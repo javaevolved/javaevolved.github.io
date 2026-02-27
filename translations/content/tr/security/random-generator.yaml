@@ -1,0 +1,18 @@
+---
+title: RandomGenerator arayüzü
+oldApproach: new Random() / ThreadLocalRandom
+modernApproach: RandomGenerator fabrikası
+summary: "Belirli bir sınıfa bağlı kalmadan rastgele sayı algoritmalarını ada göre seçmek için RandomGenerator arayüzünü kullanın."
+explanation: "JDK 17, tüm RNG uygulamaları için ortak arayüz olarak RandomGenerator'ı tanıttı. new Random() veya ThreadLocalRandom'ı sabit kodlamak yerine, farklı kullanım durumları için optimize edilmiş algoritmalar arasında kolayca geçiş yapmayı sağlayan bir fabrika aracılığıyla ada göre algoritma seçebilirsiniz (hız, istatistiksel kalite, bölünebilirlik)."
+whyModernWins:
+- icon: "🔧"
+  title: "Algoritmadan bağımsız"
+  desc: "Kod yapısını değiştirmeden en iyi RNG algoritmasını ada göre seçin."
+- icon: "⚡"
+  title: "Daha iyi algoritmalar"
+  desc: "Üstün istatistiksel özelliklere sahip modern LXM üreticilerine erişim."
+- icon: "🔗"
+  title: "Birleşik API"
+  desc: "Tek arayüz; Random, ThreadLocalRandom, SplittableRandom ve daha fazlasını kapsar."
+support:
+  description: "JDK 17'den itibaren kullanılabilir (Eylül 2021, JEP 356)."
