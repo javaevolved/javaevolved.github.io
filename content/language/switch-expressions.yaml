@@ -53,3 +53,12 @@ related:
 docs:
 - title: "Switch Expressions (JEP 361)"
   href: "https://openjdk.org/jeps/361"
+proofCode: |-
+  var day = "MONDAY";
+  String msg = switch (day) {
+      case "MONDAY"  -> "Start";
+      case "FRIDAY"  -> "End";
+      default        -> "Mid";
+  };
+  if (!"Start".equals(msg)) throw new AssertionError("unexpected: " + msg);
+  IO.println("switch expressions: OK - " + msg);

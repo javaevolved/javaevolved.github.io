@@ -49,3 +49,12 @@ docs:
   href: "https://openjdk.org/jeps/378"
 - title: "Text Blocks Guide"
   href: "https://docs.oracle.com/en/java/javase/25/language/text-blocks.html"
+proofCode: |-
+  String json = """
+      {
+        "name": "Duke",
+        "age": 30
+      }""";
+  if (!json.contains("Duke")) throw new AssertionError("text block content missing");
+  if (json.contains("\\n")) throw new AssertionError("should not contain literal \\n");
+  IO.println("text blocks: OK");

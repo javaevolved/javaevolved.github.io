@@ -1,0 +1,33 @@
+name: Proof
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'html-generators/proof.java'
+      - '.github/workflows/proof.yml'
+  pull_request:
+    paths:
+      - 'content/**'
+      - 'html-generators/proof.java'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+
+      - uses: jbangdev/setup-jbang@main
+
+      - name: Run proof
+        run: jbang html-generators/proof.java

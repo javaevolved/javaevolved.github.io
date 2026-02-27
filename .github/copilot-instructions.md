@@ -100,7 +100,8 @@ Each `content/category/slug.json` file has this structure:
   ],
   "docs": [
     { "title": "Javadoc or Guide Title", "href": "https://docs.oracle.com/..." }
-  ]
+  ],
+  "proofCode": "// Optional: self-contained JShell snippet proving the modern approach works.\n// Run with: jbang html-generators/proof.java"
 }
 ```
 
@@ -113,6 +114,7 @@ Each `content/category/slug.json` file has this structure:
 - `docs` must have at least **1** entry linking to Javadoc or Oracle documentation
 - `prev`/`next` are `category/slug` paths or `null` for first/last
 - Code in `oldCode`/`modernCode` uses `\n` for newlines
+- `proofCode` is optional — a self-contained JShell snippet (with default imports available) that proves the modern approach compiles and runs correctly. Run `jbang html-generators/proof.java` to verify all proof snippets.
 
 ## Category Display Names
 

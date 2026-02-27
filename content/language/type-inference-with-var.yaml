@@ -49,3 +49,10 @@ docs:
   href: "https://openjdk.org/jeps/286"
 - title: "Style Guidelines for var"
   href: "https://openjdk.org/projects/amber/guides/lvti-style-guide"
+proofCode: |-
+  var map = new HashMap<String, List<Integer>>();
+  map.put("a", List.of(1, 2, 3));
+  for (var entry : map.entrySet()) {
+      IO.println("key=" + entry.getKey() + " value=" + entry.getValue());
+  }
+  IO.println("var: OK");

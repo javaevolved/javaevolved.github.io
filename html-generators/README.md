@@ -10,6 +10,7 @@ This folder contains the build scripts that generate all HTML detail pages and `
 | `generate.py`   | Python equivalent — produces identical output |
 | `generate.jar`  | Pre-built fat JAR (no JBang/JDK setup needed) |
 | `build-cds.sh`  | Script to build a platform-specific AOT cache |
+| `proof.java`    | JBang script (Java 25) — runs all `proofCode` snippets via JShell |
 
 ## Benchmark
 
@@ -65,10 +66,12 @@ This produces a self-contained ~2.2 MB JAR with all dependencies (Jackson) bundl
 
 ## CI/CD Workflows
 
-Two GitHub Actions workflows automate the build and deploy pipeline:
+Three GitHub Actions workflows automate the build, deploy, and proof pipeline:
 
 1. **`build-generator.yml`** — Triggered when `generate.java` changes on `main`. Uses JBang to rebuild the fat JAR and commits the updated `generate.jar` back to the repository.
 
 2. **`deploy.yml`** — Triggered when content, templates, the JAR, or site assets change on `main`. Runs `java -jar html-generators/generate.jar` to regenerate all HTML pages, `snippets.json`, and `index.html`, then deploys the `site/` folder to GitHub Pages.
+
+3. **`proof.yml`** — Triggered when content changes on `main` or in pull requests. Runs `jbang html-generators/proof.java` to verify all `proofCode` snippets compile and execute correctly via JShell.
 
 This means the deploy workflow always uses the pre-built fat JAR (no JBang required at deploy time), and the JAR stays in sync with the source automatically.

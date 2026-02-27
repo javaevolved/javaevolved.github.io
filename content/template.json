@@ -46,5 +46,6 @@
       "title": "Javadoc or Guide Title",
       "href": "https://docs.oracle.com/..."
     }
-  ]
+  ],
+  "proofCode": "// Optional: a self-contained JShell snippet that proves the modern approach works.\n// Run all proofCode snippets with: jbang html-generators/proof.java\n// Example: var list = List.of(\"a\", \"b\", \"c\"); IO.println(list);"
 }

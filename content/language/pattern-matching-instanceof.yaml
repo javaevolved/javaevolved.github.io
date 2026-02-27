@@ -44,3 +44,11 @@ related:
 docs:
 - title: "Pattern Matching for instanceof (JEP 394)"
   href: "https://openjdk.org/jeps/394"
+proofCode: |-
+  Object obj = "Hello, pattern matching!";
+  if (obj instanceof String s) {
+      IO.println("length=" + s.length());
+  } else {
+      throw new AssertionError("should have matched String");
+  }
+  IO.println("pattern matching instanceof: OK");
