@@ -1,0 +1,18 @@
+---
+title: Map.entry() factory
+oldApproach: SimpleEntry
+modernApproach: Map.entry()
+summary: "Map girişlerini temiz bir factory metoduyla oluşturun."
+explanation: "Map.entry(), ayrıntılı AbstractMap.SimpleEntry yapıcısının yerini alır. Değişmez bir giriş döndürür; bu da onu Map.ofEntries() ve stream işlemleri için ideal kılar."
+whyModernWins:
+- icon: "📏"
+  title: "Kısa ve öz"
+  desc: "Daha net bir niyetle üç satır yerine tek satır."
+- icon: "🔒"
+  title: "Değişmez"
+  desc: "Döndürülen giriş değiştirilemez."
+- icon: "🧩"
+  title: "Birleştirilebilir"
+  desc: "Büyük map'ler için Map.ofEntries() ile mükemmel çalışır."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

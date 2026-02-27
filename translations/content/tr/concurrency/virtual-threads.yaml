@@ -1,0 +1,18 @@
+---
+title: Sanal iş parçacıkları
+oldApproach: Platform İş Parçacıkları
+modernApproach: Sanal İş Parçacıkları
+summary: "Ağır işletim sistemi iş parçacıkları yerine milyonlarca hafif sanal iş parçacığı oluşturun."
+explanation: "Sanal iş parçacıkları, işletim sistemi değil JVM tarafından yönetilen hafif iş parçacıklarıdır. İş parçacığı havuzlarını ayarlamadan milyonlarcasını oluşturabilirsiniz. HTTP çağrıları ve veritabanı sorguları gibi G/Ç'ye bağlı görevler için idealdir."
+whyModernWins:
+- icon: "⚡"
+  title: "Hafif"
+  desc: "Sanal iş parçacıkları KB bellek kullanır, platform iş parçacıkları MB."
+- icon: "♾️"
+  title: "Ölçeklenebilir"
+  desc: "Milyonlarca iş parçacığı oluşturun — havuz boyutlandırması gerekmez."
+- icon: "🧹"
+  title: "Basit model"
+  desc: "Asenkron kod gibi ölçeklenen bloklama kodu yazın."
+support:
+  description: JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)

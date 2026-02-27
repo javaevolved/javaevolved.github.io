@@ -1,0 +1,18 @@
+---
+title: Modern Process API
+oldApproach: Runtime.exec()
+modernApproach: ProcessHandle
+summary: "ProcessHandle ile işletim sistemi süreçlerini inceleyin ve yönetin."
+explanation: "ProcessHandle; PID'leri, süreç bilgilerini (komut, argümanlar, başlangıç zamanı, CPU kullanımı), üst/alt ilişkilerini ve süreç sonlandırmayı sağlar. Artık belgelenmemiş Process iç kısımlarına gerek yok."
+whyModernWins:
+- icon: "🔍"
+  title: "Tam bilgi"
+  desc: "PID, komut, argümanlar, başlangıç zamanı, CPU kullanımına erişin."
+- icon: "🌳"
+  title: "Süreç ağacı"
+  desc: "Üst, alt ve torun süreçlerde gezinin."
+- icon: "📊"
+  title: "İzleme"
+  desc: "onExit() asenkron izleme için bir CompletableFuture döndürür."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

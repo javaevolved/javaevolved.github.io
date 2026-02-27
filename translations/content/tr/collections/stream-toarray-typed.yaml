@@ -1,0 +1,18 @@
+---
+title: Tiplendirilmiş stream toArray
+oldApproach: Elle Dizi Kopyalama
+modernApproach: toArray(generator)
+summary: "Stream'leri metot referansıyla tiplendirilmiş dizilere dönüştürün."
+explanation: "toArray(IntFunction) metodu, bir stream'den düzgün tiplendirilmiş bir dizi oluşturur. Üretici (String[]::new), stream'e hangi türde dizi oluşturacağını söyler."
+whyModernWins:
+- icon: "🎯"
+  title: "Tip güvenli"
+  desc: "Object[] dönüşümü yok — dizi türü doğrudur."
+- icon: "🔗"
+  title: "Zincirlenebilir"
+  desc: "Herhangi bir stream hattının sonunda çalışır."
+- icon: "📏"
+  title: "Kısa ve öz"
+  desc: "Tek ifade elle yapılan döngünün yerini alır."
+support:
+  description: JDK 8'den itibaren geniş çapta kullanılabilir (Mart 2014)

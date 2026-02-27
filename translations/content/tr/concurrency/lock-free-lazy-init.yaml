@@ -1,0 +1,18 @@
+---
+title: Kilitlenmesiz tembel başlatma
+oldApproach: synchronized + volatile
+modernApproach: StableValue
+summary: "Tembel singleton'lar için çift kontrollü kilitleme yerine StableValue kullanın."
+explanation: "StableValue, doğru iş parçacığı güvenliğiyle tembel başlatma kalıbını kapsüller. JVM, başlatma sonrasında okuma yolunu optimize edebilir; bu da onu volatile okumalardan daha hızlı yapabilir."
+whyModernWins:
+- icon: "🧹"
+  title: "Şablonsuz kod yok"
+  desc: "volatile, synchronized veya çift null kontrolü yok."
+- icon: "⚡"
+  title: "Daha hızlı okumalar"
+  desc: "JVM başlatma sonrasında değeri sabit katlamaya alabilir."
+- icon: "✅"
+  title: "Kanıtlanmış doğruluk"
+  desc: "İnce sıralama hataları yok — JVM halleder."
+support:
+  description: "JDK 25'te önizleme (JEP 502, StableValue). --enable-preview gerektirir."

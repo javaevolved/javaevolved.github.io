@@ -1,0 +1,18 @@
+---
+title: CompletableFuture zinciri
+oldApproach: Bloklayan Future.get()
+modernApproach: CompletableFuture
+summary: "CompletableFuture kullanarak bloklamadan asenkron işlemleri zincirleme."
+explanation: "CompletableFuture, bloklamayan asenkron hatlar sağlar. İşlemleri thenApply, thenCompose, thenAccept ile zincirleyin. Hataları exceptionally() ile işleyin. Birden fazla future'ı allOf/anyOf ile birleştirin."
+whyModernWins:
+- icon: "🔗"
+  title: "Zincirlenebilir"
+  desc: "Asenkron adımları okunabilir bir hatta birleştirin."
+- icon: "🚫"
+  title: "Bloklama yok"
+  desc: "Hiçbir iş parçacığı sonuçları beklemek için boşta durmaz."
+- icon: "🛡️"
+  title: "Hata işleme"
+  desc: "exceptionally() ve handle() ile temiz hata kurtarma."
+support:
+  description: JDK 8'den itibaren geniş çapta kullanılabilir (Mart 2014)

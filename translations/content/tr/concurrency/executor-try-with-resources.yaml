@@ -1,0 +1,18 @@
+---
+title: ExecutorService otomatik kapanma
+oldApproach: Elle Kapatma
+modernApproach: try-with-resources
+summary: "Otomatik executor kapatma için try-with-resources kullanın."
+explanation: "Java 19'dan itibaren ExecutorService, AutoCloseable arayüzünü uygular. close() metodu shutdown() çağırır ve görevlerin tamamlanmasını bekler. Artık elle try/finally kapatma kalıplarına gerek yok."
+whyModernWins:
+- icon: "🧹"
+  title: "Otomatik temizleme"
+  desc: "Blok çıkışında kapatma otomatik gerçekleşir."
+- icon: "🛡️"
+  title: "Sızıntı yok"
+  desc: "İstisnalar oluşsa bile executor her zaman kapanır."
+- icon: "📖"
+  title: "Tanıdık kalıp"
+  desc: "Dosyalar ve bağlantılar için kullanılan aynı try-with-resources."
+support:
+  description: JDK 19'dan itibaren geniş çapta kullanılabilir (Eylül 2022)

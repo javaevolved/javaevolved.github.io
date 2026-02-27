@@ -1,0 +1,18 @@
+---
+title: Yapılandırılmış eşzamanlılık
+oldApproach: Elle İş Parçacığı Yaşam Döngüsü
+modernApproach: StructuredTaskScope
+summary: "Eşzamanlı görev ömürlerini tek bir iş birimi olarak yönetin."
+explanation: "Yapılandırılmış eşzamanlılık, bir grup eşzamanlı görevi tek bir işlem olarak ele alır. Herhangi bir alt görev başarısız olursa diğerleri iptal edilir. Kapsam, iş parçacığı sızıntısı olmadığını garanti eder ve açık üst-alt ilişkileri sunar."
+whyModernWins:
+- icon: "🛡️"
+  title: "İş parçacığı sızıntısı yok"
+  desc: "Tüm çatallanmış görevler kapsam kapanmadan önce tamamlanır."
+- icon: "⚡"
+  title: "Hızlı hata"
+  desc: "ShutdownOnFailure, biri başarısız olursa kardeş görevleri iptal eder."
+- icon: "📐"
+  title: "Açık yapı"
+  desc: "Görev ömrü koddaki sözcüksel kapsamla eşleşir."
+support:
+  description: "JDK 25'te önizleme (beşinci önizleme, JEP 505). --enable-preview gerektirir."

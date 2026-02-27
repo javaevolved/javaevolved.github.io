@@ -1,0 +1,18 @@
+---
+title: Kararlı değerler
+oldApproach: Çift Kontrollü Kilitleme
+modernApproach: StableValue
+summary: "volatile veya synchronized olmadan iş parçacığı güvenli tembel başlatma."
+explanation: "StableValue, yerleşik iş parçacığı güvenliğiyle tembel başlatılmış, değiştirilemez bir değer sağlar. Çift kontrollü kilitleme yok, volatile alan yok, synchronized blok yok. JVM başlatma sonrasında okuma yolunu bile optimize edebilir."
+whyModernWins:
+- icon: "🧹"
+  title: "Sıfır şablonsuz kod"
+  desc: "volatile, synchronized veya null kontrolleri yok."
+- icon: "⚡"
+  title: "JVM-optimize"
+  desc: "JVM başlatma sonrasında değeri katlayabilir."
+- icon: "🛡️"
+  title: "Bir kez garantili"
+  desc: "Sağlayıcı, çakışma altında bile yalnızca bir kez çalışır."
+support:
+  description: "JDK 25'te önizleme (JEP 502). --enable-preview gerektirir."

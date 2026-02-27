@@ -1,0 +1,18 @@
+---
+title: Değişmez liste oluşturma
+oldApproach: Ayrıntılı Sarmalama
+modernApproach: List.of()
+summary: "Değişmez listeleri tek ve temiz bir ifadeyle oluşturun."
+explanation: "List.of(), sarmalama veya savunmacı kopya gerektirmeksizin gerçek anlamda değişmez bir liste oluşturur. Null düşman yapısıyla (null öğeleri reddeder) yapısal olarak değişmezdir. Eski yöntem üç iç içe çağrı gerektiriyordu."
+whyModernWins:
+- icon: "📏"
+  title: "Tek çağrı"
+  desc: "Üç iç içe çağrıyı tek bir factory metoduyla değiştirin."
+- icon: "🔒"
+  title: "Gerçekten değişmez"
+  desc: "Sadece bir sarmalayıcı değil — listenin kendisi değişmezdir."
+- icon: "🛡️"
+  title: "Null-güvenli"
+  desc: "Oluşturma sırasında null öğeleri reddeder, hızlı hata verir."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

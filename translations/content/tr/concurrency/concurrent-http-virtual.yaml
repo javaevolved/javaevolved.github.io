@@ -1,0 +1,18 @@
+---
+title: Sanal iş parçacıklarıyla eşzamanlı HTTP
+oldApproach: İş Parçacığı Havuzu + URLConnection
+modernApproach: Sanal İş Parçacıkları + HttpClient
+summary: "Sanal iş parçacıkları ve HttpClient ile birçok URL'yi eşzamanlı getirin."
+explanation: "Sanal iş parçacıkları, her HTTP isteği için bir iş parçacığı oluşturmayı pratik hale getirir. HttpClient ile birleştirildiğinde, karmaşık asenkron geri arama kalıplarının yerini ölçeklenen basit bloklama koduyla alır."
+whyModernWins:
+- icon: "♾️"
+  title: "İstek başına iş parçacığı"
+  desc: "Havuz boyutlandırması yok — URL başına bir sanal iş parçacığı."
+- icon: "📖"
+  title: "Basit kod"
+  desc: "Anlaşılır bloklama kodu yazın."
+- icon: "⚡"
+  title: "Yüksek verim"
+  desc: "Minimum kaynak kullanımıyla binlerce eşzamanlı istek."
+support:
+  description: JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)
