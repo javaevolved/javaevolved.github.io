@@ -1,0 +1,18 @@
+---
+title: Karakter akışı olarak String
+oldApproach: Manuel Döngü
+modernApproach: "chars() Stream"
+summary: "Metin karakterlerini bir akış hattı olarak işleyin."
+explanation: "String.chars(), karakter değerlerinden oluşan bir IntStream döndürerek işlevsel işlemeye olanak tanır. Unicode desteği için codePoints(), ek karakterleri doğru biçimde işler."
+whyModernWins:
+- icon: "🔗"
+  title: Zincirlenebilir
+  desc: "Karakter akışları üzerinde filter, map ve collect kullanılabilir."
+- icon: "📐"
+  title: Bildirimsel
+  desc: "Nasıl döngü kurulacağını değil, ne yapılacağını tanımlayın."
+- icon: "🌐"
+  title: "Unicode'a hazır"
+  desc: "codePoints(), emoji ve ek karakterleri doğru şekilde işler."
+support:
+  description: "JDK 8+'dan itibaren kullanılabilir (9+'da geliştirildi)"

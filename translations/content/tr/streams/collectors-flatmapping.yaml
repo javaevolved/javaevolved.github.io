@@ -1,0 +1,18 @@
+---
+title: "Collectors.flatMapping()"
+oldApproach: İç içe flatMap
+modernApproach: "flatMapping()"
+summary: "Gruplama toplayıcısının içinde düzleştirme yapmak için flatMapping() kullanın."
+explanation: "Collectors.flatMapping(), bir bire-çok eşlemeyi aşağı akış toplayıcısı olarak uygular. Stream.flatMap() işlevinin toplayıcı karşılığıdır — groupingBy veya partitioningBy içinde kullanışlıdır."
+whyModernWins:
+- icon: "🧩"
+  title: Birleştirilebilir
+  desc: "groupingBy içinde aşağı akış toplayıcısı olarak çalışır."
+- icon: "📐"
+  title: Tek geçiş
+  desc: "Tek bir akış geçişinde düzleştirme ve gruplama yapılır."
+- icon: "🔗"
+  title: İç içe kullanılabilir
+  desc: "Diğer aşağı akış toplayıcılarıyla birleştirilebilir."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"

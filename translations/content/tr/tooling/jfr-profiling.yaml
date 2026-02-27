@@ -1,0 +1,18 @@
+---
+title: Profilleme için JFR
+oldApproach: Harici Profil Aracı
+modernApproach: Java Flight Recorder
+summary: "Herhangi bir Java uygulamasını yerleşik Flight Recorder ile profilleyin — harici araç gerekmez."
+explanation: "Java Flight Recorder (JFR), JVM'e yerleşik düşük ek yüklü bir profilleme aracıdır. CPU, bellek, GC, G/Ç, iş parçacıkları ve özel olaylar için minimal performans etkisiyle (~%1) olayları yakalar."
+whyModernWins:
+- icon: "🆓"
+  title: Yerleşik
+  desc: "Kurulacak veya lisanslanacak harici profil aracı yok."
+- icon: "⚡"
+  title: Düşük ek yük
+  desc: "~%1 performans etkisi — üretimde kullanıma güvenli."
+- icon: "📊"
+  title: Zengin olaylar
+  desc: "CPU, bellek, GC, iş parçacıkları, G/Ç, kilitler ve özel olaylar."
+support:
+  description: "JDK 9/11'den itibaren geniş çapta kullanılabilir (11'de açık kaynak yapıldı)"

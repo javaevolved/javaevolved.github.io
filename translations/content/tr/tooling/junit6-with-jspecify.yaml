@@ -1,0 +1,18 @@
+---
+title: "JSpecify null güvenliği ile JUnit 6"
+oldApproach: Açıklamasız API
+modernApproach: "@NullMarked API"
+summary: "JUnit 6, JSpecify @NullMarked'ı benimseyerek null sözleşmelerini doğrulama API'si genelinde açık hale getirir."
+explanation: "JUnit 5, standartlaştırılmış null olabilirlik açıklamaları olmadan geldi; bu durum geliştiricilerin doğrulama parametrelerinin veya dönüş değerlerinin null olup olmayacağını tahmin etmesine neden oldu. JUnit 6, tüm modülü genelinde JSpecify'ı benimser: @NullMarked açıklaması varsayılan olarak tüm açıklamasız türleri null olmayan yapar ve @Nullable istisnaları işaretler. Assertions sınıfı, assertNull(@Nullable Object actual) ve fail(@Nullable String message) gibi parametreleri açıkça açıklar; böylece IDE'ler ve NullAway ile Error Prone gibi statik analizörler çalışma zamanı yerine derleme zamanında null kötüye kullanımını yakalayabilir."
+whyModernWins:
+- icon: "📜"
+  title: Açık sözleşmeler
+  desc: "JUnit 6 modülündeki @NullMarked, null anlambilimini doğrudan API'de belgeler — kaynak okumaya gerek kalmaz."
+- icon: "🛡️"
+  title: Derleme zamanı güvenliği
+  desc: "IDE'ler ve analizörler, null olmayan beklenirken null geçildiğinde uyarır; testler çalıştırılmadan önce hatalar yakalanır."
+- icon: "🌐"
+  title: Ekosistem standardı
+  desc: "JSpecify, Spring, Guava ve diğerleri tarafından benimsendi — tüm yığınınızda tutarlı null anlambilimi."
+support:
+  description: "JUnit 6.0'dan itibaren kullanılabilir (Ekim 2025, Java 17+ gerektirir)"

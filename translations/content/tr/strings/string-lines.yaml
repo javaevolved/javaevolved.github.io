@@ -1,0 +1,18 @@
+---
+title: "String.lines() ile satır bölme"
+oldApproach: "split(\"\\\\n\")"
+modernApproach: "lines()"
+summary: "Regex yükü olmadan metni satırlara bölmek için String.lines() kullanın."
+explanation: "String.lines(), \\n, \\r veya \\r\\n ile bölünmüş satırlardan oluşan bir Stream<String> döndürür. split()'ten daha tembel ve verimlidir; regex derlenmesinden kaçınır ve daha ileri işleme için Stream API ile doğal biçimde entegre olur."
+whyModernWins:
+- icon: "⚡"
+  title: Tembel akış
+  desc: "Satırlar, split() gibi hepsi bir anda değil, isteğe bağlı olarak üretilir."
+- icon: "🔧"
+  title: Evrensel satır sonları
+  desc: "\\n, \\r ve \\r\\n otomatik olarak regex olmadan işlenir."
+- icon: "🔗"
+  title: Stream entegrasyonu
+  desc: "filter, map ve collect ile doğrudan kullanım için Stream döndürür."
+support:
+  description: "JDK 11'den itibaren kullanılabilir (Eylül 2018)."

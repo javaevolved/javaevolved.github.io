@@ -1,0 +1,18 @@
+---
+title: "String.indent() ve transform()"
+oldApproach: Manuel Girintileme
+modernApproach: "indent() / transform()"
+summary: "Metni girintileyin ve dize dönüşümlerini akıcı biçimde zincirleyin."
+explanation: "indent(n), her satıra n boşluk ekler. transform(fn) herhangi bir işlev uygular ve sonucu döndürerek dize işlemlerinin akıcı biçimde zincir oluşturmasını sağlar."
+whyModernWins:
+- icon: "📏"
+  title: Yerleşik
+  desc: "Girintileme yaygın bir işlemdir — artık tek bir çağrıdır."
+- icon: "🔗"
+  title: Zincirlenebilir
+  desc: "transform(), dizeler üzerinde akıcı boru hatları sağlar."
+- icon: "🧹"
+  title: Temiz kod
+  desc: "Manuel satır bölme ve StringBuilder döngülerine gerek kalmaz."
+support:
+  description: "JDK 12'den itibaren geniş çapta kullanılabilir (Mart 2019)"

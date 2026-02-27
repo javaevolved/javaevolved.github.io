@@ -1,0 +1,18 @@
+---
+title: Stream toplayıcıları
+oldApproach: Özel Collector
+modernApproach: "gather()"
+summary: "Özel ara akış işlemleri için toplayıcılar kullanın."
+explanation: "Toplayıcılar (Gatherers), kayan pencereler, sabit boyutlu gruplar ve standart akış işlemleriyle mümkün olmayan tarama işlemleri gibi karmaşık dönüşümleri ifade edebilen yeni bir ara akış işlemidir."
+whyModernWins:
+- icon: "🧩"
+  title: Birleştirilebilir
+  desc: "Toplayıcılar diğer akış işlemleriyle birleştirilebilir."
+- icon: "📦"
+  title: Yerleşik işlemler
+  desc: "windowFixed, windowSliding, fold ve scan kullanıma hazır gelir."
+- icon: "🔧"
+  title: Genişletilebilir
+  desc: "Herhangi bir ara dönüşüm için özel toplayıcılar yazılabilir."
+support:
+  description: "JDK 24'te tamamlandı (JEP 485, Mart 2025)."

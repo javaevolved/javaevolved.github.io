@@ -1,0 +1,18 @@
+---
+title: "Stream.ofNullable()"
+oldApproach: Null Kontrolü
+modernApproach: "ofNullable()"
+summary: "Null olabilecek bir değerden sıfır veya bir öğeli akış oluşturun."
+explanation: "Stream.ofNullable(), değer null değilse tek öğeli, null ise boş bir akış döndürür. Üçlü null kontrol desenini ortadan kaldırır."
+whyModernWins:
+- icon: "📏"
+  title: Özlü
+  desc: "Tek bir çağrı üçlü koşulun yerini alır."
+- icon: "🔗"
+  title: "flatMap uyumlu"
+  desc: "flatMap içinde null değerleri atlamak için mükemmeldir."
+- icon: "🛡️"
+  title: Null-güvenli
+  desc: "NPE riski yok — null boş akışa dönüşür."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"

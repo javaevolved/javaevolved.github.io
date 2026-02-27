@@ -1,0 +1,18 @@
+---
+title: "Optional.or() ile yedekleme"
+oldApproach: İç içe yedekleme
+modernApproach: ".or() zinciri"
+summary: "İç içe kontroller olmadan Optional yedeklerini zincirleyin."
+explanation: "Optional.or(), orijinal Optional'ın bir değeri varsa onu döndürür; yoksa alternatif bir Optional elde etmek için tedarikçiyi değerlendirir. Tedarikçiler gecikmeli çalışır — yalnızca gerektiğinde çağrılır."
+whyModernWins:
+- icon: "🔗"
+  title: Zincirlenebilir
+  desc: "Okunabilir bir boru hattında yedekler arka arkaya eklenir."
+- icon: "⚡"
+  title: Gecikmeli değerlendirme
+  desc: "Yedek tedarikçiler yalnızca gerekli olduğunda çalışır."
+- icon: "📖"
+  title: Bildirimsel
+  desc: "'önce birincili dene, yoksa ikincili, yoksa varsayılanı' şeklinde okunur."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"

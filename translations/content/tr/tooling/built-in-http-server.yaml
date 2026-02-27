@@ -1,0 +1,18 @@
+---
+title: Yerleşik HTTP sunucusu
+oldApproach: Harici Sunucu / Çerçeve
+modernApproach: jwebserver CLI
+summary: "Java 18, prototipleme ve dosya sunumu için yerleşik minimal bir HTTP sunucusu içerir."
+explanation: "JDK 18, jwebserver komut satırı aracı veya SimpleFileServer API aracılığıyla erişilebilen basit, sıfır bağımlılıklı bir HTTP dosya sunucusu ekledi. Belirli bir dizindeki statik dosyaları yapılandırma gerekmeksizin sunar. CLI aracı hızlı prototipleme, test etme ve geçici dosya paylaşımı için idealdir — harici bağımlılık veya çerçeve gerekmez. API, özelleştirilebilir işleyiciler ve çıktı seviyeleriyle programlı kullanıma olanak tanır."
+whyModernWins:
+- icon: "🚀"
+  title: Sıfır kurulum
+  desc: "Herhangi bir dizinde jwebserver komutunu çalıştırın — kurulum, yapılandırma veya bağımlılık gerekmez."
+- icon: "📦"
+  title: JDK'ya dahil
+  desc: "Her JDK 18+ kurulumunda gelir; Java yüklü her makinede kullanılabilir."
+- icon: "🧪"
+  title: Prototipleme için harika
+  desc: "HTML, API veya ön uç geliştirmeyi test etmek için statik dosyaları anında sunun."
+support:
+  description: "JDK 18'den itibaren kullanılabilir (Mart 2022)"

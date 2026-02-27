@@ -1,0 +1,18 @@
+---
+title: Prototipleme için JShell
+oldApproach: "Dosya Oluştur + Derle + Çalıştır"
+modernApproach: jshell REPL
+summary: "Dosya oluşturmadan Java ifadelerini etkileşimli olarak deneyin."
+explanation: "JShell, Java için bir Oku-Değerlendir-Yazdır Döngüsüdür. Dosya oluşturmak, derlemek veya main metodu yazmak zorunda kalmadan ifadeleri test edin, API'leri deneyin ve kod prototipleri oluşturun. Sekme tamamlama ve satır içi belgeler dahildir."
+whyModernWins:
+- icon: "⚡"
+  title: Anında geri bildirim
+  desc: "Bir ifade yazın, sonucu hemen görün."
+- icon: "📝"
+  title: Dosya gerekmez
+  desc: ".java dosyası veya derleme adımı gerekmez."
+- icon: "🔍"
+  title: API keşfi
+  desc: "Sekme tamamlama, metot ve parametreleri keşfetmeye yardımcı olur."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"

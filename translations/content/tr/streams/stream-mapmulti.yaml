@@ -1,0 +1,18 @@
+---
+title: "Stream.mapMulti()"
+oldApproach: "flatMap + List"
+modernApproach: "mapMulti()"
+summary: "Ara akışlar oluşturmadan her giriş için sıfır veya daha fazla öğe yayın."
+explanation: "mapMulti(), her öğe için ara Stream nesneleri oluşturmaktan kaçınan, flatMap'e alternatif bir zorunlu yöntemdir. Eşlemenin az sayıda öğe ürettiği durumlarda daha verimlidir."
+whyModernWins:
+- icon: "⚡"
+  title: Daha az bellek kullanımı
+  desc: "Her öğe için ara Stream oluşturulmaz."
+- icon: "🎯"
+  title: Zorunlu stil
+  desc: "Döngüler ve koşullar doğrudan kullanılabilir."
+- icon: "📐"
+  title: Esnek
+  desc: "Tam denetimle sıfır, bir veya çok sayıda öğe yayılabilir."
+support:
+  description: "JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)"

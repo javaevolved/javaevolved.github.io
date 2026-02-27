@@ -1,0 +1,18 @@
+---
+title: "Stream takeWhile / dropWhile"
+oldApproach: Manuel Döngü
+modernApproach: takeWhile/dropWhile
+summary: "Bir koşula göre akıştan öğeleri alın veya atlayın."
+explanation: "takeWhile(), koşul doğru olduğu sürece öğeleri döndürür ve ilk yanlışta durur. dropWhile() ise koşul doğru olduğu sürece öğeleri atlar ve kalanları döndürür. Her ikisi de sıralı akışlarda en iyi çalışır."
+whyModernWins:
+- icon: "🎯"
+  title: Kısa devre
+  desc: "Koşul başarısız olduğunda işlemi durur."
+- icon: "🔗"
+  title: Boru hattı uyumlu
+  desc: "Diğer akış işlemleriyle doğal biçimde zincirlenir."
+- icon: "📖"
+  title: Bildirimsel
+  desc: "takeWhile 'koşul sağlandığı sürece al' şeklinde okunur."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"
