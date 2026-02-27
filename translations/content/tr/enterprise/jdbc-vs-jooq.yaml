@@ -1,0 +1,18 @@
+---
+title: JDBC ile jOOQ Karşılaştırması
+oldApproach: Ham JDBC
+modernApproach: jOOQ SQL DSL
+summary: "Ham JDBC dize tabanlı SQL'i jOOQ'nun tür-güvenli, akıcı SQL DSL'i ile değiştirin."
+explanation: "jOOQ (Java Object Oriented Querying), veritabanı şemanızdan Java kodu üretir; tablo ve sütun adlarını tür-güvenli Java sabitlerına dönüştürür. Akıcı DSL, SQL söz dizimini yansıtır; böylece sorgular okunabilir ve birleştirilebilir olur. Tüm parametreler otomatik olarak bağlanır ve SQL enjeksiyonu riski ortadan kalkar. JPA/JPQL'den farklı olarak jOOQ, SQL'i tam anlamıyla benimser — pencere fonksiyonları, CTE'ler, RETURNING cümleleri ve satıcıya özgü uzantılar birinci sınıf desteklenir."
+whyModernWins:
+- icon: 🔒
+  title: Tür-güvenli sütunlar
+  desc: "Sütun adları üretilmiş Java sabitleridir — yazım hataları ve tür uyumsuzlukları çalışma zamanı hataları yerine derleyici hatalarına dönüşür."
+- icon: 📖
+  title: SQL akıcılığı
+  desc: "jOOQ DSL, SQL söz dizimini yakından yansıtır; karmaşık JOIN'ler, alt sorgular ve CTE'ler okunabilir kalır."
+- icon: 🛡️
+  title: Tasarım gereği enjeksiyonsuz
+  desc: "Parametreler her zaman güvenli şekilde bağlanır — dize birleştirme olmadığından SQL enjeksiyonu riski yoktur."
+support:
+  description: "jOOQ açık kaynak sürümü tüm büyük açık kaynak veritabanlarını destekler; eski ticari veritabanlar ücretli lisans gerektirir"

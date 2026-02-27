@@ -1,0 +1,18 @@
+---
+title: Tek dosya çalıştırma
+oldApproach: İki Adımlı Derleme
+modernApproach: Doğrudan Başlatma
+summary: "Tek dosyalı Java programlarını javac olmadan doğrudan çalıştırın."
+explanation: "Java başlatıcısı, tek bir kaynak dosyayı tek komutla derleyip çalıştırabilir. Unix'te shebang desteğiyle Java dosyaları betik olarak çalışabilir. Ayrı bir derleme adımına gerek kalmaz."
+whyModernWins:
+- icon: "⚡"
+  title: Tek komut
+  desc: "java File.java tek adımda derler ve çalıştırır."
+- icon: "📝"
+  title: Betik benzeri
+  desc: ".java dosyalarını çalıştırılabilir betik yapmak için shebang satırı ekleyin."
+- icon: "🎓"
+  title: Öğrenmeye uygun
+  desc: "Yeni başlayanlar, derleme araçlarını öğrenmeden kodu hemen çalıştırabilir."
+support:
+  description: "JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)"

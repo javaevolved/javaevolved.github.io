@@ -1,0 +1,18 @@
+---
+title: Özel interface metotları
+oldApproach: Çoğaltılmış Mantık
+modernApproach: Özel Metotlar
+summary: "Özel metotlar kullanarak interface'lerdeki paylaşılan mantığı çıkarın."
+explanation: "Java 9, interface'lerde özel metotlara izin vererek uygulama ayrıntılarını uygulayan sınıflara göstermeden varsayılan metotlar arasında kod paylaşmanıza olanak tanır."
+whyModernWins:
+- icon: "🧩"
+  title: Kod yeniden kullanımı
+  desc: "Tekrar etmeden varsayılan metotlar arasında mantığı paylaşın."
+- icon: "🔐"
+  title: Kapsülleme
+  desc: "Uygulama ayrıntıları uygulayan sınıflardan gizli kalır."
+- icon: "🧹"
+  title: DRY interface'ler
+  desc: "Varsayılan metotlar arasında artık kopyala-yapıştır yok."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"

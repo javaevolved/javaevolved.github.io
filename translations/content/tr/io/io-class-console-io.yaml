@@ -1,0 +1,18 @@
+---
+title: Konsol G/Ç için IO sınıfı
+oldApproach: System.out / Scanner
+modernApproach: IO sınıfı
+summary: "Yeni IO sınıfı, konsol girişi ve çıkışı için basit ve özlü metodlar sağlar."
+explanation: "Java 25, örtük olarak tanımlanan sınıflar özelliğinin bir parçası olarak IO sınıfını (java.io.IO) tanıtır. println(), print(), readln() ve read() gibi statik metodlar sağlayarak System.out ile Scanner'ın ayrıntılı kombinasyonunun yerini alır. IO.readln(prompt), tek bir çağrıda hem istem vermeyi hem de okumayı gerçekleştirir. Sınıf, kompakt kaynak dosyalarında otomatik olarak kullanılabilir ve geleneksel sınıflarda import ile kullanılabilir."
+whyModernWins:
+- icon: "✨"
+  title: "Çok daha basit"
+  desc: "İki metod, Scanner kurulumu, istem verme, okuma ve temizlemenin yedi satırının yerini alır."
+- icon: "🔒"
+  title: "Kaynak sızıntısı yok"
+  desc: "Kapatılacak Scanner yok — IO metodları kaynak yönetimini dahili olarak halleder."
+- icon: "🎓"
+  title: "Başlangıç dostu"
+  desc: "Yeni geliştiriciler Scanner, System.out veya import ifadelerini öğrenmeden konsol G/Ç yapabilir."
+support:
+  description: "JDK 25'te örtük olarak tanımlanan sınıfların bir parçası olarak önizleme (JEP 495)"

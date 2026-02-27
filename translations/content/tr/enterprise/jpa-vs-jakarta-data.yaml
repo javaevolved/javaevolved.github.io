@@ -1,0 +1,18 @@
+---
+title: JPA ile Jakarta Data Karşılaştırması
+oldApproach: JPA EntityManager
+modernApproach: Jakarta Data Repository
+summary: "Bir repository arayüzü tanımlayın ve Jakarta Data'nın DAO uygulamasını otomatik olarak oluşturmasına izin verin."
+explanation: "Jakarta Data (Jakarta EE 11), veri erişimini saf bir arayüz bildirimine dönüştürür. Bir arayüzü @Repository ile açıklarsınız ve CrudRepository gibi yerleşik bir repository türünü genişletirsiniz. Çalışma zamanı, findByName gibi yöntem adlarından türetilmiş sorgular dahil uygulamayı üretir — dolayısıyla EntityManager şablon kodu, JPQL dizeleri ve elle yazılmış save/find yöntemleri yoktur."
+whyModernWins:
+- icon: 🪄
+  title: Sıfır şablon kod
+  desc: "Arayüzü tanımlayın; kapsayıcı dağıtım zamanında tam DAO uygulamasını üretir."
+- icon: 🔍
+  title: Türetilmiş sorgular
+  desc: "findByNameAndStatus gibi yöntem adları otomatik olarak ayrıştırılır — JPQL veya SQL gerekmez."
+- icon: 🔌
+  title: Taşınabilir
+  desc: "Jakarta EE 11 uyumlu herhangi bir çalışma ortamı, satıcı bağımlılığı olmadan repository uygulamasını sağlar."
+support:
+  description: Jakarta EE 11 / Java 21'den itibaren kullanılabilir (2024)

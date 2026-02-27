@@ -1,0 +1,18 @@
+---
+title: HexFormat
+oldApproach: Manuel Hex Dönüşümü
+modernApproach: HexFormat
+summary: "HexFormat ile hex dizileri ve bayt dizileri arasında dönüşüm yapın."
+explanation: "HexFormat, baytlar, int'ler ve diziler için iki yönlü hex kodlama/kod çözme sağlar. Sınırlayıcıları, ön eki, son eki ve büyük/küçük harf kullanımını yapılandırın. Artık manuel biçimlendirme veya ayrıştırma gerekmez."
+whyModernWins:
+- icon: 📐
+  title: İki yönlü
+  desc: "Tek bir API ile bayt→hex ve hex→bayt dönüşümü yapın."
+- icon: 🔧
+  title: Yapılandırılabilir
+  desc: "Sınırlayıcılar, ön ek, son ek, büyük/küçük harf desteği."
+- icon: 📦
+  title: Dizi desteği
+  desc: "Tüm bayt dizilerini tek seferde kodlayın/kodunu çözün."
+support:
+  description: JDK 17 LTS'den (Eylül 2021) itibaren geniş çapta kullanılabilir

@@ -1,0 +1,18 @@
+---
+title: Interface'lerde statik metotlar
+oldApproach: Yardımcı sınıflar
+modernApproach: Interface statik metotları
+summary: "Ayrı yardımcı sınıflar yerine statik yardımcı metotları doğrudan interface'lere ekleyin."
+explanation: "Java 8'den önce, bir interface ile ilgili yardımcı metotlar ayrı bir sınıfta (örn. Collection için Collections) yaşamak zorundaydı. Interface'lerdeki statik metotlar, ilgili yardımcı araçları bir arada tutmanızı sağlar. Comparator.comparing(), Stream.of() ve List.of() gibi modern API'lerde yaygındır."
+whyModernWins:
+- icon: "📦"
+  title: Daha iyi organizasyon
+  desc: "İlgili yardımcı araçları ayrı bir sınıfta değil, interface ile birlikte tutun."
+- icon: "🔍"
+  title: Keşfedilebilirlik
+  desc: "Fabrika ve yardımcı metotlar, onları beklediğiniz yerde bulunur."
+- icon: "🧩"
+  title: API uyumu
+  desc: "Ayrı *Utils veya *Helper sınıflarına gerek yoktur."
+support:
+  description: "JDK 8'den itibaren kullanılabilir (Mart 2014)"

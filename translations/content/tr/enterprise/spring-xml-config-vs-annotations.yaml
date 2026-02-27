@@ -1,0 +1,18 @@
+---
+title: Spring XML Bean Yapılandırması ile Açıklama Tabanlı Karşılaştırması
+oldApproach: XML Bean Tanımları
+modernApproach: Açıklama Tabanlı Bean'ler
+summary: "Ayrıntılı Spring XML bean tanımlarını Spring Boot'ta özlü açıklama tabanlı yapılandırmayla değiştirin."
+explanation: "Geleneksel Spring uygulamaları, her sınıfı ve bağımlılıklarını ayrıntılı <bean> öğeleri olarak bildiren XML yapılandırma dosyaları aracılığıyla bean'leri bağlardı. Spring 2.5'ten itibaren açıklama desteği mevcut olsa da Spring Boot otomatik yapılandırmayı tanıtana kadar XML baskın yaklaşım olmaya devam etti. Spring Boot, classpath taraması yoluyla @Component, @Service, @Repository ve @Controller ile açıklanmış bean'leri algılar, kurucu enjeksiyon yoluyla bağımlılıkları otomatik karşılar ve classpath'ten DataSource gibi altyapıyı yapılandırır — tüm XML bağlama dosyalarını ortadan kaldırır."
+whyModernWins:
+- icon: 🚫
+  title: XML yok
+  desc: "@SpringBootApplication, bileşen taramayı ve otomatik yapılandırmayı tetikler; tüm XML bağlama dosyalarını ortadan kaldırır."
+- icon: 💉
+  title: Kurucu enjeksiyon
+  desc: "Spring, bağımlılıkları otomatik olarak kurucular aracılığıyla enjekte eder; bean'leri test etmeyi ve anlamayı kolaylaştırır."
+- icon: ⚡
+  title: Otomatik yapılandırma
+  desc: "Spring Boot, DataSource, JPA ve diğer altyapıyı classpath'ten sıfır şablon kodla yapılandırır."
+support:
+  description: "Spring Boot 1.0'dan (Nisan 2014) itibaren geniş çapta kullanılabilir; Spring Boot 3 Java 17+ gerektirir"

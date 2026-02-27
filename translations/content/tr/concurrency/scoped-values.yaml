@@ -1,0 +1,18 @@
+---
+title: Kapsamlı değerler
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: "ThreadLocal tuzakları olmadan çağrı yığınları arasında güvenle veri paylaşın."
+explanation: "ScopedValue; değiştirilemez, miras alınabilir, kapsam sınırlı bağlam sağlar. ThreadLocal'dan farklı olarak kapsamlı değerler otomatik temizlenir, sanal iş parçacıklarıyla çalışır ve çağrılanlar tarafından değiştirilemez."
+whyModernWins:
+- icon: "🔒"
+  title: "Değiştirilemez"
+  desc: "Çağrılanlar kapsamlı değeri okuyabilir ama asla değiştiremez."
+- icon: "🧹"
+  title: "Otomatik temizleme"
+  desc: "Elle remove() gerekmez — değer blokla sınırlıdır."
+- icon: "⚡"
+  title: "Sanal iş parçacığı güvenli"
+  desc: "Milyonlarca sanal iş parçacığıyla verimli çalışır."
+support:
+  description: "JDK 25 LTS'de kesinleşti (JEP 506, Eylül 2025)."

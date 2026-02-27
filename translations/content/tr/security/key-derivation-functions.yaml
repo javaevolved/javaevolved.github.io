@@ -1,0 +1,18 @@
+---
+title: Anahtar Türetme Fonksiyonları
+oldApproach: Manuel PBKDF2
+modernApproach: KDF API
+summary: "Standart KDF API'sini kullanarak kriptografik anahtarlar türetin."
+explanation: "KDF API, HKDF dahil anahtar türetme fonksiyonları için standart bir arayüz sağlar. Garip SecretKeyFactory + PBEKeySpec örüntüsünü temiz bir builder API'si ile değiştirir."
+whyModernWins:
+- icon: "📐"
+  title: "Temiz API"
+  desc: "Garip KeySpec yapıcıları yerine builder örüntüsü."
+- icon: "🔧"
+  title: "HKDF desteği"
+  desc: "PBKDF2'nin yanında modern HKDF algoritması."
+- icon: "🛡️"
+  title: "Standart"
+  desc: "Tüm anahtar türetme algoritmaları için birleşik API."
+support:
+  description: "JDK 25 LTS'de sonuçlandırıldı (JEP 510, Eylül 2025)."

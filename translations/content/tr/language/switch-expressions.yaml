@@ -1,0 +1,18 @@
+---
+title: Switch ifadeleri
+oldApproach: Switch Deyimi
+modernApproach: Switch İfadesi
+summary: "Değer döndüren switch ifadesi — break yok, düşme geçişi yok."
+explanation: "Switch ifadeleri doğrudan bir değer döndürür, düşme geçişi hatalarını önlemek için ok sözdizimini kullanır ve derleyici kapsamlılığı doğrular. Bu, hataya açık deyim biçiminin yerini alır."
+whyModernWins:
+- icon: "🎯"
+  title: Değer döndürür
+  desc: "Switch sonucunu doğrudan atayın — geçici değişkene gerek yoktur."
+- icon: "🛡️"
+  title: Düşme geçişi yok
+  desc: "Ok sözdizimi, eksik break nedeniyle oluşan yanlışlıkla düşme geçişi hatalarını ortadan kaldırır."
+- icon: "✅"
+  title: Kapsamlılık kontrolü
+  desc: "Derleyici tüm durumların kapsandığını sağlar."
+support:
+  description: "JDK 14'ten itibaren geniş çapta kullanılabilir (Mart 2020)"

@@ -1,0 +1,18 @@
+---
+title: Koleksiyonları değişmez biçimde kopyalama
+oldApproach: Elle Kopyalama + Sarmalama
+modernApproach: List.copyOf()
+summary: "Herhangi bir koleksiyonun değişmez kopyasını tek çağrıyla oluşturun."
+explanation: "List.copyOf(), Set.copyOf() ve Map.copyOf() mevcut koleksiyonların değişmez anlık görüntülerini oluşturur. Kaynak zaten değişmez bir koleksiyonsa kopyalama yapılmaz."
+whyModernWins:
+- icon: "⚡"
+  title: "Akıllı kopyalama"
+  desc: "Kaynak zaten değişmezse kopyalamayı atlar."
+- icon: "📏"
+  title: "Tek çağrı"
+  desc: "Elle ArrayList oluşturma ve sarmalama gerekmez."
+- icon: "🛡️"
+  title: "Savunmacı kopya"
+  desc: "Orijinaldeki değişiklikler kopyayı etkilemez."
+support:
+  description: JDK 10'dan itibaren geniş çapta kullanılabilir (Mart 2018)

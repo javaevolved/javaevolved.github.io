@@ -1,0 +1,18 @@
+---
+title: java.time API temelleri
+oldApproach: Date + Calendar
+modernApproach: java.time.*
+summary: "Date ve Calendar yerine değişmez ve açık tarih/saat türlerini kullanın."
+explanation: "java.time; LocalDate, LocalTime, LocalDateTime, Instant, ZonedDateTime sağlar — hepsi değişmez ve thread-safe'dir. Aylar 1'den başlar. Artık Calendar.JANUARY = 0 karışıklığı yok."
+whyModernWins:
+- icon: 🔒
+  title: Değişmez
+  desc: "Tarih/saat değerleri yanlışlıkla değiştirilemez."
+- icon: 📖
+  title: Açık API
+  desc: "0 değil Month.JANUARY; 2 değil DayOfWeek.MONDAY."
+- icon: 🛡️
+  title: Thread-safe
+  desc: "Senkronizasyon gerekmez — iş parçacıkları arasında serbestçe paylaşın."
+support:
+  description: JDK 8'den (Mart 2014) itibaren geniş çapta kullanılabilir

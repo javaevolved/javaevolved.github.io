@@ -1,0 +1,18 @@
+---
+title: JSF Managed Bean ile CDI Named Bean Karşılaştırması
+oldApproach: "@ManagedBean"
+modernApproach: "@Named + CDI"
+summary: "Birleşik bir bağımlılık enjeksiyonu modeli için kullanımdan kaldırılmış JSF @ManagedBean'i CDI @Named ile değiştirin."
+explanation: "JSF'in @ManagedBean ve @ManagedProperty'si, Jakarta Faces 2.3'te kullanımdan kaldırıldı ve Jakarta EE 10'da kaldırıldı. CDI tabanlı değişiklik, bean'i EL ifadelerine açmak için @Named ve bağımlılık bağlama için @Inject kullanır. Bu, bean modelini birleştirir: JSF sayfaları, JAX-RS kaynakları ve EJB'ler aynı CDI kapsayıcısını paylaşır."
+whyModernWins:
+- icon: 🔗
+  title: Birleşik model
+  desc: "Tek bir CDI kapsayıcısı tüm bean'leri yönetir — JSF, REST ve hizmet katmanları aynı enjeksiyonu paylaşır."
+- icon: 🗑️
+  title: Daha az şablon kod
+  desc: "@Inject, @ManagedProperty ve gerekli setter yönteminin yerini alır."
+- icon: 🔮
+  title: Geleceğe hazır
+  desc: "@ManagedBean, Jakarta EE 10'da kaldırılmıştır; @Named desteklenen yerini alandır."
+support:
+  description: "CDI @Named Java EE 6'dan itibaren kullanılabilir; @ManagedBean Jakarta EE 10'da kaldırılmıştır"

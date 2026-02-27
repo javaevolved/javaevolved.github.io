@@ -1,0 +1,18 @@
+---
+title: "Koşullu Stream.iterate()"
+oldApproach: iterate + limit
+modernApproach: "iterate(seed, pred, op)"
+summary: "Akış biçiminde bir döngü gibi yinelemeyi durdurmak için koşul kullanın."
+explanation: "Üç argümanlı Stream.iterate(seed, hasNext, next), bir for döngüsü gibi çalışır: seed başlangıç değeri, hasNext ne zaman duracağını belirler ve next sonraki değeri üretir."
+whyModernWins:
+- icon: "🎯"
+  title: Doğal sonlandırma
+  desc: "Keyfi bir sınır değil, bir koşula göre durun."
+- icon: "📐"
+  title: "for döngüsü karşılığı"
+  desc: "for(seed; hasNext; next) ile aynı anlambilim."
+- icon: "🛡️"
+  title: Sonsuz akış riski yok
+  desc: "Koşul, sonlandırmayı garanti eder."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"

@@ -1,0 +1,18 @@
+---
+title: Servlet ile JAX-RS Karşılaştırması
+oldApproach: HttpServlet
+modernApproach: JAX-RS Resource
+summary: "Ayrıntılı HttpServlet şablon kodunu bildirimsel JAX-RS kaynak sınıflarıyla değiştirin."
+explanation: "JAX-RS (Jakarta RESTful Web Services), @GET, @Path ve @Produces gibi basit açıklamalar kullanarak REST uç noktaları açığa çıkarmanızı sağlar. Artık istek parametrelerini manuel olarak ayrıştırmaya veya yanıtta içerik türlerini ayarlamaya gerek yok — çalışma zamanı, sıralama ve yönlendirmeyi otomatik olarak yönetir."
+whyModernWins:
+- icon: 📐
+  title: Bildirimsel yönlendirme
+  desc: "Açıklamalar, zorunlu if/else dağıtımı yerine HTTP yöntemini, yolu ve içerik türünü tanımlar."
+- icon: 🔄
+  title: Otomatik sıralama
+  desc: "POJO'ları doğrudan döndürün; çalışma zamanı bunları @Produces'a göre JSON veya XML'e serileştirir."
+- icon: 🧪
+  title: Daha kolay test
+  desc: "Kaynak sınıfları düz Java nesneleridir; servlet kapsayıcısı olmadan test edilebilir."
+support:
+  description: Jakarta EE 8 / Java 11'den itibaren geniş çapta kullanılabilir

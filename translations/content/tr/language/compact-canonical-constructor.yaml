@@ -1,0 +1,18 @@
+---
+title: Kompakt kanonik constructor
+oldApproach: Açık constructor doğrulaması
+modernApproach: Kompakt constructor
+summary: "Record alanlarını parametre listelerini tekrar etmeden doğrulayın ve normalleştirin."
+explanation: "Record'lar, parametre listesini ve alan atamalarını atlayan kompakt kanonik constructor tanımlayabilir. Derleyici, doğrulama mantığınız çalıştıktan sonra parametreleri alanlara otomatik olarak atar. Bu, ön koşul kontrolleri, savunmacı kopyalar ve normalleştirme için idealdir."
+whyModernWins:
+- icon: "✂️"
+  title: Daha az tekrar
+  desc: "Parametre listesini tekrar etmeye veya her alanı elle atamaya gerek yoktur."
+- icon: "🛡️"
+  title: Doğrulama
+  desc: "Null kontrolleri, aralık doğrulaması ve savunmacı kopyalar için mükemmeldir."
+- icon: "📖"
+  title: Daha net niyet
+  desc: "Kompakt sözdizimi, şablon kodları değil doğrulamayı ön plana çıkarır."
+support:
+  description: JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)

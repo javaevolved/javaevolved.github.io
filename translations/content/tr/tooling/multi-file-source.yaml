@@ -1,0 +1,18 @@
+---
+title: Çok dosyalı kaynak başlatıcı
+oldApproach: Önce Hepsini Derle
+modernApproach: Kaynak Başlatıcı
+summary: "Açık derleme adımı olmadan çok dosyalı programları başlatın."
+explanation: "Java 22+, .java dosyasından başlatıldığında başvurulan kaynak dosyaları otomatik olarak derleyebilir. Bu durum, Maven veya Gradle gerektirmeden küçük çok dosyalı programların betikler kadar kolay çalıştırılmasını sağlar."
+whyModernWins:
+- icon: "🚀"
+  title: Sıfır kurulum
+  desc: "Küçük çok dosyalı programlar için derleme aracı gerekmez."
+- icon: "🔗"
+  title: Otomatik çözümleme
+  desc: "Başvurulan sınıflar otomatik olarak bulunur ve derlenir."
+- icon: "📝"
+  title: Betik benzeri
+  desc: "Çok dosyalı programları betikler gibi çalıştırın."
+support:
+  description: "JDK 22'den itibaren kullanılabilir (Mart 2024)"

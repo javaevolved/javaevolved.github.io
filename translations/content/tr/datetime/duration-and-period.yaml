@@ -1,0 +1,18 @@
+---
+title: Duration ve Period
+oldApproach: Milisaniye Matematiği
+modernApproach: Duration / Period
+summary: "Zaman farklarını tür-güvenli Duration ve Period ile hesaplayın."
+explanation: "Duration, saat, dakika ve saniye gibi zaman tabanlı miktarlar içindir. Period ise yıl, ay ve gün gibi tarih tabanlı miktarlar içindir. Basit farklar için ChronoUnit.between() kullanılır. Tümü kenar durumları doğru şekilde ele alır."
+whyModernWins:
+- icon: 🎯
+  title: Tür-güvenli
+  desc: "Zaman için Duration, tarihler için Period — karışıklık yok."
+- icon: 🛡️
+  title: Doğru hesaplama
+  desc: "Yaz saati geçişlerini, artık yılları ve artık saniyeleri doğru ele alır."
+- icon: 📖
+  title: Okunabilir
+  desc: "ChronoUnit.DAYS.between() doğal dil gibi okunur."
+support:
+  description: JDK 8'den (Mart 2014) itibaren geniş çapta kullanılabilir

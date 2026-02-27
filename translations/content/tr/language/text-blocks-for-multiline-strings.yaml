@@ -1,0 +1,18 @@
+---
+title: Çok satırlı dizeler için metin blokları
+oldApproach: String Birleştirme
+modernApproach: Metin Blokları
+summary: "Üçlü tırnak metin blokları ile çok satırlı dizeleri doğal olarak yazın."
+explanation: "Metin blokları, çok satırlı dizeleri tam olarak göründükleri gibi yazmanıza olanak tanır. Artık tırnak işaretlerini kaçırmak veya \\n eklemek gerekmez. Derleyici, gereksiz girintiyi otomatik olarak kaldırır."
+whyModernWins:
+- icon: "📖"
+  title: Olduğu gibi okunabilir
+  desc: "JSON, SQL ve HTML, kaynak kodunuzda gerçek JSON, SQL ve HTML gibi görünür."
+- icon: "🚫"
+  title: Kaçış cehennemi yok
+  desc: "Gömülü tırnak işaretleri ters eğik çizgi ile kaçırılmaya gerek yoktur."
+- icon: "📐"
+  title: Akıllı girinti
+  desc: "Başlangıç boşluğu, kapanış sınırlayıcı konumuna göre otomatik olarak kırpılır."
+support:
+  description: "JDK 15'ten itibaren geniş çapta kullanılabilir (Eylül 2020)"

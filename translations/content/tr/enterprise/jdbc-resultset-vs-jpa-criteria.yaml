@@ -1,0 +1,18 @@
+---
+title: JDBC ResultSet Eşleme ile JPA Criteria API Karşılaştırması
+oldApproach: JDBC ResultSet
+modernApproach: JPA Criteria API
+summary: "Dinamik sorgular için manuel JDBC ResultSet eşlemesini JPA'nın tür-güvenli Criteria API'siyle değiştirin."
+explanation: "Ham JDBC, SQL dizilerinin oluşturulmasını, parametrelerin dizine göre ayarlanmasını ve her ResultSet sütununun manuel olarak eşlenmesini gerektirir — bu süreç hata eğilimlidir ve sütunlar değiştiğinde sessizce bozulur. JPA Criteria API, tür-güvenli bir oluşturucu deseni kullanarak sorguları programatik olarak oluşturur. Sütun adları entity modeline göre doğrulanır, sonuç eşlemesi otomatik yapılır ve karmaşık dinamik sorgular dize birleştirme olmadan temiz biçimde oluşturulur."
+whyModernWins:
+- icon: 🔒
+  title: Tür-güvenli sorgular
+  desc: "Criteria oluşturucusu, alan adı ve tür uyumsuzluklarını derleme zamanında yakalar."
+- icon: 🗺️
+  title: Otomatik eşleme
+  desc: "JPA, sonuç satırlarını entity nesnelerine eşler — sütun bazında manuel çıkarma yok."
+- icon: 🧩
+  title: Birleştirilebilir koşullar
+  desc: "Dinamik where koşulları, and(), or() ve yeniden kullanılabilir Predicate nesneleriyle temiz biçimde oluşturulur."
+support:
+  description: Jakarta EE 8 / Java 11'den itibaren geniş çapta kullanılabilir

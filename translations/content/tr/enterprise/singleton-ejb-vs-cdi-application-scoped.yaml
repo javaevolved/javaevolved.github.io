@@ -1,0 +1,18 @@
+---
+title: Singleton EJB ile CDI @ApplicationScoped Karşılaştırması
+oldApproach: "@Singleton EJB"
+modernApproach: "@ApplicationScoped CDI"
+summary: "Singleton EJB'leri daha basit paylaşılan durum yönetimi için CDI @ApplicationScoped bean'lerle değiştirin."
+explanation: "Singleton EJB'ler, eşzamanlılık yönetimini (@Lock, @ConcurrencyManagement) ve istekli başlatmayı (@Startup) EJB kapsayıcısına dahil eder. Bir CDI @ApplicationScoped bean, çok daha az törenle aynı tek örnek yaşam döngüsünü elde eder. Eşzamanlılık kontrolü gerektiğinde, standart java.util.concurrent yardımcı programları EJB kilit açıklamalarından daha ince taneli kontrol sağlar."
+whyModernWins:
+- icon: 🪶
+  title: Daha az açıklama gürültüsü
+  desc: "@ConcurrencyManagement, @Lock veya @Startup yok — yalnızca tek bir @ApplicationScoped açıklaması."
+- icon: 🔧
+  title: Esnek eşzamanlılık
+  desc: "Tam olarak ihtiyacınız olan iş parçacığı güvenliği için java.util.concurrent kilitleri veya volatile kullanın."
+- icon: 🧪
+  title: Kolay test
+  desc: "Düz CDI bean'leri, EJB kapsayıcısı olmadan testlerde doğrudan örneklendirilebilir."
+support:
+  description: Jakarta EE 8 / Java 11'den itibaren geniş çapta kullanılabilir

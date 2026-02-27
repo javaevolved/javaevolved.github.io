@@ -1,0 +1,18 @@
+---
+title: Değiştirilemez collector'lar
+oldApproach: collectingAndThen
+modernApproach: stream.toList()
+summary: "stream.toList() ile doğrudan değiştirilemez bir listeye toplayın."
+explanation: "Java 10, ayrıntılı collectingAndThen sarmalayıcısının yerini almak için toUnmodifiableList(), toUnmodifiableSet() ve toUnmodifiableMap() ekledi. Listeler için Java 16'nın stream.toList() yöntemi daha da basit bir alternatif sunar — hiç collect() çağrısına gerek yoktur. Diğer koleksiyon türleri için toUnmodifiableSet() ve toUnmodifiableMap() kullanın."
+whyModernWins:
+- icon: "📏"
+  title: "En kısa yol"
+  desc: "stream.toList() hiç collect() veya Collectors import gerektirmez."
+- icon: "🔒"
+  title: "Değişmez"
+  desc: "Sonuç değiştirilemez — yanlışlıkla mutasyon olmaz."
+- icon: "📖"
+  title: "Okunabilir"
+  desc: "Herhangi bir stream hattının terminal adımı olarak doğal okunur."
+support:
+  description: JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)

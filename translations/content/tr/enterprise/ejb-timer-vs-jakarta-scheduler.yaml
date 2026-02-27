@@ -1,0 +1,18 @@
+---
+title: EJB Timer ve Jakarta Scheduler
+oldApproach: EJB TimerService
+modernApproach: ManagedScheduledExecutorService
+summary: "Ağır EJB zamanlayıcıları, daha basit zamanlama için Jakarta Concurrency'nin ManagedScheduledExecutorService'i ile değiştirin."
+explanation: "EJB zamanlayıcıları, @Timeout geri çağrısı olan bir @Stateless veya @Singleton bean ve XML ya da ek açıklama tabanlı zamanlama ifadeleri gerektirir. Jakarta Concurrency, tanıdık java.util.concurrent zamanlama API'sini kullanan ManagedScheduledExecutorService sağlar. Sonuç: daha az şablon kod, daha kolay birim testi ve EJB kapsayıcı bağımlılığı yok."
+whyModernWins:
+- icon: 🪶
+  title: Azaltılmış şablon kod
+  desc: "@Timeout geri çağrısı veya ScheduleExpression yok — standart ScheduledExecutorService API'sini kullanın."
+- icon: 🧪
+  title: Daha iyi test edilebilirlik
+  desc: "Düz yöntemler ve executor mock'ları, EJB kapsayıcı olmadan birim testini basit hale getirir."
+- icon: ☁️
+  title: Buluta uyumlu
+  desc: "Yönetilen yürütücüler, kapsayıcı yaşam döngüsüyle entegre olur ve hafif çalışma ortamlarında çalışır."
+support:
+  description: Jakarta EE 10 / Concurrency 3.0'dan itibaren kullanılabilir

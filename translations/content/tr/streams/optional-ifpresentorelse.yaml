@@ -1,0 +1,18 @@
+---
+title: "Optional.ifPresentOrElse()"
+oldApproach: Optional üzerinde if/else
+modernApproach: "ifPresentOrElse()"
+summary: "Optional'ın hem mevcut hem de boş durumlarını tek bir çağrıda işleyin."
+explanation: "ifPresentOrElse(), mevcut durum için bir Consumer ve boş durum için bir Runnable alır. isPresent/get anti-deseninden kaçınılmasını sağlar."
+whyModernWins:
+- icon: "📏"
+  title: Tek ifade
+  desc: "Her iki durum tek bir metot çağrısında işlenir."
+- icon: "🚫"
+  title: "get() yok"
+  desc: "Tehlikeli isPresent() + get() desenini ortadan kaldırır."
+- icon: "🔗"
+  title: Akıcı
+  desc: "findUser() veya Optional döndüren herhangi bir metodun ardından doğal olarak zincirlenir."
+support:
+  description: "JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)"

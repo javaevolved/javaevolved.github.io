@@ -1,0 +1,18 @@
+---
+title: Try-with-resources iyileştirmesi
+oldApproach: Değişkeni Yeniden Tanımla
+modernApproach: Fiilen Final
+summary: "Fiilen final olan mevcut değişkenleri doğrudan try-with-resources içinde kullanın."
+explanation: "Java 9, fiilen final olan değişkenlerin yeniden tanımlanmadan doğrudan try-with-resources içinde kullanılmasına olanak tanır. Kaynak try bloğunun dışında oluşturulduğunda bu daha temiz bir çözümdür."
+whyModernWins:
+- icon: "🧹"
+  title: "Yeniden tanımlama yok"
+  desc: "Mevcut değişken adını doğrudan kullanın."
+- icon: "📖"
+  title: "Daha az karışıklık"
+  desc: "Try bloğu içinde ayrı değişken adı gerekmez."
+- icon: "📏"
+  title: "Özlü"
+  desc: "Daha az satır, aynı kaynak güvenliği."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

@@ -1,0 +1,18 @@
+---
+title: Record tabanlı hata yanıtları
+oldApproach: Map veya Ayrıntılı Sınıf
+modernApproach: Hata Record'ları
+summary: "Özlü, değiştirilemez hata yanıt türleri için record kullanın."
+explanation: "Record'lar hata yanıtları için mükemmeldir — değiştirilemezler, karşılaştırma için yerleşik equals/hashCode'a ve günlükleme için toString'e sahiptirler. Özel yapıcılar doğrulama veya varsayılan değerler ekler."
+whyModernWins:
+- icon: "📏"
+  title: "Özlü"
+  desc: "Hata türlerini 30 satır yerine 3 satırda tanımlayın."
+- icon: "🔒"
+  title: "Değiştirilemez"
+  desc: "Hata verileri oluşturulduktan sonra yanlışlıkla değiştirilemez."
+- icon: "📋"
+  title: "Otomatik toString"
+  desc: "Günlükleme için mükemmel — tüm alanları otomatik olarak gösterir."
+support:
+  description: JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)

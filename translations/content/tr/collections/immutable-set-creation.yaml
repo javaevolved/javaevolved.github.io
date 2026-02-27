@@ -1,0 +1,18 @@
+---
+title: Değişmez set oluşturma
+oldApproach: Ayrıntılı Sarmalama
+modernApproach: Set.of()
+summary: "Tek bir factory çağrısıyla değişmez set'ler oluşturun."
+explanation: "Set.of(), oluşturma sırasında null'ları ve yinelenen öğeleri reddeden gerçek anlamda değişmez bir set oluşturur. Artık değiştirilebilir set'leri sarmalamanıza gerek yok."
+whyModernWins:
+- icon: "📏"
+  title: "Kısa ve öz"
+  desc: "Üç iç içe çağrı yerine tek satır."
+- icon: "🚫"
+  title: "Tekrarlananları algılar"
+  desc: "Yanlışlıkla yinelenen öğeler geçirilirse hata fırlatır."
+- icon: "🔒"
+  title: "Değişmez"
+  desc: "Oluşturulduktan sonra ekleme/çıkarma yapılamaz."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

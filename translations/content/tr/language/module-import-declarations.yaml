@@ -1,0 +1,18 @@
+---
+title: Modül içe aktarım bildirimleri
+oldApproach: Çok Sayıda İçe Aktarım
+modernApproach: import module
+summary: "Bir modülün dışa aktardığı tüm paketleri tek bir bildirimle içe aktarın."
+explanation: "Modül içe aktarım bildirimleri, bir modülün dışa aktardığı her şeyi tek bir satırla içe aktarmanıza izin verir. Bu, özellikle koleksiyonları, G/Ç'yi, akışları ve daha fazlasını kapsayan java.base için kullanışlıdır."
+whyModernWins:
+- icon: "🧹"
+  title: Tek satır
+  desc: "Uzun içe aktarım listesini tek bir modül içe aktarımıyla değiştirin."
+- icon: "📦"
+  title: Modüle duyarlı
+  desc: "Tutarlı paket kümelerini içe aktarmak için modül sistemini kullanır."
+- icon: "🚀"
+  title: Hızlı başlangıç
+  desc: "İçe aktarım listelerinin sıkıcı olduğu betikler ve prototipler için mükemmeldir."
+support:
+  description: "JDK 25 LTS'de tamamlandı (JEP 511, Eylül 2025)."

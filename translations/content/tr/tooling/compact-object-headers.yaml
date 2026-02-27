@@ -1,0 +1,18 @@
+---
+title: Kompakt nesne başlıkları
+oldApproach: 128 bit Başlıklar
+modernApproach: 64 bit Başlıklar
+summary: "Daha iyi bellek yoğunluğu ve önbellek kullanımı için nesne başlık boyutunu yarıya indirin."
+explanation: "Kompakt nesne başlıkları, 64 bit platformlarda nesne başına ek yükü 128 bitten 64 bite düşürür. Bu durum belleği tasarruf eder ve özellikle çok sayıda küçük nesne içeren uygulamalarda önbellek kullanımını iyileştirir."
+whyModernWins:
+- icon: "📦"
+  title: "%50 daha küçük başlıklar"
+  desc: "Nesne başına 16 yerine 8 bayt."
+- icon: "⚡"
+  title: Daha iyi önbellek kullanımı
+  desc: "CPU önbellek satırlarına daha fazla nesne sığar."
+- icon: "📊"
+  title: Daha yüksek yoğunluk
+  desc: "Aynı heap boyutuna daha fazla nesne yerleştirin."
+support:
+  description: "JDK 25 LTS'de tamamlandı (JEP 519, Eylül 2025)."

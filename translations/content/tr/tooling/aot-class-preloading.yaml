@@ -1,0 +1,18 @@
+---
+title: AOT sınıf ön yükleme
+oldApproach: Her Seferinde Soğuk Başlangıç
+modernApproach: AOT Önbelleği
+summary: "Anında başlangıç için sınıf yükleme ve derlemeyi önbelleğe alın."
+explanation: "AOT sınıf ön yükleme, eğitim çalışmasından yüklenen ve bağlanan sınıfları önbelleğe alır. Sonraki başlangıçlarda sınıflar önbellekten yüklenerek doğrulama ve bağlama adımları atlanır. AOT derlemesiyle birleştirildiğinde başlangıç süresi önemli ölçüde azalır."
+whyModernWins:
+- icon: "⚡"
+  title: Daha hızlı başlangıç
+  desc: "Sınıf yükleme, doğrulama ve bağlama adımları atlanır."
+- icon: "📦"
+  title: Önbelleğe alınmış durum
+  desc: "Eğitim çalışması ideal sınıf durumunu yakalar."
+- icon: "🔧"
+  title: Kod değişikliği gerekmez
+  desc: "Mevcut uygulamalarla çalışır — yalnızca JVM bayrakları eklenir."
+support:
+  description: "JDK 25 LTS'de standart özellik olarak kullanılabilir (JEP 514/515, Eylül 2025)."

@@ -1,0 +1,18 @@
+---
+title: Güçlü rastgele üretim
+oldApproach: new SecureRandom()
+modernApproach: getInstanceStrong()
+summary: "Platformun en güçlü SecureRandom uygulamasını edinin."
+explanation: "getInstanceStrong(), platformda en güçlü olarak yapılandırılan SecureRandom uygulamasını döndürür. Bu, securerandom.strongAlgorithms güvenlik özelliği tarafından kontrol edilir."
+whyModernWins:
+- icon: "🛡️"
+  title: "Mevcut en güçlüsü"
+  desc: "Platform için en iyi algoritmayı otomatik olarak seçer."
+- icon: "📖"
+  title: "Açık niyet"
+  desc: "Güçlü rastgeleliğin gerekli olduğunu açıkça belirtir."
+- icon: "🔧"
+  title: "Yapılandırılabilir"
+  desc: "Yöneticiler güvenlik özellikleri aracılığıyla güçlü algoritmayı değiştirebilir."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

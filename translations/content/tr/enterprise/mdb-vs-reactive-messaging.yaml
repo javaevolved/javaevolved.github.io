@@ -1,0 +1,18 @@
+---
+title: Message-Driven Bean ile Reactive Messaging Karşılaştırması
+oldApproach: Message-Driven Bean
+modernApproach: Reactive Messaging
+summary: "Daha basit olay işleme için JMS Message-Driven Bean'leri MicroProfile Reactive Messaging ile değiştirin."
+explanation: "Message-Driven Bean'ler, MessageListener'ı uygulamayı, etkinleştirme özelliklerini yapılandırmayı ve JMS iletilerini manuel olarak seri dışı bırakmayı gerektirir. MicroProfile Reactive Messaging, doğrudan yazılı nesneler alan bir yöntem üzerinde basit bir @Incoming açıklaması kullanır. Kanal yapılandırması dışarı çıkarılır; bu da kodu aracı-agnostik ve test edilmesi çok daha kolay hale getirir."
+whyModernWins:
+- icon: 🪶
+  title: Minimal kod
+  desc: "Tek bir @Incoming yöntemi, MDB sınıfının, MessageListener arayüzünün ve etkinleştirme yapılandırmasının yerini alır."
+- icon: 🔌
+  title: Aracı-agnostik
+  desc: "Uygulama kodunu değiştirmeden yapılandırma yoluyla Kafka, AMQP veya JMS bağlayıcılarını değiştirin."
+- icon: ☁️
+  title: Buluta uyumlu
+  desc: "Reaktif akışlar geri baskısı ve hafif çalışma ortamı, konteynerleştirilmiş dağıtımlar için idealdir."
+support:
+  description: MicroProfile 4.0 / SmallRye Reactive Messaging'den itibaren kullanılabilir

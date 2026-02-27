@@ -1,0 +1,18 @@
+---
+title: "String.strip() ve trim() karşılaştırması"
+oldApproach: "trim()"
+modernApproach: "strip()"
+summary: "strip(), stripLeading() ve stripTrailing() ile Unicode'a duyarlı boşluk temizleme kullanın."
+explanation: "trim(), yalnızca U+0020 ve altındaki karakterleri (ASCII kontrol karakterleri ve boşluk) kaldırır. strip(), bölünemez boşluk ve ideografik boşluk gibi Unicode boşluklarını da işleyen Character.isWhitespace() kullanır."
+whyModernWins:
+- icon: "🌐"
+  title: "Unicode-doğru"
+  desc: "Her dilden tüm boşluk karakterlerini işler."
+- icon: "🎯"
+  title: Yönlü
+  desc: "stripLeading() ve stripTrailing(), tek taraflı kırpma sağlar."
+- icon: "🛡️"
+  title: Daha az hata
+  desc: "Uluslararası metinlerde geride kalan sürpriz boşluk kalmaz."
+support:
+  description: "JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)"

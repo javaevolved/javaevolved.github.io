@@ -1,0 +1,18 @@
+---
+title: Collectors.teeing()
+oldApproach: İki Geçiş
+modernApproach: teeing()
+summary: "Tek bir stream geçişinde iki toplama işlemi gerçekleştirin."
+explanation: "Collectors.teeing(), her elemanı iki alt collector'a gönderir ve sonuçları birleştirir. Bu sayede veriyi iki kez akıtmaktan veya değiştirilebilir bir biriktirici kullanmaktan kaçınılır."
+whyModernWins:
+- icon: "⚡"
+  title: "Tek geçiş"
+  desc: "Stream'i iki yerine bir kez işleyin."
+- icon: "🧩"
+  title: "Birleştirilebilir"
+  desc: "Herhangi iki collector'ı birleştirme fonksiyonuyla bir araya getirin."
+- icon: "🔒"
+  title: "Değişmez sonuç"
+  desc: "Doğrudan bir record veya değer nesnesine birleştirin."
+support:
+  description: JDK 12'den itibaren geniş çapta kullanılabilir (Mart 2019)

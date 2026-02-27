@@ -1,0 +1,18 @@
+---
+title: Javadoc yorumlarında Markdown
+oldApproach: HTML tabanlı Javadoc
+modernApproach: Markdown Javadoc
+summary: "Daha iyi okunabilirlik için Javadoc yorumlarını HTML yerine Markdown ile yazın."
+explanation: "Java 23, geleneksel /** */ HTML tabanlı biçime alternatif olarak /// Markdown stilinde Javadoc yorumlarını tanıtır. Markdown sözdizimi yazmak ve okumak için daha doğaldır; kod blokları, vurgu, listeler ve bağlantılar için destek sunar. Derleyici, javadoc çıktısı için Markdown'ı HTML'ye dönüştürür."
+whyModernWins:
+- icon: "📖"
+  title: Doğal sözdizimi
+  desc: "HTML etiketleri yerine satır içi kod için backtick ve bloklar için ``` kullanın."
+- icon: "✍️"
+  title: Yazmak daha kolay
+  desc: "{@code}, <pre>, <p> etiketlerine gerek yok — sadece Markdown yazın."
+- icon: "👁"
+  title: Editörlerde daha iyi
+  desc: "Markdown, modern IDE'lerde ve metin editörlerinde güzel bir şekilde görüntülenir."
+support:
+  description: "JDK 23'ten itibaren kullanılabilir (Eylül 2024)"

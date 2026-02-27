@@ -1,0 +1,18 @@
+---
+title: JDBC ile JPA Karşılaştırması
+oldApproach: JDBC
+modernApproach: JPA EntityManager
+summary: "Ayrıntılı JDBC şablon kodunu JPA'nın nesne-ilişkisel eşleme ve EntityManager'ı ile değiştirin."
+explanation: "JPA (Jakarta Persistence API), Java nesnelerini veritabanı satırlarına eşler; manuel ResultSet işleme ve SQL dize birleştirmeyi ortadan kaldırır. EntityManager, find(), persist() ve JPQL sorguları sağlar; böylece ham SQL yerine etki alanı nesneleriyle çalışırsınız; kapsayıcı ise bağlantı havuzlama ve işlemleri yönetir."
+whyModernWins:
+- icon: 🗺️
+  title: Nesne eşleme
+  desc: "Entity'ler düz açıklamalı sınıflardır — manuel ResultSet'ten nesneye çeviri yok."
+- icon: 🔒
+  title: Tür-güvenli sorgular
+  desc: "JPQL, ham tablo ve sütun dizeleri yerine entity türleri ve alanlar üzerinde çalışır."
+- icon: ⚡
+  title: Yerleşik önbellekleme
+  desc: "Birinci ve ikinci düzey önbellekler, veritabanı gidiş-dönüşlerini otomatik olarak azaltır."
+support:
+  description: Jakarta EE 8 / Java 11'den itibaren geniş çapta kullanılabilir

@@ -1,0 +1,18 @@
+---
+title: Dosya bellek eşleme
+oldApproach: MappedByteBuffer
+modernApproach: Arena ile MemorySegment
+summary: "MemorySegment kullanarak 2 GB'tan büyük dosyaları belirleyici temizlemeyle eşleyin."
+explanation: "Foreign Function & Memory API (JEP 454), güvenli ve verimli bellek erişimi için MemorySegment'i tanıtır. MappedByteBuffer'dan farklı olarak MemorySegment, 2 GB'tan (Integer.MAX_VALUE) büyük dosyaları destekler, Arena aracılığıyla belirleyici temizleme sağlar ve modern donanımla daha iyi performans sunar."
+whyModernWins:
+- icon: "📏"
+  title: "Boyut sınırı yok"
+  desc: "Geçici çözümler olmadan 2 GB'tan büyük dosyaları eşleyin."
+- icon: "🔒"
+  title: "Belirleyici temizleme"
+  desc: "Arena, belleğin GC zamanında değil kapsam çıkışında serbest bırakılmasını sağlar."
+- icon: "⚡"
+  title: "Daha iyi performans"
+  desc: "Modern bellek modelleri ve donanımla uyumlu."
+support:
+  description: JDK 22'den itibaren kullanılabilir (Mart 2024)

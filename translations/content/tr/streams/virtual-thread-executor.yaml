@@ -1,0 +1,18 @@
+---
+title: Sanal iş parçacığı yürütücüsü
+oldApproach: Sabit İş Parçacığı Havuzu
+modernApproach: Sanal İş Parçacığı Yürütücüsü
+summary: "Sınırsız hafif eşzamanlılık için sanal iş parçacığı yürütücülerini kullanın."
+explanation: "Sanal iş parçacığı yürütücüsü her görev için yeni bir sanal iş parçacığı oluşturur. Havuz boyutlandırması gerekmez — sanal iş parçacıkları milyonlarca oluşturulabilecek kadar ucuzdur."
+whyModernWins:
+- icon: "♾️"
+  title: Boyutlandırma yok
+  desc: "Ayarlanacak havuz boyutu yok — gerektiği kadar iş parçacığı oluşturulabilir."
+- icon: "⚡"
+  title: Hafif
+  desc: "Sanal iş parçacıkları MB değil, KB bellek kullanır."
+- icon: "🧹"
+  title: Otomatik kapatma
+  desc: "try-with-resources kapatmayı otomatik olarak yönetir."
+support:
+  description: "JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)"

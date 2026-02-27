@@ -1,0 +1,18 @@
+---
+title: "String.isBlank()"
+oldApproach: "trim().isEmpty()"
+modernApproach: "isBlank()"
+summary: "Tek bir metot çağrısıyla boş dizeleri kontrol edin."
+explanation: "isBlank(), dize boşsa veya yalnızca trim()'in kaçırdığı Unicode boşluk karakterleri de dahil olmak üzere boşluk içeriyorsa true döndürür."
+whyModernWins:
+- icon: "📖"
+  title: Kendi kendini belgeler
+  desc: "isBlank(), neyi kontrol ettiğini tam olarak ifade eder."
+- icon: "🌐"
+  title: "Unicode-bilinçli"
+  desc: "Yalnızca ASCII değil, tüm Unicode boşluklarını işler."
+- icon: "⚡"
+  title: Bellek tahsisi yok
+  desc: "Ara kırpılmış dize oluşturulmaz."
+support:
+  description: "JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)"

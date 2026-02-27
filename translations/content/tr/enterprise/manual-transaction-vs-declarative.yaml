@@ -1,0 +1,18 @@
+---
+title: Manuel JPA İşlemi ile Bildirimsel @Transactional Karşılaştırması
+oldApproach: Manuel İşlem
+modernApproach: "@Transactional"
+summary: "Ayrıntılı begin/commit/rollback bloklarını tek bir @Transactional açıklamasıyla değiştirin."
+explanation: "Manuel işlem yönetimi, try-catch bloklarına sarılmış açık begin(), commit() ve rollback() çağrıları gerektirir — her hizmet yöntemi bu şablon kodu tekrar eder. @Transactional açıklaması, yaşam döngüsü yönetimini kapsayıcıya devreder: yöntemden önce bir işlem başlatır, başarıda commit eder ve RuntimeException durumunda otomatik olarak geri alır."
+whyModernWins:
+- icon: 🗑️
+  title: Şablon kod yok
+  desc: "Tek bir açıklama, tekrarlayan begin/commit/rollback try-catch bloklarının yerini alır."
+- icon: 🛡️
+  title: Daha güvenli geri alma
+  desc: "Kapsayıcı, denetlenmemiş istisnalarda geri almayı garanti eder — catch bloğunu unutma riski yok."
+- icon: 📐
+  title: Bildirimsel kontrol
+  desc: "Yayılım, yalıtım ve geri alma kuralları açıklama öznitelikleri olarak ifade edilir."
+support:
+  description: Jakarta EE 8 / Java 11'den itibaren geniş çapta kullanılabilir

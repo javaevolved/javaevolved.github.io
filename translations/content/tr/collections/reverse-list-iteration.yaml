@@ -1,0 +1,18 @@
+---
+title: Ters liste yineleme
+oldApproach: Elle ListIterator
+modernApproach: reversed()
+summary: "Bir liste üzerinde temiz bir for-each döngüsüyle ters sırada yineleyin."
+explanation: "SequencedCollection'dan gelen reversed() metodu, listenin ters sıralı bir görünümünü döndürür. Bu görünüm orijinal listenin arkasına dayandığından kopyalama yapılmaz. Geliştirilmiş for döngüsü sözdizimi, ters yinelemeyi ileri yineleme kadar okunabilir kılar."
+whyModernWins:
+- icon: "📖"
+  title: "Doğal sözdizimi"
+  desc: "Ayrıntılı ListIterator yerine geliştirilmiş for döngüsü."
+- icon: "⚡"
+  title: "Kopyalama yok"
+  desc: "reversed() bir görünüm döndürür — performans yükü yoktur."
+- icon: "🧩"
+  title: "Tutarlı API"
+  desc: "List, Deque, SortedSet üzerinde tekdüze çalışır."
+support:
+  description: JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)

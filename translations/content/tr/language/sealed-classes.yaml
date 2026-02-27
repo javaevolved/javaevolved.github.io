@@ -1,0 +1,18 @@
+---
+title: Tür hiyerarşileri için sealed sınıflar
+oldApproach: Açık Hiyerarşi
+modernApproach: sealed permits
+summary: "Hangi sınıfların bir türü genişletebileceğini kısıtlayın — kapsamlı switch'leri etkinleştirin."
+explanation: "Sealed sınıflar, kapalı bir alt tür kümesi tanımlar. Derleyici tüm olası durumları bilir ve varsayılan bir dal olmadan kapsamlı kalıp eşleştirmeyi etkinleştirir. Record'larla birleştirildiğinde cebirsel veri türlerini modeller."
+whyModernWins:
+- icon: "🔐"
+  title: Kontrollü hiyerarşi
+  desc: "Yalnızca izin verilen alt türler genişletebilir — sürpriz alt sınıf yok."
+- icon: "✅"
+  title: Kapsamlı eşleştirme
+  desc: "Derleyici switch'in tüm durumları kapsadığını doğrular, default gerekmez."
+- icon: "📐"
+  title: Cebirsel veri türleri
+  desc: "Sum türlerini doğal olarak modelleyin — sealed + record'lar = Java'da ADT'ler."
+support:
+  description: "JDK 17 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2021)"

@@ -1,0 +1,18 @@
+---
+title: Spring Framework 7 API Sürümlendirme
+oldApproach: Manuel URL Yolu Sürümlendirme
+modernApproach: Yerel API Sürümlendirme
+summary: "Yinelenen sürüm önekli controller'ları Spring Framework 7'nin yerel API sürümlendirme desteğiyle değiştirin."
+explanation: "Spring Framework 7 öncesinde, API sürümlendirme her sürüm için ayrı controller sınıfları gerektiriyordu (örn. /api/v1/products, /api/v2/products); bu da istek eşlemelerini kopyalıyor ve sürüm mantığını birçok dosyaya yayıyordu. Spring Framework 7, @RequestMapping ve ilgili açıklamalardaki yeni version özniteliği ile WebMvcConfigurer'daki configureApiVersioning kancası aracılığıyla yerel sürümlendirmeyi tanıtıyor. Sürüm, bir istek başlığından, URL yolu segmentinden veya sorgu parametresinden çözümlenebilir — hepsi tek bir yerde kontrol edilir."
+whyModernWins:
+- icon: 🗂️
+  title: Controller yinelemesi yok
+  desc: "Tüm sürümler tek bir controller sınıfında yaşar; yalnızca bireysel işleyici yöntemleri bir version özniteliği taşır."
+- icon: ⚙️
+  title: Merkezi sürüm stratejisi
+  desc: "Tek bir configureApiVersioning çağrısıyla başlıktan URL'ye veya sorgu parametresi sürümlendirmesine geçin."
+- icon: 📈
+  title: Kademeli gelişim
+  desc: "İlgisiz uç noktalara dokunmadan veya yeni controller dosyaları oluşturmadan tek bir yönteme yeni bir sürüm ekleyin."
+support:
+  description: Spring Framework 7.0'dan itibaren kullanılabilir (Java 17+ gerektirir)

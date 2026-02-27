@@ -1,0 +1,18 @@
+---
+title: EJB ile CDI Karşılaştırması
+oldApproach: EJB
+modernApproach: CDI Bean
+summary: "Bağımlılık enjeksiyonu ve işlemler için ağır EJB'leri hafif CDI bean'leri ile değiştirin."
+explanation: "CDI (Contexts and Dependency Injection), EJB'lerle aynı bağımlılık enjeksiyonu ve işlem yönetimini sağlar; ancak kapsayıcıya özel arayüzler veya üst sınıflar olmadan düz Java sınıfları olarak. @ApplicationScoped ve @RequestScoped gibi kapsamlar yaşam döngüsünü kontrol eder; @Transactional ise zorunlu EJB işlem semantiğinin yerini alır."
+whyModernWins:
+- icon: 🪶
+  title: Hafif
+  desc: "CDI bean'leri, EJB'ye özel arayüzler veya tanımlayıcılar olmadan düz Java sınıflarıdır."
+- icon: 💉
+  title: Birleşik enjeksiyon
+  desc: "@Inject; tüm yönetilen bean'ler, JAX-RS kaynakları ve Jakarta EE bileşenlerinde çalışır."
+- icon: 🧪
+  title: Kolay birim testi
+  desc: "EJB proxy ek yükü olmayan düz sınıflar, örneklendirmek ve mock'lamak için çok daha basittir."
+support:
+  description: Jakarta EE 8 / Java 11'den itibaren geniş çapta kullanılabilir

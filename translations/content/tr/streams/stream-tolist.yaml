@@ -1,0 +1,18 @@
+---
+title: "Stream.toList()"
+oldApproach: "Collectors.toList()"
+modernApproach: ".toList()"
+summary: "Terminal toList(), ayrıntılı collect(Collectors.toList()) çağrısının yerini alır."
+explanation: "Stream.toList(), değiştirilemez bir liste döndürür. .collect(Collectors.toUnmodifiableList()) ile eşdeğerdir ancak çok daha kısadır. Not: Collectors.toList()'in aksine sonuç sabittir."
+whyModernWins:
+- icon: "📏"
+  title: "7 karakter, 24 değil"
+  desc: ".toList(), .collect(Collectors.toList()) ifadesinin yerini alır."
+- icon: "🔒"
+  title: Değiştirilemez
+  desc: "Sonuç liste değiştirilemez."
+- icon: "📖"
+  title: Akıcı
+  desc: "Boru hattının sonunda doğal biçimde okunur."
+support:
+  description: "JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)"

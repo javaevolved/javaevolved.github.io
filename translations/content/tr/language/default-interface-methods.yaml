@@ -1,0 +1,18 @@
+---
+title: Varsayılan interface metotları
+oldApproach: Paylaşılan davranış için soyut sınıflar
+modernApproach: Interface'lerde varsayılan metotlar
+summary: "Metot implementasyonlarını doğrudan interface'lere ekleyin ve çoklu davranış kalıtımını etkinleştirin."
+explanation: "Java 8'den önce, ilgisiz sınıflar arasında davranış paylaşmak soyut sınıflar gerektiriyordu ve bu da sizi tek kalıtımla sınırlıyordu. Varsayılan metotlar, interface'lerin metot implementasyonları sağlamasına izin verir, böylece sınıflar birden fazla interface'den davranış kalıtımı alabilir. Bu, mevcut implementasyonları bozmadan Koleksiyonlar API'sini (örn. List.forEach, Map.getOrDefault) geliştirmek için gerekliydi."
+whyModernWins:
+- icon: "🔀"
+  title: Çoklu kalıtım
+  desc: "Sınıflar, tek soyut sınıf kalıtımının aksine, varsayılan metotlara sahip birçok interface'i uygulayabilir."
+- icon: "📦"
+  title: API evrimi
+  desc: "Mevcut implementasyonları bozmadan interface'lere yeni metotlar ekleyin."
+- icon: "🧩"
+  title: Birleştirilebilir davranış
+  desc: "Birden fazla interface'den yetenekleri özgürce karıştırın ve eşleştirin."
+support:
+  description: "JDK 8'den itibaren kullanılabilir (Mart 2014)."

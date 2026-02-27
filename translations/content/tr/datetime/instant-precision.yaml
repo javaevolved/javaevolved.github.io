@@ -1,0 +1,18 @@
+---
+title: Nanosaniye hassasiyetli Instant
+oldApproach: Milisaniyeler
+modernApproach: Nanosaniyeler
+summary: "Mikrosaniye veya nanosaniye hassasiyetiyle zaman damgaları alın."
+explanation: "Java 9, saat çözünürlüğünü iyileştirdi; böylece Instant.now() çoğu platformda mikrosaniye hassasiyeti (bazılarında nanosaniye) yakalıyor. Eski currentTimeMillis() yalnızca milisaniye sağlar."
+whyModernWins:
+- icon: 🎯
+  title: Daha yüksek hassasiyet
+  desc: "Milisaniye yerine mikrosaniye/nanosaniye zaman damgaları."
+- icon: 📐
+  title: Tür-güvenli
+  desc: "Instant hassasiyetini taşır — belirsiz long türü yok."
+- icon: 🌐
+  title: UTC tabanlı
+  desc: "Instant her zaman UTC'dedir — saat dilimi karışıklığı yok."
+support:
+  description: JDK 9'dan (Eylül 2017) itibaren geniş çapta kullanılabilir

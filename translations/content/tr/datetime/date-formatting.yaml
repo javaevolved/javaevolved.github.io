@@ -1,0 +1,18 @@
+---
+title: Tarih biçimlendirme
+oldApproach: SimpleDateFormat
+modernApproach: DateTimeFormatter
+summary: "Tarihleri thread-safe ve değişmez DateTimeFormatter ile biçimlendirin."
+explanation: "DateTimeFormatter, SimpleDateFormat'ın aksine değişmez ve thread-safe'dir. Sabit olarak saklanabilir ve paylaşılabilir. Yaygın biçimler için ISO_LOCAL_DATE gibi önceden tanımlanmış biçimleyiciler mevcuttur."
+whyModernWins:
+- icon: 🛡️
+  title: Thread-safe
+  desc: "Biçimleyicileri senkronizasyon olmadan iş parçacıkları arasında paylaşın."
+- icon: 📋
+  title: Yerleşik biçimler
+  desc: "Standart biçimler için ISO_LOCAL_DATE, ISO_INSTANT ve diğerleri."
+- icon: 🔒
+  title: Değişmez
+  desc: "Güvenle static final sabit olarak saklayın."
+support:
+  description: JDK 8'den (Mart 2014) itibaren geniş çapta kullanılabilir

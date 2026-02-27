@@ -1,0 +1,18 @@
+---
+title: _ ile isimsiz değişkenler
+oldApproach: Kullanılmayan Değişken
+modernApproach: _ Yer Tutucu
+summary: "Bir değişkenin kasıtlı olarak kullanılmadığını belirtmek için _ kullanın."
+explanation: "İsimsiz değişkenler, okuyuculara ve araçlara bir değerin kasıtlı olarak görmezden gelindiğini iletir. Artık 'ignored' veya 'unused' adlandırma kurallarına, artık IDE uyarılarına gerek yoktur."
+whyModernWins:
+- icon: "📢"
+  title: Net niyet
+  desc: "_ açıkça 'bu değere burada ihtiyaç yok' der."
+- icon: "🔇"
+  title: Uyarı yok
+  desc: "IDE'ler ve lint araçları kasıtlı olarak kullanılmayan değişkenleri işaretlemez."
+- icon: "🧹"
+  title: Daha temiz lambda'lar
+  desc: "Çok parametreli lambda'lar yalnızca bazı parametrelere ihtiyaç duyduğunuzda daha temizdir."
+support:
+  description: "JDK 22'de tamamlandı (JEP 456, Mart 2024)."

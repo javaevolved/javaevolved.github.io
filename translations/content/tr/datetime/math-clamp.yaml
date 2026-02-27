@@ -1,0 +1,18 @@
+---
+title: Math.clamp()
+oldApproach: İç içe min/max
+modernApproach: Math.clamp()
+summary: "Bir değeri tek ve açık bir çağrıyla sınırlar arasında kısıtlayın."
+explanation: "Math.clamp(value, min, max), bir değeri [min, max] aralığıyla kısıtlar. İç içe Math.min/Math.max'tan daha açık ve int, long, float ve double için kullanılabilir."
+whyModernWins:
+- icon: 📖
+  title: Kendini belgeleyen
+  desc: "clamp(value, min, max) belirsizlik içermez."
+- icon: 🛡️
+  title: Daha az hata eğilimli
+  desc: "Artık min/max sırasını yanlışlıkla yer değiştirme riski yok."
+- icon: 🎯
+  title: Tüm sayısal türler
+  desc: "int, long, float ve double ile çalışır."
+support:
+  description: JDK 21 LTS'den (Eylül 2023) itibaren geniş çapta kullanılabilir

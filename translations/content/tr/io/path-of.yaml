@@ -1,0 +1,18 @@
+---
+title: Path.of() fabrika metodu
+oldApproach: Paths.get()
+modernApproach: Path.of()
+summary: "Path arayüzündeki modern fabrika metodu olan Path.of()'u kullanın."
+explanation: "Path.of(), ayrı Paths yardımcı sınıfının yerini alarak doğrudan Path arayüzüne eklenmiş bir fabrika metodudur. Daha keşfedilebilir ve List.of(), Map.of() vb. ile tutarlıdır."
+whyModernWins:
+- icon: "📐"
+  title: "Tutarlı API"
+  desc: "List.of(), Set.of() gibi .of() fabrika örüntüsünü izler."
+- icon: "📖"
+  title: "Keşfedilebilir"
+  desc: "Ayrı bir Paths sınıfı değil, Path türünün kendisinde bulunur."
+- icon: "🧹"
+  title: "Bir sınıf daha az"
+  desc: "Paths yardımcı sınıfını import etmeye gerek yoktur."
+support:
+  description: JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)

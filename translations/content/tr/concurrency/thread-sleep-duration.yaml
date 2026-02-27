@@ -1,0 +1,18 @@
+---
+title: Duration ile Thread.sleep
+oldApproach: Milisaniye
+modernApproach: Duration
+summary: "Kendini belgeleyen zaman değerleri için Duration kullanın."
+explanation: "Thread.sleep(Duration) zaman birimini açık hale getirir. 5000'in milisaniye mi yoksa mikrosaniye mi olduğunu artık tahmin etmeye gerek yok. Duration.ofSeconds, ofMillis, ofMinutes vb. ile çalışır."
+whyModernWins:
+- icon: "📖"
+  title: "Kendini belgeleyen"
+  desc: "Duration.ofSeconds(5) belirsizlik taşımaz."
+- icon: "🛡️"
+  title: "Birim güvenli"
+  desc: "Mikrosaniyeyi yanlışlıkla milisaniye olarak geçirme olmaz."
+- icon: "🧩"
+  title: "Birleştirilebilir"
+  desc: "Duration matematiği: plus(), multipliedBy() vb."
+support:
+  description: JDK 19'dan itibaren geniş çapta kullanılabilir (Eylül 2022)

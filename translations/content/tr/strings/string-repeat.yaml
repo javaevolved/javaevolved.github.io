@@ -1,0 +1,18 @@
+---
+title: "String.repeat()"
+oldApproach: StringBuilder Döngüsü
+modernApproach: "repeat()"
+summary: "Bir dizeyi döngü kullanmadan n kez tekrarlayın."
+explanation: "String.repeat(int), dizeyi kendisiyle n kez birleştirerek döndürür. Sınır durumlarını işler: repeat(0) boş dize, repeat(1) aynı dizeyi döndürür."
+whyModernWins:
+- icon: "📏"
+  title: Tek satır
+  desc: "5 satır StringBuilder kodunu tek bir çağrıyla değiştirin."
+- icon: "⚡"
+  title: Optimize edilmiş
+  desc: "Dahili uygulama büyük tekrarlar için optimize edilmiştir."
+- icon: "📖"
+  title: Net amaç
+  desc: "repeat(3) amacı hemen ortaya koyar."
+support:
+  description: "JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)"

@@ -1,0 +1,89 @@
+site:
+  title: java.evolved
+  tagline: Java gelişti. Kodun da gelişebilir.
+  tagline_line1: Java gelişti.
+  tagline_line2: Kodun da gelişebilir.
+  description: Modern Java kod parçacıklarından oluşan bir koleksiyon. Her eski Java deseni, temiz ve modern karşılığının yanında — yan yana.
+  heroSnippetCount: ✦ {{snippetCount}} modern desen · Java 8 → Java 25
+  heroOld: Eski
+  heroModern: Modern
+  allComparisons: Tüm karşılaştırmalar
+  snippetsBadge: '{{snippetCount}} parçacık'
+nav:
+  allPatterns: ← Tüm desenler
+  toggleTheme: Temayı değiştir
+  viewOnGitHub: GitHub'da görüntüle
+  selectLanguage: Dil seç
+breadcrumb:
+  home: Ana Sayfa
+sections:
+  codeComparison: Kod Karşılaştırması
+  whyModernWins: Modern yöntem neden daha iyi
+  oldApproach: Eski Yaklaşım
+  modernApproach: Modern Yaklaşım
+  sinceJdk: JDK'dan itibaren
+  difficulty: Zorluk
+  jdkSupport: JDK Desteği
+  howItWorks: Nasıl çalışır
+  relatedDocs: İlgili Belgeler
+  relatedPatterns: İlgili desenler
+filters:
+  show: 'Göster:'
+  all: Tümü
+difficulty:
+  beginner: Başlangıç
+  intermediate: Orta
+  advanced: İleri
+search:
+  placeholder: Parçacık ara…
+  noResults: Sonuç bulunamadı.
+  esc: ESC
+  searchTrigger: Ara…
+  navigate: gezin
+  open: aç
+  close: kapat
+cards:
+  old: Eski
+  modern: Modern
+  hoverHint: modernini görmek için üzerine gel →
+  hoverHintRelated: Modernini görmek için üzerine gel ➜
+  touchHint: 👆 dokun veya kaydır →
+  learnMore: daha fazla bilgi
+copy:
+  copy: Kopyala
+  copied: Kopyalandı!
+share:
+  label: Paylaş
+view:
+  expandAll: Tümünü Genişlet
+  collapseAll: Tümünü Daralt
+stats:
+  modernPatterns: Modern Desenler
+  jdkVersions: Kapsanan JDK Sürümleri
+  categories: Kategoriler
+  linesOfPython: Gereken Python Satırı
+footer:
+  tagline: Java gelişti. Kodun da gelişebilir.
+  madeWith: ❤️ ile yapıldı
+  and: ve
+  inspiredBy: İlham kaynağı
+  viewOnGitHub: GitHub'da görüntüle
+copilot:
+  headline: Java kod tabanınızı GitHub Copilot ile modernleştirin.
+  description: Copilot'un eski desenleri modern Java'ya otomatik olarak geçirmenize yardımcı olmasına izin verin.
+  appModernization: Uygulama Modernizasyonu →
+  javaGuide: Java Kılavuzu →
+support:
+  available: Mevcut
+  preview: Önizleme
+  experimental: Deneysel
+contribute:
+  button: Katkıda Bulun
+  codeIssue: Kod sorunu bildir
+  translationIssue: Çeviri sorunu bildir
+  suggestPattern: Yeni desen öner
+  seeIssue: "Bu kodda bir sorun mu gördünüz?"
+  reportIt: "Bize bildirin."
+untranslated:
+  notice: Bu sayfa henüz {{localeName}} diline çevrilmemiştir.
+  viewInEnglish: İngilizce olarak görüntüle

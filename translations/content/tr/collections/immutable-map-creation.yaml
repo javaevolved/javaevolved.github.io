@@ -1,0 +1,18 @@
+---
+title: Değişmez map oluşturma
+oldApproach: Map Builder Kalıbı
+modernApproach: Map.of()
+summary: "Builder kullanmadan satır içi değişmez map'ler oluşturun."
+explanation: "Map.of(), anahtar-değer çiftlerini satır içinde alır ve değişmez bir map döndürür. 10'dan fazla giriş için Map.entry() çiftleriyle birlikte Map.ofEntries() kullanın."
+whyModernWins:
+- icon: "📏"
+  title: "Satır içi oluşturma"
+  desc: "Geçici değiştirilebilir map gerekmez."
+- icon: "🔒"
+  title: "Değişmez sonuç"
+  desc: "Map oluşturulduktan sonra değiştirilemez."
+- icon: "🚫"
+  title: "Null anahtar/değer yok"
+  desc: "Null girişler anında reddedilir."
+support:
+  description: JDK 9'dan itibaren geniş çapta kullanılabilir (Eylül 2017)

@@ -1,0 +1,18 @@
+---
+title: JSpecify ile Spring Null Safety
+oldApproach: Spring @NonNull/@Nullable
+modernApproach: JSpecify @NullMarked
+summary: "Spring 7, JSpecify açıklamalarını benimseyerek null olmayan değeri varsayılan yapar ve açıklama gürültüsünü azaltır."
+explanation: "Spring 5 ve 6, org.springframework.lang paketinde kendi null güvenlik açıklamalarını tanıttı. Yararlı olmakla birlikte bunlar çerçeveye özgüydü ve her null olmayan öğeyi açıkça açıklamayı gerektiriyordu. Spring 7, null güvenliği için çapraz ekosistem standardı olan JSpecify'a geçiş yapıyor. Sınıf veya paket düzeyindeki @NullMarked açıklaması, açıklanmamış tüm türlerin varsayılan olarak null olmayan olduğunu belirtir. Yalnızca gerçekten null olabilecek türlerin @Nullable açıklamasına ihtiyacı vardır; bu da ayrıntıyı önemli ölçüde azaltır. JSpecify açıklamaları NullAway, Error Prone ve IntelliJ IDEA gibi büyük statik analiz araçları tarafından tanınır ve Spring'e özgü açıklamaların sağladığından daha zengin araç desteği sunar."
+whyModernWins:
+- icon: ✂️
+  title: Varsayılan olarak null olmayan
+  desc: "@NullMarked, açıklanmamış tüm türleri null olmayan yapar; yalnızca nullable istisnalar açıklama gerektirir."
+- icon: 🌐
+  title: Ekosistem standardı
+  desc: "JSpecify açıklamaları, NullAway, Error Prone ve IDE'ler tarafından tanınan çapraz çerçeve standardıdır."
+- icon: 🔍
+  title: Daha zengin araç desteği
+  desc: "Modern statik analizörler JSpecify'ın null modelini anlar ve ihlalleri derleme zamanında bildirir."
+support:
+  description: Spring Framework 7.0'dan itibaren kullanılabilir (Java 17+ gerektirir)

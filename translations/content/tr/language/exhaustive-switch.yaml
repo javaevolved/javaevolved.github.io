@@ -1,0 +1,18 @@
+---
+title: Varsayılan olmadan kapsamlı switch
+oldApproach: Zorunlu default
+modernApproach: sealed Kapsamlılığı
+summary: "Derleyici tüm sealed alt türlerin kapsandığını doğrular — default gerekmez."
+explanation: "Sealed bir türde switch kullandığınızda, derleyici tüm olası alt türleri bilir ve her durumun işlendiğini doğrular. Yeni bir alt tür eklerseniz, derleyici artık eksik olan her switch'i işaretler."
+whyModernWins:
+- icon: "✅"
+  title: Derleme zamanı güvenliği
+  desc: "Yeni bir alt tür ekleyin ve derleyici güncellenecek her yeri gösterir."
+- icon: "🚫"
+  title: Ölü kod yok
+  desc: "Hataları gizleyen erişilemeyen varsayılan dal yoktur."
+- icon: "📐"
+  title: Cebirsel türler
+  desc: "sealed + record'lar + kapsamlı switch = Java'da uygun ADT'ler."
+support:
+  description: "JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)"

@@ -1,0 +1,18 @@
+---
+title: Dosya yazma
+oldApproach: FileWriter + BufferedWriter
+modernApproach: Files.writeString()
+summary: "Bir String'i tek satırla dosyaya yazın."
+explanation: "Files.writeString(), içeriği varsayılan olarak UTF-8 kodlamasıyla dosyaya yazar. Ekleme, oluşturma vb. için seçenekler geçirilebilir."
+whyModernWins:
+- icon: "📏"
+  title: "Tek satır"
+  desc: "Writer sarmalama veya try-with-resources gerekmez."
+- icon: "🛡️"
+  title: "Güvenli varsayılanlar"
+  desc: "UTF-8 kodlama, uygun dosya tanıtıcısı temizliği."
+- icon: "🔧"
+  title: "Seçenekler"
+  desc: "Ekleme, oluşturma vb. için OpenOption bayrakları geçirin."
+support:
+  description: JDK 11'den itibaren geniş çapta kullanılabilir (Eylül 2018)

@@ -1,0 +1,18 @@
+---
+title: "Predicate.not() ile olumsuzlama"
+oldApproach: Lambda olumsuzlama
+modernApproach: "Predicate.not()"
+summary: "Lambda sarmalayıcılar yazmak yerine metot referanslarını temiz biçimde olumsuzlamak için Predicate.not() kullanın."
+explanation: "Java 11'den önce bir metot referansını olumsuzlamak için onu bir lambda içine sarmak gerekiyordu. Predicate.not(), herhangi bir koşulu doğrudan olumsuzlamanıza olanak tanır; bu sayede kod okunabilirliği korunur ve akış hattı boyunca metot referansı stiliyle tutarlılık sağlanır."
+whyModernWins:
+- icon: "👁"
+  title: Daha temiz olumsuzlama
+  desc: "Metot referanslarını olumsuzlamak için lambda içine sarmaya gerek kalmaz."
+- icon: "🔗"
+  title: Birleştirilebilir
+  desc: "Her Predicate ile çalışır; temiz koşul zincirleri oluşturmayı sağlar."
+- icon: "📖"
+  title: Doğal okunur
+  desc: "Predicate.not(String::isBlank) İngilizce gibi okunur."
+support:
+  description: "JDK 11'den itibaren kullanılabilir (Eylül 2018)."

@@ -1,0 +1,18 @@
+---
+title: "String.formatted()"
+oldApproach: "String.format()"
+modernApproach: "formatted()"
+summary: "formatted() metodunu şablon dizesinin kendisi üzerinde çağırın."
+explanation: "String.formatted(), String.format() ile eşdeğer bir örnek metodudur; ancak biçim dizesi üzerinde çağrılır. Soldan sağa bir akışta daha doğal okunur."
+whyModernWins:
+- icon: "📖"
+  title: Doğal okunur
+  desc: "Template.formatted(args), String.format(template, args)'tan daha akıcı akar."
+- icon: "🔗"
+  title: Zincirlenebilir
+  desc: "Diğer String metodlarıyla zincirlenebilir."
+- icon: "📏"
+  title: Daha az ayrıntılı
+  desc: "Gereksiz String.format() statik çağrısını kaldırır."
+support:
+  description: "JDK 15'ten itibaren geniş çapta kullanılabilir (Eylül 2020)"

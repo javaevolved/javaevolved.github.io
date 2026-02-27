@@ -1,0 +1,18 @@
+---
+title: Kompakt kaynak dosyaları
+oldApproach: Ana Sınıf Tören Kodu
+modernApproach: void main()
+summary: "Sınıf bildirimi veya public static void main olmadan eksiksiz bir program yazın."
+explanation: "Kompakt kaynak dosyaları, basit programlar için sınıf bildirimleri ve main metot imzasının törenini ortadan kaldırır. java.io.IO'nun örtük içe aktarımıyla birlikte println bile doğrudan kullanılabilir."
+whyModernWins:
+- icon: "🚀"
+  title: Sıfır tören
+  desc: "Sınıf yok, public static void main yok, String[] args yok."
+- icon: "🎓"
+  title: Yeni başlayanlar için uygun
+  desc: "Yeni programcılar 1. satırdan itibaren kullanışlı kod yazabilir."
+- icon: "📝"
+  title: Betik benzeri
+  desc: "Hızlı prototipler, betikler ve örnekler için mükemmeldir."
+support:
+  description: "JDK 25 LTS'de tamamlandı (JEP 512, Eylül 2025)."

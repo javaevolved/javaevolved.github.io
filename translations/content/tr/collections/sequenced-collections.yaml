@@ -1,0 +1,18 @@
+---
+title: Sıralı koleksiyonlar
+oldApproach: İndeks Aritmetiği
+modernApproach: getFirst/getLast
+summary: "Temiz API metodlarıyla ilk/son öğelere ve ters görünümlere erişin."
+explanation: "SequencedCollection, List, Deque, SortedSet ve LinkedHashSet'e getFirst(), getLast(), reversed(), addFirst(), addLast() ekler. Artık size-1 aritmetiğine veya elle ters yinelemeye gerek yok."
+whyModernWins:
+- icon: "📖"
+  title: "Kendini belgeleyen"
+  desc: "getLast(), get(size()-1) ifadesinden çok daha açıktır."
+- icon: "🔄"
+  title: "Ters görünüm"
+  desc: "reversed() bir görünüm verir — kopyalama gerekmez."
+- icon: "🧩"
+  title: "Tekdüze API"
+  desc: "List, Deque, SortedSet üzerinde aynı şekilde çalışır."
+support:
+  description: JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)

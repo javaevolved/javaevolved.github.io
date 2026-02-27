@@ -1,0 +1,18 @@
+---
+title: JNDI Arama ile CDI Enjeksiyonu Karşılaştırması
+oldApproach: JNDI Arama
+modernApproach: CDI @Inject
+summary: "Kırılgan JNDI dize aramalarını, kapsayıcı tarafından yönetilen kaynaklar için tür-güvenli CDI enjeksiyonuyla değiştirin."
+explanation: "Geleneksel JNDI deseni, dize tabanlı kaynak adları kullanmayı, NamingException'ı işlemeyi ve bir InitialContext yönetmeyi zorlar. @Inject (veya kapsayıcı kaynakları için @Resource) ile CDI enjeksiyonu, kapsayıcının bağımlılıkları otomatik olarak bağlamasını sağlar. Yazım hataları derleme zamanı hatalarına dönüşür ve sınıflar, bağımlılıklar doğrudan enjekte edilebildiğinden test edilmesi daha kolaydır."
+whyModernWins:
+- icon: 🔒
+  title: Tür-güvenli bağlama
+  desc: "Enjeksiyon hataları, dize aramaları yerine dağıtım zamanında yakalanır."
+- icon: 🗑️
+  title: Şablon kod yok
+  desc: "InitialContext oluşturma, JNDI ad dizeleri ve NamingException işlemeyi ortadan kaldırır."
+- icon: 🧪
+  title: Test edilebilir
+  desc: "Bağımlılıklar enjekte edilmiş alanlardır; birim testlerinde mock'larla kolayca değiştirilebilir."
+support:
+  description: Jakarta EE 8 / Java 11'den itibaren geniş çapta kullanılabilir
