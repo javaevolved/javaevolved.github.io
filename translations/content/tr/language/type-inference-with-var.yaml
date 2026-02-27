@@ -1,0 +1,18 @@
+---
+title: var ile tür çıkarımı
+oldApproach: Açık Türler
+modernApproach: var anahtar kelimesi
+summary: "Yerel değişken tür çıkarımı için var kullanın — daha az gürültü, aynı güvenlik."
+explanation: "Java 10'dan itibaren, derleyici yerel değişken türlerini sağ taraftan çıkarır. Bu, tür güvenliğinden ödün vermeden görsel gürültüyü azaltır. Türün bağlamdan açık olduğu durumlarda var kullanın."
+whyModernWins:
+- icon: "⚡"
+  title: Daha az şablon kod
+  desc: "Atamanın her iki tarafında karmaşık genel türleri tekrar etmeye gerek yoktur."
+- icon: "👁"
+  title: Daha iyi okunabilirlik
+  desc: "Tür bildirimlerine değil, değişken adlarına ve değerlere odaklanın."
+- icon: "🔒"
+  title: Hâlâ tür güvenli
+  desc: "Derleyici, derleme zamanında tam türü çıkarır ve uygular."
+support:
+  description: "JDK 10'dan itibaren geniş çapta kullanılabilir (Mart 2018)"

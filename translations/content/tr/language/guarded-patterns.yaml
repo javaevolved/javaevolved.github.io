@@ -1,0 +1,18 @@
+---
+title: when ile korumalı kalıplar
+oldApproach: İç içe if
+modernApproach: when Cümlesi
+summary: "when koruyucularını kullanarak kalıp durumlarına koşullar ekleyin."
+explanation: "Korumalı kalıplar, bir tür eşleşmesini ek bir boolean koşuluyla rafine etmenizi sağlar. Bu, durumların içinde if deyimlerini iç içe koymak yerine tüm dallanma mantığını switch içinde tutar."
+whyModernWins:
+- icon: "🎯"
+  title: Hassas eşleştirme
+  desc: "Tek bir case etiketinde tür + koşulu birleştirin."
+- icon: "📐"
+  title: Düz yapı
+  desc: "switch durumları içinde iç içe if/else yoktur."
+- icon: "📖"
+  title: Okunabilir niyet
+  desc: "when cümlesi doğal dil gibi okunur."
+support:
+  description: "JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)"

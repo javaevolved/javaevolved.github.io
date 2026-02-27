@@ -1,0 +1,18 @@
+---
+title: instanceof için kalıp eşleştirme
+oldApproach: instanceof + Tür Dönüşümü
+modernApproach: Kalıp Değişkeni
+summary: "Tür kontrolü ve tür dönüşümünü kalıp eşleştirme ile tek adımda birleştirin."
+explanation: "instanceof için kalıp eşleştirme, tür kontrolünden sonra gereksiz tür dönüşümünü ortadan kaldırır. Değişken, kalıbın eşleştiği yerle otomatik olarak kapsamlandırılır; bu da kodu daha güvenli ve kısa yapar."
+whyModernWins:
+- icon: "🔄"
+  title: Gereksiz tür dönüşümü yok
+  desc: "Tür kontrolü ve değişken bağlama tek bir ifadede gerçekleşir."
+- icon: "📏"
+  title: Daha az satır
+  desc: "İki satır yerine bir satır — tür dönüşümü satırı tamamen ortadan kalkar."
+- icon: "🛡️"
+  title: Kapsam güvenliği
+  desc: "Kalıp değişkeni yalnızca türün garanti edildiği yerde kapsamdadır."
+support:
+  description: "JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)"

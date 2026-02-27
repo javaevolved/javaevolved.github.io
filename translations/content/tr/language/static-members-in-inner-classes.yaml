@@ -1,0 +1,18 @@
+---
+title: İç sınıflardaki statik üyeler
+oldApproach: Statik iç içe sınıf kullanılmalı
+modernApproach: İç sınıflarda statik üyeler
+summary: "Statik iç içe sınıflar gerektirmeden iç sınıflarda statik üyeler tanımlayın."
+explanation: "Java 16'dan önce, yalnızca statik iç içe sınıflar statik üyeler içerebiliyordu. İç (statik olmayan) sınıflar, bir çevreleyen örnek gerektirdiğinden statik üyelere sahip olamazdı. Java 16, bu kısıtlamayı gevşeterek iç sınıflarda statik alanlar, metotlar ve hatta iç içe türlere izin verir."
+whyModernWins:
+- icon: "🔓"
+  title: Daha fazla esneklik
+  desc: "İç sınıflar artık gerektiğinde statik üyelere sahip olabilir."
+- icon: "🧩"
+  title: Paylaşılan durum
+  desc: "Bir iç sınıfın örnekleri arasında paylaşılan durumu takip edin."
+- icon: "📐"
+  title: Tasarım özgürlüğü
+  desc: "Yalnızca bir statik alan için statik iç içe sınıfa geçmeye gerek yok."
+support:
+  description: "JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)"

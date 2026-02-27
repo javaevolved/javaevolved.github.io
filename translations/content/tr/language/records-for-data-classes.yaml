@@ -1,0 +1,18 @@
+---
+title: Veri sınıfları için record'lar
+oldApproach: Ayrıntılı POJO
+modernApproach: record
+summary: "Bir satır, değişmez veri taşıyıcılar için 30'dan fazla satır şablon kodunun yerini alır."
+explanation: "Record'lar constructor'ı, erişimcileri (x(), y()), equals(), hashCode() ve toString() metodlarını otomatik olarak oluşturur. Tasarım gereği değişmezdirler ve DTO'lar, değer nesneleri ve kalıp eşleştirme için idealdir."
+whyModernWins:
+- icon: "⚡"
+  title: Tek satır tanım
+  desc: "Tek satır constructor, getter'lar, equals, hashCode, toString'in yerini alır."
+- icon: "🔒"
+  title: Varsayılan olarak değişmez
+  desc: "Tüm alanlar final'dır — setter tuzağı yoktur."
+- icon: "🧩"
+  title: Kalıp dostu
+  desc: "Record'lar switch ve instanceof'ta parçalama kalıplarıyla çalışır."
+support:
+  description: "JDK 16'dan itibaren geniş çapta kullanılabilir (Mart 2021)"

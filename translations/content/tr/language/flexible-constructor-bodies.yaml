@@ -1,0 +1,18 @@
+---
+title: Esnek constructor gövdeleri
+oldApproach: "super()'dan Sonra Doğrula"
+modernApproach: "super()'dan Önce Kod"
+summary: "super() veya this() çağırmadan önce değerleri doğrulayın ve hesaplayın."
+explanation: "Java 25, super()'ın ilk deyim olması zorunluluğunu kaldırır. Artık üst sınıf constructor'ına devretmeden önce argümanları doğrulayabilir, türetilmiş değerler hesaplayabilir ve durumu ayarlayabilirsiniz."
+whyModernWins:
+- icon: "🛡️"
+  title: Hızla başarısız ol
+  desc: "super() constructor çalışmadan önce argümanları doğrulayın."
+- icon: "🧮"
+  title: Önce hesapla
+  desc: "super() çağırmadan önce değerleri türetin ve verileri hazırlayın."
+- icon: "🧹"
+  title: Geçici çözüm yok
+  desc: "Kısıtlamayı aşmak için artık statik yardımcı metotlar veya fabrika kalıpları gerekmiyor."
+support:
+  description: "JDK 25 LTS'de tamamlandı (JEP 513, Eylül 2025)."

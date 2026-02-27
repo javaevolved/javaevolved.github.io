@@ -1,0 +1,18 @@
+---
+title: "Record kalıpları (parçalama)"
+oldApproach: Manuel Erişim
+modernApproach: Parçalama
+summary: "Record'ları doğrudan kalıplarda parçalayın — alanları tek adımda çıkarın."
+explanation: "Record kalıpları, bir record'un bileşenlerini doğrudan instanceof ve switch içinde ayrıştırmanıza olanak tanır. İç içe kalıplar da desteklenir; bu, ara değişkenler olmadan derin eşleştirmeyi mümkün kılar."
+whyModernWins:
+- icon: "🎯"
+  title: Doğrudan çıkarma
+  desc: "Erişimcileri elle çağırmadan record bileşenlerine erişin."
+- icon: "🪆"
+  title: İç içe geçirilebilir
+  desc: "Kalıplar iç içe geçirilebilir — tek bir ifadede iç record'larla eşleştirin."
+- icon: "📏"
+  title: Kompakt kod
+  desc: "Beş satır ikiye dönüşür — daha az tören, aynı netlik."
+support:
+  description: "JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)"

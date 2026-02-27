@@ -1,0 +1,18 @@
+---
+title: Anonim sınıflarla elmas operatörü
+oldApproach: Tür Argümanlarını Tekrarlayın
+modernApproach: "Elmas <>"
+summary: "Elmas operatörü artık anonim sınıflarla da çalışır."
+explanation: "Java 7, <> operatörünü tanıttı ancak anonim iç sınıflarla çalışmıyordu. Java 9 bunu düzeltti, böylece sağ tarafta tür argümanlarını asla tekrar etmeniz gerekmez."
+whyModernWins:
+- icon: "📏"
+  title: Tutarlı kurallar
+  desc: "Elmas her yerde çalışır — hem constructor'larda hem anonim sınıflarda."
+- icon: "🧹"
+  title: Daha az tekrar
+  desc: "Tür argümanları solda bir kez belirtilir, asla tekrarlanmaz."
+- icon: "🔧"
+  title: DRY ilkesi
+  desc: "Derleyici türü zaten biliyor — neden iki kez yazasınız ki?"
+support:
+  description: "Anonim sınıflarla elmas operatörü JDK 9'dan itibaren kullanılabilir (Eylül 2017)."

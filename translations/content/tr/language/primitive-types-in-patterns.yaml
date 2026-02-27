@@ -1,0 +1,18 @@
+---
+title: Kalıplarda temel türler
+oldApproach: Manuel Aralık Kontrolleri
+modernApproach: Temel Tür Kalıpları
+summary: "Kalıp eşleştirme artık yalnızca nesnelerle değil, temel türlerle de çalışır."
+explanation: "Java 25, kalıp eşleştirmeyi temel türlere genişletir. int, long, double vb. türleri when koruyucularıyla switch kalıplarında kullanabilirsiniz; bu, kutulama veya manuel aralık kontrollerine olan ihtiyacı ortadan kaldırır."
+whyModernWins:
+- icon: "📦"
+  title: Kutulama yok
+  desc: "Temel türleri doğrudan eşleştirin — Integer sarmalayıcısına gerek yoktur."
+- icon: "🎯"
+  title: Kalıp tutarlılığı
+  desc: "Nesneler ve temel türler için aynı kalıp sözdizimi."
+- icon: "⚡"
+  title: Daha iyi performans
+  desc: "Kalıp eşleştirmede otomatik kutulama yükünü önleyin."
+support:
+  description: "JDK 25'te önizleme (üçüncü önizleme, JEP 507). --enable-preview gerektirir."

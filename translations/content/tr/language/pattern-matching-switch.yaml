@@ -1,0 +1,18 @@
+---
+title: switch'te kalıp eşleştirme
+oldApproach: if-else Zinciri
+modernApproach: Tür Kalıpları
+summary: "if-else instanceof zincirlerini temiz switch tür kalıplarıyla değiştirin."
+explanation: "switch'te kalıp eşleştirme, tür testini, tür dönüşümünü ve bağlamayı tek ve özlü bir case etiketinde birleştirerek türlere doğrudan eşleştirmenizi sağlar. Derleyici tamamlığı denetler."
+whyModernWins:
+- icon: "📐"
+  title: Yapılandırılmış dağıtım
+  desc: "switch, dallanma yapısını açık ve taranabilir hale getirir."
+- icon: "🎯"
+  title: İfade biçimi
+  desc: "Doğrudan bir değer döndürür — değiştirilebilir değişkene gerek yoktur."
+- icon: "✅"
+  title: Kapsamlılık
+  desc: "Derleyici tüm türlerin işlendiğini sağlar."
+support:
+  description: "JDK 21 LTS'den itibaren geniş çapta kullanılabilir (Eylül 2023)"
