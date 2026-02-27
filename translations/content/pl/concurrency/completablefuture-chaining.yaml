@@ -1,11 +1,11 @@
-title: Łańcuchowanie CompletableFuture
+title: Łączenie CompletableFuture
 oldApproach: Blokujące Future.get()
 modernApproach: CompletableFuture
 summary: Łącz operacje asynchroniczne bez blokowania, używając CompletableFuture.
-explanation: CompletableFuture pozwala budować nieblokujące potoki async. Łącz kroki przez thenApply, thenCompose i thenAccept. Błędy obsługuj przez exceptionally(). Wiele future można łączyć przez allOf/anyOf.
+explanation: CompletableFuture pozwala budować nieblokujące asynchroniczne potoki. Łącz kroki przez thenApply, thenCompose i thenAccept. Błędy obsługuj przez exceptionally(). Wiele future można łączyć przez allOf/anyOf.
 whyModernWins:
   - icon: 🔗
-    title: Łańcuchowanie
+    title: Umożliwia łączenie operacji
     desc: Składasz kroki asynchroniczne w czytelny pipeline.
   - icon: 🚫
     title: Bez blokowania
