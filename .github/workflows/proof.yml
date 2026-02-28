@@ -37,11 +37,11 @@ jobs:
             name="${script#proof/}"
             if jbang "$script" > /dev/null 2>&1; then
               echo "✅ $name"
-              ((passed++))
+              passed=$((passed + 1))
             else
               echo "❌ $name"
               failures+=("$name")
-              ((failed++))
+              failed=$((failed + 1))
             fi
           done < <(find proof -name '*.java' -print0 | sort -z)
 
