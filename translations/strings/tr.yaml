@@ -26,6 +26,8 @@ sections:
   jdkSupport: JDK Desteği
   howItWorks: Nasıl çalışır
   relatedDocs: İlgili Belgeler
+  proof: Kanıt
+  proofLink: Kanıt kaynağını görüntüle
   relatedPatterns: İlgili desenler
 filters:
   show: 'Göster:'

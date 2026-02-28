@@ -26,6 +26,8 @@ sections:
   jdkSupport: JDK 支持
   howItWorks: 工作原理
   relatedDocs: 相关文档
+  proof: 证明
+  proofLink: 查看证明源码
   relatedPatterns: 相关模式
 filters:
   show: '显示：'

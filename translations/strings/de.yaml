@@ -27,6 +27,8 @@ sections:
   jdkSupport: JDK-Unterstützung
   howItWorks: Wie es funktioniert
   relatedDocs: Zugehörige Dokumentation
+  proof: Beweis
+  proofLink: Beweisquelle ansehen
   relatedPatterns: Verwandte Muster
 filters:
   show: 'Anzeigen:'

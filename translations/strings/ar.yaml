@@ -25,6 +25,8 @@ sections:
   jdkSupport: دعم JDK
   howItWorks: كيف يعمل
   relatedDocs: توثيق ذو صلة
+  proof: إثبات
+  proofLink: عرض كود الإثبات
   relatedPatterns: أنماط ذات صلة
 filters:
   show: "عرض:"

@@ -25,6 +25,8 @@ sections:
   jdkSupport: JDK 지원
   howItWorks: 동작 원리
   relatedDocs: 관련 문서
+  proof: 증명
+  proofLink: 증명 소스 보기
   relatedPatterns: 관련 패턴
 filters:
   show: '표시:'
