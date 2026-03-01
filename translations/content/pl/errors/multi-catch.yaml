@@ -1,0 +1,17 @@
+title: Obsługa wielu wyjątków w jednym bloku
+oldApproach: Oddzielne bloki catch
+modernApproach: Multi-catch
+summary: Łap wiele typów wyjątków w jednym bloku catch.
+explanation: Multi-catch obsługuje wiele typów wyjątków tym samym kodem. Zmienna wyjątku jest efektywnie finalna, więc można ją ponownie rzucić bez opakowywania.
+whyModernWins:
+  - icon: 📏
+    title: DRY
+    desc: Ta sama logika obsługi napisana raz zamiast trzech razy.
+  - icon: 🔄
+    title: Możliwość ponownego rzucenia
+    desc: Złapany wyjątek może być ponownie rzucony ze swoim precyzyjnym typem.
+  - icon: 📖
+    title: Czytelny
+    desc: Wszystkie obsługiwane typy widoczne w jednym miejscu.
+support:
+  description: Szeroko dostępne od JDK 7 (lipiec 2011)

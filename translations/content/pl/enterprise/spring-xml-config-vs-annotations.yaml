@@ -1,0 +1,17 @@
+title: Konfiguracja XML Spring kontra adnotacje
+oldApproach: Definicje beanów XML
+modernApproach: Beany sterowane adnotacjami
+summary: Zastąp rozwlekłe definicje beanów XML Spring zwięzłą konfiguracją sterowaną adnotacjami w Spring Boot.
+explanation: Tradycyjne aplikacje Spring łączyły beany przez pliki konfiguracyjne XML, deklarując każdą klasę i jej zależności jako rozwlekłe elementy <bean>. Choć wsparcie adnotacji istniało od Spring 2.5, XML pozostawał dominującym podejściem do czasu gdy Spring Boot wprowadził auto-konfigurację. Spring Boot wykrywa beany adnotowane @Component, @Service, @Repository i @Controller przez skanowanie classpath, automatycznie zaspokaja zależności przez wstrzykiwanie konstruktorem i konfiguruje infrastrukturę jak DataSource z classpath — eliminując wszystkie pliki XML.
+whyModernWins:
+  - icon: 🚫
+    title: Bez XML
+    desc: "@SpringBootApplication wyzwala skanowanie komponentów i auto-konfigurację, eliminując wszystkie pliki XML."
+  - icon: 💉
+    title: Wstrzykiwanie konstruktorem
+    desc: Spring automatycznie wstrzykuje zależności przez konstruktory, ułatwiając testowanie i rozumowanie o beanach.
+  - icon: ⚡
+    title: Auto-konfiguracja
+    desc: Spring Boot konfiguruje DataSource, JPA i inną infrastrukturę z classpath bez boilerplate.
+support:
+  description: Szeroko dostępne od Spring Boot 1.0 (kwiecień 2014); Spring Boot 3 wymaga Java 17+

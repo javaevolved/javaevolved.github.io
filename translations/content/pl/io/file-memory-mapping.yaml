@@ -1,0 +1,17 @@
+title: Mapowanie pliku w pamięci
+oldApproach: MappedByteBuffer
+modernApproach: MemorySegment z Arena
+summary: Mapuj pliki większe niż 2 GB z deterministycznym czyszczeniem za pomocą MemorySegment.
+explanation: Foreign Function & Memory API (JEP 454) wprowadza MemorySegment do bezpiecznego i wydajnego dostępu do pamięci. W przeciwieństwie do MappedByteBuffer, MemorySegment obsługuje pliki większe niż 2 GB, zapewnia deterministyczne czyszczenie przez Arena i oferuje lepszą wydajność na nowoczesnym sprzęcie.
+whyModernWins:
+  - icon: 📏
+    title: Brak ograniczenia rozmiaru
+    desc: Mapuj pliki większe niż 2 GB bez obejść.
+  - icon: 🔒
+    title: Deterministyczne czyszczenie
+    desc: Arena zapewnia zwolnienie pamięci po zakończeniu zasięgu, nie w czasie GC.
+  - icon: ⚡
+    title: Lepsza wydajność
+    desc: Dostosowany do nowoczesnych modeli pamięci i sprzętu.
+support:
+  description: Dostępne od JDK 22 (marzec 2024)

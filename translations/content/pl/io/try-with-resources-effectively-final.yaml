@@ -1,0 +1,17 @@
+title: Ulepszenie try-with-resources
+oldApproach: Ponowna deklaracja zmiennej
+modernApproach: Efektywnie finalna
+summary: Używaj istniejących zmiennych efektywnie finalnych bezpośrednio w try-with-resources.
+explanation: Java 9 pozwala na używanie zmiennych efektywnie finalnych bezpośrednio w try-with-resources bez ponownej deklaracji. Jest to czytelniejsze, gdy zasób został utworzony poza blokiem try.
+whyModernWins:
+  - icon: 🧹
+    title: Bez ponownej deklaracji
+    desc: Używaj istniejącej nazwy zmiennej bezpośrednio.
+  - icon: 📖
+    title: Mniej zamieszania
+    desc: Brak oddzielnej nazwy zmiennej wewnątrz bloku try.
+  - icon: 📏
+    title: Zwięzłość
+    desc: Mniej linii, takie samo bezpieczeństwo zasobów.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

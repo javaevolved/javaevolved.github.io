@@ -1,0 +1,17 @@
+title: "Statyczne metody w interfejsach"
+oldApproach: "Klasy narzędziowe"
+modernApproach: "Statyczne metody interfejsów"
+summary: "Dodawaj statyczne metody narzędziowe bezpośrednio do interfejsów zamiast tworzenia osobnych klas narzędziowych."
+explanation: "Przed Javą 8 metody narzędziowe związane z interfejsem musiały znajdować się w osobnej klasie (np. Collections dla Collection). Statyczne metody w interfejsach pozwalają trzymać powiązane narzędzia razem. Powszechne we współczesnych API jak Comparator.comparing(), Stream.of() i List.of()."
+whyModernWins:
+  - icon: "📦"
+    title: "Lepsza organizacja"
+    desc: "Trzymaj powiązane narzędzia przy interfejsie, a nie w osobnej klasie."
+  - icon: "🔍"
+    title: "Wykrywalność"
+    desc: "Metody fabryczne i pomocnicze są tam, gdzie się ich spodziewasz."
+  - icon: "🧩"
+    title: "Spójność API"
+    desc: "Żadnych osobnych klas *Utils ani *Helper."
+support:
+  description: "Szeroko dostępne od JDK 8 (marzec 2014)."

@@ -1,0 +1,17 @@
+title: Typowana konwersja strumienia do tablicy
+oldApproach: Ręczne kopiowanie tablicy
+modernApproach: toArray(generator)
+summary: Konwertuj strumienie do typowanych tablic za pomocą referencji do metody.
+explanation: Metoda toArray(IntFunction) tworzy poprawnie typowaną tablicę ze strumienia. Generator (String[]::new) mówi strumieniowi, jakiego typu tablicę utworzyć.
+whyModernWins:
+  - icon: 🎯
+    title: Bezpieczny typ
+    desc: Bez rzutowania na Object[] — typ tablicy jest poprawny.
+  - icon: 🔗
+    title: Łańcuchowalność
+    desc: Działa na końcu dowolnego potoku strumieniowego.
+  - icon: 📏
+    title: Zwięzłość
+    desc: Jedno wyrażenie zastępuje ręczną pętlę.
+support:
+  description: Szeroko dostępne od JDK 8 (marzec 2014)

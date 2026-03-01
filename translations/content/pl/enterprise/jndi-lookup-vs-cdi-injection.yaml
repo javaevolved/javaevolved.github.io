@@ -1,0 +1,17 @@
+title: Lookup JNDI kontra wstrzykiwanie CDI
+oldApproach: Lookup JNDI
+modernApproach: CDI @Inject
+summary: Zastąp kruche lookupki JNDI oparte na ciągach typowo-bezpiecznym wstrzykiwaniem CDI dla zasobów zarządzanych przez kontener.
+explanation: Tradycyjny wzorzec JNDI wymusza używanie nazw zasobów opartych na ciągach, obsługi NamingException i zarządzania InitialContext. Wstrzykiwanie CDI z @Inject (lub @Resource dla zasobów kontenera) pozwala kontenerowi automatycznie łączyć zależności. Literówki stają się błędami kompilacji, a klasy są łatwiejsze do testowania, bo zależności można wstrzykiwać bezpośrednio.
+whyModernWins:
+  - icon: 🔒
+    title: Typowo-bezpieczne łączenie
+    desc: Błędy wstrzykiwania są wykrywane w czasie wdrożenia, nie w środowisku uruchomieniowym przez string lookupki.
+  - icon: 🗑️
+    title: Bez boilerplate
+    desc: Eliminuje tworzenie InitialContext, ciągi nazw JNDI i obsługę NamingException.
+  - icon: 🧪
+    title: Testowalny
+    desc: Zależności to wstrzykiwane pola, łatwe do zastąpienia mockami w testach jednostkowych.
+support:
+  description: Szeroko dostępne od Jakarta EE 8 / Java 11

@@ -1,0 +1,17 @@
+title: Stabilne wartości
+oldApproach: Podwójnie sprawdzane blokowanie
+modernApproach: StableValue
+summary: Bezpieczna wątkowo leniwa inicjalizacja bez volatile ani synchronized.
+explanation: StableValue zapewnia leniwie inicjalizowaną, niemutowalną wartość z wbudowanym bezpieczeństwem wątków. Bez podwójnie sprawdzanego blokowania, bez pól volatile, bez bloków synchronized. JVM może nawet zoptymalizować ścieżkę odczytu po inicjalizacji.
+whyModernWins:
+  - icon: 🧹
+    title: Zero boilerplate
+    desc: Bez volatile, synchronized ani sprawdzeń null.
+  - icon: ⚡
+    title: Optymalizacja JVM
+    desc: JVM może zoptymalizować wartość po inicjalizacji.
+  - icon: 🛡️
+    title: Gwarantowane jednokrotne wykonanie
+    desc: Dostawca uruchamia się dokładnie raz, nawet przy rywalizacji.
+support:
+  description: Podgląd w JDK 25 (JEP 502). Wymaga --enable-preview.

@@ -1,0 +1,17 @@
+title: Wersjonowanie API w Spring Framework 7
+oldApproach: Ręczne wersjonowanie przez ścieżkę URL
+modernApproach: Natywne wersjonowanie API
+summary: Zastąp zduplikowane kontrolery z prefiksami wersji natywnym wsparciem wersjonowania API w Spring Framework 7.
+explanation: Przed Spring Framework 7 wersjonowanie API wymagało osobnych klas kontrolerów na wersję (np. /api/v1/products, /api/v2/products), duplikując mapowania żądań i rozpraszając logikę wersji po wielu plikach. Spring Framework 7 wprowadza natywne wersjonowanie przez nowy atrybut version w @RequestMapping i powiązanych adnotacjach, plus hook configureApiVersioning w WebMvcConfigurer. Wersja może być rozwiązywana z nagłówka żądania, segmentu ścieżki URL lub parametru zapytania — wszystko kontrolowane w jednym miejscu.
+whyModernWins:
+  - icon: 🗂️
+    title: Bez duplikacji kontrolerów
+    desc: Wszystkie wersje żyją w jednej klasie kontrolera; tylko poszczególne metody handlera mają atrybut version.
+  - icon: ⚙️
+    title: Scentralizowana strategia wersjonowania
+    desc: Przełącz się z nagłówka na URL lub wersjonowanie przez parametr zapytania jednym wywołaniem configureApiVersioning.
+  - icon: 📈
+    title: Stopniowa ewolucja
+    desc: Dodaj nową wersję do jednej metody bez dotykania niepowiązanych endpointów ani tworzenia nowych plików kontrolerów.
+support:
+  description: Dostępne od Spring Framework 7.0 (wymaga Java 17+)

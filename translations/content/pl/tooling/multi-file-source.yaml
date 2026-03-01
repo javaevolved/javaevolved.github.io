@@ -1,0 +1,17 @@
+title: Uruchamianie programów wieloplikowych ze źródła
+oldApproach: Kompiluj wszystko najpierw
+modernApproach: Launcher źródłowy
+summary: Uruchamiaj programy wieloplikowe bez jawnego kroku kompilacji.
+explanation: Java 22+ może automatycznie kompilować przywoływane pliki źródłowe podczas uruchamiania z pliku .java. Sprawia to, że małe programy wieloplikowe są tak łatwe do uruchomienia jak skrypty, bez potrzeby Maven ani Gradle.
+whyModernWins:
+  - icon: 🚀
+    title: Zero konfiguracji
+    desc: Żadnego narzędzia do budowania dla małych programów wieloplikowych.
+  - icon: 🔗
+    title: Auto-rozwiązywanie
+    desc: Przywoływane klasy są znajdowane i kompilowane automatycznie.
+  - icon: 📝
+    title: Jak skrypt
+    desc: Uruchamiaj programy wieloplikowe jak skrypty.
+support:
+  description: Dostępne od JDK 22 (marzec 2024)

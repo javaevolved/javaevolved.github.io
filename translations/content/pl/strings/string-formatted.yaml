@@ -1,0 +1,17 @@
+title: String.formatted()
+oldApproach: String.format()
+modernApproach: formatted()
+summary: Wywołuj formatted() bezpośrednio na ciągu szablonu.
+explanation: String.formatted() to metoda instancji równoważna String.format(), ale wywoływana na ciągu formatu. Czyta się bardziej naturalnie w przepływie od lewej do prawej.
+whyModernWins:
+  - icon: 📖
+    title: Czyta się naturalnie
+    desc: Template.formatted(args) płynie lepiej niż String.format(template, args).
+  - icon: 🔗
+    title: Łańcuchowalność
+    desc: Można łączyć z innymi metodami String.
+  - icon: 📏
+    title: Mniej rozwlekłe
+    desc: Pomija zbędne statyczne wywołanie String.format().
+support:
+  description: Szeroko dostępne od JDK 15 (wrzesień 2020)

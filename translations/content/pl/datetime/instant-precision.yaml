@@ -1,0 +1,17 @@
+title: Instant z precyzją nanosekundową
+oldApproach: Milisekundy
+modernApproach: Nanosekundy
+summary: Pobieraj znaczniki czasu z precyzją mikro- lub nanosekundową.
+explanation: Java 9 poprawiła rozdzielczość zegara, dzięki czemu Instant.now() przechwytuje precyzję mikrosekundową na większości platform (nanosekundową na niektórych). Stare currentTimeMillis() daje tylko milisekundy.
+whyModernWins:
+  - icon: 🎯
+    title: Wyższa precyzja
+    desc: Znaczniki mikro-/nanosekundowe zamiast milisekundowych.
+  - icon: 📐
+    title: Bezpieczne typowanie
+    desc: Instant niesie swoją precyzję — żadnych niejednoznacznych longów.
+  - icon: 🌐
+    title: Bazuje na UTC
+    desc: Instant jest zawsze w UTC — bez zamieszania ze strefami czasowymi.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

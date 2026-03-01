@@ -1,0 +1,17 @@
+title: String.isBlank()
+oldApproach: trim().isEmpty()
+modernApproach: isBlank()
+summary: Sprawdzaj puste ciągi jednym wywołaniem metody.
+explanation: isBlank() zwraca true jeśli ciąg jest pusty lub zawiera tylko białe znaki, w tym znaki białe Unicode, które trim() pomija.
+whyModernWins:
+  - icon: 📖
+    title: Samo-dokumentujący
+    desc: isBlank() mówi dokładnie co sprawdza.
+  - icon: 🌐
+    title: Świadomy Unicode
+    desc: Obsługuje wszystkie białe znaki Unicode, nie tylko ASCII.
+  - icon: ⚡
+    title: Bez alokacji
+    desc: Nie jest tworzony pośredni przycięty ciąg.
+support:
+  description: Szeroko dostępne od JDK 11 (wrzesień 2018)

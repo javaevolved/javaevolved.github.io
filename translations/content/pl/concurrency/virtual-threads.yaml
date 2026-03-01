@@ -1,0 +1,17 @@
+title: Wątki wirtualne
+oldApproach: Wątki platformowe
+modernApproach: Wątki wirtualne
+summary: Twórz miliony lekkich wątków wirtualnych zamiast ciężkich wątków systemu operacyjnego.
+explanation: Wątki wirtualne to lekkie wątki zarządzane przez JVM, nie przez system operacyjny. Możesz tworzyć ich miliony bez dobierania pul wątków. Są idealne do zadań I/O-bound, takich jak wywołania HTTP i zapytania do baz danych.
+whyModernWins:
+  - icon: ⚡
+    title: Lekkie
+    desc: Wątki wirtualne używają KB pamięci, wątki platformowe MB.
+  - icon: ♾️
+    title: Skalowalne
+    desc: Twórz miliony wątków — bez potrzeby dobierania rozmiaru puli.
+  - icon: 🧹
+    title: Prosty model
+    desc: Pisz blokowalny kod, który skaluje jak kod asynchroniczny.
+support:
+  description: Szeroko dostępne od JDK 21 LTS (wrzesień 2023)

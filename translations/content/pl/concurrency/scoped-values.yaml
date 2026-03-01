@@ -1,0 +1,17 @@
+title: Wartości zasięgowe
+oldApproach: ThreadLocal
+modernApproach: ScopedValue
+summary: Bezpiecznie współdziel dane w stosie wywołań bez pułapek ThreadLocal.
+explanation: ScopedValue zapewnia niemutowalny, dziedziczony, ograniczony zasięgiem kontekst. W przeciwieństwie do ThreadLocal, wartości zasięgowe są automatycznie czyszczone, działają z wątkami wirtualnymi i nie mogą być mutowane przez wywoływanych.
+whyModernWins:
+  - icon: 🔒
+    title: Niemutowalny
+    desc: Wywołani mogą odczytywać, ale nigdy nie modyfikować wartości zasięgowej.
+  - icon: 🧹
+    title: Automatyczne sprzątanie
+    desc: Bez ręcznego remove() — wartość jest zasięgiem ograniczona do bloku.
+  - icon: ⚡
+    title: Bezpieczny dla wątków wirtualnych
+    desc: Działa efektywnie z milionami wątków wirtualnych.
+support:
+  description: Sfinalizowane w JDK 25 LTS (JEP 506, wrzesień 2025).

@@ -1,0 +1,17 @@
+title: Kompaktowe nagłówki obiektów
+oldApproach: Nagłówki 128-bitowe
+modernApproach: Nagłówki 64-bitowe
+summary: Zmniejsz rozmiar nagłówka obiektu o połowę dla lepszej gęstości pamięci i użycia pamięci podręcznej.
+explanation: Kompaktowe nagłówki obiektów redukują narzut na obiekt z 128 bitów do 64 bitów na platformach 64-bitowych. Oszczędza pamięć i poprawia wykorzystanie pamięci podręcznej, szczególnie dla aplikacji z wieloma małymi obiektami.
+whyModernWins:
+  - icon: 📦
+    title: O 50% mniejsze nagłówki
+    desc: 8 bajtów zamiast 16 na obiekt.
+  - icon: ⚡
+    title: Lepsze użycie pamięci podręcznej
+    desc: Więcej obiektów mieści się w liniach pamięci podręcznej CPU.
+  - icon: 📊
+    title: Wyższa gęstość
+    desc: Więcej obiektów w tym samym rozmiarze sterty.
+support:
+  description: Sfinalizowane w JDK 25 LTS (JEP 519, wrzesień 2025).

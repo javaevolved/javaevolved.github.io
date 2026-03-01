@@ -1,0 +1,17 @@
+title: "Bloki tekstowe dla ciągów wieloliniowych"
+oldApproach: "Konkatenacja ciągów"
+modernApproach: "Bloki tekstowe"
+summary: "Pisz ciągi wieloliniowe naturalnie za pomocą bloków tekstowych z potrójnym cudzysłowem."
+explanation: "Bloki tekstowe pozwalają pisać ciągi wieloliniowe dokładnie tak, jak wyglądają. Koniec z uciekaniem cudzysłowów czy dodawaniem \\n. Kompilator automatycznie usuwa przypadkowe wcięcia."
+whyModernWins:
+  - icon: "📖"
+    title: "Czytelne od razu"
+    desc: "JSON, SQL i HTML wyglądają jak prawdziwy JSON, SQL i HTML w kodzie źródłowym."
+  - icon: "🚫"
+    title: "Bez piekła ucieczek"
+    desc: "Osadzone cudzysłowy nie wymagają uciekania ukośnikiem."
+  - icon: "📐"
+    title: "Inteligentne wcięcia"
+    desc: "Wiodące białe znaki są automatycznie przycinane na podstawie pozycji zamykającego ogranicznika."
+support:
+  description: "Szeroko dostępne od JDK 15 (wrzesień 2020)."

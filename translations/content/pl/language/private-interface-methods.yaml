@@ -1,0 +1,17 @@
+title: "Prywatne metody interfejsów"
+oldApproach: "Powielona logika"
+modernApproach: "Metody prywatne"
+summary: "Wyodrębnij współdzieloną logikę w interfejsach używając metod prywatnych."
+explanation: "Java 9 umożliwia prywatne metody w interfejsach, co pozwala współdzielić kod między metodami domyślnymi bez ujawniania szczegółów implementacji klasom implementującym."
+whyModernWins:
+  - icon: "🧩"
+    title: "Ponowne użycie kodu"
+    desc: "Współdziel logikę między metodami domyślnymi bez duplikacji."
+  - icon: "🔐"
+    title: "Enkapsulacja"
+    desc: "Szczegóły implementacji pozostają ukryte przed klasami implementującymi."
+  - icon: "🧹"
+    title: "Interfejsy DRY"
+    desc: "Koniec z kopiuj-wklej między metodami domyślnymi."
+support:
+  description: "Szeroko dostępne od JDK 9 (wrzesień 2017)."

@@ -1,0 +1,17 @@
+title: Odczytywanie plików
+oldApproach: BufferedReader
+modernApproach: Files.readString()
+summary: Odczytaj cały plik do String w jednej linii.
+explanation: Files.readString() odczytuje całą zawartość pliku do String. Obsługuje kodowanie (domyślnie UTF-8) i zwalnianie zasobów. Dla dużych plików używaj Files.lines() do leniwego strumieniowania.
+whyModernWins:
+  - icon: 📏
+    title: Jedna linia
+    desc: Zastąp 8 linii boilerplate BufferedReader.
+  - icon: 🧹
+    title: Automatyczne czyszczenie
+    desc: Uchwyt pliku jest zamykany automatycznie.
+  - icon: 🌐
+    title: Domyślne UTF-8
+    desc: Poprawne kodowanie domyślnie — bez zamieszania z zestawem znaków.
+support:
+  description: Szeroko dostępne od JDK 11 (wrzesień 2018)

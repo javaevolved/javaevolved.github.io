@@ -1,0 +1,17 @@
+title: Ustrukturyzowana współbieżność
+oldApproach: Ręczny cykl życia wątków
+modernApproach: StructuredTaskScope
+summary: Zarządzaj czasami życia współbieżnych zadań jako jedną jednostką pracy.
+explanation: Ustrukturyzowana współbieżność traktuje grupę współbieżnych zadań jako jedną operację. Jeśli któreś podzadanie zakończy się błędem, pozostałe są anulowane. Zasięg gwarantuje brak wycieków wątków i zapewnia jasne relacje rodzic-dziecko.
+whyModernWins:
+  - icon: 🛡️
+    title: Bez wycieków wątków
+    desc: Wszystkie rozwidlone zadania kończą się przed zamknięciem zasięgu.
+  - icon: ⚡
+    title: Szybkie wykrywanie błędów
+    desc: ShutdownOnFailure anuluje rodzeństwo przy awarii jednego zadania.
+  - icon: 📐
+    title: Przejrzysta struktura
+    desc: Czas życia zadania odpowiada leksykalnemu zasięgowi w kodzie.
+support:
+  description: Podgląd w JDK 25 (piąty podgląd, JEP 505). Wymaga --enable-preview.

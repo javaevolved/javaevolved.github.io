@@ -1,0 +1,17 @@
+title: "Zmienne nienazwane z _"
+oldApproach: "Nieużywana zmienna"
+modernApproach: "Symbol zastępczy _"
+summary: "Używaj _ aby sygnalizować zamiar, gdy zmienna jest celowo nieużywana."
+explanation: "Zmienne nienazwane komunikują czytelnikom i narzędziom, że wartość jest celowo ignorowana. Koniec z konwencjami nazewniczymi 'ignored' lub 'unused', koniec z ostrzeżeniami IDE."
+whyModernWins:
+  - icon: "📢"
+    title: "Jasny zamiar"
+    desc: "_ wprost mówi 'ta wartość nie jest tu potrzebna'."
+  - icon: "🔇"
+    title: "Brak ostrzeżeń"
+    desc: "IDE i lintery nie będą oznaczać celowo nieużywanych zmiennych."
+  - icon: "🧹"
+    title: "Czystsze lambdy"
+    desc: "Lambdy z wieloma parametrami są czystsze, gdy potrzebujesz tylko niektórych parametrów."
+support:
+  description: "Dostępne od JDK 22 (JEP 456, marzec 2024)."

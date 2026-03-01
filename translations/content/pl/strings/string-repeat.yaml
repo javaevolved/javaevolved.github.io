@@ -1,0 +1,17 @@
+title: String.repeat()
+oldApproach: Pętla StringBuilder
+modernApproach: repeat()
+summary: Powtarzaj ciąg n razy bez pętli.
+explanation: String.repeat(int) zwraca ciąg sklejony ze sobą n razy. Obsługuje przypadki brzegowe — repeat(0) zwraca pusty ciąg, repeat(1) zwraca ten sam ciąg.
+whyModernWins:
+  - icon: 📏
+    title: Jednowierszowiec
+    desc: Zastąp 5 linii kodu StringBuilder jednym wywołaniem.
+  - icon: ⚡
+    title: Zoptymalizowane
+    desc: Wewnętrzna implementacja zoptymalizowana dla dużych powtórzeń.
+  - icon: 📖
+    title: Jasna intencja
+    desc: repeat(3) natychmiast przekazuje cel.
+support:
+  description: Szeroko dostępne od JDK 11 (wrzesień 2018)

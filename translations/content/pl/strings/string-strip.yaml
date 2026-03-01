@@ -1,0 +1,17 @@
+title: String.strip() kontra trim()
+oldApproach: trim()
+modernApproach: strip()
+summary: Używaj świadomego Unicode przycinania za pomocą strip(), stripLeading(), stripTrailing().
+explanation: trim() usuwa tylko znaki ≤ U+0020 (znaki sterujące ASCII i spację). strip() używa Character.isWhitespace(), który obsługuje spacje Unicode jak niełamliwa spacja, spacja ideograficzna itp.
+whyModernWins:
+  - icon: 🌐
+    title: Poprawny Unicode
+    desc: Obsługuje wszystkie znaki białe ze wszystkich skryptów.
+  - icon: 🎯
+    title: Kierunkowy
+    desc: stripLeading() i stripTrailing() do jednostronnego przycinania.
+  - icon: 🛡️
+    title: Mniej błędów
+    desc: Brak niespodziewanego białego znaku pozostawionego w tekstach międzynarodowych.
+support:
+  description: Szeroko dostępne od JDK 11 (wrzesień 2018)

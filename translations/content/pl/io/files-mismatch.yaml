@@ -1,0 +1,17 @@
+title: Files.mismatch()
+oldApproach: Ręczne porównywanie bajtów
+modernApproach: Files.mismatch()
+summary: Porównuj dwa pliki wydajnie bez ładowania ich do pamięci.
+explanation: Files.mismatch() zwraca pozycję pierwszego bajtu, który się różni, lub -1 jeśli pliki są identyczne. Odczytuje leniwie i przerywa przy pierwszej różnicy.
+whyModernWins:
+  - icon: ⚡
+    title: Efektywność pamięciowa
+    desc: Nie ładuje całych plików do tablic bajtów.
+  - icon: 🎯
+    title: Wskazuje różnicę
+    desc: Zwraca dokładną pozycję bajtu pierwszej niezgodności.
+  - icon: 📏
+    title: Jedno wywołanie
+    desc: Bez ręcznej logiki porównywania tablic bajtów.
+support:
+  description: Szeroko dostępne od JDK 12 (marzec 2019)

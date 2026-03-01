@@ -1,0 +1,17 @@
+title: Interfejs RandomGenerator
+oldApproach: new Random() / ThreadLocalRandom
+modernApproach: Fabryka RandomGenerator
+summary: Używaj interfejsu RandomGenerator do wyboru algorytmów losowych po nazwie bez wiązania się z konkretną klasą.
+explanation: JDK 17 wprowadził RandomGenerator jako wspólny interfejs dla wszystkich implementacji RNG. Zamiast na stałe kodować new Random() lub ThreadLocalRandom, możesz wybierać algorytmy po nazwie przez fabrykę, ułatwiając zamianę algorytmów zoptymalizowanych do różnych zastosowań (szybkość, jakość statystyczna, rozszczepialnność).
+whyModernWins:
+  - icon: 🔧
+    title: Niezależny od algorytmu
+    desc: Wybierz najlepszy algorytm RNG po nazwie bez zmiany struktury kodu.
+  - icon: ⚡
+    title: Lepsze algorytmy
+    desc: Dostęp do nowoczesnych generatorów LXM z lepszymi właściwościami statystycznymi.
+  - icon: 🔗
+    title: Ujednolicone API
+    desc: Jeden interfejs obejmuje Random, ThreadLocalRandom, SplittableRandom i więcej.
+support:
+  description: Dostępne od JDK 17 (wrzesień 2021, JEP 356).

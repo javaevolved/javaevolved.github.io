@@ -1,0 +1,17 @@
+title: String.lines() do podziału na wiersze
+oldApproach: split("\\n")
+modernApproach: lines()
+summary: Używaj String.lines() do dzielenia tekstu na strumień wierszy bez narzutu regex.
+explanation: String.lines() zwraca Stream<String> wierszy podzielonych przez \n, \r lub \r\n. Jest leniwszy i bardziej efektywny niż split(), unika kompilacji regex i integruje się naturalnie z Stream API do dalszego przetwarzania.
+whyModernWins:
+  - icon: ⚡
+    title: Leniwe strumieniowanie
+    desc: Wiersze są produkowane na żądanie, nie wszystkie naraz jak split().
+  - icon: 🔧
+    title: Uniwersalne zakończenia linii
+    desc: Obsługuje \n, \r i \r\n automatycznie bez regex.
+  - icon: 🔗
+    title: Integracja ze strumieniami
+    desc: Zwraca Stream do bezpośredniego użycia z filter, map, collect.
+support:
+  description: Dostępne od JDK 11 (wrzesień 2018).

@@ -1,0 +1,17 @@
+title: Null jako przypadek w switch
+oldApproach: Sprawdzenie przed switch
+modernApproach: case null
+summary: Obsługuj null bezpośrednio jako przypadek switch — bez oddzielnego warunku.
+explanation: Switch z dopasowaniem wzorców może dopasowywać null jako etykietę case. Eliminuje potrzebę sprawdzenia null przed switch i czyni obsługę null jawną i widoczną.
+whyModernWins:
+  - icon: 🎯
+    title: Jawny
+    desc: Obsługa null jest widoczna bezpośrednio w switch.
+  - icon: 🛡️
+    title: Bez NPE
+    desc: Switch na wartości null nie rzuci NullPointerException.
+  - icon: 📐
+    title: Wszystko w jednym
+    desc: Wszystkie przypadki łącznie z null w jednym wyrażeniu switch.
+support:
+  description: Szeroko dostępne od JDK 21 LTS (wrzesień 2023)

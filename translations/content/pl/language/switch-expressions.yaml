@@ -1,0 +1,17 @@
+title: "Wyrażenia switch"
+oldApproach: "Instrukcja switch"
+modernApproach: "Wyrażenie switch"
+summary: "Switch jako wyrażenie zwracające wartość — bez break, bez fall-through."
+explanation: "Wyrażenia switch zwracają wartość bezpośrednio, używają składni strzałkowej aby zapobiec błędom fall-through, a kompilator weryfikuje wyczerpywalność. Zastępuje podatną na błędy formę instrukcji."
+whyModernWins:
+  - icon: "🎯"
+    title: "Zwraca wartość"
+    desc: "Przypisz wynik switch bezpośrednio — żadnej zmiennej tymczasowej nie potrzeba."
+  - icon: "🛡️"
+    title: "Brak fall-through"
+    desc: "Składnia strzałkowa eliminuje przypadkowe błędy fall-through spowodowane brakującym break."
+  - icon: "✅"
+    title: "Sprawdzanie wyczerpywalności"
+    desc: "Kompilator zapewnia, że wszystkie przypadki są obsłużone."
+support:
+  description: "Szeroko dostępne od JDK 14 (marzec 2020)."

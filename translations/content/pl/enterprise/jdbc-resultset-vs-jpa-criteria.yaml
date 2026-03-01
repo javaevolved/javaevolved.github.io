@@ -1,0 +1,17 @@
+title: Mapowanie ResultSet JDBC kontra Criteria API JPA
+oldApproach: ResultSet JDBC
+modernApproach: Criteria API JPA
+summary: Zastąp ręczne mapowanie ResultSet JDBC typowo-bezpiecznym Criteria API JPA dla dynamicznych zapytań.
+explanation: Surowy JDBC wymaga budowania ciągów SQL, ustawiania parametrów przez indeks i ręcznego mapowania każdej kolumny ResultSet — proces podatny na błędy, który psuje się cicho przy zmianach kolumn. Criteria API JPA buduje zapytania programowo za pomocą wzorca buildera z kontrolą typów. Nazwy kolumn są weryfikowane względem modelu encji, mapowanie wyników jest automatyczne, a złożone dynamiczne zapytania składają się przejrzyście bez konkatenacji ciągów.
+whyModernWins:
+  - icon: 🔒
+    title: Zapytania z kontrolą typów
+    desc: Builder Criteria wykrywa niezgodności nazw pól i typów w czasie kompilacji.
+  - icon: 🗺️
+    title: Automatyczne mapowanie
+    desc: JPA mapuje wiersze wyników na obiekty encji — bez ręcznego wyciągania kolumna po kolumnie.
+  - icon: 🧩
+    title: Komponowalne predykaty
+    desc: Dynamiczne klauzule where budują się przejrzyście za pomocą and(), or() i wielokrotnego użytku obiektów Predicate.
+support:
+  description: Szeroko dostępne od Jakarta EE 8 / Java 11

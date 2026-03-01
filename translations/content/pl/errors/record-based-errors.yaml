@@ -1,0 +1,17 @@
+title: Odpowiedzi błędów oparte na rekordach
+oldApproach: Mapa lub rozwlekła klasa
+modernApproach: Rekordy błędów
+summary: Używaj rekordów do zwięzłych, niemutowalnych typów odpowiedzi błędów.
+explanation: Rekordy są idealne dla odpowiedzi błędów — są niemutowalne, mają wbudowane equals/hashCode do porównań i toString do logowania. Niestandardowe konstruktory dodają walidację lub wartości domyślne.
+whyModernWins:
+  - icon: 📏
+    title: Zwięzłość
+    desc: Definiuj typy błędów w 3 liniach zamiast 30.
+  - icon: 🔒
+    title: Niemutowalny
+    desc: Dane błędu nie mogą być przypadkowo zmodyfikowane po utworzeniu.
+  - icon: 📋
+    title: Automatyczny toString
+    desc: Idealny do logowania — wyświetla wszystkie pola automatycznie.
+support:
+  description: Szeroko dostępne od JDK 16 (marzec 2021)

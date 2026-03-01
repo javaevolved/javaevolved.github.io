@@ -1,0 +1,17 @@
+title: Predicate.not() do negacji
+oldApproach: Negacja lambda
+modernApproach: Predicate.not()
+summary: Używaj Predicate.not() do negowania referencji do metod bez pisania wrapperów lambda.
+explanation: Przed Java 11 negowanie referencji do metody wymagało owinięcia jej w lambdę. Predicate.not() pozwala negować dowolny predykat bezpośrednio, zachowując czytelność i spójność z stylem referencji do metod w potoku strumienia.
+whyModernWins:
+  - icon: 👁
+    title: Czystsza negacja
+    desc: Nie trzeba owijać referencji do metod w lambdy tylko po to, żeby je negować.
+  - icon: 🔗
+    title: Kompozycyjny
+    desc: Działa z dowolnym Predicate, umożliwiając czyste łańcuchy predykatów.
+  - icon: 📖
+    title: Czyta się naturalnie
+    desc: Predicate.not(String::isBlank) czyta się jak angielski.
+support:
+  description: Dostępne od JDK 11 (wrzesień 2018).

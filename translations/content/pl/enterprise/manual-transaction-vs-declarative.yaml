@@ -1,0 +1,17 @@
+title: Ręczna transakcja JPA kontra deklaratywna @Transactional
+oldApproach: Ręczna transakcja
+modernApproach: "@Transactional"
+summary: Zastąp rozwlekłe bloki begin/commit/rollback pojedynczą adnotacją @Transactional.
+explanation: Ręczne zarządzanie transakcjami wymaga jawnych wywołań begin(), commit() i rollback() opakowanych w bloki try-catch — każda metoda serwisu powtarza ten boilerplate. Adnotacja @Transactional deleguje zarządzanie cyklem życia do kontenera — rozpoczyna transakcję przed metodą, zatwierdza przy sukcesie i automatycznie cofa przy RuntimeException.
+whyModernWins:
+  - icon: 🗑️
+    title: Bez boilerplate
+    desc: Jedna adnotacja zastępuje powtarzające się bloki try-catch begin/commit/rollback.
+  - icon: 🛡️
+    title: Bezpieczniejsze wycofanie
+    desc: Kontener gwarantuje wycofanie przy wyjątkach unchecked — bez ryzyka zapomnienia bloku catch.
+  - icon: 📐
+    title: Deklaratywna kontrola
+    desc: Propagacja, izolacja i reguły wycofania są wyrażone jako atrybuty adnotacji.
+support:
+  description: Szeroko dostępne od Jakarta EE 8 / Java 11

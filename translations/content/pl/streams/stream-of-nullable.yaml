@@ -1,0 +1,17 @@
+title: Stream.ofNullable()
+oldApproach: Sprawdzenie null
+modernApproach: ofNullable()
+summary: Twórz strumień z zero lub jednym elementem z wartości mogącej być null.
+explanation: Stream.ofNullable() zwraca strumień jednoelementowy jeśli wartość jest nie-null, lub pusty strumień jeśli null. Eliminuje wzorzec trójkowego sprawdzenia null.
+whyModernWins:
+  - icon: 📏
+    title: Zwięzłość
+    desc: Jedno wywołanie zastępuje trójkowy warunek.
+  - icon: 🔗
+    title: Przyjazny dla flatMap
+    desc: Idealny wewnątrz flatMap do pomijania wartości null.
+  - icon: 🛡️
+    title: Bezpieczny pod kątem null
+    desc: Brak ryzyka NPE — null staje się pustym strumieniem.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

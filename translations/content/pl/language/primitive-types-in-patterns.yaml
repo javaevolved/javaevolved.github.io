@@ -1,0 +1,17 @@
+title: "Typy prymitywne we wzorcach"
+oldApproach: "Ręczne sprawdzanie zakresów"
+modernApproach: "Wzorce prymitywów"
+summary: "Dopasowanie wzorców działa teraz z typami prymitywnymi, nie tylko z obiektami."
+explanation: "Java 25 rozszerza dopasowanie wzorców na typy prymitywne. Możesz używać int, long, double itd. we wzorcach switch ze strażnikami when, eliminując potrzebę boxing lub ręcznego sprawdzania zakresów."
+whyModernWins:
+  - icon: "📦"
+    title: "Bez boxing"
+    desc: "Dopasowuj prymitywy bezpośrednio — żadnego opakowania Integer nie potrzeba."
+  - icon: "🎯"
+    title: "Spójność wzorców"
+    desc: "Ta sama składnia wzorców dla obiektów i prymitywów."
+  - icon: "⚡"
+    title: "Lepsza wydajność"
+    desc: "Unikaj narzutu autoboxing w dopasowaniu wzorców."
+support:
+  description: "Wersja zapoznawcza w JDK 25 (trzeci podgląd, JEP 507). Wymaga --enable-preview."

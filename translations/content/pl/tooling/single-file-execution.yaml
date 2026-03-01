@@ -1,0 +1,17 @@
+title: Uruchamianie jednoplikowe
+oldApproach: Dwuetapowa kompilacja
+modernApproach: Bezpośrednie uruchomienie
+summary: Uruchamiaj jednoplikowe programy Java bezpośrednio bez javac.
+explanation: Launcher Java może kompilować i uruchamiać pojedynczy plik źródłowy jednym poleceniem. W połączeniu z obsługą shebang na Unix, pliki Java mogą działać jako skrypty. Bez oddzielnego kroku kompilacji.
+whyModernWins:
+  - icon: ⚡
+    title: Jedno polecenie
+    desc: java File.java kompiluje i uruchamia w jednym kroku.
+  - icon: 📝
+    title: Jak skrypt
+    desc: Dodaj linię shebang, żeby pliki .java były wykonywalnymi skryptami.
+  - icon: 🎓
+    title: Przyjazny dla uczących się
+    desc: Nowicjusze uruchamiają kod natychmiast bez nauki narzędzi do budowania.
+support:
+  description: Szeroko dostępne od JDK 11 (wrzesień 2018)

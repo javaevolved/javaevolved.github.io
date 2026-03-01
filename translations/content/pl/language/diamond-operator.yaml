@@ -1,0 +1,17 @@
+title: "Operator diamentowy z klasami anonimowymi"
+oldApproach: "Powtarzanie argumentów typów"
+modernApproach: "Operator diamentowy <>"
+summary: "Operator diamentowy działa teraz również z klasami anonimowymi."
+explanation: "Java 7 wprowadziła <>, ale nie działało to z anonimowymi klasami wewnętrznymi. Java 9 naprawiła to, więc nigdy nie trzeba już powtarzać argumentów typów po prawej stronie."
+whyModernWins:
+  - icon: "📏"
+    title: "Spójne zasady"
+    desc: "Operator diamentowy działa wszędzie — zarówno w konstruktorach, jak i w klasach anonimowych."
+  - icon: "🧹"
+    title: "Mniej redundancji"
+    desc: "Argumenty typów podaje się raz po lewej stronie, nigdy ich nie powtarzając."
+  - icon: "🔧"
+    title: "Zasada DRY"
+    desc: "Kompilator już zna typ — po co pisać go dwa razy?"
+support:
+  description: "Operator diamentowy z klasami anonimowymi od JDK 9 (wrzesień 2017)."

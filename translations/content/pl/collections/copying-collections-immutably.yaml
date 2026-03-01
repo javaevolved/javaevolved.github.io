@@ -1,0 +1,17 @@
+title: Niemutowalne kopiowanie kolekcji
+oldApproach: Ręczna kopia + opakowanie
+modernApproach: List.copyOf()
+summary: Utwórz niemutowalną kopię dowolnej kolekcji w jednym wywołaniu.
+explanation: List.copyOf(), Set.copyOf() oraz Map.copyOf() tworzą niemutowalne migawki istniejących kolekcji. Jeśli źródło jest już niemutowalną kolekcją, kopia nie jest tworzona.
+whyModernWins:
+  - icon: ⚡
+    title: Inteligentna kopia
+    desc: Pomija kopiowanie, jeśli źródło jest już niemutowalne.
+  - icon: 📏
+    title: Jedno wywołanie
+    desc: Bez ręcznej konstrukcji ArrayList i opakowywania.
+  - icon: 🛡️
+    title: Kopia defensywna
+    desc: Zmiany w oryginale nie wpływają na kopię.
+support:
+  description: Szeroko dostępne od JDK 10 (marzec 2018)

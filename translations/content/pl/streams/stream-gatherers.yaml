@@ -1,0 +1,17 @@
+title: Gatherery strumieni
+oldApproach: Niestandardowy Collector
+modernApproach: gather()
+summary: Używaj gathererów do niestandardowych pośrednich operacji na strumieniach.
+explanation: Gatherery to nowa pośrednia operacja strumienia, która może wyrażać złożone transformacje jak okna przesuwne, grupy o stałym rozmiarze i operacje skanowania, które były niemożliwe ze standardowymi operacjami strumieni.
+whyModernWins:
+  - icon: 🧩
+    title: Kompozycyjny
+    desc: Gatherery komponują się z innymi operacjami strumieni.
+  - icon: 📦
+    title: Wbudowane operacje
+    desc: windowFixed, windowSliding, fold, scan dostępne od razu.
+  - icon: 🔧
+    title: Rozszerzalny
+    desc: Pisz niestandardowe gatherery do dowolnej pośredniej transformacji.
+support:
+  description: Sfinalizowane w JDK 24 (JEP 485, marzec 2025).

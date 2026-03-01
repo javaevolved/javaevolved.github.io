@@ -1,0 +1,17 @@
+title: Leniwa inicjalizacja bez blokad
+oldApproach: synchronized + volatile
+modernApproach: StableValue
+summary: Zastąp podwójnie sprawdzane blokowanie przez StableValue dla leniwych singletonów.
+explanation: StableValue hermetyzuje wzorzec leniwej inicjalizacji z poprawnym bezpieczeństwem wątków. JVM może zoptymalizować ścieżkę odczytu po inicjalizacji, co potencjalnie czyni go szybszym niż odczyty volatile.
+whyModernWins:
+  - icon: 🧹
+    title: Zero boilerplate
+    desc: Bez volatile, synchronized ani podwójnego sprawdzania null.
+  - icon: ⚡
+    title: Szybsze odczyty
+    desc: JVM może zoptymalizować wartość po inicjalizacji.
+  - icon: ✅
+    title: Dowodliwa poprawność
+    desc: Żadnych subtelnych błędów kolejności — JVM to obsługuje.
+support:
+  description: Podgląd w JDK 25 (JEP 502, StableValue). Wymaga --enable-preview.

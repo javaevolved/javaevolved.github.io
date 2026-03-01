@@ -1,0 +1,17 @@
+title: Stream.toList()
+oldApproach: Collectors.toList()
+modernApproach: .toList()
+summary: Terminalne toList() zastępuje rozwlekłe collect(Collectors.toList()).
+explanation: Stream.toList() zwraca niemodyfikowalną listę. Jest równoważne .collect(Collectors.toUnmodifiableList()) ale znacznie krótsze. Uwaga — wynik jest niemutowalny, w przeciwieństwie do Collectors.toList().
+whyModernWins:
+  - icon: 📏
+    title: 7 znaków vs 24
+    desc: .toList() zastępuje .collect(Collectors.toList()).
+  - icon: 🔒
+    title: Niemutowalny
+    desc: Wynikowej listy nie można modyfikować.
+  - icon: 📖
+    title: Płynny
+    desc: Czyta się naturalnie na końcu potoku.
+support:
+  description: Szeroko dostępne od JDK 16 (marzec 2021)

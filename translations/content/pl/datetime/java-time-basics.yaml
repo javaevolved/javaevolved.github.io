@@ -1,0 +1,17 @@
+title: Podstawy API java.time
+oldApproach: Date + Calendar
+modernApproach: java.time.*
+summary: Używaj niemutowalnych, przejrzystych typów daty/czasu zamiast Date i Calendar.
+explanation: java.time oferuje LocalDate, LocalTime, LocalDateTime, Instant, ZonedDateTime — wszystkie niemutowalne i bezpieczne wątkowo. Miesiące są numerowane od 1. Koniec z zamieszaniem Calendar.JANUARY = 0.
+whyModernWins:
+  - icon: 🔒
+    title: Niemutowalne
+    desc: Wartości daty/czasu nie mogą być przypadkowo zmodyfikowane.
+  - icon: 📖
+    title: Przejrzyste API
+    desc: Month.JANUARY, nie 0. DayOfWeek.MONDAY, nie 2.
+  - icon: 🛡️
+    title: Bezpieczne wątkowo
+    desc: Bez synchronizacji — swobodne współdzielenie między wątkami.
+support:
+  description: Szeroko dostępne od JDK 8 (marzec 2014)

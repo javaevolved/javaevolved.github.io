@@ -1,0 +1,17 @@
+title: TLS 1.3 jako domyślny
+oldApproach: Ręczna konfiguracja TLS
+modernApproach: Domyślny TLS 1.3
+summary: TLS 1.3 jest domyślnie włączony — nie potrzeba jawnej konfiguracji protokołu.
+explanation: Java 11 dodała obsługę TLS 1.3 i uczyniła go preferowanym protokołem. HttpClient używa go automatycznie. Koniec z ręcznym podawaniem wersji protokołu dla bezpiecznych połączeń.
+whyModernWins:
+  - icon: 🛡️
+    title: Bezpieczniejszy
+    desc: TLS 1.3 usuwa przestarzałe zestawy szyfrów i wzorce uzgadniania.
+  - icon: ⚡
+    title: Szybsze uzgadnianie
+    desc: TLS 1.3 kończy się w jednej rundzie zamiast dwóch.
+  - icon: 🆓
+    title: Zero konfiguracji
+    desc: Bezpieczny domyślnie — nie potrzeba jawnego wyboru protokołu.
+support:
+  description: Szeroko dostępne od JDK 11 (wrzesień 2018)

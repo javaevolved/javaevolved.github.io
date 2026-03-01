@@ -1,0 +1,17 @@
+title: "Elastyczne ciała konstruktorów"
+oldApproach: "Walidacja po super()"
+modernApproach: "Kod przed super()"
+summary: "Waliduj i obliczaj wartości przed wywołaniem super() lub this()."
+explanation: "Java 25 znosi ograniczenie, że super() musi być pierwszą instrukcją. Teraz możesz walidować argumenty, obliczać pochodne wartości i przygotowywać stan przed delegowaniem do konstruktora nadklasy."
+whyModernWins:
+  - icon: "🛡️"
+    title: "Szybkie wykrywanie błędów"
+    desc: "Waliduj argumenty przed uruchomieniem konstruktora nadklasy."
+  - icon: "🧮"
+    title: "Najpierw obliczenia"
+    desc: "Wylicz wartości i przygotuj dane przed wywołaniem super()."
+  - icon: "🧹"
+    title: "Bez obejść"
+    desc: "Koniec ze statycznymi metodami pomocniczymi czy wzorcami fabryki jako obejściami tego ograniczenia."
+support:
+  description: "Dostępne od JDK 25 LTS (JEP 513, wrzesień 2025)."

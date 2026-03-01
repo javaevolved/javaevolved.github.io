@@ -1,0 +1,17 @@
+title: InputStream.transferTo()
+oldApproach: Ręczna pętla kopiowania
+modernApproach: transferTo()
+summary: Kopiuj InputStream do OutputStream w jednym wywołaniu.
+explanation: transferTo() odczytuje wszystkie bajty ze strumienia wejściowego i zapisuje je do strumienia wyjściowego. Bez zarządzania buforem, bez pętli. Używa zoptymalizowanego bufora wewnętrznego.
+whyModernWins:
+  - icon: 📏
+    title: Jedna linia
+    desc: Zastąp całą pętlę odczytu/zapisu jednym wywołaniem metody.
+  - icon: ⚡
+    title: Zoptymalizowane
+    desc: Rozmiar bufora wewnętrznego dostrojony pod kątem wydajności.
+  - icon: 🛡️
+    title: Bez błędów
+    desc: Brak błędów off-by-one w zarządzaniu buforem.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

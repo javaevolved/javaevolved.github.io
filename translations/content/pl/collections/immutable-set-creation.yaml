@@ -1,0 +1,17 @@
+title: Tworzenie niemutowalnego zbioru
+oldApproach: Rozwlekłe opakowywanie
+modernApproach: Set.of()
+summary: Twórz niemutowalne zbiory jednym wywołaniem metody fabrycznej.
+explanation: Set.of() tworzy prawdziwie niemutowalny zbiór, który odrzuca null i zduplikowane elementy podczas tworzenia. Koniec z opakowywaniem mutowalnych zbiorów.
+whyModernWins:
+  - icon: 📏
+    title: Zwięzłość
+    desc: Jedna linia zamiast trzech zagnieżdżonych wywołań.
+  - icon: 🚫
+    title: Wykrywa duplikaty
+    desc: Rzuca wyjątek przy przypadkowym przekazaniu zduplikowanych elementów.
+  - icon: 🔒
+    title: Niemutowalny
+    desc: Brak możliwości dodawania/usuwania po utworzeniu.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

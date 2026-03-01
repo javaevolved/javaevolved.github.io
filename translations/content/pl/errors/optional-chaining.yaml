@@ -1,0 +1,17 @@
+title: Łańcuchowanie Optional
+oldApproach: Zagnieżdżone sprawdzenia null
+modernApproach: Potok Optional
+summary: Zastąp zagnieżdżone sprawdzenia null potokiem Optional.
+explanation: Optional.map() łączy przez wartości null, zatrzymując się na pierwszym null. orElse() dostarcza wartość domyślną. Eliminuje zagnieżdżone sprawdzenia null w stylu piramidy zagłady.
+whyModernWins:
+  - icon: 🔗
+    title: Łańcuchowalność
+    desc: Każdy krok .map() obsługuje null transparentnie.
+  - icon: 📖
+    title: Liniowy przepływ
+    desc: Czytaj od lewej do prawej zamiast zagnieżdżonych bloków if.
+  - icon: 🛡️
+    title: Bez NPE
+    desc: null jest obsługiwany na każdym kroku — brak możliwości awarii.
+support:
+  description: Dostępne od JDK 8+ (ulepszone w 9+)

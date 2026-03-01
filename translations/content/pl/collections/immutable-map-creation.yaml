@@ -1,0 +1,17 @@
+title: Tworzenie niemutowalnej mapy
+oldApproach: Wzorzec buildera mapy
+modernApproach: Map.of()
+summary: Twórz niemutowalne mapy inline bez użycia buildera.
+explanation: Map.of() przyjmuje pary klucz-wartość inline i zwraca niemutowalną mapę. Dla więcej niż 10 wpisów użyj Map.ofEntries() z parami Map.entry().
+whyModernWins:
+  - icon: 📏
+    title: Tworzenie inline
+    desc: Bez potrzeby tworzenia tymczasowej mutowalnej mapy.
+  - icon: 🔒
+    title: Niemutowalny wynik
+    desc: Mapa nie może być modyfikowana po utworzeniu.
+  - icon: 🚫
+    title: Brak kluczy/wartości null
+    desc: Wpisy null są natychmiast odrzucane.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

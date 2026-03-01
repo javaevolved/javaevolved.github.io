@@ -1,0 +1,17 @@
+title: Zapisywanie plików
+oldApproach: FileWriter + BufferedWriter
+modernApproach: Files.writeString()
+summary: Zapisz String do pliku w jednej linii.
+explanation: Files.writeString() zapisuje zawartość do pliku domyślnie z kodowaniem UTF-8. Można przekazać opcje dotyczące dołączania, tworzenia itp.
+whyModernWins:
+  - icon: 📏
+    title: Jedna linia
+    desc: Bez owijania writerów ani try-with-resources.
+  - icon: 🛡️
+    title: Bezpieczne ustawienia domyślne
+    desc: Kodowanie UTF-8, właściwe zwalnianie uchwytu pliku.
+  - icon: 🔧
+    title: Opcje
+    desc: Przekazuj flagi OpenOption dla dołączania, tworzenia itp.
+support:
+  description: Szeroko dostępne od JDK 11 (wrzesień 2018)

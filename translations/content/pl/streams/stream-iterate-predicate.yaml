@@ -1,0 +1,17 @@
+title: Stream.iterate() z predykatem
+oldApproach: iterate + limit
+modernApproach: iterate(seed, pred, op)
+summary: Używaj predykatu do zatrzymania iteracji — jak pętla for w formie strumienia.
+explanation: Trójargumentowy Stream.iterate(seed, hasNext, next) działa jak pętla for — seed to punkt startowy, hasNext określa kiedy zatrzymać, a next produkuje następną wartość.
+whyModernWins:
+  - icon: 🎯
+    title: Naturalne zakończenie
+    desc: Zatrzymaj na podstawie warunku, nie arbitralnego limitu.
+  - icon: 📐
+    title: Odpowiednik pętli for
+    desc: Te same semantyki co for(seed; hasNext; next).
+  - icon: 🛡️
+    title: Bez ryzyka nieskończonego strumienia
+    desc: Predykat gwarantuje zakończenie.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

@@ -1,0 +1,17 @@
+title: Tworzenie niemutowalnej listy
+oldApproach: Rozwlekłe opakowywanie
+modernApproach: List.of()
+summary: Twórz niemutowalne listy w jednym czytelnym wyrażeniu.
+explanation: List.of() tworzy prawdziwie niemutowalną listę — bez opakowywania, bez kopii defensywnej. Jest odporna na null (odrzuca elementy null) i strukturalnie niemutowalna. Stary sposób wymagał trzech zagnieżdżonych wywołań.
+whyModernWins:
+  - icon: 📏
+    title: Jedno wywołanie
+    desc: Zastąp trzy zagnieżdżone wywołania jedną metodą fabryczną.
+  - icon: 🔒
+    title: Prawdziwie niemutowalna
+    desc: Nie tylko opakowanie — sama lista jest niemutowalna.
+  - icon: 🛡️
+    title: Bezpieczna pod kątem null
+    desc: Odrzuca elementy null podczas tworzenia, szybko sygnalizując błąd.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

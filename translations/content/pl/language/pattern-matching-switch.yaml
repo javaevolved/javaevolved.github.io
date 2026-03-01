@@ -1,0 +1,17 @@
+title: "Dopasowanie wzorców w switch"
+oldApproach: "Łańcuch if-else"
+modernApproach: "Wzorce typów"
+summary: "Zastąp łańcuchy if-else instanceof czystymi wzorcami typów w switch."
+explanation: "Dopasowanie wzorców w switch pozwala dopasowywać typy bezpośrednio, łącząc test typu, rzutowanie i powiązanie w jednej zwięzłej etykiecie case. Kompilator sprawdza kompletność."
+whyModernWins:
+  - icon: "📐"
+    title: "Ustrukturyzowane przekazywanie"
+    desc: "Switch sprawia, że struktura rozgałęzień jest jawna i łatwa do skanowania."
+  - icon: "🎯"
+    title: "Forma wyrażenia"
+    desc: "Zwraca wartość bezpośrednio — nie potrzeba zmiennej mutowalnej."
+  - icon: "✅"
+    title: "Wyczerpywalność"
+    desc: "Kompilator zapewnia obsłużenie wszystkich typów."
+support:
+  description: "Szeroko dostępne od JDK 21 LTS (wrzesień 2023)."

@@ -1,0 +1,17 @@
+title: Fabryka Map.entry()
+oldApproach: SimpleEntry
+modernApproach: Map.entry()
+summary: Twórz wpisy map za pomocą przejrzystej metody fabrycznej.
+explanation: Map.entry() zastępuje rozwlekły konstruktor AbstractMap.SimpleEntry. Zwraca niemutowalny wpis, co czyni go idealnym do Map.ofEntries() i operacji na strumieniach.
+whyModernWins:
+  - icon: 📏
+    title: Zwięzłość
+    desc: Jedna linia zamiast trzech z wyraźniejszą intencją.
+  - icon: 🔒
+    title: Niemutowalny
+    desc: Zwrócony wpis nie może być modyfikowany.
+  - icon: 🧩
+    title: Kompozycyjność
+    desc: Doskonale współpracuje z Map.ofEntries() dla dużych map.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

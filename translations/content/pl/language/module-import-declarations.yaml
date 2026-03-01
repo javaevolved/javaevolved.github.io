@@ -1,0 +1,17 @@
+title: "Deklaracje importu modułów"
+oldApproach: "Wiele importów"
+modernApproach: "import module"
+summary: "Importuj wszystkie eksportowane pakiety modułu jedną deklaracją."
+explanation: "Deklaracje importu modułów pozwalają zaimportować wszystko, co eksportuje moduł, jedną linią. Jest to szczególnie przydatne dla java.base, który obejmuje kolekcje, I/O, strumienie i wiele więcej."
+whyModernWins:
+  - icon: "🧹"
+    title: "Jedna linia"
+    desc: "Zastąp ścianę importów jednym importem modułu."
+  - icon: "📦"
+    title: "Świadomy modułów"
+    desc: "Wykorzystuje system modułów do importowania spójnych zestawów pakietów."
+  - icon: "🚀"
+    title: "Szybki start"
+    desc: "Idealne do skryptów i prototypów, gdzie listy importów są uciążliwe."
+support:
+  description: "Dostępne od JDK 25 LTS (JEP 511, wrzesień 2025)."

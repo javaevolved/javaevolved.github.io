@@ -1,0 +1,17 @@
+title: Sekwencyjne kolekcje
+oldApproach: Arytmetyka na indeksach
+modernApproach: getFirst/getLast
+summary: Dostęp do pierwszego/ostatniego elementu i widoków odwróconych za pomocą przejrzystych metod API.
+explanation: SequencedCollection dodaje getFirst(), getLast(), reversed(), addFirst(), addLast() do List, Deque, SortedSet i LinkedHashSet. Koniec z arytmetyką size-1 i ręczną iteracją wsteczną.
+whyModernWins:
+  - icon: 📖
+    title: Samo-dokumentujący
+    desc: getLast() jest czytelniejsze niż get(size()-1).
+  - icon: 🔄
+    title: Widok odwrócony
+    desc: reversed() zwraca widok — bez kopiowania.
+  - icon: 🧩
+    title: Jednolite API
+    desc: Działa tak samo na List, Deque, SortedSet.
+support:
+  description: Szeroko dostępne od JDK 21 LTS (wrzesień 2023)

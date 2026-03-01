@@ -1,0 +1,17 @@
+title: "Markdown w komentarzach Javadoc"
+oldApproach: "Javadoc oparty na HTML"
+modernApproach: "Javadoc w Markdown"
+summary: "Pisz komentarze Javadoc w Markdown zamiast HTML dla lepszej czytelności."
+explanation: "Java 23 wprowadza komentarze Javadoc w stylu /// Markdown jako alternatywę dla tradycyjnego formatu /** */ opartego na HTML. Składnia Markdown jest bardziej naturalna do pisania i czytania, z obsługą bloków kodu, wyróżnienia, list i linków. Kompilator konwertuje Markdown do HTML dla wyjścia javadoc."
+whyModernWins:
+  - icon: "📖"
+    title: "Naturalna składnia"
+    desc: "Używaj grawisów dla kodu inline i ``` dla bloków zamiast tagów HTML."
+  - icon: "✍️"
+    title: "Łatwiejsze pisanie"
+    desc: "Żadnego {@code}, <pre>, tagów <p> — pisz po prostu w Markdown."
+  - icon: "👁"
+    title: "Lepiej w edytorach"
+    desc: "Markdown renderuje się pięknie w nowoczesnych IDE i edytorach tekstu."
+support:
+  description: "Dostępne od JDK 23 (wrzesień 2024)."

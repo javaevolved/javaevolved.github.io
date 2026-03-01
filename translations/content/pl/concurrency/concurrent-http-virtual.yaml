@@ -1,0 +1,17 @@
+title: Równoległe HTTP z wątkami wirtualnymi
+oldApproach: Pula wątków + URLConnection
+modernApproach: Wątki wirtualne + HttpClient
+summary: Pobieraj wiele URL-i równolegle za pomocą wątków wirtualnych i HttpClient.
+explanation: Wątki wirtualne sprawiają, że tworzenie jednego wątku na żądanie HTTP jest praktyczne. W połączeniu z HttpClient zastępuje złożone wzorce asynchronicznych callbacków prostym blokowalnym kodem, który dobrze skaluje.
+whyModernWins:
+  - icon: ♾️
+    title: Jeden wątek na żądanie
+    desc: Bez dobierania rozmiaru puli — jeden wątek wirtualny na URL.
+  - icon: 📖
+    title: Prosty kod
+    desc: Pisz bezpośredni, blokowalny kod.
+  - icon: ⚡
+    title: Wysoka przepustowość
+    desc: Tysiące równoległych żądań przy minimalnych zasobach.
+support:
+  description: Szeroko dostępne od JDK 21 LTS (wrzesień 2023)

@@ -1,0 +1,17 @@
+title: Iteracja po liście w odwrotnej kolejności
+oldApproach: Ręczny ListIterator
+modernApproach: reversed()
+summary: Iteruj po liście w odwrotnej kolejności za pomocą zwykłej pętli for-each.
+explanation: Metoda reversed() z SequencedCollection zwraca widok listy w odwróconej kolejności. Ten widok jest oparty na oryginalnej liście, więc nie dochodzi do kopiowania. Ulepszona pętla for sprawia, że iteracja wsteczna jest tak samo czytelna jak wprzód.
+whyModernWins:
+  - icon: 📖
+    title: Naturalna składnia
+    desc: Ulepszona pętla for zamiast rozwlekłego ListIteratora.
+  - icon: ⚡
+    title: Bez kopiowania
+    desc: reversed() zwraca widok — bez narzutu wydajnościowego.
+  - icon: 🧩
+    title: Spójne API
+    desc: Działa na List, Deque, SortedSet jednakowo.
+support:
+  description: Szeroko dostępne od JDK 21 LTS (wrzesień 2023)

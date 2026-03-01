@@ -1,0 +1,17 @@
+title: Kodowanie/dekodowanie PEM
+oldApproach: Ręczny Base64 + nagłówki
+modernApproach: PEM API
+summary: Koduj i dekoduj kryptograficzne obiekty w formacie PEM natywnie.
+explanation: PEM API zapewnia standardowe kodowanie/dekodowanie certyfikatów, kluczy i innych obiektów kryptograficznych w formacie PEM. Koniec z ręcznym opakowywaniem Base64 z nagłówkami BEGIN/END.
+whyModernWins:
+  - icon: 🧹
+    title: Bez ręcznego Base64
+    desc: Nagłówki PEM, zawijanie linii i Base64 obsługiwane automatycznie.
+  - icon: 🔄
+    title: Dwukierunkowy
+    desc: Koduj do PEM i dekoduj z PEM jednym API.
+  - icon: 🛡️
+    title: Standardowy format
+    desc: Produkuje wynik PEM zgodny z RFC 7468.
+support:
+  description: Podgląd w JDK 25 (JEP 470). Wymaga --enable-preview.

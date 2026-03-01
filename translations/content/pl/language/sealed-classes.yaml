@@ -1,0 +1,17 @@
+title: "Klasy sealed dla hierarchii typów"
+oldApproach: "Otwarta hierarchia"
+modernApproach: "sealed permits"
+summary: "Ogranicz, które klasy mogą rozszerzać typ — umożliwiając wyczerpujące switche."
+explanation: "Klasy sealed definiują zamknięty zestaw podtypów. Kompilator zna wszystkie możliwe przypadki, umożliwiając wyczerpujące dopasowanie wzorców bez gałęzi default. W połączeniu z rekordami modelują algebraiczne typy danych."
+whyModernWins:
+  - icon: "🔐"
+    title: "Kontrolowana hierarchia"
+    desc: "Tylko dozwolone podtypy mogą rozszerzać — żadnych niespodziewanych podklas."
+  - icon: "✅"
+    title: "Wyczerpujące dopasowanie"
+    desc: "Kompilator weryfikuje, że switch obsługuje wszystkie przypadki — default nie jest potrzebny."
+  - icon: "📐"
+    title: "Algebraiczne typy danych"
+    desc: "Modeluj typy sumowe naturalnie — sealed + rekordy = ADT w Javie."
+support:
+  description: "Szeroko dostępne od JDK 17 LTS (wrzesień 2021)."

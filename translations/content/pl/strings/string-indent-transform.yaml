@@ -1,0 +1,17 @@
+title: String.indent() i transform()
+oldApproach: Ręczne wcięcia
+modernApproach: indent() / transform()
+summary: Wciskaj tekst i łącz transformacje ciągów płynnie.
+explanation: indent(n) dodaje n spacji do każdej linii. transform(fn) stosuje dowolną funkcję i zwraca wynik, umożliwiając płynne łańcuchowanie operacji na ciągach.
+whyModernWins:
+  - icon: 📏
+    title: Wbudowane
+    desc: Wcięcia to częsta operacja — teraz to jedno wywołanie.
+  - icon: 🔗
+    title: Łańcuchowalność
+    desc: transform() umożliwia płynne potoki na ciągach.
+  - icon: 🧹
+    title: Czysty kod
+    desc: Bez ręcznego dzielenia linii i pętli StringBuilder.
+support:
+  description: Szeroko dostępne od JDK 12 (marzec 2019)

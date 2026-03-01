@@ -1,0 +1,17 @@
+title: "Optional.or() — wariant zapasowy"
+oldApproach: Zagnieżdżone warianty zapasowe
+modernApproach: Łańcuch .or()
+summary: Łącz warianty zapasowe Optional bez zagnieżdżonych sprawdzeń.
+explanation: Optional.or() zwraca oryginalny Optional jeśli ma wartość, w przeciwnym razie wywołuje dostawcę, aby uzyskać alternatywny Optional. Dostawcy są leniwi — wywoływani tylko gdy potrzebni.
+whyModernWins:
+  - icon: 🔗
+    title: Łańcuchowalność
+    desc: Układaj warianty zapasowe w czytelnym potoku.
+  - icon: ⚡
+    title: Leniwa ewaluacja
+    desc: Dostawcy zapasowi uruchamiają się tylko gdy potrzebne.
+  - icon: 📖
+    title: Deklaratywny
+    desc: "Czyta się jako 'spróbuj primary, lub secondary, lub defaults'."
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

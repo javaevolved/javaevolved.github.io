@@ -1,0 +1,17 @@
+title: "Wzorce chronione z when"
+oldApproach: "Zagnieżdżone if"
+modernApproach: "Klauzula when"
+summary: "Dodaj warunki do przypadków wzorców używając strażników when."
+explanation: "Wzorce chronione pozwalają doprecyzować dopasowanie typów za pomocą dodatkowego warunku boolowskiego. Dzięki temu cała logika rozgałęzień pozostaje w switch zamiast zagnieżdżonych instrukcji if wewnątrz przypadków."
+whyModernWins:
+  - icon: "🎯"
+    title: "Precyzyjne dopasowanie"
+    desc: "Łącz typ i warunek w jednej etykiecie case."
+  - icon: "📐"
+    title: "Płaska struktura"
+    desc: "Żadnych zagnieżdżonych if/else wewnątrz przypadków switch."
+  - icon: "📖"
+    title: "Czytelny zamiar"
+    desc: "Klauzula when czyta się jak język naturalny."
+support:
+  description: "Szeroko dostępne od JDK 21 LTS (wrzesień 2023)."

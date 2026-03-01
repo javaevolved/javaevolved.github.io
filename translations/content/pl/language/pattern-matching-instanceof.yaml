@@ -1,0 +1,17 @@
+title: "Dopasowanie wzorców dla instanceof"
+oldApproach: "instanceof + rzutowanie"
+modernApproach: "Zmienna wzorca"
+summary: "Połącz sprawdzanie typu i rzutowanie w jednym kroku za pomocą dopasowania wzorców."
+explanation: "Dopasowanie wzorców dla instanceof eliminuje redundantne rzutowanie po sprawdzeniu typu. Zmienna jest automatycznie ograniczona do zakresu, w którym wzorzec pasuje, co sprawia, że kod jest bezpieczniejszy i krótszy."
+whyModernWins:
+  - icon: "🔄"
+    title: "Brak redundantnego rzutowania"
+    desc: "Sprawdzenie typu i powiązanie zmiennej odbywają się w jednym wyrażeniu."
+  - icon: "📏"
+    title: "Mniej linii"
+    desc: "Jedna linia zamiast dwóch — linia z rzutowaniem znika całkowicie."
+  - icon: "🛡️"
+    title: "Bezpieczeństwo zakresu"
+    desc: "Zmienna wzorca jest w zakresie tylko tam, gdzie typ jest gwarantowany."
+support:
+  description: "Szeroko dostępne od JDK 16 (marzec 2021)."

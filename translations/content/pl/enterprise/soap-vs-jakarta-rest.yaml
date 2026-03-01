@@ -1,0 +1,17 @@
+title: Usługi SOAP kontra Jakarta REST
+oldApproach: JAX-WS / SOAP
+modernApproach: Jakarta REST / JSON
+summary: Zastąp ciężkie endpointy SOAP/WSDL czystymi zasobami Jakarta REST zwracającymi JSON.
+explanation: Usługi webowe oparte na SOAP polegają na kontraktach WSDL, marshallingu XML i adnotacjach JAX-WS dodających znaczny narzut. Jakarta REST (dawniej JAX-RS) używa intuicyjnych adnotacji jak @GET, @Path i @Produces do udostępniania REST-owych API JSON. Model programowania jest prostszy, ładunki są mniejsze, a podejście jest zgodne ze sposobem komunikacji nowoczesnych mikroserwisów.
+whyModernWins:
+  - icon: 🪶
+    title: Lżejsze ładunki
+    desc: JSON jest bardziej kompaktowy niż koperty XML SOAP, redukując przepustowość i narzut parsowania.
+  - icon: 📐
+    title: Proste adnotacje
+    desc: "@GET, @Path i @Produces zastępują ceremonię WSDL, @WebService i @WebMethod."
+  - icon: 🔌
+    title: Gotowy na mikroserwisy
+    desc: REST/JSON to standard komunikacji serwis-do-serwisu w architekturach cloud-native.
+support:
+  description: Szeroko dostępne od Jakarta EE 8 / Java 11

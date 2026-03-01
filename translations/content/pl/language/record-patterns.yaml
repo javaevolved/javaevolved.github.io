@@ -1,0 +1,17 @@
+title: "Wzorce rekordów (destrukturyzacja)"
+oldApproach: "Ręczny dostęp"
+modernApproach: "Destrukturyzacja"
+summary: "Destrukturyzuj rekordy bezpośrednio we wzorcach — wyodrębnij pola w jednym kroku."
+explanation: "Wzorce rekordów pozwalają rozkładać komponenty rekordu bezpośrednio w instanceof i switch. Obsługiwane są też wzorce zagnieżdżone, umożliwiając głębokie dopasowanie bez zmiennych pośrednich."
+whyModernWins:
+  - icon: "🎯"
+    title: "Bezpośrednia ekstrakcja"
+    desc: "Dostęp do komponentów rekordu bez ręcznego wywoływania akcesorów."
+  - icon: "🪆"
+    title: "Zagnieżdżalność"
+    desc: "Wzorce mogą być zagnieżdżane — dopasowuj wewnętrzne rekordy w jednym wyrażeniu."
+  - icon: "📏"
+    title: "Zwięzły kod"
+    desc: "Pięć linii staje się dwiema — mniej ceremonii, ta sama czytelność."
+support:
+  description: "Szeroko dostępne od JDK 21 LTS (wrzesień 2023)."

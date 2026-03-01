@@ -1,0 +1,17 @@
+title: "Statyczne składowe w klasach wewnętrznych"
+oldApproach: "Wymagana statyczna klasa zagnieżdżona"
+modernApproach: "Statyczne składowe w klasach wewnętrznych"
+summary: "Definiuj statyczne składowe w klasach wewnętrznych bez konieczności stosowania statycznych klas zagnieżdżonych."
+explanation: "Przed Javą 16 tylko statyczne klasy zagnieżdżone mogły zawierać statyczne składowe. Wewnętrzne (niestatyczne) klasy nie mogły mieć statycznych elementów, ponieważ wymagały otaczającej instancji. Java 16 łagodzi to ograniczenie, pozwalając na statyczne pola, metody, a nawet zagnieżdżone typy w klasach wewnętrznych."
+whyModernWins:
+  - icon: "🔓"
+    title: "Większa elastyczność"
+    desc: "Klasy wewnętrzne mogą teraz mieć statyczne składowe, gdy jest to potrzebne."
+  - icon: "🧩"
+    title: "Współdzielony stan"
+    desc: "Śledź współdzielony stan między instancjami klasy wewnętrznej."
+  - icon: "📐"
+    title: "Swoboda projektowania"
+    desc: "Nie trzeba promować do statycznej klasy zagnieżdżonej tylko dla jednego statycznego pola."
+support:
+  description: "Szeroko dostępne od JDK 16 (marzec 2021)."

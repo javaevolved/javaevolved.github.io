@@ -1,0 +1,17 @@
+title: "Kompaktowe pliki źródłowe"
+oldApproach: "Ceremonia klasy głównej"
+modernApproach: "void main()"
+summary: "Napisz kompletny program bez deklaracji klasy ani public static void main."
+explanation: "Kompaktowe pliki źródłowe eliminują ceremonię deklaracji klas i sygnatury metody main dla prostych programów. W połączeniu z niejawnym importem java.io.IO, nawet println jest dostępne bezpośrednio."
+whyModernWins:
+  - icon: "🚀"
+    title: "Zero ceremonii"
+    desc: "Żadnej klasy, żadnego public static void main, żadnego String[] args."
+  - icon: "🎓"
+    title: "Przyjazne dla początkujących"
+    desc: "Nowi programiści mogą pisać użyteczny kod od pierwszej linii."
+  - icon: "📝"
+    title: "Styl skryptowy"
+    desc: "Idealne do szybkich prototypów, skryptów i przykładów."
+support:
+  description: "Dostępne od JDK 25 LTS (JEP 512, wrzesień 2025)."

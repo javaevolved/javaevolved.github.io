@@ -1,0 +1,17 @@
+title: takeWhile / dropWhile na strumieniu
+oldApproach: Ręczna pętla
+modernApproach: takeWhile/dropWhile
+summary: Pobieraj lub pomijaj elementy strumienia na podstawie predykatu.
+explanation: takeWhile() zwraca elementy dopóki predykat jest prawdziwy i zatrzymuje się przy pierwszym fałszu. dropWhile() pomija elementy dopóki prawda i zwraca resztę. Oba działają najlepiej na uporządkowanych strumieniach.
+whyModernWins:
+  - icon: 🎯
+    title: Krótkie spięcie
+    desc: Przestaje przetwarzać gdy predykat zawodzi.
+  - icon: 🔗
+    title: Przyjazny dla potoku
+    desc: Łączy się z innymi operacjami strumieni naturalnie.
+  - icon: 📖
+    title: Deklaratywny
+    desc: takeWhile czyta się naturalnie — 'pobieraj dopóki mniej niż 100'.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

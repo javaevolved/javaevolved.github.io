@@ -1,0 +1,17 @@
+title: "Wyczerpujący switch bez default"
+oldApproach: "Obowiązkowy default"
+modernApproach: "Wyczerpywalność sealed"
+summary: "Kompilator weryfikuje, że wszystkie uszczelnione podtypy są obsłużone — nie trzeba default."
+explanation: "Podczas przełączania po typie sealed kompilator zna wszystkie możliwe podtypy i weryfikuje, że każdy przypadek jest obsłużony. Jeśli dodasz nowy podtyp, kompilator oznaczy każdy switch, który jest teraz niekompletny."
+whyModernWins:
+  - icon: "✅"
+    title: "Bezpieczeństwo na etapie kompilacji"
+    desc: "Dodaj nowy podtyp, a kompilator pokaże każde miejsce do zaktualizowania."
+  - icon: "🚫"
+    title: "Brak martwego kodu"
+    desc: "Żadnej nieosiągalnej gałęzi default, która maskuje błędy."
+  - icon: "📐"
+    title: "Typy algebraiczne"
+    desc: "Sealed + rekordy + wyczerpujący switch = prawidłowe ADT w Javie."
+support:
+  description: "Szeroko dostępne od JDK 21 LTS (wrzesień 2023)."

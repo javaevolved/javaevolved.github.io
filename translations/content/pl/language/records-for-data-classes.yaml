@@ -1,0 +1,17 @@
+title: "Rekordy dla klas danych"
+oldApproach: "Rozbudowane POJO"
+modernApproach: "record"
+summary: "Jedna linia zastępuje ponad 30 linii szablonowego kodu dla niemutowalnych nośników danych."
+explanation: "Rekordy automatycznie generują konstruktor, akcesory (x(), y()), equals(), hashCode() i toString(). Są niemutowalne z założenia i idealne dla DTO, obiektów wartości i dopasowania wzorców."
+whyModernWins:
+  - icon: "⚡"
+    title: "Definicja w jednej linii"
+    desc: "Jedna linia zastępuje konstruktor, gettery, equals, hashCode, toString."
+  - icon: "🔒"
+    title: "Niemutowalne domyślnie"
+    desc: "Wszystkie pola są final — żadnych niebezpiecznych setterów."
+  - icon: "🧩"
+    title: "Przyjazne dla wzorców"
+    desc: "Rekordy współpracują z wzorcami destrukturyzacji w switch i instanceof."
+support:
+  description: "Szeroko dostępne od JDK 16 (marzec 2021)."

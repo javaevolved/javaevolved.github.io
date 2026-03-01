@@ -1,0 +1,17 @@
+title: Generowanie silnych liczb losowych
+oldApproach: new SecureRandom()
+modernApproach: getInstanceStrong()
+summary: Pobierz najmocniejszą implementację SecureRandom dostępną na platformie.
+explanation: getInstanceStrong() zwraca implementację SecureRandom skonfigurowaną jako najmocniejsza na platformie. Jest kontrolowana przez właściwość bezpieczeństwa securerandom.strongAlgorithms.
+whyModernWins:
+  - icon: 🛡️
+    title: Najmocniejsza dostępna
+    desc: Automatycznie wybiera najlepszy algorytm dla platformy.
+  - icon: 📖
+    title: Jawna intencja
+    desc: Wyraźnie komunikuje, że wymagana jest silna losowość.
+  - icon: 🔧
+    title: Konfigurowalny
+    desc: Administratorzy mogą zmieniać silny algorytm przez właściwości bezpieczeństwa.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

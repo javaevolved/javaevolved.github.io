@@ -1,0 +1,17 @@
+title: "Domyślne metody interfejsów"
+oldApproach: "Klasy abstrakcyjne dla współdzielonego zachowania"
+modernApproach: "Metody domyślne w interfejsach"
+summary: "Dodaj implementacje metod bezpośrednio w interfejsach, umożliwiając wielokrotne dziedziczenie zachowania."
+explanation: "Przed Javą 8 współdzielenie zachowania między niezwiązanymi klasami wymagało klas abstrakcyjnych, co ograniczało do pojedynczego dziedziczenia. Metody domyślne pozwalają interfejsom dostarczać implementacje metod, dzięki czemu klasy mogą dziedziczyć zachowanie z wielu interfejsów. Było to niezbędne do rozszerzenia API Collections (np. List.forEach, Map.getOrDefault) bez łamania istniejących implementacji."
+whyModernWins:
+  - icon: "🔀"
+    title: "Wielokrotne dziedziczenie"
+    desc: "Klasy mogą implementować wiele interfejsów z metodami domyślnymi, w odróżnieniu od pojedynczego dziedziczenia klas abstrakcyjnych."
+  - icon: "📦"
+    title: "Ewolucja API"
+    desc: "Dodawaj nowe metody do interfejsów bez łamania istniejących implementacji."
+  - icon: "🧩"
+    title: "Komponowalne zachowanie"
+    desc: "Swobodnie łącz i dobieraj możliwości z wielu interfejsów."
+support:
+  description: "Szeroko dostępne od JDK 8 (marzec 2014)."

@@ -1,0 +1,17 @@
+title: HexFormat
+oldApproach: Ręczna konwersja hex
+modernApproach: HexFormat
+summary: Konwertuj między ciągami hex a tablicami bajtów za pomocą HexFormat.
+explanation: HexFormat zapewnia dwukierunkowe kodowanie/dekodowanie hex dla bajtów, intów i tablic. Konfiguruj separatory, prefiks, sufiks i wielkość liter. Koniec z ręcznym formatowaniem i parsowaniem.
+whyModernWins:
+  - icon: 📐
+    title: Dwukierunkowy
+    desc: Konwertuj bajty→hex i hex→bajty jednym API.
+  - icon: 🔧
+    title: Konfigurowalny
+    desc: Separatory, prefiks, sufiks, wielkie/małe litery.
+  - icon: 📦
+    title: Obsługa tablic
+    desc: Koduj/dekoduj całe tablice bajtów jednocześnie.
+support:
+  description: Szeroko dostępne od JDK 17 LTS (wrzesień 2021)

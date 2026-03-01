@@ -1,0 +1,17 @@
+title: Duration i Period
+oldApproach: Arytmetyka na milisekundach
+modernApproach: Duration / Period
+summary: Obliczaj różnice czasu z bezpiecznym typowaniem za pomocą Duration i Period.
+explanation: Duration służy do ilości czasu (godziny, minuty, sekundy). Period służy do ilości dat (lata, miesiące, dni). ChronoUnit.between() do prostych różnic. Wszystkie typy poprawnie obsługują przypadki brzegowe.
+whyModernWins:
+  - icon: 🎯
+    title: Bezpieczne typowanie
+    desc: Duration dla czasu, Period dla dat — bez pomyłek.
+  - icon: 🛡️
+    title: Poprawna arytmetyka
+    desc: Obsługuje przejścia czasu letniego, lata przestępne i sekundy przestępne.
+  - icon: 📖
+    title: Czytelność
+    desc: ChronoUnit.DAYS.between() czyta się jak naturalny język.
+support:
+  description: Szeroko dostępne od JDK 8 (marzec 2014)

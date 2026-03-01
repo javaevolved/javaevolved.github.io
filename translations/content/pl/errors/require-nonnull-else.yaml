@@ -1,0 +1,17 @@
+title: Objects.requireNonNullElse()
+oldApproach: Trójkowe sprawdzenie null
+modernApproach: requireNonNullElse()
+summary: Pobierz wartość nie-null z przejrzystą wartością domyślną, bez operatora trójkowego.
+explanation: requireNonNullElse zwraca pierwszy argument jeśli nie jest null, w przeciwnym razie drugi. Wartość domyślna sama nie może być null — rzuca NPE jeśli oba są null, wykrywając błędy wcześnie.
+whyModernWins:
+  - icon: 📖
+    title: Jasna intencja
+    desc: Nazwa metody dokładnie opisuje co robi.
+  - icon: 🛡️
+    title: Null-bezpieczna wartość domyślna
+    desc: Wartość domyślna jest również sprawdzana pod kątem null.
+  - icon: 📏
+    title: Czytelny
+    desc: Lepszy niż operator trójkowy dla prostej logiki null-lub-domyślny.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

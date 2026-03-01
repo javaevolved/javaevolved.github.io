@@ -1,0 +1,17 @@
+title: Executor wątków wirtualnych
+oldApproach: Stała pula wątków
+modernApproach: Executor wątków wirtualnych
+summary: Używaj executora wątków wirtualnych dla nieograniczonej lekkiej współbieżności.
+explanation: Executor wątków wirtualnych tworzy nowy wątek wirtualny dla każdego zadania. Bez dobierania rozmiaru puli — wątki wirtualne są wystarczająco tanie, by tworzyć ich miliony.
+whyModernWins:
+  - icon: ♾️
+    title: Bez dobierania rozmiaru
+    desc: Brak rozmiaru puli do dobierania — twórz tyle wątków ile potrzeba.
+  - icon: ⚡
+    title: Lekkie
+    desc: Wątki wirtualne używają KB pamięci, nie MB.
+  - icon: 🧹
+    title: AutoCloseable
+    desc: try-with-resources obsługuje zamknięcie automatycznie.
+support:
+  description: Szeroko dostępne od JDK 21 LTS (wrzesień 2023)
