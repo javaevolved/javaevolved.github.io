@@ -1,0 +1,1171 @@
+# Java Modernization Pattern Map
+#
+# Each entry maps a legacy Java idiom to its modern equivalent.
+#
+# Fields:
+#   slug      — unique identifier matching content/<category>/<slug>.yaml
+#   category  — one of: language, collections, strings, streams, concurrency,
+#               io, errors, datetime, security, tooling, enterprise
+#   title     — human-readable pattern name
+#   legacy    — short label for the old approach
+#   modern    — short label for the modern approach
+#   min_jdk   — minimum JDK version where the modern approach became final/stable
+#   safety    — "safe"   : mechanical substitution, no behavioural change
+#               "review" : may change semantics, mutability, or API surface;
+#                          always leave a PR note
+#   summary   — one-line description
+#   ref       — canonical URL on java.evolved
+
+patterns:
+
+  # ── Collections ────────────────────────────────────────────────────────────
+
+  - slug: collectors-teeing
+    category: collections
+    title: Collectors.teeing()
+    legacy: Two separate stream passes
+    modern: Collectors.teeing()
+    min_jdk: 12
+    safety: safe
+    summary: Compute two aggregations in a single stream pass.
+    ref: https://javaevolved.github.io/collections/collectors-teeing.html
+
+  - slug: copying-collections-immutably
+    category: collections
+    title: Copying collections immutably
+    legacy: "new ArrayList<>(c) + Collections.unmodifiableList"
+    modern: List.copyOf()
+    min_jdk: 10
+    safety: review  # rejects null elements
+    summary: Create an immutable copy of any collection in one call.
+    ref: https://javaevolved.github.io/collections/copying-collections-immutably.html
+
+  - slug: immutable-list-creation
+    category: collections
+    title: Immutable list creation
+    legacy: "Arrays.asList / Collections.unmodifiableList"
+    modern: List.of()
+    min_jdk: 9
+    safety: review  # rejects null elements; result is unmodifiable
+    summary: Create immutable lists in one clean expression.
+    ref: https://javaevolved.github.io/collections/immutable-list-creation.html
+
+  - slug: immutable-map-creation
+    category: collections
+    title: Immutable map creation
+    legacy: Map builder pattern / put-put-put
+    modern: Map.of()
+    min_jdk: 9
+    safety: review  # rejects null keys/values; max 10 entries for Map.of()
+    summary: Create immutable maps inline without a builder.
+    ref: https://javaevolved.github.io/collections/immutable-map-creation.html
+
+  - slug: immutable-set-creation
+    category: collections
+    title: Immutable set creation
+    legacy: "new HashSet<>(Arrays.asList(…)) wrapped unmodifiable"
+    modern: Set.of()
+    min_jdk: 9
+    safety: review  # rejects null elements; result is unmodifiable
+    summary: Create immutable sets with a single factory call.
+    ref: https://javaevolved.github.io/collections/immutable-set-creation.html
+
+  - slug: map-entry-factory
+    category: collections
+    title: Map.entry() factory
+    legacy: new AbstractMap.SimpleEntry<>()
+    modern: Map.entry()
+    min_jdk: 9
+    safety: safe
+    summary: Create map entries with a clean factory method.
+    ref: https://javaevolved.github.io/collections/map-entry-factory.html
+
+  - slug: reverse-list-iteration
+    category: collections
+    title: Reverse list iteration
+    legacy: Manual ListIterator in reverse
+    modern: list.reversed()
+    min_jdk: 21
+    safety: safe
+    summary: Iterate over a list in reverse order with a clean for-each loop.
+    ref: https://javaevolved.github.io/collections/reverse-list-iteration.html
+
+  - slug: sequenced-collections
+    category: collections
+    title: Sequenced collections
+    legacy: Index arithmetic (get(0) / get(size-1))
+    modern: getFirst() / getLast()
+    min_jdk: 21
+    safety: safe
+    summary: Access first/last elements and reverse views with clean API methods.
+    ref: https://javaevolved.github.io/collections/sequenced-collections.html
+
+  - slug: stream-toarray-typed
+    category: collections
+    title: Typed stream toArray
+    legacy: Manual array copy / (T[]) stream.toArray()
+    modern: stream.toArray(T[]::new)
+    min_jdk: 8
+    safety: safe
+    summary: Convert streams to typed arrays with a method reference.
+    ref: https://javaevolved.github.io/collections/stream-toarray-typed.html
+
+  - slug: unmodifiable-collectors
+    category: collections
+    title: Unmodifiable collectors
+    legacy: collect(Collectors.toList())
+    modern: stream.toList()
+    min_jdk: 16
+    safety: review  # .toList() is unmodifiable; callers that mutate result will break
+    summary: Collect directly to an unmodifiable list with stream.toList().
+    ref: https://javaevolved.github.io/collections/unmodifiable-collectors.html
+
+  # ── Concurrency ─────────────────────────────────────────────────────────────
+
+  - slug: completablefuture-chaining
+    category: concurrency
+    title: CompletableFuture chaining
+    legacy: Blocking Future.get()
+    modern: CompletableFuture.thenApply / thenCompose
+    min_jdk: 8
+    safety: review  # requires async restructuring of call sites
+    summary: Chain async operations without blocking, using CompletableFuture.
+    ref: https://javaevolved.github.io/concurrency/completablefuture-chaining.html
+
+  - slug: concurrent-http-virtual
+    category: concurrency
+    title: Concurrent HTTP with virtual threads
+    legacy: Thread pool + URLConnection
+    modern: Virtual threads + HttpClient
+    min_jdk: 21
+    safety: review  # requires API restructuring
+    summary: Fetch many URLs concurrently with virtual threads and HttpClient.
+    ref: https://javaevolved.github.io/concurrency/concurrent-http-virtual.html
+
+  - slug: executor-try-with-resources
+    category: concurrency
+    title: ExecutorService auto-close
+    legacy: Manual shutdown() + awaitTermination()
+    modern: try-with-resources on ExecutorService
+    min_jdk: 19
+    safety: safe
+    summary: Use try-with-resources for automatic executor shutdown.
+    ref: https://javaevolved.github.io/concurrency/executor-try-with-resources.html
+
+  - slug: lock-free-lazy-init
+    category: concurrency
+    title: Lock-free lazy initialization
+    legacy: Double-checked locking with synchronized + volatile
+    modern: StableValue
+    min_jdk: 25
+    safety: review  # changes synchronization model
+    summary: Replace double-checked locking with StableValue for lazy singletons.
+    ref: https://javaevolved.github.io/concurrency/lock-free-lazy-init.html
+
+  - slug: process-api
+    category: concurrency
+    title: Modern Process API
+    legacy: Runtime.exec()
+    modern: ProcessBuilder + ProcessHandle
+    min_jdk: 9
+    safety: review  # significant API change
+    summary: Inspect and manage OS processes with ProcessHandle.
+    ref: https://javaevolved.github.io/concurrency/process-api.html
+
+  - slug: scoped-values
+    category: concurrency
+    title: Scoped values
+    legacy: ThreadLocal
+    modern: ScopedValue
+    min_jdk: 25
+    safety: review  # ScopedValue is immutable per scope; mutation sites must be redesigned
+    summary: Share data across call stacks safely without ThreadLocal pitfalls.
+    ref: https://javaevolved.github.io/concurrency/scoped-values.html
+
+  - slug: stable-values
+    category: concurrency
+    title: Stable values
+    legacy: Double-checked locking
+    modern: StableValue
+    min_jdk: 25
+    safety: review  # verify singleton contract is preserved
+    summary: Thread-safe lazy initialization without volatile or synchronized.
+    ref: https://javaevolved.github.io/concurrency/stable-values.html
+
+  - slug: structured-concurrency
+    category: concurrency
+    title: Structured concurrency
+    legacy: Manual thread lifecycle management
+    modern: StructuredTaskScope
+    min_jdk: 25
+    safety: review  # requires significant structural refactoring
+    summary: Manage concurrent task lifetimes as a single unit of work.
+    ref: https://javaevolved.github.io/concurrency/structured-concurrency.html
+
+  - slug: thread-sleep-duration
+    category: concurrency
+    title: Thread.sleep with Duration
+    legacy: Thread.sleep(millis)
+    modern: Thread.sleep(Duration.of…)
+    min_jdk: 19
+    safety: safe
+    summary: Use Duration for self-documenting time values.
+    ref: https://javaevolved.github.io/concurrency/thread-sleep-duration.html
+
+  - slug: virtual-threads
+    category: concurrency
+    title: Virtual threads
+    legacy: Platform threads (new Thread / thread pools)
+    modern: Thread.ofVirtual() / Executors.newVirtualThreadPerTaskExecutor()
+    min_jdk: 21
+    safety: review  # verify ThreadLocal use and absence of pinning-sensitive locks
+    summary: Create millions of lightweight virtual threads instead of heavy OS threads.
+    ref: https://javaevolved.github.io/concurrency/virtual-threads.html
+
+  # ── Datetime ────────────────────────────────────────────────────────────────
+
+  - slug: date-formatting
+    category: datetime
+    title: Date formatting
+    legacy: SimpleDateFormat
+    modern: DateTimeFormatter
+    min_jdk: 8
+    safety: safe
+    summary: Format dates with thread-safe, immutable DateTimeFormatter.
+    ref: https://javaevolved.github.io/datetime/date-formatting.html
+
+  - slug: duration-and-period
+    category: datetime
+    title: Duration and Period
+    legacy: Manual millisecond arithmetic
+    modern: Duration / Period
+    min_jdk: 8
+    safety: safe
+    summary: Calculate time differences with type-safe Duration and Period.
+    ref: https://javaevolved.github.io/datetime/duration-and-period.html
+
+  - slug: hex-format
+    category: datetime
+    title: HexFormat
+    legacy: Manual hex conversion with String.format("%02x")
+    modern: HexFormat
+    min_jdk: 17
+    safety: safe
+    summary: Convert between hex strings and byte arrays with HexFormat.
+    ref: https://javaevolved.github.io/datetime/hex-format.html
+
+  - slug: instant-precision
+    category: datetime
+    title: Instant with nanosecond precision
+    legacy: System.currentTimeMillis()
+    modern: Instant.now() with nanosecond precision
+    min_jdk: 9
+    safety: safe
+    summary: Get timestamps with microsecond or nanosecond precision.
+    ref: https://javaevolved.github.io/datetime/instant-precision.html
+
+  - slug: java-time-basics
+    category: datetime
+    title: java.time API basics
+    legacy: java.util.Date + Calendar
+    modern: LocalDate / LocalDateTime / ZonedDateTime
+    min_jdk: 8
+    safety: review  # verify timezone handling and serialisation format compatibility
+    summary: Use immutable, clear date/time types instead of Date and Calendar.
+    ref: https://javaevolved.github.io/datetime/java-time-basics.html
+
+  - slug: math-clamp
+    category: datetime
+    title: Math.clamp()
+    legacy: Math.max(min, Math.min(value, max))
+    modern: Math.clamp(value, min, max)
+    min_jdk: 21
+    safety: safe
+    summary: Clamp a value between bounds with a single clear call.
+    ref: https://javaevolved.github.io/datetime/math-clamp.html
+
+  # ── Enterprise ──────────────────────────────────────────────────────────────
+
+  - slug: ejb-timer-vs-jakarta-scheduler
+    category: enterprise
+    title: EJB Timer vs Jakarta Scheduler
+    legacy: EJB TimerService
+    modern: ManagedScheduledExecutorService
+    min_jdk: 11
+    safety: review  # framework migration; requires Jakarta EE 9+
+    summary: Replace heavyweight EJB timers with Jakarta Concurrency's ManagedScheduledExecutorService.
+    ref: https://javaevolved.github.io/enterprise/ejb-timer-vs-jakarta-scheduler.html
+
+  - slug: ejb-vs-cdi
+    category: enterprise
+    title: EJB versus CDI
+    legacy: "@Stateless / @Stateful EJB"
+    modern: CDI Bean (@ApplicationScoped / @RequestScoped)
+    min_jdk: 11
+    safety: review  # EJB features (XA transactions, remoting) may not have CDI equivalents
+    summary: Replace heavyweight EJBs with lightweight CDI beans for dependency injection.
+    ref: https://javaevolved.github.io/enterprise/ejb-vs-cdi.html
+
+  - slug: jdbc-resultset-vs-jpa-criteria
+    category: enterprise
+    title: JDBC ResultSet Mapping vs JPA Criteria API
+    legacy: Manual JDBC ResultSet mapping
+    modern: JPA Criteria API
+    min_jdk: 11
+    safety: review  # requires JPA entity model setup
+    summary: Replace manual JDBC ResultSet mapping with JPA's type-safe Criteria API.
+    ref: https://javaevolved.github.io/enterprise/jdbc-resultset-vs-jpa-criteria.html
+
+  - slug: jdbc-vs-jooq
+    category: enterprise
+    title: JDBC versus jOOQ
+    legacy: Raw JDBC string-based SQL
+    modern: jOOQ SQL DSL
+    min_jdk: 11
+    safety: review  # requires jOOQ dependency and code generation
+    summary: Replace raw JDBC string-based SQL with jOOQ's type-safe, fluent SQL DSL.
+    ref: https://javaevolved.github.io/enterprise/jdbc-vs-jooq.html
+
+  - slug: jdbc-vs-jpa
+    category: enterprise
+    title: JDBC versus JPA
+    legacy: Raw JDBC boilerplate
+    modern: JPA EntityManager
+    min_jdk: 11
+    safety: review  # requires entity model and persistence.xml
+    summary: Replace verbose JDBC boilerplate with JPA's object-relational mapping.
+    ref: https://javaevolved.github.io/enterprise/jdbc-vs-jpa.html
+
+  - slug: jndi-lookup-vs-cdi-injection
+    category: enterprise
+    title: JNDI Lookup vs CDI Injection
+    legacy: JNDI string lookup
+    modern: CDI @Inject
+    min_jdk: 11
+    safety: review  # requires CDI container
+    summary: Replace fragile JNDI string lookups with type-safe CDI injection.
+    ref: https://javaevolved.github.io/enterprise/jndi-lookup-vs-cdi-injection.html
+
+  - slug: jpa-vs-jakarta-data
+    category: enterprise
+    title: JPA versus Jakarta Data
+    legacy: JPA EntityManager manual DAO
+    modern: Jakarta Data Repository interface
+    min_jdk: 21
+    safety: review  # requires Jakarta Data 1.0 provider
+    summary: Declare a repository interface and let Jakarta Data generate the DAO implementation.
+    ref: https://javaevolved.github.io/enterprise/jpa-vs-jakarta-data.html
+
+  - slug: jsf-managed-bean-vs-cdi-named
+    category: enterprise
+    title: JSF Managed Bean vs CDI Named Bean
+    legacy: "@javax.faces.bean.ManagedBean"
+    modern: "@Named + CDI scoped bean"
+    min_jdk: 11
+    safety: review  # @ManagedBean deprecated since JSF 2.3
+    summary: Replace deprecated JSF @ManagedBean with CDI @Named for a unified dependency model.
+    ref: https://javaevolved.github.io/enterprise/jsf-managed-bean-vs-cdi-named.html
+
+  - slug: manual-transaction-vs-declarative
+    category: enterprise
+    title: Manual JPA Transaction vs Declarative @Transactional
+    legacy: Manual begin/commit/rollback
+    modern: "@Transactional"
+    min_jdk: 11
+    safety: review  # requires CDI or Spring; verify propagation semantics
+    summary: Replace verbose begin/commit/rollback blocks with a single @Transactional annotation.
+    ref: https://javaevolved.github.io/enterprise/manual-transaction-vs-declarative.html
+
+  - slug: mdb-vs-reactive-messaging
+    category: enterprise
+    title: Message-Driven Bean vs Reactive Messaging
+    legacy: JMS Message-Driven Bean
+    modern: MicroProfile Reactive Messaging @Incoming
+    min_jdk: 11
+    safety: review  # requires MicroProfile or Quarkus; significant design change
+    summary: Replace JMS Message-Driven Beans with MicroProfile Reactive Messaging.
+    ref: https://javaevolved.github.io/enterprise/mdb-vs-reactive-messaging.html
+
+  - slug: servlet-vs-jaxrs
+    category: enterprise
+    title: Servlet versus JAX-RS
+    legacy: HttpServlet doGet/doPost boilerplate
+    modern: JAX-RS @Path resource
+    min_jdk: 11
+    safety: review  # requires JAX-RS runtime (Jersey, RESTEasy, etc.)
+    summary: Replace verbose HttpServlet boilerplate with declarative JAX-RS resource methods.
+    ref: https://javaevolved.github.io/enterprise/servlet-vs-jaxrs.html
+
+  - slug: singleton-ejb-vs-cdi-application-scoped
+    category: enterprise
+    title: Singleton EJB vs CDI @ApplicationScoped
+    legacy: "@Singleton EJB"
+    modern: "@ApplicationScoped CDI bean"
+    min_jdk: 11
+    safety: review  # EJB @Singleton has container-managed concurrency; CDI does not
+    summary: Replace Singleton EJBs with CDI @ApplicationScoped beans for simpler shared state.
+    ref: https://javaevolved.github.io/enterprise/singleton-ejb-vs-cdi-application-scoped.html
+
+  - slug: soap-vs-jakarta-rest
+    category: enterprise
+    title: SOAP Web Services vs Jakarta REST
+    legacy: JAX-WS / SOAP / WSDL
+    modern: Jakarta REST + JSON
+    min_jdk: 11
+    safety: review  # breaking API contract change for existing SOAP clients
+    summary: Replace heavyweight SOAP/WSDL endpoints with clean Jakarta REST resources.
+    ref: https://javaevolved.github.io/enterprise/soap-vs-jakarta-rest.html
+
+  - slug: spring-api-versioning
+    category: enterprise
+    title: Spring Framework 7 API Versioning
+    legacy: Duplicated version-prefixed controllers
+    modern: Spring Framework 7 native API versioning
+    min_jdk: 17
+    safety: review  # requires Spring Framework 7+
+    summary: Replace duplicated version-prefixed controllers with Spring Framework 7's native versioning.
+    ref: https://javaevolved.github.io/enterprise/spring-api-versioning.html
+
+  - slug: spring-null-safety-jspecify
+    category: enterprise
+    title: Spring Null Safety with JSpecify
+    legacy: Spring @NonNull / @Nullable annotations
+    modern: JSpecify @NullMarked
+    min_jdk: 17
+    safety: review  # requires Spring 7+ and JSpecify dependency
+    summary: Spring 7 adopts JSpecify annotations, making non-null the default.
+    ref: https://javaevolved.github.io/enterprise/spring-null-safety-jspecify.html
+
+  - slug: spring-xml-config-vs-annotations
+    category: enterprise
+    title: Spring XML Bean Config vs Annotation-Driven
+    legacy: XML bean definitions (applicationContext.xml)
+    modern: "@Component / @Service / @Configuration"
+    min_jdk: 17
+    safety: review  # requires Spring 3+ annotation support; verify component scan setup
+    summary: Replace verbose Spring XML bean definitions with concise annotation-driven configuration.
+    ref: https://javaevolved.github.io/enterprise/spring-xml-config-vs-annotations.html
+
+  # ── Errors ──────────────────────────────────────────────────────────────────
+
+  - slug: helpful-npe
+    category: errors
+    title: Helpful NullPointerExceptions
+    legacy: Cryptic "NullPointerException" with no detail
+    modern: Detailed NPE message (JVM flag -XX:+ShowCodeDetailsInExceptionMessages)
+    min_jdk: 14
+    safety: safe  # no code change required; JVM improvement
+    summary: JVM automatically tells you exactly which variable was null.
+    ref: https://javaevolved.github.io/errors/helpful-npe.html
+
+  - slug: multi-catch
+    category: errors
+    title: Multi-catch exception handling
+    legacy: Separate catch blocks with identical bodies
+    modern: "catch (A | B e)"
+    min_jdk: 7
+    safety: safe
+    summary: Catch multiple exception types in a single catch block.
+    ref: https://javaevolved.github.io/errors/multi-catch.html
+
+  - slug: null-in-switch
+    category: errors
+    title: Null case in switch
+    legacy: Null guard before switch
+    modern: "case null in switch"
+    min_jdk: 21
+    safety: safe
+    summary: Handle null directly as a switch case — no separate guard needed.
+    ref: https://javaevolved.github.io/errors/null-in-switch.html
+
+  - slug: optional-chaining
+    category: errors
+    title: Optional chaining
+    legacy: Nested null checks
+    modern: Optional pipeline
+    min_jdk: 9
+    safety: review  # Optional is not serialisable; avoid as a field type
+    summary: Replace nested null checks with an Optional pipeline.
+    ref: https://javaevolved.github.io/errors/optional-chaining.html
+
+  - slug: optional-orelsethrow
+    category: errors
+    title: Optional.orElseThrow() without supplier
+    legacy: "opt.get() or opt.orElseThrow(() -> new NoSuchElementException())"
+    modern: opt.orElseThrow()
+    min_jdk: 10
+    safety: safe
+    summary: Use Optional.orElseThrow() as a clearer, intent-revealing alternative.
+    ref: https://javaevolved.github.io/errors/optional-orelsethrow.html
+
+  - slug: record-based-errors
+    category: errors
+    title: Record-based error responses
+    legacy: Map<String,Object> or verbose error class
+    modern: Error record
+    min_jdk: 16
+    safety: review  # records are immutable; verify no mutation of error fields
+    summary: Use records for concise, immutable error response types.
+    ref: https://javaevolved.github.io/errors/record-based-errors.html
+
+  - slug: require-nonnull-else
+    category: errors
+    title: Objects.requireNonNullElse()
+    legacy: "x != null ? x : defaultValue"
+    modern: Objects.requireNonNullElse(x, defaultValue)
+    min_jdk: 9
+    safety: safe
+    summary: Get a non-null value with a clear default, no ternary needed.
+    ref: https://javaevolved.github.io/errors/require-nonnull-else.html
+
+  # ── I/O ─────────────────────────────────────────────────────────────────────
+
+  - slug: deserialization-filters
+    category: io
+    title: Deserialization filters
+    legacy: Accept-everything ObjectInputStream
+    modern: ObjectInputFilter
+    min_jdk: 9
+    safety: review  # tightening deserialization may break existing serialised objects
+    summary: Restrict which classes can be deserialized to prevent attacks.
+    ref: https://javaevolved.github.io/io/deserialization-filters.html
+
+  - slug: file-memory-mapping
+    category: io
+    title: File memory mapping
+    legacy: MappedByteBuffer (limited to 2 GB)
+    modern: MemorySegment with Arena
+    min_jdk: 22
+    safety: review  # Foreign Memory API; requires --enable-preview on JDK < 22 final
+    summary: Map files larger than 2GB with deterministic cleanup using MemorySegment.
+    ref: https://javaevolved.github.io/io/file-memory-mapping.html
+
+  - slug: files-mismatch
+    category: io
+    title: Files.mismatch()
+    legacy: Manual byte-by-byte file comparison
+    modern: Files.mismatch()
+    min_jdk: 12
+    safety: safe
+    summary: Compare two files efficiently without loading them into memory.
+    ref: https://javaevolved.github.io/io/files-mismatch.html
+
+  - slug: http-client
+    category: io
+    title: Modern HTTP client
+    legacy: HttpURLConnection
+    modern: HttpClient
+    min_jdk: 11
+    safety: review  # async API may require caller restructuring
+    summary: Use the built-in HttpClient for clean, modern HTTP requests.
+    ref: https://javaevolved.github.io/io/http-client.html
+
+  - slug: inputstream-transferto
+    category: io
+    title: InputStream.transferTo()
+    legacy: Manual read/write copy loop
+    modern: inputStream.transferTo(outputStream)
+    min_jdk: 9
+    safety: safe
+    summary: Copy an InputStream to an OutputStream in one call.
+    ref: https://javaevolved.github.io/io/inputstream-transferto.html
+
+  - slug: io-class-console-io
+    category: io
+    title: IO class for console I/O
+    legacy: System.out.println / new Scanner(System.in)
+    modern: IO.println / IO.readln
+    min_jdk: 25
+    safety: safe
+    summary: The new IO class provides simple, concise methods for console input and output.
+    ref: https://javaevolved.github.io/io/io-class-console-io.html
+
+  - slug: path-of
+    category: io
+    title: Path.of() factory
+    legacy: Paths.get()
+    modern: Path.of()
+    min_jdk: 11
+    safety: safe
+    summary: Use Path.of() — the modern factory method on the Path interface.
+    ref: https://javaevolved.github.io/io/path-of.html
+
+  - slug: reading-files
+    category: io
+    title: Reading files
+    legacy: BufferedReader / Files.readAllLines + join
+    modern: Files.readString()
+    min_jdk: 11
+    safety: safe
+    summary: Read an entire file into a String with one line.
+    ref: https://javaevolved.github.io/io/reading-files.html
+
+  - slug: try-with-resources-effectively-final
+    category: io
+    title: Try-with-resources improvement
+    legacy: Re-declare variable in try-with-resources header
+    modern: Use existing effectively-final variable directly
+    min_jdk: 9
+    safety: safe
+    summary: Use existing effectively-final variables directly in try-with-resources.
+    ref: https://javaevolved.github.io/io/try-with-resources-effectively-final.html
+
+  - slug: writing-files
+    category: io
+    title: Writing files
+    legacy: FileWriter + BufferedWriter
+    modern: Files.writeString()
+    min_jdk: 11
+    safety: safe
+    summary: Write a String to a file with one line.
+    ref: https://javaevolved.github.io/io/writing-files.html
+
+  # ── Language ─────────────────────────────────────────────────────────────────
+
+  - slug: call-c-from-java
+    category: language
+    title: Calling out to C code from Java
+    legacy: JNI (Java Native Interface)
+    modern: FFM (Foreign Function & Memory API)
+    min_jdk: 22
+    safety: review  # significant API redesign; requires Panama-style downcall handles
+    summary: FFM lets Java call C libraries directly, without JNI boilerplate.
+    ref: https://javaevolved.github.io/language/call-c-from-java.html
+
+  - slug: compact-canonical-constructor
+    category: language
+    title: Compact canonical constructor
+    legacy: Explicit record constructor repeating all parameters
+    modern: Compact canonical constructor
+    min_jdk: 16
+    safety: safe
+    summary: Validate and normalize record fields without repeating parameter lists.
+    ref: https://javaevolved.github.io/language/compact-canonical-constructor.html
+
+  - slug: compact-source-files
+    category: language
+    title: Compact source files
+    legacy: "public class Main { public static void main(String[] args) { … } }"
+    modern: void main()
+    min_jdk: 25
+    safety: safe
+    summary: Write a complete program without class declaration or public static void main.
+    ref: https://javaevolved.github.io/language/compact-source-files.html
+
+  - slug: default-interface-methods
+    category: language
+    title: Default interface methods
+    legacy: Abstract class for shared behaviour
+    modern: Default methods on interface
+    min_jdk: 8
+    safety: review  # multiple inheritance of behaviour; verify diamond-problem conflicts
+    summary: Add method implementations directly in interfaces, enabling mixin-style reuse.
+    ref: https://javaevolved.github.io/language/default-interface-methods.html
+
+  - slug: diamond-operator
+    category: language
+    title: Diamond with anonymous classes
+    legacy: Repeat type arguments on anonymous class instantiation
+    modern: "new Comparator<>() { … }"
+    min_jdk: 9
+    safety: safe
+    summary: Diamond operator now works with anonymous classes too.
+    ref: https://javaevolved.github.io/language/diamond-operator.html
+
+  - slug: exhaustive-switch
+    category: language
+    title: Exhaustive switch without default
+    legacy: Mandatory default branch in sealed-type switch
+    modern: Compiler-verified exhaustive switch (no default needed)
+    min_jdk: 21
+    safety: safe
+    summary: Compiler verifies all sealed subtypes are covered — no default needed.
+    ref: https://javaevolved.github.io/language/exhaustive-switch.html
+
+  - slug: flexible-constructor-bodies
+    category: language
+    title: Flexible constructor bodies
+    legacy: Validate arguments only after super() or this()
+    modern: Code before super() / this() call
+    min_jdk: 25
+    safety: safe
+    summary: Validate and compute values before calling super() or this().
+    ref: https://javaevolved.github.io/language/flexible-constructor-bodies.html
+
+  - slug: guarded-patterns
+    category: language
+    title: Guarded patterns with when
+    legacy: Nested if inside case block
+    modern: "case Foo f when f.size() > 0"
+    min_jdk: 21
+    safety: safe
+    summary: Add conditions to pattern cases using when guards.
+    ref: https://javaevolved.github.io/language/guarded-patterns.html
+
+  - slug: markdown-javadoc-comments
+    category: language
+    title: Markdown in Javadoc comments
+    legacy: HTML-based Javadoc (/** &lt;p&gt; … */)
+    modern: Markdown Javadoc (/// ## Heading …)
+    min_jdk: 23
+    safety: safe
+    summary: Write Javadoc comments in Markdown instead of HTML for better readability.
+    ref: https://javaevolved.github.io/language/markdown-javadoc-comments.html
+
+  - slug: module-import-declarations
+    category: language
+    title: Module import declarations
+    legacy: Many individual import statements
+    modern: "import module java.base;"
+    min_jdk: 25
+    safety: safe
+    summary: Import all exported packages of a module with a single declaration.
+    ref: https://javaevolved.github.io/language/module-import-declarations.html
+
+  - slug: pattern-matching-instanceof
+    category: language
+    title: Pattern matching for instanceof
+    legacy: "if (x instanceof Foo) { Foo f = (Foo) x; … }"
+    modern: "if (x instanceof Foo f) { … }"
+    min_jdk: 16
+    safety: safe
+    summary: Combine type check and cast in one step with pattern matching.
+    ref: https://javaevolved.github.io/language/pattern-matching-instanceof.html
+
+  - slug: pattern-matching-switch
+    category: language
+    title: Pattern matching in switch
+    legacy: if-else instanceof chain
+    modern: switch type patterns
+    min_jdk: 21
+    safety: safe
+    summary: Replace if-else instanceof chains with clean switch type patterns.
+    ref: https://javaevolved.github.io/language/pattern-matching-switch.html
+
+  - slug: primitive-types-in-patterns
+    category: language
+    title: Primitive types in patterns
+    legacy: Manual range checks / boxed instanceof
+    modern: Primitive patterns in switch
+    min_jdk: 25
+    safety: safe
+    summary: Pattern matching now works with primitive types, not just objects.
+    ref: https://javaevolved.github.io/language/primitive-types-in-patterns.html
+
+  - slug: private-interface-methods
+    category: language
+    title: Private interface methods
+    legacy: Duplicated logic across default methods
+    modern: private method in interface
+    min_jdk: 9
+    safety: safe
+    summary: Extract shared logic in interfaces using private methods.
+    ref: https://javaevolved.github.io/language/private-interface-methods.html
+
+  - slug: record-patterns
+    category: language
+    title: Record patterns (destructuring)
+    legacy: Manual accessor calls after instanceof
+    modern: "case Point(int x, int y)"
+    min_jdk: 21
+    safety: safe
+    summary: Destructure records directly in patterns — extract fields in one step.
+    ref: https://javaevolved.github.io/language/record-patterns.html
+
+  - slug: records-for-data-classes
+    category: language
+    title: Records for data classes
+    legacy: Verbose POJO (constructor + getters + equals/hashCode/toString)
+    modern: record
+    min_jdk: 16
+    safety: review  # records are immutable; callers that mutate fields must be updated
+    summary: One line replaces 30+ lines of boilerplate for immutable data carriers.
+    ref: https://javaevolved.github.io/language/records-for-data-classes.html
+
+  - slug: sealed-classes
+    category: language
+    title: Sealed classes for type hierarchies
+    legacy: Open class hierarchy
+    modern: "sealed class … permits …"
+    min_jdk: 17
+    safety: review  # breaks external subclassing; audit all known subclasses first
+    summary: Restrict which classes can extend a type — enabling exhaustive switches.
+    ref: https://javaevolved.github.io/language/sealed-classes.html
+
+  - slug: static-members-in-inner-classes
+    category: language
+    title: Static members in inner classes
+    legacy: Promote inner class to static nested class to hold static members
+    modern: Static members in inner class
+    min_jdk: 16
+    safety: safe
+    summary: Define static members in inner classes without requiring static nested class.
+    ref: https://javaevolved.github.io/language/static-members-in-inner-classes.html
+
+  - slug: static-methods-in-interfaces
+    category: language
+    title: Static methods in interfaces
+    legacy: Separate utility class (e.g. Collections, Iterators)
+    modern: Static methods in interface
+    min_jdk: 8
+    safety: safe
+    summary: Add static utility methods directly to interfaces instead of separate utility classes.
+    ref: https://javaevolved.github.io/language/static-methods-in-interfaces.html
+
+  - slug: switch-expressions
+    category: language
+    title: Switch expressions
+    legacy: Switch statement with break and fall-through
+    modern: Switch expression with arrow labels
+    min_jdk: 14
+    safety: safe
+    summary: Switch as an expression that returns a value — no break, no fall-through.
+    ref: https://javaevolved.github.io/language/switch-expressions.html
+
+  - slug: text-blocks-for-multiline-strings
+    category: language
+    title: Text blocks for multiline strings
+    legacy: "\"line1\\n\" + \"line2\\n\" + …"
+    modern: '"""multiline text block"""'
+    min_jdk: 15
+    safety: safe
+    summary: Write multiline strings naturally with triple-quote text blocks.
+    ref: https://javaevolved.github.io/language/text-blocks-for-multiline-strings.html
+
+  - slug: type-inference-with-var
+    category: language
+    title: Type inference with var
+    legacy: Explicit local variable type declarations
+    modern: var
+    min_jdk: 10
+    safety: safe
+    summary: Use var for local variable type inference — less noise, same safety.
+    ref: https://javaevolved.github.io/language/type-inference-with-var.html
+
+  - slug: unnamed-variables
+    category: language
+    title: Unnamed variables with _
+    legacy: Unused but required variable name
+    modern: _ (unnamed variable)
+    min_jdk: 22
+    safety: safe
+    summary: Use _ to signal intent when a variable is intentionally unused.
+    ref: https://javaevolved.github.io/language/unnamed-variables.html
+
+  # ── Security ────────────────────────────────────────────────────────────────
+
+  - slug: key-derivation-functions
+    category: security
+    title: Key Derivation Functions
+    legacy: Manual PBKDF2 via SecretKeyFactory
+    modern: KDF API (KDF.getInstance("HKDF-SHA256"))
+    min_jdk: 25
+    safety: review  # verify KDF algorithm choice matches security requirements
+    summary: Derive cryptographic keys using the standard KDF API.
+    ref: https://javaevolved.github.io/security/key-derivation-functions.html
+
+  - slug: pem-encoding
+    category: security
+    title: PEM encoding/decoding
+    legacy: Manual Base64 + header/footer string assembly
+    modern: PEM API (PEMDecoder / PEMEncoder)
+    min_jdk: 25
+    safety: safe
+    summary: Encode and decode PEM-formatted cryptographic objects natively.
+    ref: https://javaevolved.github.io/security/pem-encoding.html
+
+  - slug: random-generator
+    category: security
+    title: RandomGenerator interface
+    legacy: "new Random() / ThreadLocalRandom.current()"
+    modern: RandomGenerator.of("Xoshiro256PlusPlus")
+    min_jdk: 17
+    safety: safe
+    summary: Use the RandomGenerator interface to choose random number algorithms by name.
+    ref: https://javaevolved.github.io/security/random-generator.html
+
+  - slug: strong-random
+    category: security
+    title: Strong random generation
+    legacy: new SecureRandom()
+    modern: SecureRandom.getInstanceStrong()
+    min_jdk: 9
+    safety: safe
+    summary: Get the platform's strongest SecureRandom implementation.
+    ref: https://javaevolved.github.io/security/strong-random.html
+
+  - slug: tls-default
+    category: security
+    title: TLS 1.3 by default
+    legacy: Manual SSLContext configuration to enable TLS 1.2/1.3
+    modern: TLS 1.3 enabled by default
+    min_jdk: 11
+    safety: safe  # no code change required; JDK/JVM improvement
+    summary: TLS 1.3 is enabled by default — no explicit protocol configuration needed.
+    ref: https://javaevolved.github.io/security/tls-default.html
+
+  # ── Streams ──────────────────────────────────────────────────────────────────
+
+  - slug: collectors-flatmapping
+    category: streams
+    title: Collectors.flatMapping()
+    legacy: Nested flatMap inside a grouping collector
+    modern: Collectors.flatMapping()
+    min_jdk: 9
+    safety: safe
+    summary: Use flatMapping() to flatten inside a grouping collector.
+    ref: https://javaevolved.github.io/streams/collectors-flatmapping.html
+
+  - slug: optional-ifpresentorelse
+    category: streams
+    title: Optional.ifPresentOrElse()
+    legacy: "if (opt.isPresent()) { … } else { … }"
+    modern: opt.ifPresentOrElse(consumer, runnable)
+    min_jdk: 9
+    safety: safe
+    summary: Handle both present and empty cases of Optional in one call.
+    ref: https://javaevolved.github.io/streams/optional-ifpresentorelse.html
+
+  - slug: optional-or
+    category: streams
+    title: Optional.or() fallback
+    legacy: Nested Optional.orElse / manual fallback chain
+    modern: opt.or(() -> fallbackOptional)
+    min_jdk: 9
+    safety: safe
+    summary: Chain Optional fallbacks without nested checks.
+    ref: https://javaevolved.github.io/streams/optional-or.html
+
+  - slug: predicate-not
+    category: streams
+    title: Predicate.not() for negation
+    legacy: "e -> !pred.test(e)"
+    modern: Predicate.not(pred)
+    min_jdk: 11
+    safety: safe
+    summary: Use Predicate.not() to negate method references cleanly.
+    ref: https://javaevolved.github.io/streams/predicate-not.html
+
+  - slug: stream-gatherers
+    category: streams
+    title: Stream gatherers
+    legacy: Custom Collector for stateful intermediate operations
+    modern: stream.gather(gatherer)
+    min_jdk: 24
+    safety: review  # gather() is final in JDK 24; verify no earlier JDK usage
+    summary: Use gatherers for custom intermediate stream operations.
+    ref: https://javaevolved.github.io/streams/stream-gatherers.html
+
+  - slug: stream-iterate-predicate
+    category: streams
+    title: Stream.iterate() with predicate
+    legacy: Stream.iterate(seed, op).limit(n)
+    modern: Stream.iterate(seed, predicate, op)
+    min_jdk: 9
+    safety: safe
+    summary: Use a predicate to stop iteration — like a for-loop in stream form.
+    ref: https://javaevolved.github.io/streams/stream-iterate-predicate.html
+
+  - slug: stream-mapmulti
+    category: streams
+    title: Stream.mapMulti()
+    legacy: flatMap with intermediate List creation
+    modern: stream.mapMulti()
+    min_jdk: 16
+    safety: safe
+    summary: Emit zero or more elements per input without creating intermediate streams.
+    ref: https://javaevolved.github.io/streams/stream-mapmulti.html
+
+  - slug: stream-of-nullable
+    category: streams
+    title: Stream.ofNullable()
+    legacy: "value != null ? Stream.of(value) : Stream.empty()"
+    modern: Stream.ofNullable(value)
+    min_jdk: 9
+    safety: safe
+    summary: Create a zero-or-one element stream from a nullable value.
+    ref: https://javaevolved.github.io/streams/stream-of-nullable.html
+
+  - slug: stream-takewhile-dropwhile
+    category: streams
+    title: Stream takeWhile / dropWhile
+    legacy: Manual loop with break condition
+    modern: stream.takeWhile(pred) / stream.dropWhile(pred)
+    min_jdk: 9
+    safety: safe
+    summary: Take or drop elements from a stream based on a predicate.
+    ref: https://javaevolved.github.io/streams/stream-takewhile-dropwhile.html
+
+  - slug: stream-tolist
+    category: streams
+    title: Stream.toList()
+    legacy: collect(Collectors.toList())
+    modern: stream.toList()
+    min_jdk: 16
+    safety: review  # .toList() returns an unmodifiable list; callers that mutate it will break
+    summary: Terminal toList() replaces the verbose collect(Collectors.toList()).
+    ref: https://javaevolved.github.io/streams/stream-tolist.html
+
+  - slug: virtual-thread-executor
+    category: streams
+    title: Virtual thread executor
+    legacy: Executors.newFixedThreadPool(n)
+    modern: Executors.newVirtualThreadPerTaskExecutor()
+    min_jdk: 21
+    safety: review  # verify ThreadLocal usage and absence of pinning-sensitive locks
+    summary: Use virtual thread executors for unlimited lightweight concurrency.
+    ref: https://javaevolved.github.io/streams/virtual-thread-executor.html
+
+  # ── Strings ──────────────────────────────────────────────────────────────────
+
+  - slug: string-chars-stream
+    category: strings
+    title: String chars as stream
+    legacy: Manual character loop
+    modern: str.chars()
+    min_jdk: 9
+    safety: safe
+    summary: Process string characters as a stream pipeline.
+    ref: https://javaevolved.github.io/strings/string-chars-stream.html
+
+  - slug: string-formatted
+    category: strings
+    title: String.formatted()
+    legacy: String.format(template, args)
+    modern: template.formatted(args)
+    min_jdk: 15
+    safety: safe
+    summary: Call formatted() on the template string itself.
+    ref: https://javaevolved.github.io/strings/string-formatted.html
+
+  - slug: string-indent-transform
+    category: strings
+    title: String.indent() and transform()
+    legacy: Manual indentation with replaceAll / split
+    modern: str.indent(n) / str.transform(fn)
+    min_jdk: 12
+    safety: safe
+    summary: Indent text and chain string transformations fluently.
+    ref: https://javaevolved.github.io/strings/string-indent-transform.html
+
+  - slug: string-isblank
+    category: strings
+    title: String.isBlank()
+    legacy: "str.trim().isEmpty()"
+    modern: str.isBlank()
+    min_jdk: 11
+    safety: safe
+    summary: Check for blank strings with a single method call.
+    ref: https://javaevolved.github.io/strings/string-isblank.html
+
+  - slug: string-lines
+    category: strings
+    title: String.lines() for line splitting
+    legacy: "str.split(\"\\\\n\")"
+    modern: str.lines()
+    min_jdk: 11
+    safety: safe
+    summary: Use String.lines() to split text into a stream of lines without regex overhead.
+    ref: https://javaevolved.github.io/strings/string-lines.html
+
+  - slug: string-repeat
+    category: strings
+    title: String.repeat()
+    legacy: StringBuilder loop
+    modern: str.repeat(n)
+    min_jdk: 11
+    safety: safe
+    summary: Repeat a string n times without a loop.
+    ref: https://javaevolved.github.io/strings/string-repeat.html
+
+  - slug: string-strip
+    category: strings
+    title: String.strip() vs trim()
+    legacy: str.trim()
+    modern: str.strip() / str.stripLeading() / str.stripTrailing()
+    min_jdk: 11
+    safety: safe
+    summary: Use Unicode-aware stripping with strip() instead of trim().
+    ref: https://javaevolved.github.io/strings/string-strip.html
+
+  # ── Tooling ──────────────────────────────────────────────────────────────────
+
+  - slug: aot-class-preloading
+    category: tooling
+    title: AOT class preloading
+    legacy: Cold class loading on every JVM startup
+    modern: AOT cache (java -XX:AOTMode=record / replay)
+    min_jdk: 25
+    safety: review  # deployment change; verify cache validity in CI/CD pipeline
+    summary: Cache class loading and compilation for instant startup.
+    ref: https://javaevolved.github.io/tooling/aot-class-preloading.html
+
+  - slug: built-in-http-server
+    category: tooling
+    title: Built-in HTTP server
+    legacy: External HTTP server / framework for prototyping
+    modern: jwebserver CLI / SimpleFileServer API
+    min_jdk: 18
+    safety: safe
+    summary: Java 18 includes a built-in minimal HTTP server for prototyping and file serving.
+    ref: https://javaevolved.github.io/tooling/built-in-http-server.html
+
+  - slug: compact-object-headers
+    category: tooling
+    title: Compact object headers
+    legacy: 128-bit object headers
+    modern: 64-bit object headers (-XX:+UseCompactObjectHeaders)
+    min_jdk: 25
+    safety: safe  # JVM flag; no code change required
+    summary: Cut object header size in half for better memory density and cache usage.
+    ref: https://javaevolved.github.io/tooling/compact-object-headers.html
+
+  - slug: jfr-profiling
+    category: tooling
+    title: JFR for profiling
+    legacy: External profiler (JProfiler, YourKit, etc.)
+    modern: Java Flight Recorder
+    min_jdk: 9
+    safety: safe
+    summary: Profile any Java app with the built-in Flight Recorder — no external tools.
+    ref: https://javaevolved.github.io/tooling/jfr-profiling.html
+
+  - slug: jshell-prototyping
+    category: tooling
+    title: JShell for prototyping
+    legacy: Create file + compile + run cycle
+    modern: jshell REPL
+    min_jdk: 9
+    safety: safe
+    summary: Try Java expressions interactively without creating files.
+    ref: https://javaevolved.github.io/tooling/jshell-prototyping.html
+
+  - slug: junit6-with-jspecify
+    category: tooling
+    title: JUnit 6 with JSpecify null safety
+    legacy: Unannotated test API (implicit nullable)
+    modern: "@NullMarked test API"
+    min_jdk: 17
+    safety: review  # requires JUnit 6 and JSpecify dependency
+    summary: JUnit 6 adopts JSpecify @NullMarked, making null contracts explicit.
+    ref: https://javaevolved.github.io/tooling/junit6-with-jspecify.html
+
+  - slug: multi-file-source
+    category: tooling
+    title: Multi-file source launcher
+    legacy: javac *.java && java Main
+    modern: java Main.java (source launcher)
+    min_jdk: 22
+    safety: safe
+    summary: Launch multi-file programs without an explicit compile step.
+    ref: https://javaevolved.github.io/tooling/multi-file-source.html
+
+  - slug: single-file-execution
+    category: tooling
+    title: Single-file execution
+    legacy: javac Hello.java && java Hello
+    modern: java Hello.java
+    min_jdk: 11
+    safety: safe
+    summary: Run single-file Java programs directly without javac.
+    ref: https://javaevolved.github.io/tooling/single-file-execution.html
