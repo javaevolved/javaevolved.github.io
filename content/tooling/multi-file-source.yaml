@@ -42,6 +42,8 @@ related:
 - "tooling/compact-object-headers"
 - "tooling/aot-class-preloading"
 - "tooling/jshell-prototyping"
+tags:
+- tooling
 docs:
 - title: "Launch Multi-File Source-Code Programs (JEP 458)"
   href: "https://openjdk.org/jeps/458"

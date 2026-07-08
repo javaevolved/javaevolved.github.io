@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="{{locale}}" dir="{{htmlDir}}">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PCJH3L75');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{topicTitle}}</title>
+  <meta name="description" content="{{topicDescription}}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{canonicalUrl}}">
+  <link rel="icon" href="{{topicBasePrefix}}favicon.ico" sizes="any">
+  <link rel="icon" href="{{topicBasePrefix}}favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="{{topicBasePrefix}}apple-touch-icon.png">
+  <link rel="manifest" href="{{topicBasePrefix}}manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="java.evolved">
+  <meta property="og:title" content="{{topicTitle}}">
+  <meta property="og:description" content="{{topicDescription}}">
+  <meta property="og:url" content="{{canonicalUrl}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="java.evolved">
+  <meta property="og:image" content="https://javaevolved.github.io/images/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{topicTitle}}">
+  <meta name="twitter:description" content="{{topicDescription}}">
+  <meta name="twitter:image" content="https://javaevolved.github.io/images/social-card.png">
+  <link rel="stylesheet" href="{{topicBasePrefix}}styles.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HL8F2RJW68"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HL8F2RJW68');
+  </script>
+</head>
+<body data-page="topic">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCJH3L75"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <nav>
+    <div class="nav-inner">
+      <a href="{{homeUrl}}" class="logo">java.<span>evolved</span></a>
+      <div class="nav-right">
+        <a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener" class="github-link" aria-label="{{nav.viewOnGitHub}}">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 3C6.13 3 3 6.13 3 10c0 3.09 2 5.71 4.77 6.63.35.06.48-.15.48-.33v-1.16c-1.95.42-2.36-1.07-2.36-1.07-.32-.81-.78-1.03-.78-1.03-.64-.43.05-.42.05-.42.7.05 1.07.72 1.07.72.63 1.08 1.65.77 2.05.59.06-.46.24-.77.44-.95-1.57-.18-3.22-.78-3.22-3.48 0-.77.27-1.4.72-1.89-.07-.18-.31-.9.07-1.87 0 0 .59-.19 1.93.72.56-.16 1.16-.24 1.76-.24s1.2.08 1.76.24c1.34-.91 1.93-.72 1.93-.72.38.97.14 1.69.07 1.87.45.49.72 1.12.72 1.89 0 2.71-1.65 3.3-3.23 3.47.25.22.48.65.48 1.31v1.94c0 .19.13.4.48.33C15 15.71 17 13.09 17 10c0-3.87-3.13-7-7-7z"/>
+          </svg>
+        </a>
+        <button class="theme-toggle" id="themeToggle" aria-label="{{nav.toggleTheme}}">☀️</button>
+        <a href="{{homeUrl}}" class="back-link">{{topics.backToAll}}</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="breadcrumb">
+      <a href="{{homeUrl}}">{{breadcrumb.home}}</a>
+      <span class="sep">/</span>
+      <span>{{topics.breadcrumb}}</span>
+      <span class="sep">/</span>
+      <span>{{tagDisplay}}</span>
+    </div>
+
+    <div class="tip-header">
+      <div class="tip-meta">
+        <span class="badge topic-badge">🏷 {{tagDisplay}}</span>
+        <span class="badge">{{topicSnippetCount}}</span>
+      </div>
+      <h1>{{topics.heading}}</h1>
+      <p>{{topicDescription}}</p>
+    </div>
+
+    <section class="related">
+      <div class="tips-grid" id="tipsGrid">
+{{topicCards}}
+      </div>
+    </section>
+  </article>
+
+  <footer>
+    <p><a href="{{homeUrl}}">java.evolved</a> — {{footer.tagline}}</p>
+    <p>{{footer.madeWith}} <a href="https://github.com/brunoborges" target="_blank" rel="noopener">Bruno Borges</a> {{footer.and}} <a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a></p>
+    <p>{{footer.inspiredBy}} <a href="https://modern-css.com" target="_blank" rel="noopener">modern-css.com</a></p>
+    <p><a href="https://github.com/javaevolved/javaevolved.github.io" target="_blank" rel="noopener">{{footer.viewOnGitHub}}</a></p>
+  </footer>
+
+{{i18nScript}}
+  <script src="{{topicBasePrefix}}app.js"></script>
+</body>
+</html>

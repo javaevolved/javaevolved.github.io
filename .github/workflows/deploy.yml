@@ -10,6 +10,8 @@ on:
       - 'site/**'
       - 'html-generators/generateog.java'
       - 'html-generators/og/**'
+      - 'html-generators/tags.properties'
+      - 'html-generators/categories.properties'
   workflow_run:
     workflows: ['Build Generator JARs']
     types: [completed]
@@ -53,7 +55,7 @@ jobs:
 
             NEEDS_GENERATE=false
 
-            if echo "$CHANGED" | grep -qE '^(content/|translations/|templates/)'; then
+            if echo "$CHANGED" | grep -qE '^(content/|translations/|templates/|html-generators/tags\.properties|html-generators/categories\.properties)'; then
               NEEDS_GENERATE=true
             fi
 

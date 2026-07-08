@@ -70,6 +70,10 @@ related:
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/jpa-vs-jakarta-data"
 - "enterprise/manual-transaction-vs-declarative"
+tags:
+- enterprise
+- persistence
+- jpa
 docs:
 - title: "Jakarta Persistence Specification"
   href: "https://jakarta.ee/specifications/persistence/"

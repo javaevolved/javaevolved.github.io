@@ -48,6 +48,9 @@ related:
 - "concurrency/virtual-threads"
 - "concurrency/scoped-values"
 - "concurrency/stable-values"
+tags:
+- concurrency
+- virtual-threads
 docs:
 - title: "Structured Concurrency (JEP 499)"
   href: "https://openjdk.org/jeps/499"

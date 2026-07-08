@@ -50,6 +50,8 @@ related:
 - "language/compact-source-files"
 - "language/sealed-classes"
 - "language/record-patterns"
+tags:
+- switch
 docs:
 - title: "Switch Expressions (JEP 361)"
   href: "https://openjdk.org/jeps/361"

@@ -49,6 +49,8 @@ related:
 - "language/compact-source-files"
 - "language/module-import-declarations"
 - "io/reading-files"
+tags:
+- io
 docs:
 - title: "Simple Source Files (JEP 495)"
   href: "https://openjdk.org/jeps/495"

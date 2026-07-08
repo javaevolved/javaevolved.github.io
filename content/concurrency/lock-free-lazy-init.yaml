@@ -55,6 +55,8 @@ related:
 - "concurrency/virtual-threads"
 - "concurrency/structured-concurrency"
 - "concurrency/scoped-values"
+tags:
+- concurrency
 docs:
 - title: "StableValue (JEP 502)"
   href: "https://openjdk.org/jeps/502"

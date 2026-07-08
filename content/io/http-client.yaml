@@ -48,6 +48,8 @@ related:
 - "io/reading-files"
 - "io/inputstream-transferto"
 - "io/try-with-resources-effectively-final"
+tags:
+- http
 docs:
 - title: "HttpClient (JEP 321)"
   href: "https://openjdk.org/jeps/321"

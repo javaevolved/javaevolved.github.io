@@ -1816,3 +1816,46 @@ footer a:hover {
   text-align: left;
   unicode-bidi: embed;
 }
+
+/* ============================
+   Tag Pills (topic tags on detail pages)
+   ============================ */
+.tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  color: var(--accent);
+  background: rgba(251, 146, 60, 0.08);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.tag-pill:hover {
+  background: rgba(251, 146, 60, 0.18);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tag-pill::before {
+  content: '#';
+  opacity: 0.6;
+  margin-right: 2px;
+}
+
+/* Topic badge on topic pages */
+.badge.topic-badge {
+  color: var(--accent);
+  background: rgba(251, 146, 60, 0.1);
+  border-color: rgba(251, 146, 60, 0.25);
+}

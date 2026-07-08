@@ -43,6 +43,9 @@ related:
 - "strings/string-repeat"
 - "strings/string-isblank"
 - "strings/string-formatted"
+tags:
+- strings
+- streams
 docs:
 - title: "String.chars()"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#chars()"

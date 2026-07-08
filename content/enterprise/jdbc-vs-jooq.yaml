@@ -66,6 +66,9 @@ related:
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/jdbc-resultset-vs-jpa-criteria"
 - "enterprise/manual-transaction-vs-declarative"
+tags:
+- enterprise
+- persistence
 docs:
 - title: "jOOQ — Getting Started"
   href: "https://www.jooq.org/doc/latest/manual/getting-started/"

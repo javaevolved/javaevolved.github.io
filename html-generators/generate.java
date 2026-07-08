@@ -28,8 +28,10 @@ static final Map<String, ObjectMapper> MAPPERS = Map.of(
 
 static final String CATEGORIES_FILE = "html-generators/categories.properties";
 static final String LOCALES_FILE = "html-generators/locales.properties";
+static final String TAGS_FILE = "html-generators/tags.properties";
 static final SequencedMap<String, String> CATEGORY_DISPLAY = loadCategoryDisplay();
 static final SequencedMap<String, String> LOCALES = loadLocales();
+static final Map<String, String> TAG_DISPLAY = loadTagDisplay();
 
 static SequencedMap<String, String> loadCategoryDisplay() {
     try {
@@ -50,6 +52,21 @@ static SequencedMap<String, String> loadLocales() {
     try {
         var map = new LinkedHashMap<String, String>();
         for (var line : Files.readAllLines(Path.of(LOCALES_FILE))) {
+            line = line.strip();
+            if (line.isEmpty() || line.startsWith("#")) continue;
+            var idx = line.indexOf('=');
+            if (idx > 0) map.put(line.substring(0, idx).strip(), line.substring(idx + 1).strip());
+        }
+        return map;
+    } catch (IOException e) {
+        throw new UncheckedIOException(e);
+    }
+}
+
+static Map<String, String> loadTagDisplay() {
+    try {
+        var map = new LinkedHashMap<String, String>();
+        for (var line : Files.readAllLines(Path.of(TAGS_FILE))) {
             line = line.strip();
             if (line.isEmpty() || line.startsWith("#")) continue;
             var idx = line.indexOf('=');
@@ -159,10 +176,18 @@ record Snippet(JsonNode node) {
         rel.forEach(n -> paths.add(n.asText()));
         return paths;
     }
+
+    List<String> tags() {
+        var t = node.get("tags");
+        if (t == null || !t.isArray()) return List.of();
+        var tagList = new ArrayList<String>();
+        t.forEach(n -> tagList.add(n.asText()));
+        return tagList;
+    }
 }
 
 record Templates(String page, String whyCard, String relatedCard, String socialShare,
-                 String index, String indexCard, String docLink) {
+                 String index, String indexCard, String docLink, String topicPage) {
     static Templates load() throws IOException {
         return new Templates(
             Files.readString(Path.of("templates/slug-template.html")),
@@ -171,7 +196,8 @@ record Templates(String page, String whyCard, String relatedCard, String socialS
             Files.readString(Path.of("templates/social-share.html")),
             Files.readString(Path.of("templates/index.html")),
             Files.readString(Path.of("templates/index-card.html")),
-            Files.readString(Path.of("templates/doc-link.html")));
+            Files.readString(Path.of("templates/doc-link.html")),
+            Files.readString(Path.of("templates/topic-page.html")));
     }
 }
 
@@ -281,6 +307,11 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
     if (!isEnglish) Files.createDirectories(indexPath.getParent());
     Files.writeString(indexPath, indexHtml);
     IO.println("Generated index.html for %s with %d cards".formatted(locale, allSnippets.size()));
+
+    // Generate topic pages — only for English (canonical); other locales link back to English topics
+    if (isEnglish) {
+        generateTopicPages(templates, allSnippets, strings, locale, homeUrl, i18nScript);
+    }
 }
 
 SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
@@ -361,11 +392,13 @@ String renderIndexCard(String tpl, Snippet s, String locale, Map<String, String>
     var cardHref = locale.equals("en")
             ? "/%s/%s.html".formatted(s.category(), s.slug())
             : "/%s/%s/%s.html".formatted(locale, s.category(), s.slug());
+    var tagsValue = String.join(" ", s.tags());
     return replaceTokens(tpl, Map.ofEntries(
             Map.entry("category", s.category()), Map.entry("slug", s.slug()),
             Map.entry("catDisplay", s.catDisplay()), Map.entry("title", escape(s.title())),
             Map.entry("oldCode", escape(s.oldCode())), Map.entry("modernCode", escape(s.modernCode())),
             Map.entry("jdkVersion", s.jdkVersion()), Map.entry("cardHref", cardHref),
+            Map.entry("tags", tagsValue),
             Map.entry("cards.old", strings.getOrDefault("cards.old", "Old")),
             Map.entry("cards.modern", strings.getOrDefault("cards.modern", "Modern")),
             Map.entry("cards.hoverHint", strings.getOrDefault("cards.hoverHint", "hover to see modern →")),
@@ -443,6 +476,81 @@ String renderSocialShare(String tpl, String category, String slug, String title,
             "share.label", strings.getOrDefault("share.label", "Share")));
 }
 
+/** Render tag pill links for the snippet detail page. Returns empty string if no tags. */
+String renderTagPills(Snippet s, String locale) {
+    var tags = s.tags();
+    if (tags.isEmpty()) return "";
+    var sb = new StringBuilder();
+    sb.append("      <div class=\"tag-pills\">\n");
+    for (var tag : tags) {
+        var display = TAG_DISPLAY.getOrDefault(tag, tag);
+        // Topic pages are English-only (canonical); use absolute path
+        sb.append("        <a href=\"/topics/%s.html\" class=\"tag-pill\">%s</a>\n"
+                .formatted(tag, escape(display)));
+    }
+    sb.append("      </div>");
+    return sb.toString();
+}
+
+void generateTopicPages(Templates templates, SequencedMap<String, Snippet> allSnippets,
+                        Map<String, String> strings, String locale, String homeUrl,
+                        String i18nScript) throws IOException {
+    // Build map: tag → list of snippets
+    var tagSnippets = new LinkedHashMap<String, List<Snippet>>();
+    for (var snippet : allSnippets.values()) {
+        for (var tag : snippet.tags()) {
+            tagSnippets.computeIfAbsent(tag, k -> new ArrayList<>()).add(snippet);
+        }
+    }
+
+    var topicsDir = Path.of(SITE_DIR, "topics");
+    Files.createDirectories(topicsDir);
+
+    for (var entry : tagSnippets.entrySet()) {
+        var tag = entry.getKey();
+        var snippetsForTag = entry.getValue();
+        var tagDisplay = TAG_DISPLAY.getOrDefault(tag, tag);
+
+        // Render cards for snippets in this topic
+        var topicCards = snippetsForTag.stream()
+                .map(s -> renderIndexCard(templates.indexCard(), s, locale, strings))
+                .collect(Collectors.joining("\n"));
+
+        var canonicalUrl = "%s/topics/%s.html".formatted(BASE_URL, tag);
+        var topicTitle = strings.getOrDefault("topics.title", "{{tagDisplay}} — java.evolved")
+                .replace("{{tagDisplay}}", tagDisplay);
+        var topicDescription = strings.getOrDefault("topics.description",
+                "All Java patterns related to {{tagDisplay}} — java.evolved")
+                .replace("{{tagDisplay}}", tagDisplay);
+        var topicHeading = strings.getOrDefault("topics.heading", "Topic: {{tagDisplay}}")
+                .replace("{{tagDisplay}}", tagDisplay);
+        var topicSnippetCount = strings.getOrDefault("topics.snippetCount", "{{count}} patterns")
+                .replace("{{count}}", String.valueOf(snippetsForTag.size()));
+
+        var tokens = new LinkedHashMap<String, String>();
+        tokens.putAll(strings);
+        tokens.put("locale", locale);
+        tokens.put("htmlDir", locale.equals("ar") ? "rtl" : "ltr");
+        tokens.put("ogLocale", locale.replace("-", "_"));
+        tokens.put("homeUrl", homeUrl);
+        tokens.put("canonicalUrl", canonicalUrl);
+        tokens.put("tagDisplay", escape(tagDisplay));
+        tokens.put("topicTitle", escape(topicTitle));
+        tokens.put("topicDescription", escape(topicDescription));
+        tokens.put("topics.heading", topicHeading);
+        tokens.put("topics.breadcrumb", strings.getOrDefault("topics.breadcrumb", "Topics"));
+        tokens.put("topics.backToAll", strings.getOrDefault("topics.backToAll", "← All patterns"));
+        tokens.put("topicSnippetCount", topicSnippetCount);
+        tokens.put("topicCards", topicCards);
+        tokens.put("topicBasePrefix", "../../");
+        tokens.put("i18nScript", i18nScript);
+
+        var html = replaceTokens(templates.topicPage(), tokens);
+        Files.writeString(topicsDir.resolve(tag + ".html"), html);
+    }
+    IO.println("Generated %d topic pages".formatted(tagSnippets.size()));
+}
+
 static final String GITHUB_ISSUES_URL = "https://github.com/javaevolved/javaevolved.github.io/issues/new";
 
 Map<String, String> buildContributeUrls(Snippet s, String locale, String localeName) {
@@ -498,7 +606,8 @@ String generateHtml(Templates tpl, Snippet s, Map<String, Snippet> all, Map<Stri
             Map.entry("docLinks", renderDocLinks(tpl.docLink(), s.node().withArray("docs"))),
             Map.entry("proofSection", renderProofSection(s, extraTokens)),
             Map.entry("relatedCards", renderRelatedSection(tpl.relatedCard(), s, all, locale, extraTokens)),
-            Map.entry("socialShare", renderSocialShare(tpl.socialShare(), s.category(), s.slug(), s.title(), extraTokens))));
+            Map.entry("socialShare", renderSocialShare(tpl.socialShare(), s.category(), s.slug(), s.title(), extraTokens)),
+            Map.entry("tagPills", renderTagPills(s, locale))));
     var localeName = LOCALES.getOrDefault(locale, locale);
     tokens.putAll(buildContributeUrls(s, locale, localeName));
     return replaceTokens(tpl.page(), tokens);

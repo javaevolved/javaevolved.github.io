@@ -52,6 +52,10 @@ related:
 - "language/record-patterns"
 - "language/type-inference-with-var"
 - "language/compact-source-files"
+tags:
+- pattern-matching
+- switch
+- records
 docs:
 - title: "Pattern Matching for switch (JEP 441)"
   href: "https://openjdk.org/jeps/441"

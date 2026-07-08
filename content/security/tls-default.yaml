@@ -45,6 +45,8 @@ related:
 - "security/pem-encoding"
 - "security/key-derivation-functions"
 - "security/strong-random"
+tags:
+- security
 docs:
 - title: "SSLContext"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/javax/net/ssl/SSLContext.html"

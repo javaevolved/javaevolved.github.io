@@ -46,6 +46,9 @@ related:
 - "io/inputstream-transferto"
 - "io/http-client"
 - "io/path-of"
+tags:
+- security
+- serialization
 docs:
 - title: "ObjectInputFilter"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/ObjectInputFilter.html"

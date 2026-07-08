@@ -93,6 +93,9 @@ related:
 - "enterprise/spring-null-safety-jspecify"
 - "errors/helpful-npe"
 - "errors/require-nonnull-else"
+tags:
+- testing
+- null-safety
 docs:
 - title: "JUnit 6 Assertions API"
   href: "https://docs.junit.org/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html"

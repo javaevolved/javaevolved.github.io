@@ -49,6 +49,9 @@ related:
 - "errors/helpful-npe"
 - "errors/record-based-errors"
 - "errors/multi-catch"
+tags:
+- switch
+- null-safety
 docs:
 - title: "Pattern Matching for switch (JEP 441)"
   href: "https://openjdk.org/jeps/441"

@@ -47,6 +47,8 @@ related:
 - "tooling/jshell-prototyping"
 - "tooling/single-file-execution"
 - "tooling/multi-file-source"
+tags:
+- performance
 docs:
 - title: "Ahead-of-Time Command-Line Ergonomics (JEP 514)"
   href: "https://openjdk.org/jeps/514"

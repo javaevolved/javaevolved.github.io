@@ -42,6 +42,8 @@ related:
 - "collections/collectors-teeing"
 - "collections/immutable-set-creation"
 - "collections/immutable-map-creation"
+tags:
+- collections
 docs:
 - title: "Sequenced Collections (JEP 431)"
   href: "https://openjdk.org/jeps/431"

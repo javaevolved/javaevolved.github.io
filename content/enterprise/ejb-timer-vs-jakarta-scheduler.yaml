@@ -74,6 +74,9 @@ related:
 - "enterprise/ejb-vs-cdi"
 - "concurrency/virtual-threads"
 - "concurrency/executor-try-with-resources"
+tags:
+- enterprise
+- jakarta
 docs:
 - title: "Jakarta Concurrency Specification"
   href: "https://jakarta.ee/specifications/concurrency/"

@@ -11,6 +11,9 @@ site/security/*.html
 site/tooling/*.html
 site/enterprise/*.html
 
+# Generated topic pages (built by html-generators/)
+site/topics/*.html
+
 # Generated aggregate file (built from individual JSON sources by html-generators/)
 site/data/snippets.json
 
