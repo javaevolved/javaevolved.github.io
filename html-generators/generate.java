@@ -181,7 +181,16 @@ record Snippet(JsonNode node) {
         var t = node.get("tags");
         if (t == null || !t.isArray()) return List.of();
         var tagList = new ArrayList<String>();
-        t.forEach(n -> tagList.add(n.asText()));
+        t.forEach(n -> {
+            var tag = n.asText().strip();
+            if (!tag.matches("[a-z0-9]+(?:-[a-z0-9]+)*")) {
+                throw new IllegalArgumentException("Invalid tag slug \"" + tag + "\" in " + key());
+            }
+            if (!TAG_DISPLAY.containsKey(tag)) {
+                throw new IllegalArgumentException("Unknown tag \"" + tag + "\" in " + key() + " (missing from " + TAGS_FILE + ")");
+            }
+            tagList.add(tag);
+        });
         return tagList;
     }
 }
@@ -392,7 +401,7 @@ String renderIndexCard(String tpl, Snippet s, String locale, Map<String, String>
     var cardHref = locale.equals("en")
             ? "/%s/%s.html".formatted(s.category(), s.slug())
             : "/%s/%s/%s.html".formatted(locale, s.category(), s.slug());
-    var tagsValue = String.join(" ", s.tags());
+    var tagsValue = escape(String.join(" ", s.tags()));
     return replaceTokens(tpl, Map.ofEntries(
             Map.entry("category", s.category()), Map.entry("slug", s.slug()),
             Map.entry("catDisplay", s.catDisplay()), Map.entry("title", escape(s.title())),
