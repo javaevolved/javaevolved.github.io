@@ -82,6 +82,9 @@ related:
 - "errors/helpful-npe"
 - "errors/optional-orelsethrow"
 - "errors/require-nonnull-else"
+tags:
+- null-safety
+- spring
 docs:
 - title: "Spring Framework 7 — Null Safety"
   href: "https://docs.spring.io/spring-framework/reference/core/null-safety.html"

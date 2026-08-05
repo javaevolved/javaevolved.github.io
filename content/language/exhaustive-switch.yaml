@@ -52,6 +52,10 @@ related:
 - "language/sealed-classes"
 - "language/pattern-matching-instanceof"
 - "language/type-inference-with-var"
+tags:
+- switch
+- sealed-classes
+- pattern-matching
 docs:
 - title: "Pattern Matching for switch (JEP 441)"
   href: "https://openjdk.org/jeps/441"

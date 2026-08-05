@@ -44,6 +44,9 @@ related:
 - "io/path-of"
 - "io/reading-files"
 - "io/http-client"
+tags:
+- io
+- exceptions
 docs:
 - title: "Catching and Handling Exceptions (dev.java)"
   href: "https://dev.java/learn/exceptions/catching-handling/"

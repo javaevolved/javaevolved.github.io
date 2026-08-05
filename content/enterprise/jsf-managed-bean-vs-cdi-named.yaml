@@ -68,6 +68,9 @@ related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jndi-lookup-vs-cdi-injection"
 - "enterprise/servlet-vs-jaxrs"
+tags:
+- enterprise
+- jakarta
 docs:
 - title: "Jakarta Faces Specification"
   href: "https://jakarta.ee/specifications/faces/"

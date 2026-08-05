@@ -48,6 +48,9 @@ related:
 - "concurrency/completablefuture-chaining"
 - "concurrency/virtual-threads"
 - "concurrency/thread-sleep-duration"
+tags:
+- virtual-threads
+- concurrency
 docs:
 - title: "ExecutorService"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorService.html"

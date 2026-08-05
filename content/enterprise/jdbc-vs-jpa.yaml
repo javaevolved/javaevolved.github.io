@@ -63,6 +63,10 @@ related:
 - "enterprise/servlet-vs-jaxrs"
 - "enterprise/ejb-vs-cdi"
 - "io/try-with-resources-effectively-final"
+tags:
+- enterprise
+- persistence
+- jpa
 docs:
 - title: "Jakarta Persistence Specification"
   href: "https://jakarta.ee/specifications/persistence/"

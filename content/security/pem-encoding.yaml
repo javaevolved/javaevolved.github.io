@@ -45,6 +45,9 @@ related:
 - "security/key-derivation-functions"
 - "security/strong-random"
 - "security/tls-default"
+tags:
+- security
+- cryptography
 docs:
 - title: "PEM Encodings of Certificates (JEP 470)"
   href: "https://openjdk.org/jeps/470"

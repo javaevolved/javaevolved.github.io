@@ -85,6 +85,9 @@ related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jndi-lookup-vs-cdi-injection"
 - "enterprise/manual-transaction-vs-declarative"
+tags:
+- enterprise
+- spring
 docs:
 - title: "Spring Framework — Annotation-based Container Configuration"
   href: "https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html"

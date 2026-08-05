@@ -63,6 +63,9 @@ related:
 - "enterprise/servlet-vs-jaxrs"
 - "io/http-client"
 - "enterprise/ejb-vs-cdi"
+tags:
+- enterprise
+- rest
 docs:
 - title: "Jakarta RESTful Web Services Specification"
   href: "https://jakarta.ee/specifications/restful-ws/"

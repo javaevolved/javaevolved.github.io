@@ -42,6 +42,9 @@ related:
 - "streams/stream-tolist"
 - "strings/string-isblank"
 - "streams/stream-takewhile-dropwhile"
+tags:
+- functional
+- streams
 docs:
 - title: "Predicate.not()"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html#not(java.util.function.Predicate)"

@@ -113,7 +113,8 @@
         visibleResults = snippets.filter(s =>
           fuzzyMatch(query, s.title) ||
           fuzzyMatch(query, s.category) ||
-          fuzzyMatch(query, s.summary)
+          fuzzyMatch(query, s.summary) ||
+          (Array.isArray(s.tags) && s.tags.some(t => fuzzyMatch(query, t)))
         );
       }
 
@@ -337,6 +338,9 @@
       } else if (catDropdownCtrl) {
         catDropdownCtrl.setActive('all');
         activeCategory = null;
+        applyFilters();
+      } else {
+        // No filter dropdowns (e.g. topic pages) — show all cards
         applyFilters();
       }
     };

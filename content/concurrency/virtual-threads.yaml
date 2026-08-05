@@ -42,6 +42,9 @@ related:
 - "concurrency/thread-sleep-duration"
 - "concurrency/scoped-values"
 - "concurrency/completablefuture-chaining"
+tags:
+- virtual-threads
+- concurrency
 docs:
 - title: "Virtual Threads (JEP 444)"
   href: "https://openjdk.org/jeps/444"

@@ -40,6 +40,8 @@ related:
 - "collections/immutable-set-creation"
 - "collections/map-entry-factory"
 - "collections/immutable-list-creation"
+tags:
+- collections
 docs:
 - title: "List.copyOf()"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#copyOf(java.util.Collection)"

@@ -44,6 +44,8 @@ related:
 - "datetime/instant-precision"
 - "datetime/duration-and-period"
 - "datetime/date-formatting"
+tags:
+- datetime
 docs:
 - title: "LocalDate"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html"

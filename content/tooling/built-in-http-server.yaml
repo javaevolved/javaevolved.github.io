@@ -57,6 +57,9 @@ related:
 - "io/http-client"
 - "tooling/single-file-execution"
 - "tooling/jshell-prototyping"
+tags:
+- tooling
+- http
 docs:
 - title: "Simple Web Server (JEP 408)"
   href: "https://openjdk.org/jeps/408"

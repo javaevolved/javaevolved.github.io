@@ -78,6 +78,9 @@ related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jndi-lookup-vs-cdi-injection"
 - "concurrency/lock-free-lazy-init"
+tags:
+- enterprise
+- jakarta
 docs:
 - title: "Jakarta CDI Specification"
   href: "https://jakarta.ee/specifications/cdi/"

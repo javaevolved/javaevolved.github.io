@@ -42,6 +42,8 @@ related:
 - "collections/immutable-map-creation"
 - "collections/immutable-set-creation"
 - "collections/sequenced-collections"
+tags:
+- collections
 docs:
 - title: "List.of()"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#of()"

@@ -58,6 +58,8 @@ related:
 - "language/default-interface-methods"
 - "language/private-interface-methods"
 - "collections/immutable-list-creation"
+tags:
+- interfaces
 docs:
 - title: "Evolving Interfaces (dev.java)"
   href: "https://dev.java/learn/interfaces/examples/"

@@ -43,6 +43,9 @@ related:
 - "language/diamond-operator"
 - "language/records-for-data-classes"
 - "language/unnamed-variables"
+tags:
+- records
+- pattern-matching
 docs:
 - title: "Record Patterns (JEP 440)"
   href: "https://openjdk.org/jeps/440"

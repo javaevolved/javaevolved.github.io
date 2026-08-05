@@ -70,6 +70,9 @@ related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/jpa-vs-jakarta-data"
+tags:
+- enterprise
+- persistence
 docs:
 - title: "Jakarta Transactions Specification"
   href: "https://jakarta.ee/specifications/transactions/"

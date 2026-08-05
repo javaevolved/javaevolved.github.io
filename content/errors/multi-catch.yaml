@@ -49,6 +49,8 @@ related:
 - "errors/null-in-switch"
 - "errors/helpful-npe"
 - "errors/require-nonnull-else"
+tags:
+- exceptions
 docs:
 - title: "Catching and Handling Exceptions (dev.java)"
   href: "https://dev.java/learn/exceptions/catching-handling/"

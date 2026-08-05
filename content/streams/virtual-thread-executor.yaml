@@ -49,6 +49,9 @@ related:
 - "streams/stream-gatherers"
 - "streams/stream-iterate-predicate"
 - "streams/optional-ifpresentorelse"
+tags:
+- virtual-threads
+- concurrency
 docs:
 - title: "Executors.newVirtualThreadPerTaskExecutor()"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executors.html#newVirtualThreadPerTaskExecutor()"

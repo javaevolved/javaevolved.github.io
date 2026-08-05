@@ -59,6 +59,9 @@ related:
 - "enterprise/servlet-vs-jaxrs"
 - "enterprise/jdbc-vs-jpa"
 - "language/records-for-data-classes"
+tags:
+- enterprise
+- jakarta
 docs:
 - title: "Jakarta CDI Specification"
   href: "https://jakarta.ee/specifications/cdi/"

@@ -41,6 +41,8 @@ related:
 - "language/flexible-constructor-bodies"
 - "language/private-interface-methods"
 - "language/pattern-matching-switch"
+tags:
+- records
 docs:
 - title: "Records (JEP 395)"
   href: "https://openjdk.org/jeps/395"

@@ -53,6 +53,8 @@ related:
 - "language/records-for-data-classes"
 - "language/flexible-constructor-bodies"
 - "errors/record-based-errors"
+tags:
+- records
 docs:
 - title: "Record (Java 21)"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Record.html"

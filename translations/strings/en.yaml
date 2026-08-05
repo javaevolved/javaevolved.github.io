@@ -30,6 +30,14 @@ sections:
   proof: Proof
   proofLink: View proof source
   relatedPatterns: Related patterns
+  tags: Topics
+topics:
+  title: "{{tagDisplay}} — java.evolved"
+  description: "All Java patterns related to {{tagDisplay}} — java.evolved"
+  heading: "Topic: {{tagDisplay}}"
+  breadcrumb: Topics
+  backToAll: ← All patterns
+  snippetCount: "{{count}} patterns"
 filters:
   show: 'Show:'
   all: All

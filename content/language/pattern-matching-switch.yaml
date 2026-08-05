@@ -51,6 +51,9 @@ related:
 - "language/pattern-matching-instanceof"
 - "language/unnamed-variables"
 - "language/records-for-data-classes"
+tags:
+- pattern-matching
+- switch
 docs:
 - title: "Pattern Matching for switch (JEP 441)"
   href: "https://openjdk.org/jeps/441"

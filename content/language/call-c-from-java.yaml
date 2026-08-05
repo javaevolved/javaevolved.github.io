@@ -75,6 +75,9 @@ related:
 - "io/file-memory-mapping"
 - "language/compact-source-files"
 - "language/unnamed-variables"
+tags:
+- foreign-function-api
+- native
 docs:
 - title: "JEP 454: Foreign Function & Memory API"
   href: "https://openjdk.org/jeps/454"

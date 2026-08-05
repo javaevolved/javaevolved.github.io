@@ -87,6 +87,10 @@ related:
 - "enterprise/soap-vs-jakarta-rest"
 - "enterprise/servlet-vs-jaxrs"
 - "enterprise/ejb-vs-cdi"
+tags:
+- enterprise
+- spring
+- rest
 docs:
 - title: "Spring Framework 7.0 — API Versioning"
   href: "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-version"

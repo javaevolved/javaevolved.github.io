@@ -48,6 +48,9 @@ related:
 - "concurrency/virtual-threads"
 - "concurrency/structured-concurrency"
 - "concurrency/stable-values"
+tags:
+- concurrency
+- virtual-threads
 docs:
 - title: "Scoped Values (JEP 487)"
   href: "https://openjdk.org/jeps/487"

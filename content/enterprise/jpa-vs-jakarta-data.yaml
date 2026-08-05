@@ -62,6 +62,10 @@ related:
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/ejb-vs-cdi"
 - "enterprise/servlet-vs-jaxrs"
+tags:
+- enterprise
+- persistence
+- jpa
 docs:
 - title: "Jakarta Data 1.0 Specification"
   href: "https://jakarta.ee/specifications/data/1.0/"

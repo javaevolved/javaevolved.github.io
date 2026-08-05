@@ -41,6 +41,9 @@ related:
 - "collections/immutable-map-creation"
 - "collections/immutable-set-creation"
 - "streams/stream-tolist"
+tags:
+- streams
+- collections
 docs:
 - title: "Stream.toList()"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html#toList()"

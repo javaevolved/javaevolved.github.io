@@ -44,6 +44,8 @@ related:
 - "language/switch-expressions"
 - "language/pattern-matching-instanceof"
 - "language/exhaustive-switch"
+tags:
+- text-blocks
 docs:
 - title: "Text Blocks (JEP 378)"
   href: "https://openjdk.org/jeps/378"

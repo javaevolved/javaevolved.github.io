@@ -68,6 +68,9 @@ related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/singleton-ejb-vs-cdi-application-scoped"
+tags:
+- enterprise
+- jakarta
 docs:
 - title: "Jakarta CDI Specification"
   href: "https://jakarta.ee/specifications/cdi/"

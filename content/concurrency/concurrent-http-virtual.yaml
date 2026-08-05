@@ -51,6 +51,9 @@ related:
 - "concurrency/structured-concurrency"
 - "concurrency/stable-values"
 - "concurrency/lock-free-lazy-init"
+tags:
+- virtual-threads
+- concurrency
 docs:
 - title: "Virtual Threads (JEP 444)"
   href: "https://openjdk.org/jeps/444"

@@ -45,6 +45,8 @@ related:
 - "streams/stream-of-nullable"
 - "streams/stream-iterate-predicate"
 - "streams/stream-takewhile-dropwhile"
+tags:
+- streams
 docs:
 - title: "Stream Gatherers (JEP 485)"
   href: "https://openjdk.org/jeps/485"
