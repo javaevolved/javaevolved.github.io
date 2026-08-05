@@ -16,7 +16,7 @@ oldCode: |-
 modernCode: |-
   List<String> nonEmpty = list.stream()
       .filter(Predicate.not(String::isBlank))
-      .toList();
+      .collect(Collectors.toList());
 summary: "Use Predicate.not() to negate method references cleanly instead of writing\
   \ lambda wrappers."
 explanation: "Before Java 11, negating a method reference required wrapping it in\
