@@ -46,6 +46,7 @@ related:
 - "language/exhaustive-switch"
 tags:
 - text-blocks
+- strings
 docs:
 - title: "Text Blocks (JEP 378)"
   href: "https://openjdk.org/jeps/378"

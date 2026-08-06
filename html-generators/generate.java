@@ -294,7 +294,7 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
 
     // Generate index.html from template
     var tipCards = allSnippets.values().stream()
-            .map(s -> renderIndexCard(templates.indexCard(), resolveSnippet(s, locale), locale, strings))
+            .map(s -> renderIndexCard(templates.indexCard(), resolveSnippet(s, locale), locale, strings, true))
             .collect(Collectors.joining("\n"));
 
     var indexTokens = new LinkedHashMap<String, String>();
@@ -397,7 +397,8 @@ String renderNavArrows(Snippet snippet, String locale) {
     return prev + "\n          " + next;
 }
 
-String renderIndexCard(String tpl, Snippet s, String locale, Map<String, String> strings) {
+String renderIndexCard(String tpl, Snippet s, String locale, Map<String, String> strings,
+                       boolean initiallyHidden) {
     var cardHref = locale.equals("en")
             ? "/%s/%s.html".formatted(s.category(), s.slug())
             : "/%s/%s/%s.html".formatted(locale, s.category(), s.slug());
@@ -407,6 +408,7 @@ String renderIndexCard(String tpl, Snippet s, String locale, Map<String, String>
             Map.entry("catDisplay", s.catDisplay()), Map.entry("title", escape(s.title())),
             Map.entry("oldCode", escape(s.oldCode())), Map.entry("modernCode", escape(s.modernCode())),
             Map.entry("jdkVersion", s.jdkVersion()), Map.entry("cardHref", cardHref),
+            Map.entry("initialCardState", initiallyHidden ? " filter-hidden" : ""),
             Map.entry("tags", tagsValue),
             Map.entry("cards.old", strings.getOrDefault("cards.old", "Old")),
             Map.entry("cards.modern", strings.getOrDefault("cards.modern", "Modern")),
@@ -522,7 +524,7 @@ void generateTopicPages(Templates templates, SequencedMap<String, Snippet> allSn
 
         // Render cards for snippets in this topic
         var topicCards = snippetsForTag.stream()
-                .map(s -> renderIndexCard(templates.indexCard(), s, locale, strings))
+                .map(s -> renderIndexCard(templates.indexCard(), s, locale, strings, false))
                 .collect(Collectors.joining("\n"));
 
         var canonicalUrl = "%s/topics/%s.html".formatted(BASE_URL, tag);
@@ -551,7 +553,7 @@ void generateTopicPages(Templates templates, SequencedMap<String, Snippet> allSn
         tokens.put("topics.backToAll", strings.getOrDefault("topics.backToAll", "← All patterns"));
         tokens.put("topicSnippetCount", topicSnippetCount);
         tokens.put("topicCards", topicCards);
-        tokens.put("topicBasePrefix", "../../");
+        tokens.put("topicBasePrefix", "../");
         tokens.put("i18nScript", i18nScript);
 
         var html = replaceTokens(templates.topicPage(), tokens);

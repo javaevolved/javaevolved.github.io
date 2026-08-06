@@ -85,6 +85,7 @@ related:
 tags:
 - null-safety
 - spring
+- enterprise
 docs:
 - title: "Spring Framework 7 — Null Safety"
   href: "https://docs.spring.io/spring-framework/reference/core/null-safety.html"

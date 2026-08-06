@@ -63,7 +63,6 @@ related:
 - "language/sealed-classes"
 tags:
 - interfaces
-- functional
 docs:
 - title: "Evolving Interfaces (dev.java)"
   href: "https://dev.java/learn/interfaces/examples/"

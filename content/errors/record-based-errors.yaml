@@ -52,8 +52,6 @@ related:
 - "errors/multi-catch"
 tags:
 - records
-- exceptions
-- sealed-classes
 docs:
 - title: "Records (JEP 395)"
   href: "https://openjdk.org/jeps/395"

@@ -54,6 +54,7 @@ related:
 tags:
 - virtual-threads
 - concurrency
+- http
 docs:
 - title: "Virtual Threads (JEP 444)"
   href: "https://openjdk.org/jeps/444"

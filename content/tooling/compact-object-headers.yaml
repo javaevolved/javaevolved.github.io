@@ -45,6 +45,7 @@ related:
 - "tooling/multi-file-source"
 tags:
 - performance
+- tooling
 docs:
 - title: "Compact Object Headers (JEP 519)"
   href: "https://openjdk.org/jeps/519"
