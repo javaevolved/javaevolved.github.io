@@ -45,6 +45,7 @@ related:
 - "errors/require-nonnull-else"
 tags:
 - null-safety
+- exceptions
 docs:
 - title: "Helpful NullPointerExceptions (JEP 358)"
   href: "https://openjdk.org/jeps/358"

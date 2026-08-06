@@ -44,7 +44,6 @@ related:
 - "errors/optional-chaining"
 tags:
 - null-safety
-- optional
 docs:
 - title: "Objects.requireNonNullElse()"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Objects.html#requireNonNullElse(T,T)"

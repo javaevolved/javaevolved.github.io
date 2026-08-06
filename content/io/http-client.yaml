@@ -50,6 +50,7 @@ related:
 - "io/try-with-resources-effectively-final"
 tags:
 - http
+- io
 docs:
 - title: "HttpClient (JEP 321)"
   href: "https://openjdk.org/jeps/321"

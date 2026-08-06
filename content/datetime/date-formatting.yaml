@@ -47,6 +47,7 @@ related:
 - "datetime/hex-format"
 tags:
 - datetime
+- formatting
 docs:
 - title: "DateTimeFormatter"
   href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/format/DateTimeFormatter.html"

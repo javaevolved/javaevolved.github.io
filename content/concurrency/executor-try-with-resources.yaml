@@ -49,7 +49,6 @@ related:
 - "concurrency/virtual-threads"
 - "concurrency/thread-sleep-duration"
 tags:
-- virtual-threads
 - concurrency
 docs:
 - title: "ExecutorService"

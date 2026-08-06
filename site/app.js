@@ -17,6 +17,8 @@
 
   /* ---------- Browser Locale Auto-Redirect ---------- */
   const autoRedirectLocale = () => {
+    // Topic pages are canonical English-only pages.
+    if (document.body.dataset.page === 'topic') return;
     if (locale !== 'en') return; // already on a non-English locale
     const available = (window.i18n && window.i18n.availableLocales) || [];
     if (available.length <= 1) return;

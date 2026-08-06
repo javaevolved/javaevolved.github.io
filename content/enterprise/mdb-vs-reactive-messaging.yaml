@@ -67,6 +67,7 @@ related:
 tags:
 - enterprise
 - reactive
+- async
 docs:
 - title: "MicroProfile Reactive Messaging Specification"
   href: "https://download.eclipse.org/microprofile/microprofile-reactive-messaging-3.0/microprofile-reactive-messaging-spec-3.0.html"
