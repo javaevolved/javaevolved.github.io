@@ -102,7 +102,8 @@ jobs:
         working-directory: agent-plugins/modern-java-development
         run: |
           python3 -m unittest \
-            skills/modern-java/scripts/test_detect_java_version.py
+            skills/modern-java/scripts/test_detect_java_version.py \
+            skills/modern-java/scripts/test_reference_coverage.py
           jq --exit-status \
             --arg version "${{ steps.version.outputs.version }}" \
             '.version == $version' plugin.json >/dev/null

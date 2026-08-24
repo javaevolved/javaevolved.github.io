@@ -18,9 +18,11 @@ modern-java-development/
         ├── SKILL.md
         ├── references/
         │   ├── core-practices.md
+        │   ├── enterprise-practices.md
         │   └── release-practices.md
         └── scripts/
             ├── detect_java_version.py
+            ├── test_reference_coverage.py
             └── test_detect_java_version.py
 ```
 
@@ -106,7 +108,8 @@ lower-confidence runtime evidence and report conflicting build configuration.
 
 ```bash
 python3 -m unittest \
-  skills/modern-java/scripts/test_detect_java_version.py
+  skills/modern-java/scripts/test_detect_java_version.py \
+  skills/modern-java/scripts/test_reference_coverage.py
 ```
 
 ## Release

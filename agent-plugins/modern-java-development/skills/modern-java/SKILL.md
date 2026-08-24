@@ -39,6 +39,10 @@ features or APIs the build accepts.
    release and all earlier applicable groups in
    [release practices](references/release-practices.md). Recommendations are
    cumulative: Java 21 code may use final features from Java 21 and below.
+   When Jakarta EE, MicroProfile, Spring, JPA, JDBC, jOOQ, JSF, JAX-RS, JMS,
+   EJB, or CDI is in scope, also read
+   [enterprise practices](references/enterprise-practices.md). Framework
+   versions are a separate compatibility axis from the Java target.
 
 4. Inspect whether preview is explicitly enabled (`--enable-preview` in both
    compile and runtime/test configuration). Do not recommend preview features
@@ -54,6 +58,9 @@ features or APIs the build accepts.
      maintainer's local JDK.
    - **Multi-release or multi-module builds:** evaluate each affected source set
      or module against its own target.
+   - **Framework migrations:** verify the framework/runtime version, namespace
+     (`javax.*` versus `jakarta.*`), deployment model, and operational semantics.
+     Do not infer framework capability from the Java target alone.
 
 6. Validate with the project's existing build using its configured toolchain.
    Compile and run tests with the same `--release` and preview settings used by
