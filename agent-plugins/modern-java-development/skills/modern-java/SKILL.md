@@ -4,7 +4,7 @@ description: Detects a project's effective Java version and provides release-app
 license: MIT
 compatibility: Requires Python 3 to run the bundled detector; an agent may inspect the same project files directly when Python is unavailable.
 metadata:
-  author: java.evolved
+  author: @brunoborges
   version: "1.0.0"
 ---
 
