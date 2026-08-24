@@ -26,6 +26,10 @@ modern-java-development/
 
 ## Install
 
+Versioned `.tar.gz` packages and SHA-256 checksums are available from the
+[GitHub Releases](https://github.com/javaevolved/javaevolved.github.io/releases).
+Each archive contains the `modern-java-development` package directory.
+
 ### GitHub Copilot CLI
 
 GitHub Copilot CLI supports the Agent Plugins specification, so it can install
@@ -104,3 +108,11 @@ lower-confidence runtime evidence and report conflicting build configuration.
 python3 -m unittest \
   skills/modern-java/scripts/test_detect_java_version.py
 ```
+
+## Release
+
+Run the **Release agent plugin** workflow from the `main` branch. The first run
+publishes the manifest's initial `1.0.0` version. Later runs use a patch release
+by default (`1.0.0` to `1.0.1`); select **Feature release** for a minor bump or
+**Major release** for a major bump. The two release options are mutually
+exclusive.
