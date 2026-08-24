@@ -32,22 +32,22 @@ Each archive contains the `modern-java-development` package directory.
 
 ### GitHub Copilot CLI
 
-GitHub Copilot CLI supports the Agent Plugins specification, so it can install
-the complete package directly from this repository:
+GitHub Copilot CLI supports the Agent Plugins specification. Add the
+java.evolved marketplace once:
 
 ```bash
-copilot plugin install javaevolved/javaevolved.github.io:agent-plugins/modern-java-development
+copilot plugin marketplace add javaevolved/javaevolved.github.io
 ```
 
-To install a local checkout instead, pass its plugin directory:
+Then install the plugin:
 
 ```bash
-copilot plugin install /absolute/path/to/agent-plugins/modern-java-development
+copilot plugin install modern-java-development@javaevolved
 ```
 
 See the
 [GitHub Copilot CLI plugin reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference)
-for other sources and marketplace installation.
+for marketplace management and plugin updates.
 
 ### Claude Code
 
