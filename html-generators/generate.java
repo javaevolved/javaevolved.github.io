@@ -196,7 +196,8 @@ record Snippet(JsonNode node) {
 }
 
 record Templates(String page, String whyCard, String relatedCard, String socialShare,
-                 String index, String indexCard, String docLink, String topicPage) {
+                 String index, String indexCard, String docLink, String topicPage,
+                 String agentPlugin) {
     static Templates load() throws IOException {
         return new Templates(
             Files.readString(Path.of("templates/slug-template.html")),
@@ -206,7 +207,8 @@ record Templates(String page, String whyCard, String relatedCard, String socialS
             Files.readString(Path.of("templates/index.html")),
             Files.readString(Path.of("templates/index-card.html")),
             Files.readString(Path.of("templates/doc-link.html")),
-            Files.readString(Path.of("templates/topic-page.html")));
+            Files.readString(Path.of("templates/topic-page.html")),
+            Files.readString(Path.of("templates/agent-plugin.html")));
     }
 }
 
@@ -319,6 +321,8 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
 
     // Generate topic pages — only for English (canonical); other locales link back to English topics
     if (isEnglish) {
+        Files.writeString(Path.of(SITE_DIR, "agent-plugin.html"), templates.agentPlugin());
+        IO.println("Generated agent-plugin.html");
         generateTopicPages(templates, allSnippets, strings, locale, homeUrl, i18nScript);
     }
 }

@@ -19,6 +19,7 @@ site/data/snippets.json
 
 # Generated index page (built from templates/index.html by html-generators/)
 site/index.html
+site/agent-plugin.html
 
 # Generated locale directories (built by html-generators/ for non-English locales)
 site/[a-z][a-z]/
