@@ -1,0 +1,154 @@
+name: Release agent plugin
+
+on:
+  workflow_dispatch:
+    inputs:
+      feature_release:
+        description: 'Feature release (1.0.0 -> 1.1.0)'
+        required: false
+        default: false
+        type: boolean
+      major_release:
+        description: 'Major release (1.0.0 -> 2.0.0)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-modern-java-development
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require the main branch
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "::error::Agent plugin releases must be run from the main branch."
+          exit 1
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Determine release version
+        id: version
+        env:
+          FEATURE_RELEASE: ${{ inputs.feature_release }}
+          GH_TOKEN: ${{ github.token }}
+          MAJOR_RELEASE: ${{ inputs.major_release }}
+        run: |
+          set -euo pipefail
+
+          manifest="agent-plugins/modern-java-development/plugin.json"
+          current_version=$(jq -r '.version' "$manifest")
+
+          if [[ ! "$current_version" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+            echo "::error::Invalid SemVer in $manifest: $current_version"
+            exit 1
+          fi
+          major="${BASH_REMATCH[1]}"
+          minor="${BASH_REMATCH[2]}"
+          patch="${BASH_REMATCH[3]}"
+
+          if [[ "$FEATURE_RELEASE" == "true" && "$MAJOR_RELEASE" == "true" ]]; then
+            echo "::error::Feature and major release inputs are mutually exclusive."
+            exit 1
+          fi
+
+          tag="modern-java-development-v$current_version"
+          if git rev-parse --verify --quiet "refs/tags/$tag" >/dev/null; then
+            if ! gh release view "$tag" >/dev/null 2>&1; then
+              if [[ "$(git rev-list -n 1 "$tag")" != "$(git rev-parse HEAD)" ]]; then
+                echo "::error::Unpublished tag $tag does not point to the current commit."
+                exit 1
+              fi
+
+              echo "version=$current_version" >> "$GITHUB_OUTPUT"
+              echo "tag=$tag" >> "$GITHUB_OUTPUT"
+              echo "create_tag=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            if [[ "$MAJOR_RELEASE" == "true" ]]; then
+              next_version="$((10#$major + 1)).0.0"
+            elif [[ "$FEATURE_RELEASE" == "true" ]]; then
+              next_version="$major.$((10#$minor + 1)).0"
+            else
+              next_version="$major.$minor.$((10#$patch + 1))"
+            fi
+
+            jq --arg version "$next_version" '.version = $version' "$manifest" > "$manifest.tmp"
+            mv "$manifest.tmp" "$manifest"
+          else
+            next_version="$current_version"
+          fi
+
+          if git rev-parse --verify --quiet \
+            "refs/tags/modern-java-development-v$next_version" >/dev/null; then
+            echo "::error::Release tag already exists for $next_version."
+            exit 1
+          fi
+
+          echo "version=$next_version" >> "$GITHUB_OUTPUT"
+          echo "tag=modern-java-development-v$next_version" >> "$GITHUB_OUTPUT"
+          echo "create_tag=true" >> "$GITHUB_OUTPUT"
+
+      - name: Validate plugin
+        working-directory: agent-plugins/modern-java-development
+        run: |
+          python3 -m unittest \
+            skills/modern-java/scripts/test_detect_java_version.py
+          jq --exit-status \
+            --arg version "${{ steps.version.outputs.version }}" \
+            '.version == $version' plugin.json >/dev/null
+
+      - name: Package plugin
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          archive="modern-java-development-$VERSION.tar.gz"
+          tar -czf "$archive" -C agent-plugins modern-java-development
+          shasum -a 256 "$archive" > "$archive.sha256"
+          echo "ARCHIVE=$archive" >> "$GITHUB_ENV"
+
+      - name: Commit version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if git diff --quiet -- agent-plugins/modern-java-development/plugin.json; then
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add agent-plugins/modern-java-development/plugin.json
+          git commit -m "Release modern Java development plugin v$VERSION"
+          git push origin HEAD:main
+
+      - name: Tag release
+        if: steps.version.outputs.create_tag == 'true'
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git tag --annotate "$TAG" --message "Modern Java Development v$VERSION"
+          git push origin "$TAG"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "$TAG" \
+            "$ARCHIVE" \
+            "$ARCHIVE.sha256" \
+            --title "Modern Java Development v$VERSION" \
+            --generate-notes \
+            --verify-tag
