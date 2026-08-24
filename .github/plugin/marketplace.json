@@ -1,0 +1,19 @@
+{
+  "name": "javaevolved",
+  "owner": {
+    "name": "java.evolved"
+  },
+  "metadata": {
+    "description": "Version-aware tools for modern Java development.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "modern-java-development",
+      "description": "Version-aware guidance for writing, reviewing, and modernizing Java projects.",
+      "version": "1.0.0",
+      "source": "./agent-plugins/modern-java-development",
+      "category": "development"
+    }
+  ]
+}
