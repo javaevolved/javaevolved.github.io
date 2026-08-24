@@ -50,6 +50,13 @@ This site uses a **JSON/YAML-first** build pipeline:
 - **Translations**: `translations/strings/{locale}.yaml` for UI strings, `translations/content/{locale}/` for pattern content (YAML)
 - **Deploy**: GitHub Actions runs the generator and deploys to GitHub Pages
 
+### Agent plugin
+
+[`agent-plugins/modern-java-development`](agent-plugins/modern-java-development/)
+is a portable Agent Plugins 1.0 package for version-aware Java development. Its
+skill detects a project's effective compilation target, then limits guidance to
+final language features and APIs available in that Java release.
+
 Generated files (`site/category/*.html`, `site/{locale}/`, and `site/data/snippets.json`) are in `.gitignore` — never edit them directly.
 
 ### Internationalization
