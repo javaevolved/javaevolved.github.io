@@ -144,15 +144,39 @@
     </section>
 
     <section class="plugin-install" id="install" aria-labelledby="install-title">
-      <div>
-        <h2 id="install-title">Install once. Keep the advice honest.</h2>
-        <p>Clone the repository, then register the plugin directory with any Agent Plugins-compatible client. Installation and enablement are controlled by each client.</p>
-        <a href="https://agent-plugins.org/plugin-authors/build-an-agent-plugin" target="_blank" rel="noopener">Read the Agent Plugins specification <span aria-hidden="true">↗</span></a>
+      <div class="install-intro">
+        <h2 id="install-title">Install it in your agent.</h2>
+        <p>Copilot CLI supports the complete Agent Plugins package. Claude Code and Codex CLI use the portable <code>modern-java</code> skill included in the package.</p>
       </div>
-      <div class="install-command">
-        <code>git clone https://github.com/javaevolved/javaevolved.github.io.git</code>
-        <p>Plugin path</p>
-        <code>agent-plugins/modern-java-development</code>
+      <div class="install-options">
+        <article class="install-option">
+          <div>
+            <h3>GitHub Copilot CLI</h3>
+            <p>Install the plugin directly from this repository.</p>
+          </div>
+          <code>copilot plugin install javaevolved/javaevolved.github.io:agent-plugins/modern-java-development</code>
+          <a href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference" target="_blank" rel="noopener">Copilot plugin documentation <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="install-option">
+          <div>
+            <h3>Claude Code</h3>
+            <p>Clone the repository, then install the skill for your user account.</p>
+          </div>
+          <code>git clone --depth 1 https://github.com/javaevolved/javaevolved.github.io.git</code>
+          <code>mkdir -p ~/.claude/skills &amp;&amp; cp -R javaevolved.github.io/agent-plugins/modern-java-development/skills/modern-java ~/.claude/skills/</code>
+          <p class="install-scope">For one project, copy it to <code>.claude/skills/modern-java</code> instead.</p>
+          <a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener">Claude Code skill documentation <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="install-option">
+          <div>
+            <h3>OpenAI Codex CLI</h3>
+            <p>Clone the repository, then install the skill for your user account.</p>
+          </div>
+          <code>git clone --depth 1 https://github.com/javaevolved/javaevolved.github.io.git</code>
+          <code>mkdir -p ~/.agents/skills &amp;&amp; cp -R javaevolved.github.io/agent-plugins/modern-java-development/skills/modern-java ~/.agents/skills/</code>
+          <p class="install-scope">For one project, copy it to <code>.agents/skills/modern-java</code> instead.</p>
+          <a href="https://developers.openai.com/codex/skills/" target="_blank" rel="noopener">Codex skill documentation <span aria-hidden="true">↗</span></a>
+        </article>
       </div>
     </section>
   </main>

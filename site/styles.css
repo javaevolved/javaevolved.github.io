@@ -1809,9 +1809,6 @@ footer a:hover {
 }
 
 .plugin-install {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
   max-width: 1052px;
   margin-top: 48px;
   margin-bottom: 96px;
@@ -1824,41 +1821,81 @@ footer a:hover {
 .plugin-install h2 { font-size: clamp(2rem, 4vw, 3rem); }
 
 .plugin-install p {
-  margin-top: 18px;
   color: #fff7ed;
+}
+
+.install-intro {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: end;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 247, 237, 0.3);
+}
+
+.install-intro p {
+  max-width: 60ch;
+  font-size: 1.05rem;
+}
+
+.install-intro code,
+.install-scope code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+
+.install-options {
+  display: grid;
+}
+
+.install-option {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr);
+  gap: 10px 40px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 247, 237, 0.3);
+}
+
+.install-option:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.install-option h3 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.install-option > div {
+  grid-row: 1 / span 4;
+}
+
+.install-option > div p,
+.install-option .install-scope {
+  color: #fed7aa;
+  font-size: 0.88rem;
+}
+
+.install-option > code {
+  display: block;
+  overflow-x: auto;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: #101117;
+  color: #fb923c;
+  font: 0.78rem/1.55 'JetBrains Mono', monospace;
+  white-space: nowrap;
 }
 
 .plugin-install a {
   display: inline-block;
-  margin-top: 24px;
+  justify-self: start;
+  margin-top: 4px;
+  color: #fff;
+  font-size: 0.84rem;
   font-weight: 750;
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-
-.install-command {
-  align-self: center;
-  min-width: 0;
-  padding: 24px;
-  border-radius: var(--radius-sm);
-  background: #101117;
-  color: #d9d9e2;
-  box-shadow: 12px 16px 36px rgba(124, 45, 18, 0.3);
-}
-
-.install-command code {
-  display: block;
-  overflow-x: auto;
-  color: #fb923c;
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-
-.install-command p {
-  margin: 22px 0 8px;
-  color: #7d7f8d;
-  font: 0.72rem 'JetBrains Mono', monospace;
-  text-transform: uppercase;
 }
 
 /* ---------- Responsive: ≤ 700px ---------- */
@@ -1925,7 +1962,8 @@ footer a:hover {
   }
 
   .evidence-flow,
-  .plugin-install {
+  .install-intro,
+  .install-option {
     grid-template-columns: 1fr;
   }
 
@@ -1954,6 +1992,18 @@ footer a:hover {
     width: calc(100% - 32px);
     margin: 24px 16px 72px;
     padding: 36px 24px;
+  }
+
+  .install-intro {
+    gap: 16px;
+  }
+
+  .install-option {
+    gap: 12px;
+  }
+
+  .install-option > div {
+    grid-row: auto;
   }
 }
 
