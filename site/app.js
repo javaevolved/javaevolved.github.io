@@ -445,24 +445,32 @@
      4. Copy-to-Clipboard (article pages)
      ========================================================== */
   const initCopyButtons = () => {
-    document.querySelectorAll('.copy-btn').forEach(btn => {
+    document.querySelectorAll('.copy-btn, .command-copy-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        // Find adjacent code block
-        const codeBlock = btn.closest('.code-header')?.nextElementSibling
+        const codeBlock = btn.closest('.install-command')?.querySelector('code')
+          || btn.closest('.code-header')?.nextElementSibling
           || btn.closest('.compare-panel-header')?.nextElementSibling?.querySelector('pre, code, .code-text')
           || btn.parentElement?.querySelector('pre, code, .code-text');
         if (!codeBlock) return;
 
         const text = codeBlock.textContent;
-        navigator.clipboard.writeText(text).then(() => {
+        const originalContent = btn.innerHTML;
+        const originalLabel = btn.getAttribute('aria-label');
+        const showCopied = () => {
           btn.classList.add('copied');
-          const original = btn.textContent;
-          btn.textContent = (window.i18n && window.i18n.copied) || 'Copied!';
+          if (btn.classList.contains('command-copy-btn')) {
+            btn.innerHTML = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="m3 8.25 3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            btn.setAttribute('aria-label', 'Command copied');
+          } else {
+            btn.textContent = (window.i18n && window.i18n.copied) || 'Copied!';
+          }
           setTimeout(() => {
             btn.classList.remove('copied');
-            btn.textContent = original;
+            btn.innerHTML = originalContent;
+            if (originalLabel) btn.setAttribute('aria-label', originalLabel);
           }, 2000);
-        }).catch(() => {
+        };
+        const fallbackCopy = () => {
           // Fallback for older browsers
           const textarea = document.createElement('textarea');
           textarea.value = text;
@@ -472,14 +480,14 @@
           textarea.select();
           document.execCommand('copy');
           document.body.removeChild(textarea);
-          btn.classList.add('copied');
-          const original = btn.textContent;
-          btn.textContent = (window.i18n && window.i18n.copied) || 'Copied!';
-          setTimeout(() => {
-            btn.classList.remove('copied');
-            btn.textContent = original;
-          }, 2000);
-        });
+          showCopied();
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(showCopied).catch(fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
       });
     });
   };

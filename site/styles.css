@@ -1851,8 +1851,8 @@ footer a:hover {
 .install-option {
   display: grid;
   grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr);
-  gap: 10px 40px;
-  padding: 32px 0;
+  gap: 14px 48px;
+  padding: 36px 0;
   border-bottom: 1px solid rgba(255, 247, 237, 0.3);
 }
 
@@ -1866,25 +1866,61 @@ footer a:hover {
   font-size: 1.15rem;
 }
 
-.install-option > div {
+.install-option-copy {
   grid-row: 1 / span 4;
 }
 
-.install-option > div p,
+.install-option-copy p,
 .install-option .install-scope {
   color: #fed7aa;
   font-size: 0.88rem;
 }
 
-.install-option > code {
-  display: block;
-  overflow-x: auto;
-  padding: 12px 14px;
-  border-radius: 6px;
+.install-command {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #2f3039;
+  border-radius: 8px;
   background: #101117;
+}
+
+.install-command code {
+  display: block;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 15px 18px;
   color: #fb923c;
   font: 0.78rem/1.55 'JetBrains Mono', monospace;
   white-space: nowrap;
+  scrollbar-color: #52525b transparent;
+  scrollbar-width: thin;
+}
+
+.command-copy-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  min-height: 44px;
+  border-left: 1px solid #2f3039;
+  background: #191a21;
+  color: #a1a1aa;
+  transition: background 0.15s, color 0.15s;
+}
+
+.command-copy-btn:hover {
+  background: #24252d;
+  color: #fff;
+}
+
+.command-copy-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+.command-copy-btn.copied {
+  color: #34d399;
 }
 
 .plugin-install a {
@@ -2002,7 +2038,7 @@ footer a:hover {
     gap: 12px;
   }
 
-  .install-option > div {
+  .install-option-copy {
     grid-row: auto;
   }
 }
