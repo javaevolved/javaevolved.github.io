@@ -24,10 +24,66 @@ modern-java-development/
             └── test_detect_java_version.py
 ```
 
+## Install
+
+### GitHub Copilot CLI
+
+GitHub Copilot CLI supports the Agent Plugins specification, so it can install
+the complete package directly from this repository:
+
+```bash
+copilot plugin install javaevolved/javaevolved.github.io:agent-plugins/modern-java-development
+```
+
+To install a local checkout instead, pass its plugin directory:
+
+```bash
+copilot plugin install /absolute/path/to/agent-plugins/modern-java-development
+```
+
+See the
+[GitHub Copilot CLI plugin reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference)
+for other sources and marketplace installation.
+
+### Claude Code
+
+Claude Code supports the Agent Skills format used by the `modern-java` skill.
+Clone this repository and copy the skill to your personal skills directory:
+
+```bash
+git clone --depth 1 https://github.com/javaevolved/javaevolved.github.io.git
+mkdir -p ~/.claude/skills
+cp -R javaevolved.github.io/agent-plugins/modern-java-development/skills/modern-java \
+  ~/.claude/skills/
+```
+
+For a project-only installation, copy the skill to
+`.claude/skills/modern-java` in that project instead. See the
+[Claude Code skills documentation](https://code.claude.com/docs/en/skills).
+
+### OpenAI Codex CLI
+
+Codex CLI also supports Agent Skills. Clone this repository and copy the skill
+to your personal skills directory:
+
+```bash
+git clone --depth 1 https://github.com/javaevolved/javaevolved.github.io.git
+mkdir -p ~/.agents/skills
+cp -R javaevolved.github.io/agent-plugins/modern-java-development/skills/modern-java \
+  ~/.agents/skills/
+```
+
+For a project-only installation, copy the skill to
+`.agents/skills/modern-java` in that project instead. See the
+[Codex skills documentation](https://developers.openai.com/codex/skills/).
+
+Claude Code and Codex CLI use their own product-specific plugin manifests, so
+the instructions above install the portable skill rather than the root
+Agent Plugins manifest.
+
 ## Use
 
-Install or copy this directory into any Agent Plugins-compatible client. When
-the skill is active, the agent runs the detector from the Java project root:
+When the skill is active, the agent runs the detector from the Java project root:
 
 ```bash
 python3 skills/modern-java/scripts/detect_java_version.py .
