@@ -11,9 +11,9 @@ jobs:
   benchmark:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v6
         with:
           distribution: 'temurin'
           java-version: '25'
@@ -21,7 +21,7 @@ jobs:
       - uses: jbangdev/setup-jbang@main
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
 
@@ -160,9 +160,9 @@ jobs:
   build-jar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v6
         with:
           distribution: 'temurin'
           java-version: '25'
@@ -177,7 +177,7 @@ jobs:
           java -XX:AOTCacheOutput=html-generators/generateog.aot -jar html-generators/generateog.jar
 
       - name: Upload JAR and AOT
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: generator
           path: |
@@ -190,15 +190,15 @@ jobs:
     needs: build-jar
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v6
         with:
           distribution: 'temurin'
           java-version: '25'
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.13'
 
@@ -209,7 +209,7 @@ jobs:
         run: pip install pyyaml cairosvg
 
       - name: Download JAR and AOT
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: generator
           path: html-generators
