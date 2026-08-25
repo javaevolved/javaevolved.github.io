@@ -302,7 +302,9 @@
         if (target) {
           selectItem(target);
           toggleBtn.classList.toggle('has-filter', value !== 'all');
+          return true;
         }
+        return false;
       }};
     };
 
@@ -331,8 +333,7 @@
 
     // Apply filter from a given category string (or "all" / empty for no filter)
     const applyHashFilter = (category) => {
-      if (category && catDropdownCtrl) {
-        catDropdownCtrl.setActive(category);
+      if (category && catDropdownCtrl && catDropdownCtrl.setActive(category)) {
         activeCategory = category;
         applyFilters();
         const section = document.getElementById('all-comparisons');
