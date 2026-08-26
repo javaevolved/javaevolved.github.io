@@ -1,0 +1,47 @@
+---
+id: bffeb48b-eda4-4cd1-966d-e401ba9e75a6
+slug: "standard-base64"
+title: "Standard Base64 encoding and decoding"
+category: "security"
+difficulty: "beginner"
+jdkVersion: "8"
+oldLabel: "Internal JDK API"
+modernLabel: "Java 8+"
+oldApproach: "sun.misc encoder"
+modernApproach: "Standard Base64 API"
+oldCode: |-
+  String encoded = new sun.misc.BASE64Encoder()
+      .encode(data);
+modernCode: |-
+  String encoded = Base64.getEncoder()
+      .encodeToString(data);
+summary: "Use java.util.Base64 instead of internal JDK classes or third-party codecs."
+explanation: "The standard Base64 API provides basic, URL-safe, and MIME encoders and\
+  \ decoders without relying on unsupported internal packages. Use getEncoder() and\
+  \ getDecoder() for standard Base64, or select the URL and MIME variants when the\
+  \ target format requires them."
+whyModernWins:
+- icon: "🛡️"
+  title: "Supported API"
+  desc: "Avoids inaccessible sun.misc implementation classes."
+- icon: "🧩"
+  title: "Complete variants"
+  desc: "Includes basic, URL-safe, and MIME encoders and decoders."
+- icon: "🚀"
+  title: "No dependency"
+  desc: "Encoding and decoding are built into the JDK."
+support:
+  state: "available"
+  description: "Widely available since JDK 8 (March 2014)."
+prev: "security/pem-encoding"
+next: "security/key-derivation-functions"
+related:
+- "security/pem-encoding"
+- "datetime/hex-format"
+- "strings/string-chars-stream"
+tags:
+- security
+- serialization
+docs:
+- title: "Base64"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Base64.html"
