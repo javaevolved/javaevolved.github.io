@@ -1,0 +1,51 @@
+---
+id: a1ac8e52-14cf-49be-a22a-be72de7caa4e
+slug: "comparator-factories"
+title: "Comparator factories and fluent ordering"
+category: "collections"
+difficulty: "beginner"
+jdkVersion: "8"
+oldLabel: "Anonymous comparator"
+modernLabel: "Java 8+"
+oldApproach: "Anonymous Comparator"
+modernApproach: "Comparator factories"
+oldCode: |-
+  people.sort(new Comparator<Person>() {
+      @Override
+      public int compare(Person a, Person b) {
+          int byName = a.name().compareTo(b.name());
+          return byName != 0 ? byName : Integer.compare(a.age(), b.age());
+      }
+  });
+modernCode: |-
+  people.sort(Comparator.comparing(Person::name)
+          .thenComparingInt(Person::age));
+summary: "Build readable, composable ordering rules with Comparator factory methods."
+explanation: "Comparator factories express ordering declaratively and compose primary and secondary keys without handwritten branching."
+whyModernWins:
+- icon: "🧩"
+  title: "Composable"
+  desc: "Ordering rules chain naturally."
+- icon: "👁"
+  title: "Easier to review"
+  desc: "Sort keys and priority are explicit."
+- icon: "🐛"
+  title: "Safer comparisons"
+  desc: "Specialized helpers avoid error-prone arithmetic comparators."
+support:
+  state: "available"
+  description: "Available since JDK 8 (March 2014)"
+prev: "collections/collection-bulk-operations"
+next: null
+related:
+- "collections/collection-bulk-operations"
+- "collections/reverse-list-iteration"
+- "language/static-methods-in-interfaces"
+tags:
+- collections
+- functional
+docs:
+- title: "Comparator.comparing()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html#comparing(java.util.function.Function)"
+- title: "Comparator.thenComparingInt()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Comparator.html#thenComparingInt(java.util.function.ToIntFunction)"
