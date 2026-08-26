@@ -37,7 +37,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 25 LTS (JEP 519, Sept 2025)."
-prev: "tooling/jfr-profiling"
+prev: "tooling/stack-walker"
 next: "tooling/built-in-http-server"
 related:
 - "tooling/jshell-prototyping"
