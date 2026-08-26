@@ -1,0 +1,50 @@
+---
+id: 6a0d1711-a495-490e-a830-95087e092b69
+slug: "collection-bulk-operations"
+title: "Collection bulk operations instead of mutation loops"
+category: "collections"
+difficulty: "beginner"
+jdkVersion: "8"
+oldLabel: "Iterator mutation loop"
+modernLabel: "Java 8+"
+oldApproach: "Manual iterator removal"
+modernApproach: "Collection.removeIf()"
+oldCode: |-
+  for (Iterator<Order> it = orders.iterator(); it.hasNext();) {
+      if (it.next().cancelled()) {
+          it.remove();
+      }
+  }
+modernCode: |-
+  orders.removeIf(Order::cancelled);
+summary: "Use removeIf(), replaceAll(), and List.sort() for direct collection transformations."
+explanation: "Modern collection interfaces expose common mutations directly. Methods such as removeIf(), replaceAll(), and List.sort() replace control-flow-heavy loops with operations that state the intended transformation."
+whyModernWins:
+- icon: "👁"
+  title: "Clear intent"
+  desc: "The operation describes what changes, not how to iterate."
+- icon: "🐛"
+  title: "Safer mutation"
+  desc: "Avoids manual iterator-removal rules."
+- icon: "⚡"
+  title: "Less code"
+  desc: "Common transformations become a single expression."
+support:
+  state: "available"
+  description: "Available since JDK 8 (March 2014)"
+prev: "collections/stack-to-deque"
+next: null
+related:
+- "collections/reverse-list-iteration"
+- "collections/copying-collections-immutably"
+- "streams/predicate-not"
+tags:
+- collections
+- functional
+docs:
+- title: "Collection.removeIf()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html#removeIf(java.util.function.Predicate)"
+- title: "List.replaceAll()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#replaceAll(java.util.function.UnaryOperator)"
+- title: "List.sort()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#sort(java.util.Comparator)"
