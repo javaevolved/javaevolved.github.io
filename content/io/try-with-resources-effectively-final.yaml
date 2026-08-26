@@ -39,7 +39,7 @@ support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
 prev: "io/path-of"
-next: "io/file-memory-mapping"
+next: "io/finalizers-to-resource-cleanup"
 related:
 - "io/path-of"
 - "io/reading-files"

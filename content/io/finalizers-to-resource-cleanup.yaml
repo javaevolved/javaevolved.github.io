@@ -1,0 +1,79 @@
+---
+id: 45488112-44bc-4a75-a6c6-a69849147ded
+slug: "finalizers-to-resource-cleanup"
+title: "Finalizers to deterministic resource cleanup"
+category: "io"
+difficulty: "advanced"
+jdkVersion: "9"
+oldLabel: "Finalization"
+modernLabel: "Java 9+"
+oldApproach: "Override finalize()"
+modernApproach: "AutoCloseable and Cleaner"
+oldCode: |-
+  @Override
+  protected void finalize() throws Throwable {
+      nativeHandle.release();
+  }
+modernCode: |-
+  final class NativeResource implements AutoCloseable {
+      private static final Cleaner CLEANER = Cleaner.create();
+
+      private static final class State implements Runnable {
+          private final long handle;
+
+          State(long handle) {
+              this.handle = handle;
+          }
+
+          @Override
+          public void run() {
+              release(handle);
+          }
+      }
+
+      private final Cleaner.Cleanable cleanable;
+
+      NativeResource(long handle) {
+          cleanable = CLEANER.register(this, new State(handle));
+      }
+
+      @Override
+      public void close() {
+          cleanable.clean();
+      }
+  }
+summary: "Replace finalization with AutoCloseable and use Cleaner only as a defensive fallback."
+explanation: "Finalization is deprecated for removal and provides neither prompt cleanup\
+  \ nor reliable ordering. Implement AutoCloseable so callers can release resources deterministically\
+  \ with try-with-resources. For leaked resources, Cleaner can invoke the same idempotent\
+  \ cleanup action as a last resort; its action must not retain the registered object."
+whyModernWins:
+- icon: "⏱"
+  title: "Deterministic"
+  desc: "Try-with-resources releases resources at a known point."
+- icon: "🛡"
+  title: "Safer lifecycle"
+  desc: "Avoids finalizer resurrection and unpredictable ordering."
+- icon: "🧹"
+  title: "Defensive fallback"
+  desc: "Cleaner can recover leaked resources without overriding finalize()."
+support:
+  state: "available"
+  description: "Cleaner and finalization deprecation available since JDK 9 (September 2017)"
+prev: "io/try-with-resources-effectively-final"
+next: "io/file-memory-mapping"
+related:
+- "io/try-with-resources-effectively-final"
+- "io/file-memory-mapping"
+- "concurrency/executor-try-with-resources"
+tags:
+- io
+- native
+- migration
+docs:
+- title: "Cleaner"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ref/Cleaner.html"
+- title: "AutoCloseable"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html"
+- title: "JEP 421: Deprecate Finalization for Removal"
+  href: "https://openjdk.org/jeps/421"

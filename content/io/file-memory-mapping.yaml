@@ -52,7 +52,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 22 (March 2024)"
-prev: "io/try-with-resources-effectively-final"
+prev: "io/finalizers-to-resource-cleanup"
 next: "io/files-mismatch"
 related:
 - "io/http-client"
