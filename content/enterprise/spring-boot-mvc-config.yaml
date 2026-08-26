@@ -1,0 +1,61 @@
+---
+id: 111
+slug: "spring-boot-mvc-config"
+title: "Spring Boot MVC Configuration"
+category: "enterprise"
+difficulty: "beginner"
+jdkVersion: "17"
+oldLabel: "Spring Boot 1.x"
+modernLabel: "Spring Boot 4.x"
+oldApproach: "WebMvcConfigurerAdapter with @EnableWebMvc"
+modernApproach: "WebMvcConfigurer with Boot Auto-Configuration"
+oldCode: |-
+  @EnableWebMvc
+  @Configuration
+  public class WebConfig extends WebMvcConfigurerAdapter {
+      @Override
+      public void addViewControllers(
+              ViewControllerRegistry registry) {
+          registry.addViewController("/").setViewName("home");
+      }
+  }
+modernCode: |-
+  @Configuration
+  public class WebConfig implements WebMvcConfigurer {
+      @Override
+      public void addViewControllers(
+              ViewControllerRegistry registry) {
+          registry.addViewController("/").setViewName("home");
+      }
+  }
+summary: "Replace the removed WebMvcConfigurerAdapter with WebMvcConfigurer and retain Spring Boot's MVC auto-configuration."
+explanation: "Spring Boot 1.x applications commonly extended WebMvcConfigurerAdapter because Java interfaces could not provide default methods. Modern Spring Framework versions provide default implementations directly on WebMvcConfigurer, so implement the interface and override only the methods you need. In a Spring Boot application, do not add @EnableWebMvc unless you intentionally want to take full control of MVC configuration: it disables Boot's MVC auto-configuration, including its usual converters, static-resource handling, and other defaults."
+whyModernWins:
+- icon: "🧹"
+  title: "No removed adapter"
+  desc: "WebMvcConfigurer supplies default methods, so there is no adapter superclass to extend."
+- icon: "⚙️"
+  title: "Keeps Boot defaults"
+  desc: "Without @EnableWebMvc, Spring Boot continues to configure MVC infrastructure automatically."
+- icon: "🎯"
+  title: "Override only what matters"
+  desc: "Implement the interface and customize just the MVC hook required by the application."
+support:
+  state: "available"
+  description: "Available in Spring Boot 4.0 with Spring Framework 7.0 (requires Java 17+)"
+prev: "enterprise/spring-null-safety-jspecify"
+next: null
+related:
+- "enterprise/spring-api-versioning"
+- "enterprise/spring-xml-config-vs-annotations"
+- "enterprise/spring-null-safety-jspecify"
+tags:
+- spring
+- spring-boot
+- webmvc
+- migration
+docs:
+- title: "Spring Framework — MVC Java Configuration"
+  href: "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config.html"
+- title: "Spring Boot — MVC Auto-configuration"
+  href: "https://docs.spring.io/spring-boot/reference/web/servlet.html"

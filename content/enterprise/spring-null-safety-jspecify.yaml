@@ -77,7 +77,7 @@ support:
   state: "available"
   description: "Available since Spring Framework 7.0 (requires Java 17+)"
 prev: "enterprise/jdbc-resultset-vs-jpa-criteria"
-next: null
+next: "enterprise/spring-boot-mvc-config"
 related:
 - "errors/helpful-npe"
 - "errors/optional-orelsethrow"
