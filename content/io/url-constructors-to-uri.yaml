@@ -1,0 +1,52 @@
+---
+id: d0e90aba-b424-4b96-b0cc-471f6141d71a
+slug: "url-constructors-to-uri"
+title: "Deprecated URL constructors to URI"
+category: "io"
+difficulty: "intermediate"
+jdkVersion: "20"
+oldLabel: "Deprecated URL constructor"
+modernLabel: "Java 20+"
+oldApproach: "Direct URL construction"
+modernApproach: "URI then URL"
+oldCode: |-
+  URL endpoint =
+      new URL("https://example.com/api?q=java");
+modernCode: |-
+  URI endpointUri =
+      URI.create("https://example.com/api?q=java");
+  URL endpoint = endpointUri.toURL();
+summary: "Parse and compose resource identifiers as URI values before converting to URL\
+  \ when necessary."
+explanation: "URL constructors were deprecated in JDK 20 because URL parsing and equality\
+  \ have surprising protocol-handler behavior. URI is the preferred immutable representation\
+  \ for parsing, composition, comparison, and normalization; convert only at APIs that\
+  \ require URL."
+whyModernWins:
+- icon: "✅"
+  title: "Avoids deprecation"
+  desc: "Removes use of deprecated URL constructors."
+- icon: "🧠"
+  title: "Predictable semantics"
+  desc: "URI comparison does not perform network-dependent resolution."
+- icon: "🧩"
+  title: "Better composition"
+  desc: "URI is designed for parsing and manipulating identifiers."
+support:
+  state: "available"
+  description: "URL constructors deprecated since JDK 20 (March 2023)"
+prev: "io/http-client"
+next: "io/io-class-console-io"
+related:
+- "io/http-client"
+- "io/path-of"
+- "io/reading-files"
+tags:
+- io
+- http
+- migration
+docs:
+- title: "URI"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URI.html"
+- title: "URL"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URL.html"
