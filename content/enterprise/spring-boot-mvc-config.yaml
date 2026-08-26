@@ -44,7 +44,7 @@ support:
   state: "available"
   description: "Available in Spring Boot 4.0 with Spring Framework 7.0 (requires Java 17+)"
 prev: "enterprise/spring-null-safety-jspecify"
-next: null
+next: "collections/stack-to-deque"
 related:
 - "enterprise/spring-api-versioning"
 - "enterprise/spring-xml-config-vs-annotations"
