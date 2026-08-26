@@ -9,9 +9,11 @@ import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.SequencedMap;
+import java.util.UUID;
 
 /** Loads content JSON/YAML files and category properties. */
 public final class ContentLoader {
@@ -45,6 +47,7 @@ public final class ContentLoader {
 
     public static SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
         var snippets = new LinkedHashMap<String, Snippet>();
+        var ids = new HashSet<String>();
         for (var cat : CATEGORY_DISPLAY.sequencedKeySet()) {
             var catDir = Path.of(CONTENT_DIR, cat);
             if (!Files.isDirectory(catDir)) continue;
@@ -58,11 +61,34 @@ public final class ContentLoader {
             for (var path : sorted) {
                 var ext = path.getFileName().toString();
                 ext = ext.substring(ext.lastIndexOf('.') + 1);
-                var snippet = new Snippet(MAPPERS.get(ext).readTree(Files.readString(path)));
+                var node = MAPPERS.get(ext).readTree(Files.readString(path));
+                var id = requireUuidId(node, path);
+                if (!ids.add(id)) {
+                    throw new IllegalArgumentException("Duplicate UUID id \"" + id + "\" in " + path);
+                }
+                var snippet = new Snippet(node);
                 snippets.put(snippet.key(), snippet);
             }
         }
         return snippets;
+    }
+
+    static String requireUuidId(JsonNode node, Path path) {
+        var idNode = node.get("id");
+        if (idNode == null || !idNode.isTextual()) {
+            throw new IllegalArgumentException("Missing or non-string UUID id in " + path);
+        }
+
+        var id = idNode.asText().strip();
+        try {
+            var parsed = UUID.fromString(id);
+            if (!parsed.toString().equals(id)) {
+                throw new IllegalArgumentException("UUID id must use canonical lowercase form");
+            }
+            return id;
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid UUID id \"" + id + "\" in " + path, e);
+        }
     }
 
     public static SequencedMap<String, String> loadProperties(String file) {
