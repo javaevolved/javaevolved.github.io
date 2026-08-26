@@ -1,5 +1,5 @@
 ---
-id: 104
+id: f547e15a-f151-45e2-9000-a9b20498b4e9
 slug: "manual-transaction-vs-declarative"
 title: "Manual JPA Transaction vs Declarative @Transactional"
 category: "enterprise"

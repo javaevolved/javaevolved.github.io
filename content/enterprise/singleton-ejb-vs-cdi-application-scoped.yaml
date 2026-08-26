@@ -1,5 +1,5 @@
 ---
-id: 108
+id: 942229f5-9ef4-4f75-97b9-1bcf19db757b
 slug: "singleton-ejb-vs-cdi-application-scoped"
 title: "Singleton EJB vs CDI @ApplicationScoped"
 category: "enterprise"
