@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-java@v6
         with:
@@ -26,14 +28,27 @@ jobs:
 
       - uses: jbangdev/setup-jbang@main
 
-      - name: Run all proof scripts
+      - name: Run proof scripts
         shell: bash
         run: |
           passed=0
           failed=0
           failures=()
+          scripts=()
 
-          while IFS= read -r -d '' script; do
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            while IFS= read -r -d '' script; do
+              [[ "$script" == *.java ]] && scripts+=("$script")
+            done < <(git diff --name-only --diff-filter=ACMR -z \
+              "${{ github.event.pull_request.base.sha }}" \
+              "${{ github.event.pull_request.head.sha }}" -- proof/)
+          else
+            while IFS= read -r -d '' script; do
+              scripts+=("$script")
+            done < <(find proof -name '*.java' -print0 | sort -z)
+          fi
+
+          for script in "${scripts[@]}"; do
             name="${script#proof/}"
             if jbang "$script" > /dev/null 2>&1; then
               echo "✅ $name"
@@ -43,7 +58,7 @@ jobs:
               failures+=("$name")
               failed=$((failed + 1))
             fi
-          done < <(find proof -name '*.java' -print0 | sort -z)
+          done
 
           echo ""
           echo "Results: $passed passed, $failed failed out of $((passed + failed)) scripts"

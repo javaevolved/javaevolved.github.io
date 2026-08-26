@@ -48,6 +48,7 @@ Content files are YAML (preferred) or JSON under `content/{category}/{slug}.yaml
 | `category` | Must match parent folder name |
 | `whyModernWins` | Exactly **3** entries, each with `icon`, `title`, `desc` |
 | `related` | Exactly **3** entries as `category/slug` paths (cross-category OK) |
+| `tags` | Non-empty list of slugs registered in `html-generators/tags.properties` |
 | `docs` | At least **1** entry with `title` and `href` |
 | `prev` / `next` | `category/slug` path or `null` for first/last in the global chain |
 | `jdkVersion` | The JDK version where the feature became **final** (not preview) |
@@ -57,10 +58,11 @@ Content files are YAML (preferred) or JSON under `content/{category}/{slug}.yaml
 ### Adding a new pattern
 
 1. Create `content/{category}/new-slug.yaml` with all required fields (use `content/template.json` as reference).
-2. Update `prev`/`next` in the adjacent patterns to maintain the navigation chain.
-3. Create `proof/{category}/{PascalCaseSlug}.java` — JBang script wrapping the modern code.
-4. Run `jbang html-generators/generate.java` and verify it completes.
-5. Translations are optional — the AI translation workflow handles them, or create partial files under `translations/content/{locale}/`.
+2. Add a non-empty `tags` list. Every tag slug must already exist in `html-generators/tags.properties`; add new `slug=Display Name` entries there in the same change.
+3. Update `prev`/`next` in the adjacent patterns to maintain the navigation chain.
+4. Create `proof/{category}/{PascalCaseSlug}.java` — JBang script wrapping the modern code.
+5. Run `jbang html-generators/generate.java` and verify it completes. The generator rejects missing, empty, malformed, and unregistered tags.
+6. Translations are optional — the AI translation workflow handles them, or create partial files under `translations/content/{locale}/`.
 
 ### Removing or reordering a pattern
 

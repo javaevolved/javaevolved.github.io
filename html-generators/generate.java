@@ -179,7 +179,9 @@ record Snippet(JsonNode node) {
 
     List<String> tags() {
         var t = node.get("tags");
-        if (t == null || !t.isArray()) return List.of();
+        if (t == null || !t.isArray() || t.isEmpty()) {
+            throw new IllegalArgumentException("Missing or empty tags array in " + key());
+        }
         var tagList = new ArrayList<String>();
         t.forEach(n -> {
             var tag = n.asText().strip();
