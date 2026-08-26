@@ -35,7 +35,7 @@ whyModernWins:
 support:
   state: "available"
   description: "URL constructors deprecated since JDK 20 (March 2023)"
-prev: "io/http-client"
+prev: "io/http-websocket-client"
 next: "io/io-class-console-io"
 related:
 - "io/http-client"
