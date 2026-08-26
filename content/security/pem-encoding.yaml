@@ -40,7 +40,7 @@ support:
   state: "preview"
   description: "Preview in JDK 25 (JEP 470). Requires --enable-preview."
 prev: "datetime/locale-of"
-next: "security/key-derivation-functions"
+next: "security/standard-base64"
 related:
 - "security/key-derivation-functions"
 - "security/strong-random"

@@ -45,7 +45,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 25 LTS (JEP 510, Sept 2025)."
-prev: "security/pem-encoding"
+prev: "security/standard-base64"
 next: "security/strong-random"
 related:
 - "security/pem-encoding"
