@@ -36,7 +36,7 @@ support:
   state: "available"
   description: "Widely available since JDK 16 (March 2021)"
 prev: "collections/reverse-list-iteration"
-next: "strings/string-isblank"
+next: "collections/legacy-synchronized-collections"
 related:
 - "collections/immutable-map-creation"
 - "collections/immutable-set-creation"

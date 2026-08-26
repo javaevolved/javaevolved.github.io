@@ -1,0 +1,48 @@
+---
+id: d54a4e9f-74b9-4579-84a3-2541fe7b4272
+slug: "legacy-synchronized-collections"
+title: "Legacy synchronized collections to modern alternatives"
+category: "collections"
+difficulty: "intermediate"
+jdkVersion: "5"
+oldLabel: "Legacy synchronized collection"
+modernLabel: "Concurrent Collections API"
+oldApproach: "Hashtable"
+modernApproach: "ConcurrentHashMap"
+oldCode: |-
+  Hashtable<String, Session> sessions = new Hashtable<>();
+  sessions.put(id, session);
+modernCode: |-
+  ConcurrentMap<String, Session> sessions = new ConcurrentHashMap<>();
+  sessions.put(id, session);
+summary: "Replace Vector and Hashtable with collections selected for actual mutability and concurrency needs."
+explanation: "Vector and Hashtable synchronize every operation through legacy APIs. Modern\
+  \ code should normally use ArrayList or HashMap for thread-confined data, and purpose-built\
+  \ concurrent collections when shared mutation is required."
+whyModernWins:
+- icon: "🎯"
+  title: "Intentional concurrency"
+  desc: "The chosen type documents whether sharing is expected."
+- icon: "⚡"
+  title: "Better scalability"
+  desc: "ConcurrentHashMap avoids a single table-wide lock for normal access."
+- icon: "🧩"
+  title: "Modern APIs"
+  desc: "Works naturally with current collection and concurrent-map operations."
+support:
+  state: "available"
+  description: "Widely available since JDK 5 (September 2004)"
+prev: "collections/unmodifiable-collectors"
+next: "strings/string-isblank"
+related:
+- "collections/immutable-map-creation"
+- "collections/copying-collections-immutably"
+- "concurrency/lock-free-lazy-init"
+tags:
+- collections
+- concurrency
+docs:
+- title: "ConcurrentHashMap"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html"
+- title: "ConcurrentMap"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentMap.html"
