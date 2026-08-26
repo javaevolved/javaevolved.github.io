@@ -33,7 +33,7 @@ support:
   state: "available"
   description: "Available since JDK 6 (December 2006)"
 prev: "enterprise/spring-boot-mvc-config"
-next: null
+next: "collections/collection-bulk-operations"
 related:
 - "collections/sequenced-collections"
 - "collections/reverse-list-iteration"
