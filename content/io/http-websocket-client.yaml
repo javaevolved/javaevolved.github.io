@@ -1,5 +1,5 @@
 ---
-id: 115
+id: "efd29a06-ffe7-4c3e-ba0f-627eee35b1a2"
 slug: "http-websocket-client"
 title: "WebSocket clients with java.net.http"
 category: "io"
