@@ -52,7 +52,7 @@ support:
   state: "available"
   description: "Available since JDK 18 (March 2022)"
 prev: "tooling/compact-object-headers"
-next: "tooling/aot-class-preloading"
+next: "tooling/class-file-api"
 related:
 - "io/http-client"
 - "tooling/single-file-execution"

@@ -1,0 +1,51 @@
+---
+id: 25fec0a0-53ed-4b30-b30c-6f5a80feb1c2
+slug: "class-file-api"
+title: "Class-file parsing with the standard API"
+category: "tooling"
+difficulty: "advanced"
+jdkVersion: "24"
+oldLabel: "Third-party bytecode parser"
+modernLabel: "Java 24+"
+oldApproach: "ASM ClassReader"
+modernApproach: "Class-File API"
+oldCode: |-
+  ClassReader reader = new ClassReader(
+          Files.readAllBytes(classFile));
+  reader.accept(visitor, 0);
+modernCode: |-
+  ClassModel model = ClassFile.of().parse(classFile);
+  model.methods().forEach(method ->
+          System.out.println(
+                  method.methodName().stringValue()));
+summary: "Use the standard Class-File API for class-file parsing and transformation."
+explanation: "The Class-File API, finalized in JDK 24, provides supported models and\
+  \ transformations for JVM class files. It tracks the class-file format with the JDK\
+  \ and removes the need for third-party libraries in many inspection and generation\
+  \ tasks."
+whyModernWins:
+- icon: "🛡"
+  title: "Supported API"
+  desc: "Ships and evolves with the JDK class-file format."
+- icon: "📦"
+  title: "Fewer dependencies"
+  desc: "Handles common bytecode tasks without an external library."
+- icon: "🧩"
+  title: "Composable models"
+  desc: "Parsing, building, and transformation share one API."
+support:
+  state: "available"
+  description: "Finalized in JDK 24 (JEP 484, March 2025)."
+prev: "tooling/built-in-http-server"
+next: "tooling/aot-class-preloading"
+related:
+- "tooling/aot-class-preloading"
+- "tooling/compact-object-headers"
+- "tooling/multi-file-source"
+tags:
+- tooling
+docs:
+- title: "ClassFile"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/classfile/ClassFile.html"
+- title: "Class-File API (JEP 484)"
+  href: "https://openjdk.org/jeps/484"
