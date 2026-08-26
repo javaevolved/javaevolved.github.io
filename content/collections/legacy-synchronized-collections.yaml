@@ -33,7 +33,7 @@ support:
   state: "available"
   description: "Widely available since JDK 5 (September 2004)"
 prev: "collections/unmodifiable-collectors"
-next: "strings/string-isblank"
+next: "collections/map-compute-and-merge"
 related:
 - "collections/immutable-map-creation"
 - "collections/copying-collections-immutably"

@@ -1,0 +1,56 @@
+---
+id: fe4cbd51-2be6-4d7b-86c5-0ce82ce9bf10
+slug: "map-compute-and-merge"
+title: "Atomic map updates with compute and merge"
+category: "collections"
+difficulty: "intermediate"
+jdkVersion: "8"
+oldLabel: "Manual lookup and update"
+modernLabel: "Java 8+"
+oldApproach: "get() + null check + put()"
+modernApproach: "computeIfAbsent()"
+oldCode: |-
+  List<String> values = groups.get(key);
+  if (values == null) {
+      values = new ArrayList<>();
+      groups.put(key, values);
+  }
+  values.add(value);
+modernCode: |-
+  groups.computeIfAbsent(key, ignored -> new ArrayList<>())
+          .add(value);
+summary: "Replace multi-step map lookup and mutation with computeIfAbsent(), compute(), and merge()."
+explanation: "Map computation methods combine lookup and update intent into one operation.\
+  \ Use computeIfAbsent() for lazy initialization, compute() when the new value depends\
+  \ on the existing value, and merge() to combine a supplied value with one already in\
+  \ the map. On concurrent map implementations, supported computations also avoid races\
+  \ caused by separate get() and put() calls."
+whyModernWins:
+- icon: "⚡"
+  title: "Fewer lookups"
+  desc: "Avoids repeated key access."
+- icon: "🧵"
+  title: "Better concurrency semantics"
+  desc: "Concurrent maps can perform supported updates atomically."
+- icon: "👁"
+  title: "Clear intent"
+  desc: "The initialization rule appears beside the access."
+support:
+  state: "available"
+  description: "Widely available since JDK 8 (March 2014)"
+prev: "collections/legacy-synchronized-collections"
+next: "strings/string-isblank"
+related:
+- "collections/legacy-synchronized-collections"
+- "collections/immutable-map-creation"
+- "concurrency/lock-free-lazy-init"
+tags:
+- collections
+- functional
+docs:
+- title: "Map.computeIfAbsent()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html#computeIfAbsent(K,java.util.function.Function)"
+- title: "Map.compute()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html#compute(K,java.util.function.BiFunction)"
+- title: "Map.merge()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html#merge(K,V,java.util.function.BiFunction)"
