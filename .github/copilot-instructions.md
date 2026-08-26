@@ -44,6 +44,7 @@ Content files are YAML (preferred) or JSON under `content/{category}/{slug}.yaml
 
 | Field | Constraint |
 |-------|-----------|
+| `id` | Unique UUID string (generate independently with `uuidgen`) |
 | `slug` | Must match filename (without extension) |
 | `category` | Must match parent folder name |
 | `whyModernWins` | Exactly **3** entries, each with `icon`, `title`, `desc` |
@@ -57,11 +58,11 @@ Content files are YAML (preferred) or JSON under `content/{category}/{slug}.yaml
 
 ### Adding a new pattern
 
-1. Create `content/{category}/new-slug.yaml` with all required fields (use `content/template.json` as reference).
+1. Create `content/{category}/new-slug.yaml` with all required fields (use `content/template.json` as reference) and generate its `id` with `uuidgen`.
 2. Add a non-empty `tags` list. Every tag slug must already exist in `html-generators/tags.properties`; add new `slug=Display Name` entries there in the same change.
 3. Update `prev`/`next` in the adjacent patterns to maintain the navigation chain.
 4. Create `proof/{category}/{PascalCaseSlug}.java` — JBang script wrapping the modern code.
-5. Run `jbang html-generators/generate.java` and verify it completes. The generator rejects missing, empty, malformed, and unregistered tags.
+5. Run `jbang html-generators/generate.java` and verify it completes. The generator rejects missing, malformed, or duplicate UUIDs as well as missing, empty, malformed, and unregistered tags.
 6. Translations are optional — the AI translation workflow handles them, or create partial files under `translations/content/{locale}/`.
 
 ### Removing or reordering a pattern
