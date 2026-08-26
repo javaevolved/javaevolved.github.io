@@ -145,6 +145,7 @@ static final Set<String> EXCLUDED_KEYS = Set.of("_path", "prev", "next", "relate
 
 record Snippet(JsonNode node) {
     String get(String f)    { return node.get(f).asText(); }
+    String id()             { return get("id"); }
     String slug()           { return get("slug"); }
     String category()       { return get("category"); }
     String title()          { return get("title"); }
@@ -331,6 +332,7 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
 
 SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
     SequencedMap<String, Snippet> snippets = new LinkedHashMap<>();
+    var ids = new HashSet<String>();
     for (var cat : CATEGORY_DISPLAY.sequencedKeySet()) {
         var catDir = Path.of(CONTENT_DIR, cat);
         if (!Files.isDirectory(catDir)) continue;
@@ -346,11 +348,33 @@ SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
             var filename = path.getFileName().toString();
             var ext = filename.substring(filename.lastIndexOf('.') + 1);
             var json = MAPPERS.get(ext).readTree(Files.readString(path));
+            var id = requireUuidId(json, path);
+            if (!ids.add(id)) {
+                throw new IllegalArgumentException("Duplicate UUID id \"" + id + "\" in " + path);
+            }
             var snippet = new Snippet(json);
             snippets.put(snippet.key(), snippet);
         }
     }
     return snippets;
+}
+
+String requireUuidId(JsonNode node, Path path) {
+    var idNode = node.get("id");
+    if (idNode == null || !idNode.isTextual()) {
+        throw new IllegalArgumentException("Missing or non-string UUID id in " + path);
+    }
+
+    var id = idNode.asText().strip();
+    try {
+        var parsed = UUID.fromString(id);
+        if (!parsed.toString().equals(id)) {
+            throw new IllegalArgumentException("UUID id must use canonical lowercase form");
+        }
+        return id;
+    } catch (IllegalArgumentException e) {
+        throw new IllegalArgumentException("Invalid UUID id \"" + id + "\" in " + path, e);
+    }
 }
 
 String escape(String text) {
@@ -638,7 +662,7 @@ static final Set<String> TRANSLATABLE_FIELDS = Set.of(
 /**
  * Overlay translated content onto the English base.
  * Translation files contain only translatable fields; everything else
- * (id, slug, category, difficulty, code, navigation, docs, etc.)
+ * (UUID id, slug, category, difficulty, code, navigation, docs, etc.)
  * is always taken from the English source of truth.
  */
 Snippet resolveSnippet(Snippet englishSnippet, String locale) {

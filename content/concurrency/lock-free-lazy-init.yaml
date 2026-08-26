@@ -1,5 +1,5 @@
 ---
-id: 55
+id: d8c32443-3da4-462b-9a37-ffaff0dbf3ec
 slug: "lock-free-lazy-init"
 title: "Lock-free lazy initialization"
 category: "concurrency"

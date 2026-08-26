@@ -1,5 +1,5 @@
 ---
-id: 51
+id: 504dc724-f73d-4b16-8be0-41098927b23a
 slug: "executor-try-with-resources"
 title: "ExecutorService auto-close"
 category: "concurrency"
