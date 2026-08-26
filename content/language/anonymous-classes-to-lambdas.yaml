@@ -1,0 +1,49 @@
+---
+id: bbccea66-79bb-4bf9-80ea-e6bdd96a7bfc
+slug: "anonymous-classes-to-lambdas"
+title: "Anonymous classes to lambdas and method references"
+category: "language"
+difficulty: "beginner"
+jdkVersion: "8"
+oldLabel: "Anonymous class"
+modernLabel: "Java 8+"
+oldApproach: "Anonymous class"
+modernApproach: "Method reference"
+oldCode: |-
+  button.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent event) {
+          save(event);
+      }
+  });
+modernCode: |-
+  button.addActionListener(this::save);
+summary: "Replace single-method anonymous classes with concise lambdas and method references."
+explanation: "Functional interfaces can be implemented with lambdas or method references. This removes anonymous-class ceremony while preserving static typing and the same callback contract."
+whyModernWins:
+- icon: "⚡"
+  title: "Less boilerplate"
+  desc: "Removes the class declaration and override ceremony."
+- icon: "👁"
+  title: "Better readability"
+  desc: "Keeps attention on the operation being performed."
+- icon: "🔒"
+  title: "Still type-safe"
+  desc: "The compiler checks the target functional-interface signature."
+support:
+  state: "available"
+  description: "Available since JDK 8 (March 2014)."
+prev: "tooling/junit6-with-jspecify"
+next: "language/default-interface-methods"
+related:
+- "language/default-interface-methods"
+- "streams/predicate-not"
+- "collections/collection-bulk-operations"
+tags:
+- functional
+- interfaces
+docs:
+- title: "Lambda Expressions"
+  href: "https://dev.java/learn/lambdas/"
+- title: "Method References"
+  href: "https://dev.java/learn/lambdas/method-references/"
