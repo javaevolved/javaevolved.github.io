@@ -40,7 +40,7 @@ support:
   state: "available"
   description: "Widely available since JDK 9/11 (open-sourced in 11)"
 prev: "tooling/multi-file-source"
-next: "tooling/compact-object-headers"
+next: "tooling/stack-walker"
 related:
 - "tooling/multi-file-source"
 - "tooling/jshell-prototyping"

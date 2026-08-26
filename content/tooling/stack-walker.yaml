@@ -1,0 +1,52 @@
+---
+id: 35f7b2bd-cbf2-4b59-8553-801367e6ceee
+slug: "stack-walker"
+title: "Lazy stack inspection with StackWalker"
+category: "tooling"
+difficulty: "intermediate"
+jdkVersion: "9"
+oldLabel: "Materialized stack trace"
+modernLabel: "Java 9+"
+oldApproach: "Thread.getStackTrace()"
+modernApproach: "StackWalker"
+oldCode: |-
+  StackTraceElement caller = Thread.currentThread()
+          .getStackTrace()[2];
+  String callerClass = caller.getClassName();
+modernCode: |-
+  String callerClass = StackWalker.getInstance()
+          .walk(frames -> frames.skip(1)
+                  .findFirst()
+                  .orElseThrow()
+                  .getClassName());
+summary: "Inspect stack frames lazily with StackWalker instead of materializing a complete stack trace."
+explanation: "StackWalker exposes a lazy stream of stack frames and configurable access\
+  \ to retained class references. Code can stop once it finds the needed frame rather\
+  \ than allocating an entire stack-trace array."
+whyModernWins:
+- icon: "⚡"
+  title: "Lazy traversal"
+  desc: "Visits only the frames the operation needs."
+- icon: "🧩"
+  title: "Stream-friendly"
+  desc: "Filtering and selection use standard stream operations."
+- icon: "🎛"
+  title: "Configurable"
+  desc: "Options support class references and hidden or reflective frames."
+support:
+  state: "available"
+  description: "Widely available since JDK 9 (September 2017)"
+prev: "tooling/jfr-profiling"
+next: "tooling/compact-object-headers"
+related:
+- "tooling/jfr-profiling"
+- "concurrency/process-api"
+- "errors/helpful-npe"
+tags:
+- tooling
+- performance
+docs:
+- title: "StackWalker"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/StackWalker.html"
+- title: "Stack-Walking API (JEP 259)"
+  href: "https://openjdk.org/jeps/259"
