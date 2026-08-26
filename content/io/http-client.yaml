@@ -43,7 +43,7 @@ support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
 prev: "concurrency/lock-free-lazy-init"
-next: "io/io-class-console-io"
+next: "io/url-constructors-to-uri"
 related:
 - "io/reading-files"
 - "io/inputstream-transferto"
