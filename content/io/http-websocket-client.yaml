@@ -1,0 +1,65 @@
+---
+id: 115
+slug: "http-websocket-client"
+title: "WebSocket clients with java.net.http"
+category: "io"
+difficulty: "intermediate"
+jdkVersion: "11"
+oldLabel: "Third-party library"
+modernLabel: "Java 11+"
+oldApproach: "Third-party WebSocket client"
+modernApproach: "java.net.http.WebSocket"
+oldCode: |-
+  WebSocketClient client =
+      new WebSocketClient(serverUri) {
+          @Override
+          public void onMessage(String message) {
+              handle(message);
+          }
+      };
+  client.connect();
+modernCode: |-
+  HttpClient.newHttpClient()
+      .newWebSocketBuilder()
+      .buildAsync(serverUri,
+          new WebSocket.Listener() {
+              @Override
+              public CompletionStage<?> onText(
+                      WebSocket socket,
+                      CharSequence data,
+                      boolean last) {
+                  handle(data.toString());
+                  return WebSocket.Listener.super
+                      .onText(socket, data, last);
+              }
+          });
+summary: "Use the standard asynchronous WebSocket client instead of adding a third-party dependency."
+explanation: "The java.net.http package includes an asynchronous WebSocket client integrated with the standard HTTP client. Connections are established with CompletableFuture, listener callbacks support non-blocking message processing through CompletionStage, and the client shares the JDK's standard proxy, TLS, and executor configuration."
+whyModernWins:
+- icon: "📦"
+  title: "No extra dependency"
+  desc: "The WebSocket client ships with the JDK."
+- icon: "🧵"
+  title: "Asynchronous API"
+  desc: "Connection and message handling compose with CompletionStage."
+- icon: "🔗"
+  title: "Shared HTTP stack"
+  desc: "Proxy, TLS, and executor configuration use standard JDK facilities."
+support:
+  state: "available"
+  description: "Widely available since JDK 11 (September 2018)"
+prev: "io/http-client"
+next: "io/io-class-console-io"
+related:
+- "io/http-client"
+- "concurrency/completablefuture-chaining"
+- "concurrency/concurrent-http-virtual"
+tags:
+- http
+- io
+- async
+docs:
+- title: "WebSocket"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.net.http/java/net/http/WebSocket.html"
+- title: "HTTP Client (JEP 321)"
+  href: "https://openjdk.org/jeps/321"

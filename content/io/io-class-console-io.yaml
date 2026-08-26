@@ -43,7 +43,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 25 alongside compact source files (JEP 512)"
-prev: "io/http-client"
+prev: "io/http-websocket-client"
 next: "io/reading-files"
 related:
 - "language/compact-source-files"
