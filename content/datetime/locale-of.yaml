@@ -1,0 +1,45 @@
+---
+id: 115
+slug: "locale-of"
+title: "Locale constructors to Locale.of()"
+category: "datetime"
+difficulty: "beginner"
+jdkVersion: "19"
+oldLabel: "Deprecated constructor"
+modernLabel: "Java 19+"
+oldApproach: "Locale constructors"
+modernApproach: "Locale.of()"
+oldCode: |-
+  Locale brazilianPortuguese =
+      new Locale("pt", "BR");
+modernCode: |-
+  Locale brazilianPortuguese =
+      Locale.of("pt", "BR");
+summary: "Create language and region locales with Locale.of() instead of deprecated constructors."
+explanation: "Locale factory methods replace constructors deprecated in JDK 19. The factory\
+  \ form is clearer, aligns with other value-based APIs, and centralizes locale creation."
+whyModernWins:
+- icon: "✅"
+  title: "Supported API"
+  desc: "Avoids deprecated constructors."
+- icon: "👁"
+  title: "Clear construction"
+  desc: "The named factory communicates intent."
+- icon: "🧩"
+  title: "Consistent style"
+  desc: "Matches modern JDK value-object factories."
+support:
+  state: "available"
+  description: "Available since JDK 19 (September 2022)"
+prev: "datetime/hex-format"
+next: "security/pem-encoding"
+related:
+- "datetime/date-formatting"
+- "datetime/java-time-basics"
+- "strings/string-formatted"
+tags:
+- datetime
+- constructors
+docs:
+- title: "Locale.of()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Locale.html#of(java.lang.String,java.lang.String)"

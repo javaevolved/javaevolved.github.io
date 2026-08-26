@@ -41,7 +41,7 @@ support:
   state: "available"
   description: "Widely available since JDK 17 LTS (Sept 2021)"
 prev: "datetime/math-clamp"
-next: "security/pem-encoding"
+next: "datetime/locale-of"
 related:
 - "datetime/date-formatting"
 - "datetime/instant-precision"
