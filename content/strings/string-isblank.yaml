@@ -32,7 +32,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "collections/unmodifiable-collectors"
+prev: "collections/legacy-synchronized-collections"
 next: "strings/string-strip"
 related:
 - "strings/string-formatted"
