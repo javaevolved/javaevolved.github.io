@@ -8,7 +8,7 @@ jdkVersion: "17"
 oldLabel: "Spring Boot 1.x"
 modernLabel: "Spring Boot 4.x"
 oldApproach: "WebMvcConfigurerAdapter with @EnableWebMvc"
-modernApproach: "WebMvcConfigurer with Boot Auto-Configuration"
+modernApproach: "WebMvcConfigurer with Spring Boot Auto-Configuration"
 oldCode: |-
   @EnableWebMvc
   @Configuration
