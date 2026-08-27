@@ -497,6 +497,7 @@ nav {
 }
 
 .show-all-btn {
+  display: grid;
   padding: 10px 20px;
   color: var(--text);
   font: inherit;
@@ -507,6 +508,25 @@ nav {
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.25s;
+}
+
+.show-all-btn::before,
+.show-all-btn::after,
+.show-all-btn-text {
+  grid-area: 1 / 1;
+}
+
+.show-all-btn::before,
+.show-all-btn::after {
+  visibility: hidden;
+}
+
+.show-all-btn::before {
+  content: attr(data-show-label);
+}
+
+.show-all-btn::after {
+  content: attr(data-hide-label);
 }
 
 .show-all-btn:hover {
