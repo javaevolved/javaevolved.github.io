@@ -1,0 +1,23 @@
+title: Class.newInstance() yönteminden kurucu yansımasına
+oldApproach: Class.newInstance()
+modernApproach: Açık kurucu araması
+summary: Kullanımdan kaldırılan Class.newInstance() yöntemini açık kurucu araması ve
+  çağrısıyla değiştirin.
+explanation: Class.newInstance(), kurucunun fırlattığı istisnaların derleme zamanı denetimini
+  atlayabildiği ve yalnızca parametresiz kurucuyu desteklediği için kullanımdan kaldırılmıştır.
+  Açık Constructor araması seçilen imzayı görünür kılar ve yansıtmalı çağrı hatalarını
+  uygun yansıma istisnalarıyla bildirir. Modül ve erişim kuralları geçerliliğini korur;
+  bu kalıp kapsüllemeyi aşmayı önermez.
+whyModernWins:
+- icon: ✅
+  title: Desteklenen API
+  desc: Kullanımdan kaldırılan Class.newInstance() kullanımını kaldırır.
+- icon: 🎯
+  title: Açık kurucu
+  desc: İstenen imza görünürdür ve bağımsız değişken kabul edebilir.
+- icon: 🛡
+  title: Dürüst hatalar
+  desc: Kurucu istisnaları InvocationTargetException ile temsil edilir.
+support:
+  description: Class.newInstance() JDK 9'da (Eylül 2017) kullanımdan kaldırıldığından
+    beri önerilir.

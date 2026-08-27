@@ -1,0 +1,19 @@
+title: Class.newInstance()에서 생성자 리플렉션으로
+oldApproach: Class.newInstance()
+modernApproach: 명시적 생성자 조회
+summary: 더 이상 사용되지 않는 Class.newInstance()를 명시적인 생성자 조회 및 호출로 대체합니다.
+explanation: Class.newInstance()는 생성자가 던지는 예외의 컴파일 시간 검사를 우회할 수 있고 인수 없는 생성자만 지원하므로
+  더 이상 사용되지 않습니다. 명시적인 Constructor 조회는 선택한 시그니처를 보여 주고 리플렉션 호출 실패를 적절한 리플렉션
+  예외로 보고합니다. 모듈 및 접근 규칙은 계속 적용되며, 이 패턴은 캡슐화를 우회하도록 권장하지 않습니다.
+whyModernWins:
+- icon: ✅
+  title: 지원되는 API
+  desc: 더 이상 사용되지 않는 Class.newInstance()를 제거합니다.
+- icon: 🎯
+  title: 명시적 생성자
+  desc: 요청한 시그니처가 명확히 보이며 인수를 받을 수 있습니다.
+- icon: 🛡
+  title: 정직한 실패 처리
+  desc: 생성자 예외는 InvocationTargetException으로 표현됩니다.
+support:
+  description: JDK 9(2017년 9월)에서 Class.newInstance()가 더 이상 사용되지 않게 된 이후 권장됩니다.

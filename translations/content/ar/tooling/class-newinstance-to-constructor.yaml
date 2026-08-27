@@ -1,0 +1,20 @@
+title: الانتقال من Class.newInstance() إلى انعكاس المُنشئ
+oldApproach: Class.newInstance()
+modernApproach: البحث الصريح عن المُنشئ
+summary: استبدل Class.newInstance() المهجورة بالبحث الصريح عن المُنشئ واستدعائه.
+explanation: أُهملت Class.newInstance() لأنها قد تتجاوز التحقق وقت الترجمة من الاستثناءات
+  التي يرميها المُنشئ، ولا تدعم سوى مُنشئ بلا معاملات. يجعل البحث الصريح عن Constructor
+  التوقيع المحدد مرئيًا ويبلّغ عن إخفاقات الاستدعاء الانعكاسي عبر استثناءات الانعكاس
+  المناسبة. تظل قواعد الوحدات والوصول سارية؛ ولا يوصي هذا النمط بتجاوز التغليف.
+whyModernWins:
+- icon: ✅
+  title: واجهة مدعومة
+  desc: تزيل استخدام Class.newInstance() المهجورة.
+- icon: 🎯
+  title: مُنشئ صريح
+  desc: يكون التوقيع المطلوب مرئيًا ويمكنه قبول معاملات.
+- icon: 🛡
+  title: إخفاقات واضحة
+  desc: تُمثّل استثناءات المُنشئ عبر InvocationTargetException.
+support:
+  description: موصى بها منذ إهمال Class.newInstance() في JDK 9 (سبتمبر 2017).

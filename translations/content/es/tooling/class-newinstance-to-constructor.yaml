@@ -1,0 +1,24 @@
+title: De Class.newInstance() a reflexión de constructores
+oldApproach: Class.newInstance()
+modernApproach: Búsqueda explícita del constructor
+summary: Reemplaza Class.newInstance(), obsoleto, por la búsqueda e invocación explícitas
+  del constructor.
+explanation: Class.newInstance() está obsoleto porque puede eludir la comprobación en
+  compilación de las excepciones lanzadas por el constructor y solo admite un constructor
+  sin argumentos. La búsqueda explícita del constructor hace visible la firma elegida
+  e informa de los fallos de invocación reflexiva mediante las excepciones de reflexión
+  adecuadas. Las reglas de módulos y acceso siguen aplicándose; este patrón no recomienda
+  eludir la encapsulación.
+whyModernWins:
+- icon: ✅
+  title: API compatible
+  desc: Elimina el uso de Class.newInstance(), que está obsoleto.
+- icon: 🎯
+  title: Constructor explícito
+  desc: La firma solicitada es visible y puede aceptar argumentos.
+- icon: 🛡
+  title: Fallos transparentes
+  desc: Las excepciones del constructor se representan mediante InvocationTargetException.
+support:
+  description: Recomendado desde que Class.newInstance() quedó obsoleto en JDK 9 (septiembre
+    de 2017).

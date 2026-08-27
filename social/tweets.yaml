@@ -1318,3 +1318,13 @@ io/explicit-charset-file-io: |-
   🔗 https://javaevolved.github.io/io/explicit-charset-file-io.html
 
   #Java #JavaEvolved
+tooling/class-newinstance-to-constructor: |-
+  ☕ Class.newInstance() to constructor reflection
+
+  Replace deprecated Class.newInstance() with explicit constructor looku…
+
+  Class.newInstance() → Explicit constructor lookup (JDK 9+)
+  🔗 https://javaevolved.github.io/tooling/class-newinstance-to-constructor.html
+  🔗 https://javaevolved.github.io/tooling/class-newinstance-to-constructor.html
+
+  #Java #JavaEvolved

@@ -1,0 +1,24 @@
+title: Da Class.newInstance() alla reflection sul costruttore
+oldApproach: Class.newInstance()
+modernApproach: Ricerca esplicita del costruttore
+summary: Sostituisci Class.newInstance(), deprecato, con la ricerca e l’invocazione
+  esplicite del costruttore.
+explanation: Class.newInstance() è deprecato perché può aggirare il controllo in fase
+  di compilazione delle eccezioni generate dal costruttore e supporta solo un costruttore
+  senza argomenti. La ricerca esplicita del costruttore rende visibile la firma selezionata
+  e segnala gli errori dell’invocazione riflessiva mediante le eccezioni di reflection
+  appropriate. Le regole di accesso e dei moduli restano valide; questo pattern non
+  consiglia di aggirare l’incapsulamento.
+whyModernWins:
+- icon: ✅
+  title: API supportata
+  desc: Elimina l’uso di Class.newInstance(), che è deprecato.
+- icon: 🎯
+  title: Costruttore esplicito
+  desc: La firma richiesta è visibile e può accettare argomenti.
+- icon: 🛡
+  title: Errori trasparenti
+  desc: Le eccezioni del costruttore sono rappresentate da InvocationTargetException.
+support:
+  description: Consigliato da quando Class.newInstance() è stato deprecato nel JDK 9
+    (settembre 2017).
