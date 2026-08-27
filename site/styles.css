@@ -439,6 +439,14 @@ nav {
   margin-bottom: 12px;
 }
 
+.comparisons-section {
+  padding-block: 24px;
+}
+
+.comparisons-section .section-header {
+  margin-bottom: 24px;
+}
+
 /* ---------- Tips / Card Grid ---------- */
 .tips-grid {
   display: grid;
@@ -463,8 +471,8 @@ nav {
   flex-direction: column;
   align-items: center;
   max-width: 540px;
-  margin: 32px auto 0;
-  padding: 36px 24px;
+  margin: 24px auto 0;
+  padding: 28px 24px;
   text-align: center;
   color: var(--text);
   border: 1px dashed var(--border-light);
@@ -727,7 +735,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 16px 0;
+  margin: 0;
 }
 
 /* ---------- JDK Dropdown ---------- */
@@ -892,7 +900,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 32px;
-  padding: 40px 24px;
+  padding: 24px 24px 32px;
   flex-wrap: wrap;
 }
 
@@ -1979,6 +1987,10 @@ footer a:hover {
 
   .section {
     padding: 40px 16px;
+  }
+
+  .comparisons-section {
+    padding-block: 24px;
   }
 
   .tips-grid {
