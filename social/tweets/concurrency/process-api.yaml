@@ -1,0 +1,10 @@
+text: |-
+  ☕ Modern Process API
+  
+  Inspect and manage OS processes with ProcessHandle.
+  
+  Runtime.exec() → ProcessHandle (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/concurrency/process-api.html
+  
+  #Java #JavaEvolved

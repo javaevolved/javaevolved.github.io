@@ -3,6 +3,7 @@ id: 1fa578db-e750-4adb-a88e-bdd2bbda14c4
 slug: "immutable-list-creation"
 title: "Immutable list creation"
 category: "collections"
+navigationOrder: 26000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "language/exhaustive-switch"
-next: "collections/immutable-map-creation"
 related:
 - "collections/immutable-map-creation"
 - "collections/immutable-set-creation"

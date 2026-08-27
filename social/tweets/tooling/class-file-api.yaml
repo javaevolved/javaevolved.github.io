@@ -1,0 +1,10 @@
+text: |-
+  ☕ Class-file parsing with the standard API
+  
+  Use the standard Class-File API for class-file parsing and transformation.
+  
+  ASM ClassReader → Class-File API (JDK 24+)
+  
+  🔗 https://javaevolved.github.io/tooling/class-file-api.html
+  
+  #Java #JavaEvolved

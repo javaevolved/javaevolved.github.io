@@ -3,6 +3,7 @@ id: 5ec6dc04-e96e-4d30-a11c-ea48c9d28fbf
 slug: "stack-to-deque"
 title: "Stack to Deque and ArrayDeque"
 category: "collections"
+navigationOrder: 38000
 difficulty: "beginner"
 jdkVersion: "6"
 oldLabel: "Legacy Stack"
@@ -32,8 +33,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 6 (December 2006)"
-prev: "enterprise/spring-boot-mvc-config"
-next: "collections/collection-bulk-operations"
 related:
 - "collections/sequenced-collections"
 - "collections/reverse-list-iteration"

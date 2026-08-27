@@ -3,6 +3,7 @@ id: 48ac8b15-9ed0-46b4-98b0-064c32b68aad
 slug: "call-c-from-java"
 title: "Calling out to C code from Java"
 category: "language"
+navigationOrder: 25000
 difficulty: "advanced"
 jdkVersion: "22"
 oldLabel: "Java 1.1+"
@@ -69,8 +70,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Standardized in JDK 22 (March 2024); previously incubating since JDK 14"
-prev: "language/compact-canonical-constructor"
-next: "enterprise/servlet-vs-jaxrs"
 related:
 - "io/file-memory-mapping"
 - "language/compact-source-files"

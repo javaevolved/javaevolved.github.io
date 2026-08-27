@@ -3,6 +3,7 @@ id: 73d4af75-dfcb-4e0b-8aa1-10c6df90b653
 slug: "diamond-operator"
 title: "Diamond with anonymous classes"
 category: "language"
+navigationOrder: 11000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 7/8"
@@ -42,8 +43,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Diamond with anonymous classes since JDK 9 (Sept 2017)."
-prev: "language/flexible-constructor-bodies"
-next: "language/raw-collections-to-generics"
 related:
 - "language/type-inference-with-var"
 - "language/text-blocks-for-multiline-strings"

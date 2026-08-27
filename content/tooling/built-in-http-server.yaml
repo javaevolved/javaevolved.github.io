@@ -3,6 +3,7 @@ id: 019a8c37-225e-404c-a9a5-af4d50af06a3
 slug: "built-in-http-server"
 title: "Built-in HTTP server"
 category: "tooling"
+navigationOrder: 113000
 difficulty: "beginner"
 jdkVersion: "18"
 oldLabel: "Java 8"
@@ -51,8 +52,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 18 (March 2022)"
-prev: "tooling/compact-object-headers"
-next: "tooling/class-file-api"
 related:
 - "io/http-client"
 - "tooling/single-file-execution"

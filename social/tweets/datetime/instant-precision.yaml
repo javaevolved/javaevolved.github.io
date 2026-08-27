@@ -1,0 +1,10 @@
+text: |-
+  ☕ Instant with nanosecond precision
+  
+  Get timestamps with microsecond or nanosecond precision.
+  
+  Milliseconds → Nanoseconds (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/datetime/instant-precision.html
+  
+  #Java #JavaEvolved

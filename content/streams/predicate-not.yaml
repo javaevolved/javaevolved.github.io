@@ -3,6 +3,7 @@ id: 1419eeaf-2277-4aad-bde8-d7c1a1c3c593
 slug: "predicate-not"
 title: "Predicate.not() for negation"
 category: "streams"
+navigationOrder: 58000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 11 (September 2018)."
-prev: "streams/optional-or"
-next: "concurrency/virtual-threads"
 related:
 - "streams/stream-tolist"
 - "strings/string-isblank"

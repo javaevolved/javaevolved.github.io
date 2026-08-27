@@ -3,6 +3,7 @@ id: be0111a0-1b64-4d6e-bca9-a004bde4dd18
 slug: "inputstream-transferto"
 title: "InputStream.transferTo()"
 category: "io"
+navigationOrder: 79000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -33,8 +34,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "io/explicit-charset-file-io"
-next: "io/path-of"
 related:
 - "io/writing-files"
 - "io/deserialization-filters"

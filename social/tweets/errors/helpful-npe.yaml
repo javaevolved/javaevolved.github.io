@@ -1,0 +1,10 @@
+text: |-
+  ☕ Helpful NullPointerExceptions
+  
+  JVM automatically tells you exactly which variable was null.
+  
+  Cryptic NPE → Detailed NPE (JDK 14+)
+  
+  🔗 https://javaevolved.github.io/errors/helpful-npe.html
+  
+  #Java #JavaEvolved

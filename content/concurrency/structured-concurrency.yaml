@@ -3,6 +3,7 @@ id: fd8d3592-2eb6-439c-bca7-15fc9953a275
 slug: "structured-concurrency"
 title: "Structured concurrency"
 category: "concurrency"
+navigationOrder: 60000
 difficulty: "advanced"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -42,8 +43,6 @@ whyModernWins:
 support:
   state: "preview"
   description: "Preview in JDK 25 (fifth preview, JEP 505). Requires --enable-preview."
-prev: "concurrency/virtual-threads"
-next: "concurrency/scoped-values"
 related:
 - "concurrency/virtual-threads"
 - "concurrency/scoped-values"

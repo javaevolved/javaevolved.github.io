@@ -1,0 +1,10 @@
+text: |-
+  ☕ Legacy synchronized collections to modern alternatives
+  
+  Replace Vector and Hashtable with collections selected for actual mutability a…
+  
+  Hashtable → ConcurrentHashMap (JDK 5+)
+  
+  🔗 https://javaevolved.github.io/collections/legacy-synchronized-collections.html
+  
+  #Java #JavaEvolved

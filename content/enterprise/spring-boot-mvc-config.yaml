@@ -3,6 +3,7 @@ id: 51007825-4ecf-4f6e-9213-402e09116aca
 slug: "spring-boot-mvc-config"
 title: "Spring Boot MVC Configuration"
 category: "enterprise"
+navigationOrder: 135000
 difficulty: "beginner"
 jdkVersion: "17"
 oldLabel: "Spring Boot 1.x"
@@ -43,8 +44,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available in Spring Boot 4.0 with Spring Framework 7.0 (requires Java 17+)"
-prev: "enterprise/spring-null-safety-jspecify"
-next: "collections/stack-to-deque"
 related:
 - "enterprise/spring-api-versioning"
 - "enterprise/spring-xml-config-vs-annotations"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ TLS 1.3 by default
+  
+  TLS 1.3 is enabled by default — no explicit protocol configuration needed.
+  
+  Manual TLS Config → TLS 1.3 Default (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/security/tls-default.html
+  
+  #Java #JavaEvolved

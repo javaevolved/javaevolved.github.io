@@ -3,6 +3,7 @@ id: 6f1e7cff-996f-484e-8aeb-039e21e39700
 slug: "stream-takewhile-dropwhile"
 title: "Stream takeWhile / dropWhile"
 category: "streams"
+navigationOrder: 50000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "streams/stream-iterate-predicate"
-next: "streams/collectors-flatmapping"
 related:
 - "streams/stream-tolist"
 - "streams/stream-mapmulti"

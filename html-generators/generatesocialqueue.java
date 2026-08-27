@@ -10,32 +10,28 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
 
 /**
- * Generate social media queue and pre-drafted tweets from content YAML files.
+ * Reconcile the pending social queue or generate a tweet draft for one pattern.
  *
- * Produces:
- *   social/queue.txt    — shuffled posting order (one category/slug per line)
- *   social/tweets.yaml  — pre-drafted tweet text for each pattern
- *
- * Re-run behavior:
- *   - New patterns are appended to the end of the existing queue
- *   - Deleted/renamed patterns are pruned
- *   - Existing order and tweet edits are preserved
- *   - Use --reshuffle to force a full reshuffle
+ * Default behavior preserves pending order, prunes deleted patterns, and appends
+ * new patterns. Use --file content/category/slug.yaml to write one tweet draft,
+ * or --reshuffle to begin a fresh cycle containing every pattern.
  */
 
 static final String CONTENT_DIR = "content";
 static final String SOCIAL_DIR = "social";
 static final String QUEUE_FILE = SOCIAL_DIR + "/queue.txt";
-static final String TWEETS_FILE = SOCIAL_DIR + "/tweets.yaml";
+static final String TWEETS_DIR = SOCIAL_DIR + "/tweets";
 static final String STATE_FILE = SOCIAL_DIR + "/state.yaml";
 static final String BASE_URL = "https://javaevolved.github.io";
 static final int MAX_TWEET_LENGTH = 280;
 
 static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());
+static final ObjectMapper JSON_MAPPER = new ObjectMapper();
 static final ObjectMapper YAML_WRITER = new ObjectMapper(
     new YAMLFactory()
         .disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER)
         .enable(YAMLGenerator.Feature.MINIMIZE_QUOTES)
+        .enable(YAMLGenerator.Feature.LITERAL_BLOCK_STYLE)
 );
 
 record PatternInfo(String category, String slug, String title, String summary,
@@ -44,96 +40,63 @@ record PatternInfo(String category, String slug, String title, String summary,
 }
 
 void main(String... args) throws Exception {
-    boolean reshuffle = List.of(args).contains("--reshuffle");
-
-    // 1. Scan all content files
     var allPatterns = scanContentFiles();
     System.out.println("Found " + allPatterns.size() + " patterns in content/");
 
-    // 2. Load existing queue and tweets (if any)
-    var existingQueue = loadExistingQueue();
-    var existingTweets = loadExistingTweets();
+    if (args.length == 2 && args[0].equals("--file")) {
+        var file = Path.of(args[1]).normalize();
+        var pattern = readPattern(file);
+        if (!allPatterns.containsKey(pattern.key())) {
+            throw new IllegalArgumentException("Not a registered content pattern: " + file);
+        }
+        writeTweetDraft(pattern);
+        return;
+    }
+    if (args.length > 1 || (args.length == 1 && !args[0].equals("--reshuffle"))) {
+        throw new IllegalArgumentException(
+            "Usage: generatesocialqueue.java [--reshuffle | --file content/category/slug.yaml]");
+    }
 
-    // 3. Determine new queue order
-    List<String> queue;
-    if (reshuffle || existingQueue.isEmpty()) {
-        // Full shuffle
+    var state = loadState();
+    var posted = loadPostedKeys(state).stream()
+        .filter(allPatterns::containsKey)
+        .collect(Collectors.toCollection(LinkedHashSet::new));
+    var pending = loadExistingQueue().stream()
+        .filter(allPatterns::containsKey)
+        .filter(key -> !posted.contains(key))
+        .collect(Collectors.toCollection(LinkedHashSet::new));
+
+    if (args.length == 1) {
+        pending.clear();
+        posted.clear();
         var keys = new ArrayList<>(allPatterns.keySet());
         Collections.shuffle(keys);
-        queue = keys;
-        System.out.println(reshuffle ? "Reshuffled all patterns" : "Generated new queue");
+        pending.addAll(keys);
+        System.out.println("Started a fresh shuffled cycle");
+    } else if (pending.isEmpty() && posted.containsAll(allPatterns.keySet())) {
+        posted.clear();
+        var keys = new ArrayList<>(allPatterns.keySet());
+        Collections.shuffle(keys);
+        pending.addAll(keys);
+        System.out.println("Completed cycle; started a fresh shuffled cycle");
     } else {
-        // Preserve existing order, prune deleted, append new
-        queue = new ArrayList<>();
-        for (var key : existingQueue) {
-            if (allPatterns.containsKey(key)) queue.add(key);
-            else System.out.println("  Pruned (removed): " + key);
-        }
-        var existingSet = new LinkedHashSet<>(queue);
-        var newKeys = new ArrayList<String>();
-        for (var key : allPatterns.keySet()) {
-            if (!existingSet.contains(key)) newKeys.add(key);
-        }
+        var known = new LinkedHashSet<>(posted);
+        known.addAll(pending);
+        var newKeys = allPatterns.keySet().stream()
+            .filter(key -> !known.contains(key))
+            .collect(Collectors.toCollection(ArrayList::new));
+        Collections.shuffle(newKeys);
+        pending.addAll(newKeys);
         if (!newKeys.isEmpty()) {
-            Collections.shuffle(newKeys);
-            queue.addAll(newKeys);
-            System.out.println("  Appended " + newKeys.size() + " new patterns: " + newKeys);
+            System.out.println("Appended " + newKeys.size() + " new patterns: " + newKeys);
         }
     }
 
-    // 4. Generate tweet drafts
-    var tweets = new LinkedHashMap<String, String>();
-    int truncated = 0;
-    for (var key : queue) {
-        // Preserve manually edited tweets
-        if (!reshuffle && existingTweets.containsKey(key)) {
-            tweets.put(key, existingTweets.get(key));
-        } else {
-            var p = allPatterns.get(key);
-            var tweet = buildTweet(p);
-            tweets.put(key, tweet);
-            if (tweet.length() > MAX_TWEET_LENGTH) {
-                // Retry with truncated summary
-                tweet = buildTweetTruncated(p);
-                tweets.put(key, tweet);
-                truncated++;
-            }
-        }
-    }
-
-    // 5. Validate lengths
-    int overLength = 0;
-    for (var entry : tweets.entrySet()) {
-        int len = entry.getValue().length();
-        if (len > MAX_TWEET_LENGTH) {
-            System.err.println("  WARNING: " + entry.getKey() + " tweet is " + len + " chars (max " + MAX_TWEET_LENGTH + ")");
-            overLength++;
-        }
-    }
-
-    // 6. Write queue file
     Files.createDirectories(Path.of(SOCIAL_DIR));
-    Files.writeString(Path.of(QUEUE_FILE), String.join("\n", queue) + "\n");
-    System.out.println("Wrote " + QUEUE_FILE + " (" + queue.size() + " entries)");
-
-    // 7. Write tweets file
-    YAML_WRITER.writerWithDefaultPrettyPrinter().writeValue(Path.of(TWEETS_FILE).toFile(), tweets);
-    System.out.println("Wrote " + TWEETS_FILE + " (" + tweets.size() + " entries)");
-
-    // 8. Create state file if it doesn't exist
-    if (!Files.exists(Path.of(STATE_FILE))) {
-        var state = new LinkedHashMap<String, Object>();
-        state.put("currentIndex", 1);
-        state.put("lastPostedKey", null);
-        state.put("lastTweetId", null);
-        state.put("lastPostedAt", null);
-        YAML_WRITER.writerWithDefaultPrettyPrinter().writeValue(Path.of(STATE_FILE).toFile(), state);
-        System.out.println("Created " + STATE_FILE);
-    }
-
-    if (truncated > 0) System.out.println(truncated + " tweets were truncated to fit 280 chars");
-    if (overLength > 0) System.err.println("WARNING: " + overLength + " tweets still exceed 280 chars — edit manually in " + TWEETS_FILE);
-    System.out.println("Done!");
+    Files.writeString(Path.of(QUEUE_FILE), String.join("\n", pending) + "\n");
+    state.put("postedKeys", new ArrayList<>(posted));
+    YAML_WRITER.writerWithDefaultPrettyPrinter().writeValue(Path.of(STATE_FILE).toFile(), state);
+    System.out.println("Queue reconciled: " + pending.size() + " pending, " + posted.size() + " posted");
 }
 
 Map<String, PatternInfo> scanContentFiles() throws Exception {
@@ -145,22 +108,35 @@ Map<String, PatternInfo> scanContentFiles() throws Exception {
             var category = catDir.getFileName().toString();
             try (var files = Files.list(catDir)) {
                 for (var file : files.filter(f -> isContentFile(f)).sorted().toList()) {
-                    var node = YAML_MAPPER.readTree(file.toFile());
-                    var slug = node.path("slug").asText();
-                    var info = new PatternInfo(
-                        category, slug,
-                        node.path("title").asText(),
-                        node.path("summary").asText(),
-                        node.path("oldApproach").asText(),
-                        node.path("modernApproach").asText(),
-                        node.path("jdkVersion").asText()
-                    );
+                    var info = readPattern(file);
+                    if (!info.category().equals(category)) {
+                        throw new IllegalArgumentException(
+                            file + " category must match its parent directory");
+                    }
                     patterns.put(info.key(), info);
                 }
             }
         }
     }
     return patterns;
+}
+
+PatternInfo readPattern(Path file) throws Exception {
+    if (!Files.isRegularFile(file) || !isContentFile(file)) {
+        throw new IllegalArgumentException("Pattern file does not exist: " + file);
+    }
+    var node = file.getFileName().toString().endsWith(".json")
+        ? JSON_MAPPER.readTree(file.toFile())
+        : YAML_MAPPER.readTree(file.toFile());
+    return new PatternInfo(
+        node.path("category").asText(),
+        node.path("slug").asText(),
+        node.path("title").asText(),
+        node.path("summary").asText(),
+        node.path("oldApproach").asText(),
+        node.path("modernApproach").asText(),
+        node.path("jdkVersion").asText()
+    );
 }
 
 boolean isContentFile(Path p) {
@@ -178,10 +154,47 @@ List<String> loadExistingQueue() throws Exception {
 }
 
 @SuppressWarnings("unchecked")
-Map<String, String> loadExistingTweets() throws Exception {
-    var path = Path.of(TWEETS_FILE);
-    if (!Files.exists(path)) return Map.of();
-    return YAML_MAPPER.readValue(path.toFile(), LinkedHashMap.class);
+Map<String, Object> loadState() throws Exception {
+    var path = Path.of(STATE_FILE);
+    if (Files.exists(path)) {
+        Map<String, Object> state = YAML_MAPPER.readValue(path.toFile(), LinkedHashMap.class);
+        if (!state.containsKey("postedKeys")) {
+            throw new IllegalArgumentException(
+                "Existing social/state.yaml must define postedKeys; migrate it before reconciliation");
+        }
+        return state;
+    }
+    var state = new LinkedHashMap<String, Object>();
+    state.put("lastPostedKey", null);
+    state.put("lastTweetId", null);
+    state.put("lastPostedAt", null);
+    state.put("postedKeys", new ArrayList<String>());
+    return state;
+}
+
+List<String> loadPostedKeys(Map<String, Object> state) {
+    var value = state.get("postedKeys");
+    if (!(value instanceof List<?> values)
+            || values.stream().anyMatch(item -> !(item instanceof String))) {
+        throw new IllegalArgumentException("social/state.yaml postedKeys must be a string list");
+    }
+    return values.stream().map(String.class::cast).toList();
+}
+
+void writeTweetDraft(PatternInfo pattern) throws Exception {
+    var tweet = buildTweet(pattern);
+    if (tweet.length() > MAX_TWEET_LENGTH) {
+        tweet = buildTweetTruncated(pattern);
+    }
+    if (tweet.length() > MAX_TWEET_LENGTH) {
+        throw new IllegalArgumentException(
+            pattern.key() + " tweet is " + tweet.length() + " characters");
+    }
+    var path = Path.of(TWEETS_DIR, pattern.category(), pattern.slug() + ".yaml");
+    Files.createDirectories(path.getParent());
+    YAML_WRITER.writerWithDefaultPrettyPrinter()
+        .writeValue(path.toFile(), Map.of("text", tweet));
+    System.out.println("Wrote " + path + " (" + tweet.length() + " characters)");
 }
 
 String buildTweet(PatternInfo p) {

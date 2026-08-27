@@ -1,0 +1,10 @@
+text: |-
+  ☕ Scoped values
+  
+  Share data across call stacks safely without ThreadLocal pitfalls.
+  
+  ThreadLocal → ScopedValue (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/concurrency/scoped-values.html
+  
+  #Java #JavaEvolved

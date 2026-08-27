@@ -1,0 +1,10 @@
+text: |-
+  ☕ Finalizers to deterministic resource cleanup
+  
+  Replace finalization with AutoCloseable and use Cleaner only as a defensive fall…
+  
+  Override finalize() → AutoCloseable and Cleaner (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/io/finalizers-to-resource-cleanup.html
+  
+  #Java #JavaEvolved

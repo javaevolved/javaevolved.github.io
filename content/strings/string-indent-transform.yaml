@@ -3,6 +3,7 @@ id: ff92e3b3-3067-415b-9691-72b5097e0135
 slug: "string-indent-transform"
 title: "String.indent() and transform()"
 category: "strings"
+navigationOrder: 44000
 difficulty: "beginner"
 jdkVersion: "12"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 12 (March 2019)"
-prev: "strings/string-repeat"
-next: "strings/string-formatted"
 related:
 - "strings/string-isblank"
 - "strings/string-strip"

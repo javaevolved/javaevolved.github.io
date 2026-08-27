@@ -3,6 +3,7 @@ id: 26dee8f0-333e-44ae-9467-4c99bae5516a
 slug: "immutable-set-creation"
 title: "Immutable set creation"
 category: "collections"
+navigationOrder: 28000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "collections/immutable-map-creation"
-next: "collections/copying-collections-immutably"
 related:
 - "collections/copying-collections-immutably"
 - "collections/collectors-teeing"

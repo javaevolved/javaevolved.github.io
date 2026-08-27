@@ -3,6 +3,7 @@ id: 10f4499a-362f-4aa9-900a-14b34732b147
 slug: "thread-stop-to-cooperative-cancellation"
 title: "Unsafe thread termination to cooperative cancellation"
 category: "concurrency"
+navigationOrder: 70000
 difficulty: "advanced"
 jdkVersion: "5"
 oldLabel: "Forced thread termination"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Future and ExecutorService have been available since JDK 5 (Sept 2004)."
-prev: "concurrency/wait-notify-to-blocking-queue"
-next: "concurrency/timer-task-to-scheduled-executor"
 related:
 - "concurrency/executor-try-with-resources"
 - "concurrency/structured-concurrency"

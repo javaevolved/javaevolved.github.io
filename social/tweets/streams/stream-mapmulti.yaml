@@ -1,0 +1,10 @@
+text: |-
+  ☕ Stream.mapMulti()
+  
+  Emit zero or more elements per input without creating intermediate streams.
+  
+  flatMap + List → mapMulti() (JDK 16+)
+  
+  🔗 https://javaevolved.github.io/streams/stream-mapmulti.html
+  
+  #Java #JavaEvolved

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Guarded patterns with when
+  
+  Add conditions to pattern cases using when guards.
+  
+  Nested if → when Clause (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/language/guarded-patterns.html
+  
+  #Java #JavaEvolved

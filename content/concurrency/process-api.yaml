@@ -3,6 +3,7 @@ id: a906e3e4-2027-44b6-a030-adb804e5d9df
 slug: "process-api"
 title: "Modern Process API"
 category: "concurrency"
+navigationOrder: 66000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "concurrency/thread-sleep-duration"
-next: "concurrency/concurrent-http-virtual"
 related:
 - "concurrency/scoped-values"
 - "concurrency/concurrent-http-virtual"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Virtual threads
+  
+  Create millions of lightweight virtual threads instead of heavy OS threads.
+  
+  Platform Threads → Virtual Threads (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/concurrency/virtual-threads.html
+  
+  #Java #JavaEvolved

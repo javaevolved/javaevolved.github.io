@@ -1,0 +1,10 @@
+text: |-
+  ☕ Try-with-resources improvement
+  
+  Use existing effectively-final variables directly in try-with-resources.
+  
+  Re-declare Variable → Effectively Final (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/io/try-with-resources-effectively-final.html
+  
+  #Java #JavaEvolved

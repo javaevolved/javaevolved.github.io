@@ -1,0 +1,10 @@
+text: |-
+  ☕ JDBC versus jOOQ
+  
+  Replace raw JDBC string-based SQL with jOOQ's type-safe, fluent SQL DSL.
+  
+  Raw JDBC → jOOQ SQL DSL (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/jdbc-vs-jooq.html
+  
+  #Java #JavaEvolved

@@ -1,0 +1,10 @@
+text: |-
+  ☕ String.lines() for line splitting
+  
+  Use String.lines() to split text into a stream of lines without regex overhead.
+  
+  split("\\n") → lines() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/strings/string-lines.html
+  
+  #Java #JavaEvolved

@@ -3,6 +3,7 @@ id: cccaa39a-3698-4fd3-b11c-2a712d57d307
 slug: "mdb-vs-reactive-messaging"
 title: "Message-Driven Bean vs Reactive Messaging"
 category: "enterprise"
+navigationOrder: 127000
 difficulty: "advanced"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -58,8 +59,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since MicroProfile 4.0 / SmallRye Reactive Messaging"
-prev: "enterprise/soap-vs-jakarta-rest"
-next: "enterprise/jsf-managed-bean-vs-cdi-named"
 related:
 - "enterprise/ejb-vs-cdi"
 - "concurrency/structured-concurrency"

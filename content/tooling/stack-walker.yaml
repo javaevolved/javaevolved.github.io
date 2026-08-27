@@ -3,6 +3,7 @@ id: 35f7b2bd-cbf2-4b59-8553-801367e6ceee
 slug: "stack-walker"
 title: "Lazy stack inspection with StackWalker"
 category: "tooling"
+navigationOrder: 111000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Materialized stack trace"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (September 2017)"
-prev: "tooling/jfr-profiling"
-next: "tooling/compact-object-headers"
 related:
 - "tooling/jfr-profiling"
 - "concurrency/process-api"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Optional chaining
+  
+  Replace nested null checks with an Optional pipeline.
+  
+  Nested Null Checks → Optional Pipeline (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/errors/optional-chaining.html
+  
+  #Java #JavaEvolved

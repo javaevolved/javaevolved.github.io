@@ -1,0 +1,10 @@
+text: |-
+  ☕ Unmodifiable collectors
+  
+  Collect directly to an unmodifiable list with stream.toList().
+  
+  collectingAndThen → stream.toList() (JDK 16+)
+  
+  🔗 https://javaevolved.github.io/collections/unmodifiable-collectors.html
+  
+  #Java #JavaEvolved

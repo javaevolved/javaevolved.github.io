@@ -1,0 +1,10 @@
+text: |-
+  ☕ Collectors.teeing()
+  
+  Compute two aggregations in a single stream pass.
+  
+  Two Passes → teeing() (JDK 12+)
+  
+  🔗 https://javaevolved.github.io/collections/collectors-teeing.html
+  
+  #Java #JavaEvolved

@@ -3,6 +3,7 @@ id: 103bdb91-97aa-46bd-a7a6-d372c26a40a2
 slug: "jdbc-vs-jooq"
 title: "JDBC versus jOOQ"
 category: "enterprise"
+navigationOrder: 132000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Raw JDBC"
@@ -60,8 +61,6 @@ support:
   state: "available"
   description: "jOOQ open-source edition supports all major open-source databases;\
     \ older commercial databases require a paid license"
-prev: "enterprise/spring-xml-config-vs-annotations"
-next: null
 related:
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/jdbc-resultset-vs-jpa-criteria"

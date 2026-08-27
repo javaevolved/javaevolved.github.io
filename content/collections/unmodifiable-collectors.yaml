@@ -3,6 +3,7 @@ id: 4ed99b6a-ef57-4769-a640-46521d03b190
 slug: "unmodifiable-collectors"
 title: "Unmodifiable collectors"
 category: "collections"
+navigationOrder: 35000
 difficulty: "intermediate"
 jdkVersion: "16"
 oldLabel: "Java 8"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 16 (March 2021)"
-prev: "collections/reverse-list-iteration"
-next: "collections/legacy-synchronized-collections"
 related:
 - "collections/immutable-map-creation"
 - "collections/immutable-set-creation"

@@ -3,6 +3,7 @@ id: da4d528e-40f5-4a65-be86-ed01776ce458
 slug: "class-newinstance-to-constructor"
 title: "Class.newInstance() to constructor reflection"
 category: "tooling"
+navigationOrder: 118000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Deprecated Class.newInstance()"
@@ -30,8 +31,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Recommended since Class.newInstance() was deprecated in JDK 9 (September 2017)."
-prev: "tooling/runtime-exec-to-process-builder"
-next: "language/anonymous-classes-to-lambdas"
 related:
 - "tooling/class-file-api"
 - "io/url-constructors-to-uri"

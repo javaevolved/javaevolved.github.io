@@ -3,6 +3,7 @@ id: 79baafd3-9ac2-4148-a6fb-db50c9cf5783
 slug: "timer-task-to-scheduled-executor"
 title: "Timer tasks to scheduled executors"
 category: "concurrency"
+navigationOrder: 71000
 difficulty: "intermediate"
 jdkVersion: "5"
 oldLabel: "Timer and TimerTask"
@@ -42,8 +43,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 5 (Sept 2004)"
-prev: "concurrency/thread-stop-to-cooperative-cancellation"
-next: "io/http-client"
 related:
 - "concurrency/executor-try-with-resources"
 - "concurrency/thread-sleep-duration"

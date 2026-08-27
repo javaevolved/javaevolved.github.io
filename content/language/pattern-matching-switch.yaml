@@ -3,6 +3,7 @@ id: 712b1e93-5fad-47f4-a6d9-9d42bbbd2ae7
 slug: "pattern-matching-switch"
 title: "Pattern matching in switch"
 category: "language"
+navigationOrder: 14000
 difficulty: "intermediate"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -45,8 +46,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "language/private-interface-methods"
-next: "language/guarded-patterns"
 related:
 - "language/pattern-matching-instanceof"
 - "language/unnamed-variables"

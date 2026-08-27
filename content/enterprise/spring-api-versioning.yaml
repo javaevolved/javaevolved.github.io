@@ -3,6 +3,7 @@ id: 5c5fa7f9-24a8-43e0-b227-142f3972d4e4
 slug: "spring-api-versioning"
 title: "Spring Framework 7 API Versioning"
 category: "enterprise"
+navigationOrder: 133000
 difficulty: "intermediate"
 jdkVersion: "17"
 oldLabel: "Spring Boot 2/3"
@@ -81,8 +82,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since Spring Framework 7.0 (requires Java 17+)"
-prev: "enterprise/jdbc-resultset-vs-jpa-criteria"
-next: null
 related:
 - "enterprise/soap-vs-jakarta-rest"
 - "enterprise/servlet-vs-jaxrs"

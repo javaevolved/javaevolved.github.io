@@ -1,0 +1,10 @@
+text: |-
+  ☕ Message-Driven Bean vs Reactive Messaging
+  
+  Replace JMS Message-Driven Beans with MicroProfile Reactive Messaging for simpler even…
+  
+  Message-Driven Bean → Reactive Messaging (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/mdb-vs-reactive-messaging.html
+  
+  #Java #JavaEvolved

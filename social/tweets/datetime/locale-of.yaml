@@ -1,0 +1,10 @@
+text: |-
+  ☕ Locale constructors to Locale.of()
+  
+  Create language and region locales with Locale.of() instead of deprecated constructors.
+  
+  Locale constructors → Locale.of() (JDK 19+)
+  
+  🔗 https://javaevolved.github.io/datetime/locale-of.html
+  
+  #Java #JavaEvolved

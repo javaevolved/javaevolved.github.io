@@ -1,0 +1,10 @@
+text: |-
+  ☕ Key Derivation Functions
+  
+  Derive cryptographic keys using the standard KDF API.
+  
+  Manual PBKDF2 → KDF API (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/security/key-derivation-functions.html
+  
+  #Java #JavaEvolved

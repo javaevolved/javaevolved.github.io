@@ -1,0 +1,10 @@
+text: |-
+  ☕ Writing files
+  
+  Write a String to a file with one line.
+  
+  FileWriter + BufferedWriter → Files.writeString() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/io/writing-files.html
+  
+  #Java #JavaEvolved

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Module import declarations
+  
+  Import all exported packages of a module with a single declaration.
+  
+  Many Imports → import module (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/language/module-import-declarations.html
+  
+  #Java #JavaEvolved

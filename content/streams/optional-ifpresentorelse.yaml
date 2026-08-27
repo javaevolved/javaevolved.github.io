@@ -3,6 +3,7 @@ id: 7999b44d-3a03-4bcc-aac4-4eaf56632c32
 slug: "optional-ifpresentorelse"
 title: "Optional.ifPresentOrElse()"
 category: "streams"
+navigationOrder: 56000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "streams/virtual-thread-executor"
-next: "streams/optional-or"
 related:
 - "streams/stream-tolist"
 - "streams/stream-gatherers"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Structured concurrency
+  
+  Manage concurrent task lifetimes as a single unit of work.
+  
+  Manual Thread Lifecycle → StructuredTaskScope (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/concurrency/structured-concurrency.html
+  
+  #Java #JavaEvolved

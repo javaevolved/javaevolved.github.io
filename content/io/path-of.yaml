@@ -3,6 +3,7 @@ id: b1daeb4c-3014-4552-919b-f2bf7ffacda6
 slug: "path-of"
 title: "Path.of() factory"
 category: "io"
+navigationOrder: 80000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -32,8 +33,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "io/inputstream-transferto"
-next: "io/try-with-resources-effectively-final"
 related:
 - "io/inputstream-transferto"
 - "io/reading-files"

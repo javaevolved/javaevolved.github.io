@@ -3,6 +3,7 @@ id: 785a633d-2dd2-4e09-a3a1-be7b38fa5700
 slug: "http-client"
 title: "Modern HTTP client"
 category: "io"
+navigationOrder: 72000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -42,8 +43,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "concurrency/timer-task-to-scheduled-executor"
-next: "io/http-websocket-client"
 related:
 - "io/reading-files"
 - "io/inputstream-transferto"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ File memory mapping
+  
+  Map files larger than 2GB with deterministic cleanup using MemorySegment.
+  
+  MappedByteBuffer → MemorySegment with Arena (JDK 22+)
+  
+  🔗 https://javaevolved.github.io/io/file-memory-mapping.html
+  
+  #Java #JavaEvolved

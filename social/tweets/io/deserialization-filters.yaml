@@ -1,0 +1,10 @@
+text: |-
+  ☕ Deserialization filters
+  
+  Restrict which classes can be deserialized to prevent attacks.
+  
+  Accept Everything → ObjectInputFilter (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/io/deserialization-filters.html
+  
+  #Java #JavaEvolved

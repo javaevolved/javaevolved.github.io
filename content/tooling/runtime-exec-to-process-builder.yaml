@@ -3,6 +3,7 @@ id: e27cf2f6-ae52-4d75-a481-0fd04dbf2999
 slug: "runtime-exec-to-process-builder"
 title: "Runtime.exec(String) to ProcessBuilder arguments"
 category: "tooling"
+navigationOrder: 117000
 difficulty: "intermediate"
 jdkVersion: "5"
 oldLabel: "Command string"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 5 (September 2004)"
-prev: "tooling/junit6-with-jspecify"
-next: "tooling/class-newinstance-to-constructor"
 related:
 - "concurrency/process-api"
 - "io/inputstream-transferto"

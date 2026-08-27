@@ -3,6 +3,7 @@ id: 327ea5da-b0cd-442a-b3ac-613176285f95
 slug: "multi-file-source"
 title: "Multi-file source launcher"
 category: "tooling"
+navigationOrder: 109000
 difficulty: "intermediate"
 jdkVersion: "22"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 22 (March 2024)"
-prev: "tooling/single-file-execution"
-next: "tooling/jfr-profiling"
 related:
 - "tooling/compact-object-headers"
 - "tooling/aot-class-preloading"

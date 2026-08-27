@@ -3,6 +3,7 @@ id: f52bebd0-05a6-43ff-b67a-463103bb475d
 slug: "jsf-managed-bean-vs-cdi-named"
 title: "JSF Managed Bean vs CDI Named Bean"
 category: "enterprise"
+navigationOrder: 128000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -62,8 +63,6 @@ support:
   state: "available"
   description: "CDI @Named available since Java EE 6; @ManagedBean removed in Jakarta\
     \ EE 10"
-prev: "enterprise/mdb-vs-reactive-messaging"
-next: "enterprise/singleton-ejb-vs-cdi-application-scoped"
 related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jndi-lookup-vs-cdi-injection"

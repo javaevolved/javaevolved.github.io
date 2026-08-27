@@ -1,0 +1,10 @@
+text: |-
+  ☕ JSF Managed Bean vs CDI Named Bean
+  
+  Replace deprecated JSF @ManagedBean with CDI @Named for a unified dependency injection model.
+  
+  @ManagedBean → @Named + CDI (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/jsf-managed-bean-vs-cdi-named.html
+  
+  #Java #JavaEvolved

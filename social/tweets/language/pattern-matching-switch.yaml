@@ -1,0 +1,10 @@
+text: |-
+  ☕ Pattern matching in switch
+  
+  Replace if-else instanceof chains with clean switch type patterns.
+  
+  if-else Chain → Type Patterns (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/language/pattern-matching-switch.html
+  
+  #Java #JavaEvolved

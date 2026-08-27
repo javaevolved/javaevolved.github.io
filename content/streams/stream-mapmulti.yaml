@@ -3,6 +3,7 @@ id: b1b9448b-4531-4af3-ba3c-0093e4bf4eed
 slug: "stream-mapmulti"
 title: "Stream.mapMulti()"
 category: "streams"
+navigationOrder: 53000
 difficulty: "intermediate"
 jdkVersion: "16"
 oldLabel: "Java 8"
@@ -41,8 +42,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 16 (March 2021)"
-prev: "streams/stream-tolist"
-next: "streams/stream-gatherers"
 related:
 - "streams/stream-iterate-predicate"
 - "streams/stream-of-nullable"

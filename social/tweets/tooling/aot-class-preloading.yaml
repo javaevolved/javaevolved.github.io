@@ -1,0 +1,10 @@
+text: |-
+  ☕ AOT class preloading
+  
+  Cache class loading and compilation for instant startup.
+  
+  Cold Start Every Time → AOT Cache (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/tooling/aot-class-preloading.html
+  
+  #Java #JavaEvolved

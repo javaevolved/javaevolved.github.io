@@ -3,6 +3,7 @@ id: f88bc5e9-5118-4ab8-bd29-910964cf4d20
 slug: "random-generator"
 title: "RandomGenerator interface"
 category: "security"
+navigationOrder: 105000
 difficulty: "intermediate"
 jdkVersion: "17"
 oldLabel: "Java 8"
@@ -44,8 +45,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 17 (September 2021, JEP 356)."
-prev: "security/tls-default"
-next: "security/security-manager-migration"
 related:
 - "security/strong-random"
 - "security/key-derivation-functions"

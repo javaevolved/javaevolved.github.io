@@ -1,0 +1,10 @@
+text: |-
+  ☕ Atomic map updates with compute and merge
+  
+  Replace multi-step map lookup and mutation with computeIfAbsent(), compute(), and me…
+  
+  get() + null check + put() → computeIfAbsent() (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/collections/map-compute-and-merge.html
+  
+  #Java #JavaEvolved

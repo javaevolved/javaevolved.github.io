@@ -3,6 +3,7 @@ id: f547e15a-f151-45e2-9000-a9b20498b4e9
 slug: "manual-transaction-vs-declarative"
 title: "Manual JPA Transaction vs Declarative @Transactional"
 category: "enterprise"
+navigationOrder: 125000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -64,8 +65,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since Jakarta EE 8 / Java 11"
-prev: "enterprise/jndi-lookup-vs-cdi-injection"
-next: "enterprise/soap-vs-jakarta-rest"
 related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jdbc-vs-jpa"

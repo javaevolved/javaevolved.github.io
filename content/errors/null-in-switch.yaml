@@ -3,6 +3,7 @@ id: 6e23cb16-86d8-4926-abdd-2cff4b3c4261
 slug: "null-in-switch"
 title: "Null case in switch"
 category: "errors"
+navigationOrder: 90000
 difficulty: "beginner"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -43,8 +44,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "errors/multi-catch"
-next: "errors/record-based-errors"
 related:
 - "errors/helpful-npe"
 - "errors/record-based-errors"

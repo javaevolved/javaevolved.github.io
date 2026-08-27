@@ -1,0 +1,10 @@
+text: |-
+  ☕ String.repeat()
+  
+  Repeat a string n times without a loop.
+  
+  StringBuilder Loop → repeat() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/strings/string-repeat.html
+  
+  #Java #JavaEvolved

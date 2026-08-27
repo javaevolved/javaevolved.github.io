@@ -1,0 +1,10 @@
+text: |-
+  ☕ Compact canonical constructor
+  
+  Validate and normalize record fields without repeating parameter lists.
+  
+  Explicit constructor validation → Compact constructor (JDK 16+)
+  
+  🔗 https://javaevolved.github.io/language/compact-canonical-constructor.html
+  
+  #Java #JavaEvolved

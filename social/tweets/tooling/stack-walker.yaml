@@ -1,0 +1,10 @@
+text: |-
+  ☕ Lazy stack inspection with StackWalker
+  
+  Inspect stack frames lazily with StackWalker instead of materializing a complete stack trace.
+  
+  Thread.getStackTrace() → StackWalker (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/tooling/stack-walker.html
+  
+  #Java #JavaEvolved

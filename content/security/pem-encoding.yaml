@@ -3,6 +3,7 @@ id: adc174c1-0461-4706-add8-a039cf395cc3
 slug: "pem-encoding"
 title: "PEM encoding/decoding"
 category: "security"
+navigationOrder: 100000
 difficulty: "advanced"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "preview"
   description: "Preview in JDK 25 (JEP 470). Requires --enable-preview."
-prev: "datetime/locale-of"
-next: "security/standard-base64"
 related:
 - "security/key-derivation-functions"
 - "security/strong-random"

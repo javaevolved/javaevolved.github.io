@@ -1,0 +1,10 @@
+text: |-
+  ☕ Record patterns (destructuring)
+  
+  Destructure records directly in patterns — extract fields in one step.
+  
+  Manual Access → Destructuring (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/language/record-patterns.html
+  
+  #Java #JavaEvolved

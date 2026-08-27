@@ -1,0 +1,10 @@
+text: |-
+  ☕ String.formatted()
+  
+  Call formatted() on the template string itself.
+  
+  String.format() → formatted() (JDK 15+)
+  
+  🔗 https://javaevolved.github.io/strings/string-formatted.html
+  
+  #Java #JavaEvolved

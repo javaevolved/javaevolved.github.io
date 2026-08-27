@@ -3,6 +3,7 @@ id: e1e93294-e581-4d1c-aee8-af5dde8833a2
 slug: "virtual-thread-executor"
 title: "Virtual thread executor"
 category: "streams"
+navigationOrder: 55000
 difficulty: "intermediate"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -43,8 +44,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "streams/stream-gatherers"
-next: "streams/optional-ifpresentorelse"
 related:
 - "streams/stream-gatherers"
 - "streams/stream-iterate-predicate"

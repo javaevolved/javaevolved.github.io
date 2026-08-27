@@ -3,6 +3,7 @@ id: 50fec359-09d8-4ae1-9d22-bf5b97b6b9e2
 slug: "single-file-execution"
 title: "Single-file execution"
 category: "tooling"
+navigationOrder: 108000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "tooling/jshell-prototyping"
-next: "tooling/multi-file-source"
 related:
 - "tooling/multi-file-source"
 - "tooling/compact-object-headers"

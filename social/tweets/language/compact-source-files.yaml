@@ -1,0 +1,10 @@
+text: |-
+  ☕ Compact source files
+  
+  Write a complete program without class declaration or public static void main.
+  
+  Main Class Ceremony → void main() (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/language/compact-source-files.html
+  
+  #Java #JavaEvolved

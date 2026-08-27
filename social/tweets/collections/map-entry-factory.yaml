@@ -1,0 +1,10 @@
+text: |-
+  ☕ Map.entry() factory
+
+  Create map entries with a clean factory method.
+
+  SimpleEntry → Map.entry() (JDK 9+)
+
+  🔗 https://javaevolved.github.io/collections/map-entry-factory.html
+
+  #Java #JavaEvolved

@@ -6,11 +6,12 @@ on:
       - '.github/workflows/content-validation.yml'
       - 'content/**'
       - 'proof/**'
-      - 'social/queue.txt'
-      - 'social/tweets.yaml'
+      - 'social/tweets/**'
       - 'translations/**'
       - 'templates/**'
       - 'html-generators/generate.java'
+      - 'html-generators/generatesocialqueue.java'
+      - 'html-generators/socialpost.java'
       - 'html-generators/validatepatternchanges.java'
       - 'html-generators/tags.properties'
       - 'html-generators/categories.properties'
@@ -41,6 +42,11 @@ jobs:
           jbang html-generators/validatepatternchanges.java
           --base "${{ github.event.pull_request.base.sha }}"
           --head "${{ github.event.pull_request.head.sha }}"
+
+      - name: Validate social posting flow
+        run: |
+          jbang html-generators/generatesocialqueue.java
+          jbang html-generators/socialpost.java --dry-run
 
       - name: Validate content and generate site
         run: jbang html-generators/generate.java

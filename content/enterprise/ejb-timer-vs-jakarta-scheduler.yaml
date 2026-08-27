@@ -3,6 +3,7 @@ id: 0d972e66-0b9b-4351-ba43-3b176673033e
 slug: "ejb-timer-vs-jakarta-scheduler"
 title: "EJB Timer vs Jakarta Scheduler"
 category: "enterprise"
+navigationOrder: 123000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -68,8 +69,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since Jakarta EE 10 / Concurrency 3.0"
-prev: "enterprise/jpa-vs-jakarta-data"
-next: "enterprise/jndi-lookup-vs-cdi-injection"
 related:
 - "enterprise/ejb-vs-cdi"
 - "concurrency/virtual-threads"

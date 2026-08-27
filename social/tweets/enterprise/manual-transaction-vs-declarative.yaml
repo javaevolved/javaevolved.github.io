@@ -1,0 +1,10 @@
+text: |-
+  ☕ Manual JPA Transaction vs Declarative @Transactional
+  
+  Replace verbose begin/commit/rollback blocks with a single @Transactiona…
+  
+  Manual Transaction → @Transactional (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/manual-transaction-vs-declarative.html
+  
+  #Java #JavaEvolved

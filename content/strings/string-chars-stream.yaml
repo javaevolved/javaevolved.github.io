@@ -3,6 +3,7 @@ id: 8fe15a96-160e-45de-bfd0-e1ad1726d5c4
 slug: "string-chars-stream"
 title: "String chars as stream"
 category: "strings"
+navigationOrder: 46000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 8+ (improved in 9+)"
-prev: "strings/string-formatted"
-next: "strings/string-lines"
 related:
 - "strings/string-repeat"
 - "strings/string-isblank"

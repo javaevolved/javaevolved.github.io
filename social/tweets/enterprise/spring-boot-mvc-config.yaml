@@ -1,0 +1,10 @@
+text: |-
+  ☕ Spring Boot MVC Configuration
+  
+  Replace the removed WebMvcConfigurerAdapter …
+  
+  WebMvcConfigurerAdapter with @EnableWebMvc → WebMvcConfigurer with Spring Boot Auto-Configuration (JDK 17+)
+  
+  🔗 https://javaevolved.github.io/enterprise/spring-boot-mvc-config.html
+  
+  #Java #JavaEvolved

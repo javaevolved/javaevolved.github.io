@@ -1,0 +1,10 @@
+text: |-
+  ☕ JNDI Lookup vs CDI Injection
+  
+  Replace fragile JNDI string lookups with type-safe CDI injection for container-managed resources.
+  
+  JNDI Lookup → CDI @Inject (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/jndi-lookup-vs-cdi-injection.html
+  
+  #Java #JavaEvolved

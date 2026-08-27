@@ -3,6 +3,7 @@ id: 3367a86f-5e67-4edd-b668-c547d4fb462b
 slug: "static-members-in-inner-classes"
 title: "Static members in inner classes"
 category: "language"
+navigationOrder: 23000
 difficulty: "intermediate"
 jdkVersion: "16"
 oldLabel: "Java 8"
@@ -56,8 +57,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 16 (March 2021)"
-prev: "language/static-methods-in-interfaces"
-next: "language/compact-canonical-constructor"
 related:
 - "language/records-for-data-classes"
 - "language/sealed-classes"

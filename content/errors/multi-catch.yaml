@@ -3,6 +3,7 @@ id: a1e10d18-a8b7-439b-9cc9-e3ce363c6588
 slug: "multi-catch"
 title: "Multi-catch exception handling"
 category: "errors"
+navigationOrder: 89000
 difficulty: "beginner"
 jdkVersion: "7"
 oldLabel: "Pre-Java 7"
@@ -43,8 +44,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 7 (July 2011)"
-prev: "errors/require-nonnull-else"
-next: "errors/null-in-switch"
 related:
 - "errors/null-in-switch"
 - "errors/helpful-npe"

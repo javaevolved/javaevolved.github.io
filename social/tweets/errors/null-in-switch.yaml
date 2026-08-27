@@ -1,0 +1,10 @@
+text: |-
+  ☕ Null case in switch
+  
+  Handle null directly as a switch case — no separate guard needed.
+  
+  Guard Before Switch → case null (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/errors/null-in-switch.html
+  
+  #Java #JavaEvolved

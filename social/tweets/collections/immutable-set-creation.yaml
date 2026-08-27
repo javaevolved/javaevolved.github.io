@@ -1,0 +1,10 @@
+text: |-
+  ☕ Immutable set creation
+  
+  Create immutable sets with a single factory call.
+  
+  Verbose Wrapping → Set.of() (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/collections/immutable-set-creation.html
+  
+  #Java #JavaEvolved

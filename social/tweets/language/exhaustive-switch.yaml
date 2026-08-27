@@ -1,0 +1,10 @@
+text: |-
+  ☕ Exhaustive switch without default
+  
+  Compiler verifies all sealed subtypes are covered — no default needed.
+  
+  Mandatory default → Sealed Exhaustiveness (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/language/exhaustive-switch.html
+  
+  #Java #JavaEvolved

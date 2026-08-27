@@ -3,6 +3,7 @@ id: 413bcef8-2ec4-444f-9b70-a6f6af2c8c55
 slug: "static-methods-in-interfaces"
 title: "Static methods in interfaces"
 category: "language"
+navigationOrder: 22000
 difficulty: "beginner"
 jdkVersion: "8"
 oldLabel: "Java 7"
@@ -52,8 +53,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 8 (March 2014)"
-prev: "language/markdown-javadoc-comments"
-next: "language/static-members-in-inner-classes"
 related:
 - "language/default-interface-methods"
 - "language/private-interface-methods"

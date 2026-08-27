@@ -3,6 +3,7 @@ id: c6cb183e-8a07-46e1-a962-62b47c08ce48
 slug: "hex-format"
 title: "HexFormat"
 category: "datetime"
+navigationOrder: 98000
 difficulty: "intermediate"
 jdkVersion: "17"
 oldLabel: "Java 8"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 17 LTS (Sept 2021)"
-prev: "datetime/math-clamp"
-next: "datetime/locale-of"
 related:
 - "datetime/date-formatting"
 - "datetime/instant-precision"

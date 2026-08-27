@@ -3,6 +3,7 @@ id: 078a3160-0074-4206-82f6-9050c9dcb2da
 slug: "switch-expressions"
 title: "Switch expressions"
 category: "language"
+navigationOrder: 3000
 difficulty: "beginner"
 jdkVersion: "14"
 oldLabel: "Java 8"
@@ -44,8 +45,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 14 (March 2020)"
-prev: "language/text-blocks-for-multiline-strings"
-next: "language/pattern-matching-instanceof"
 related:
 - "language/compact-source-files"
 - "language/sealed-classes"

@@ -3,6 +3,7 @@ id: 1c85a064-8bc5-41df-89df-f98f8b7da370
 slug: "string-formatted"
 title: "String.formatted()"
 category: "strings"
+navigationOrder: 45000
 difficulty: "beginner"
 jdkVersion: "15"
 oldLabel: "Java 8"
@@ -34,8 +35,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 15 (Sept 2020)"
-prev: "strings/string-indent-transform"
-next: "strings/string-chars-stream"
 related:
 - "strings/string-lines"
 - "strings/string-strip"

@@ -51,7 +51,7 @@ Content files are YAML (preferred) or JSON under `content/{category}/{slug}.yaml
 | `related` | Exactly **3** entries as `category/slug` paths (cross-category OK) |
 | `tags` | Non-empty list of slugs registered in `html-generators/tags.properties` |
 | `docs` | At least **1** entry with `title` and `href` |
-| `prev` / `next` | `category/slug` path or `null` for first/last in the global chain |
+| `navigationOrder` | Non-negative integer; global order is `(navigationOrder, category/slug)` |
 | `jdkVersion` | The JDK version where the feature became **final** (not preview) |
 | `difficulty` | One of: `beginner`, `intermediate`, `advanced` |
 | `support.state` | One of: `available`, `preview`, `experimental` |
@@ -60,16 +60,16 @@ Content files are YAML (preferred) or JSON under `content/{category}/{slug}.yaml
 
 1. Create `content/{category}/new-slug.yaml` with all required fields (use `content/template.json` as reference) and generate its `id` with `uuidgen`.
 2. Add a non-empty `tags` list. Every tag slug must already exist in `html-generators/tags.properties`; add new `slug=Display Name` entries there in the same change.
-3. Update `prev`/`next` in the adjacent patterns to maintain the navigation chain.
+3. Set `navigationOrder` to place the pattern in the global sequence. Values are spaced by 1000; duplicate values are allowed and tie-break by pattern key.
 4. Create `proof/{category}/{PascalCaseSlug}.java` — JBang script wrapping the modern code.
 5. Create a partial translation at `translations/content/{locale}/{category}/{slug}.yaml` for every non-English locale registered in `html-generators/locales.properties`.
 6. Run `jbang html-generators/generate.java` and verify all localized output builds. Generated site files are ignored and must not be committed. The generator rejects missing, malformed, or duplicate UUIDs as well as missing, empty, malformed, and unregistered tags.
-7. Run `jbang html-generators/generatesocialqueue.java` without `--reshuffle`. Commit the appended `social/queue.txt` entry and `social/tweets.yaml` draft; do not change `social/state.yaml`.
-8. Run `jbang html-generators/validatepatternchanges.java --file content/{category}/{slug}.yaml` and the new proof. The validator enforces translations, proof, navigation, related targets, and social artifacts.
+7. Run `jbang html-generators/generatesocialqueue.java --file content/{category}/{slug}.yaml`. Commit the generated `social/tweets/{category}/{slug}.yaml`; do not change `social/queue.txt` or `social/state.yaml`.
+8. Run `jbang html-generators/validatepatternchanges.java --file content/{category}/{slug}.yaml` and the new proof. The validator enforces translations, proof, navigation order, related targets, and the tweet draft.
 
 ### Removing or reordering a pattern
 
-Update `prev`/`next` in adjacent patterns. Search for the slug in other patterns' `related` arrays and replace with an appropriate alternative.
+Update `navigationOrder` when reordering. Search for a removed slug in other patterns' `related` arrays and replace it with an appropriate alternative.
 
 ## Internationalization
 
@@ -77,7 +77,7 @@ Full spec: `specs/i18n/i18n-spec.md`. Key rules:
 
 - All locales (including English) go through the same build pipeline.
 - UI strings: `translations/strings/{locale}.yaml`. Missing keys fall back to English with a build-time warning.
-- Content translations contain **only** translatable fields: `title`, `summary`, `explanation`, `oldApproach`, `modernApproach`, `whyModernWins`, `support.description`. Code, slugs, navigation, and docs are never translated.
+- Content translations contain **only** translatable fields: `title`, `summary`, `explanation`, `oldApproach`, `modernApproach`, `whyModernWins`, `support.description`. Code, slugs, navigation order, and docs are never translated.
 - `oldCode`/`modernCode` in translation files are **always overwritten** with English values at build time to prevent hallucinated code.
 - Locale registry: `html-generators/locales.properties` (format: `locale=Display Name`).
 - When adding a new UI string key, add it to `en.yaml` first, then to all other locale files. The generator warns on missing keys but doesn't fail.

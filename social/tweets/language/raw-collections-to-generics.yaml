@@ -1,0 +1,10 @@
+text: |-
+  ☕ Raw collections to generic types
+  
+  Replace raw collection types and retrieval casts with compile-time generic type safety.
+  
+  Raw collections → Generic collections (JDK 5+)
+  
+  🔗 https://javaevolved.github.io/language/raw-collections-to-generics.html
+  
+  #Java #JavaEvolved

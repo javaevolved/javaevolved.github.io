@@ -1,0 +1,10 @@
+text: |-
+  ☕ JShell for prototyping
+  
+  Try Java expressions interactively without creating files.
+  
+  Create File + Compile + Run → jshell REPL (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/tooling/jshell-prototyping.html
+  
+  #Java #JavaEvolved

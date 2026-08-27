@@ -3,6 +3,7 @@ id: 3aaba7e8-bd12-441a-b104-049feaa104b6
 slug: "jshell-prototyping"
 title: "JShell for prototyping"
 category: "tooling"
+navigationOrder: 107000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "security/security-manager-migration"
-next: "tooling/single-file-execution"
 related:
 - "tooling/aot-class-preloading"
 - "tooling/compact-object-headers"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Built-in HTTP server
+  
+  Java 18 includes a built-in minimal HTTP server for prototyping and file serving.
+  
+  External Server / Framework → jwebserver CLI (JDK 18+)
+  
+  🔗 https://javaevolved.github.io/tooling/built-in-http-server.html
+  
+  #Java #JavaEvolved

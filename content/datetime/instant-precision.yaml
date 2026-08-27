@@ -3,6 +3,7 @@ id: ab1ba9f1-fe99-471f-8625-cdd0eb95073e
 slug: "instant-precision"
 title: "Instant with nanosecond precision"
 category: "datetime"
+navigationOrder: 96000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "datetime/date-formatting"
-next: "datetime/math-clamp"
 related:
 - "datetime/hex-format"
 - "datetime/java-time-basics"

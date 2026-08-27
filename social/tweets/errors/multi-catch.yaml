@@ -1,0 +1,10 @@
+text: |-
+  ☕ Multi-catch exception handling
+  
+  Catch multiple exception types in a single catch block.
+  
+  Separate Catch Blocks → Multi-catch (JDK 7+)
+  
+  🔗 https://javaevolved.github.io/errors/multi-catch.html
+  
+  #Java #JavaEvolved

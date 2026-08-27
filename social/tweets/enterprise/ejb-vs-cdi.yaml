@@ -1,0 +1,10 @@
+text: |-
+  ☕ EJB versus CDI
+  
+  Replace heavyweight EJBs with lightweight CDI beans for dependency injection and transactions.
+  
+  EJB → CDI Bean (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/ejb-vs-cdi.html
+  
+  #Java #JavaEvolved

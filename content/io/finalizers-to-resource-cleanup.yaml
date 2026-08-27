@@ -3,6 +3,7 @@ id: 45488112-44bc-4a75-a6c6-a69849147ded
 slug: "finalizers-to-resource-cleanup"
 title: "Finalizers to deterministic resource cleanup"
 category: "io"
+navigationOrder: 82000
 difficulty: "advanced"
 jdkVersion: "9"
 oldLabel: "Finalization"
@@ -60,8 +61,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Cleaner and finalization deprecation available since JDK 9 (September 2017)"
-prev: "io/try-with-resources-effectively-final"
-next: "io/file-memory-mapping"
 related:
 - "io/try-with-resources-effectively-final"
 - "io/file-memory-mapping"

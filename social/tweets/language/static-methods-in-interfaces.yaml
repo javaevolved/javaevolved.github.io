@@ -1,0 +1,10 @@
+text: |-
+  ☕ Static methods in interfaces
+  
+  Add static utility methods directly to interfaces instead of separate utility classes.
+  
+  Utility classes → Interface static methods (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/language/static-methods-in-interfaces.html
+  
+  #Java #JavaEvolved

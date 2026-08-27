@@ -1,0 +1,10 @@
+text: |-
+  ☕ Immutable list creation
+  
+  Create immutable lists in one clean expression.
+  
+  Verbose Wrapping → List.of() (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/collections/immutable-list-creation.html
+  
+  #Java #JavaEvolved

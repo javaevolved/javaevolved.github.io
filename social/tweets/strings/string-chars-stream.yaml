@@ -1,0 +1,10 @@
+text: |-
+  ☕ String chars as stream
+  
+  Process string characters as a stream pipeline.
+  
+  Manual Loop → chars() Stream (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/strings/string-chars-stream.html
+  
+  #Java #JavaEvolved

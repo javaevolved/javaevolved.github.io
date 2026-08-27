@@ -1,0 +1,10 @@
+text: |-
+  ☕ Objects.requireNonNullElse()
+  
+  Get a non-null value with a clear default, no ternary needed.
+  
+  Ternary Null Check → requireNonNullElse() (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/errors/require-nonnull-else.html
+  
+  #Java #JavaEvolved

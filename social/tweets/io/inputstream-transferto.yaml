@@ -1,0 +1,10 @@
+text: |-
+  ☕ InputStream.transferTo()
+  
+  Copy an InputStream to an OutputStream in one call.
+  
+  Manual Copy Loop → transferTo() (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/io/inputstream-transferto.html
+  
+  #Java #JavaEvolved

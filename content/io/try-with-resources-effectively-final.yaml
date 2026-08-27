@@ -3,6 +3,7 @@ id: 8a24c403-b30c-4506-b6d7-9de7aecbd949
 slug: "try-with-resources-effectively-final"
 title: "Try-with-resources improvement"
 category: "io"
+navigationOrder: 81000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "io/path-of"
-next: "io/finalizers-to-resource-cleanup"
 related:
 - "io/path-of"
 - "io/reading-files"

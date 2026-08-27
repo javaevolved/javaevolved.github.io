@@ -1,0 +1,10 @@
+text: |-
+  ☕ ExecutorService auto-close
+  
+  Use try-with-resources for automatic executor shutdown.
+  
+  Manual Shutdown → try-with-resources (JDK 19+)
+  
+  🔗 https://javaevolved.github.io/concurrency/executor-try-with-resources.html
+  
+  #Java #JavaEvolved

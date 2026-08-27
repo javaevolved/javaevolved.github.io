@@ -1,0 +1,10 @@
+text: |-
+  ☕ JDBC ResultSet Mapping vs JPA Criteria API
+  
+  Replace manual JDBC ResultSet mapping with JPA's type-safe Criteria API for dynamic que…
+  
+  JDBC ResultSet → JPA Criteria API (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/jdbc-resultset-vs-jpa-criteria.html
+  
+  #Java #JavaEvolved

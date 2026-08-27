@@ -3,6 +3,7 @@ id: c725a785-d4e2-41c6-8ca8-9bfde8588926
 slug: "module-import-declarations"
 title: "Module import declarations"
 category: "language"
+navigationOrder: 17000
 difficulty: "intermediate"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 25 LTS (JEP 511, Sept 2025)."
-prev: "language/primitive-types-in-patterns"
-next: "language/exhaustive-switch"
 related:
 - "language/type-inference-with-var"
 - "language/text-blocks-for-multiline-strings"

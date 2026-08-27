@@ -1,0 +1,10 @@
+text: |-
+  ☕ JUnit 6 with JSpecify null safety
+  
+  JUnit 6 adopts JSpecify @NullMarked, making null contracts explicit across its assertion API.
+  
+  Unannotated API → @NullMarked API (JDK 17+)
+  
+  🔗 https://javaevolved.github.io/tooling/junit6-with-jspecify.html
+  
+  #Java #JavaEvolved

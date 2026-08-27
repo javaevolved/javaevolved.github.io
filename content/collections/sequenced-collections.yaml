@@ -3,6 +3,7 @@ id: 8d95ed1f-c10f-49c9-8427-916904b5ce92
 slug: "sequenced-collections"
 title: "Sequenced collections"
 category: "collections"
+navigationOrder: 31000
 difficulty: "beginner"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "collections/map-entry-factory"
-next: "collections/collectors-teeing"
 related:
 - "collections/collectors-teeing"
 - "collections/immutable-set-creation"

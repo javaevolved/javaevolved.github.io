@@ -1,0 +1,10 @@
+text: |-
+  ☕ Path.of() factory
+  
+  Use Path.of() — the modern factory method on the Path interface.
+  
+  Paths.get() → Path.of() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/io/path-of.html
+  
+  #Java #JavaEvolved

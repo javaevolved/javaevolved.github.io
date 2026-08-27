@@ -1,0 +1,10 @@
+text: |-
+  ☕ IO class for console I/O
+  
+  The new IO class provides simple, concise methods for console input and output.
+  
+  System.out / Scanner → IO class (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/io/io-class-console-io.html
+  
+  #Java #JavaEvolved

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Comparator factories and fluent ordering
+  
+  Build readable, composable ordering rules with Comparator factory methods.
+  
+  Anonymous Comparator → Comparator factories (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/collections/comparator-factories.html
+  
+  #Java #JavaEvolved

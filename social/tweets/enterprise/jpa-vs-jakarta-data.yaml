@@ -1,0 +1,10 @@
+text: |-
+  ☕ JPA versus Jakarta Data
+  
+  Declare a repository interface and let Jakarta Data generate the DAO implementation automatically.
+  
+  JPA EntityManager → Jakarta Data Repository (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/enterprise/jpa-vs-jakarta-data.html
+  
+  #Java #JavaEvolved

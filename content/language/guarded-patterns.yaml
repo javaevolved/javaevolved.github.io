@@ -3,6 +3,7 @@ id: a0a359b3-2d7e-4bc9-9e98-72fdb1287c89
 slug: "guarded-patterns"
 title: "Guarded patterns with when"
 category: "language"
+navigationOrder: 15000
 difficulty: "intermediate"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -46,8 +47,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "language/pattern-matching-switch"
-next: "language/primitive-types-in-patterns"
 related:
 - "language/record-patterns"
 - "language/type-inference-with-var"

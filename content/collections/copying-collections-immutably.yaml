@@ -3,6 +3,7 @@ id: 34332f56-c837-4ddb-b00f-aca32bb68bef
 slug: "copying-collections-immutably"
 title: "Copying collections immutably"
 category: "collections"
+navigationOrder: 29000
 difficulty: "beginner"
 jdkVersion: "10"
 oldLabel: "Java 8"
@@ -34,8 +35,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 10 (March 2018)"
-prev: "collections/immutable-set-creation"
-next: "collections/map-entry-factory"
 related:
 - "collections/immutable-set-creation"
 - "collections/map-entry-factory"

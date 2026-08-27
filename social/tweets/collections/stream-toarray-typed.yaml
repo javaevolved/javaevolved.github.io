@@ -1,0 +1,10 @@
+text: |-
+  ☕ Typed stream toArray
+  
+  Filter a collection and collect the results to a typed array using a single stream expression.
+  
+  Manual Filter + Copy → toArray(generator) (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/collections/stream-toarray-typed.html
+  
+  #Java #JavaEvolved

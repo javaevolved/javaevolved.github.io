@@ -3,6 +3,7 @@ id: 3e06bdce-3f1a-4a62-887d-00189dd2d858
 slug: "default-interface-methods"
 title: "Default interface methods"
 category: "language"
+navigationOrder: 20000
 difficulty: "intermediate"
 jdkVersion: "8"
 oldLabel: "Java 7"
@@ -55,8 +56,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 8 (March 2014)."
-prev: "language/anonymous-classes-to-lambdas"
-next: "language/markdown-javadoc-comments"
 related:
 - "language/private-interface-methods"
 - "language/pattern-matching-instanceof"

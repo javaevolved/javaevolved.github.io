@@ -3,6 +3,7 @@ id: d118236d-2cfb-4c8a-81b6-f870fc10c25d
 slug: "immutable-map-creation"
 title: "Immutable map creation"
 category: "collections"
+navigationOrder: 27000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -34,8 +35,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "collections/immutable-list-creation"
-next: "collections/immutable-set-creation"
 related:
 - "collections/copying-collections-immutably"
 - "collections/sequenced-collections"

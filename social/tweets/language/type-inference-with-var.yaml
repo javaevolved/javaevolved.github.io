@@ -1,0 +1,10 @@
+text: |-
+  ☕ Type inference with var
+  
+  Use var for local variable type inference — less noise, same safety.
+  
+  Explicit Types → var keyword (JDK 10+)
+  
+  🔗 https://javaevolved.github.io/language/type-inference-with-var.html
+  
+  #Java #JavaEvolved

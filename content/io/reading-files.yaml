@@ -3,6 +3,7 @@ id: 4b4ea893-b7b3-486f-a989-fb3f615fbeae
 slug: "reading-files"
 title: "Reading files"
 category: "io"
+navigationOrder: 76000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "io/io-class-console-io"
-next: "io/writing-files"
 related:
 - "io/try-with-resources-effectively-final"
 - "io/writing-files"

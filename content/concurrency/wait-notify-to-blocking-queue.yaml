@@ -3,6 +3,7 @@ id: "6d265fc2-1b92-417b-a1dd-9150d4985a1b"
 slug: "wait-notify-to-blocking-queue"
 title: "Wait and notify queues to BlockingQueue"
 category: "concurrency"
+navigationOrder: 69000
 difficulty: "intermediate"
 jdkVersion: "5"
 oldLabel: "Manual wait and notify"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 5 (2004)"
-prev: "concurrency/lock-free-lazy-init"
-next: "concurrency/thread-stop-to-cooperative-cancellation"
 related:
 - "concurrency/executor-try-with-resources"
 - "concurrency/structured-concurrency"

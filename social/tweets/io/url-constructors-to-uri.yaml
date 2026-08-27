@@ -1,0 +1,10 @@
+text: |-
+  ☕ Deprecated URL constructors to URI
+  
+  Parse and compose resource identifiers as URI values before converting to URL when necessary.
+  
+  Direct URL construction → URI then URL (JDK 20+)
+  
+  🔗 https://javaevolved.github.io/io/url-constructors-to-uri.html
+  
+  #Java #JavaEvolved
