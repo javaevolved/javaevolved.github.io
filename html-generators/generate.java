@@ -11,7 +11,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 /**
  * Generate HTML detail pages from JSON snippet files and slug-template.html.
- * JBang equivalent of generate.py — produces identical output.
+ * Generates the static site from the content and translation sources.
  */
 static final String BASE_URL = "https://javaevolved.github.io";
 static final String CONTENT_DIR = "content";
