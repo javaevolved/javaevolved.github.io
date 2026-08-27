@@ -1,0 +1,21 @@
+title: Colas con wait y notify a BlockingQueue
+oldApproach: wait y notify manuales
+modernApproach: BlockingQueue
+summary: Reemplaza la coordinación productor-consumidor escrita a mano con BlockingQueue.
+explanation: El código correcto de wait/notify requiere un monitor compartido, bucles
+  de condición, notificaciones coincidentes y un manejo cuidadoso de la interrupción.
+  BlockingQueue encapsula esas reglas y ofrece operaciones bloqueantes, con tiempo
+  límite y no bloqueantes para flujos productor-consumidor. Llamadas como put() y
+  take() siguen siendo interrumpibles.
+whyModernWins:
+- icon: 🛡
+  title: Coordinación más segura
+  desc: La cola se encarga del bloqueo y la señalización de condiciones.
+- icon: 👁
+  title: Intención clara
+  desc: put() y take() expresan directamente el comportamiento productor-consumidor.
+- icon: 🎛
+  title: Políticas integradas
+  desc: Elige capacidad limitada, equidad, tiempos de espera u operaciones no bloqueantes.
+support:
+  description: Ampliamente disponible desde JDK 5 (2004)

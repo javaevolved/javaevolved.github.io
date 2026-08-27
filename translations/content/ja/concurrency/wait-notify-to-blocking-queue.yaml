@@ -1,0 +1,17 @@
+title: "wait/notifyキューからBlockingQueueへ"
+oldApproach: 手動でのwaitとnotify
+modernApproach: BlockingQueue
+summary: "手書きのプロデューサー・コンシューマー調整をBlockingQueueに置き換える。"
+explanation: "正しいwait/notifyコードには、共有モニター、条件ループ、対応する通知、そして慎重な割り込み処理が必要です。BlockingQueueはこれらのルールをカプセル化し、プロデューサー・コンシューマーのワークフロー向けにブロッキング、タイムアウト付き、非ブロッキングの各操作を提供します。put()やtake()などの呼び出しは引き続き割り込み可能です。"
+whyModernWins:
+- icon: "🛡"
+  title: より安全な調整
+  desc: "キューがロックと条件通知を管理します。"
+- icon: "👁"
+  title: 明確な意図
+  desc: "put()とtake()はプロデューサー・コンシューマーの動作を直接表現します。"
+- icon: "🎛"
+  title: 組み込みポリシー
+  desc: "容量制限、公平性、タイムアウト、非ブロッキング操作を選択できます。"
+support:
+  description: "JDK 5（2004年）以降、広く利用可能"

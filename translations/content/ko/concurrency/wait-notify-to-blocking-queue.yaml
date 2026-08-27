@@ -1,0 +1,17 @@
+title: "wait/notify 큐를 BlockingQueue로"
+oldApproach: "수동 wait 및 notify"
+modernApproach: "BlockingQueue"
+summary: "수작업으로 작성한 생산자-소비자 조정 코드를 BlockingQueue로 대체합니다."
+explanation: "올바른 wait/notify 코드는 공유 모니터, 조건 루프, 일치하는 알림, 신중한 인터럽트 처리를 필요로 합니다. BlockingQueue는 이러한 규칙을 캡슐화하고 생산자-소비자 워크플로를 위한 블로킹, 시간 제한, 논블로킹 연산을 제공합니다. put()과 take() 같은 호출은 여전히 인터럽트 가능합니다."
+whyModernWins:
+- icon: "🛡"
+  title: "더 안전한 조정"
+  desc: "큐가 잠금과 조건 신호를 담당합니다."
+- icon: "👁"
+  title: "명확한 의도"
+  desc: "put()과 take()는 생산자-소비자 동작을 직접적으로 표현합니다."
+- icon: "🎛"
+  title: "내장된 정책"
+  desc: "제한된 용량, 공정성, 타임아웃 또는 논블로킹 연산을 선택할 수 있습니다."
+support:
+  description: "JDK 5 (2004년) 이후 널리 사용 가능"

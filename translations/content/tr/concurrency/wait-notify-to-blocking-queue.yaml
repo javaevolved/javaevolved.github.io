@@ -1,0 +1,17 @@
+title: "wait/notify kuyruklarından BlockingQueue'ya"
+oldApproach: "Manuel wait ve notify"
+modernApproach: "BlockingQueue"
+summary: "Elle yazılan üretici-tüketici koordinasyonunu BlockingQueue ile değiştirin."
+explanation: "Doğru wait/notify kodu, paylaşılan bir monitör, koşul döngüleri, eşleşen bildirimler ve dikkatli kesme (interrupt) işleme gerektirir. BlockingQueue bu kuralları kapsüller ve üretici-tüketici iş akışları için bloklayan, zaman aşımlı ve bloklamayan işlemler sunar. put() ve take() gibi çağrılar kesilebilir olmaya devam eder."
+whyModernWins:
+- icon: "🛡"
+  title: "Daha güvenli koordinasyon"
+  desc: "Kuyruk kilitleme ve koşul sinyalleşmesini üstlenir."
+- icon: "👁"
+  title: "Net amaç"
+  desc: "put() ve take() üretici-tüketici davranışını doğrudan ifade eder."
+- icon: "🎛"
+  title: "Yerleşik politikalar"
+  desc: "Sınırlı kapasite, adalet, zaman aşımı veya bloklamayan işlemler seçin."
+support:
+  description: "JDK 5'ten (2004) itibaren geniş çapta kullanılabilir"

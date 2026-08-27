@@ -1,0 +1,17 @@
+title: Code wait/notify verso BlockingQueue
+oldApproach: wait e notify manuali
+modernApproach: BlockingQueue
+summary: "Sostituisci la coordinazione produttore-consumatore scritta a mano con BlockingQueue."
+explanation: "Un codice wait/notify corretto richiede un monitor condiviso, cicli di condizione, notifiche corrispondenti e una gestione attenta dell'interruzione. BlockingQueue incapsula queste regole e fornisce operazioni bloccanti, temporizzate e non bloccanti per i flussi produttore-consumatore. Chiamate come put() e take() restano interrompibili."
+whyModernWins:
+- icon: 🛡
+  title: Coordinazione più sicura
+  desc: "La coda gestisce il blocco e la segnalazione delle condizioni."
+- icon: 👁
+  title: Intento chiaro
+  desc: "put() e take() esprimono direttamente il comportamento produttore-consumatore."
+- icon: 🎛
+  title: Politiche integrate
+  desc: "Scegli capacità limitata, equità, timeout o operazioni non bloccanti."
+support:
+  description: Ampiamente disponibile dal JDK 5 (2004)
