@@ -15,10 +15,10 @@ oldCode: |-
 
   String name = (String) names.get(0);
 modernCode: |-
-  List<String> names = new ArrayList<>();
+  List<String> names = new ArrayList();
   names.add("Duke");
 
-  String name = names.getFirst();
+  String name = names.get(0);
 summary: "Replace raw collection types and retrieval casts with compile-time generic type safety."
 explanation: "Raw collections accept arbitrary object types and defer type errors until a cast executes.\
   \ Generic type arguments let the compiler validate writes and reads, remove casts, improve IDE assistance,\
