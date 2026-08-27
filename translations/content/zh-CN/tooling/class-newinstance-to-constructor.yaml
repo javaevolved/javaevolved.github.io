@@ -1,0 +1,18 @@
+title: 从 Class.newInstance() 迁移到构造器反射
+oldApproach: Class.newInstance()
+modernApproach: 显式查找构造器
+summary: 使用显式构造器查找和调用替代已弃用的 Class.newInstance()。
+explanation: Class.newInstance() 已被弃用，因为它可能绕过编译期对构造器所抛异常的检查，并且只支持无参构造器。显式查找
+  Constructor 可清楚展示所选签名，并通过适当的反射异常报告反射调用失败。模块和访问规则仍然适用；此模式不建议绕过封装。
+whyModernWins:
+- icon: ✅
+  title: 受支持的 API
+  desc: 不再使用已弃用的 Class.newInstance()。
+- icon: 🎯
+  title: 显式构造器
+  desc: 请求的签名清晰可见，并且可以接受参数。
+- icon: 🛡
+  title: 如实报告失败
+  desc: 构造器异常通过 InvocationTargetException 表示。
+support:
+  description: 自 JDK 9（2017 年 9 月）弃用 Class.newInstance() 起推荐使用。

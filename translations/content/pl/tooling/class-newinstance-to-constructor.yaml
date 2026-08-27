@@ -1,0 +1,23 @@
+title: Od Class.newInstance() do refleksji konstruktora
+oldApproach: Class.newInstance()
+modernApproach: Jawne wyszukiwanie konstruktora
+summary: Zastąp przestarzałe Class.newInstance() jawnym wyszukiwaniem i wywołaniem
+  konstruktora.
+explanation: Class.newInstance() jest przestarzałe, ponieważ może ominąć kontrolę podczas
+  kompilacji wyjątków zgłaszanych przez konstruktor i obsługuje wyłącznie konstruktor
+  bezargumentowy. Jawne wyszukiwanie konstruktora uwidacznia wybraną sygnaturę i zgłasza
+  błędy wywołania refleksyjnego za pomocą odpowiednich wyjątków refleksji. Reguły modułów
+  i dostępu nadal obowiązują; ten wzorzec nie zaleca omijania hermetyzacji.
+whyModernWins:
+- icon: ✅
+  title: Obsługiwane API
+  desc: Eliminuje użycie przestarzałego Class.newInstance().
+- icon: 🎯
+  title: Jawny konstruktor
+  desc: Żądana sygnatura jest widoczna i może przyjmować argumenty.
+- icon: 🛡
+  title: Uczciwe błędy
+  desc: Wyjątki konstruktora są reprezentowane przez InvocationTargetException.
+support:
+  description: Zalecane od czasu oznaczenia Class.newInstance() jako przestarzałego
+    w JDK 9 (wrzesień 2017).

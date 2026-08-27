@@ -1,0 +1,18 @@
+title: Class.newInstance() からコンストラクター・リフレクションへ
+oldApproach: Class.newInstance()
+modernApproach: 明示的なコンストラクター検索
+summary: 非推奨の Class.newInstance() を、明示的なコンストラクターの検索と呼び出しに置き換えます。
+explanation: Class.newInstance() は、コンストラクターがスローする例外のコンパイル時チェックを回避でき、引数なしコンストラクターしかサポートしないため非推奨です。明示的に
+  Constructor を検索すると、選択したシグネチャが明確になり、リフレクション呼び出しの失敗が適切なリフレクション例外として報告されます。モジュールとアクセスの規則は引き続き適用されます。このパターンはカプセル化の回避を推奨するものではありません。
+whyModernWins:
+- icon: ✅
+  title: サポート対象の API
+  desc: 非推奨の Class.newInstance() を使用しません。
+- icon: 🎯
+  title: 明示的なコンストラクター
+  desc: 要求したシグネチャが明確になり、引数も指定できます。
+- icon: 🛡
+  title: 正確な失敗通知
+  desc: コンストラクターの例外は InvocationTargetException で表されます。
+support:
+  description: Class.newInstance() が JDK 9（2017 年 9 月）で非推奨になって以降、推奨されています。

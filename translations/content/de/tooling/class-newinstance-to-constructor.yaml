@@ -1,0 +1,24 @@
+title: Class.newInstance() durch Konstruktorreflexion ersetzen
+oldApproach: Class.newInstance()
+modernApproach: Explizite Konstruktorsuche
+summary: Das veraltete Class.newInstance() durch explizite Konstruktorsuche und
+  -aufruf ersetzen.
+explanation: Class.newInstance() ist veraltet, weil es die Prüfung der vom Konstruktor
+  ausgelösten Ausnahmen zur Kompilierzeit umgehen kann und nur parameterlose Konstruktoren
+  unterstützt. Die explizite Konstruktorsuche macht die gewählte Signatur sichtbar
+  und meldet Fehler beim reflektiven Aufruf über die passenden Reflexionsausnahmen.
+  Modul- und Zugriffsregeln gelten weiterhin; dieses Muster empfiehlt nicht, die Kapselung
+  zu umgehen.
+whyModernWins:
+- icon: ✅
+  title: Unterstützte API
+  desc: Vermeidet das veraltete Class.newInstance().
+- icon: 🎯
+  title: Expliziter Konstruktor
+  desc: Die gewünschte Signatur ist sichtbar und kann Argumente annehmen.
+- icon: 🛡
+  title: Ehrliche Fehler
+  desc: Konstruktorausnahmen werden durch InvocationTargetException dargestellt.
+support:
+  description: Empfohlen, seit Class.newInstance() in JDK 9 (September 2017) als veraltet
+    markiert wurde.

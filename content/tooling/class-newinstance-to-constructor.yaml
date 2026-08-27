@@ -1,0 +1,48 @@
+---
+id: da4d528e-40f5-4a65-be86-ed01776ce458
+slug: "class-newinstance-to-constructor"
+title: "Class.newInstance() to constructor reflection"
+category: "tooling"
+difficulty: "intermediate"
+jdkVersion: "9"
+oldLabel: "Deprecated Class.newInstance()"
+modernLabel: "Constructor reflection"
+oldApproach: "Class.newInstance()"
+modernApproach: "Explicit constructor lookup"
+oldCode: |-
+  Plugin plugin = pluginClass.newInstance();
+modernCode: |-
+  Plugin plugin = pluginClass
+          .getDeclaredConstructor()
+          .newInstance();
+summary: "Replace deprecated Class.newInstance() with explicit constructor lookup and invocation."
+explanation: "Class.newInstance() is deprecated because it can bypass compile-time checking for exceptions thrown by the constructor and only supports a zero-argument constructor. Explicit Constructor lookup makes the selected signature visible and reports reflective invocation failures through the appropriate reflection exceptions. Module and access rules still apply; this pattern does not recommend bypassing encapsulation."
+whyModernWins:
+- icon: "✅"
+  title: "Supported API"
+  desc: "Removes use of deprecated Class.newInstance()."
+- icon: "🎯"
+  title: "Explicit constructor"
+  desc: "The requested signature is visible and can accept arguments."
+- icon: "🛡"
+  title: "Honest failures"
+  desc: "Constructor exceptions are represented through InvocationTargetException."
+support:
+  state: "available"
+  description: "Recommended since Class.newInstance() was deprecated in JDK 9 (September 2017)."
+prev: "tooling/runtime-exec-to-process-builder"
+next: "language/anonymous-classes-to-lambdas"
+related:
+- "tooling/class-file-api"
+- "io/url-constructors-to-uri"
+- "language/compact-canonical-constructor"
+tags:
+- tooling
+- migration
+- constructors
+- exceptions
+docs:
+- title: "Class.getDeclaredConstructor()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Class.html#getDeclaredConstructor(java.lang.Class...)"
+- title: "Constructor.newInstance()"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/reflect/Constructor.html#newInstance(java.lang.Object...)"
