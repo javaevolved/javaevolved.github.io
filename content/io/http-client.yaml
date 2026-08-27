@@ -42,7 +42,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "concurrency/thread-stop-to-cooperative-cancellation"
+prev: "concurrency/timer-task-to-scheduled-executor"
 next: "io/http-websocket-client"
 related:
 - "io/reading-files"

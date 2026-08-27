@@ -1,0 +1,23 @@
+title: Timer görevlerinden zamanlanmış executor'lara
+oldApproach: Timer ve TimerTask
+modernApproach: ScheduledExecutorService
+summary: Sağlam zamanlanmış işler için Timer ve TimerTask'ı ScheduledExecutorService
+  ile değiştirin.
+explanation: Timer her görevi tek bir iş parçacığında çalıştırır, bu yüzden uzun süren
+  bir görev diğerlerini geciktirir ve yakalanmamış bir istisna timer iş parçacığını
+  sonlandırır. ScheduledExecutorService, executor çerçevesini kullanır, birden fazla
+  worker'ı destekler, ScheduledFuture tanıtıcıları döndürür ve açık bir yaşam döngüsü
+  yönetimi sağlar. Sahip bileşen, artık ihtiyaç duyulmadığında scheduler'ı kapatmalıdır.
+whyModernWins:
+- icon: 🧵
+  title: Daha iyi izolasyon
+  desc: Yapılandırılabilir bir iş parçacığı havuzu, ilgisiz zamanlamaların tek bir
+    kırılgan worker'ı paylaşmasını önler.
+- icon: 🛡
+  title: Sağlam yürütme
+  desc: Başarısız olan bir görev, scheduler'ın kendisini sonlandırmaz.
+- icon: 🎛
+  title: Kontrol edilebilir yaşam döngüsü
+  desc: 'Future, iptal, gecikmeler ve kapatma standart executor API''lerini kullanır.'
+support:
+  description: JDK 5'ten (Eylül 2004) beri yaygın olarak kullanılabilir

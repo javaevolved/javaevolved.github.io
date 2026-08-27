@@ -1338,3 +1338,13 @@ concurrency/wait-notify-to-blocking-queue: |-
   🔗 https://javaevolved.github.io/concurrency/wait-notify-to-blocking-queue.html
 
   #Java #JavaEvolved
+concurrency/timer-task-to-scheduled-executor: |-
+  ☕ Timer tasks to scheduled executors
+
+  Replace Timer and TimerTask with ScheduledExecutorService for robust scheduled w…
+
+  Timer and TimerTask → ScheduledExecutorService (JDK 5+)
+  🔗 https://javaevolved.github.io/concurrency/timer-task-to-scheduled-executor.html
+  🔗 https://javaevolved.github.io/concurrency/timer-task-to-scheduled-executor.html
+
+  #Java #JavaEvolved

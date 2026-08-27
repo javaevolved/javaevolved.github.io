@@ -1,0 +1,19 @@
+title: Timer 작업에서 예약 실행자로
+oldApproach: Timer와 TimerTask
+modernApproach: ScheduledExecutorService
+summary: 견고한 예약 작업을 위해 Timer와 TimerTask를 ScheduledExecutorService로 대체합니다.
+explanation: Timer는 모든 작업을 하나의 스레드에서 실행하므로 오래 걸리는 작업이 다른 작업을 지연시키고, 처리되지 않은 예외가
+  타이머 스레드를 종료시킵니다. ScheduledExecutorService는 executor 프레임워크를 사용하여 여러 워커를 지원하고, ScheduledFuture
+  핸들을 반환하며, 명시적인 생명주기 관리를 제공합니다. 소유 컴포넌트는 더 이상 필요하지 않을 때 스케줄러를 종료해야 합니다.
+whyModernWins:
+- icon: 🧵
+  title: 더 나은 격리
+  desc: 구성 가능한 스레드 풀은 관련 없는 일정들이 하나의 취약한 워커를 공유하는 것을 방지합니다.
+- icon: 🛡
+  title: 견고한 실행
+  desc: 하나의 작업이 실패해도 스케줄러 자체는 종료되지 않습니다.
+- icon: 🎛
+  title: 제어 가능한 생명주기
+  desc: Future, 취소, 지연, 종료는 표준 executor API를 사용합니다.
+support:
+  description: JDK 5(2004년 9월)부터 널리 사용 가능

@@ -39,7 +39,7 @@ support:
   state: "available"
   description: "Future and ExecutorService have been available since JDK 5 (Sept 2004)."
 prev: "concurrency/wait-notify-to-blocking-queue"
-next: "io/http-client"
+next: "concurrency/timer-task-to-scheduled-executor"
 related:
 - "concurrency/executor-try-with-resources"
 - "concurrency/structured-concurrency"

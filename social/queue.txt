@@ -132,3 +132,4 @@ concurrency/thread-stop-to-cooperative-cancellation
 io/explicit-charset-file-io
 tooling/class-newinstance-to-constructor
 concurrency/wait-notify-to-blocking-queue
+concurrency/timer-task-to-scheduled-executor
