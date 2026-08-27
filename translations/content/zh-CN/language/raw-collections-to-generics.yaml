@@ -1,0 +1,19 @@
+---
+title: 从原始集合到泛型类型
+oldApproach: 原始集合
+modernApproach: 泛型集合
+summary: 用编译期泛型类型安全取代原始集合类型和取值时的强制转换。
+explanation: "原始集合可以接受任意对象类型，类型错误会被推迟到强制转换执行时才暴露。泛型类型参数让编译器能够校验写入和读取，消除强制转换，\
+  \ 增强IDE辅助功能，并使API契约更加明确。原始类型通常只应保留在经过仔细隔离的遗留互操作边界处。"
+whyModernWins:
+- icon: 🔒
+  title: 编译期安全
+  desc: 无效的元素类型会在编译期而非运行期失败。
+- icon: 🧹
+  title: 无需取值强制转换
+  desc: 值会保留其声明的元素类型。
+- icon: 📖
+  title: 自解释的API
+  desc: 集合声明能准确说明其包含的内容。
+support:
+  description: 泛型自JDK 5（2004年9月）起可用。

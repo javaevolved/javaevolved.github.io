@@ -1,0 +1,51 @@
+---
+id: 81fd0ae3-6d56-412a-a085-90d87c84f6fe
+slug: "raw-collections-to-generics"
+title: "Raw collections to generic types"
+category: "language"
+difficulty: "beginner"
+jdkVersion: "5"
+oldLabel: "Java 1.4"
+modernLabel: "Java 5+"
+oldApproach: "Raw collections"
+modernApproach: "Generic collections"
+oldCode: |-
+  List names = new ArrayList();
+  names.add("Duke");
+
+  String name = (String) names.get(0);
+modernCode: |-
+  List<String> names = new ArrayList();
+  names.add("Duke");
+
+  String name = names.get(0);
+summary: "Replace raw collection types and retrieval casts with compile-time generic type safety."
+explanation: "Raw collections accept arbitrary object types and defer type errors until a cast executes.\
+  \ Generic type arguments let the compiler validate writes and reads, remove casts, improve IDE assistance,\
+  \ and make API contracts explicit. Raw types should normally remain only at carefully isolated legacy\
+  \ interoperability boundaries."
+whyModernWins:
+- icon: "🔒"
+  title: "Compile-time safety"
+  desc: "Invalid element types fail during compilation rather than at runtime."
+- icon: "🧹"
+  title: "No retrieval casts"
+  desc: "Values retain their declared element type."
+- icon: "📖"
+  title: "Self-documenting APIs"
+  desc: "Collection declarations state exactly what they contain."
+support:
+  state: "available"
+  description: "Generics have been available since JDK 5 (September 2004)."
+prev: "language/diamond-operator"
+next: "language/private-interface-methods"
+related:
+- "language/diamond-operator"
+- "language/type-inference-with-var"
+- "collections/immutable-list-creation"
+tags:
+- generics
+- collections
+docs:
+- title: "Generics (The Java Tutorials)"
+  href: "https://docs.oracle.com/javase/tutorial/java/generics/index.html"

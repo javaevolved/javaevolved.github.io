@@ -1,0 +1,21 @@
+---
+title: Dalle collection raw ai tipi generici
+oldApproach: Collection raw
+modernApproach: Collection generiche
+summary: Sostituisci i tipi di collection raw e i cast di recupero con la sicurezza dei tipi a tempo di compilazione.
+explanation: "Le collection raw accettano tipi di oggetto arbitrari e rimandano gli errori di tipo fino all'esecuzione\
+  \ di un cast. Gli argomenti di tipo generico permettono al compilatore di validare scritture e letture, eliminano i\
+  \ cast, migliorano il supporto dell'IDE e rendono espliciti i contratti delle API. I tipi raw dovrebbero normalmente\
+  \ rimanere solo ai confini di interoperabilità legacy attentamente isolati."
+whyModernWins:
+- icon: 🔒
+  title: Sicurezza a tempo di compilazione
+  desc: I tipi di elemento non validi falliscono in fase di compilazione anziché a runtime.
+- icon: 🧹
+  title: Nessun cast di recupero
+  desc: I valori mantengono il tipo di elemento dichiarato.
+- icon: 📖
+  title: API autodocumentate
+  desc: Le dichiarazioni di collection indicano esattamente cosa contengono.
+support:
+  description: I generici sono disponibili da JDK 5 (settembre 2004).

@@ -49,7 +49,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "language/diamond-operator"
+prev: "language/raw-collections-to-generics"
 next: "language/pattern-matching-switch"
 related:
 - "language/compact-source-files"
