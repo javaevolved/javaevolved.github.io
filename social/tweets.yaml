@@ -1334,7 +1334,7 @@ concurrency/wait-notify-to-blocking-queue: |-
   Replace hand-written producer-consumer coordination with BlockingQueue.
 
   Manual wait and notify → BlockingQueue (JDK 5+)
-  🔗 https://javaevolved.github.io/concurrency/wait-notify-to-blocking-queue.html
+
   🔗 https://javaevolved.github.io/concurrency/wait-notify-to-blocking-queue.html
 
   #Java #JavaEvolved
