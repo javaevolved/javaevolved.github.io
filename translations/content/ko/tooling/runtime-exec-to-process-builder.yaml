@@ -1,0 +1,18 @@
+---
+title: "Runtime.exec(String)에서 ProcessBuilder 인자로"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+summary: "명시적인 인자 목록과 ProcessBuilder 설정으로 프로세스를 실행합니다."
+explanation: "Runtime.exec(String)은 자바의 명령 문자열 토큰화를 적용하므로 인자에 공백이나 따옴표가 포함되면 오해하기 쉽습니다. ProcessBuilder는 프로그램 인자를 각각 구분된 값으로 받고 작업 디렉터리, 환경 변수, 입출력 리다이렉션, 오류 스트림 정책을 명시적으로 노출합니다. 애플리케이션이 의도적으로 실행하지 않는 한 셸을 호출하지 않습니다."
+whyModernWins:
+- icon: "🎯"
+  title: "정확한 인자"
+  desc: "각 프로세스 인자는 명령 문자열 토큰화 없이 구분된 값으로 유지됩니다."
+- icon: "🎛"
+  title: "명시적 설정"
+  desc: "환경, 디렉터리, 리다이렉션, 오류 처리를 함께 설정합니다."
+- icon: "🛡"
+  title: "더 안전한 경계"
+  desc: "동적 값으로 셸과 유사한 명령 문자열을 조립하지 않습니다."
+support:
+  description: "JDK 5 (2004년 9월) 이후 널리 사용 가능"

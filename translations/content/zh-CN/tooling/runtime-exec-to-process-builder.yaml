@@ -1,0 +1,18 @@
+---
+title: "从 Runtime.exec(String) 到 ProcessBuilder 参数"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+summary: "使用显式的参数列表和 ProcessBuilder 配置来启动进程。"
+explanation: "Runtime.exec(String) 会按照 Java 的命令字符串分词规则拆分命令，当参数包含空格或引号时很容易被误解。ProcessBuilder 将程序参数作为彼此独立的值接收，并显式暴露工作目录、环境变量、输入/输出重定向以及错误流策略。除非应用有意启动 shell，否则它不会调用 shell。"
+whyModernWins:
+- icon: "🎯"
+  title: "精确的参数"
+  desc: "每个进程参数都保持为独立的值，不经过命令字符串分词。"
+- icon: "🎛"
+  title: "显式配置"
+  desc: "环境、目录、重定向与错误处理可以一起配置。"
+- icon: "🛡"
+  title: "更安全的边界"
+  desc: "避免用动态值拼接出类似 shell 的命令字符串。"
+support:
+  description: 自 JDK 5 起广泛可用（2004 年 9 月）

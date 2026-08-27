@@ -1,0 +1,18 @@
+---
+title: "Od Runtime.exec(String) do argumentów ProcessBuilder"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+summary: "Uruchamiaj procesy z jawną listą argumentów i konfiguracją ProcessBuilder."
+explanation: "Runtime.exec(String) stosuje tokenizację łańcucha polecenia w Javie, którą łatwo źle zrozumieć, gdy argumenty zawierają spacje lub cudzysłowy. ProcessBuilder przyjmuje argumenty programu jako odrębne wartości i jawnie udostępnia katalog roboczy, środowisko, przekierowania wejścia/wyjścia oraz politykę strumienia błędów. Nie uruchamia powłoki, o ile aplikacja nie zrobi tego celowo."
+whyModernWins:
+- icon: "🎯"
+  title: "Dokładne argumenty"
+  desc: "Każdy argument procesu pozostaje odrębną wartością, bez tokenizacji łańcucha polecenia."
+- icon: "🎛"
+  title: "Jawna konfiguracja"
+  desc: "Środowisko, katalog, przekierowania i obsługa błędów są konfigurowane razem."
+- icon: "🛡"
+  title: "Bezpieczniejsze granice"
+  desc: "Unika budowania łańcucha polecenia w stylu powłoki z wartości dynamicznych."
+support:
+  description: "Szeroko dostępne od JDK 5 (wrzesień 2004)"

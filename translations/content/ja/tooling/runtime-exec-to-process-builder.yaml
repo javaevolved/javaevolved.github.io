@@ -1,0 +1,18 @@
+---
+title: "Runtime.exec(String) から ProcessBuilder の引数へ"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+summary: "明示的な引数リストと ProcessBuilder の設定でプロセスを起動する。"
+explanation: "Runtime.exec(String) は Java のコマンド文字列のトークン分割を適用するため、引数に空白や引用符が含まれると誤解しやすくなります。ProcessBuilder はプログラムの引数を個別の値として受け取り、作業ディレクトリ、環境変数、入出力のリダイレクト、エラーストリームの扱いを明示的に公開します。アプリケーションが意図的に起動しない限り、シェルは呼び出されません。"
+whyModernWins:
+- icon: "🎯"
+  title: "正確な引数"
+  desc: "各プロセス引数はコマンド文字列の分割を受けず、個別の値のまま保たれます。"
+- icon: "🎛"
+  title: "明示的な設定"
+  desc: "環境、ディレクトリ、リダイレクト、エラー処理をまとめて設定できます。"
+- icon: "🛡"
+  title: "安全な境界"
+  desc: "動的な値からシェルのようなコマンド文字列を組み立てずに済みます。"
+support:
+  description: "JDK 5（2004年9月）以降、広く利用可能"

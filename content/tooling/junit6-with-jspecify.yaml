@@ -88,7 +88,7 @@ support:
   state: "available"
   description: "Available since JUnit 6.0 (October 2025, requires Java 17+)"
 prev: "tooling/aot-class-preloading"
-next: "language/anonymous-classes-to-lambdas"
+next: "tooling/runtime-exec-to-process-builder"
 related:
 - "enterprise/spring-null-safety-jspecify"
 - "errors/helpful-npe"

@@ -1,0 +1,18 @@
+---
+title: "Runtime.exec(String) yerine ProcessBuilder argümanları"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+summary: "Süreçleri açık bir argüman listesi ve ProcessBuilder yapılandırmasıyla başlatın."
+explanation: "Runtime.exec(String), argümanlar boşluk veya tırnak içerdiğinde kolayca yanlış anlaşılan Java komut dizesi belirteçlemesini uygular. ProcessBuilder program argümanlarını ayrı değerler olarak alır; çalışma dizinini, ortamı, giriş/çıkış yönlendirmelerini ve hata akışı politikasını açıkça sunar. Uygulama bilerek bir kabuk başlatmadıkça kabuk çağırmaz."
+whyModernWins:
+- icon: "🎯"
+  title: "Tam argümanlar"
+  desc: "Her süreç argümanı, komut dizesi belirteçlemesi olmadan ayrı bir değer olarak kalır."
+- icon: "🎛"
+  title: "Açık yapılandırma"
+  desc: "Ortam, dizin, yönlendirmeler ve hata işleme birlikte yapılandırılır."
+- icon: "🛡"
+  title: "Daha güvenli sınırlar"
+  desc: "Dinamik değerlerden kabuk benzeri bir komut dizesi oluşturmaktan kaçınır."
+support:
+  description: "JDK 5'ten (Eylül 2004) itibaren geniş çapta kullanılabilir"

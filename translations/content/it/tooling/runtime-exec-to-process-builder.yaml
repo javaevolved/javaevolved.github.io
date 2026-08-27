@@ -1,0 +1,18 @@
+---
+title: "Da Runtime.exec(String) agli argomenti di ProcessBuilder"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+summary: "Avvia i processi con un elenco di argomenti esplicito e la configurazione di ProcessBuilder."
+explanation: "Runtime.exec(String) applica la tokenizzazione delle stringhe di comando di Java, facile da fraintendere quando gli argomenti contengono spazi o virgolette. ProcessBuilder accetta gli argomenti del programma come valori distinti ed espone esplicitamente la directory di lavoro, l'ambiente, le redirezioni di input/output e la politica del flusso di errore. Non invoca una shell a meno che l'applicazione non ne avvii deliberatamente una."
+whyModernWins:
+- icon: "🎯"
+  title: "Argomenti esatti"
+  desc: "Ogni argomento del processo resta un valore distinto, senza tokenizzazione della stringa di comando."
+- icon: "🎛"
+  title: "Configurazione esplicita"
+  desc: "Ambiente, directory, redirezioni e gestione degli errori si configurano insieme."
+- icon: "🛡"
+  title: "Confini più sicuri"
+  desc: "Evita di costruire una stringa di comando simile a una shell a partire da valori dinamici."
+support:
+  description: "Ampiamente disponibile dal JDK 5 (settembre 2004)"

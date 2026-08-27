@@ -1,0 +1,18 @@
+---
+title: "De Runtime.exec(String) aux arguments de ProcessBuilder"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+summary: "Lancez des processus avec une liste d'arguments explicite et la configuration de ProcessBuilder."
+explanation: "Runtime.exec(String) applique la tokenisation des chaînes de commande de Java, facile à mal comprendre lorsque les arguments contiennent des espaces ou des guillemets. ProcessBuilder accepte les arguments du programme comme des valeurs distinctes et expose explicitement le répertoire de travail, l'environnement, les redirections d'entrée/sortie et la politique du flux d'erreur. Il n'invoque pas de shell à moins que l'application n'en lance un délibérément."
+whyModernWins:
+- icon: "🎯"
+  title: "Arguments exacts"
+  desc: "Chaque argument du processus reste une valeur distincte, sans tokenisation de la chaîne de commande."
+- icon: "🎛"
+  title: "Configuration explicite"
+  desc: "L'environnement, le répertoire, les redirections et la gestion des erreurs sont configurés ensemble."
+- icon: "🛡"
+  title: "Frontières plus sûres"
+  desc: "Évite de construire une chaîne de commande de type shell à partir de valeurs dynamiques."
+support:
+  description: "Largement disponible depuis JDK 5 (septembre 2004)"
