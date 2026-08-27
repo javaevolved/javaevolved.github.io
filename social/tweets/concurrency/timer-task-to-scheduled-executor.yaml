@@ -5,6 +5,6 @@ text: |-
   
   Timer and TimerTask → ScheduledExecutorService (JDK 5+)
   
-  🔗 https://javaevolved.github.io/concurrency/timer-task-to-scheduled-executor.html
+  🔗 https://javaevolved.dev/concurrency/timer-task-to-scheduled-executor.html
   
   #Java #JavaEvolved

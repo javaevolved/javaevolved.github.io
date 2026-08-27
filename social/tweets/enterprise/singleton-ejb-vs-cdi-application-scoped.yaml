@@ -5,6 +5,6 @@ text: |-
   
   @Singleton EJB → @ApplicationScoped CDI (JDK 11+)
   
-  🔗 https://javaevolved.github.io/enterprise/singleton-ejb-vs-cdi-application-scoped.html
+  🔗 https://javaevolved.dev/enterprise/singleton-ejb-vs-cdi-application-scoped.html
   
   #Java #JavaEvolved

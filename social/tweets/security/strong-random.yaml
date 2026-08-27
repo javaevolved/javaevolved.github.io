@@ -5,6 +5,6 @@ text: |-
   
   new SecureRandom() → getInstanceStrong() (JDK 9+)
   
-  🔗 https://javaevolved.github.io/security/strong-random.html
+  🔗 https://javaevolved.dev/security/strong-random.html
   
   #Java #JavaEvolved

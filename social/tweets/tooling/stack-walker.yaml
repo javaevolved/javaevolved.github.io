@@ -5,6 +5,6 @@ text: |-
   
   Thread.getStackTrace() → StackWalker (JDK 9+)
   
-  🔗 https://javaevolved.github.io/tooling/stack-walker.html
+  🔗 https://javaevolved.dev/tooling/stack-walker.html
   
   #Java #JavaEvolved

@@ -5,6 +5,6 @@ text: |-
   
   Thread Pool + URLConnection → Virtual Threads + HttpClient (JDK 21+)
   
-  🔗 https://javaevolved.github.io/concurrency/concurrent-http-virtual.html
+  🔗 https://javaevolved.dev/concurrency/concurrent-http-virtual.html
   
   #Java #JavaEvolved

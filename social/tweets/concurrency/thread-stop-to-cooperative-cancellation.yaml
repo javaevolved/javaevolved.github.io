@@ -5,6 +5,6 @@ text: |-
   
   Thread.stop() → Future.cancel(true) (JDK 5+)
   
-  🔗 https://javaevolved.github.io/concurrency/thread-stop-to-cooperative-cancellation.html
+  🔗 https://javaevolved.dev/concurrency/thread-stop-to-cooperative-cancellation.html
   
   #Java #JavaEvolved

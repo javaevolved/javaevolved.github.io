@@ -5,6 +5,6 @@ text: |-
   
   MappedByteBuffer → MemorySegment with Arena (JDK 22+)
   
-  🔗 https://javaevolved.github.io/io/file-memory-mapping.html
+  🔗 https://javaevolved.dev/io/file-memory-mapping.html
   
   #Java #JavaEvolved

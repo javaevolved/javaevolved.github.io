@@ -5,6 +5,6 @@ text: |-
   
   Runtime.exec() → ProcessHandle (JDK 9+)
   
-  🔗 https://javaevolved.github.io/concurrency/process-api.html
+  🔗 https://javaevolved.dev/concurrency/process-api.html
   
   #Java #JavaEvolved

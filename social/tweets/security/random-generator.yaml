@@ -5,6 +5,6 @@ text: |-
   
   new Random() / ThreadLocalRandom → RandomGenerator factory (JDK 17+)
   
-  🔗 https://javaevolved.github.io/security/random-generator.html
+  🔗 https://javaevolved.dev/security/random-generator.html
   
   #Java #JavaEvolved

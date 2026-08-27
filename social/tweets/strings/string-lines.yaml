@@ -5,6 +5,6 @@ text: |-
   
   split("\\n") → lines() (JDK 11+)
   
-  🔗 https://javaevolved.github.io/strings/string-lines.html
+  🔗 https://javaevolved.dev/strings/string-lines.html
   
   #Java #JavaEvolved

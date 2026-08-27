@@ -5,6 +5,6 @@ text: |-
   
   get() or orElseThrow(supplier) → orElseThrow() (JDK 10+)
   
-  🔗 https://javaevolved.github.io/errors/optional-orelsethrow.html
+  🔗 https://javaevolved.dev/errors/optional-orelsethrow.html
   
   #Java #JavaEvolved

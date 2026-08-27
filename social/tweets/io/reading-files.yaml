@@ -5,6 +5,6 @@ text: |-
   
   BufferedReader → Files.readString() (JDK 11+)
   
-  🔗 https://javaevolved.github.io/io/reading-files.html
+  🔗 https://javaevolved.dev/io/reading-files.html
   
   #Java #JavaEvolved

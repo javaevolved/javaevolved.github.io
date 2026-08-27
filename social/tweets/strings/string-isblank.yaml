@@ -5,6 +5,6 @@ text: |-
   
   trim().isEmpty() → isBlank() (JDK 11+)
   
-  🔗 https://javaevolved.github.io/strings/string-isblank.html
+  🔗 https://javaevolved.dev/strings/string-isblank.html
   
   #Java #JavaEvolved
