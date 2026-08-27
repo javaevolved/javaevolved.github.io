@@ -1324,7 +1324,7 @@ tooling/class-newinstance-to-constructor: |-
   Replace deprecated Class.newInstance() with explicit constructor looku…
 
   Class.newInstance() → Explicit constructor lookup (JDK 9+)
-  🔗 https://javaevolved.github.io/tooling/class-newinstance-to-constructor.html
+
   🔗 https://javaevolved.github.io/tooling/class-newinstance-to-constructor.html
 
   #Java #JavaEvolved
