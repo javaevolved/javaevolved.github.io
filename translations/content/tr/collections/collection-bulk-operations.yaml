@@ -1,0 +1,18 @@
+---
+title: "Değişiklik döngüleri yerine koleksiyon toplu işlemleri"
+oldApproach: "Manuel iterator kaldırma"
+modernApproach: "Collection.removeIf()"
+summary: "Doğrudan koleksiyon dönüşümleri için removeIf(), replaceAll() ve List.sort() kullanın."
+explanation: "Modern koleksiyon interface'leri yaygın değişiklik işlemlerini doğrudan sunar. removeIf(), replaceAll() ve List.sort() gibi metotlar, kontrol akışı yoğun döngülerin yerine amaçlanan dönüşümü açıkça belirten işlemler koyar."
+whyModernWins:
+- icon: "👁"
+  title: "Açık amaç"
+  desc: "İşlem, nasıl yineleneceğini değil neyin değişeceğini açıklar."
+- icon: "🐛"
+  title: "Daha güvenli değişiklik"
+  desc: "Manuel iterator kaldırma kurallarından kaçınır."
+- icon: "⚡"
+  title: "Daha az kod"
+  desc: "Yaygın dönüşümler tek bir ifadeye dönüşür."
+support:
+  description: "JDK 8'den itibaren kullanılabilir (Mart 2014)"

@@ -1,0 +1,18 @@
+---
+title: 用现代替代方案取代旧式同步集合
+oldApproach: Hashtable
+modernApproach: ConcurrentHashMap
+summary: "根据实际的可变性和并发需求，用合适的集合替代 Vector 和 Hashtable。"
+explanation: "Vector 和 Hashtable 通过旧式 API 同步每个操作。现代代码通常应对线程封闭的数据使用 ArrayList 或 HashMap，并在需要共享修改时使用专门设计的并发集合。"
+whyModernWins:
+- icon: 🎯
+  title: 明确的并发意图
+  desc: "所选类型清楚表明是否预期共享。"
+- icon: ⚡
+  title: 更好的可扩展性
+  desc: "ConcurrentHashMap 的常规访问无需单一的全表锁。"
+- icon: 🧩
+  title: 现代 API
+  desc: "可自然配合当前的集合和并发映射操作。"
+support:
+  description: 自 JDK 5 起广泛可用（2004 年 9 月）

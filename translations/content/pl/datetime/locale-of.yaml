@@ -1,0 +1,17 @@
+title: Od konstruktorów Locale do Locale.of()
+oldApproach: Konstruktory Locale
+modernApproach: Locale.of()
+summary: Twórz ustawienia regionalne języka i regionu za pomocą Locale.of() zamiast przestarzałych konstruktorów.
+explanation: Metody fabryczne Locale zastępują konstruktory oznaczone jako przestarzałe w JDK 19. Forma fabryczna jest czytelniejsza, spójna z innymi API opartymi na wartościach i centralizuje tworzenie ustawień regionalnych.
+whyModernWins:
+  - icon: ✅
+    title: Wspierane API
+    desc: Eliminuje użycie przestarzałych konstruktorów.
+  - icon: 👁
+    title: Jasne tworzenie
+    desc: Nazwana fabryka jasno komunikuje zamiar.
+  - icon: 🧩
+    title: Spójny styl
+    desc: Pasuje do nowoczesnych fabryk obiektów wartości w JDK.
+support:
+  description: Dostępne od JDK 19 (wrzesień 2022)

@@ -1,0 +1,18 @@
+---
+title: "Análisis de archivos de clase con la API estándar"
+oldApproach: "ClassReader de ASM"
+modernApproach: "API de archivos de clase"
+summary: "Usa la API estándar de archivos de clase para analizar y transformar archivos de clase."
+explanation: "La API de archivos de clase, finalizada en JDK 24, proporciona modelos y transformaciones compatibles para los archivos de clase de la JVM. Evoluciona con el formato de archivos de clase del JDK y elimina la necesidad de bibliotecas de terceros en muchas tareas de inspección y generación."
+whyModernWins:
+- icon: "🛡"
+  title: "API compatible"
+  desc: "Se distribuye y evoluciona con el formato de archivos de clase del JDK."
+- icon: "📦"
+  title: "Menos dependencias"
+  desc: "Gestiona tareas comunes de bytecode sin una biblioteca externa."
+- icon: "🧩"
+  title: "Modelos componibles"
+  desc: "El análisis, la construcción y la transformación comparten una sola API."
+support:
+  description: "Finalizada en JDK 24 (JEP 484, marzo de 2025)."

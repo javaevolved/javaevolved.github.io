@@ -1,0 +1,18 @@
+---
+title: Deprecated URL constructor থেকে URI
+oldApproach: সরাসরি URL নির্মাণ
+modernApproach: প্রথমে URI, তারপর URL
+summary: প্রয়োজন হলে URL-এ রূপান্তরের আগে resource identifier-কে URI value হিসেবে parse ও compose করুন।
+explanation: URL parsing ও equality-তে protocol handler-এর বিস্ময়কর আচরণের কারণে JDK 20-এ URL constructorগুলো deprecated করা হয়েছে। parsing, composition, comparison এবং normalization-এর জন্য URI হলো পছন্দের immutable representation; শুধু URL প্রয়োজন এমন API-তেই রূপান্তর করুন।
+whyModernWins:
+- icon: "✅"
+  title: Deprecation এড়িয়ে যায়
+  desc: deprecated URL constructor-এর ব্যবহার দূর করে।
+- icon: "🧠"
+  title: অনুমানযোগ্য semantics
+  desc: URI comparison নেটওয়ার্ক-নির্ভর resolution সম্পাদন করে না।
+- icon: "🧩"
+  title: উন্নত composition
+  desc: identifier parse এবং manipulate করার জন্য URI নকশা করা হয়েছে।
+support:
+  description: URL constructor JDK 20 (মার্চ 2023) থেকে deprecated

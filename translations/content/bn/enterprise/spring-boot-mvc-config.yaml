@@ -1,0 +1,18 @@
+---
+title: Spring Boot MVC কনফিগারেশন
+oldApproach: "@EnableWebMvc সহ WebMvcConfigurerAdapter"
+modernApproach: Spring Boot Auto-Configuration সহ WebMvcConfigurer
+summary: অপসারিত WebMvcConfigurerAdapter-কে WebMvcConfigurer দিয়ে প্রতিস্থাপন করুন এবং Spring Boot-এর MVC auto-configuration বজায় রাখুন।
+explanation: Java interface-এ default method দেওয়া যেত না বলে Spring Boot 1.x অ্যাপ্লিকেশনগুলো সাধারণত WebMvcConfigurerAdapter extend করত। আধুনিক Spring Framework সংস্করণগুলো WebMvcConfigurer-এ সরাসরি default implementation দেয়, তাই interface-টি implement করে শুধু প্রয়োজনীয় methodগুলো override করুন। Spring Boot অ্যাপ্লিকেশনে ইচ্ছাকৃতভাবে MVC configuration-এর পূর্ণ নিয়ন্ত্রণ নিতে না চাইলে @EnableWebMvc যোগ করবেন না। এটি Boot-এর MVC auto-configuration নিষ্ক্রিয় করে, যার মধ্যে প্রচলিত converter, static-resource handling এবং অন্যান্য default অন্তর্ভুক্ত।
+whyModernWins:
+- icon: "🧹"
+  title: অপসারিত adapter নেই
+  desc: WebMvcConfigurer default method দেয়, তাই extend করার মতো কোনো adapter superclass নেই।
+- icon: "⚙️"
+  title: Boot-এর default বজায় রাখে
+  desc: "@EnableWebMvc ছাড়া Spring Boot স্বয়ংক্রিয়ভাবে MVC infrastructure configure করতে থাকে।"
+- icon: "🎯"
+  title: শুধু প্রয়োজনীয় অংশ override
+  desc: interface-টি implement করে অ্যাপ্লিকেশনের প্রয়োজনীয় MVC hook-টিই কাস্টমাইজ করুন।
+support:
+  description: Spring Framework 7.0 সহ Spring Boot 4.0-এ উপলব্ধ (Java 17+ প্রয়োজন)

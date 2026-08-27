@@ -1,0 +1,17 @@
+title: java.net.httpによるWebSocketクライアント
+oldApproach: サードパーティ製WebSocketクライアント
+modernApproach: java.net.http.WebSocket
+summary: "サードパーティ依存関係を追加する代わりに、標準の非同期WebSocketクライアントを使用する。"
+explanation: "java.net.httpパッケージには、標準HTTPクライアントと統合された非同期WebSocketクライアントが含まれています。接続はCompletableFutureで確立され、リスナーコールバックはCompletionStageによるノンブロッキングのメッセージ処理をサポートし、クライアントはJDK標準のプロキシ、TLS、エグゼキュータ設定を共有します。"
+whyModernWins:
+- icon: "📦"
+  title: 追加の依存関係なし
+  desc: "WebSocketクライアントはJDKに同梱されています。"
+- icon: "🧵"
+  title: 非同期API
+  desc: "接続とメッセージ処理をCompletionStageと組み合わせられます。"
+- icon: "🔗"
+  title: 共有HTTPスタック
+  desc: "プロキシ、TLS、エグゼキュータの設定にはJDK標準の機能を使用します。"
+support:
+  description: "JDK 11（2018年9月）以降、広く利用可能"

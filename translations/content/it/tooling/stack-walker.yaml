@@ -1,0 +1,18 @@
+---
+title: Ispezione lazy dello stack con StackWalker
+oldApproach: Thread.getStackTrace()
+modernApproach: StackWalker
+summary: "Ispeziona i frame dello stack in modo lazy con StackWalker invece di materializzare uno stack trace completo."
+explanation: "StackWalker espone uno stream lazy di frame dello stack e un accesso configurabile ai riferimenti alle classi conservati. Il codice può fermarsi non appena trova il frame necessario, anziché allocare un intero array di stack trace."
+whyModernWins:
+- icon: ⚡
+  title: Attraversamento lazy
+  desc: "Visita solo i frame necessari all'operazione."
+- icon: 🧩
+  title: Compatibile con gli stream
+  desc: "Il filtraggio e la selezione usano le operazioni standard degli stream."
+- icon: 🎛
+  title: Configurabile
+  desc: "Le opzioni supportano riferimenti alle classi e frame nascosti o riflessivi."
+support:
+  description: Ampiamente disponibile dal JDK 9 (settembre 2017)

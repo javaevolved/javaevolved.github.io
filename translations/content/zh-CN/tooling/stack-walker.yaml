@@ -1,0 +1,18 @@
+---
+title: 使用 StackWalker 惰性检查栈
+oldApproach: Thread.getStackTrace()
+modernApproach: StackWalker
+summary: "使用 StackWalker 惰性检查栈帧，避免实体化完整的栈跟踪。"
+explanation: "StackWalker 提供栈帧的惰性流，并支持以可配置方式访问保留的类引用。代码找到所需栈帧后即可停止，无需分配完整的栈跟踪数组。"
+whyModernWins:
+- icon: ⚡
+  title: 惰性遍历
+  desc: "只访问操作所需的栈帧。"
+- icon: 🧩
+  title: 流式处理友好
+  desc: "使用标准流操作进行筛选和选择。"
+- icon: 🎛
+  title: 可配置
+  desc: "选项支持类引用以及隐藏帧或反射帧。"
+support:
+  description: 自 JDK 9 起广泛可用（2017 年 9 月）

@@ -1,0 +1,18 @@
+---
+title: Dalle classi anonime alle lambda e ai riferimenti a metodo
+oldApproach: Classe anonima
+modernApproach: Riferimento a metodo
+summary: "Sostituisci le classi anonime con un solo metodo con lambda e riferimenti a metodo concisi."
+explanation: "Le interfacce funzionali possono essere implementate con lambda o riferimenti a metodo. Ciò elimina la verbosità delle classi anonime, preservando la tipizzazione statica e lo stesso contratto di callback."
+whyModernWins:
+- icon: ⚡
+  title: Meno boilerplate
+  desc: "Elimina la dichiarazione della classe e la cerimonia dell'override."
+- icon: 👁
+  title: Migliore leggibilità
+  desc: "Mantiene l'attenzione sull'operazione eseguita."
+- icon: 🔒
+  title: Sempre type-safe
+  desc: "Il compilatore verifica la firma dell'interfaccia funzionale di destinazione."
+support:
+  description: Disponibile dal JDK 8 (marzo 2014).

@@ -1,0 +1,17 @@
+title: "Von veralteten URL-Konstruktoren zu URI"
+oldApproach: "Direkte URL-Erstellung"
+modernApproach: "Erst URI, dann URL"
+summary: "Ressourcenbezeichner als URI-Werte parsen und zusammensetzen, bevor sie bei Bedarf in URL umgewandelt werden."
+explanation: "URL-Konstruktoren wurden in JDK 20 als veraltet markiert, weil das Parsen und die Gleichheitsprüfung von URLs überraschendes Verhalten durch Protokoll-Handler aufweisen. URI ist die bevorzugte unveränderliche Repräsentation zum Parsen, Zusammensetzen, Vergleichen und Normalisieren; eine Umwandlung sollte nur für APIs erfolgen, die URL benötigen."
+whyModernWins:
+- icon: "✅"
+  title: "Vermeidet veraltete APIs"
+  desc: "Entfernt die Verwendung veralteter URL-Konstruktoren."
+- icon: "🧠"
+  title: "Vorhersehbare Semantik"
+  desc: "Der URI-Vergleich führt keine netzwerkabhängige Auflösung durch."
+- icon: "🧩"
+  title: "Bessere Zusammensetzung"
+  desc: "URI ist für das Parsen und Bearbeiten von Bezeichnern konzipiert."
+support:
+  description: "URL-Konstruktoren sind seit JDK 20 veraltet (März 2023)"

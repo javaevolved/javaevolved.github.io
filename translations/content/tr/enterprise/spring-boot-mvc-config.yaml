@@ -1,0 +1,18 @@
+---
+title: "Spring Boot MVC Yapılandırması"
+oldApproach: "@EnableWebMvc ile WebMvcConfigurerAdapter"
+modernApproach: "Spring Boot Otomatik Yapılandırması ile WebMvcConfigurer"
+summary: "Kaldırılan WebMvcConfigurerAdapter'ı WebMvcConfigurer ile değiştirin ve Spring Boot'un MVC otomatik yapılandırmasını koruyun."
+explanation: "Spring Boot 1.x uygulamaları, Java interface'leri varsayılan metotlar sağlayamadığı için yaygın olarak WebMvcConfigurerAdapter'ı genişletirdi. Modern Spring Framework sürümleri varsayılan implementasyonları doğrudan WebMvcConfigurer üzerinde sağlar; bu nedenle interface'i uygulayın ve yalnızca ihtiyacınız olan metotları override edin. Bir Spring Boot uygulamasında MVC yapılandırmasının tüm denetimini bilinçli olarak devralmak istemediğiniz sürece @EnableWebMvc eklemeyin: Bu açıklama, olağan dönüştürücüler, statik kaynak işleme ve diğer varsayılanlar dahil Boot'un MVC otomatik yapılandırmasını devre dışı bırakır."
+whyModernWins:
+- icon: "🧹"
+  title: "Kaldırılmış adapter yok"
+  desc: "WebMvcConfigurer varsayılan metotlar sağladığından genişletilecek bir adapter üst sınıfı yoktur."
+- icon: "⚙️"
+  title: "Boot varsayılanlarını korur"
+  desc: "@EnableWebMvc olmadan Spring Boot, MVC altyapısını otomatik olarak yapılandırmaya devam eder."
+- icon: "🎯"
+  title: "Yalnızca gerekeni override edin"
+  desc: "Interface'i uygulayın ve yalnızca uygulamanın gerektirdiği MVC kancasını özelleştirin."
+support:
+  description: "Spring Framework 7.0 ile Spring Boot 4.0'da kullanılabilir (Java 17+ gerektirir)"

@@ -1,0 +1,17 @@
+title: "변경 루프 대신 컬렉션 일괄 연산"
+oldApproach: "수동 반복자 제거"
+modernApproach: "Collection.removeIf()"
+summary: "컬렉션을 직접 변환하려면 removeIf(), replaceAll(), List.sort()를 사용합니다."
+explanation: "모던 컬렉션 인터페이스는 일반적인 변경 연산을 직접 제공합니다. removeIf(), replaceAll(), List.sort() 같은 메서드는 제어 흐름이 복잡한 루프를 의도한 변환을 명시하는 연산으로 대체합니다."
+whyModernWins:
+- icon: "👁"
+  title: "명확한 의도"
+  desc: "반복 방법이 아니라 무엇을 변경하는지 연산 자체가 설명합니다."
+- icon: "🐛"
+  title: "더 안전한 변경"
+  desc: "반복자에서 직접 제거할 때 지켜야 하는 규칙을 피합니다."
+- icon: "⚡"
+  title: "더 적은 코드"
+  desc: "일반적인 변환이 하나의 표현식으로 줄어듭니다."
+support:
+  description: "JDK 8 (2014년 3월) 이후 사용 가능"

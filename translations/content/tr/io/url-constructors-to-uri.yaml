@@ -1,0 +1,18 @@
+---
+title: "Kullanımdan kaldırılmış URL constructor'larından URI'ye"
+oldApproach: "Doğrudan URL oluşturma"
+modernApproach: "Önce URI, ardından URL"
+summary: "Kaynak tanımlayıcılarını, gerektiğinde URL'ye dönüştürmeden önce URI değerleri olarak ayrıştırın ve oluşturun."
+explanation: "URL ayrıştırma ve eşitlik işlemleri şaşırtıcı protokol işleyicisi davranışlarına sahip olduğu için URL constructor'ları JDK 20'de kullanımdan kaldırıldı. URI; ayrıştırma, oluşturma, karşılaştırma ve normalleştirme için tercih edilen değişmez gösterimdir; yalnızca URL gerektiren API'lerde dönüştürün."
+whyModernWins:
+- icon: "✅"
+  title: "Kullanımdan kaldırılmış API'den kaçınır"
+  desc: "Kullanımdan kaldırılmış URL constructor'larının kullanımını ortadan kaldırır."
+- icon: "🧠"
+  title: "Öngörülebilir semantik"
+  desc: "URI karşılaştırması ağa bağlı çözümleme gerçekleştirmez."
+- icon: "🧩"
+  title: "Daha iyi oluşturma"
+  desc: "URI, tanımlayıcıları ayrıştırmak ve işlemek için tasarlanmıştır."
+support:
+  description: "URL constructor'ları JDK 20'den itibaren kullanımdan kaldırılmıştır (Mart 2023)"

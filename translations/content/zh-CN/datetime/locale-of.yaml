@@ -1,0 +1,18 @@
+---
+title: 从 Locale 构造函数迁移到 Locale.of()
+oldApproach: Locale 构造函数
+modernApproach: Locale.of()
+summary: "使用 Locale.of() 而不是已弃用的构造函数创建语言和地区区域设置。"
+explanation: "Locale 工厂方法取代了 JDK 19 中弃用的构造函数。工厂形式更清晰，与其他基于值的 API 保持一致，并集中管理区域设置的创建。"
+whyModernWins:
+- icon: ✅
+  title: 受支持的 API
+  desc: "避免使用已弃用的构造函数。"
+- icon: 👁
+  title: 构造方式清晰
+  desc: "具名工厂清楚表达意图。"
+- icon: 🧩
+  title: 风格一致
+  desc: "与现代 JDK 值对象工厂保持一致。"
+support:
+  description: 自 JDK 19 起可用（2022 年 9 月）

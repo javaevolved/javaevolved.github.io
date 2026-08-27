@@ -1,0 +1,17 @@
+title: "compute와 merge를 사용한 원자적 맵 업데이트"
+oldApproach: "get() + null 검사 + put()"
+modernApproach: "computeIfAbsent()"
+summary: "여러 단계의 맵 조회와 변경을 computeIfAbsent(), compute(), merge()로 대체합니다."
+explanation: "Map 계산 메서드는 조회와 업데이트 의도를 하나의 연산으로 결합합니다. 지연 초기화에는 computeIfAbsent()를, 새 값이 기존 값에 의존할 때는 compute()를, 제공된 값을 맵의 기존 값과 결합할 때는 merge()를 사용합니다. 동시성 맵 구현에서는 지원되는 계산 연산을 통해 get()과 put()을 따로 호출할 때 발생하는 경합도 피할 수 있습니다."
+whyModernWins:
+- icon: "⚡"
+  title: "더 적은 조회"
+  desc: "같은 키에 반복해서 접근하지 않습니다."
+- icon: "🧵"
+  title: "더 나은 동시성 의미 체계"
+  desc: "동시성 맵은 지원되는 업데이트를 원자적으로 수행할 수 있습니다."
+- icon: "👁"
+  title: "명확한 의도"
+  desc: "초기화 규칙이 접근 코드 바로 옆에 나타납니다."
+support:
+  description: "JDK 8 (2014년 3월) 이후 널리 사용 가능"

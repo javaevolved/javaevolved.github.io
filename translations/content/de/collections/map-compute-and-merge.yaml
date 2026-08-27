@@ -1,0 +1,17 @@
+title: "Atomare Map-Aktualisierungen mit compute und merge"
+oldApproach: "get() + null-Prüfung + put()"
+modernApproach: "computeIfAbsent()"
+summary: "Mehrstufiges Nachschlagen und Ändern von Maps durch computeIfAbsent(), compute() und merge() ersetzen."
+explanation: "Die Berechnungsmethoden von Map vereinen die Absicht von Nachschlagen und Aktualisieren in einer Operation. computeIfAbsent() eignet sich für verzögerte Initialisierung, compute(), wenn der neue Wert vom vorhandenen Wert abhängt, und merge(), um einen übergebenen Wert mit einem bereits in der Map vorhandenen Wert zu kombinieren. Bei nebenläufigen Map-Implementierungen vermeiden unterstützte Berechnungen außerdem Race Conditions, die durch getrennte get()- und put()-Aufrufe entstehen."
+whyModernWins:
+- icon: "⚡"
+  title: "Weniger Suchvorgänge"
+  desc: "Vermeidet wiederholte Schlüsselzugriffe."
+- icon: "🧵"
+  title: "Bessere Nebenläufigkeitssemantik"
+  desc: "Nebenläufige Maps können unterstützte Aktualisierungen atomar ausführen."
+- icon: "👁"
+  title: "Klare Absicht"
+  desc: "Die Initialisierungsregel steht direkt neben dem Zugriff."
+support:
+  description: "Weitgehend verfügbar seit JDK 8 (März 2014)"

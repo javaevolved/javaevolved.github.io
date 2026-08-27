@@ -1,0 +1,18 @@
+---
+title: Aggiornamenti atomici delle mappe con compute e merge
+oldApproach: get() + controllo null + put()
+modernApproach: computeIfAbsent()
+summary: "Sostituisci la ricerca e la mutazione della mappa in più passaggi con computeIfAbsent(), compute() e merge()."
+explanation: "I metodi di calcolo di Map combinano l'intento di ricerca e aggiornamento in una sola operazione. Usa computeIfAbsent() per l'inizializzazione lazy, compute() quando il nuovo valore dipende da quello esistente e merge() per combinare un valore fornito con uno già presente nella mappa. Nelle implementazioni di mappe concorrenti, i calcoli supportati evitano anche le race condition causate da chiamate separate a get() e put()."
+whyModernWins:
+- icon: ⚡
+  title: Meno ricerche
+  desc: "Evita accessi ripetuti alla chiave."
+- icon: 🧵
+  title: Migliore semantica di concorrenza
+  desc: "Le mappe concorrenti possono eseguire atomicamente gli aggiornamenti supportati."
+- icon: 👁
+  title: Intento chiaro
+  desc: "La regola di inizializzazione appare accanto all'accesso."
+support:
+  description: Ampiamente disponibile dal JDK 8 (marzo 2014)

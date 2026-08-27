@@ -1,0 +1,17 @@
+title: "Клиенты WebSocket с java.net.http"
+oldApproach: "Сторонний клиент WebSocket"
+modernApproach: "java.net.http.WebSocket"
+summary: "Используйте стандартный асинхронный клиент WebSocket вместо добавления сторонней зависимости."
+explanation: "Пакет java.net.http включает асинхронный клиент WebSocket, интегрированный со стандартным HTTP-клиентом. Соединения устанавливаются с помощью CompletableFuture, обратные вызовы слушателя поддерживают неблокирующую обработку сообщений через CompletionStage, а клиент использует стандартные настройки прокси, TLS и исполнителя из JDK."
+whyModernWins:
+- icon: "📦"
+  title: "Без дополнительной зависимости"
+  desc: "Клиент WebSocket входит в состав JDK."
+- icon: "🧵"
+  title: "Асинхронный API"
+  desc: "Установление соединения и обработка сообщений компонуются с CompletionStage."
+- icon: "🔗"
+  title: "Общий стек HTTP"
+  desc: "Для прокси, TLS и исполнителя используются стандартные средства JDK."
+support:
+  description: "Широко доступно начиная с JDK 11 (сентябрь 2018)"

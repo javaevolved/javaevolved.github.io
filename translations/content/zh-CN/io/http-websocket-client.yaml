@@ -1,0 +1,18 @@
+---
+title: 使用 java.net.http 的 WebSocket 客户端
+oldApproach: 第三方 WebSocket 客户端
+modernApproach: java.net.http.WebSocket
+summary: "使用标准异步 WebSocket 客户端，无需添加第三方依赖。"
+explanation: "java.net.http 包含与标准 HTTP 客户端集成的异步 WebSocket 客户端。连接通过 CompletableFuture 建立，监听器回调借助 CompletionStage 支持非阻塞消息处理，并且客户端共享 JDK 标准的代理、TLS 和执行器配置。"
+whyModernWins:
+- icon: 📦
+  title: 无额外依赖
+  desc: "WebSocket 客户端随 JDK 一同提供。"
+- icon: 🧵
+  title: 异步 API
+  desc: "连接和消息处理可与 CompletionStage 组合。"
+- icon: 🔗
+  title: 共享 HTTP 栈
+  desc: "代理、TLS 和执行器配置使用标准 JDK 设施。"
+support:
+  description: 自 JDK 11 起广泛可用（2018 年 9 月）

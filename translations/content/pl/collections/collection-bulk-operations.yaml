@@ -1,0 +1,17 @@
+title: Operacje zbiorcze kolekcji zamiast pętli modyfikujących
+oldApproach: Ręczne usuwanie za pomocą iteratora
+modernApproach: Collection.removeIf()
+summary: Używaj removeIf(), replaceAll() i List.sort() do bezpośredniego przekształcania kolekcji.
+explanation: Nowoczesne interfejsy kolekcji udostępniają typowe modyfikacje bezpośrednio. Metody takie jak removeIf(), replaceAll() i List.sort() zastępują pętle przeładowane logiką sterującą operacjami, które jasno wyrażają zamierzone przekształcenie.
+whyModernWins:
+  - icon: 👁
+    title: Jasny zamiar
+    desc: Operacja opisuje, co się zmienia, a nie sposób iteracji.
+  - icon: 🐛
+    title: Bezpieczniejsza modyfikacja
+    desc: Eliminuje konieczność ręcznego przestrzegania reguł usuwania za pomocą iteratora.
+  - icon: ⚡
+    title: Mniej kodu
+    desc: Typowe przekształcenia stają się pojedynczym wyrażeniem.
+support:
+  description: Dostępne od JDK 8 (marzec 2014)

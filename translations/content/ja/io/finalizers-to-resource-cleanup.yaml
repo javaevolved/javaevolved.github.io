@@ -1,0 +1,17 @@
+title: ファイナライザーから決定的なリソースクリーンアップへ
+oldApproach: finalize()のオーバーライド
+modernApproach: AutoCloseableとCleaner
+summary: "ファイナライゼーションをAutoCloseableに置き換え、Cleanerは防御的なフォールバックとしてのみ使用する。"
+explanation: "ファイナライゼーションは削除予定として非推奨であり、迅速なクリーンアップも信頼できる実行順序も保証しません。AutoCloseableを実装すると、呼び出し側はtry-with-resourcesを使用して決定的にリソースを解放できます。解放されずに残ったリソースについては、最後の手段としてCleanerから同じ冪等なクリーンアップ処理を呼び出せます。その処理が登録対象のオブジェクトを保持してはなりません。"
+whyModernWins:
+- icon: "⏱"
+  title: 決定的
+  desc: "Try-with-resourcesは既知の時点でリソースを解放します。"
+- icon: "🛡"
+  title: より安全なライフサイクル
+  desc: "ファイナライザーによるオブジェクトの復活と予測不能な実行順序を回避できます。"
+- icon: "🧹"
+  title: 防御的なフォールバック
+  desc: "Cleanerはfinalize()をオーバーライドせずに、解放されずに残ったリソースを回収できます。"
+support:
+  description: "Cleanerとファイナライゼーションの非推奨化はJDK 9（2017年9月）以降、利用可能"

@@ -1,0 +1,18 @@
+---
+title: "Standart API ile sınıf dosyası ayrıştırma"
+oldApproach: "ASM ClassReader"
+modernApproach: "Class-File API"
+summary: "Sınıf dosyası ayrıştırma ve dönüştürme için standart Class-File API'yi kullanın."
+explanation: "JDK 24'te kalıcı hale getirilen Class-File API, JVM sınıf dosyaları için desteklenen modeller ve dönüşümler sağlar. Sınıf dosyası formatını JDK ile birlikte takip eder ve birçok inceleme ve üretme görevinde üçüncü taraf kütüphane gereksinimini ortadan kaldırır."
+whyModernWins:
+- icon: "🛡"
+  title: "Desteklenen API"
+  desc: "JDK sınıf dosyası formatıyla birlikte sunulur ve gelişir."
+- icon: "📦"
+  title: "Daha az bağımlılık"
+  desc: "Yaygın bytecode görevlerini harici bir kütüphane olmadan gerçekleştirir."
+- icon: "🧩"
+  title: "Birleştirilebilir modeller"
+  desc: "Ayrıştırma, oluşturma ve dönüştürme tek bir API'yi paylaşır."
+support:
+  description: "JDK 24'te kalıcı hale getirildi (JEP 484, Mart 2025)."

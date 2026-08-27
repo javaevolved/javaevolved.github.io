@@ -1,0 +1,18 @@
+---
+title: Parsing dei file di classe con l'API standard
+oldApproach: Parser di bytecode di terze parti
+modernApproach: Class-File API
+summary: "Usa la Class-File API standard per il parsing e la trasformazione dei file di classe."
+explanation: "La Class-File API, finalizzata nel JDK 24, fornisce modelli e trasformazioni supportati per i file di classe della JVM. Segue l'evoluzione del formato dei file di classe insieme al JDK ed elimina la necessità di librerie di terze parti in molte attività di ispezione e generazione."
+whyModernWins:
+- icon: 🛡
+  title: API supportata
+  desc: "Viene distribuita e si evolve con il formato dei file di classe del JDK."
+- icon: 📦
+  title: Meno dipendenze
+  desc: "Gestisce le comuni attività sul bytecode senza una libreria esterna."
+- icon: 🧩
+  title: Modelli componibili
+  desc: "Parsing, costruzione e trasformazione condividono un'unica API."
+support:
+  description: "Finalizzata nel JDK 24 (JEP 484, marzo 2025)."

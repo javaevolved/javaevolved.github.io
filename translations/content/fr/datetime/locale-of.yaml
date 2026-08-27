@@ -1,0 +1,18 @@
+---
+title: "Des constructeurs de Locale à Locale.of()"
+oldApproach: "Constructeurs de Locale"
+modernApproach: "Locale.of()"
+summary: "Créez des locales de langue et de région avec Locale.of() plutôt qu'avec les constructeurs obsolètes."
+explanation: "Les méthodes de fabrique de Locale remplacent les constructeurs rendus obsolètes dans JDK 19. La forme fabrique est plus claire, s'aligne sur les autres APIs fondées sur des valeurs et centralise la création des locales."
+whyModernWins:
+- icon: "✅"
+  title: "API prise en charge"
+  desc: "Évite les constructeurs obsolètes."
+- icon: "👁"
+  title: "Construction claire"
+  desc: "La fabrique nommée communique l'intention."
+- icon: "🧩"
+  title: "Style cohérent"
+  desc: "Correspond aux fabriques modernes d'objets-valeurs du JDK."
+support:
+  description: "Disponible depuis JDK 19 (septembre 2022)"

@@ -1,0 +1,18 @@
+---
+title: Dai finalizer alla pulizia deterministica delle risorse
+oldApproach: Override di finalize()
+modernApproach: AutoCloseable e Cleaner
+summary: "Sostituisci la finalizzazione con AutoCloseable e usa Cleaner solo come fallback difensivo."
+explanation: "La finalizzazione è deprecata e destinata alla rimozione, e non garantisce né una pulizia tempestiva né un ordine affidabile. Implementa AutoCloseable affinché i chiamanti possano rilasciare le risorse in modo deterministico con try-with-resources. Per le risorse non chiuse, Cleaner può invocare come ultima risorsa la stessa azione di pulizia idempotente; tale azione non deve conservare un riferimento all'oggetto registrato."
+whyModernWins:
+- icon: ⏱
+  title: Deterministico
+  desc: "Try-with-resources rilascia le risorse in un momento noto."
+- icon: 🛡
+  title: Ciclo di vita più sicuro
+  desc: "Evita la resurrezione tramite finalizer e un ordine imprevedibile."
+- icon: 🧹
+  title: Fallback difensivo
+  desc: "Cleaner può recuperare le risorse non chiuse senza sovrascrivere finalize()."
+support:
+  description: Cleaner e deprecazione della finalizzazione disponibili dal JDK 9 (settembre 2017)

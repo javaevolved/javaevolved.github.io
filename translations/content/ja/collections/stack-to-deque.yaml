@@ -1,0 +1,17 @@
+title: StackからDequeとArrayDequeへ
+oldApproach: Stack
+modernApproach: ArrayDequeを使用したDeque
+summary: "レガシーなStackクラスの代わりに、DequeインターフェースとArrayDequeを使用する。"
+explanation: "Stackはレガシーな同期Vectorクラスを拡張しています。Dequeはスタック操作を直接モデル化し、ArrayDequeはメモリ内のLIFO処理に推奨される汎用実装です。"
+whyModernWins:
+- icon: "🎯"
+  title: 優れた抽象化
+  desc: "Dequeはスタック操作とキュー操作の両方を明示的にモデル化します。"
+- icon: "⚡"
+  title: 低いオーバーヘッド
+  desc: "ArrayDequeはVectorのレガシーな同期処理を回避します。"
+- icon: "🧩"
+  title: 高い柔軟性
+  desc: "同じインターフェースでLIFOとFIFOのアルゴリズムをサポートします。"
+support:
+  description: "JDK 6（2006年12月）以降、利用可能"

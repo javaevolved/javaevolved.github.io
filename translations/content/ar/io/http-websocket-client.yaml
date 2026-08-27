@@ -1,0 +1,17 @@
+title: "عملاء WebSocket باستخدام java.net.http"
+oldApproach: "عميل WebSocket من جهة خارجية"
+modernApproach: "java.net.http.WebSocket"
+summary: "استخدم عميل WebSocket القياسي غير المتزامن بدلاً من إضافة تبعية خارجية."
+explanation: "تتضمن حزمة java.net.http عميل WebSocket غير متزامن ومتكاملاً مع عميل HTTP القياسي. تُنشأ الاتصالات باستخدام CompletableFuture، وتدعم استدعاءات المستمع معالجة الرسائل دون حجب عبر CompletionStage، ويشترك العميل في تهيئة الوكيل وTLS والمنفّذ القياسية في JDK."
+whyModernWins:
+- icon: "📦"
+  title: "لا تبعية إضافية"
+  desc: "يأتي عميل WebSocket مضمّناً مع JDK."
+- icon: "🧵"
+  title: "واجهة برمجية غير متزامنة"
+  desc: "يتكامل إنشاء الاتصال ومعالجة الرسائل مع CompletionStage."
+- icon: "🔗"
+  title: "مكدس HTTP مشترك"
+  desc: "تستخدم تهيئة الوكيل وTLS والمنفّذ إمكانات JDK القياسية."
+support:
+  description: "متاح على نطاق واسع منذ JDK 11 (سبتمبر 2018)"

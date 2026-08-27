@@ -1,0 +1,17 @@
+title: StackWalkerによる遅延スタック検査
+oldApproach: Thread.getStackTrace()
+modernApproach: StackWalker
+summary: "完全なスタックトレースを実体化する代わりに、StackWalkerでスタックフレームを遅延検査する。"
+explanation: "StackWalkerはスタックフレームの遅延ストリームと、保持されたクラス参照への設定可能なアクセスを提供します。スタックトレース配列全体を割り当てる代わりに、必要なフレームが見つかった時点で処理を停止できます。"
+whyModernWins:
+- icon: "⚡"
+  title: 遅延走査
+  desc: "操作に必要なフレームだけを走査します。"
+- icon: "🧩"
+  title: ストリームとの親和性
+  desc: "標準ストリーム操作でフィルタリングと選択を行えます。"
+- icon: "🎛"
+  title: 設定可能
+  desc: "オプションにより、クラス参照、隠しフレーム、リフレクションフレームを扱えます。"
+support:
+  description: "JDK 9（2017年9月）以降、広く利用可能"

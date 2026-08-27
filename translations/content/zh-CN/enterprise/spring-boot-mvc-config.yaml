@@ -1,0 +1,18 @@
+---
+title: Spring Boot MVC 配置
+oldApproach: 带有 @EnableWebMvc 的 WebMvcConfigurerAdapter
+modernApproach: 配合 Spring Boot 自动配置的 WebMvcConfigurer
+summary: "用 WebMvcConfigurer 替代已移除的 WebMvcConfigurerAdapter，并保留 Spring Boot 的 MVC 自动配置。"
+explanation: "Spring Boot 1.x 应用通常扩展 WebMvcConfigurerAdapter，因为当时 Java 接口无法提供默认方法。现代 Spring Framework 版本直接在 WebMvcConfigurer 上提供默认实现，因此只需实现该接口并重写所需方法。在 Spring Boot 应用中，除非有意完全接管 MVC 配置，否则不要添加 @EnableWebMvc：它会禁用 Boot 的 MVC 自动配置，包括常用的转换器、静态资源处理及其他默认设置。"
+whyModernWins:
+- icon: 🧹
+  title: 不再使用已移除的适配器
+  desc: "WebMvcConfigurer 提供默认方法，因此无需扩展适配器超类。"
+- icon: ⚙️
+  title: 保留 Boot 默认设置
+  desc: "不使用 @EnableWebMvc 时，Spring Boot 会继续自动配置 MVC 基础设施。"
+- icon: 🎯
+  title: 只重写必要内容
+  desc: "实现接口，仅自定义应用所需的 MVC 扩展点。"
+support:
+  description: 在 Spring Boot 4.0 和 Spring Framework 7.0 中可用（需要 Java 17+）

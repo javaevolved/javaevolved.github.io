@@ -1,0 +1,17 @@
+title: "Locale 생성자에서 Locale.of()로"
+oldApproach: "Locale 생성자"
+modernApproach: "Locale.of()"
+summary: "지원 중단된 생성자 대신 Locale.of()로 언어 및 지역 로케일을 생성합니다."
+explanation: "Locale 팩토리 메서드는 JDK 19에서 지원 중단된 생성자를 대체합니다. 팩토리 방식은 더 명확하고 다른 값 기반 API와 일관되며 로케일 생성을 한곳으로 모읍니다."
+whyModernWins:
+- icon: "✅"
+  title: "지원되는 API"
+  desc: "지원 중단된 생성자를 사용하지 않습니다."
+- icon: "👁"
+  title: "명확한 생성"
+  desc: "이름이 있는 팩토리가 의도를 전달합니다."
+- icon: "🧩"
+  title: "일관된 스타일"
+  desc: "모던 JDK 값 객체 팩토리와 같은 스타일을 따릅니다."
+support:
+  description: "JDK 19 (2022년 9월) 이후 사용 가능"

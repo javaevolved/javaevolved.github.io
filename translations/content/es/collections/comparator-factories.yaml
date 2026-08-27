@@ -1,0 +1,18 @@
+---
+title: "Factorías de Comparator y ordenación fluida"
+oldApproach: "Comparator anónimo"
+modernApproach: "Factorías de Comparator"
+summary: "Crea reglas de ordenación legibles y componibles con los métodos factoría de Comparator."
+explanation: "Las factorías de Comparator expresan la ordenación de forma declarativa y componen claves primarias y secundarias sin bifurcaciones escritas a mano."
+whyModernWins:
+- icon: "🧩"
+  title: "Componible"
+  desc: "Las reglas de ordenación se encadenan de forma natural."
+- icon: "👁"
+  title: "Más fácil de revisar"
+  desc: "Las claves de ordenación y su prioridad son explícitas."
+- icon: "🐛"
+  title: "Comparaciones más seguras"
+  desc: "Los helpers especializados evitan comparadores aritméticos propensos a errores."
+support:
+  description: "Disponible desde JDK 8 (marzo de 2014)"

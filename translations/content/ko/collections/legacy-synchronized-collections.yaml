@@ -1,0 +1,17 @@
+title: "레거시 동기화 컬렉션에서 모던 대안으로"
+oldApproach: "Hashtable"
+modernApproach: "ConcurrentHashMap"
+summary: "Vector와 Hashtable을 실제 변경 가능성과 동시성 요구 사항에 맞게 선택한 컬렉션으로 대체합니다."
+explanation: "Vector와 Hashtable은 레거시 API를 통해 모든 연산을 동기화합니다. 모던 코드는 일반적으로 스레드 내부에서만 사용하는 데이터에는 ArrayList나 HashMap을 사용하고, 공유 변경이 필요할 때는 목적에 맞게 설계된 동시성 컬렉션을 사용해야 합니다."
+whyModernWins:
+- icon: "🎯"
+  title: "의도적인 동시성"
+  desc: "선택한 타입이 공유를 의도했는지 명확히 보여 줍니다."
+- icon: "⚡"
+  title: "더 나은 확장성"
+  desc: "ConcurrentHashMap은 일반적인 접근에서 테이블 전체를 잠그는 단일 락을 피합니다."
+- icon: "🧩"
+  title: "모던 API"
+  desc: "현재의 컬렉션 및 동시성 맵 연산과 자연스럽게 연동됩니다."
+support:
+  description: "JDK 5 (2004년 9월) 이후 널리 사용 가능"

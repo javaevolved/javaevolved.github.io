@@ -1,0 +1,18 @@
+---
+title: Dai costruttori URL deprecati a URI
+oldApproach: Costruzione diretta di URL
+modernApproach: Prima URI, poi URL
+summary: "Analizza e componi gli identificatori di risorse come valori URI prima di convertirli in URL quando necessario."
+explanation: "I costruttori di URL sono stati deprecati nel JDK 20 perché il parsing e l'uguaglianza di URL hanno comportamenti sorprendenti legati ai gestori di protocollo. URI è la rappresentazione immutabile preferita per parsing, composizione, confronto e normalizzazione; esegui la conversione solo in corrispondenza delle API che richiedono URL."
+whyModernWins:
+- icon: ✅
+  title: Evita la deprecazione
+  desc: "Elimina l'uso dei costruttori di URL deprecati."
+- icon: 🧠
+  title: Semantica prevedibile
+  desc: "Il confronto di URI non esegue risoluzioni dipendenti dalla rete."
+- icon: 🧩
+  title: Composizione migliore
+  desc: "URI è progettato per il parsing e la manipolazione degli identificatori."
+support:
+  description: Costruttori di URL deprecati dal JDK 20 (marzo 2023)

@@ -1,0 +1,17 @@
+title: レガシー同期コレクションからモダンな代替手段へ
+oldApproach: Hashtable
+modernApproach: ConcurrentHashMap
+summary: "VectorとHashtableを、実際の可変性と並行処理の要件に応じて選択したコレクションに置き換える。"
+explanation: "VectorとHashtableは、レガシーAPIを通じてすべての操作を同期します。モダンなコードでは通常、スレッド内に限定されたデータにはArrayListまたはHashMapを使用し、共有されたデータを変更する必要がある場合には目的に特化した並行コレクションを使用します。"
+whyModernWins:
+- icon: "🎯"
+  title: 意図が明確な並行処理
+  desc: "選択した型により、共有を想定しているかどうかが明確になります。"
+- icon: "⚡"
+  title: 優れたスケーラビリティ
+  desc: "ConcurrentHashMapは通常のアクセスでテーブル全体を単一のロックで保護することを避けます。"
+- icon: "🧩"
+  title: モダンなAPI
+  desc: "現在のコレクション操作やConcurrentMap操作と自然に連携します。"
+support:
+  description: "JDK 5（2004年9月）以降、広く利用可能"

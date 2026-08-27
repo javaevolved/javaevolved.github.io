@@ -1,0 +1,17 @@
+title: Od przestarzałych konstruktorów URL do URI
+oldApproach: Bezpośrednie tworzenie URL
+modernApproach: Najpierw URI, potem URL
+summary: Analizuj i składaj identyfikatory zasobów jako wartości URI, a dopiero w razie potrzeby konwertuj je do URL.
+explanation: Konstruktory URL oznaczono jako przestarzałe w JDK 20, ponieważ analizowanie i porównywanie URL wiąże się z zaskakującym zachowaniem handlerów protokołów. URI jest preferowaną niemutowalną reprezentacją do analizowania, składania, porównywania i normalizacji; konwertuj ją tylko dla API wymagających URL.
+whyModernWins:
+  - icon: ✅
+    title: Bez przestarzałego API
+    desc: Eliminuje użycie przestarzałych konstruktorów URL.
+  - icon: 🧠
+    title: Przewidywalna semantyka
+    desc: Porównywanie URI nie wykonuje rozwiązywania zależnego od sieci.
+  - icon: 🧩
+    title: Lepsze składanie
+    desc: URI zaprojektowano do analizowania identyfikatorów i manipulowania nimi.
+support:
+  description: Konstruktory URL są przestarzałe od JDK 20 (marzec 2023)

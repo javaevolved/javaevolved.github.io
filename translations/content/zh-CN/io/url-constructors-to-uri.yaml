@@ -1,0 +1,18 @@
+---
+title: 从已弃用的 URL 构造函数迁移到 URI
+oldApproach: 直接构造 URL
+modernApproach: 先 URI，后 URL
+summary: "先将资源标识符解析并组装为 URI 值，仅在必要时再转换为 URL。"
+explanation: "URL 构造函数在 JDK 20 中被弃用，因为 URL 的解析和相等性判断涉及协议处理器，行为可能出人意料。URI 是解析、组装、比较和规范化时首选的不可变表示；仅在 API 要求 URL 时才进行转换。"
+whyModernWins:
+- icon: ✅
+  title: 避免弃用 API
+  desc: "不再使用已弃用的 URL 构造函数。"
+- icon: 🧠
+  title: 语义可预测
+  desc: "URI 比较不会执行依赖网络的解析。"
+- icon: 🧩
+  title: 更易组装
+  desc: "URI 专为解析和操作标识符而设计。"
+support:
+  description: URL 构造函数自 JDK 20 起弃用（2023 年 3 月）

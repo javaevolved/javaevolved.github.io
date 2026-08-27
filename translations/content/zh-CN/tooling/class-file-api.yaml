@@ -1,0 +1,18 @@
+---
+title: 使用标准 API 解析类文件
+oldApproach: ASM ClassReader
+modernApproach: Class-File API
+summary: "使用标准 Class-File API 解析和转换类文件。"
+explanation: "Class-File API 在 JDK 24 中最终定稿，为 JVM 类文件提供受支持的模型和转换机制。它随 JDK 跟进类文件格式，使许多检查和生成任务不再需要第三方库。"
+whyModernWins:
+- icon: 🛡
+  title: 受支持的 API
+  desc: "随 JDK 类文件格式一同提供和演进。"
+- icon: 📦
+  title: 更少依赖
+  desc: "无需外部库即可处理常见字节码任务。"
+- icon: 🧩
+  title: 可组合模型
+  desc: "解析、构建和转换共用一个 API。"
+support:
+  description: 在 JDK 24 中最终定稿（JEP 484，2025 年 3 月）。

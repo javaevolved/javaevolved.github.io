@@ -1,0 +1,18 @@
+---
+title: "Actualizaciones atómicas de mapas con compute y merge"
+oldApproach: "get() + comprobación de null + put()"
+modernApproach: "computeIfAbsent()"
+summary: "Sustituye la consulta y mutación de mapas en varios pasos por computeIfAbsent(), compute() y merge()."
+explanation: "Los métodos de cálculo de Map combinan la intención de consulta y actualización en una sola operación. Usa computeIfAbsent() para la inicialización diferida, compute() cuando el nuevo valor dependa del existente y merge() para combinar un valor proporcionado con otro que ya esté en el mapa. En implementaciones de mapas concurrentes, los cálculos compatibles también evitan las condiciones de carrera causadas por llamadas separadas a get() y put()."
+whyModernWins:
+- icon: "⚡"
+  title: "Menos consultas"
+  desc: "Evita accesos repetidos a la clave."
+- icon: "🧵"
+  title: "Mejor semántica de concurrencia"
+  desc: "Los mapas concurrentes pueden realizar atómicamente las actualizaciones compatibles."
+- icon: "👁"
+  title: "Intención clara"
+  desc: "La regla de inicialización aparece junto al acceso."
+support:
+  description: "Ampliamente disponible desde JDK 8 (marzo de 2014)"

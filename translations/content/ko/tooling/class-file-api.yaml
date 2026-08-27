@@ -1,0 +1,17 @@
+title: "표준 API를 사용한 클래스 파일 파싱"
+oldApproach: "ASM ClassReader"
+modernApproach: "Class-File API"
+summary: "클래스 파일 파싱 및 변환에 표준 Class-File API를 사용합니다."
+explanation: "JDK 24에서 정식 기능이 된 Class-File API는 JVM 클래스 파일을 위한 지원되는 모델과 변환 기능을 제공합니다. JDK와 함께 클래스 파일 형식의 변화를 따르며, 다양한 검사 및 생성 작업에서 서드파티 라이브러리가 필요하지 않게 합니다."
+whyModernWins:
+- icon: "🛡"
+  title: "지원되는 API"
+  desc: "JDK 클래스 파일 형식과 함께 제공되고 발전합니다."
+- icon: "📦"
+  title: "더 적은 의존성"
+  desc: "외부 라이브러리 없이 일반적인 바이트코드 작업을 처리합니다."
+- icon: "🧩"
+  title: "조합 가능한 모델"
+  desc: "파싱, 빌드 및 변환이 하나의 API를 공유합니다."
+support:
+  description: "JDK 24에서 정식 기능으로 확정 (JEP 484, 2025년 3월)."

@@ -1,0 +1,17 @@
+title: "Von veralteten synchronisierten Collections zu modernen Alternativen"
+oldApproach: "Hashtable"
+modernApproach: "ConcurrentHashMap"
+summary: "Vector und Hashtable durch Collections ersetzen, die den tatsächlichen Anforderungen an Veränderbarkeit und Nebenläufigkeit entsprechen."
+explanation: "Vector und Hashtable synchronisieren jede Operation über veraltete APIs. Moderner Code sollte für Thread-lokale Daten normalerweise ArrayList oder HashMap und bei gemeinsam genutzten Mutationen speziell dafür entwickelte nebenläufige Collections verwenden."
+whyModernWins:
+- icon: "🎯"
+  title: "Bewusste Nebenläufigkeit"
+  desc: "Der gewählte Typ dokumentiert, ob eine gemeinsame Nutzung vorgesehen ist."
+- icon: "⚡"
+  title: "Bessere Skalierbarkeit"
+  desc: "ConcurrentHashMap vermeidet bei normalen Zugriffen eine einzige Sperre für die gesamte Tabelle."
+- icon: "🧩"
+  title: "Moderne APIs"
+  desc: "Funktioniert nahtlos mit aktuellen Collection- und ConcurrentMap-Operationen."
+support:
+  description: "Weitgehend verfügbar seit JDK 5 (September 2004)"

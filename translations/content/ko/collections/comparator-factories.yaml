@@ -1,0 +1,17 @@
+title: "Comparator 팩토리와 유창한 정렬"
+oldApproach: "익명 Comparator"
+modernApproach: "Comparator 팩토리"
+summary: "Comparator 팩토리 메서드로 읽기 쉽고 조합 가능한 정렬 규칙을 구성합니다."
+explanation: "Comparator 팩토리는 정렬 방식을 선언적으로 표현하고, 직접 분기문을 작성하지 않고도 기본 키와 보조 키를 조합합니다."
+whyModernWins:
+- icon: "🧩"
+  title: "조합 가능"
+  desc: "정렬 규칙을 자연스럽게 연결할 수 있습니다."
+- icon: "👁"
+  title: "더 쉬운 검토"
+  desc: "정렬 키와 우선순위가 명확하게 드러납니다."
+- icon: "🐛"
+  title: "더 안전한 비교"
+  desc: "특화된 헬퍼를 사용해 오류가 발생하기 쉬운 산술 비교를 피합니다."
+support:
+  description: "JDK 8 (2014년 3월) 이후 사용 가능"

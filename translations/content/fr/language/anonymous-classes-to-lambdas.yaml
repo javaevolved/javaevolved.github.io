@@ -1,0 +1,18 @@
+---
+title: "Des classes anonymes aux lambdas et références de méthodes"
+oldApproach: "Classe anonyme"
+modernApproach: "Référence de méthode"
+summary: "Remplacez les classes anonymes à méthode unique par des lambdas et des références de méthodes concises."
+explanation: "Les interfaces fonctionnelles peuvent être implémentées avec des lambdas ou des références de méthodes. Cela élimine le cérémonial des classes anonymes tout en préservant le typage statique et le même contrat de callback."
+whyModernWins:
+- icon: "⚡"
+  title: "Moins de code répétitif"
+  desc: "Supprime la déclaration de classe et le cérémonial de redéfinition."
+- icon: "👁"
+  title: "Meilleure lisibilité"
+  desc: "Maintient l'attention sur l'opération effectuée."
+- icon: "🔒"
+  title: "Toujours sûr au niveau du typage"
+  desc: "Le compilateur vérifie la signature de l'interface fonctionnelle cible."
+support:
+  description: "Disponible depuis JDK 8 (mars 2014)."

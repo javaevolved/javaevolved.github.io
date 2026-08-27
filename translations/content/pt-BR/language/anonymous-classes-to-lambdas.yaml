@@ -1,0 +1,20 @@
+title: De classes anônimas para lambdas e referências de método
+oldApproach: Classe anônima
+modernApproach: Referência de método
+summary: Substitua classes anônimas de método único por lambdas e referências de método
+  concisas.
+explanation: Interfaces funcionais podem ser implementadas com lambdas ou referências
+  de método. Isso elimina a cerimônia das classes anônimas, mantendo a tipagem estática
+  e o mesmo contrato de callback.
+whyModernWins:
+- icon: "⚡"
+  title: Menos boilerplate
+  desc: Elimina a declaração da classe e a cerimônia da sobrescrita.
+- icon: "👁"
+  title: Melhor legibilidade
+  desc: Mantém o foco na operação realizada.
+- icon: "🔒"
+  title: Mantém a segurança de tipos
+  desc: O compilador verifica a assinatura da interface funcional de destino.
+support:
+  description: Disponível desde o JDK 8 (março de 2014).

@@ -1,0 +1,18 @@
+---
+title: "StackWalker ile tembel çağrı yığını incelemesi"
+oldApproach: "Thread.getStackTrace()"
+modernApproach: "StackWalker"
+summary: "Tam bir yığın izini bellekte oluşturmadan, yığın çerçevelerini StackWalker ile tembel olarak inceleyin."
+explanation: "StackWalker, yığın çerçevelerinden oluşan tembel bir stream ve tutulan sınıf referanslarına yapılandırılabilir erişim sunar. Kod, çağrı yığını izinin tamamını içeren bir dizi ayırmak yerine gereken çerçeveyi bulduğunda durabilir."
+whyModernWins:
+- icon: "⚡"
+  title: "Tembel dolaşım"
+  desc: "Yalnızca işlemin gerektirdiği çerçeveleri ziyaret eder."
+- icon: "🧩"
+  title: "Stream uyumlu"
+  desc: "Filtreleme ve seçim standart stream işlemlerini kullanır."
+- icon: "🎛"
+  title: "Yapılandırılabilir"
+  desc: "Seçenekler sınıf referanslarını ve gizli ya da yansıtıcı çerçeveleri destekler."
+support:
+  description: "JDK 9'dan (Eylül 2017) itibaren geniş çapta kullanılabilir"

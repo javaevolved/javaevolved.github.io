@@ -1,0 +1,18 @@
+---
+title: "Analyse des fichiers de classe avec l'API standard"
+oldApproach: "Analyseur de bytecode tiers"
+modernApproach: "API Class-File"
+summary: "Utilisez l'API Class-File standard pour analyser et transformer les fichiers de classe."
+explanation: "L'API Class-File, finalisée dans JDK 24, fournit des modèles et transformations pris en charge pour les fichiers de classe de la JVM. Elle suit le format des fichiers de classe avec le JDK et dispense de bibliothèques tierces pour de nombreuses tâches d'inspection et de génération."
+whyModernWins:
+- icon: "🛡"
+  title: "API prise en charge"
+  desc: "Elle est fournie et évolue avec le format des fichiers de classe du JDK."
+- icon: "📦"
+  title: "Moins de dépendances"
+  desc: "Gère les tâches courantes sur le bytecode sans bibliothèque externe."
+- icon: "🧩"
+  title: "Modèles composables"
+  desc: "L'analyse, la construction et la transformation partagent une seule API."
+support:
+  description: "Finalisée dans JDK 24 (JEP 484, mars 2025)."

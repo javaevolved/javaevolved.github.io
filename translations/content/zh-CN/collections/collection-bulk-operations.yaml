@@ -1,0 +1,18 @@
+---
+title: 用集合批量操作替代修改循环
+oldApproach: 手动迭代器移除
+modernApproach: Collection.removeIf()
+summary: "使用 removeIf()、replaceAll() 和 List.sort() 直接转换集合。"
+explanation: "现代集合接口直接提供常见的修改操作。removeIf()、replaceAll() 和 List.sort() 等方法用明确表达预期转换的操作，替代控制流繁重的循环。"
+whyModernWins:
+- icon: 👁
+  title: 意图清晰
+  desc: "操作描述要更改什么，而不是如何迭代。"
+- icon: 🐛
+  title: 修改更安全
+  desc: "避免手动遵循迭代器移除规则。"
+- icon: ⚡
+  title: 代码更少
+  desc: "常见转换只需一个表达式。"
+support:
+  description: 自 JDK 8 起可用（2014 年 3 月）

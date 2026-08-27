@@ -1,0 +1,18 @@
+---
+title: Factory di Comparator e ordinamento fluente
+oldApproach: Comparator anonimo
+modernApproach: Factory di Comparator
+summary: "Crea regole di ordinamento leggibili e componibili con i metodi factory di Comparator."
+explanation: "Le factory di Comparator esprimono l'ordinamento in modo dichiarativo e compongono chiavi primarie e secondarie senza scrivere manualmente diramazioni."
+whyModernWins:
+- icon: 🧩
+  title: Componibile
+  desc: "Le regole di ordinamento si concatenano in modo naturale."
+- icon: 👁
+  title: Più facile da revisionare
+  desc: "Le chiavi di ordinamento e la loro priorità sono esplicite."
+- icon: 🐛
+  title: Confronti più sicuri
+  desc: "Gli helper specializzati evitano comparatori aritmetici soggetti a errori."
+support:
+  description: Disponibile dal JDK 8 (marzo 2014)

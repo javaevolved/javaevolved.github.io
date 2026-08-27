@@ -1,0 +1,17 @@
+title: "Comparator-Factories und fluente Sortierung"
+oldApproach: "Anonymer Comparator"
+modernApproach: "Comparator-Factories"
+summary: "Lesbare, kombinierbare Sortierregeln mit den Factory-Methoden von Comparator erstellen."
+explanation: "Comparator-Factories drücken Sortierungen deklarativ aus und kombinieren primäre und sekundäre Schlüssel ohne handgeschriebene Verzweigungen."
+whyModernWins:
+- icon: "🧩"
+  title: "Kombinierbar"
+  desc: "Sortierregeln lassen sich auf natürliche Weise verketten."
+- icon: "👁"
+  title: "Leichter zu prüfen"
+  desc: "Sortierschlüssel und Priorität sind explizit."
+- icon: "🐛"
+  title: "Sicherere Vergleiche"
+  desc: "Spezialisierte Hilfsmethoden vermeiden fehleranfällige arithmetische Comparatoren."
+support:
+  description: "Verfügbar seit JDK 8 (März 2014)"

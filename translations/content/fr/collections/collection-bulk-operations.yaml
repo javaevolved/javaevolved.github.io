@@ -1,0 +1,18 @@
+---
+title: "Opérations groupées sur les collections plutôt que boucles de mutation"
+oldApproach: "Suppression manuelle avec un itérateur"
+modernApproach: "Collection.removeIf()"
+summary: "Utilisez removeIf(), replaceAll() et List.sort() pour transformer directement les collections."
+explanation: "Les interfaces de collection modernes exposent directement les mutations courantes. Des méthodes telles que removeIf(), replaceAll() et List.sort() remplacent les boucles chargées de logique de contrôle par des opérations qui expriment la transformation souhaitée."
+whyModernWins:
+- icon: "👁"
+  title: "Intention claire"
+  desc: "L'opération décrit ce qui change, et non la manière d'itérer."
+- icon: "🐛"
+  title: "Mutation plus sûre"
+  desc: "Évite les règles de suppression manuelle avec un itérateur."
+- icon: "⚡"
+  title: "Moins de code"
+  desc: "Les transformations courantes tiennent en une seule expression."
+support:
+  description: "Disponible depuis JDK 8 (mars 2014)"

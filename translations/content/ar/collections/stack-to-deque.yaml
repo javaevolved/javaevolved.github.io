@@ -1,0 +1,17 @@
+title: "من Stack إلى Deque و ArrayDeque"
+oldApproach: "Stack"
+modernApproach: "Deque باستخدام ArrayDeque"
+summary: "استخدم واجهة Deque مع ArrayDeque بدلاً من فئة Stack القديمة."
+explanation: "ترث Stack من فئة Vector المتزامنة القديمة. تمثّل Deque عمليات المكدس مباشرةً، وArrayDeque هو التطبيق العام المفضّل لأعمال LIFO داخل الذاكرة."
+whyModernWins:
+- icon: "🎯"
+  title: "تجريد أفضل"
+  desc: "تمثّل Deque صراحةً عمليات المكدس والطابور معاً."
+- icon: "⚡"
+  title: "تكلفة إضافية أقل"
+  desc: "يتجنب ArrayDeque التزامن القديم في Vector."
+- icon: "🧩"
+  title: "مرونة أكبر"
+  desc: "تدعم الواجهة نفسها خوارزميات LIFO و FIFO."
+support:
+  description: "متاح منذ JDK 6 (ديسمبر 2006)"

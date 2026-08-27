@@ -1,0 +1,17 @@
+title: LocaleコンストラクターからLocale.of()へ
+oldApproach: Localeコンストラクター
+modernApproach: Locale.of()
+summary: "非推奨のコンストラクターの代わりにLocale.of()を使用して、言語と地域のロケールを作成する。"
+explanation: "Localeファクトリメソッドは、JDK 19で非推奨になったコンストラクターに代わるものです。ファクトリ形式はより明確で、他の値ベースAPIと整合し、ロケールの作成を一元化します。"
+whyModernWins:
+- icon: "✅"
+  title: サポート対象のAPI
+  desc: "非推奨のコンストラクターを回避できます。"
+- icon: "👁"
+  title: 明確な生成
+  desc: "名前付きファクトリが意図を明確に伝えます。"
+- icon: "🧩"
+  title: 一貫したスタイル
+  desc: "モダンJDKの値オブジェクト用ファクトリと同じスタイルです。"
+support:
+  description: "JDK 19（2022年9月）以降、利用可能"

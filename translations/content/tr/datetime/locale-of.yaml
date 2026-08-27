@@ -1,0 +1,18 @@
+---
+title: "Locale constructor'larından Locale.of()'a"
+oldApproach: "Locale constructor'ları"
+modernApproach: "Locale.of()"
+summary: "Dil ve bölge locale'lerini kullanımdan kaldırılmış constructor'lar yerine Locale.of() ile oluşturun."
+explanation: "Locale fabrika metotları, JDK 19'da kullanımdan kaldırılan constructor'ların yerini alır. Fabrika biçimi daha açıktır, diğer değer tabanlı API'lerle uyumludur ve locale oluşturmayı merkezileştirir."
+whyModernWins:
+- icon: "✅"
+  title: "Desteklenen API"
+  desc: "Kullanımdan kaldırılmış constructor'lardan kaçınır."
+- icon: "👁"
+  title: "Açık oluşturma"
+  desc: "Adlandırılmış fabrika metodu amacı anlatır."
+- icon: "🧩"
+  title: "Tutarlı stil"
+  desc: "Modern JDK değer nesnesi fabrika metotlarıyla uyumludur."
+support:
+  description: "JDK 19'dan itibaren kullanılabilir (Eylül 2022)"

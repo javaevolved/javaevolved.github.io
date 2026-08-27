@@ -1,0 +1,20 @@
+title: Análise de arquivos de classe com a API padrão
+oldApproach: ASM ClassReader
+modernApproach: API Class-File
+summary: Use a API Class-File padrão para analisar e transformar arquivos de classe.
+explanation: A API Class-File, finalizada no JDK 24, fornece modelos e transformações
+  com suporte para arquivos de classe da JVM. Ela acompanha o formato de arquivo de classe
+  do JDK e elimina a necessidade de bibliotecas de terceiros em muitas tarefas de inspeção
+  e geração.
+whyModernWins:
+- icon: "🛡"
+  title: API suportada
+  desc: É fornecida e evolui com o formato de arquivo de classe do JDK.
+- icon: "📦"
+  title: Menos dependências
+  desc: Realiza tarefas comuns de bytecode sem uma biblioteca externa.
+- icon: "🧩"
+  title: Modelos combináveis
+  desc: Análise, construção e transformação compartilham uma única API.
+support:
+  description: Finalizada no JDK 24 (JEP 484, março de 2025).

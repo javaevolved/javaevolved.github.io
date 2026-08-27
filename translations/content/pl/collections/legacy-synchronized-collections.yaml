@@ -1,0 +1,17 @@
+title: Od przestarzałych synchronizowanych kolekcji do nowoczesnych alternatyw
+oldApproach: Hashtable
+modernApproach: ConcurrentHashMap
+summary: Zastąp Vector i Hashtable kolekcjami dobranymi do rzeczywistych potrzeb w zakresie mutowalności i współbieżności.
+explanation: Vector i Hashtable synchronizują każdą operację za pośrednictwem przestarzałych API. Nowoczesny kod powinien zwykle używać ArrayList lub HashMap dla danych ograniczonych do jednego wątku, a specjalizowanych kolekcji współbieżnych, gdy wymagana jest współdzielona modyfikacja.
+whyModernWins:
+  - icon: 🎯
+    title: Świadoma współbieżność
+    desc: Wybrany typ dokumentuje, czy oczekiwane jest współdzielenie.
+  - icon: ⚡
+    title: Lepsza skalowalność
+    desc: ConcurrentHashMap podczas zwykłego dostępu nie blokuje całej tablicy pojedynczą blokadą.
+  - icon: 🧩
+    title: Nowoczesne API
+    desc: Naturalnie współpracuje z obecnymi operacjami kolekcji i map współbieżnych.
+support:
+  description: Szeroko dostępne od JDK 5 (wrzesień 2004)

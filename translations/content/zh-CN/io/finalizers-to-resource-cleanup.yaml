@@ -1,0 +1,18 @@
+---
+title: 从终结器迁移到确定性资源清理
+oldApproach: 重写 finalize()
+modernApproach: AutoCloseable 和 Cleaner
+summary: "用 AutoCloseable 替代终结机制，仅将 Cleaner 用作防御性后备方案。"
+explanation: "终结机制已被弃用并计划移除，既不能及时清理，也无法保证可靠的执行顺序。实现 AutoCloseable，使调用者可通过 try-with-resources 在确定的时机释放资源。对于泄漏的资源，Cleaner 可作为最后手段调用同一个幂等清理操作；该操作不得持有已注册对象。"
+whyModernWins:
+- icon: ⏱
+  title: 确定性
+  desc: "Try-with-resources 会在已知时机释放资源。"
+- icon: 🛡
+  title: 生命周期更安全
+  desc: "避免终结器复活和不可预测的执行顺序。"
+- icon: 🧹
+  title: 防御性后备方案
+  desc: "Cleaner 无需重写 finalize() 即可回收泄漏的资源。"
+support:
+  description: Cleaner 和终结机制弃用自 JDK 9 起可用（2017 年 9 月）

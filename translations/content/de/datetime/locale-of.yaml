@@ -1,0 +1,17 @@
+title: "Von Locale-Konstruktoren zu Locale.of()"
+oldApproach: "Locale-Konstruktoren"
+modernApproach: "Locale.of()"
+summary: "Sprach- und Regions-Locales mit Locale.of() statt veralteter Konstruktoren erstellen."
+explanation: "Die Locale-Factory-Methoden ersetzen die seit JDK 19 als veraltet markierten Konstruktoren. Die Factory-Form ist klarer, entspricht anderen wertbasierten APIs und zentralisiert die Locale-Erstellung."
+whyModernWins:
+- icon: "✅"
+  title: "Unterstützte API"
+  desc: "Vermeidet veraltete Konstruktoren."
+- icon: "👁"
+  title: "Klare Erstellung"
+  desc: "Die benannte Factory vermittelt die Absicht."
+- icon: "🧩"
+  title: "Einheitlicher Stil"
+  desc: "Entspricht modernen JDK-Factories für Wertobjekte."
+support:
+  description: "Verfügbar seit JDK 19 (September 2022)"

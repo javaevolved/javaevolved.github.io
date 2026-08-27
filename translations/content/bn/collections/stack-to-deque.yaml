@@ -1,0 +1,18 @@
+---
+title: Stack থেকে Deque এবং ArrayDeque
+oldApproach: Stack
+modernApproach: ArrayDeque সহ Deque
+summary: লিগ্যাসি Stack ক্লাসের পরিবর্তে ArrayDeque সহ Deque ইন্টারফেস ব্যবহার করুন।
+explanation: Stack লিগ্যাসি synchronized Vector ক্লাসকে extend করে। Deque সরাসরি stack operation মডেল করে, আর in-memory LIFO কাজের জন্য ArrayDeque পছন্দের general-purpose implementation।
+whyModernWins:
+- icon: "🎯"
+  title: উন্নত অ্যাবস্ট্রাকশন
+  desc: Deque স্পষ্টভাবে stack এবং queue—উভয় অপারেশন মডেল করে।
+- icon: "⚡"
+  title: কম ওভারহেড
+  desc: ArrayDeque, Vector-এর লিগ্যাসি synchronization এড়িয়ে যায়।
+- icon: "🧩"
+  title: আরও নমনীয়
+  desc: একই ইন্টারফেস LIFO এবং FIFO অ্যালগরিদম সমর্থন করে।
+support:
+  description: JDK 6 (ডিসেম্বর 2006) থেকে উপলব্ধ

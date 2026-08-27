@@ -1,0 +1,17 @@
+title: Od Stack do Deque i ArrayDeque
+oldApproach: Stack
+modernApproach: Deque z ArrayDeque
+summary: Używaj interfejsu Deque z ArrayDeque zamiast przestarzałej klasy Stack.
+explanation: Stack rozszerza przestarzałą synchronizowaną klasę Vector. Deque bezpośrednio modeluje operacje stosu, a ArrayDeque jest preferowaną implementacją ogólnego przeznaczenia do wykonywania operacji LIFO w pamięci.
+whyModernWins:
+  - icon: 🎯
+    title: Lepsza abstrakcja
+    desc: Deque jawnie modeluje operacje zarówno stosu, jak i kolejki.
+  - icon: ⚡
+    title: Mniejszy narzut
+    desc: ArrayDeque nie ponosi kosztu przestarzałej synchronizacji Vector.
+  - icon: 🧩
+    title: Większa elastyczność
+    desc: Ten sam interfejs obsługuje algorytmy LIFO i FIFO.
+support:
+  description: Dostępne od JDK 6 (grudzień 2006)

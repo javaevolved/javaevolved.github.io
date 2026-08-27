@@ -1,0 +1,18 @@
+title: Fábricas de Comparator e ordenação fluente
+oldApproach: Comparator anônimo
+modernApproach: Fábricas de Comparator
+summary: Crie regras de ordenação legíveis e combináveis com métodos fábrica de Comparator.
+explanation: Fábricas de Comparator expressam a ordenação de forma declarativa e combinam
+  chaves primárias e secundárias sem ramificações escritas manualmente.
+whyModernWins:
+- icon: "🧩"
+  title: Combinável
+  desc: Regras de ordenação são encadeadas naturalmente.
+- icon: "👁"
+  title: Mais fácil de revisar
+  desc: As chaves de ordenação e a prioridade ficam explícitas.
+- icon: "🐛"
+  title: Comparações mais seguras
+  desc: Métodos auxiliares especializados evitam comparadores aritméticos propensos a erros.
+support:
+  description: Disponível desde o JDK 8 (março de 2014)

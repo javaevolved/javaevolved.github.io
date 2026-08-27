@@ -1,0 +1,17 @@
+title: "표준 Base64 인코딩 및 디코딩"
+oldApproach: "sun.misc 인코더"
+modernApproach: "표준 Base64 API"
+summary: "내부 JDK 클래스나 서드파티 코덱 대신 java.util.Base64를 사용합니다."
+explanation: "표준 Base64 API는 지원되지 않는 내부 패키지에 의존하지 않고 기본, URL 안전 및 MIME 인코더와 디코더를 제공합니다. 표준 Base64에는 getEncoder()와 getDecoder()를 사용하고, 대상 형식에 필요한 경우 URL 또는 MIME 변형을 선택합니다."
+whyModernWins:
+- icon: "🛡️"
+  title: "지원되는 API"
+  desc: "접근할 수 없는 sun.misc 구현 클래스를 사용하지 않습니다."
+- icon: "🧩"
+  title: "완전한 변형 지원"
+  desc: "기본, URL 안전 및 MIME 인코더와 디코더를 포함합니다."
+- icon: "🚀"
+  title: "의존성 없음"
+  desc: "인코딩과 디코딩이 JDK에 내장되어 있습니다."
+support:
+  description: "JDK 8 (2014년 3월) 이후 널리 사용 가능."

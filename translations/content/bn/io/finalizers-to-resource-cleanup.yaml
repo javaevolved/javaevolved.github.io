@@ -1,0 +1,18 @@
+---
+title: Finalizer থেকে নির্ধারিত resource cleanup
+oldApproach: finalize() override করা
+modernApproach: AutoCloseable এবং Cleaner
+summary: finalization-কে AutoCloseable দিয়ে প্রতিস্থাপন করুন এবং শুধু প্রতিরক্ষামূলক fallback হিসেবে Cleaner ব্যবহার করুন।
+explanation: Finalization অপসারণের জন্য deprecated এবং এটি সময়মতো cleanup বা নির্ভরযোগ্য ordering—কোনোটিই দেয় না। AutoCloseable implement করুন, যাতে caller try-with-resources দিয়ে নির্ধারিতভাবে resource release করতে পারে। leak হওয়া resource-এর জন্য শেষ উপায় হিসেবে Cleaner একই idempotent cleanup action চালাতে পারে; এর action অবশ্যই registered object ধরে রাখবে না।
+whyModernWins:
+- icon: "⏱"
+  title: নির্ধারিত
+  desc: Try-with-resources একটি নির্দিষ্ট সময়ে resource release করে।
+- icon: "🛡"
+  title: নিরাপদ lifecycle
+  desc: finalizer resurrection এবং অনির্দেশ্য ordering এড়িয়ে যায়।
+- icon: "🧹"
+  title: প্রতিরক্ষামূলক fallback
+  desc: finalize() override না করেই Cleaner leak হওয়া resource পুনরুদ্ধার করতে পারে।
+support:
+  description: Cleaner এবং finalization deprecation JDK 9 (সেপ্টেম্বর 2017) থেকে উপলব্ধ

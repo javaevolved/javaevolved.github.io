@@ -1,0 +1,17 @@
+title: Atomowe aktualizacje map za pomocą compute i merge
+oldApproach: get() + sprawdzenie null + put()
+modernApproach: computeIfAbsent()
+summary: Zastąp wieloetapowe wyszukiwanie i modyfikowanie mapy metodami computeIfAbsent(), compute() i merge().
+explanation: Metody obliczeniowe Map łączą zamiar wyszukania i aktualizacji w jednej operacji. Używaj computeIfAbsent() do leniwej inicjalizacji, compute(), gdy nowa wartość zależy od istniejącej, a merge() do połączenia dostarczonej wartości z wartością obecną już w mapie. W implementacjach map współbieżnych obsługiwane obliczenia zapobiegają też wyścigom powodowanym przez osobne wywołania get() i put().
+whyModernWins:
+  - icon: ⚡
+    title: Mniej wyszukiwań
+    desc: Eliminuje wielokrotny dostęp do tego samego klucza.
+  - icon: 🧵
+    title: Lepsza semantyka współbieżności
+    desc: Mapy współbieżne mogą atomowo wykonywać obsługiwane aktualizacje.
+  - icon: 👁
+    title: Jasny zamiar
+    desc: Reguła inicjalizacji znajduje się bezpośrednio przy operacji dostępu.
+support:
+  description: Szeroko dostępne od JDK 8 (marzec 2014)

@@ -1,0 +1,17 @@
+title: Standardowe kodowanie i dekodowanie Base64
+oldApproach: Encoder z sun.misc
+modernApproach: Standardowe API Base64
+summary: Używaj java.util.Base64 zamiast wewnętrznych klas JDK lub zewnętrznych kodeków.
+explanation: Standardowe API Base64 zapewnia podstawowe, bezpieczne dla URL oraz MIME encodery i decodery bez polegania na niewspieranych pakietach wewnętrznych. Używaj getEncoder() i getDecoder() dla standardowego Base64 albo wybierz wariant URL lub MIME, gdy wymaga tego format docelowy.
+whyModernWins:
+  - icon: 🛡️
+    title: Wspierane API
+    desc: Eliminuje użycie niedostępnych klas implementacyjnych sun.misc.
+  - icon: 🧩
+    title: Pełny zestaw wariantów
+    desc: Obejmuje podstawowe, bezpieczne dla URL oraz MIME encodery i decodery.
+  - icon: 🚀
+    title: Bez zależności
+    desc: Kodowanie i dekodowanie są wbudowane w JDK.
+support:
+  description: Szeroko dostępne od JDK 8 (marzec 2014).

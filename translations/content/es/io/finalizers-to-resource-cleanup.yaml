@@ -1,0 +1,18 @@
+---
+title: "De finalizadores a la liberación determinista de recursos"
+oldApproach: "Sobrescribir finalize()"
+modernApproach: "AutoCloseable y Cleaner"
+summary: "Sustituye la finalización por AutoCloseable y usa Cleaner solo como mecanismo defensivo de respaldo."
+explanation: "La finalización está obsoleta y pendiente de eliminación, y no ofrece ni una liberación oportuna ni un orden fiable. Implementa AutoCloseable para que el código cliente pueda liberar los recursos de forma determinista mediante try-with-resources. Para recursos no liberados, Cleaner puede invocar como último recurso la misma acción de limpieza idempotente; dicha acción no debe conservar el objeto registrado."
+whyModernWins:
+- icon: "⏱"
+  title: "Determinista"
+  desc: "Try-with-resources libera los recursos en un punto conocido."
+- icon: "🛡"
+  title: "Ciclo de vida más seguro"
+  desc: "Evita la resurrección de finalizadores y un orden impredecible."
+- icon: "🧹"
+  title: "Mecanismo defensivo de respaldo"
+  desc: "Cleaner puede recuperar recursos no liberados sin sobrescribir finalize()."
+support:
+  description: "Cleaner y la declaración de obsolescencia de la finalización están disponibles desde JDK 9 (septiembre de 2017)"

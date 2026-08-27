@@ -1,0 +1,17 @@
+title: "Parsen von Class-Dateien mit der Standard-API"
+oldApproach: "ASM ClassReader"
+modernApproach: "Class-File API"
+summary: "Die Standard-Class-File-API zum Parsen und Transformieren von Class-Dateien verwenden."
+explanation: "Die in JDK 24 finalisierte Class-File-API bietet unterstützte Modelle und Transformationen für JVM-Class-Dateien. Sie folgt dem Class-Dateiformat des JDK und macht Drittanbieterbibliotheken für viele Inspektions- und Generierungsaufgaben überflüssig."
+whyModernWins:
+- icon: "🛡"
+  title: "Unterstützte API"
+  desc: "Wird zusammen mit dem JDK-Class-Dateiformat ausgeliefert und weiterentwickelt."
+- icon: "📦"
+  title: "Weniger Abhängigkeiten"
+  desc: "Erledigt gängige Bytecode-Aufgaben ohne externe Bibliothek."
+- icon: "🧩"
+  title: "Kombinierbare Modelle"
+  desc: "Parsen, Erstellen und Transformieren verwenden dieselbe API."
+support:
+  description: "Finalisiert in JDK 24 (JEP 484, März 2025)."

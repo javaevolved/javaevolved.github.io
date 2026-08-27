@@ -1,0 +1,18 @@
+---
+title: "Standart Base64 kodlama ve çözme"
+oldApproach: "sun.misc kodlayıcısı"
+modernApproach: "Standart Base64 API"
+summary: "Dahili JDK sınıfları veya üçüncü taraf codec'ler yerine java.util.Base64 kullanın."
+explanation: "Standart Base64 API, desteklenmeyen dahili paketlere bağlı kalmadan temel, URL-güvenli ve MIME kodlayıcıları ile çözücüleri sağlar. Standart Base64 için getEncoder() ve getDecoder() kullanın; hedef format gerektirdiğinde URL ve MIME çeşitlerini seçin."
+whyModernWins:
+- icon: "🛡️"
+  title: "Desteklenen API"
+  desc: "Erişilemeyen sun.misc implementasyon sınıflarından kaçınır."
+- icon: "🧩"
+  title: "Eksiksiz çeşitler"
+  desc: "Temel, URL-güvenli ve MIME kodlayıcıları ile çözücüleri içerir."
+- icon: "🚀"
+  title: "Bağımlılık yok"
+  desc: "Kodlama ve çözme JDK'da yerleşiktir."
+support:
+  description: "JDK 8'den (Mart 2014) itibaren geniş çapta kullanılabilir."

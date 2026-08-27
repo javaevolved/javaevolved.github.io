@@ -1,0 +1,20 @@
+title: De construtores de Locale para Locale.of()
+oldApproach: Construtores de Locale
+modernApproach: Locale.of()
+summary: Crie objetos Locale de idioma e região com Locale.of() em vez de construtores
+  obsoletos.
+explanation: Métodos fábrica de Locale substituem os construtores marcados como obsoletos
+  no JDK 19. A forma com fábrica é mais clara, alinha-se a outras APIs baseadas em valores
+  e centraliza a criação de objetos Locale.
+whyModernWins:
+- icon: "✅"
+  title: API suportada
+  desc: Evita construtores obsoletos.
+- icon: "👁"
+  title: Construção clara
+  desc: O método fábrica nomeado comunica a intenção.
+- icon: "🧩"
+  title: Estilo consistente
+  desc: Segue o padrão das fábricas modernas de objetos de valor do JDK.
+support:
+  description: Disponível desde o JDK 19 (setembro de 2022)
