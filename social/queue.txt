@@ -1,4 +1,3 @@
-collections/map-entry-factory
 concurrency/scoped-values
 language/markdown-javadoc-comments
 concurrency/completablefuture-chaining
