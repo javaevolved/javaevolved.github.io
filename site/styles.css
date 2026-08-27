@@ -735,7 +735,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 0;
+  margin: 0 0 24px;
 }
 
 /* ---------- JDK Dropdown ---------- */
