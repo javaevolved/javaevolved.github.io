@@ -21,9 +21,11 @@ modern-java-development/
         │   ├── enterprise-practices.md
         │   └── release-practices.md
         └── scripts/
-            ├── detect_java_version.py
-            ├── test_reference_coverage.py
-            └── test_detect_java_version.py
+            ├── DetectJavaVersion.java
+            ├── PluginValidationTest.java
+            ├── detect-java-version.cmd
+            ├── detect-java-version.jar
+            └── detect-java-version.sh
 ```
 
 ## Install
@@ -91,14 +93,22 @@ Agent Plugins manifest.
 
 When the skill is active, the agent runs the detector from the Java project root:
 
-```bash
-python3 skills/modern-java/scripts/detect_java_version.py .
+```console
+# macOS and Linux
+skills/modern-java/scripts/detect-java-version.sh .
+
+# Windows
+skills\modern-java\scripts\detect-java-version.cmd .
 ```
 
 Pass an explicit target when build metadata is unavailable:
 
-```bash
-python3 skills/modern-java/scripts/detect_java_version.py . --java-version 21
+```console
+# macOS and Linux
+skills/modern-java/scripts/detect-java-version.sh . --java-version 21
+
+# Windows
+skills\modern-java\scripts\detect-java-version.cmd . --java-version 21
 ```
 
 The detector emits JSON so an agent can distinguish the selected target from
@@ -107,9 +117,24 @@ lower-confidence runtime evidence and report conflicting build configuration.
 ## Validate
 
 ```bash
-python3 -m unittest \
-  skills/modern-java/scripts/test_detect_java_version.py \
-  skills/modern-java/scripts/test_reference_coverage.py
+set -e
+classes=$(mktemp -d)
+trap 'rm -rf "$classes"' EXIT
+jarfile="$PWD/skills/modern-java/scripts/detect-java-version.jar"
+mkdir "$classes/source" "$classes/shipped" "$classes/tests"
+javac -source 8 -target 8 -Xlint:-options \
+  -d "$classes/source" skills/modern-java/scripts/DetectJavaVersion.java
+(
+  cd "$classes/shipped"
+  jar xf "$jarfile"
+)
+rm -rf "$classes/shipped/META-INF"
+diff -r "$classes/source" "$classes/shipped"
+javac -source 8 -target 8 -Xlint:-options \
+  -cp "$jarfile" \
+  -d "$classes/tests" skills/modern-java/scripts/PluginValidationTest.java
+java -cp "$classes/tests:$jarfile" \
+  PluginValidationTest ../..
 ```
 
 ## Release
