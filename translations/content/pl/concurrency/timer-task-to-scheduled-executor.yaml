@@ -1,0 +1,24 @@
+title: Z zadań Timer do zaplanowanych executorów
+oldApproach: Timer i TimerTask
+modernApproach: ScheduledExecutorService
+summary: Zastąp Timer i TimerTask za pomocą ScheduledExecutorService dla solidnej
+  pracy zaplanowanej.
+explanation: Timer wykonuje każde zadanie na jednym wątku, więc długo działające
+  zadanie opóźnia inne, a nieobsłużony wyjątek kończy działanie wątku timera. ScheduledExecutorService
+  korzysta z frameworka executorów, obsługuje wielu workerów, zwraca uchwyty ScheduledFuture
+  i zapewnia jawne zarządzanie cyklem życia. Komponent właścicielski musi zamknąć
+  scheduler, gdy nie jest już potrzebny.
+whyModernWins:
+- icon: 🧵
+  title: Lepsza izolacja
+  desc: Konfigurowalna pula wątków zapobiega dzieleniu jednego kruchego workera przez
+    niepowiązane harmonogramy.
+- icon: 🛡
+  title: Solidne wykonanie
+  desc: Niepowodzenie jednego zadania nie kończy działania samego schedulera.
+- icon: 🎛
+  title: Kontrolowany cykl życia
+  desc: 'Future, anulowanie, opóźnienia i zamykanie korzystają ze standardowych API
+    executorów.'
+support:
+  description: Szeroko dostępne od JDK 5 (wrz. 2004)

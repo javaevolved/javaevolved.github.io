@@ -1,0 +1,24 @@
+title: Timer-Aufgaben zu geplanten Executors
+oldApproach: Timer und TimerTask
+modernApproach: ScheduledExecutorService
+summary: Ersetzen Sie Timer und TimerTask durch ScheduledExecutorService für robuste
+  geplante Aufgaben.
+explanation: Timer führt jede Aufgabe auf einem Thread aus, sodass eine lang laufende
+  Aufgabe die anderen verzögert und eine unbehandelte Ausnahme den Timer-Thread beendet.
+  ScheduledExecutorService nutzt das Executor-Framework, unterstützt mehrere Worker,
+  liefert ScheduledFuture-Handles und bietet ein explizites Lifecycle-Management.
+  Die besitzende Komponente muss den Scheduler herunterfahren, wenn er nicht mehr
+  benötigt wird.
+whyModernWins:
+- icon: 🧵
+  title: Bessere Isolation
+  desc: Ein konfigurierbarer Thread-Pool verhindert, dass sich unabhängige Zeitpläne
+    einen fragilen Worker teilen.
+- icon: 🛡
+  title: Robuste Ausführung
+  desc: Eine fehlschlagende Aufgabe beendet nicht den Scheduler selbst.
+- icon: 🎛
+  title: Steuerbarer Lebenszyklus
+  desc: 'Futures, Abbruch, Verzögerungen und Herunterfahren nutzen Standard-Executor-APIs.'
+support:
+  description: Weithin verfügbar seit JDK 5 (Sept. 2004)

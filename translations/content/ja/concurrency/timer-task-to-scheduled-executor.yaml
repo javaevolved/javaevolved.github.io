@@ -1,0 +1,17 @@
+title: Timerタスクからスケジュール済みエグゼキュータへ
+oldApproach: TimerとTimerTask
+modernApproach: ScheduledExecutorService
+summary: 堅牢なスケジュール処理のためにTimerとTimerTaskをScheduledExecutorServiceに置き換える。
+explanation: Timerはすべてのタスクを1つのスレッドで実行するため、実行時間の長いタスクが他のタスクを遅延させ、未処理の例外がタイマースレッドを終了させてしまう。ScheduledExecutorServiceはエグゼキュータフレームワークを使用し、複数のワーカーをサポートし、ScheduledFutureハンドルを返し、明示的なライフサイクル管理を提供する。所有するコンポーネントは、不要になったらスケジューラをシャットダウンする必要がある。
+whyModernWins:
+- icon: 🧵
+  title: 優れた分離性
+  desc: 設定可能なスレッドプールにより、無関係なスケジュールが1つの脆弱なワーカーを共有することを防ぐ。
+- icon: 🛡
+  title: 堅牢な実行
+  desc: 1つのタスクの失敗がスケジューラ自体を終了させることはない。
+- icon: 🎛
+  title: 制御可能なライフサイクル
+  desc: Future、キャンセル、遅延、シャットダウンは標準のエグゼキュータAPIを使用する。
+support:
+  description: JDK 5（2004年9月）以降広く利用可能

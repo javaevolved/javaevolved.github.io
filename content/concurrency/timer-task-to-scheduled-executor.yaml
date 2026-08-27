@@ -1,0 +1,57 @@
+---
+id: 79baafd3-9ac2-4148-a6fb-db50c9cf5783
+slug: "timer-task-to-scheduled-executor"
+title: "Timer tasks to scheduled executors"
+category: "concurrency"
+difficulty: "intermediate"
+jdkVersion: "5"
+oldLabel: "Timer and TimerTask"
+modernLabel: "ScheduledExecutorService"
+oldApproach: "Timer and TimerTask"
+modernApproach: "ScheduledExecutorService"
+oldCode: |-
+  Timer timer = new Timer("refresh-timer");
+  timer.scheduleAtFixedRate(new TimerTask() {
+      @Override
+      public void run() {
+          refresh();
+      }
+  }, 0, 60_000);
+modernCode: |-
+  ScheduledExecutorService scheduler =
+          Executors.newScheduledThreadPool(2);
+
+  scheduler.scheduleAtFixedRate(
+          this::refresh, 0, 1, TimeUnit.MINUTES);
+summary: "Replace Timer and TimerTask with ScheduledExecutorService for robust scheduled work."
+explanation: "Timer executes every task on one thread, so one long-running task delays\
+  \ the others, and an unchecked exception terminates the timer thread. ScheduledExecutorService\
+  \ uses the executor framework, supports multiple workers, returns ScheduledFuture\
+  \ handles, and provides explicit lifecycle management. The owning component must\
+  \ shut the scheduler down when it is no longer needed."
+whyModernWins:
+- icon: "🧵"
+  title: "Better isolation"
+  desc: "A configurable thread pool prevents unrelated schedules from sharing one fragile worker."
+- icon: "🛡"
+  title: "Robust execution"
+  desc: "One failing task does not terminate the scheduler itself."
+- icon: "🎛"
+  title: "Controllable lifecycle"
+  desc: "Futures, cancellation, delays, and shutdown use standard executor APIs."
+support:
+  state: "available"
+  description: "Widely available since JDK 5 (Sept 2004)"
+prev: "concurrency/thread-stop-to-cooperative-cancellation"
+next: "io/http-client"
+related:
+- "concurrency/executor-try-with-resources"
+- "concurrency/thread-sleep-duration"
+- "concurrency/structured-concurrency"
+tags:
+- concurrency
+docs:
+- title: "ScheduledExecutorService"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html"
+- title: "Executors"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executors.html"

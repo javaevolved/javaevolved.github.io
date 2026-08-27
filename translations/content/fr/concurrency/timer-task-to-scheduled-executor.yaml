@@ -1,0 +1,24 @@
+title: Des tâches Timer aux exécuteurs planifiés
+oldApproach: Timer et TimerTask
+modernApproach: ScheduledExecutorService
+summary: Remplacez Timer et TimerTask par ScheduledExecutorService pour un travail
+  planifié robuste.
+explanation: Timer exécute chaque tâche sur un seul thread, de sorte qu'une tâche
+  longue retarde les autres, et une exception non interceptée met fin au thread du
+  timer. ScheduledExecutorService utilise le framework des exécuteurs, prend en charge
+  plusieurs workers, renvoie des handles ScheduledFuture et offre une gestion explicite
+  du cycle de vie. Le composant propriétaire doit arrêter le planificateur lorsqu'il
+  n'est plus nécessaire.
+whyModernWins:
+- icon: 🧵
+  title: Meilleure isolation
+  desc: Un pool de threads configurable évite que des tâches planifiées indépendantes
+    partagent un seul worker fragile.
+- icon: 🛡
+  title: Exécution robuste
+  desc: Une tâche en échec ne met pas fin au planificateur lui-même.
+- icon: 🎛
+  title: Cycle de vie maîtrisable
+  desc: 'Futures, annulation, délais et arrêt utilisent les API standard des exécuteurs.'
+support:
+  description: Largement disponible depuis JDK 5 (sept. 2004)

@@ -1,0 +1,23 @@
+title: De tarefas de Timer para executores agendados
+oldApproach: Timer e TimerTask
+modernApproach: ScheduledExecutorService
+summary: Substitua Timer e TimerTask por ScheduledExecutorService para um trabalho
+  agendado robusto.
+explanation: O Timer executa cada tarefa em uma única thread, então uma tarefa demorada
+  atrasa as demais, e uma exceção não tratada encerra a thread do timer. O ScheduledExecutorService
+  usa o framework de executors, suporta múltiplos workers, retorna handles ScheduledFuture
+  e oferece gerenciamento explícito de ciclo de vida. O componente proprietário deve
+  encerrar o scheduler quando ele não for mais necessário.
+whyModernWins:
+- icon: 🧵
+  title: Melhor isolamento
+  desc: Um pool de threads configurável evita que agendamentos não relacionados
+    compartilhem um único worker frágil.
+- icon: 🛡
+  title: Execução robusta
+  desc: Uma tarefa que falha não encerra o scheduler.
+- icon: 🎛
+  title: Ciclo de vida controlável
+  desc: 'Futures, cancelamento, atrasos e encerramento usam as APIs padrão de executors.'
+support:
+  description: Amplamente disponível desde o JDK 5 (set. 2004)

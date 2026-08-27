@@ -1,0 +1,18 @@
+title: 从 Timer 任务到调度执行器
+oldApproach: Timer 和 TimerTask
+modernApproach: ScheduledExecutorService
+summary: 用 ScheduledExecutorService 替代 Timer 和 TimerTask，实现更健壮的定时任务。
+explanation: Timer 在单个线程上执行所有任务，因此一个耗时任务会延迟其他任务，一个未捕获的异常会终止该定时器线程。ScheduledExecutorService
+  使用 executor 框架，支持多个工作线程，返回 ScheduledFuture 句柄，并提供显式的生命周期管理。拥有该调度器的组件必须在不再需要时将其关闭。
+whyModernWins:
+- icon: 🧵
+  title: 更好的隔离性
+  desc: 可配置的线程池可防止不相关的调度共享同一个脆弱的工作线程。
+- icon: 🛡
+  title: 健壮的执行
+  desc: 单个任务失败不会终止调度器本身。
+- icon: 🎛
+  title: 可控的生命周期
+  desc: Future、取消、延迟和关闭都使用标准的 executor API。
+support:
+  description: 自 JDK 5（2004 年 9 月）起广泛可用
