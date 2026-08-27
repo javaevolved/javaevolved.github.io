@@ -2107,12 +2107,12 @@ footer a:hover {
   display: flex;
   align-items: center;
   gap: 16px;
+  max-width: 748px;
   background: var(--surface);
   border: 1px solid var(--accent);
   border-radius: 12px;
   padding: 16px 24px;
-  margin-top: 16px;
-  margin-bottom: 8px;
+  margin: 16px auto 8px;
 }
 .copilot-icon {
   width: 36px;
