@@ -1,0 +1,17 @@
+title: 非推奨のURLコンストラクターからURIへ
+oldApproach: URLの直接生成
+modernApproach: URIからURLへ変換
+summary: "リソース識別子をURI値として解析・構成し、必要な場合にのみURLへ変換する。"
+explanation: "URLの解析と等価性にはプロトコルハンドラーに起因する予想外の動作があるため、URLコンストラクターはJDK 20で非推奨になりました。解析、構成、比較、正規化には、不変な表現であるURIが推奨されます。URLを要求するAPIでのみ変換してください。"
+whyModernWins:
+- icon: "✅"
+  title: 非推奨APIを回避
+  desc: "非推奨のURLコンストラクターを使用せずに済みます。"
+- icon: "🧠"
+  title: 予測可能なセマンティクス
+  desc: "URIの比較ではネットワークに依存する名前解決は行われません。"
+- icon: "🧩"
+  title: 優れた構成
+  desc: "URIは識別子の解析と操作を目的として設計されています。"
+support:
+  description: "URLコンストラクターはJDK 20（2023年3月）以降、非推奨"

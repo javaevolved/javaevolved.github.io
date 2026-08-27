@@ -1,0 +1,18 @@
+---
+title: স্ট্যান্ডার্ড API দিয়ে class-file parsing
+oldApproach: ASM ClassReader
+modernApproach: Class-File API
+summary: class-file parsing এবং transformation-এর জন্য স্ট্যান্ডার্ড Class-File API ব্যবহার করুন।
+explanation: JDK 24-এ final হওয়া Class-File API, JVM class file-এর জন্য সমর্থিত model এবং transformation দেয়। এটি JDK-এর সঙ্গে class-file format অনুসরণ করে এবং অনেক inspection ও generation কাজে তৃতীয়-পক্ষের library-এর প্রয়োজন দূর করে।
+whyModernWins:
+- icon: "🛡"
+  title: সমর্থিত API
+  desc: JDK class-file format-এর সঙ্গে সরবরাহ করা হয় এবং বিবর্তিত হয়।
+- icon: "📦"
+  title: কম dependency
+  desc: external library ছাড়াই সাধারণ bytecode-এর কাজ সম্পন্ন করে।
+- icon: "🧩"
+  title: কম্পোজেবল model
+  desc: Parsing, building এবং transformation একই API শেয়ার করে।
+support:
+  description: JDK 24-এ final হয়েছে (JEP 484, মার্চ 2025)।

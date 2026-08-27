@@ -1,0 +1,18 @@
+---
+title: "De constructores obsoletos de URL a URI"
+oldApproach: "Construcción directa de URL"
+modernApproach: "URI y después URL"
+summary: "Analiza y compone identificadores de recursos como valores URI antes de convertirlos a URL cuando sea necesario."
+explanation: "Los constructores de URL se declararon obsoletos en JDK 20 porque el análisis y la igualdad de URL presentan comportamientos sorprendentes relacionados con los manejadores de protocolos. URI es la representación inmutable preferida para el análisis, la composición, la comparación y la normalización; realiza la conversión únicamente en las API que requieran URL."
+whyModernWins:
+- icon: "✅"
+  title: "Evita API obsoletas"
+  desc: "Elimina el uso de constructores obsoletos de URL."
+- icon: "🧠"
+  title: "Semántica predecible"
+  desc: "La comparación de URI no realiza resoluciones dependientes de la red."
+- icon: "🧩"
+  title: "Mejor composición"
+  desc: "URI está diseñada para analizar y manipular identificadores."
+support:
+  description: "Constructores de URL obsoletos desde JDK 20 (marzo de 2023)"

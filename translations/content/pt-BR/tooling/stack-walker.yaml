@@ -1,0 +1,20 @@
+title: Inspeção preguiçosa da pilha com StackWalker
+oldApproach: Thread.getStackTrace()
+modernApproach: StackWalker
+summary: Inspecione frames da pilha de forma preguiçosa com StackWalker em vez de materializar
+  um stack trace completo.
+explanation: StackWalker expõe um stream preguiçoso de frames da pilha e acesso configurável
+  a referências de classe retidas. O código pode parar assim que encontrar o frame necessário,
+  em vez de alocar um array completo de stack trace.
+whyModernWins:
+- icon: "⚡"
+  title: Percurso preguiçoso
+  desc: Visita apenas os frames necessários para a operação.
+- icon: "🧩"
+  title: Compatível com streams
+  desc: Filtragem e seleção usam operações padrão de stream.
+- icon: "🎛"
+  title: Configurável
+  desc: As opções oferecem suporte a referências de classe e frames ocultos ou reflexivos.
+support:
+  description: Amplamente disponível desde o JDK 9 (setembro de 2017)

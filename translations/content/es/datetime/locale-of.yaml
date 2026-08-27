@@ -1,0 +1,18 @@
+---
+title: "De constructores de Locale a Locale.of()"
+oldApproach: "Constructores de Locale"
+modernApproach: "Locale.of()"
+summary: "Crea locales de idioma y región con Locale.of() en lugar de constructores obsoletos."
+explanation: "Los métodos factoría de Locale sustituyen los constructores declarados obsoletos en JDK 19. La forma basada en factorías es más clara, se ajusta a otras API basadas en valores y centraliza la creación de locales."
+whyModernWins:
+- icon: "✅"
+  title: "API compatible"
+  desc: "Evita constructores obsoletos."
+- icon: "👁"
+  title: "Creación clara"
+  desc: "La factoría con nombre comunica la intención."
+- icon: "🧩"
+  title: "Estilo coherente"
+  desc: "Coincide con las factorías modernas de objetos de valor del JDK."
+support:
+  description: "Disponible desde JDK 19 (septiembre de 2022)"

@@ -1,0 +1,18 @@
+---
+title: "Sonlandırıcılardan belirlenimci kaynak temizliğine"
+oldApproach: "finalize() metodunu override etme"
+modernApproach: "AutoCloseable ve Cleaner"
+summary: "Sonlandırmayı AutoCloseable ile değiştirin ve Cleaner'ı yalnızca savunmacı bir yedek olarak kullanın."
+explanation: "Sonlandırma, kaldırılmak üzere kullanımdan kaldırılmıştır; ne zamanında temizlik ne de güvenilir bir sıralama sağlar. Çağıranların try-with-resources ile kaynakları belirlenimci biçimde serbest bırakabilmesi için AutoCloseable uygulayın. Sızdırılan kaynaklar için Cleaner, son çare olarak aynı idempotent temizlik işlemini çağırabilir; bu işlem kayıtlı nesneye referans tutmamalıdır."
+whyModernWins:
+- icon: "⏱"
+  title: "Belirlenimci"
+  desc: "Try-with-resources, kaynakları bilinen bir noktada serbest bırakır."
+- icon: "🛡"
+  title: "Daha güvenli yaşam döngüsü"
+  desc: "Sonlandırıcıyla nesnenin yeniden canlandırılmasını ve öngörülemeyen sıralamayı önler."
+- icon: "🧹"
+  title: "Savunmacı yedek"
+  desc: "Cleaner, finalize() metodunu override etmeden sızdırılan kaynakları kurtarabilir."
+support:
+  description: "Cleaner ve sonlandırmanın kullanımdan kaldırılması JDK 9'dan itibaren kullanılabilir (Eylül 2017)"

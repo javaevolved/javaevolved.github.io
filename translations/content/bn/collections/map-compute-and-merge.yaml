@@ -1,0 +1,18 @@
+---
+title: compute এবং merge দিয়ে অ্যাটমিক map আপডেট
+oldApproach: get() + null চেক + put()
+modernApproach: computeIfAbsent()
+summary: বহু-ধাপের map lookup এবং mutation-কে computeIfAbsent(), compute(), ও merge() দিয়ে প্রতিস্থাপন করুন।
+explanation: Map computation মেথড lookup এবং update-এর উদ্দেশ্যকে একটি অপারেশনে একত্র করে। lazy initialization-এর জন্য computeIfAbsent(), নতুন value বিদ্যমান value-এর ওপর নির্ভর করলে compute(), এবং সরবরাহ করা value-কে map-এ আগে থাকা value-এর সঙ্গে একত্র করতে merge() ব্যবহার করুন। concurrent map implementation-এ সমর্থিত computationগুলো আলাদা get() ও put() কলের কারণে হওয়া race-ও এড়ায়।
+whyModernWins:
+- icon: "⚡"
+  title: কম lookup
+  desc: একই key বারবার অ্যাক্সেস করা এড়িয়ে যায়।
+- icon: "🧵"
+  title: উন্নত কনকারেন্সি সেমান্টিক্স
+  desc: Concurrent map সমর্থিত আপডেটগুলো অ্যাটমিকভাবে সম্পন্ন করতে পারে।
+- icon: "👁"
+  title: স্পষ্ট উদ্দেশ্য
+  desc: initialization-এর নিয়মটি access-এর পাশেই দেখা যায়।
+support:
+  description: JDK 8 (মার্চ 2014) থেকে ব্যাপকভাবে উপলব্ধ

@@ -1,0 +1,18 @@
+---
+title: 使用 compute 和 merge 原子更新映射
+oldApproach: get() + null 检查 + put()
+modernApproach: computeIfAbsent()
+summary: "用 computeIfAbsent()、compute() 和 merge() 替代多步骤的映射查找与修改。"
+explanation: "Map 计算方法将查找和更新意图合并为一个操作。使用 computeIfAbsent() 进行惰性初始化；当新值取决于现有值时使用 compute()；使用 merge() 将给定值与映射中的现有值合并。对于并发映射实现，受支持的计算还能避免分别调用 get() 和 put() 所造成的竞态。"
+whyModernWins:
+- icon: ⚡
+  title: 减少查找
+  desc: "避免重复访问键。"
+- icon: 🧵
+  title: 更好的并发语义
+  desc: "并发映射可以原子地执行受支持的更新。"
+- icon: 👁
+  title: 意图清晰
+  desc: "初始化规则紧邻访问操作。"
+support:
+  description: 自 JDK 8 起广泛可用（2014 年 3 月）

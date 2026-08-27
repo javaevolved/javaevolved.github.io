@@ -1,0 +1,17 @@
+title: "Von Finalizern zu deterministischer Ressourcenbereinigung"
+oldApproach: "finalize() überschreiben"
+modernApproach: "AutoCloseable und Cleaner"
+summary: "Finalisierung durch AutoCloseable ersetzen und Cleaner nur als defensive Rückfallebene verwenden."
+explanation: "Die Finalisierung ist zur Entfernung veraltet und bietet weder eine zeitnahe Bereinigung noch eine zuverlässige Reihenfolge. AutoCloseable implementieren, damit Aufrufer Ressourcen mit try-with-resources deterministisch freigeben können. Bei nicht freigegebenen Ressourcen kann Cleaner als letztes Mittel dieselbe idempotente Bereinigungsaktion aufrufen; diese Aktion darf das registrierte Objekt nicht referenzieren."
+whyModernWins:
+- icon: "⏱"
+  title: "Deterministisch"
+  desc: "Try-with-resources gibt Ressourcen zu einem bekannten Zeitpunkt frei."
+- icon: "🛡"
+  title: "Sichererer Lebenszyklus"
+  desc: "Vermeidet die Wiederbelebung durch Finalizer und eine unvorhersehbare Reihenfolge."
+- icon: "🧹"
+  title: "Defensive Rückfallebene"
+  desc: "Cleaner kann nicht freigegebene Ressourcen bereinigen, ohne finalize() zu überschreiben."
+support:
+  description: "Cleaner und die Veraltung der Finalisierung sind seit JDK 9 verfügbar (September 2017)"

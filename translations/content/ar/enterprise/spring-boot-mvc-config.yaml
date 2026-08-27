@@ -1,0 +1,17 @@
+title: "تهيئة MVC في Spring Boot"
+oldApproach: "WebMvcConfigurerAdapter مع @EnableWebMvc"
+modernApproach: "WebMvcConfigurer مع التهيئة التلقائية في Spring Boot"
+summary: "استبدل WebMvcConfigurerAdapter المحذوف بـ WebMvcConfigurer مع الاحتفاظ بالتهيئة التلقائية لـ MVC في Spring Boot."
+explanation: "كانت تطبيقات Spring Boot 1.x ترث عادةً من WebMvcConfigurerAdapter لأن واجهات Java لم تكن قادرة على توفير دوال افتراضية. توفّر إصدارات Spring Framework الحديثة تطبيقات افتراضية مباشرةً في WebMvcConfigurer، لذا طبّق الواجهة وتجاوز فقط الدوال التي تحتاجها. في تطبيق Spring Boot، لا تضف @EnableWebMvc إلا إذا كنت تريد عمداً التحكّم الكامل في تهيئة MVC؛ فهي تعطّل التهيئة التلقائية لـ MVC في Boot، بما فيها المحوّلات المعتادة ومعالجة الموارد الثابتة والإعدادات الافتراضية الأخرى."
+whyModernWins:
+- icon: "🧹"
+  title: "لا محوّل محذوف"
+  desc: "يوفّر WebMvcConfigurer دوال افتراضية، فلا حاجة إلى وراثة فئة محوّل أساسية."
+- icon: "⚙️"
+  title: "يحافظ على إعدادات Boot الافتراضية"
+  desc: "دون @EnableWebMvc، يواصل Spring Boot تهيئة بنية MVC تلقائياً."
+- icon: "🎯"
+  title: "تجاوز ما يهم فقط"
+  desc: "طبّق الواجهة وخصّص فقط نقطة ربط MVC التي يتطلبها التطبيق."
+support:
+  description: "متاح في Spring Boot 4.0 مع Spring Framework 7.0 (يتطلب Java 17+)"

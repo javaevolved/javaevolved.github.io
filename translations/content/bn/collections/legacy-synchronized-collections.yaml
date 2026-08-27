@@ -1,0 +1,18 @@
+---
+title: লিগ্যাসি synchronized কালেকশন থেকে আধুনিক বিকল্প
+oldApproach: Hashtable
+modernApproach: ConcurrentHashMap
+summary: প্রকৃত মিউটেবিলিটি ও কনকারেন্সির প্রয়োজন অনুযায়ী নির্বাচিত কালেকশন দিয়ে Vector এবং Hashtable প্রতিস্থাপন করুন।
+explanation: Vector এবং Hashtable লিগ্যাসি API-এর মাধ্যমে প্রতিটি অপারেশন synchronize করে। আধুনিক কোডে সাধারণত থ্রেডে সীমাবদ্ধ ডেটার জন্য ArrayList বা HashMap এবং শেয়ারড মিউটেশনের প্রয়োজন হলে সেই উদ্দেশ্যে তৈরি concurrent collection ব্যবহার করা উচিত।
+whyModernWins:
+- icon: "🎯"
+  title: উদ্দেশ্যপূর্ণ কনকারেন্সি
+  desc: নির্বাচিত টাইপটি জানায় শেয়ারিং প্রত্যাশিত কি না।
+- icon: "⚡"
+  title: উন্নত স্কেলেবিলিটি
+  desc: সাধারণ অ্যাক্সেসে ConcurrentHashMap পুরো টেবিলজুড়ে একটি একক লক এড়িয়ে যায়।
+- icon: "🧩"
+  title: আধুনিক API
+  desc: বর্তমান collection এবং concurrent-map অপারেশনের সঙ্গে স্বাভাবিকভাবে কাজ করে।
+support:
+  description: JDK 5 (সেপ্টেম্বর 2004) থেকে ব্যাপকভাবে উপলব্ধ

@@ -1,0 +1,18 @@
+---
+title: Comparator 工厂与流畅排序
+oldApproach: 匿名 Comparator
+modernApproach: Comparator 工厂
+summary: "使用 Comparator 工厂方法构建可读、可组合的排序规则。"
+explanation: "Comparator 工厂以声明式方式表达排序，无需手写分支即可组合主排序键和次排序键。"
+whyModernWins:
+- icon: 🧩
+  title: 可组合
+  desc: "排序规则可以自然地链式组合。"
+- icon: 👁
+  title: 更易审查
+  desc: "排序键及其优先级一目了然。"
+- icon: 🐛
+  title: 比较更安全
+  desc: "专用辅助方法可避免容易出错的算术比较器。"
+support:
+  description: 自 JDK 8 起可用（2014 年 3 月）

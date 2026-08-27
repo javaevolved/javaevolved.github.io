@@ -1,0 +1,17 @@
+title: ミューテーションループに代わるコレクション一括操作
+oldApproach: 手動イテレーター削除
+modernApproach: Collection.removeIf()
+summary: "コレクションを直接変換するにはremoveIf()、replaceAll()、List.sort()を使用する。"
+explanation: "モダンなコレクションインターフェースは、一般的な変更操作を直接提供します。removeIf()、replaceAll()、List.sort()などのメソッドにより、制御フローの多いループを、目的とする変換を明示する操作に置き換えられます。"
+whyModernWins:
+- icon: "👁"
+  title: 明確な意図
+  desc: "反復方法ではなく、何を変更するかを操作自体が示します。"
+- icon: "🐛"
+  title: より安全な変更
+  desc: "手動でイテレーターから削除する際のルールを回避できます。"
+- icon: "⚡"
+  title: 少ないコード
+  desc: "一般的な変換を1つの式で記述できます。"
+support:
+  description: "JDK 8（2014年3月）以降、利用可能"

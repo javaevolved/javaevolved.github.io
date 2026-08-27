@@ -1,0 +1,18 @@
+---
+title: "De Stack a Deque y ArrayDeque"
+oldApproach: "Stack"
+modernApproach: "Deque con ArrayDeque"
+summary: "Usa la interfaz Deque con ArrayDeque en lugar de la clase heredada Stack."
+explanation: "Stack extiende la clase sincronizada heredada Vector. Deque modela directamente las operaciones de pila, y ArrayDeque es la implementación de propósito general preferida para el trabajo LIFO en memoria."
+whyModernWins:
+- icon: "🎯"
+  title: "Mejor abstracción"
+  desc: "Deque modela explícitamente las operaciones tanto de pila como de cola."
+- icon: "⚡"
+  title: "Menor sobrecarga"
+  desc: "ArrayDeque evita la sincronización heredada de Vector."
+- icon: "🧩"
+  title: "Más flexible"
+  desc: "La misma interfaz admite algoritmos LIFO y FIFO."
+support:
+  description: "Disponible desde JDK 6 (diciembre de 2006)"

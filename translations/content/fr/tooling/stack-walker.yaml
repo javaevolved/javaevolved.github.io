@@ -1,0 +1,18 @@
+---
+title: "Inspection paresseuse de la pile avec StackWalker"
+oldApproach: "Trace de pile matérialisée"
+modernApproach: "StackWalker"
+summary: "Inspectez paresseusement les frames de pile avec StackWalker plutôt que de matérialiser une trace de pile complète."
+explanation: "StackWalker expose un stream paresseux de frames de pile et un accès configurable aux références de classes conservées. Le code peut s'arrêter dès qu'il trouve la frame recherchée au lieu d'allouer un tableau complet de trace de pile."
+whyModernWins:
+- icon: "⚡"
+  title: "Parcours paresseux"
+  desc: "Ne visite que les frames nécessaires à l'opération."
+- icon: "🧩"
+  title: "Adapté aux streams"
+  desc: "Le filtrage et la sélection utilisent les opérations standard des streams."
+- icon: "🎛"
+  title: "Configurable"
+  desc: "Les options prennent en charge les références de classes ainsi que les frames masquées ou réflexives."
+support:
+  description: "Largement disponible depuis JDK 9 (septembre 2017)"

@@ -1,0 +1,18 @@
+---
+title: অ্যানোনিমাস ক্লাস থেকে lambda এবং method reference
+oldApproach: অ্যানোনিমাস ক্লাস
+modernApproach: Method reference
+summary: single-method অ্যানোনিমাস ক্লাসকে সংক্ষিপ্ত lambda এবং method reference দিয়ে প্রতিস্থাপন করুন।
+explanation: Functional interface lambda বা method reference দিয়ে implement করা যায়। এটি static typing এবং একই callback contract বজায় রেখে অ্যানোনিমাস ক্লাসের আনুষ্ঠানিকতা দূর করে।
+whyModernWins:
+- icon: "⚡"
+  title: কম boilerplate
+  desc: class declaration এবং override-এর আনুষ্ঠানিকতা দূর করে।
+- icon: "👁"
+  title: উন্নত পাঠযোগ্যতা
+  desc: সম্পাদিত অপারেশনের ওপর মনোযোগ ধরে রাখে।
+- icon: "🔒"
+  title: এখনও type-safe
+  desc: compiler target functional-interface-এর signature যাচাই করে।
+support:
+  description: JDK 8 (মার্চ 2014) থেকে উপলব্ধ।

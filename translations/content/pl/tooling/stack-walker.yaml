@@ -1,0 +1,17 @@
+title: Leniwa inspekcja stosu za pomocą StackWalker
+oldApproach: Thread.getStackTrace()
+modernApproach: StackWalker
+summary: Przeglądaj ramki stosu leniwie za pomocą StackWalker zamiast materializować pełny ślad stosu.
+explanation: StackWalker udostępnia leniwy strumień ramek stosu i konfigurowalny dostęp do zachowanych referencji do klas. Kod może zakończyć działanie po znalezieniu potrzebnej ramki, zamiast alokować całą tablicę śladu stosu.
+whyModernWins:
+  - icon: ⚡
+    title: Leniwe przechodzenie
+    desc: Odwiedza tylko ramki potrzebne danej operacji.
+  - icon: 🧩
+    title: Przyjazne dla strumieni
+    desc: Filtrowanie i wybór korzystają ze standardowych operacji strumieniowych.
+  - icon: 🎛
+    title: Konfigurowalność
+    desc: Opcje zapewniają obsługę referencji do klas oraz ramek ukrytych i refleksyjnych.
+support:
+  description: Szeroko dostępne od JDK 9 (wrzesień 2017)

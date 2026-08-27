@@ -1,0 +1,17 @@
+title: "Collection-Massenoperationen statt Mutationsschleifen"
+oldApproach: "Manuelles Entfernen per Iterator"
+modernApproach: "Collection.removeIf()"
+summary: "removeIf(), replaceAll() und List.sort() für direkte Transformationen von Collections verwenden."
+explanation: "Moderne Collection-Interfaces stellen häufige Mutationen direkt bereit. Methoden wie removeIf(), replaceAll() und List.sort() ersetzen Schleifen mit aufwendiger Kontrolllogik durch Operationen, die die beabsichtigte Transformation ausdrücken."
+whyModernWins:
+- icon: "👁"
+  title: "Klare Absicht"
+  desc: "Die Operation beschreibt, was geändert wird, und nicht, wie darüber iteriert wird."
+- icon: "🐛"
+  title: "Sicherere Mutation"
+  desc: "Vermeidet manuelle Regeln für das Entfernen per Iterator."
+- icon: "⚡"
+  title: "Weniger Code"
+  desc: "Häufige Transformationen werden zu einem einzigen Ausdruck."
+support:
+  description: "Verfügbar seit JDK 8 (März 2014)"

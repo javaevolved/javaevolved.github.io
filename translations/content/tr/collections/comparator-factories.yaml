@@ -1,0 +1,18 @@
+---
+title: "Comparator fabrika metotları ve akıcı sıralama"
+oldApproach: "Anonim Comparator"
+modernApproach: "Comparator fabrika metotları"
+summary: "Comparator fabrika metotlarıyla okunabilir ve birleştirilebilir sıralama kuralları oluşturun."
+explanation: "Comparator fabrika metotları sıralamayı bildirimsel olarak ifade eder ve elle dallanma yazmadan birincil ve ikincil anahtarları birleştirir."
+whyModernWins:
+- icon: "🧩"
+  title: "Birleştirilebilir"
+  desc: "Sıralama kuralları doğal biçimde zincirlenir."
+- icon: "👁"
+  title: "İncelemesi daha kolay"
+  desc: "Sıralama anahtarları ve öncelikleri açıktır."
+- icon: "🐛"
+  title: "Daha güvenli karşılaştırmalar"
+  desc: "Özelleştirilmiş yardımcılar, hataya açık aritmetik comparator'lardan kaçınır."
+support:
+  description: "JDK 8'den itibaren kullanılabilir (Mart 2014)"

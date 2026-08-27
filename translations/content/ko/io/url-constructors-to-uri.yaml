@@ -1,0 +1,17 @@
+title: "지원 중단된 URL 생성자에서 URI로"
+oldApproach: "직접 URL 생성"
+modernApproach: "URI 생성 후 URL로 변환"
+summary: "필요할 때 URL로 변환하기 전에 리소스 식별자를 URI 값으로 파싱하고 구성합니다."
+explanation: "URL 파싱과 동등성 비교에 프로토콜 핸들러로 인한 예상 밖의 동작이 있어 URL 생성자는 JDK 20에서 지원 중단되었습니다. URI는 파싱, 구성, 비교 및 정규화에 권장되는 불변 표현입니다. URL이 필요한 API에서만 변환하십시오."
+whyModernWins:
+- icon: "✅"
+  title: "지원 중단 API 회피"
+  desc: "지원 중단된 URL 생성자를 사용하지 않습니다."
+- icon: "🧠"
+  title: "예측 가능한 의미 체계"
+  desc: "URI 비교는 네트워크에 의존하는 이름 해석을 수행하지 않습니다."
+- icon: "🧩"
+  title: "더 나은 구성"
+  desc: "URI는 식별자를 파싱하고 조작하도록 설계되었습니다."
+support:
+  description: "URL 생성자는 JDK 20 (2023년 3월)부터 지원 중단"

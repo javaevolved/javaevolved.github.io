@@ -1,0 +1,18 @@
+---
+title: "Eski senkronize koleksiyonlardan modern alternatiflere"
+oldApproach: "Hashtable"
+modernApproach: "ConcurrentHashMap"
+summary: "Vector ve Hashtable'ı gerçek değiştirilebilirlik ve eşzamanlılık gereksinimlerine göre seçilen koleksiyonlarla değiştirin."
+explanation: "Vector ve Hashtable, eski API'ler aracılığıyla her işlemi senkronize eder. Modern kod, iş parçacığına özel veriler için normalde ArrayList veya HashMap; paylaşılan değişiklik gerektiğinde ise bu amaç için tasarlanmış eşzamanlı koleksiyonlar kullanmalıdır."
+whyModernWins:
+- icon: "🎯"
+  title: "Bilinçli eşzamanlılık"
+  desc: "Seçilen tür, paylaşım beklenip beklenmediğini belgeler."
+- icon: "⚡"
+  title: "Daha iyi ölçeklenebilirlik"
+  desc: "ConcurrentHashMap, normal erişimde tüm tabloyu kapsayan tek bir kilitten kaçınır."
+- icon: "🧩"
+  title: "Modern API'ler"
+  desc: "Güncel koleksiyon ve concurrent map işlemleriyle doğal biçimde çalışır."
+support:
+  description: "JDK 5'ten (Eylül 2004) itibaren geniş çapta kullanılabilir"

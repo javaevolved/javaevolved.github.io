@@ -1,0 +1,17 @@
+title: "Von anonymen Klassen zu Lambdas und Methodenreferenzen"
+oldApproach: "Anonyme Klasse"
+modernApproach: "Methodenreferenz"
+summary: "Anonyme Klassen mit einer einzigen Methode durch prägnante Lambdas und Methodenreferenzen ersetzen."
+explanation: "Funktionale Interfaces können mit Lambdas oder Methodenreferenzen implementiert werden. Dadurch entfällt der Verwaltungsaufwand anonymer Klassen, während die statische Typisierung und derselbe Callback-Vertrag erhalten bleiben."
+whyModernWins:
+- icon: "⚡"
+  title: "Weniger Boilerplate"
+  desc: "Die Klassendeklaration und das Überschreiben der Methode entfallen."
+- icon: "👁"
+  title: "Bessere Lesbarkeit"
+  desc: "Lenkt die Aufmerksamkeit auf die ausgeführte Operation."
+- icon: "🔒"
+  title: "Weiterhin typsicher"
+  desc: "Der Compiler prüft die Signatur des Zielfunktionsinterfaces."
+support:
+  description: "Verfügbar seit JDK 8 (März 2014)."

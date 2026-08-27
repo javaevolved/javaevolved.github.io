@@ -1,0 +1,17 @@
+title: Comparatorファクトリとフルエントな順序付け
+oldApproach: 匿名Comparator
+modernApproach: Comparatorファクトリ
+summary: "Comparatorファクトリメソッドを使用して、読みやすく合成可能な順序付けルールを構築する。"
+explanation: "Comparatorファクトリは順序付けを宣言的に表現し、手書きの分岐を使わずに第1キーと第2キーを組み合わせられます。"
+whyModernWins:
+- icon: "🧩"
+  title: 合成可能
+  desc: "順序付けルールを自然に連結できます。"
+- icon: "👁"
+  title: レビューが容易
+  desc: "ソートキーと優先順位が明確になります。"
+- icon: "🐛"
+  title: より安全な比較
+  desc: "専用ヘルパーにより、誤りやすい算術演算によるComparatorを回避できます。"
+support:
+  description: "JDK 8（2014年3月）以降、利用可能"

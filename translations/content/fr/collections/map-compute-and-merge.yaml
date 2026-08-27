@@ -1,0 +1,18 @@
+---
+title: "Mises à jour atomiques de maps avec compute et merge"
+oldApproach: "get() + vérification de null + put()"
+modernApproach: "computeIfAbsent()"
+summary: "Remplacez la recherche et la mutation d'une map en plusieurs étapes par computeIfAbsent(), compute() et merge()."
+explanation: "Les méthodes de calcul de Map réunissent l'intention de recherche et de mise à jour en une seule opération. Utilisez computeIfAbsent() pour l'initialisation paresseuse, compute() lorsque la nouvelle valeur dépend de la valeur existante, et merge() pour combiner une valeur fournie avec celle déjà présente dans la map. Sur les implémentations de maps concurrentes, les calculs pris en charge évitent aussi les conditions de concurrence causées par des appels séparés à get() et put()."
+whyModernWins:
+- icon: "⚡"
+  title: "Moins de recherches"
+  desc: "Évite les accès répétés à la clé."
+- icon: "🧵"
+  title: "Meilleure sémantique de concurrence"
+  desc: "Les maps concurrentes peuvent effectuer atomiquement les mises à jour prises en charge."
+- icon: "👁"
+  title: "Intention claire"
+  desc: "La règle d'initialisation apparaît à côté de l'accès."
+support:
+  description: "Largement disponible depuis JDK 8 (mars 2014)"

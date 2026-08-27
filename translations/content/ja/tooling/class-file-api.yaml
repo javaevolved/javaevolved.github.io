@@ -1,0 +1,17 @@
+title: 標準APIによるクラスファイル解析
+oldApproach: ASM ClassReader
+modernApproach: Class-File API
+summary: "クラスファイルの解析と変換には標準のClass-File APIを使用する。"
+explanation: "JDK 24で正式導入されたClass-File APIは、JVMクラスファイル用のサポート対象モデルと変換機能を提供します。JDKとともにクラスファイル形式の変更に追従し、多くの検査や生成タスクでサードパーティ製ライブラリが不要になります。"
+whyModernWins:
+- icon: "🛡"
+  title: サポート対象のAPI
+  desc: "JDKのクラスファイル形式とともに提供され、進化します。"
+- icon: "📦"
+  title: 依存関係の削減
+  desc: "外部ライブラリなしで一般的なバイトコード処理を実行できます。"
+- icon: "🧩"
+  title: 合成可能なモデル
+  desc: "解析、構築、変換で1つのAPIを共有します。"
+support:
+  description: "JDK 24（JEP 484、2025年3月）で正式導入"

@@ -1,0 +1,17 @@
+title: 標準Base64エンコードとデコード
+oldApproach: sun.miscエンコーダー
+modernApproach: 標準Base64 API
+summary: "JDK内部クラスやサードパーティ製コーデックの代わりにjava.util.Base64を使用する。"
+explanation: "標準Base64 APIは、サポート対象外の内部パッケージに依存せず、基本形式、URLセーフ形式、MIME形式のエンコーダーとデコーダーを提供します。標準Base64にはgetEncoder()とgetDecoder()を使用し、対象形式で必要な場合はURL形式またはMIME形式を選択します。"
+whyModernWins:
+- icon: "🛡️"
+  title: サポート対象のAPI
+  desc: "アクセスできないsun.misc実装クラスを回避できます。"
+- icon: "🧩"
+  title: すべてのバリアント
+  desc: "基本形式、URLセーフ形式、MIME形式のエンコーダーとデコーダーが含まれます。"
+- icon: "🚀"
+  title: 依存関係なし
+  desc: "エンコードとデコードはJDKに組み込まれています。"
+support:
+  description: "JDK 8（2014年3月）以降、広く利用可能"

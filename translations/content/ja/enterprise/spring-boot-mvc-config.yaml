@@ -1,0 +1,17 @@
+title: Spring Boot MVC設定
+oldApproach: "@EnableWebMvcを使用したWebMvcConfigurerAdapter"
+modernApproach: "Spring Bootの自動構成を使用したWebMvcConfigurer"
+summary: "削除されたWebMvcConfigurerAdapterをWebMvcConfigurerに置き換え、Spring BootのMVC自動構成を維持する。"
+explanation: "Javaインターフェースがデフォルトメソッドを提供できなかったため、Spring Boot 1.xアプリケーションではWebMvcConfigurerAdapterを拡張するのが一般的でした。モダンなSpring FrameworkではWebMvcConfigurer上でデフォルト実装が直接提供されるため、このインターフェースを実装し、必要なメソッドだけをオーバーライドします。Spring Bootアプリケーションでは、MVC設定を意図的に完全制御する場合を除き、@EnableWebMvcを追加しないでください。追加すると、通常のコンバーター、静的リソース処理、その他のデフォルトを含むBootのMVC自動構成が無効になります。"
+whyModernWins:
+- icon: "🧹"
+  title: 削除されたAdapterが不要
+  desc: "WebMvcConfigurerがデフォルトメソッドを提供するため、拡張するAdapterスーパークラスは不要です。"
+- icon: "⚙️"
+  title: Bootのデフォルトを維持
+  desc: "@EnableWebMvcを使用しなければ、Spring Bootは引き続きMVCインフラストラクチャを自動構成します。"
+- icon: "🎯"
+  title: 必要な箇所だけをオーバーライド
+  desc: "インターフェースを実装し、アプリケーションに必要なMVCフックだけをカスタマイズします。"
+support:
+  description: "Spring Framework 7.0を使用するSpring Boot 4.0（Java 17以上が必要）以降、利用可能"

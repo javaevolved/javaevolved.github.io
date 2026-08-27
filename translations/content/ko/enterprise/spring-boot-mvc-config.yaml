@@ -1,0 +1,17 @@
+title: "Spring Boot MVC 구성"
+oldApproach: "@EnableWebMvc를 사용하는 WebMvcConfigurerAdapter"
+modernApproach: "Spring Boot 자동 구성을 사용하는 WebMvcConfigurer"
+summary: "제거된 WebMvcConfigurerAdapter를 WebMvcConfigurer로 대체하고 Spring Boot의 MVC 자동 구성을 유지합니다."
+explanation: "Java 인터페이스가 기본 메서드를 제공할 수 없었던 시절에는 Spring Boot 1.x 애플리케이션에서 흔히 WebMvcConfigurerAdapter를 확장했습니다. 모던 Spring Framework 버전은 WebMvcConfigurer에 기본 구현을 직접 제공하므로, 인터페이스를 구현하고 필요한 메서드만 재정의하면 됩니다. Spring Boot 애플리케이션에서는 의도적으로 MVC 구성을 완전히 제어하려는 경우가 아니라면 @EnableWebMvc를 추가하지 마십시오. 이를 추가하면 일반적인 컨버터, 정적 리소스 처리 및 기타 기본값을 포함한 Boot의 MVC 자동 구성이 비활성화됩니다."
+whyModernWins:
+- icon: "🧹"
+  title: "제거된 어댑터 불필요"
+  desc: "WebMvcConfigurer가 기본 메서드를 제공하므로 확장할 어댑터 슈퍼클래스가 필요 없습니다."
+- icon: "⚙️"
+  title: "Boot 기본값 유지"
+  desc: "@EnableWebMvc가 없으면 Spring Boot가 MVC 인프라를 계속 자동으로 구성합니다."
+- icon: "🎯"
+  title: "필요한 부분만 재정의"
+  desc: "인터페이스를 구현하고 애플리케이션에 필요한 MVC 훅만 사용자 지정합니다."
+support:
+  description: "Spring Framework 7.0이 포함된 Spring Boot 4.0에서 사용 가능 (Java 17+ 필요)"

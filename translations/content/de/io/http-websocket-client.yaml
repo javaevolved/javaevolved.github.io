@@ -1,0 +1,17 @@
+title: "WebSocket-Clients mit java.net.http"
+oldApproach: "WebSocket-Client eines Drittanbieters"
+modernApproach: "java.net.http.WebSocket"
+summary: "Den asynchronen Standard-WebSocket-Client verwenden, statt eine Drittanbieterabhängigkeit hinzuzufügen."
+explanation: "Das Paket java.net.http enthält einen asynchronen WebSocket-Client, der in den Standard-HTTP-Client integriert ist. Verbindungen werden mit CompletableFuture aufgebaut, Listener-Callbacks unterstützen über CompletionStage die nicht blockierende Nachrichtenverarbeitung, und der Client verwendet die standardmäßige Proxy-, TLS- und Executor-Konfiguration des JDK."
+whyModernWins:
+- icon: "📦"
+  title: "Keine zusätzliche Abhängigkeit"
+  desc: "Der WebSocket-Client ist Bestandteil des JDK."
+- icon: "🧵"
+  title: "Asynchrone API"
+  desc: "Verbindungsaufbau und Nachrichtenverarbeitung lassen sich mit CompletionStage kombinieren."
+- icon: "🔗"
+  title: "Gemeinsamer HTTP-Stack"
+  desc: "Proxy-, TLS- und Executor-Konfiguration verwenden die Standardfunktionen des JDK."
+support:
+  description: "Weitgehend verfügbar seit JDK 11 (September 2018)"

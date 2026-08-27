@@ -1,0 +1,18 @@
+---
+title: Locale constructor থেকে Locale.of()
+oldApproach: Locale constructor
+modernApproach: Locale.of()
+summary: deprecated constructor-এর পরিবর্তে Locale.of() দিয়ে ভাষা ও অঞ্চলের locale তৈরি করুন।
+explanation: Locale factory method, JDK 19-এ deprecated হওয়া constructorগুলো প্রতিস্থাপন করে। factory form-টি আরও স্পষ্ট, অন্যান্য value-based API-এর সঙ্গে সামঞ্জস্যপূর্ণ এবং locale তৈরিকে কেন্দ্রীভূত করে।
+whyModernWins:
+- icon: "✅"
+  title: সমর্থিত API
+  desc: deprecated constructor এড়িয়ে যায়।
+- icon: "👁"
+  title: স্পষ্ট নির্মাণ
+  desc: নামযুক্ত factory উদ্দেশ্যটি পরিষ্কার করে।
+- icon: "🧩"
+  title: সামঞ্জস্যপূর্ণ স্টাইল
+  desc: আধুনিক JDK value-object factory-এর সঙ্গে সামঞ্জস্যপূর্ণ।
+support:
+  description: JDK 19 (সেপ্টেম্বর 2022) থেকে উপলব্ধ

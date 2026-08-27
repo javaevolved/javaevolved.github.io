@@ -1,0 +1,18 @@
+---
+title: স্ট্যান্ডার্ড Base64 এনকোডিং এবং ডিকোডিং
+oldApproach: sun.misc encoder
+modernApproach: স্ট্যান্ডার্ড Base64 API
+summary: internal JDK class বা তৃতীয়-পক্ষের codec-এর পরিবর্তে java.util.Base64 ব্যবহার করুন।
+explanation: স্ট্যান্ডার্ড Base64 API অসমর্থিত internal package-এর ওপর নির্ভর না করে basic, URL-safe এবং MIME encoder ও decoder দেয়। স্ট্যান্ডার্ড Base64-এর জন্য getEncoder() ও getDecoder() ব্যবহার করুন, অথবা target format-এর প্রয়োজন অনুযায়ী URL ও MIME variant নির্বাচন করুন।
+whyModernWins:
+- icon: "🛡️"
+  title: সমর্থিত API
+  desc: অ্যাক্সেস-অযোগ্য sun.misc implementation class এড়িয়ে যায়।
+- icon: "🧩"
+  title: সম্পূর্ণ variant
+  desc: basic, URL-safe এবং MIME encoder ও decoder অন্তর্ভুক্ত।
+- icon: "🚀"
+  title: কোনো dependency নেই
+  desc: এনকোডিং ও ডিকোডিং JDK-তেই বিল্ট-ইন।
+support:
+  description: JDK 8 (মার্চ 2014) থেকে ব্যাপকভাবে উপলব্ধ।

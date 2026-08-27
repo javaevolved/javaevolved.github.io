@@ -1,0 +1,17 @@
+title: Fabryki komparatorów i płynne definiowanie porządku
+oldApproach: Anonimowy Comparator
+modernApproach: Fabryki Comparator
+summary: Twórz czytelne, komponowalne reguły porządkowania za pomocą metod fabrycznych Comparator.
+explanation: Fabryki komparatorów wyrażają porządek deklaratywnie i łączą klucze główne oraz dodatkowe bez ręcznie pisanych rozgałęzień.
+whyModernWins:
+  - icon: 🧩
+    title: Komponowalność
+    desc: Reguły porządkowania można naturalnie łączyć w łańcuch.
+  - icon: 👁
+    title: Łatwiejszy przegląd
+    desc: Klucze sortowania i ich priorytety są jawne.
+  - icon: 🐛
+    title: Bezpieczniejsze porównania
+    desc: Wyspecjalizowane metody pomocnicze eliminują podatne na błędy komparatory oparte na działaniach arytmetycznych.
+support:
+  description: Dostępne od JDK 8 (marzec 2014)

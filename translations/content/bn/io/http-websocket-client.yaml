@@ -1,0 +1,18 @@
+---
+title: java.net.http দিয়ে WebSocket client
+oldApproach: তৃতীয়-পক্ষের WebSocket client
+modernApproach: java.net.http.WebSocket
+summary: তৃতীয়-পক্ষের dependency যোগ করার পরিবর্তে standard asynchronous WebSocket client ব্যবহার করুন।
+explanation: java.net.http প্যাকেজে standard HTTP client-এর সঙ্গে সমন্বিত একটি asynchronous WebSocket client রয়েছে। CompletableFuture দিয়ে connection স্থাপন করা হয়, listener callback CompletionStage-এর মাধ্যমে non-blocking message processing সমর্থন করে এবং client-টি JDK-এর standard proxy, TLS ও executor configuration শেয়ার করে।
+whyModernWins:
+- icon: "📦"
+  title: অতিরিক্ত dependency নেই
+  desc: WebSocket client-টি JDK-এর সঙ্গেই আসে।
+- icon: "🧵"
+  title: Asynchronous API
+  desc: Connection এবং message handling CompletionStage-এর সঙ্গে compose করা যায়।
+- icon: "🔗"
+  title: শেয়ারড HTTP stack
+  desc: Proxy, TLS এবং executor configuration standard JDK facility ব্যবহার করে।
+support:
+  description: JDK 11 (সেপ্টেম্বর 2018) থেকে ব্যাপকভাবে উপলব্ধ

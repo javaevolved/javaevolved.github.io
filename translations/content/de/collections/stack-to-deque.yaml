@@ -1,0 +1,17 @@
+title: "Von Stack zu Deque und ArrayDeque"
+oldApproach: "Stack"
+modernApproach: "Deque mit ArrayDeque"
+summary: "Das Deque-Interface mit ArrayDeque statt der veralteten Stack-Klasse verwenden."
+explanation: "Stack erweitert die veraltete synchronisierte Vector-Klasse. Deque bildet Stack-Operationen direkt ab, und ArrayDeque ist die bevorzugte Allzweckimplementierung für LIFO-Verarbeitung im Arbeitsspeicher."
+whyModernWins:
+- icon: "🎯"
+  title: "Bessere Abstraktion"
+  desc: "Deque bildet sowohl Stack- als auch Queue-Operationen explizit ab."
+- icon: "⚡"
+  title: "Weniger Overhead"
+  desc: "ArrayDeque vermeidet die veraltete Synchronisierung von Vector."
+- icon: "🧩"
+  title: "Flexibler"
+  desc: "Dasselbe Interface unterstützt LIFO- und FIFO-Algorithmen."
+support:
+  description: "Verfügbar seit JDK 6 (Dezember 2006)"

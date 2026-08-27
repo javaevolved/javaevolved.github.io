@@ -1,0 +1,17 @@
+title: "Stack에서 Deque와 ArrayDeque로"
+oldApproach: "Stack"
+modernApproach: "ArrayDeque를 사용하는 Deque"
+summary: "레거시 Stack 클래스 대신 ArrayDeque를 구현체로 사용하는 Deque 인터페이스를 사용합니다."
+explanation: "Stack은 레거시 동기화 클래스인 Vector를 확장합니다. Deque는 스택 연산을 직접 모델링하며, ArrayDeque는 메모리 내 LIFO 작업에 권장되는 범용 구현체입니다."
+whyModernWins:
+- icon: "🎯"
+  title: "더 나은 추상화"
+  desc: "Deque는 스택과 큐 연산을 모두 명시적으로 모델링합니다."
+- icon: "⚡"
+  title: "더 낮은 오버헤드"
+  desc: "ArrayDeque는 Vector의 레거시 동기화를 피합니다."
+- icon: "🧩"
+  title: "더 높은 유연성"
+  desc: "동일한 인터페이스가 LIFO와 FIFO 알고리즘을 모두 지원합니다."
+support:
+  description: "JDK 6 (2006년 12월) 이후 사용 가능"

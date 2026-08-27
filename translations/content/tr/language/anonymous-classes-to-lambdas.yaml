@@ -1,0 +1,18 @@
+---
+title: "Anonim sınıflardan lambda ve metot referanslarına"
+oldApproach: "Anonim sınıf"
+modernApproach: "Metot referansı"
+summary: "Tek metotlu anonim sınıfları özlü lambda'lar ve metot referanslarıyla değiştirin."
+explanation: "Fonksiyonel interface'ler lambda veya metot referanslarıyla uygulanabilir. Bu yaklaşım, statik tiplemeyi ve aynı callback sözleşmesini korurken anonim sınıf şablon kodunu ortadan kaldırır."
+whyModernWins:
+- icon: "⚡"
+  title: "Daha az şablon kod"
+  desc: "Sınıf bildirimini ve override kalabalığını ortadan kaldırır."
+- icon: "👁"
+  title: "Daha iyi okunabilirlik"
+  desc: "Dikkati gerçekleştirilen işlem üzerinde tutar."
+- icon: "🔒"
+  title: "Hâlâ tür güvenli"
+  desc: "Derleyici, hedef fonksiyonel interface imzasını denetler."
+support:
+  description: "JDK 8'den itibaren kullanılabilir (Mart 2014)."

@@ -1,0 +1,17 @@
+title: "Finalizer에서 결정론적 리소스 정리로"
+oldApproach: "finalize() 재정의"
+modernApproach: "AutoCloseable과 Cleaner"
+summary: "Finalization을 AutoCloseable로 대체하고 Cleaner는 방어적인 최후 수단으로만 사용합니다."
+explanation: "Finalization은 제거를 위해 지원 중단되었으며 신속한 정리도 신뢰할 수 있는 순서도 보장하지 않습니다. 호출자가 try-with-resources로 리소스를 결정론적으로 해제할 수 있도록 AutoCloseable을 구현합니다. 누수된 리소스의 경우 Cleaner가 최후 수단으로 동일한 멱등 정리 작업을 호출할 수 있습니다. 이 작업은 등록된 객체를 참조해 유지해서는 안 됩니다."
+whyModernWins:
+- icon: "⏱"
+  title: "결정론적"
+  desc: "Try-with-resources는 알려진 시점에 리소스를 해제합니다."
+- icon: "🛡"
+  title: "더 안전한 생명 주기"
+  desc: "Finalizer 부활과 예측 불가능한 실행 순서를 피합니다."
+- icon: "🧹"
+  title: "방어적 대안"
+  desc: "Cleaner는 finalize()를 재정의하지 않고도 누수된 리소스를 회수할 수 있습니다."
+support:
+  description: "Cleaner와 finalization 지원 중단은 JDK 9 (2017년 9월)부터 제공"

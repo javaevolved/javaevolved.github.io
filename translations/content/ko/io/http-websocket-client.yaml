@@ -1,0 +1,17 @@
+title: "java.net.http를 사용하는 WebSocket 클라이언트"
+oldApproach: "서드파티 WebSocket 클라이언트"
+modernApproach: "java.net.http.WebSocket"
+summary: "서드파티 의존성을 추가하는 대신 표준 비동기 WebSocket 클라이언트를 사용합니다."
+explanation: "java.net.http 패키지는 표준 HTTP 클라이언트와 통합된 비동기 WebSocket 클라이언트를 포함합니다. 연결은 CompletableFuture로 설정되고, 리스너 콜백은 CompletionStage를 통해 논블로킹 메시지 처리를 지원하며, 클라이언트는 JDK의 표준 프록시, TLS 및 실행자 구성을 공유합니다."
+whyModernWins:
+- icon: "📦"
+  title: "추가 의존성 없음"
+  desc: "WebSocket 클라이언트가 JDK에 포함되어 있습니다."
+- icon: "🧵"
+  title: "비동기 API"
+  desc: "연결 및 메시지 처리를 CompletionStage와 조합할 수 있습니다."
+- icon: "🔗"
+  title: "공유 HTTP 스택"
+  desc: "프록시, TLS 및 실행자 구성에 표준 JDK 기능을 사용합니다."
+support:
+  description: "JDK 11 (2018년 9월) 이후 널리 사용 가능"

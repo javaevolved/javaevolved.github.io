@@ -1,0 +1,18 @@
+---
+title: "java.net.http ile WebSocket istemcileri"
+oldApproach: "Üçüncü taraf WebSocket istemcisi"
+modernApproach: "java.net.http.WebSocket"
+summary: "Üçüncü taraf bağımlılığı eklemek yerine standart asenkron WebSocket istemcisini kullanın."
+explanation: "java.net.http paketi, standart HTTP istemcisiyle tümleşik asenkron bir WebSocket istemcisi içerir. Bağlantılar CompletableFuture ile kurulur, listener callback'leri CompletionStage aracılığıyla bloklamayan mesaj işlemeyi destekler ve istemci JDK'nın standart proxy, TLS ve executor yapılandırmasını paylaşır."
+whyModernWins:
+- icon: "📦"
+  title: "Ek bağımlılık yok"
+  desc: "WebSocket istemcisi JDK ile birlikte gelir."
+- icon: "🧵"
+  title: "Asenkron API"
+  desc: "Bağlantı ve mesaj işleme CompletionStage ile birleştirilebilir."
+- icon: "🔗"
+  title: "Paylaşılan HTTP yığını"
+  desc: "Proxy, TLS ve executor yapılandırması standart JDK olanaklarını kullanır."
+support:
+  description: "JDK 11'den (Eylül 2018) itibaren geniş çapta kullanılabilir"

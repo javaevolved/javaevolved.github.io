@@ -1,0 +1,18 @@
+---
+title: 从匿名类迁移到 lambda 和方法引用
+oldApproach: 匿名类
+modernApproach: 方法引用
+summary: "用简洁的 lambda 和方法引用替代单方法匿名类。"
+explanation: "函数式接口可以通过 lambda 或方法引用实现。这样既消除了匿名类的繁琐样板，又保留了静态类型检查和相同的回调契约。"
+whyModernWins:
+- icon: ⚡
+  title: 更少样板代码
+  desc: "省去类声明和方法重写的繁琐形式。"
+- icon: 👁
+  title: 可读性更好
+  desc: "让注意力集中在所执行的操作上。"
+- icon: 🔒
+  title: 仍然类型安全
+  desc: "编译器会检查目标函数式接口的签名。"
+support:
+  description: 自 JDK 8 起可用（2014 年 3 月）。

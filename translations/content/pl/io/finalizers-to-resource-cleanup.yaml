@@ -1,0 +1,17 @@
+title: Od finalizatorów do deterministycznego zwalniania zasobów
+oldApproach: Przesłanianie finalize()
+modernApproach: AutoCloseable i Cleaner
+summary: Zastąp finalizację interfejsem AutoCloseable, a Cleaner stosuj tylko jako awaryjne zabezpieczenie.
+explanation: Finalizacja jest przestarzała i przeznaczona do usunięcia; nie zapewnia ani szybkiego zwalniania zasobów, ani niezawodnej kolejności. Zaimplementuj AutoCloseable, aby kod wywołujący mógł deterministycznie zwalniać zasoby za pomocą try-with-resources. W przypadku wycieku zasobów Cleaner może w ostateczności wywołać tę samą idempotentną operację czyszczenia; jego akcja nie może przechowywać referencji do zarejestrowanego obiektu.
+whyModernWins:
+  - icon: ⏱
+    title: Deterministyczność
+    desc: Try-with-resources zwalnia zasoby w znanym momencie.
+  - icon: 🛡
+    title: Bezpieczniejszy cykl życia
+    desc: Eliminuje wskrzeszanie obiektów przez finalizator i nieprzewidywalną kolejność.
+  - icon: 🧹
+    title: Awaryjne zabezpieczenie
+    desc: Cleaner może odzyskać zasoby po wycieku bez przesłaniania finalize().
+support:
+  description: Cleaner i oznaczenie finalizacji jako przestarzałej są dostępne od JDK 9 (wrzesień 2017)

@@ -1,0 +1,18 @@
+---
+title: 标准 Base64 编码与解码
+oldApproach: sun.misc 编码器
+modernApproach: 标准 Base64 API
+summary: "使用 java.util.Base64，取代 JDK 内部类或第三方编解码器。"
+explanation: "标准 Base64 API 提供基本型、URL 安全型和 MIME 型编码器与解码器，无需依赖不受支持的内部包。标准 Base64 使用 getEncoder() 和 getDecoder()；目标格式需要时，则选择 URL 或 MIME 变体。"
+whyModernWins:
+- icon: 🛡️
+  title: 受支持的 API
+  desc: "避免使用无法访问的 sun.misc 实现类。"
+- icon: 🧩
+  title: 变体齐全
+  desc: "包含基本型、URL 安全型和 MIME 型编码器与解码器。"
+- icon: 🚀
+  title: 无依赖
+  desc: "编码与解码内置于 JDK。"
+support:
+  description: 自 JDK 8 起广泛可用（2014 年 3 月）。

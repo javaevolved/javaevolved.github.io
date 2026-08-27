@@ -1,0 +1,18 @@
+---
+title: "compute ve merge ile atomik map güncellemeleri"
+oldApproach: "get() + null denetimi + put()"
+modernApproach: "computeIfAbsent()"
+summary: "Çok adımlı map arama ve değiştirme işlemlerini computeIfAbsent(), compute() ve merge() ile değiştirin."
+explanation: "Map hesaplama metotları, arama ve güncelleme amacını tek bir işlemde birleştirir. Tembel başlatma için computeIfAbsent(), yeni değer mevcut değere bağlı olduğunda compute(), sağlanan bir değeri map'te bulunan değerle birleştirmek için merge() kullanın. Eşzamanlı map implementasyonlarında desteklenen hesaplamalar, ayrı get() ve put() çağrılarının yol açtığı yarış durumlarını da önler."
+whyModernWins:
+- icon: "⚡"
+  title: "Daha az arama"
+  desc: "Aynı anahtara tekrar tekrar erişmekten kaçınır."
+- icon: "🧵"
+  title: "Daha iyi eşzamanlılık semantiği"
+  desc: "Eşzamanlı map'ler desteklenen güncellemeleri atomik olarak gerçekleştirebilir."
+- icon: "👁"
+  title: "Açık amaç"
+  desc: "Başlatma kuralı erişimin yanında görünür."
+support:
+  description: "JDK 8'den (Mart 2014) itibaren geniş çapta kullanılabilir"

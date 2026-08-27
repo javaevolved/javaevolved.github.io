@@ -1,0 +1,17 @@
+title: Analizowanie plików klas za pomocą standardowego API
+oldApproach: ASM ClassReader
+modernApproach: Class-File API
+summary: Używaj standardowego Class-File API do analizowania i przekształcania plików klas.
+explanation: Class-File API, sfinalizowane w JDK 24, zapewnia wspierane modele i przekształcenia plików klas JVM. Jest rozwijane wraz z formatem plików klas w JDK i w wielu zadaniach związanych z inspekcją i generowaniem eliminuje potrzebę używania bibliotek zewnętrznych.
+whyModernWins:
+  - icon: 🛡
+    title: Wspierane API
+    desc: Jest dostarczane i rozwijane wraz z formatem plików klas JDK.
+  - icon: 📦
+    title: Mniej zależności
+    desc: Obsługuje typowe zadania dotyczące bytecode'u bez zewnętrznej biblioteki.
+  - icon: 🧩
+    title: Komponowalne modele
+    desc: Analizowanie, budowanie i przekształcanie korzystają z jednego API.
+support:
+  description: Sfinalizowane w JDK 24 (JEP 484, marzec 2025).

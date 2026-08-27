@@ -1,0 +1,18 @@
+---
+title: Configurazione MVC di Spring Boot
+oldApproach: WebMvcConfigurerAdapter con @EnableWebMvc
+modernApproach: WebMvcConfigurer con l'auto-configurazione di Spring Boot
+summary: "Sostituisci il WebMvcConfigurerAdapter rimosso con WebMvcConfigurer e mantieni l'auto-configurazione MVC di Spring Boot."
+explanation: "Le applicazioni Spring Boot 1.x estendevano comunemente WebMvcConfigurerAdapter perché le interfacce Java non potevano fornire metodi default. Le versioni moderne di Spring Framework forniscono implementazioni predefinite direttamente in WebMvcConfigurer: implementa quindi l'interfaccia e sovrascrivi solo i metodi necessari. In un'applicazione Spring Boot, non aggiungere @EnableWebMvc a meno che tu non voglia assumere intenzionalmente il pieno controllo della configurazione MVC: disabilita l'auto-configurazione MVC di Boot, inclusi i consueti convertitori, la gestione delle risorse statiche e altre impostazioni predefinite."
+whyModernWins:
+- icon: 🧹
+  title: Nessun adapter rimosso
+  desc: "WebMvcConfigurer fornisce metodi default, quindi non occorre estendere una superclasse adapter."
+- icon: ⚙️
+  title: Mantiene i valori predefiniti di Boot
+  desc: "Senza @EnableWebMvc, Spring Boot continua a configurare automaticamente l'infrastruttura MVC."
+- icon: 🎯
+  title: Sovrascrive solo ciò che conta
+  desc: "Implementa l'interfaccia e personalizza solo l'hook MVC richiesto dall'applicazione."
+support:
+  description: "Disponibile in Spring Boot 4.0 con Spring Framework 7.0 (richiede Java 17+)"

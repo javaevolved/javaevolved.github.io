@@ -1,0 +1,18 @@
+---
+title: "Des constructeurs URL obsolètes à URI"
+oldApproach: "Construction directe d'une URL"
+modernApproach: "URI puis URL"
+summary: "Analysez et composez les identifiants de ressources sous forme de valeurs URI avant de les convertir en URL lorsque nécessaire."
+explanation: "Les constructeurs URL ont été rendus obsolètes dans JDK 20, car l'analyse et l'égalité des URL ont un comportement surprenant lié aux gestionnaires de protocoles. URI est la représentation immuable recommandée pour l'analyse, la composition, la comparaison et la normalisation ; ne convertissez qu'aux frontières des APIs qui exigent une URL."
+whyModernWins:
+- icon: "✅"
+  title: "Évite les APIs obsolètes"
+  desc: "Supprime l'utilisation des constructeurs URL obsolètes."
+- icon: "🧠"
+  title: "Sémantique prévisible"
+  desc: "La comparaison d'URI n'effectue aucune résolution dépendante du réseau."
+- icon: "🧩"
+  title: "Meilleure composition"
+  desc: "URI est conçue pour analyser et manipuler les identifiants."
+support:
+  description: "Constructeurs URL obsolètes depuis JDK 20 (mars 2023)"

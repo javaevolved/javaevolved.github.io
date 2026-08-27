@@ -1,0 +1,18 @@
+---
+title: 从 Stack 迁移到 Deque 和 ArrayDeque
+oldApproach: Stack
+modernApproach: 使用 ArrayDeque 的 Deque
+summary: "使用 Deque 接口和 ArrayDeque，取代旧式 Stack 类。"
+explanation: "Stack 扩展了旧式同步 Vector 类。Deque 直接对栈操作建模，而 ArrayDeque 是内存中 LIFO 工作的首选通用实现。"
+whyModernWins:
+- icon: 🎯
+  title: 更好的抽象
+  desc: "Deque 明确地对栈和队列操作建模。"
+- icon: ⚡
+  title: 更低开销
+  desc: "ArrayDeque 避免了 Vector 的旧式同步。"
+- icon: 🧩
+  title: 更灵活
+  desc: "同一个接口同时支持 LIFO 和 FIFO 算法。"
+support:
+  description: 自 JDK 6 起可用（2006 年 12 月）

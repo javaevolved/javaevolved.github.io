@@ -1,0 +1,18 @@
+---
+title: "Stack'ten Deque ve ArrayDeque'a"
+oldApproach: "Stack"
+modernApproach: "ArrayDeque ile Deque"
+summary: "Eski Stack sınıfı yerine ArrayDeque ile Deque interface'ini kullanın."
+explanation: "Stack, eski ve senkronize Vector sınıfını genişletir. Deque, yığın işlemlerini doğrudan modeller; ArrayDeque ise bellek içi LIFO işlemleri için tercih edilen genel amaçlı implementasyondur."
+whyModernWins:
+- icon: "🎯"
+  title: "Daha iyi soyutlama"
+  desc: "Deque hem yığın hem de kuyruk işlemlerini açıkça modeller."
+- icon: "⚡"
+  title: "Daha düşük ek yük"
+  desc: "ArrayDeque, Vector'ün eski senkronizasyonundan kaçınır."
+- icon: "🧩"
+  title: "Daha esnek"
+  desc: "Aynı interface, LIFO ve FIFO algoritmalarını destekler."
+support:
+  description: "JDK 6'dan itibaren kullanılabilir (Aralık 2006)"

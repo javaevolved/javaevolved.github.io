@@ -1,0 +1,17 @@
+title: "StackWalker를 사용한 지연 스택 검사"
+oldApproach: "Thread.getStackTrace()"
+modernApproach: "StackWalker"
+summary: "전체 스택 트레이스를 구체화하는 대신 StackWalker로 스택 프레임을 지연 방식으로 검사합니다."
+explanation: "StackWalker는 스택 프레임의 지연 스트림과 유지된 클래스 참조에 대한 구성 가능한 접근을 제공합니다. 전체 스택 트레이스 배열을 할당하지 않고 필요한 프레임을 찾는 즉시 탐색을 중단할 수 있습니다."
+whyModernWins:
+- icon: "⚡"
+  title: "지연 순회"
+  desc: "연산에 필요한 프레임만 방문합니다."
+- icon: "🧩"
+  title: "스트림 친화적"
+  desc: "필터링과 선택에 표준 스트림 연산을 사용합니다."
+- icon: "🎛"
+  title: "구성 가능"
+  desc: "옵션을 통해 클래스 참조와 숨겨진 프레임 또는 리플렉션 프레임을 지원합니다."
+support:
+  description: "JDK 9 (2017년 9월) 이후 널리 사용 가능"

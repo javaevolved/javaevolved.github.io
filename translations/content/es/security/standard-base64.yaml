@@ -1,0 +1,18 @@
+---
+title: "Codificación y decodificación Base64 estándar"
+oldApproach: "Codificador de sun.misc"
+modernApproach: "API Base64 estándar"
+summary: "Usa java.util.Base64 en lugar de clases internas del JDK o códecs de terceros."
+explanation: "La API Base64 estándar proporciona codificadores y decodificadores básicos, seguros para URL y MIME sin depender de paquetes internos no compatibles. Usa getEncoder() y getDecoder() para Base64 estándar, o selecciona las variantes URL y MIME cuando el formato de destino las requiera."
+whyModernWins:
+- icon: "🛡️"
+  title: "API compatible"
+  desc: "Evita las clases de implementación sun.misc inaccesibles."
+- icon: "🧩"
+  title: "Todas las variantes"
+  desc: "Incluye codificadores y decodificadores básicos, seguros para URL y MIME."
+- icon: "🚀"
+  title: "Sin dependencias"
+  desc: "La codificación y decodificación están integradas en el JDK."
+support:
+  description: "Ampliamente disponible desde JDK 8 (marzo de 2014)."

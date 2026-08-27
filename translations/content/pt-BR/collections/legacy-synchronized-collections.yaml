@@ -1,0 +1,20 @@
+title: De coleções sincronizadas legadas para alternativas modernas
+oldApproach: Hashtable
+modernApproach: ConcurrentHashMap
+summary: Substitua Vector e Hashtable por coleções escolhidas conforme as necessidades
+  reais de mutabilidade e concorrência.
+explanation: Vector e Hashtable sincronizam cada operação por meio de APIs legadas. Em
+  geral, código moderno deve usar ArrayList ou HashMap para dados confinados a uma thread
+  e coleções concorrentes específicas quando mutação compartilhada for necessária.
+whyModernWins:
+- icon: "🎯"
+  title: Concorrência intencional
+  desc: O tipo escolhido documenta se o compartilhamento é esperado.
+- icon: "⚡"
+  title: Melhor escalabilidade
+  desc: ConcurrentHashMap evita um único lock para toda a tabela durante o acesso normal.
+- icon: "🧩"
+  title: APIs modernas
+  desc: Funciona naturalmente com operações atuais de coleções e mapas concorrentes.
+support:
+  description: Amplamente disponível desde o JDK 5 (setembro de 2004)

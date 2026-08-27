@@ -1,0 +1,17 @@
+title: computeとmergeによるアトミックなMap更新
+oldApproach: get() + nullチェック + put()
+modernApproach: computeIfAbsent()
+summary: "複数ステップのMap検索と変更をcomputeIfAbsent()、compute()、merge()に置き換える。"
+explanation: "Mapの計算メソッドは、検索と更新の意図を1つの操作にまとめます。遅延初期化にはcomputeIfAbsent()、既存の値に基づいて新しい値を決める場合はcompute()、指定した値をMap内の既存値と結合する場合はmerge()を使用します。並行Map実装では、サポートされる計算操作により、get()とput()を個別に呼び出すことで生じる競合も回避できます。"
+whyModernWins:
+- icon: "⚡"
+  title: 検索回数の削減
+  desc: "同じキーへの繰り返しアクセスを回避できます。"
+- icon: "🧵"
+  title: 優れた並行処理セマンティクス
+  desc: "並行Mapでは、サポートされる更新をアトミックに実行できます。"
+- icon: "👁"
+  title: 明確な意図
+  desc: "初期化ルールがアクセス処理のそばに記述されます。"
+support:
+  description: "JDK 8（2014年3月）以降、広く利用可能"

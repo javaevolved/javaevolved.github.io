@@ -1,0 +1,18 @@
+---
+title: StackWalker দিয়ে lazy stack inspection
+oldApproach: Thread.getStackTrace()
+modernApproach: StackWalker
+summary: সম্পূর্ণ stack trace materialize করার পরিবর্তে StackWalker দিয়ে lazy পদ্ধতিতে stack frame inspect করুন।
+explanation: StackWalker stack frame-এর একটি lazy stream এবং ধরে রাখা class reference-এ configurable access দেয়। সম্পূর্ণ stack-trace array allocate না করে প্রয়োজনীয় frame পাওয়া গেলেই কোড থামতে পারে।
+whyModernWins:
+- icon: "⚡"
+  title: Lazy traversal
+  desc: অপারেশনের প্রয়োজনীয় frameগুলোতেই কেবল যায়।
+- icon: "🧩"
+  title: Stream-বান্ধব
+  desc: Filtering এবং selection standard stream operation ব্যবহার করে।
+- icon: "🎛"
+  title: কনফিগারযোগ্য
+  desc: Optionগুলো class reference এবং hidden বা reflective frame সমর্থন করে।
+support:
+  description: JDK 9 (সেপ্টেম্বর 2017) থেকে ব্যাপকভাবে উপলব্ধ

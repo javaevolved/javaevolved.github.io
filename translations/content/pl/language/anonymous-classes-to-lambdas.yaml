@@ -1,0 +1,17 @@
+title: Od klas anonimowych do lambd i referencji do metod
+oldApproach: Klasa anonimowa
+modernApproach: Referencja do metody
+summary: Zastąp klasy anonimowe z jedną metodą zwięzłymi lambdami i referencjami do metod.
+explanation: Interfejsy funkcyjne można implementować za pomocą lambd lub referencji do metod. Eliminuje to formalności związane z klasą anonimową, zachowując statyczne typowanie i ten sam kontrakt wywołania zwrotnego.
+whyModernWins:
+  - icon: ⚡
+    title: Mniej kodu szablonowego
+    desc: Eliminuje deklarację klasy i formalności związane z przesłanianiem metody.
+  - icon: 👁
+    title: Lepsza czytelność
+    desc: Skupia uwagę na wykonywanej operacji.
+  - icon: 🔒
+    title: Nadal bezpieczne typowo
+    desc: Kompilator sprawdza sygnaturę docelowego interfejsu funkcyjnego.
+support:
+  description: Dostępne od JDK 8 (marzec 2014).

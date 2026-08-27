@@ -1,0 +1,18 @@
+---
+title: "Inspección diferida de la pila con StackWalker"
+oldApproach: "Thread.getStackTrace()"
+modernApproach: "StackWalker"
+summary: "Inspecciona los frames de pila de forma diferida con StackWalker en lugar de materializar una traza de pila completa."
+explanation: "StackWalker expone un stream diferido de frames de pila y acceso configurable a referencias de clase conservadas. El código puede detenerse cuando encuentre el frame necesario en lugar de asignar un array con la traza de pila completa."
+whyModernWins:
+- icon: "⚡"
+  title: "Recorrido diferido"
+  desc: "Visita únicamente los frames que necesita la operación."
+- icon: "🧩"
+  title: "Integración con streams"
+  desc: "El filtrado y la selección usan operaciones estándar de streams."
+- icon: "🎛"
+  title: "Configurable"
+  desc: "Las opciones admiten referencias de clase y frames ocultos o reflectivos."
+support:
+  description: "Ampliamente disponible desde JDK 9 (septiembre de 2017)"

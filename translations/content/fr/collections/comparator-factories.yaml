@@ -1,0 +1,18 @@
+---
+title: "Fabriques de Comparator et ordonnancement fluide"
+oldApproach: "Comparator anonyme"
+modernApproach: "Fabriques de Comparator"
+summary: "Construisez des règles d'ordonnancement lisibles et composables avec les méthodes de fabrique de Comparator."
+explanation: "Les fabriques de Comparator expriment l'ordonnancement de façon déclarative et composent des clés principales et secondaires sans branchements écrits à la main."
+whyModernWins:
+- icon: "🧩"
+  title: "Composable"
+  desc: "Les règles d'ordonnancement s'enchaînent naturellement."
+- icon: "👁"
+  title: "Plus facile à relire"
+  desc: "Les clés de tri et leur priorité sont explicites."
+- icon: "🐛"
+  title: "Comparaisons plus sûres"
+  desc: "Les méthodes spécialisées évitent les comparateurs arithmétiques sujets aux erreurs."
+support:
+  description: "Disponible depuis JDK 8 (mars 2014)"
