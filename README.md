@@ -83,7 +83,7 @@ jwebserver -b 0.0.0.0 -d path/to/site -p 8090
 
 The fat JAR is a self-contained ~2.2 MB file with all dependencies bundled. [JBang](https://jbang.dev) is needed to run the generator.
 
-For development on the generator itself, you can use JBang or Python — see [html-generators/README.md](html-generators/README.md) for details.
+For development on the generator itself, see [html-generators/README.md](html-generators/README.md).
 
 ## Contributing
 
