@@ -1301,10 +1301,10 @@ language/raw-collections-to-generics: |-
 concurrency/thread-stop-to-cooperative-cancellation: |-
   ☕ Unsafe thread termination to cooperative cancellation
 
-  Replace Thread.stop() and ad hoc shared flags with interruption-a…
+  Use interruption-aware task cancellation.
 
   Thread.stop() → Future.cancel(true) (JDK 5+)
-  🔗 https://javaevolved.github.io/concurrency/thread-stop-to-cooperative-cancellation.html
+
   🔗 https://javaevolved.github.io/concurrency/thread-stop-to-cooperative-cancellation.html
 
   #Java #JavaEvolved
