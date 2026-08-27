@@ -1,0 +1,17 @@
+title: "Standard-Charset-Datei-I/O zu explizitem StandardCharsets"
+oldApproach: "Plattformabhängiger Standard-Zeichensatz"
+modernApproach: "Expliziter Standard-Zeichensatz"
+summary: "Verwenden Sie Files-Reader und -Writer mit StandardCharsets-Konstanten statt sich auf das plattformabhängige Standard-Charset-Verhalten und die Zeichensatznamens-Suche zu verlassen."
+explanation: "Reader- und Writer-Konstruktoren, die sich auf den Standard-Zeichensatz verlassen, machen das Dateiverhalten von der Laufzeitumgebung abhängig. Files.newBufferedReader() und newBufferedWriter() akzeptieren ein explizites Charset, während StandardCharsets garantierte Konstanten wie UTF_8 ohne String-Suche oder UnsupportedCharsetException bereitstellt."
+whyModernWins:
+- icon: "🌍"
+  title: "Portable Ergebnisse"
+  desc: "Dieselben Bytes werden auf jeder Maschine identisch dekodiert."
+- icon: "🔒"
+  title: "Vordefinierte Konstante"
+  desc: "StandardCharsets.UTF_8 kann keinen falsch geschriebenen Zeichensatznamen enthalten."
+- icon: "🧩"
+  title: "Moderne Datei-API"
+  desc: "Path, Pufferung und Kodierung werden in einer Operation ausgedrückt."
+support:
+  description: "Seit JDK 7 allgemein verfügbar (Juli 2011)"

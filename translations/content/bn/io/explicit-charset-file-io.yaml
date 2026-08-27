@@ -1,0 +1,17 @@
+title: "ডিফল্ট চারসেট ফাইল I/O থেকে স্পষ্ট StandardCharsets এ"
+oldApproach: "প্ল্যাটফর্ম ডিফল্ট চারসেট"
+modernApproach: "স্পষ্ট স্ট্যান্ডার্ড চারসেট"
+summary: "প্ল্যাটফর্মের ডিফল্ট চারসেট আচরণ এবং চারসেট-নাম লুকআপের পরিবর্তে StandardCharsets কনস্ট্যান্ট সহ Files রিডার এবং রাইটার ব্যবহার করুন।"
+explanation: "Reader এবং Writer কনস্ট্রাক্টর যা ডিফল্ট চারসেটের উপর নির্ভর করে তা ফাইলের আচরণকে রানটাইম এনভায়রনমেন্টের উপর নির্ভরশীল করে তোলে। Files.newBufferedReader() এবং newBufferedWriter() একটি স্পষ্ট Charset গ্রহণ করে, যেখানে StandardCharsets স্ট্রিং লুকআপ বা UnsupportedCharsetException ছাড়াই UTF_8 এর মতো নিশ্চিত কনস্ট্যান্ট প্রদান করে।"
+whyModernWins:
+- icon: "🌍"
+  title: "পোর্টেবল ফলাফল"
+  desc: "একই বাইট প্রতিটি মেশিনে একইভাবে ডিকোড হয়।"
+- icon: "🔒"
+  title: "পূর্বনির্ধারিত কনস্ট্যান্ট"
+  desc: "StandardCharsets.UTF_8 এ ভুল বানানযুক্ত চারসেট নাম থাকতে পারে না।"
+- icon: "🧩"
+  title: "আধুনিক ফাইল API"
+  desc: "Path, বাফারিং এবং এনকোডিং একটি অপারেশনে প্রকাশ করা হয়।"
+support:
+  description: "JDK 7 (জুলাই 2011) থেকে ব্যাপকভাবে উপলব্ধ"

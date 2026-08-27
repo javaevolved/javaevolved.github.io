@@ -1,0 +1,17 @@
+title: "تحويل إدخال/إخراج الملفات بترميز افتراضي إلى StandardCharsets صريح"
+oldApproach: "الترميز الافتراضي للمنصة"
+modernApproach: "ترميز قياسي صريح"
+summary: "استخدم قارئات وكاتبات Files مع ثوابت StandardCharsets بدلاً من الاعتماد على سلوك الترميز الافتراضي للمنصة والبحث عن اسم الترميز."
+explanation: "تجعل بواني Reader وWriter التي تعتمد على الترميز الافتراضي سلوك الملف يعتمد على بيئة التشغيل. تقبل Files.newBufferedReader() وnewBufferedWriter() ترميزاً صريحاً، بينما توفر StandardCharsets ثوابت مضمونة مثل UTF_8 دون البحث عن سلسلة نصية أو استثناء UnsupportedCharsetException."
+whyModernWins:
+- icon: "🌍"
+  title: "نتائج قابلة للنقل"
+  desc: "تُفكّ نفس البايتات بنفس الطريقة على أي جهاز."
+- icon: "🔒"
+  title: "ثابت معرّف مسبقًا"
+  desc: "لا يمكن أن يحتوي StandardCharsets.UTF_8 على اسم ترميز مكتوب خطأ."
+- icon: "🧩"
+  title: "واجهة ملفات حديثة"
+  desc: "يُعبَّر عن Path والتخزين المؤقت والترميز في عملية واحدة."
+support:
+  description: "متاح على نطاق واسع منذ JDK 7 (يوليو 2011)"

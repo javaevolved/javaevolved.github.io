@@ -1,0 +1,17 @@
+title: "デフォルト文字コードのファイルI/Oから明示的なStandardCharsetsへ"
+oldApproach: "プラットフォームのデフォルト文字コード"
+modernApproach: "明示的な標準文字コード"
+summary: "プラットフォームのデフォルト文字コードの挙動や文字コード名の検索に頼るのではなく、StandardCharsets定数を使ったFilesのリーダーとライターを使用する。"
+explanation: "デフォルト文字コードに依存するReaderおよびWriterのコンストラクタは、ファイルの挙動を実行環境に依存させます。Files.newBufferedReader()とnewBufferedWriter()は明示的なCharsetを受け取ることができ、StandardCharsetsは文字列検索やUnsupportedCharsetExceptionなしでUTF_8のような保証された定数を提供します。"
+whyModernWins:
+- icon: "🌍"
+  title: "移植性のある結果"
+  desc: "同じバイト列がどのマシンでも同一にデコードされます。"
+- icon: "🔒"
+  title: "定義済み定数"
+  desc: "StandardCharsets.UTF_8には文字コード名のスペルミスが入り込みません。"
+- icon: "🧩"
+  title: "モダンなファイルAPI"
+  desc: "Path、バッファリング、エンコーディングが1つの操作で表現されます。"
+support:
+  description: "JDK 7（2011年7月）以降、広く利用可能"

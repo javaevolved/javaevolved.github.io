@@ -1,0 +1,48 @@
+---
+id: 100472fa-74b1-442f-b89d-3e6e8adcc1b1
+slug: "explicit-charset-file-io"
+title: "Default-charset file I/O to explicit StandardCharsets"
+category: "io"
+difficulty: "beginner"
+jdkVersion: "7"
+oldLabel: "Platform-default charset"
+modernLabel: "Explicit standard charset"
+oldApproach: "Platform-default charset"
+modernApproach: "Explicit standard charset"
+oldCode: |-
+  try (Reader reader = new FileReader(path.toFile())) {
+      return readAll(reader);
+  }
+modernCode: |-
+  try (BufferedReader reader = Files.newBufferedReader(
+          path, StandardCharsets.UTF_8)) {
+      return readAll(reader);
+  }
+summary: "Use Files readers and writers with StandardCharsets constants instead of platform-default charset behavior and charset-name lookup."
+explanation: "Reader and writer constructors that rely on the default charset make file behavior depend on the runtime environment. Files.newBufferedReader() and newBufferedWriter() accept an explicit Charset, while StandardCharsets provides guaranteed constants such as UTF_8 without string lookup or UnsupportedCharsetException. This combines the explicit-file-encoding and Charset.forName(\"UTF-8\") migrations into one coherent pattern."
+whyModernWins:
+- icon: "🌍"
+  title: "Portable results"
+  desc: "The same bytes decode identically on every machine."
+- icon: "🔒"
+  title: "Predefined constant"
+  desc: "StandardCharsets.UTF_8 cannot contain a misspelled charset name."
+- icon: "🧩"
+  title: "Modern file API"
+  desc: "Path, buffering, and encoding are expressed in one operation."
+support:
+  state: "available"
+  description: "Widely available since JDK 7 (July 2011)"
+prev: "io/writing-files"
+next: "io/inputstream-transferto"
+related:
+- "io/reading-files"
+- "io/writing-files"
+- "io/path-of"
+tags:
+- io
+docs:
+- title: "Files.newBufferedReader(Path, Charset)"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Files.html#newBufferedReader(java.nio.file.Path,java.nio.charset.Charset)"
+- title: "StandardCharsets"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/charset/StandardCharsets.html"

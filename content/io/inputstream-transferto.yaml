@@ -33,7 +33,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "io/writing-files"
+prev: "io/explicit-charset-file-io"
 next: "io/path-of"
 related:
 - "io/writing-files"

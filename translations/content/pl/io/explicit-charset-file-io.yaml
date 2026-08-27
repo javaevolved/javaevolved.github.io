@@ -1,0 +1,17 @@
+title: "I/O plików z domyślnym zestawem znaków na jawne StandardCharsets"
+oldApproach: "Domyślny zestaw znaków platformy"
+modernApproach: "Jawny standardowy zestaw znaków"
+summary: "Używaj czytników i zapisów Files ze stałymi StandardCharsets zamiast polegać na domyślnym zachowaniu zestawu znaków platformy i wyszukiwaniu po nazwie."
+explanation: "Konstruktory Reader i Writer, które polegają na domyślnym zestawie znaków, sprawiają, że zachowanie pliku zależy od środowiska uruchomieniowego. Files.newBufferedReader() i newBufferedWriter() przyjmują jawny Charset, podczas gdy StandardCharsets zapewnia gwarantowane stałe, takie jak UTF_8, bez wyszukiwania po ciągu znaków ani UnsupportedCharsetException."
+whyModernWins:
+- icon: "🌍"
+  title: "Przenośne wyniki"
+  desc: "Te same bajty są dekodowane identycznie na każdej maszynie."
+- icon: "🔒"
+  title: "Predefiniowana stała"
+  desc: "StandardCharsets.UTF_8 nie może zawierać błędnie napisanej nazwy zestawu znaków."
+- icon: "🧩"
+  title: "Nowoczesne API plików"
+  desc: "Path, buforowanie i kodowanie są wyrażone w jednej operacji."
+support:
+  description: "Szeroko dostępne od JDK 7 (lipiec 2011)"
