@@ -2,6 +2,7 @@
 //JAVA 25
 //DEPS com.fasterxml.jackson.core:jackson-databind:2.18.3
 //DEPS com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3
+//DEPS org.yaml:snakeyaml:2.4
 
 import module java.base;
 import com.fasterxml.jackson.databind.*;
