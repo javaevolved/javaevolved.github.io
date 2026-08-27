@@ -1,0 +1,17 @@
+title: "默认字符集文件 I/O 改为显式 StandardCharsets"
+oldApproach: "平台默认字符集"
+modernApproach: "显式标准字符集"
+summary: "使用带有 StandardCharsets 常量的 Files 读写器，而不是依赖平台默认字符集行为和字符集名称查找。"
+explanation: "依赖默认字符集的 Reader 和 Writer 构造函数会使文件行为依赖于运行时环境。Files.newBufferedReader() 和 newBufferedWriter() 接受显式的 Charset，而 StandardCharsets 提供了如 UTF_8 这样有保证的常量，无需字符串查找或 UnsupportedCharsetException。"
+whyModernWins:
+- icon: "🌍"
+  title: "结果可移植"
+  desc: "相同的字节在任何机器上都能被相同地解码。"
+- icon: "🔒"
+  title: "预定义常量"
+  desc: "StandardCharsets.UTF_8 不可能拼错字符集名称。"
+- icon: "🧩"
+  title: "现代文件 API"
+  desc: "Path、缓冲和编码在一次操作中表达。"
+support:
+  description: "自 JDK 7 起广泛可用（2011 年 7 月）"

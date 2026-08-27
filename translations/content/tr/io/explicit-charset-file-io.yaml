@@ -1,0 +1,17 @@
+title: "Varsayılan karakter kümesi dosya G/Ç'sinden açık StandardCharsets'e"
+oldApproach: "Platform varsayılan karakter kümesi"
+modernApproach: "Açık standart karakter kümesi"
+summary: "Platform varsayılan karakter kümesi davranışına ve karakter kümesi adı aramasına güvenmek yerine StandardCharsets sabitleriyle Files okuyucu ve yazıcılarını kullanın."
+explanation: "Varsayılan karakter kümesine dayanan Reader ve Writer yapıcıları, dosya davranışını çalışma ortamına bağımlı hale getirir. Files.newBufferedReader() ve newBufferedWriter() açık bir Charset kabul ederken, StandardCharsets dize araması veya UnsupportedCharsetException olmadan UTF_8 gibi garantili sabitler sağlar."
+whyModernWins:
+- icon: "🌍"
+  title: "Taşınabilir sonuçlar"
+  desc: "Aynı baytlar her makinede aynı şekilde çözülür."
+- icon: "🔒"
+  title: "Önceden tanımlı sabit"
+  desc: "StandardCharsets.UTF_8 yanlış yazılmış bir karakter kümesi adı içeremez."
+- icon: "🧩"
+  title: "Modern dosya API'si"
+  desc: "Path, arabelleğe alma ve kodlama tek bir işlemde ifade edilir."
+support:
+  description: "JDK 7'den (Temmuz 2011) itibaren geniş çapta kullanılabilir"

@@ -1308,3 +1308,13 @@ concurrency/thread-stop-to-cooperative-cancellation: |-
   🔗 https://javaevolved.github.io/concurrency/thread-stop-to-cooperative-cancellation.html
 
   #Java #JavaEvolved
+io/explicit-charset-file-io: |-
+  ☕ Default-charset file I/O to explicit StandardCharsets
+
+  Use Files readers and writers with StandardCharsets constants instead of…
+
+  Platform-default charset → Explicit standard charset (JDK 7+)
+
+  🔗 https://javaevolved.github.io/io/explicit-charset-file-io.html
+
+  #Java #JavaEvolved

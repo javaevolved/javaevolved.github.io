@@ -1,0 +1,17 @@
+title: "E/S de fichiers avec charset par défaut vers StandardCharsets explicite"
+oldApproach: "Charset par défaut de la plateforme"
+modernApproach: "Charset standard explicite"
+summary: "Utilisez les lecteurs et writers de Files avec des constantes StandardCharsets plutôt que de dépendre du comportement du charset par défaut de la plateforme et de la recherche par nom de charset."
+explanation: "Les constructeurs de Reader et Writer qui dépendent du charset par défaut rendent le comportement du fichier dépendant de l'environnement d'exécution. Files.newBufferedReader() et newBufferedWriter() acceptent un Charset explicite, tandis que StandardCharsets fournit des constantes garanties comme UTF_8 sans recherche par chaîne ni UnsupportedCharsetException."
+whyModernWins:
+- icon: "🌍"
+  title: "Résultats portables"
+  desc: "Les mêmes octets sont décodés de manière identique sur chaque machine."
+- icon: "🔒"
+  title: "Constante prédéfinie"
+  desc: "StandardCharsets.UTF_8 ne peut pas contenir un nom de charset mal orthographié."
+- icon: "🧩"
+  title: "API de fichiers moderne"
+  desc: "Path, mise en tampon et encodage sont exprimés en une seule opération."
+support:
+  description: "Disponible depuis JDK 7 (juillet 2011)"

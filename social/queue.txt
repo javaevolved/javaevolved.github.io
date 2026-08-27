@@ -129,3 +129,4 @@ security/security-manager-migration
 tooling/runtime-exec-to-process-builder
 language/raw-collections-to-generics
 concurrency/thread-stop-to-cooperative-cancellation
+io/explicit-charset-file-io

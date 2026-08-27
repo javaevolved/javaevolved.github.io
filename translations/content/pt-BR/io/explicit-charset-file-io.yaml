@@ -1,0 +1,17 @@
+title: "E/S de arquivos com charset padrão para StandardCharsets explícito"
+oldApproach: "Charset padrão da plataforma"
+modernApproach: "Charset padrão explícito"
+summary: "Use leitores e escritores de Files com constantes StandardCharsets em vez do comportamento de charset padrão da plataforma e busca por nome de charset."
+explanation: "Construtores de Reader e Writer que dependem do charset padrão fazem o comportamento do arquivo depender do ambiente de execução. Files.newBufferedReader() e newBufferedWriter() aceitam um Charset explícito, enquanto StandardCharsets fornece constantes garantidas como UTF_8 sem busca por string ou UnsupportedCharsetException."
+whyModernWins:
+- icon: "🌍"
+  title: "Resultados portáveis"
+  desc: "Os mesmos bytes são decodificados de forma idêntica em qualquer máquina."
+- icon: "🔒"
+  title: "Constante predefinida"
+  desc: "StandardCharsets.UTF_8 não pode conter um nome de charset com erro de digitação."
+- icon: "🧩"
+  title: "API de arquivos moderna"
+  desc: "Path, buffering e codificação são expressos em uma única operação."
+support:
+  description: "Amplamente disponível desde o JDK 7 (julho de 2011)"
