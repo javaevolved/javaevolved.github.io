@@ -13,7 +13,7 @@ on:
       - 'html-generators/tags.properties'
       - 'html-generators/categories.properties'
   workflow_run:
-    workflows: ['Build Generator JARs']
+    workflows: ['Build Project JARs']
     types: [completed]
     branches: [main]
   workflow_dispatch:
