@@ -9,9 +9,17 @@ body:
       value: |
         ## How to submit a new pattern
 
-        Patterns are defined as **JSON files** in category subfolders.
-        Please provide the information below and we'll create the JSON file,
-        or submit a PR with the JSON file directly.
+        Patterns are defined as **YAML files** in category subfolders.
+        Please provide the information below and we'll create the pattern,
+        or submit a pull request that completes this checklist:
+
+        - Canonical content with valid metadata, tags, related patterns, and reciprocal navigation
+        - A Java 25 proof for the modern code
+        - Partial content translations for every locale in `html-generators/locales.properties`
+        - Successful regeneration of all localized site output
+        - An appended social queue entry and pre-drafted tweet
+
+        Pull requests validate this checklist automatically.
 
   - type: dropdown
     id: category

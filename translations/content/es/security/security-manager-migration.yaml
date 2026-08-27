@@ -1,0 +1,17 @@
+title: "De comprobaciones de SecurityManager a autorización explícita"
+oldApproach: "Comprobaciones de SecurityManager"
+modernApproach: "Autorización explícita"
+summary: "Sustituye las comprobaciones deshabilitadas de SecurityManager por autorización explícita en la aplicación y aislamiento en el despliegue."
+explanation: "JEP 486 deshabilitó permanentemente el Security Manager en JDK 24, por lo que las comprobaciones mediante System.getSecurityManager() solo pueden aplicar políticas en JDK 23 y versiones anteriores. Las aplicaciones deben autorizar el acceso explícitamente en la lógica de dominio; resolver las rutas reales del sistema de archivos evita que los enlaces simbólicos existentes escapen de una raíz permitida cuando los usuarios no confiables no pueden modificar ese árbol simultáneamente. En árboles donde un atacante pueda escribir, utiliza acceso relativo a identificadores y resistente a condiciones de carrera, como SecureDirectoryStream. Utiliza límites de proceso, contenedor o sistema operativo para el aislamiento. JDK 24 conserva temporalmente la API obsoleta, pero no se puede habilitar ni ha sido sustituida por otro entorno aislado dentro del proceso."
+whyModernWins:
+- icon: "🔍"
+  title: "Política explícita"
+  desc: "La autorización es visible y comprobable en la lógica de la aplicación."
+- icon: "🛡️"
+  title: "Aislamiento real"
+  desc: "Los límites de proceso, contenedor y sistema operativo protegen toda la aplicación."
+- icon: "🚫"
+  title: "Migración obligatoria"
+  desc: "Elimina comprobaciones que ya no pueden aplicar políticas en JDK 24 y versiones posteriores."
+support:
+  description: "Obligatorio en JDK 24 y versiones posteriores, donde JEP 486 deshabilita permanentemente el Security Manager."

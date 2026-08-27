@@ -1,0 +1,17 @@
+title: "SecurityManager denetimlerinden açık yetkilendirmeye"
+oldApproach: "SecurityManager denetimleri"
+modernApproach: "Açık yetkilendirme"
+summary: "Devre dışı bırakılan SecurityManager denetimlerini açık uygulama yetkilendirmesi ve dağıtım yalıtımıyla değiştirin."
+explanation: "JEP 486, JDK 24'te Security Manager'ı kalıcı olarak devre dışı bıraktığından System.getSecurityManager() üzerinden yapılan denetimler yalnızca JDK 23 ve önceki sürümlerde politika uygulayabilir. Uygulamalar, etki alanı mantığında erişimi açıkça yetkilendirmelidir; güvenilmeyen kullanıcılar söz konusu ağacı eşzamanlı olarak değiştiremiyorsa gerçek dosya sistemi yollarının çözümlenmesi, mevcut sembolik bağlantıların izin verilen bir kök dizinin dışına çıkmasını önler. Saldırganın yazabildiği ağaçlar için SecureDirectoryStream gibi yarış durumlarına dayanıklı, tanıtıcıya göreli erişim kullanın. Yalıtım için süreç, konteyner veya işletim sistemi sınırlarını kullanın. JDK 24, kullanımdan kaldırılmış API'yi geçici olarak korur; ancak bu API etkinleştirilemez ve yerine başka bir süreç içi sanal alan getirilmemiştir."
+whyModernWins:
+- icon: "🔍"
+  title: "Açık politika"
+  desc: "Yetkilendirme, uygulama mantığında görünür ve test edilebilir durumdadır."
+- icon: "🛡️"
+  title: "Gerçek yalıtım"
+  desc: "Süreç, konteyner ve işletim sistemi sınırları uygulamanın tamamını korur."
+- icon: "🚫"
+  title: "Zorunlu geçiş"
+  desc: "JDK 24 ve sonraki sürümlerde artık politika uygulayamayan denetimleri kaldırır."
+support:
+  description: "JEP 486'nın Security Manager'ı kalıcı olarak devre dışı bıraktığı JDK 24 ve sonraki sürümlerde zorunludur."
