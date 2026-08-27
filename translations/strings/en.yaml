@@ -3,9 +3,8 @@ site:
   tagline: Java has evolved. Your code can too.
   tagline_line1: Java has evolved.
   tagline_line2: Your code can too.
-  description: A collection of modern Java code snippets. Every old Java pattern next
+  description: A collection of {{snippetCount}} modern Java code snippets. Every old Java pattern next
     to its clean, modern replacement — side by side.
-  heroSnippetCount: ✦ {{snippetCount}} modern patterns · Java 8 → Java 25
   heroOld: Old
   heroModern: Modern
   allComparisons: All comparisons
@@ -43,6 +42,9 @@ filters:
   all: All
   jdk: 'JDK:'
   category: 'Category:'
+  showAll: Show all
+  hideAll: Hide all
+  browsePrompt: Choose a category or JDK to find the Java patterns most relevant to you.
   noResults: No code patterns found for this filter.
 difficulty:
   beginner: Beginner

@@ -3,9 +3,8 @@ site:
   tagline: Java эволюционировал. Ваш код тоже может.
   tagline_line1: Java эволюционировал.
   tagline_line2: Ваш код тоже может.
-  description: Коллекция современных фрагментов кода на Java. Каждый устаревший шаблон
+  description: Коллекция из {{snippetCount}} современных фрагментов кода на Java. Каждый устаревший шаблон
     рядом с его чистой, современной заменой — бок о бок.
-  heroSnippetCount: ✦ {{snippetCount}} современных шаблонов · Java 8 → Java 25
   heroOld: Старый
   heroModern: Современный
   allComparisons: Все сравнения
@@ -35,6 +34,9 @@ filters:
   all: Все
   jdk: 'JDK:'
   category: 'Категория:'
+  showAll: Показать все
+  hideAll: Скрыть все
+  browsePrompt: Выберите категорию или версию JDK, чтобы найти наиболее подходящие шаблоны Java.
   noResults: Шаблоны кода для этого фильтра не найдены.
 difficulty:
   beginner: Начинающий

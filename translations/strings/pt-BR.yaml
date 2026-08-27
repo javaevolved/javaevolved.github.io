@@ -2,9 +2,8 @@ site:
   tagline: O Java evoluiu. Seu código também pode.
   tagline_line1: O Java evoluiu.
   tagline_line2: Seu código também pode.
-  description: Uma coleção de snippets modernos de Java. Cada padrão antigo ao lado
+  description: Uma coleção de {{snippetCount}} snippets modernos de Java. Cada padrão antigo ao lado
     da sua substituição moderna e limpa — lado a lado.
-  heroSnippetCount: ✦ {{snippetCount}} padrões modernos · Java 8 → Java 25
   heroOld: Antigo
   heroModern: Moderno
   allComparisons: Todas as comparações
@@ -32,6 +31,10 @@ sections:
 filters:
   show: 'Mostrar:'
   all: Todos
+  category: 'Categoria:'
+  showAll: Mostrar todos
+  hideAll: Ocultar todos
+  browsePrompt: Escolha uma categoria ou versão do JDK para encontrar os padrões Java mais relevantes.
   noResults: Nenhum padrão de código encontrado para este filtro.
 difficulty:
   beginner: Iniciante

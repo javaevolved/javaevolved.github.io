@@ -3,8 +3,7 @@ site:
   tagline: Java gelişti. Kodun da gelişebilir.
   tagline_line1: Java gelişti.
   tagline_line2: Kodun da gelişebilir.
-  description: Modern Java kod parçacıklarından oluşan bir koleksiyon. Her eski Java deseni, temiz ve modern karşılığının yanında — yan yana.
-  heroSnippetCount: ✦ {{snippetCount}} modern desen · Java 8 → Java 25
+  description: "{{snippetCount}} modern Java kod parçacığından oluşan bir koleksiyon. Her eski Java deseni, temiz ve modern karşılığının yanında — yan yana."
   heroOld: Eski
   heroModern: Modern
   allComparisons: Tüm karşılaştırmalar
@@ -32,6 +31,10 @@ sections:
 filters:
   show: 'Göster:'
   all: Tümü
+  category: 'Kategori:'
+  showAll: Tümünü göster
+  hideAll: Tümünü gizle
+  browsePrompt: En uygun Java desenlerini bulmak için bir kategori veya JDK sürümü seçin.
   noResults: Bu filtre için kod deseni bulunamadı.
 difficulty:
   beginner: Başlangıç

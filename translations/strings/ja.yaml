@@ -2,8 +2,7 @@ site:
   tagline: Javaは進化した。あなたのコードも。
   tagline_line1: Javaは進化した。
   tagline_line2: あなたのコードも。
-  description: モダンなJavaコードスニペットのコレクション。古いパターンとその洗練されたモダンな置き換えを並べて比較。
-  heroSnippetCount: ✦ {{snippetCount}} のモダンパターン · Java 8 → Java 25
+  description: "{{snippetCount}}個のモダンなJavaコードスニペットのコレクション。古いパターンとその洗練されたモダンな置き換えを並べて比較。"
   heroOld: 旧来
   heroModern: モダン
   allComparisons: すべての比較
@@ -31,6 +30,10 @@ sections:
 filters:
   show: '表示:'
   all: すべて
+  category: 'カテゴリ:'
+  showAll: すべて表示
+  hideAll: すべて非表示
+  browsePrompt: カテゴリまたはJDKバージョンを選択して、関連するJavaパターンを見つけてください。
   noResults: このフィルターに一致するコードパターンが見つかりません。
 difficulty:
   beginner: 初級

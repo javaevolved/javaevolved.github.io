@@ -2,8 +2,7 @@ site:
   tagline: "تطوّرت Java. يمكن لكودك ذلك أيضاً."
   tagline_line1: "تطوّرت Java."
   tagline_line2: "يمكن لكودك ذلك أيضاً."
-  description: "مجموعة من مقاطع كود Java الحديثة. كل نمط قديم بجانب بديله الحديث والنظيف — جنباً إلى جنب."
-  heroSnippetCount: "✦ {{snippetCount}} نمطاً حديثاً · Java 8 ← Java 25"
+  description: "مجموعة تضم {{snippetCount}} من مقاطع كود Java الحديثة. كل نمط قديم بجانب بديله الحديث والنظيف — جنباً إلى جنب."
   heroOld: قديم
   heroModern: حديث
   allComparisons: جميع المقارنات
@@ -31,6 +30,10 @@ sections:
 filters:
   show: "عرض:"
   all: الكل
+  category: "الفئة:"
+  showAll: عرض الكل
+  hideAll: إخفاء الكل
+  browsePrompt: اختر فئة أو إصدار JDK للعثور على أنماط Java الأكثر صلة بك.
   noResults: لم يتم العثور على أنماط برمجية لهذا الفلتر.
 difficulty:
   beginner: مبتدئ
