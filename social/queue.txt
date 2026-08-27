@@ -111,3 +111,17 @@ strings/string-indent-transform
 language/exhaustive-switch
 collections/collectors-teeing
 concurrency/thread-sleep-duration
+datetime/locale-of
+language/anonymous-classes-to-lambdas
+collections/legacy-synchronized-collections
+collections/collection-bulk-operations
+io/finalizers-to-resource-cleanup
+io/url-constructors-to-uri
+enterprise/spring-boot-mvc-config
+collections/comparator-factories
+tooling/class-file-api
+collections/stack-to-deque
+security/standard-base64
+tooling/stack-walker
+collections/map-compute-and-merge
+io/http-websocket-client

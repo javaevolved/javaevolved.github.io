@@ -1128,3 +1128,143 @@ concurrency/thread-sleep-duration: |-
   🔗 https://javaevolved.github.io/concurrency/thread-sleep-duration.html
 
   #Java #JavaEvolved
+datetime/locale-of: |-
+  ☕ Locale constructors to Locale.of()
+
+  Create language and region locales with Locale.of() instead of deprecated constructors.
+
+  Locale constructors → Locale.of() (JDK 19+)
+
+  🔗 https://javaevolved.github.io/datetime/locale-of.html
+
+  #Java #JavaEvolved
+language/anonymous-classes-to-lambdas: |-
+  ☕ Anonymous classes to lambdas and method references
+
+  Replace single-method anonymous classes with concise lambdas and method references.
+
+  Anonymous class → Method reference (JDK 8+)
+
+  🔗 https://javaevolved.github.io/language/anonymous-classes-to-lambdas.html
+
+  #Java #JavaEvolved
+collections/legacy-synchronized-collections: |-
+  ☕ Legacy synchronized collections to modern alternatives
+
+  Replace Vector and Hashtable with collections selected for actual mutability a…
+
+  Hashtable → ConcurrentHashMap (JDK 5+)
+
+  🔗 https://javaevolved.github.io/collections/legacy-synchronized-collections.html
+
+  #Java #JavaEvolved
+collections/collection-bulk-operations: |-
+  ☕ Collection bulk operations instead of mutation loops
+
+  Use removeIf(), replaceAll(), and List.sort() for direct collection…
+
+  Manual iterator removal → Collection.removeIf() (JDK 8+)
+
+  🔗 https://javaevolved.github.io/collections/collection-bulk-operations.html
+
+  #Java #JavaEvolved
+io/finalizers-to-resource-cleanup: |-
+  ☕ Finalizers to deterministic resource cleanup
+
+  Replace finalization with AutoCloseable and use Cleaner only as a defensive fall…
+
+  Override finalize() → AutoCloseable and Cleaner (JDK 9+)
+
+  🔗 https://javaevolved.github.io/io/finalizers-to-resource-cleanup.html
+
+  #Java #JavaEvolved
+io/url-constructors-to-uri: |-
+  ☕ Deprecated URL constructors to URI
+
+  Parse and compose resource identifiers as URI values before converting to URL when necessary.
+
+  Direct URL construction → URI then URL (JDK 20+)
+
+  🔗 https://javaevolved.github.io/io/url-constructors-to-uri.html
+
+  #Java #JavaEvolved
+enterprise/spring-boot-mvc-config: |-
+  ☕ Spring Boot MVC Configuration
+
+  Replace the removed WebMvcConfigurerAdapter …
+
+  WebMvcConfigurerAdapter with @EnableWebMvc → WebMvcConfigurer with Spring Boot Auto-Configuration (JDK 17+)
+
+  🔗 https://javaevolved.github.io/enterprise/spring-boot-mvc-config.html
+
+  #Java #JavaEvolved
+collections/comparator-factories: |-
+  ☕ Comparator factories and fluent ordering
+
+  Build readable, composable ordering rules with Comparator factory methods.
+
+  Anonymous Comparator → Comparator factories (JDK 8+)
+
+  🔗 https://javaevolved.github.io/collections/comparator-factories.html
+
+  #Java #JavaEvolved
+tooling/class-file-api: |-
+  ☕ Class-file parsing with the standard API
+
+  Use the standard Class-File API for class-file parsing and transformation.
+
+  ASM ClassReader → Class-File API (JDK 24+)
+
+  🔗 https://javaevolved.github.io/tooling/class-file-api.html
+
+  #Java #JavaEvolved
+collections/stack-to-deque: |-
+  ☕ Stack to Deque and ArrayDeque
+
+  Use the Deque interface with ArrayDeque instead of the legacy Stack class.
+
+  Stack → Deque with ArrayDeque (JDK 6+)
+
+  🔗 https://javaevolved.github.io/collections/stack-to-deque.html
+
+  #Java #JavaEvolved
+security/standard-base64: |-
+  ☕ Standard Base64 encoding and decoding
+
+  Use java.util.Base64 instead of internal JDK classes or third-party codecs.
+
+  sun.misc encoder → Standard Base64 API (JDK 8+)
+
+  🔗 https://javaevolved.github.io/security/standard-base64.html
+
+  #Java #JavaEvolved
+tooling/stack-walker: |-
+  ☕ Lazy stack inspection with StackWalker
+
+  Inspect stack frames lazily with StackWalker instead of materializing a complete stack trace.
+
+  Thread.getStackTrace() → StackWalker (JDK 9+)
+
+  🔗 https://javaevolved.github.io/tooling/stack-walker.html
+
+  #Java #JavaEvolved
+collections/map-compute-and-merge: |-
+  ☕ Atomic map updates with compute and merge
+
+  Replace multi-step map lookup and mutation with computeIfAbsent(), compute(), and me…
+
+  get() + null check + put() → computeIfAbsent() (JDK 8+)
+
+  🔗 https://javaevolved.github.io/collections/map-compute-and-merge.html
+
+  #Java #JavaEvolved
+io/http-websocket-client: |-
+  ☕ WebSocket clients with java.net.http
+
+  Use the standard asynchronous WebSocket client instead of adding a third-party dependency.
+
+  Third-party WebSocket client → java.net.http.WebSocket (JDK 11+)
+
+  🔗 https://javaevolved.github.io/io/http-websocket-client.html
+
+  #Java #JavaEvolved
