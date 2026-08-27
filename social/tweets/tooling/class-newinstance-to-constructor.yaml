@@ -5,6 +5,6 @@ text: |-
   
   Class.newInstance() → Explicit constructor lookup (JDK 9+)
   
-  🔗 https://javaevolved.github.io/tooling/class-newinstance-to-constructor.html
+  🔗 https://javaevolved.dev/tooling/class-newinstance-to-constructor.html
   
   #Java #JavaEvolved

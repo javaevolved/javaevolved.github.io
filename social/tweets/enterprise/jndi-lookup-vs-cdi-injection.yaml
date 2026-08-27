@@ -5,6 +5,6 @@ text: |-
   
   JNDI Lookup → CDI @Inject (JDK 11+)
   
-  🔗 https://javaevolved.github.io/enterprise/jndi-lookup-vs-cdi-injection.html
+  🔗 https://javaevolved.dev/enterprise/jndi-lookup-vs-cdi-injection.html
   
   #Java #JavaEvolved

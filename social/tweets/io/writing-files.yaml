@@ -5,6 +5,6 @@ text: |-
   
   FileWriter + BufferedWriter → Files.writeString() (JDK 11+)
   
-  🔗 https://javaevolved.github.io/io/writing-files.html
+  🔗 https://javaevolved.dev/io/writing-files.html
   
   #Java #JavaEvolved

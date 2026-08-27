@@ -22,7 +22,7 @@ static final String SOCIAL_DIR = "social";
 static final String QUEUE_FILE = SOCIAL_DIR + "/queue.txt";
 static final String TWEETS_DIR = SOCIAL_DIR + "/tweets";
 static final String STATE_FILE = SOCIAL_DIR + "/state.yaml";
-static final String BASE_URL = "https://javaevolved.github.io";
+static final String BASE_URL = "https://javaevolved.dev";
 static final int MAX_TWEET_LENGTH = 280;
 
 static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());

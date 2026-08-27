@@ -5,6 +5,6 @@ text: |-
   
   @ManagedBean → @Named + CDI (JDK 11+)
   
-  🔗 https://javaevolved.github.io/enterprise/jsf-managed-bean-vs-cdi-named.html
+  🔗 https://javaevolved.dev/enterprise/jsf-managed-bean-vs-cdi-named.html
   
   #Java #JavaEvolved

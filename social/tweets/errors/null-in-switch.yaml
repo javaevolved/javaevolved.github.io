@@ -5,6 +5,6 @@ text: |-
   
   Guard Before Switch → case null (JDK 21+)
   
-  🔗 https://javaevolved.github.io/errors/null-in-switch.html
+  🔗 https://javaevolved.dev/errors/null-in-switch.html
   
   #Java #JavaEvolved

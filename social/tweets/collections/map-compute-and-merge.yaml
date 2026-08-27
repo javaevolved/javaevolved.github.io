@@ -5,6 +5,6 @@ text: |-
   
   get() + null check + put() → computeIfAbsent() (JDK 8+)
   
-  🔗 https://javaevolved.github.io/collections/map-compute-and-merge.html
+  🔗 https://javaevolved.dev/collections/map-compute-and-merge.html
   
   #Java #JavaEvolved

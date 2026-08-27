@@ -5,6 +5,6 @@ text: |-
   
   synchronized + volatile → StableValue (JDK 25+)
   
-  🔗 https://javaevolved.github.io/concurrency/lock-free-lazy-init.html
+  🔗 https://javaevolved.dev/concurrency/lock-free-lazy-init.html
   
   #Java #JavaEvolved

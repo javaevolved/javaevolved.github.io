@@ -5,6 +5,6 @@ text: |-
   
   Manual wait and notify → BlockingQueue (JDK 5+)
   
-  🔗 https://javaevolved.github.io/concurrency/wait-notify-to-blocking-queue.html
+  🔗 https://javaevolved.dev/concurrency/wait-notify-to-blocking-queue.html
   
   #Java #JavaEvolved

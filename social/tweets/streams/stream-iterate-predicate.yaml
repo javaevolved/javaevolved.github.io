@@ -5,6 +5,6 @@ text: |-
   
   iterate + limit → iterate(seed, pred, op) (JDK 9+)
   
-  🔗 https://javaevolved.github.io/streams/stream-iterate-predicate.html
+  🔗 https://javaevolved.dev/streams/stream-iterate-predicate.html
   
   #Java #JavaEvolved

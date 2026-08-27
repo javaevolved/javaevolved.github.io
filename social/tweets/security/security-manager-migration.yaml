@@ -5,6 +5,6 @@ text: |-
   
   SecurityManager checks → Explicit authorization (JDK 24+)
   
-  🔗 https://javaevolved.github.io/security/security-manager-migration.html
+  🔗 https://javaevolved.dev/security/security-manager-migration.html
   
   #Java #JavaEvolved

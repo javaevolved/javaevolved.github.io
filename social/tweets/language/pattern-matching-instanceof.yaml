@@ -5,6 +5,6 @@ text: |-
   
   instanceof + Cast → Pattern Variable (JDK 16+)
   
-  🔗 https://javaevolved.github.io/language/pattern-matching-instanceof.html
+  🔗 https://javaevolved.dev/language/pattern-matching-instanceof.html
   
   #Java #JavaEvolved

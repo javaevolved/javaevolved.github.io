@@ -5,6 +5,6 @@ text: |-
   
   Runtime.exec(String) → ProcessBuilder (JDK 5+)
   
-  🔗 https://javaevolved.github.io/tooling/runtime-exec-to-process-builder.html
+  🔗 https://javaevolved.dev/tooling/runtime-exec-to-process-builder.html
   
   #Java #JavaEvolved
