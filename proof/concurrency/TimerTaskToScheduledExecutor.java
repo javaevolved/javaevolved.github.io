@@ -8,7 +8,7 @@ void main() throws Exception {
     Runnable refresh = () -> System.out.println("refresh");
 
     ScheduledExecutorService scheduler =
-            Executors.newSingleThreadScheduledExecutor();
+            Executors.newScheduledThreadPool(2);
 
     ScheduledFuture<?> future = scheduler.scheduleAtFixedRate(
             refresh, 0, 1, TimeUnit.MINUTES);

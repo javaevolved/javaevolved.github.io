@@ -19,7 +19,7 @@ oldCode: |-
   }, 0, 60_000);
 modernCode: |-
   ScheduledExecutorService scheduler =
-          Executors.newSingleThreadScheduledExecutor();
+          Executors.newScheduledThreadPool(2);
 
   scheduler.scheduleAtFixedRate(
           this::refresh, 0, 1, TimeUnit.MINUTES);
