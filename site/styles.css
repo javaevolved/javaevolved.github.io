@@ -281,7 +281,7 @@ nav {
 /* ---------- Hero ---------- */
 .hero {
   text-align: center;
-  padding: 80px 24px 16px;
+  padding: 56px 24px 16px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -1978,7 +1978,35 @@ footer a:hover {
   }
 
   .nav-inner {
-    padding: 0 16px;
+    padding: 0 12px;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
+
+  .cmd-bar {
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+
+  .cmd-bar-label {
+    display: none;
+  }
+
+  .cmd-bar::before {
+    content: "⌕";
+    color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1;
   }
 
   .hero {
@@ -2081,6 +2109,12 @@ footer a:hover {
 
   .install-option-copy {
     grid-row: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .github-link {
+    display: none;
   }
 }
 

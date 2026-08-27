@@ -193,7 +193,10 @@
         </a>
         <button class="theme-toggle" id="themeToggle" aria-label="{{nav.toggleTheme}}">☀️</button>
 {{localePicker}}
-        <div class="cmd-bar" id="searchTrigger">{{search.searchTrigger}} <kbd>⌘K</kbd></div>
+        <button type="button" class="cmd-bar" id="searchTrigger" aria-label="{{search.searchTrigger}}">
+          <span class="cmd-bar-label">{{search.searchTrigger}}</span>
+          <kbd>⌘K</kbd>
+        </button>
       </div>
     </div>
   </nav>
