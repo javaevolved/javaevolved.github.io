@@ -50,7 +50,7 @@ support:
   state: "preview"
   description: "Preview in JDK 25 (JEP 502, StableValue). Requires --enable-preview."
 prev: "concurrency/concurrent-http-virtual"
-next: "io/http-client"
+next: "concurrency/thread-stop-to-cooperative-cancellation"
 related:
 - "concurrency/virtual-threads"
 - "concurrency/structured-concurrency"

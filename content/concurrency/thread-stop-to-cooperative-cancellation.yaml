@@ -1,0 +1,54 @@
+---
+id: 10f4499a-362f-4aa9-900a-14b34732b147
+slug: "thread-stop-to-cooperative-cancellation"
+title: "Unsafe thread termination to cooperative cancellation"
+category: "concurrency"
+difficulty: "advanced"
+jdkVersion: "5"
+oldLabel: "Forced thread termination"
+modernLabel: "Future cancellation"
+oldApproach: "Thread.stop()"
+modernApproach: "Future.cancel(true)"
+oldCode: |-
+  Thread worker = new Thread(this::runTask);
+  worker.start();
+
+  // May stop the thread while shared state is inconsistent.
+  worker.stop();
+modernCode: |-
+  Future<?> worker = executor.submit(this::runTask);
+
+  // Requests interruption; the task must cooperate.
+  worker.cancel(true);
+summary: "Replace Thread.stop() and ad hoc shared flags with interruption-aware task cancellation."
+explanation: "Thread.stop() can terminate code while it owns monitors or is updating shared\
+  \ state, leaving objects damaged. Modern cancellation is cooperative: cancel the Future\
+  \ with interruption, propagate InterruptedException where possible, restore interrupt status\
+  \ when it cannot be propagated, and design the task to reach safe cancellation points."
+whyModernWins:
+- icon: "🛡"
+  title: "Preserves invariants"
+  desc: "Tasks stop only at code paths designed for cancellation."
+- icon: "🧩"
+  title: "Standard control"
+  desc: "Future represents execution, completion, and cancellation together."
+- icon: "🔗"
+  title: "Composable"
+  desc: "Interruption works with blocking queues, locks, executors, and virtual threads."
+support:
+  state: "available"
+  description: "Future and ExecutorService have been available since JDK 5 (Sept 2004)."
+prev: "concurrency/lock-free-lazy-init"
+next: "io/http-client"
+related:
+- "concurrency/executor-try-with-resources"
+- "concurrency/structured-concurrency"
+- "concurrency/virtual-threads"
+tags:
+- concurrency
+- async
+docs:
+- title: "Future"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Future.html"
+- title: "Thread.stop() deprecation"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#stop()"

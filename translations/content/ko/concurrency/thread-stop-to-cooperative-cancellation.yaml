@@ -1,0 +1,17 @@
+title: "안전하지 않은 스레드 종료에서 협력적 취소로"
+oldApproach: "Thread.stop()"
+modernApproach: "Future.cancel(true)"
+summary: "Thread.stop()과 임시 공유 플래그를 인터럽트를 인식하는 작업 취소로 대체합니다."
+explanation: "Thread.stop()은 모니터를 소유하고 있거나 공유 상태를 갱신하는 도중에 코드를 종료시킬 수 있어 객체가 손상된 채로 남을 수 있습니다. 현대적인 취소는 협력적입니다. 인터럽트로 Future를 취소하고, 가능하면 InterruptedException을 전파하며, 전파할 수 없는 경우 인터럽트 상태를 복원하고, 작업이 안전한 취소 지점에 도달하도록 설계합니다."
+whyModernWins:
+- icon: "🛡"
+  title: "불변성 유지"
+  desc: "작업은 취소를 위해 설계된 코드 경로에서만 중단됩니다."
+- icon: "🧩"
+  title: "표준화된 제어"
+  desc: "Future는 실행, 완료, 취소를 함께 표현합니다."
+- icon: "🔗"
+  title: "조합 가능"
+  desc: "인터럽트는 블로킹 큐, 락, executor, 가상 스레드와 함께 작동합니다."
+support:
+  description: "Future와 ExecutorService는 JDK 5 (2004년 9월)부터 사용할 수 있습니다."

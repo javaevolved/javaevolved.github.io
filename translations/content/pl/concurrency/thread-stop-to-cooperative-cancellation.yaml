@@ -1,0 +1,20 @@
+title: Od niebezpiecznego zatrzymywania wątków do kooperatywnego anulowania
+oldApproach: Thread.stop()
+modernApproach: Future.cancel(true)
+summary: Zastąp Thread.stop() i doraźne współdzielone flagi anulowaniem zadań świadomym przerwań.
+explanation: Thread.stop() może zakończyć kod, gdy ten posiada monitory lub aktualizuje współdzielony
+  stan, pozostawiając obiekty uszkodzone. Nowoczesne anulowanie jest kooperatywne. Anuluj Future
+  z przerwaniem, propaguj InterruptedException tam, gdzie to możliwe, przywróć status przerwania,
+  gdy nie można go propagować, i zaprojektuj zadanie tak, aby osiągało bezpieczne punkty anulowania.
+whyModernWins:
+  - icon: 🛡
+    title: Zachowuje niezmienniki
+    desc: Zadania zatrzymują się tylko w ścieżkach kodu zaprojektowanych do anulowania.
+  - icon: 🧩
+    title: Standardowa kontrola
+    desc: Future reprezentuje wykonanie, ukończenie i anulowanie razem.
+  - icon: 🔗
+    title: Komponowalność
+    desc: Przerwanie działa z kolejkami blokującymi, blokadami, executorami i wątkami wirtualnymi.
+support:
+  description: Future i ExecutorService są dostępne od JDK 5 (wrzesień 2004)

@@ -1,0 +1,18 @@
+---
+title: 从不安全的线程终止到协作式取消
+oldApproach: Thread.stop()
+modernApproach: Future.cancel(true)
+summary: "用支持中断感知的任务取消，取代 Thread.stop() 和临时共享标志。"
+explanation: "Thread.stop() 可能在代码持有监视器或正在更新共享状态时终止线程，导致对象损坏。现代取消方式是协作式的：使用中断取消 Future，尽可能传播 InterruptedException，无法传播时恢复中断状态，并将任务设计为能够到达安全的取消点。"
+whyModernWins:
+- icon: 🛡
+  title: 保持不变量
+  desc: "任务只在为取消而设计的代码路径上停止。"
+- icon: 🧩
+  title: 统一控制
+  desc: "Future 将执行、完成和取消统一表示。"
+- icon: 🔗
+  title: 可组合
+  desc: "中断机制与阻塞队列、锁、执行器和虚拟线程协同工作。"
+support:
+  description: "Future 和 ExecutorService 自 JDK 5（2004 年 9 月）起可用。"

@@ -1298,3 +1298,13 @@ language/raw-collections-to-generics: |-
   🔗 https://javaevolved.github.io/language/raw-collections-to-generics.html
 
   #Java #JavaEvolved
+concurrency/thread-stop-to-cooperative-cancellation: |-
+  ☕ Unsafe thread termination to cooperative cancellation
+
+  Use interruption-aware task cancellation.
+
+  Thread.stop() → Future.cancel(true) (JDK 5+)
+
+  🔗 https://javaevolved.github.io/concurrency/thread-stop-to-cooperative-cancellation.html
+
+  #Java #JavaEvolved

@@ -1,0 +1,22 @@
+title: Terminación insegura de hilos a cancelación cooperativa
+oldApproach: Thread.stop()
+modernApproach: Future.cancel(true)
+summary: Sustituye Thread.stop() y las banderas compartidas improvisadas por una cancelación
+  de tareas consciente de la interrupción.
+explanation: Thread.stop() puede terminar el código mientras posee monitores o está actualizando
+  estado compartido, dejando los objetos dañados. La cancelación moderna es cooperativa. Cancela
+  el Future con interrupción, propaga InterruptedException cuando sea posible, restaura el
+  estado de interrupción cuando no se puede propagar, y diseña la tarea para que alcance puntos
+  seguros de cancelación.
+whyModernWins:
+- icon: 🛡
+  title: Preserva invariantes
+  desc: Las tareas se detienen solo en rutas de código diseñadas para la cancelación.
+- icon: 🧩
+  title: Control estándar
+  desc: Future representa la ejecución, la finalización y la cancelación en conjunto.
+- icon: 🔗
+  title: Componible
+  desc: La interrupción funciona con colas bloqueantes, locks, executors e hilos virtuales.
+support:
+  description: Future y ExecutorService están disponibles desde JDK 5 (sept. 2004).

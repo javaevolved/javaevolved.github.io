@@ -1,0 +1,22 @@
+title: Unsichere Thread-Beendigung zu kooperativer Abbruchsteuerung
+oldApproach: Thread.stop()
+modernApproach: Future.cancel(true)
+summary: Ersetzen Sie Thread.stop() und ad-hoc geteilte Flags durch unterbrechungsbewusste Aufgabenabbrüche.
+explanation: "Thread.stop() kann Code beenden, während er Monitore besitzt oder gemeinsam\
+  \ genutzten Zustand aktualisiert, wodurch Objekte beschädigt bleiben können. Moderne\
+  \ Abbruchsteuerung ist kooperativ: Brechen Sie das Future mit Unterbrechung ab,\
+  \ leiten Sie InterruptedException weiter, wo möglich, stellen Sie den Unterbrechungsstatus\
+  \ wieder her, wenn dies nicht möglich ist, und gestalten Sie die Aufgabe so, dass\
+  \ sie sichere Abbruchpunkte erreicht."
+whyModernWins:
+- icon: "🛡"
+  title: Bewahrt Invarianten
+  desc: Aufgaben stoppen nur an Codepfaden, die für den Abbruch ausgelegt sind.
+- icon: "🧩"
+  title: Einheitliche Steuerung
+  desc: Future stellt Ausführung, Abschluss und Abbruch gemeinsam dar.
+- icon: "🔗"
+  title: Komponierbar
+  desc: Unterbrechung funktioniert mit Blocking-Queues, Locks, Executors und virtuellen Threads.
+support:
+  description: "Future und ExecutorService sind seit JDK 5 (Sept. 2004) verfügbar."
