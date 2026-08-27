@@ -2,7 +2,7 @@
 name: modern-java
 description: Detects a project's effective Java version and provides release-appropriate guidance for writing, reviewing, refactoring, upgrading, and modernizing Java code. Use for Java implementation, architecture, code review, build configuration, migration, performance, concurrency, testing, or API design tasks.
 license: MIT
-compatibility: Requires Python 3 to run the bundled detector; an agent may inspect the same project files directly when Python is unavailable.
+compatibility: Requires a Java 8 or newer runtime to run the bundled detector.
 metadata:
   author: "@brunoborges"
   version: "1.0.0"
@@ -18,8 +18,16 @@ features or APIs the build accepts.
 
 1. From the project or module root, run:
 
+   On macOS or Linux:
+
    ```bash
-   python3 <skill-directory>/scripts/detect_java_version.py .
+   <skill-directory>/scripts/detect-java-version.sh .
+   ```
+
+   On Windows:
+
+   ```bat
+   <skill-directory>\scripts\detect-java-version.cmd .
    ```
 
    If the user explicitly supplied Java version X, pass

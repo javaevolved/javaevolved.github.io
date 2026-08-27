@@ -88,7 +88,7 @@ configuration before recommending a migration.
   explicit `@Configuration` over large XML bean graphs in modern Spring.
   Preserve XML where externalized wiring or legacy integration makes it useful;
   do not rely on broad component scanning that obscures ownership.
-  <!-- covers: spring-xml-config-vs-annotations -->
+  <!-- covers: spring-xml-config-vs-annotations spring-boot-mvc-config -->
 - On Spring Framework 7, use native API version conditions when they match the
   public versioning strategy. Keep version negotiation centralized, document
   deprecation and compatibility policy, and avoid merging unrelated versions

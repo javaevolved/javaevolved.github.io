@@ -35,6 +35,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/setup-java@v6
+        with:
+          distribution: zulu
+          java-version: '8.0.492+9'
+
       - name: Determine release version
         id: version
         env:
@@ -101,9 +106,27 @@ jobs:
       - name: Validate plugin
         working-directory: agent-plugins/modern-java-development
         run: |
-          python3 -m unittest \
-            skills/modern-java/scripts/test_detect_java_version.py \
-            skills/modern-java/scripts/test_reference_coverage.py
+          classes=$(mktemp -d)
+          trap 'rm -rf "$classes"' EXIT
+          mkdir "$classes/source" "$classes/shipped" "$classes/tests"
+          javac -source 8 -target 8 -Xlint:-options \
+            -d "$classes/source" \
+            skills/modern-java/scripts/DetectJavaVersion.java
+          (
+            cd "$classes/shipped"
+            jar xf "$GITHUB_WORKSPACE/agent-plugins/modern-java-development/skills/modern-java/scripts/detect-java-version.jar"
+          )
+          rm -rf "$classes/shipped/META-INF"
+          diff --recursive "$classes/source" "$classes/shipped"
+          javac -source 8 -target 8 -Xlint:-options \
+            -cp skills/modern-java/scripts/detect-java-version.jar \
+            -d "$classes/tests" \
+            skills/modern-java/scripts/PluginValidationTest.java
+          java -cp "$classes/tests:skills/modern-java/scripts/detect-java-version.jar" \
+            PluginValidationTest ../..
+          javap -verbose \
+            -classpath skills/modern-java/scripts/detect-java-version.jar \
+            DetectJavaVersion | grep --quiet 'major version: 52'
           jq --exit-status \
             --arg version "${{ steps.version.outputs.version }}" \
             '.version == $version' plugin.json >/dev/null

@@ -49,8 +49,12 @@ syntax available at the detected compilation target.
   cancellation, timeout, interruption, and failure propagation behavior.
 - Preserve interruption (`Thread.currentThread().interrupt()`) when an
   `InterruptedException` cannot be propagated.
+- Replace unsafe forced thread termination with cooperative cancellation and
+  explicit lifecycle ownership.
+  <!-- covers: thread-stop-to-cooperative-cancellation -->
 - Use concurrent collections and high-level synchronization utilities before
   hand-written locking. Document invariants protected by locks.
+  <!-- covers: wait-notify-to-blocking-queue -->
 - Measure before selecting executors, pool sizes, lock-free structures, or
   virtual-thread migration. CPU-bound and I/O-bound workloads need different
   strategies.

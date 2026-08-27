@@ -7,6 +7,12 @@ on the exact runtime and module graph.
 
 ## Java 7 and older maintenance targets
 
+- Use generics instead of raw collections, `Deque` instead of legacy `Stack`,
+  and unsynchronized collections unless synchronization is part of the contract.
+  <!-- covers: raw-collections-to-generics stack-to-deque legacy-synchronized-collections -->
+- Use `ProcessBuilder` instead of `Runtime.exec`, construct URLs through `URI`,
+  and specify charsets explicitly at text/byte boundaries.
+  <!-- covers: runtime-exec-to-process-builder url-constructors-to-uri explicit-charset-file-io -->
 - Use multi-catch when handlers have identical behavior and neither alternative
   needs a more specific type. Preserve separate catches when recovery differs.
   <!-- covers: multi-catch -->
@@ -19,7 +25,11 @@ on the exact runtime and module graph.
 - Use lambdas and method references when they clarify behavior, and streams for
   side-effect-free transformations and reductions. Use
   `stream.toArray(Type[]::new)` when a typed array is the required API boundary.
-  <!-- covers: stream-toarray-typed -->
+  <!-- covers: anonymous-classes-to-lambdas stream-toarray-typed -->
+- Prefer collection bulk operations, `Map.compute`/`merge`, comparator factories,
+  and the standard Base64 codecs over hand-written equivalents when their
+  contracts match the required behavior.
+  <!-- covers: collection-bulk-operations map-compute-and-merge comparator-factories standard-base64 -->
 - Use `java.time`, `DateTimeFormatter`, `Duration`, and `Period` instead of
   mutable `Date`, `Calendar`, `SimpleDateFormat`, or unitless millisecond math.
   <!-- covers: java-time-basics date-formatting duration-and-period -->
@@ -51,7 +61,11 @@ on the exact runtime and module graph.
   <!-- covers: inputstream-transferto try-with-resources-effectively-final -->
 - Use `ProcessBuilder` to start processes and `ProcessHandle` to inspect or
   manage them. Drain output, bound waits, and handle process-tree termination.
-  <!-- covers: process-api -->
+  <!-- covers: process-api runtime-exec-to-process-builder -->
+- Use `StackWalker` for controlled stack inspection, `Cleaner` or explicit
+  resource ownership instead of finalization, and
+  `getDeclaredConstructor().newInstance()` instead of `Class.newInstance()`.
+  <!-- covers: stack-walker finalizers-to-resource-cleanup class-newinstance-to-constructor -->
 - Preserve nanosecond `Instant` precision through storage and serialization;
   do not silently truncate to epoch milliseconds.
   <!-- covers: instant-precision -->
@@ -89,7 +103,7 @@ on the exact runtime and module graph.
 - Prefer `java.net.http.HttpClient` for JDK-native HTTP. Reuse clients, configure
   connect/request timeouts, handle interruption, and validate status and body
   limits.
-  <!-- covers: http-client -->
+  <!-- covers: http-client http-websocket-client -->
 - Use `String.isBlank`, `strip`, `lines`, and `repeat` instead of hand-written
   equivalents. `strip` is Unicode-aware; `lines` recognizes multiple line
   terminators and does not retain them.
@@ -177,6 +191,9 @@ on the exact runtime and module graph.
   <!-- covers: junit6-with-jspecify -->
 - Treat strong encapsulation of JDK internals as a migration requirement, not
   something to bypass permanently with `--add-opens`.
+- Plan migrations away from the deprecated Security Manager around explicit
+  process, container, module, and application security boundaries.
+  <!-- covers: security-manager-migration -->
 
 ## Java 18-20
 
@@ -189,6 +206,9 @@ on the exact runtime and module graph.
 - Use try-with-resources for locally owned `ExecutorService` lifetimes. Define
   cancellation, graceful shutdown, timeout, and forced-shutdown behavior.
   <!-- covers: executor-try-with-resources -->
+- Use `Locale.of` instead of deprecated locale constructors, while preserving
+  language, region, variant, and BCP 47 semantics.
+  <!-- covers: locale-of -->
 - Record patterns, pattern switch, and virtual threads are not final before Java
   21.
 
@@ -245,6 +265,10 @@ on the exact runtime and module graph.
 
 ## Java 24
 
+- Use the Class-File API for class-file parsing, generation, and transformation
+  when its typed model fits; preserve unknown attributes and verify emitted
+  bytecode when interoperability matters.
+  <!-- covers: class-file-api -->
 - Use stream gatherers for reusable stateful intermediate operations when
   standard operations cannot express the transformation clearly. Respect
   integrator state, short-circuiting, parallel-combiner, and finisher semantics.
