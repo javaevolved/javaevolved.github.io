@@ -1,0 +1,21 @@
+---
+title: Ham koleksiyonlardan jenerik türlere
+oldApproach: Ham koleksiyonlar
+modernApproach: Jenerik koleksiyonlar
+summary: Ham koleksiyon türlerini ve alma sırasında yapılan cast işlemlerini derleme zamanı jenerik tür güvenliğiyle değiştirin.
+explanation: "Ham koleksiyonlar herhangi bir nesne türünü kabul eder ve tür hatalarını bir cast çalıştırılana kadar\
+  \ erteler. Jenerik tür argümanları derleyicinin yazma ve okuma işlemlerini doğrulamasına, cast'leri ortadan\
+  \ kaldırmasına, IDE desteğini iyileştirmesine ve API sözleşmelerini açık hale getirmesine olanak tanır. Ham türler\
+  \ normalde yalnızca dikkatle izole edilmiş eski sistem birlikte çalışabilirlik sınırlarında kalmalıdır."
+whyModernWins:
+- icon: 🔒
+  title: Derleme zamanı güvenliği
+  desc: Geçersiz eleman türleri çalışma zamanında değil derleme sırasında başarısız olur.
+- icon: 🧹
+  title: Alma sırasında cast yok
+  desc: Değerler bildirilen eleman türünü korur.
+- icon: 📖
+  title: Kendini belgeleyen API'ler
+  desc: Koleksiyon tanımlamaları tam olarak neyi içerdiğini belirtir.
+support:
+  description: Jenerikler JDK 5'ten (Eylül 2004) beri kullanılabilir.

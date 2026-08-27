@@ -1,0 +1,21 @@
+---
+title: Rohe Collections zu generischen Typen
+oldApproach: Rohe Collections
+modernApproach: Generische Collections
+summary: Ersetzen Sie rohe Collection-Typen und Downcasts durch generische Typsicherheit zur Kompilierzeit.
+explanation: "Rohe Collections akzeptieren beliebige Objekttypen und verschieben Typfehler bis zur Ausführung eines Casts.\
+  \ Generische Typargumente lassen den Compiler Schreib- und Lesezugriffe prüfen, entfernen Casts, verbessern die\
+  \ IDE-Unterstützung und machen API-Verträge explizit. Rohe Typen sollten normalerweise nur an sorgfältig isolierten\
+  \ Altsystem-Schnittstellen verbleiben."
+whyModernWins:
+- icon: 🔒
+  title: Sicherheit zur Kompilierzeit
+  desc: Ungültige Elementtypen schlagen bereits beim Kompilieren fehl, nicht erst zur Laufzeit.
+- icon: 🧹
+  title: Keine Downcasts
+  desc: Werte behalten ihren deklarierten Elementtyp.
+- icon: 📖
+  title: Selbsterklärende APIs
+  desc: Collection-Deklarationen geben genau an, was sie enthalten.
+support:
+  description: Generics sind seit JDK 5 (September 2004) verfügbar.

@@ -1,0 +1,21 @@
+---
+title: De colecciones sin tipo a tipos genéricos
+oldApproach: Colecciones sin tipo
+modernApproach: Colecciones genéricas
+summary: Sustituye las colecciones sin tipo y los casts de recuperación por seguridad de tipos en tiempo de compilación.
+explanation: "Las colecciones sin tipo aceptan cualquier tipo de objeto y posponen los errores de tipo hasta que se\
+  \ ejecuta un cast. Los argumentos de tipo genérico permiten que el compilador valide escrituras y lecturas, eliminen\
+  \ los casts, mejoren la asistencia del IDE y hagan explícitos los contratos de la API. Los tipos sin tipar deberían\
+  \ quedar reservados a puntos de interoperabilidad heredados cuidadosamente aislados."
+whyModernWins:
+- icon: 🔒
+  title: Seguridad en tiempo de compilación
+  desc: Los tipos de elemento inválidos fallan durante la compilación, no en tiempo de ejecución.
+- icon: 🧹
+  title: Sin casts de recuperación
+  desc: Los valores conservan su tipo de elemento declarado.
+- icon: 📖
+  title: APIs autodocumentadas
+  desc: Las declaraciones de colecciones indican exactamente qué contienen.
+support:
+  description: Los genéricos están disponibles desde JDK 5 (septiembre de 2004).

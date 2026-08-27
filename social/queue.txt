@@ -127,3 +127,4 @@ collections/map-compute-and-merge
 io/http-websocket-client
 security/security-manager-migration
 tooling/runtime-exec-to-process-builder
+language/raw-collections-to-generics

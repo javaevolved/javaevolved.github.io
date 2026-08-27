@@ -1,0 +1,21 @@
+---
+title: De coleções brutas para tipos genéricos
+oldApproach: Coleções brutas
+modernApproach: Coleções genéricas
+summary: Substitua tipos de coleção brutos e casts de recuperação por segurança de tipos em tempo de compilação.
+explanation: "Coleções brutas aceitam tipos de objeto arbitrários e adiam os erros de tipo até que um cast seja\
+  \ executado. Argumentos de tipo genérico permitem que o compilador valide gravações e leituras, eliminem casts,\
+  \ melhorem o suporte da IDE e tornem explícitos os contratos de API. Tipos brutos normalmente devem permanecer\
+  \ apenas em pontos de interoperabilidade legados cuidadosamente isolados."
+whyModernWins:
+- icon: 🔒
+  title: Segurança em tempo de compilação
+  desc: Tipos de elemento inválidos falham durante a compilação, não em tempo de execução.
+- icon: 🧹
+  title: Sem casts de recuperação
+  desc: Os valores mantêm o tipo de elemento declarado.
+- icon: 📖
+  title: APIs autoexplicativas
+  desc: As declarações de coleção informam exatamente o que contêm.
+support:
+  description: Genéricos estão disponíveis desde o JDK 5 (setembro de 2004).

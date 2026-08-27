@@ -43,7 +43,7 @@ support:
   state: "available"
   description: "Diamond with anonymous classes since JDK 9 (Sept 2017)."
 prev: "language/flexible-constructor-bodies"
-next: "language/private-interface-methods"
+next: "language/raw-collections-to-generics"
 related:
 - "language/type-inference-with-var"
 - "language/text-blocks-for-multiline-strings"

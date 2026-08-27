@@ -1,0 +1,21 @@
+---
+title: Z surowych kolekcji do typów generycznych
+oldApproach: Surowe kolekcje
+modernApproach: Kolekcje generyczne
+summary: Zastąp surowe typy kolekcji i rzutowania przy odczycie bezpieczeństwem typów w czasie kompilacji.
+explanation: "Surowe kolekcje akceptują dowolne typy obiektów i odkładają błędy typów do momentu wykonania rzutowania.\
+  \ Argumenty typu generycznego pozwalają kompilatorowi weryfikować zapisy i odczyty, eliminują rzutowania, poprawiają\
+  \ wsparcie IDE i czynią kontrakty API jawnymi. Surowe typy powinny normalnie pozostawać jedynie na starannie\
+  \ odizolowanych granicach interoperacyjności z kodem starszym."
+whyModernWins:
+- icon: 🔒
+  title: Bezpieczeństwo w czasie kompilacji
+  desc: Nieprawidłowe typy elementów zawodzą podczas kompilacji, a nie w czasie działania.
+- icon: 🧹
+  title: Brak rzutowań przy odczycie
+  desc: Wartości zachowują zadeklarowany typ elementu.
+- icon: 📖
+  title: Samodokumentujące się API
+  desc: Deklaracje kolekcji dokładnie określają, co zawierają.
+support:
+  description: Generyki są dostępne od JDK 5 (wrzesień 2004).

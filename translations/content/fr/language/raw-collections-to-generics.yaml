@@ -1,0 +1,21 @@
+---
+title: Des collections brutes aux types génériques
+oldApproach: Collections brutes
+modernApproach: Collections génériques
+summary: Remplacez les types de collection bruts et les casts de récupération par une sécurité de type vérifiée à la compilation.
+explanation: "Les collections brutes acceptent des types d'objet arbitraires et reportent les erreurs de type jusqu'à\
+  \ l'exécution d'un cast. Les arguments de type génériques permettent au compilateur de valider les écritures et les\
+  \ lectures, suppriment les casts, améliorent l'assistance de l'IDE et rendent les contrats d'API explicites. Les types\
+  \ bruts ne devraient normalement subsister qu'aux frontières d'interopérabilité héritées soigneusement isolées."
+whyModernWins:
+- icon: 🔒
+  title: Sécurité à la compilation
+  desc: Les types d'éléments invalides échouent à la compilation plutôt qu'à l'exécution.
+- icon: 🧹
+  title: Aucun cast de récupération
+  desc: Les valeurs conservent leur type d'élément déclaré.
+- icon: 📖
+  title: API auto-documentées
+  desc: Les déclarations de collection indiquent exactement ce qu'elles contiennent.
+support:
+  description: Les génériques sont disponibles depuis JDK 5 (septembre 2004).
