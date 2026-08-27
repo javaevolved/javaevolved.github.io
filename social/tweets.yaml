@@ -1278,3 +1278,13 @@ security/security-manager-migration: |-
   🔗 https://javaevolved.github.io/security/security-manager-migration.html
 
   #Java #JavaEvolved
+tooling/runtime-exec-to-process-builder: |-
+  ☕ Runtime.exec(String) to ProcessBuilder arguments
+
+  Launch processes with an explicit argument list and ProcessBuilder configuration.
+
+  Runtime.exec(String) → ProcessBuilder (JDK 5+)
+
+  🔗 https://javaevolved.github.io/tooling/runtime-exec-to-process-builder.html
+
+  #Java #JavaEvolved

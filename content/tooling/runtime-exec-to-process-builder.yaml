@@ -1,0 +1,52 @@
+---
+id: e27cf2f6-ae52-4d75-a481-0fd04dbf2999
+slug: "runtime-exec-to-process-builder"
+title: "Runtime.exec(String) to ProcessBuilder arguments"
+category: "tooling"
+difficulty: "intermediate"
+jdkVersion: "5"
+oldLabel: "Command string"
+modernLabel: "ProcessBuilder"
+oldApproach: "Runtime.exec(String)"
+modernApproach: "ProcessBuilder"
+oldCode: |-
+  Process process = Runtime.getRuntime()
+          .exec("git show " + revision);
+modernCode: |-
+  Process process = new ProcessBuilder(
+          "git", "show", revision)
+          .redirectErrorStream(true)
+          .start();
+summary: "Launch processes with an explicit argument list and ProcessBuilder configuration."
+explanation: "Runtime.exec(String) applies Java's command-string tokenization, which\
+  \ is easy to misunderstand when arguments contain spaces or quoting. ProcessBuilder\
+  \ accepts program arguments as distinct values and exposes the working directory,\
+  \ environment, input/output redirects, and error-stream policy explicitly. It does\
+  \ not invoke a shell unless the application deliberately launches one."
+whyModernWins:
+- icon: "🎯"
+  title: "Exact arguments"
+  desc: "Each process argument remains a distinct value without command-string tokenization."
+- icon: "🎛"
+  title: "Explicit configuration"
+  desc: "Environment, directory, redirects, and error handling are configured together."
+- icon: "🛡"
+  title: "Safer boundaries"
+  desc: "Avoids constructing a shell-like command string from dynamic values."
+support:
+  state: "available"
+  description: "Widely available since JDK 5 (September 2004)"
+prev: "tooling/junit6-with-jspecify"
+next: "language/anonymous-classes-to-lambdas"
+related:
+- "concurrency/process-api"
+- "io/inputstream-transferto"
+- "security/security-manager-migration"
+tags:
+- tooling
+- security
+docs:
+- title: "ProcessBuilder"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ProcessBuilder.html"
+- title: "Runtime.exec(String)"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runtime.html#exec(java.lang.String)"
