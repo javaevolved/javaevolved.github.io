@@ -45,7 +45,7 @@ support:
   state: "available"
   description: "Available since JDK 17 (September 2021, JEP 356)."
 prev: "security/tls-default"
-next: "tooling/jshell-prototyping"
+next: "security/security-manager-migration"
 related:
 - "security/strong-random"
 - "security/key-derivation-functions"

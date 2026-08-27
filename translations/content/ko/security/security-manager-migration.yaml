@@ -1,0 +1,17 @@
+title: "SecurityManager 검사에서 명시적 권한 부여로"
+oldApproach: "SecurityManager 검사"
+modernApproach: "명시적 권한 부여"
+summary: "비활성화된 SecurityManager 검사를 애플리케이션의 명시적 권한 부여와 배포 환경 격리로 대체합니다."
+explanation: "JEP 486은 JDK 24에서 Security Manager를 영구적으로 비활성화했으므로 System.getSecurityManager()를 통한 검사는 JDK 23 이하에서만 정책을 적용할 수 있습니다. 애플리케이션은 도메인 로직에서 접근 권한을 명시적으로 부여해야 합니다. 신뢰할 수 없는 사용자가 해당 트리를 동시에 수정할 수 없는 경우, 파일 시스템의 실제 경로를 확인하면 기존 심볼릭 링크가 허용된 루트 밖으로 벗어나는 것을 방지할 수 있습니다. 공격자가 쓸 수 있는 트리에는 SecureDirectoryStream과 같이 경쟁 조건에 강한 핸들 상대 접근 방식을 사용하세요. 격리를 위해 프로세스, 컨테이너 또는 운영 체제 경계를 사용하세요. JDK 24에는 더 이상 사용되지 않는 API가 일시적으로 남아 있지만 활성화할 수 없으며 다른 프로세스 내 샌드박스로 대체되지도 않았습니다."
+whyModernWins:
+- icon: "🔍"
+  title: "명시적 정책"
+  desc: "애플리케이션 로직에서 권한 부여를 명확히 확인하고 테스트할 수 있습니다."
+- icon: "🛡️"
+  title: "실질적인 격리"
+  desc: "프로세스, 컨테이너, 운영 체제 경계가 애플리케이션 전체를 보호합니다."
+- icon: "🚫"
+  title: "필수 마이그레이션"
+  desc: "JDK 24 이상에서 더 이상 정책을 적용할 수 없는 검사를 제거합니다."
+support:
+  description: "JEP 486이 Security Manager를 영구적으로 비활성화하는 JDK 24 이상에서 필수입니다."

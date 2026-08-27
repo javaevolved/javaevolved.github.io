@@ -62,8 +62,10 @@ Content files are YAML (preferred) or JSON under `content/{category}/{slug}.yaml
 2. Add a non-empty `tags` list. Every tag slug must already exist in `html-generators/tags.properties`; add new `slug=Display Name` entries there in the same change.
 3. Update `prev`/`next` in the adjacent patterns to maintain the navigation chain.
 4. Create `proof/{category}/{PascalCaseSlug}.java` — JBang script wrapping the modern code.
-5. Run `jbang html-generators/generate.java` and verify it completes. The generator rejects missing, malformed, or duplicate UUIDs as well as missing, empty, malformed, and unregistered tags.
-6. Translations are optional — the AI translation workflow handles them, or create partial files under `translations/content/{locale}/`.
+5. Create a partial translation at `translations/content/{locale}/{category}/{slug}.yaml` for every non-English locale registered in `html-generators/locales.properties`.
+6. Run `jbang html-generators/generate.java` and verify all localized output builds. Generated site files are ignored and must not be committed. The generator rejects missing, malformed, or duplicate UUIDs as well as missing, empty, malformed, and unregistered tags.
+7. Run `jbang html-generators/generatesocialqueue.java` without `--reshuffle`. Commit the appended `social/queue.txt` entry and `social/tweets.yaml` draft; do not change `social/state.yaml`.
+8. Run `jbang html-generators/validatepatternchanges.java --file content/{category}/{slug}.yaml` and the new proof. The validator enforces translations, proof, navigation, related targets, and social artifacts.
 
 ### Removing or reordering a pattern
 

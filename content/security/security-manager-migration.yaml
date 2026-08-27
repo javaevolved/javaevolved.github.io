@@ -1,0 +1,66 @@
+---
+id: 9e0d265f-d778-4115-9fc9-b09e37c55e41
+slug: "security-manager-migration"
+title: "SecurityManager checks to explicit authorization"
+category: "security"
+difficulty: "advanced"
+jdkVersion: "24"
+oldLabel: "JDK 23 and earlier"
+modernLabel: "JDK 24+"
+oldApproach: "SecurityManager checks"
+modernApproach: "Explicit authorization"
+oldCode: |-
+  SecurityManager manager = System.getSecurityManager();
+  if (manager != null) {
+      manager.checkRead(path.toString());
+  }
+  return Files.readString(path);
+modernCode: |-
+  // Untrusted users must not be able to modify this tree
+  Path root = allowedRoot.toRealPath();
+  Path resolved = root.resolve(requested)
+      .normalize()
+      .toRealPath();
+  if (!resolved.startsWith(root)) {
+      throw new SecurityException(
+          "Path is outside the allowed root");
+  }
+  return Files.readString(resolved);
+summary: "Replace disabled SecurityManager checks with explicit application authorization\
+  \ and deployment isolation."
+explanation: "JEP 486 permanently disabled the Security Manager in JDK 24, so checks\
+  \ through System.getSecurityManager() can enforce policy only on JDK 23 and earlier.\
+  \ Applications must authorize access explicitly in domain logic; resolving real filesystem\
+  \ paths prevents existing symbolic links from escaping an allowed root when untrusted\
+  \ users cannot modify that tree concurrently. For attacker-writable trees, use race-resistant,\
+  \ handle-relative access such as SecureDirectoryStream. Use process, container, or\
+  \ operating-system boundaries for isolation. JDK 24 retains the deprecated API temporarily,\
+  \ but it cannot be enabled and is not replaced by another in-process sandbox."
+whyModernWins:
+- icon: "🔍"
+  title: "Explicit policy"
+  desc: "Authorization is visible and testable in application logic."
+- icon: "🛡️"
+  title: "Real isolation"
+  desc: "Process, container, and operating-system boundaries protect the whole application."
+- icon: "🚫"
+  title: "Required migration"
+  desc: "Removes checks that can no longer enforce policy on JDK 24 and later."
+support:
+  state: "available"
+  description: "Required on JDK 24 and later, where JEP 486 permanently disables the\
+    \ Security Manager."
+prev: "security/random-generator"
+next: "tooling/jshell-prototyping"
+related:
+- "io/reading-files"
+- "io/deserialization-filters"
+- "security/tls-default"
+tags:
+- security
+- migration
+docs:
+- title: "Permanently Disable the Security Manager (JEP 486)"
+  href: "https://openjdk.org/jeps/486"
+- title: "SecureDirectoryStream"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/SecureDirectoryStream.html"

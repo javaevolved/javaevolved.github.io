@@ -1268,3 +1268,13 @@ io/http-websocket-client: |-
   🔗 https://javaevolved.github.io/io/http-websocket-client.html
 
   #Java #JavaEvolved
+security/security-manager-migration: |-
+  ☕ SecurityManager checks to explicit authorization
+
+  Replace disabled SecurityManager checks with explicit application authori…
+
+  SecurityManager checks → Explicit authorization (JDK 24+)
+
+  🔗 https://javaevolved.github.io/security/security-manager-migration.html
+
+  #Java #JavaEvolved

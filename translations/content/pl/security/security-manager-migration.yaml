@@ -1,0 +1,17 @@
+title: "Od kontroli SecurityManager do jawnej autoryzacji"
+oldApproach: "Kontrole SecurityManager"
+modernApproach: "Jawna autoryzacja"
+summary: "Zastąp wyłączone kontrole SecurityManager jawną autoryzacją w aplikacji i izolacją środowiska wdrożeniowego."
+explanation: "JEP 486 trwale wyłączył Security Manager w JDK 24, dlatego kontrole za pośrednictwem System.getSecurityManager() mogą egzekwować zasady tylko w JDK 23 i starszych wersjach. Aplikacje muszą jawnie autoryzować dostęp w logice domenowej; rozwiązywanie rzeczywistych ścieżek systemu plików zapobiega wydostawaniu się istniejących dowiązań symbolicznych poza dozwolony katalog główny, gdy niezaufani użytkownicy nie mogą jednocześnie modyfikować tego drzewa. W przypadku drzew zapisywalnych przez atakującego użyj odpornego na wyścigi dostępu względnego względem uchwytu, takiego jak SecureDirectoryStream. Do izolacji używaj granic procesów, kontenerów lub systemu operacyjnego. JDK 24 tymczasowo zachowuje przestarzałe API, ale nie można go włączyć i nie zastąpiono go inną piaskownicą działającą wewnątrz procesu."
+whyModernWins:
+- icon: "🔍"
+  title: "Jawne zasady"
+  desc: "Autoryzacja jest widoczna i możliwa do przetestowania w logice aplikacji."
+- icon: "🛡️"
+  title: "Rzeczywista izolacja"
+  desc: "Granice procesów, kontenerów i systemu operacyjnego chronią całą aplikację."
+- icon: "🚫"
+  title: "Wymagana migracja"
+  desc: "Usuwa kontrole, które nie mogą już egzekwować zasad w JDK 24 i nowszych wersjach."
+support:
+  description: "Wymagane w JDK 24 i nowszych wersjach, w których JEP 486 trwale wyłącza Security Manager."

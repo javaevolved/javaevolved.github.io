@@ -1,0 +1,17 @@
+title: "Dai controlli SecurityManager all’autorizzazione esplicita"
+oldApproach: "Controlli SecurityManager"
+modernApproach: "Autorizzazione esplicita"
+summary: "Sostituisci i controlli SecurityManager disabilitati con l’autorizzazione esplicita dell’applicazione e l’isolamento del deployment."
+explanation: "JEP 486 ha disabilitato definitivamente il Security Manager in JDK 24, quindi i controlli tramite System.getSecurityManager() possono applicare policy solo su JDK 23 e versioni precedenti. Le applicazioni devono autorizzare esplicitamente l’accesso nella logica di dominio; la risoluzione dei percorsi reali del file system impedisce ai collegamenti simbolici esistenti di uscire da una directory radice consentita quando gli utenti non attendibili non possono modificare simultaneamente tale albero. Per gli alberi scrivibili da un attaccante, usa un accesso relativo agli handle e resistente alle race condition, come SecureDirectoryStream. Usa i confini di processo, container o sistema operativo per l’isolamento. JDK 24 conserva temporaneamente l’API deprecata, ma non è possibile abilitarla e non è stata sostituita da un’altra sandbox interna al processo."
+whyModernWins:
+- icon: "🔍"
+  title: "Policy esplicita"
+  desc: "L’autorizzazione è visibile e verificabile nella logica dell’applicazione."
+- icon: "🛡️"
+  title: "Isolamento reale"
+  desc: "I confini di processo, container e sistema operativo proteggono l’intera applicazione."
+- icon: "🚫"
+  title: "Migrazione obbligatoria"
+  desc: "Rimuove i controlli che non possono più applicare policy su JDK 24 e versioni successive."
+support:
+  description: "Obbligatoria su JDK 24 e versioni successive, dove JEP 486 disabilita definitivamente il Security Manager."

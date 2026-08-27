@@ -37,7 +37,7 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "security/tls-default"
+prev: "security/security-manager-migration"
 next: "tooling/single-file-execution"
 related:
 - "tooling/aot-class-preloading"

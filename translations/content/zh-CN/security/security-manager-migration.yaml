@@ -1,0 +1,17 @@
+title: "从 SecurityManager 检查迁移到显式授权"
+oldApproach: "SecurityManager 检查"
+modernApproach: "显式授权"
+summary: "使用显式的应用程序授权和部署隔离，替代已禁用的 SecurityManager 检查。"
+explanation: "JEP 486 在 JDK 24 中永久禁用了 Security Manager，因此通过 System.getSecurityManager() 执行的检查只能在 JDK 23 及更早版本中实施策略。应用程序必须在领域逻辑中显式授予访问权限；当不受信任的用户无法并发修改该目录树时，解析真实的文件系统路径可防止现有符号链接逃逸出允许的根目录。对于攻击者可写的目录树，应使用 SecureDirectoryStream 等抗竞态、相对于句柄的访问方式。使用进程、容器或操作系统边界实现隔离。JDK 24 暂时保留了这个已弃用的 API，但它无法启用，也没有其他进程内沙箱取代它。"
+whyModernWins:
+- icon: "🔍"
+  title: "显式策略"
+  desc: "授权在应用程序逻辑中清晰可见且可测试。"
+- icon: "🛡️"
+  title: "真正隔离"
+  desc: "进程、容器和操作系统边界可保护整个应用程序。"
+- icon: "🚫"
+  title: "必须迁移"
+  desc: "移除在 JDK 24 及更高版本中已无法实施策略的检查。"
+support:
+  description: "JDK 24 及更高版本必须迁移，因为 JEP 486 永久禁用了 Security Manager。"
