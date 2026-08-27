@@ -1,0 +1,10 @@
+text: |-
+  ☕ Date formatting
+  
+  Format dates with thread-safe, immutable DateTimeFormatter.
+  
+  SimpleDateFormat → DateTimeFormatter (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/datetime/date-formatting.html
+  
+  #Java #JavaEvolved

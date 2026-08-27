@@ -3,6 +3,7 @@ id: 9e0d265f-d778-4115-9fc9-b09e37c55e41
 slug: "security-manager-migration"
 title: "SecurityManager checks to explicit authorization"
 category: "security"
+navigationOrder: 106000
 difficulty: "advanced"
 jdkVersion: "24"
 oldLabel: "JDK 23 and earlier"
@@ -50,8 +51,6 @@ support:
   state: "available"
   description: "Required on JDK 24 and later, where JEP 486 permanently disables the\
     \ Security Manager."
-prev: "security/random-generator"
-next: "tooling/jshell-prototyping"
 related:
 - "io/reading-files"
 - "io/deserialization-filters"

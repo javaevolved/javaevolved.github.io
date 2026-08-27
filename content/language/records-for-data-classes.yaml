@@ -3,6 +3,7 @@ id: 9cf3d86f-eb07-4056-9d72-9a8443b47b83
 slug: "records-for-data-classes"
 title: "Records for data classes"
 category: "language"
+navigationOrder: 5000
 difficulty: "beginner"
 jdkVersion: "16"
 oldLabel: "Java 8"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 16 (March 2021)"
-prev: "language/pattern-matching-instanceof"
-next: "language/sealed-classes"
 related:
 - "language/flexible-constructor-bodies"
 - "language/private-interface-methods"

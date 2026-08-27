@@ -3,6 +3,7 @@ id: 18644872-5dff-481b-9c0f-a8399c09276a
 slug: "collectors-flatmapping"
 title: "Collectors.flatMapping()"
 category: "streams"
+navigationOrder: 51000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "streams/stream-takewhile-dropwhile"
-next: "streams/stream-tolist"
 related:
 - "streams/optional-ifpresentorelse"
 - "streams/stream-of-nullable"

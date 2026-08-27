@@ -1,0 +1,10 @@
+text: |-
+  ☕ RandomGenerator interface
+  
+  Use the RandomGenerator interface to choose random number algorithms by name without coupling t…
+  
+  new Random() / ThreadLocalRandom → RandomGenerator factory (JDK 17+)
+  
+  🔗 https://javaevolved.github.io/security/random-generator.html
+  
+  #Java #JavaEvolved

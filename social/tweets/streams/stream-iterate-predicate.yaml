@@ -1,0 +1,10 @@
+text: |-
+  ☕ Stream.iterate() with predicate
+  
+  Use a predicate to stop iteration — like a for-loop in stream form.
+  
+  iterate + limit → iterate(seed, pred, op) (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/streams/stream-iterate-predicate.html
+  
+  #Java #JavaEvolved

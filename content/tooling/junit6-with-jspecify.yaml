@@ -3,6 +3,7 @@ id: 7b2ab276-c79f-4aa9-b6e0-9f560436e936
 slug: "junit6-with-jspecify"
 title: "JUnit 6 with JSpecify null safety"
 category: "tooling"
+navigationOrder: 116000
 difficulty: "intermediate"
 jdkVersion: "17"
 oldLabel: "JUnit 5"
@@ -87,8 +88,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JUnit 6.0 (October 2025, requires Java 17+)"
-prev: "tooling/aot-class-preloading"
-next: "tooling/runtime-exec-to-process-builder"
 related:
 - "enterprise/spring-null-safety-jspecify"
 - "errors/helpful-npe"

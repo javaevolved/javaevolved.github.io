@@ -3,6 +3,7 @@ id: 6a0d1711-a495-490e-a830-95087e092b69
 slug: "collection-bulk-operations"
 title: "Collection bulk operations instead of mutation loops"
 category: "collections"
+navigationOrder: 39000
 difficulty: "beginner"
 jdkVersion: "8"
 oldLabel: "Iterator mutation loop"
@@ -32,8 +33,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 8 (March 2014)"
-prev: "collections/stack-to-deque"
-next: "collections/comparator-factories"
 related:
 - "collections/reverse-list-iteration"
 - "collections/copying-collections-immutably"

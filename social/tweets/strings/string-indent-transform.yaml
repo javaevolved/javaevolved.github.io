@@ -1,0 +1,10 @@
+text: |-
+  ☕ String.indent() and transform()
+  
+  Indent text and chain string transformations fluently.
+  
+  Manual Indentation → indent() / transform() (JDK 12+)
+  
+  🔗 https://javaevolved.github.io/strings/string-indent-transform.html
+  
+  #Java #JavaEvolved

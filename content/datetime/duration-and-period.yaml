@@ -3,6 +3,7 @@ id: eaf765f9-0a5b-4644-9447-72211a1c96e5
 slug: "duration-and-period"
 title: "Duration and Period"
 category: "datetime"
+navigationOrder: 94000
 difficulty: "beginner"
 jdkVersion: "8"
 oldLabel: "Pre-Java 8"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 8 (March 2014)"
-prev: "datetime/java-time-basics"
-next: "datetime/date-formatting"
 related:
 - "datetime/java-time-basics"
 - "datetime/date-formatting"

@@ -3,6 +3,7 @@ id: d3a8a303-63dc-4880-9124-558cf0f6f598
 slug: "files-mismatch"
 title: "Files.mismatch()"
 category: "io"
+navigationOrder: 84000
 difficulty: "beginner"
 jdkVersion: "12"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 12 (March 2019)"
-prev: "io/file-memory-mapping"
-next: "io/deserialization-filters"
 related:
 - "io/inputstream-transferto"
 - "io/deserialization-filters"

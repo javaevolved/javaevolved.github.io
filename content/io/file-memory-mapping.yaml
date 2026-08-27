@@ -3,6 +3,7 @@ id: 39bb4e57-3ece-4d13-8e54-c6c82cc6e5ca
 slug: "file-memory-mapping"
 title: "File memory mapping"
 category: "io"
+navigationOrder: 83000
 difficulty: "advanced"
 jdkVersion: "22"
 oldLabel: "Java 8"
@@ -52,8 +53,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 22 (March 2024)"
-prev: "io/finalizers-to-resource-cleanup"
-next: "io/files-mismatch"
 related:
 - "io/http-client"
 - "io/reading-files"

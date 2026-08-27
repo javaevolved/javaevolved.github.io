@@ -3,6 +3,7 @@ id: 100472fa-74b1-442f-b89d-3e6e8adcc1b1
 slug: "explicit-charset-file-io"
 title: "Default-charset file I/O to explicit StandardCharsets"
 category: "io"
+navigationOrder: 78000
 difficulty: "beginner"
 jdkVersion: "7"
 oldLabel: "Platform-default charset"
@@ -33,8 +34,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 7 (July 2011)"
-prev: "io/writing-files"
-next: "io/inputstream-transferto"
 related:
 - "io/reading-files"
 - "io/writing-files"

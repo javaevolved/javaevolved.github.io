@@ -1,0 +1,10 @@
+text: |-
+  ☕ Markdown in Javadoc comments
+  
+  Write Javadoc comments in Markdown instead of HTML for better readability.
+  
+  HTML-based Javadoc → Markdown Javadoc (JDK 23+)
+  
+  🔗 https://javaevolved.github.io/language/markdown-javadoc-comments.html
+  
+  #Java #JavaEvolved

@@ -3,6 +3,7 @@ id: 70ce47ef-a05c-4e30-8801-376665667e93
 slug: "concurrent-http-virtual"
 title: "Concurrent HTTP with virtual threads"
 category: "concurrency"
+navigationOrder: 67000
 difficulty: "intermediate"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -45,8 +46,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "concurrency/process-api"
-next: "concurrency/lock-free-lazy-init"
 related:
 - "concurrency/structured-concurrency"
 - "concurrency/stable-values"

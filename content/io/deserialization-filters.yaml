@@ -3,6 +3,7 @@ id: bc2d6fd6-e255-45ed-b4ad-2ec5035929cd
 slug: "deserialization-filters"
 title: "Deserialization filters"
 category: "io"
+navigationOrder: 85000
 difficulty: "advanced"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "io/files-mismatch"
-next: "errors/helpful-npe"
 related:
 - "io/inputstream-transferto"
 - "io/http-client"

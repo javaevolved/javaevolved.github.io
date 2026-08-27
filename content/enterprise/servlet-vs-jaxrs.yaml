@@ -3,6 +3,7 @@ id: a7ba2242-b9f0-4b1a-80b7-4a5dfee925cf
 slug: "servlet-vs-jaxrs"
 title: "Servlet versus JAX-RS"
 category: "enterprise"
+navigationOrder: 119000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -52,8 +53,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since Jakarta EE 8 / Java 11"
-prev: "language/compact-canonical-constructor"
-next: "enterprise/ejb-vs-cdi"
 related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jdbc-vs-jpa"

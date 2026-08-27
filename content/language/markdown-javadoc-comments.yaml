@@ -3,6 +3,7 @@ id: 6ffd6f18-9209-485f-b741-a973092b98a2
 slug: "markdown-javadoc-comments"
 title: "Markdown in Javadoc comments"
 category: "language"
+navigationOrder: 21000
 difficulty: "beginner"
 jdkVersion: "23"
 oldLabel: "Java 8"
@@ -53,8 +54,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 23 (Sept 2024)"
-prev: "language/default-interface-methods"
-next: "language/static-methods-in-interfaces"
 related:
 - "language/text-blocks-for-multiline-strings"
 - "language/records-for-data-classes"

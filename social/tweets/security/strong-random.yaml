@@ -1,0 +1,10 @@
+text: |-
+  ☕ Strong random generation
+  
+  Get the platform's strongest SecureRandom implementation.
+  
+  new SecureRandom() → getInstanceStrong() (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/security/strong-random.html
+  
+  #Java #JavaEvolved

@@ -3,6 +3,7 @@ id: d0e90aba-b424-4b96-b0cc-471f6141d71a
 slug: "url-constructors-to-uri"
 title: "Deprecated URL constructors to URI"
 category: "io"
+navigationOrder: 74000
 difficulty: "intermediate"
 jdkVersion: "20"
 oldLabel: "Deprecated URL constructor"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "URL constructors deprecated since JDK 20 (March 2023)"
-prev: "io/http-websocket-client"
-next: "io/io-class-console-io"
 related:
 - "io/http-client"
 - "io/path-of"

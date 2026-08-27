@@ -1,0 +1,10 @@
+text: |-
+  ☕ Stable values
+  
+  Thread-safe lazy initialization without volatile or synchronized.
+  
+  Double-Checked Locking → StableValue (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/concurrency/stable-values.html
+  
+  #Java #JavaEvolved

@@ -1,0 +1,10 @@
+text: |-
+  ☕ String.isBlank()
+  
+  Check for blank strings with a single method call.
+  
+  trim().isEmpty() → isBlank() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/strings/string-isblank.html
+  
+  #Java #JavaEvolved

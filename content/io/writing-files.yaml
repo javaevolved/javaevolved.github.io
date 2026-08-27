@@ -3,6 +3,7 @@ id: 5c8f3738-5720-4977-83ee-3ea49ed5b44a
 slug: "writing-files"
 title: "Writing files"
 category: "io"
+navigationOrder: 77000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "io/reading-files"
-next: "io/explicit-charset-file-io"
 related:
 - "io/reading-files"
 - "io/http-client"

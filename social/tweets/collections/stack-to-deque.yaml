@@ -1,0 +1,10 @@
+text: |-
+  ☕ Stack to Deque and ArrayDeque
+  
+  Use the Deque interface with ArrayDeque instead of the legacy Stack class.
+  
+  Stack → Deque with ArrayDeque (JDK 6+)
+  
+  🔗 https://javaevolved.github.io/collections/stack-to-deque.html
+  
+  #Java #JavaEvolved

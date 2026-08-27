@@ -1,0 +1,10 @@
+text: |-
+  ☕ Default interface methods
+  
+  Add method implementations directly in interfaces, enabling multiple inherita…
+  
+  Abstract classes for shared behavior → Default methods on interfaces (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/language/default-interface-methods.html
+  
+  #Java #JavaEvolved

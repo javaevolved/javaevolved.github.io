@@ -3,6 +3,7 @@ id: 672534a8-9e26-4d9d-b448-a48ca562519f
 slug: "map-entry-factory"
 title: "Map.entry() factory"
 category: "collections"
+navigationOrder: 30000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -32,8 +33,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "collections/copying-collections-immutably"
-next: "collections/sequenced-collections"
 related:
 - "collections/sequenced-collections"
 - "collections/immutable-map-creation"

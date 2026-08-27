@@ -3,6 +3,7 @@ id: 691d840e-33da-4a8b-b512-eb500ec3d294
 slug: "tls-default"
 title: "TLS 1.3 by default"
 category: "security"
+navigationOrder: 104000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "security/strong-random"
-next: "security/random-generator"
 related:
 - "security/pem-encoding"
 - "security/key-derivation-functions"

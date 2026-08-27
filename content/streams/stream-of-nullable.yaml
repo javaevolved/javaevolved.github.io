@@ -3,6 +3,7 @@ id: fcc00b36-4542-4f58-8c2f-6bfee8362826
 slug: "stream-of-nullable"
 title: "Stream.ofNullable()"
 category: "streams"
+navigationOrder: 48000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -32,8 +33,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "strings/string-chars-stream"
-next: "streams/stream-iterate-predicate"
 related:
 - "streams/stream-takewhile-dropwhile"
 - "streams/stream-iterate-predicate"

@@ -3,6 +3,7 @@ id: 6e35dedb-7344-4e0c-a946-cea209414956
 slug: "stream-gatherers"
 title: "Stream gatherers"
 category: "streams"
+navigationOrder: 54000
 difficulty: "advanced"
 jdkVersion: "24"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 24 (JEP 485, March 2025)."
-prev: "streams/stream-mapmulti"
-next: "streams/virtual-thread-executor"
 related:
 - "streams/stream-of-nullable"
 - "streams/stream-iterate-predicate"

@@ -3,6 +3,7 @@ id: ffc40f37-bcf4-4297-9e1d-8b2cecc4c148
 slug: "exhaustive-switch"
 title: "Exhaustive switch without default"
 category: "language"
+navigationOrder: 18000
 difficulty: "intermediate"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -46,8 +47,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "language/module-import-declarations"
-next: "collections/immutable-list-creation"
 related:
 - "language/sealed-classes"
 - "language/pattern-matching-instanceof"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ String.strip() vs trim()
+  
+  Use Unicode-aware stripping with strip(), stripLeading(), stripTrailing().
+  
+  trim() → strip() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/strings/string-strip.html
+  
+  #Java #JavaEvolved

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Concurrent HTTP with virtual threads
+  
+  Fetch many URLs concurrently with virtual threads and HttpClient.
+  
+  Thread Pool + URLConnection → Virtual Threads + HttpClient (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/concurrency/concurrent-http-virtual.html
+  
+  #Java #JavaEvolved

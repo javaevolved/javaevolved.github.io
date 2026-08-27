@@ -3,6 +3,7 @@ id: 125c95a2-7a37-4a32-9ee4-4c7d12ef63b7
 slug: "string-lines"
 title: "String.lines() for line splitting"
 category: "strings"
+navigationOrder: 47000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 11 (September 2018)."
-prev: "strings/string-chars-stream"
-next: "streams/stream-of-nullable"
 related:
 - "strings/string-isblank"
 - "strings/string-strip"

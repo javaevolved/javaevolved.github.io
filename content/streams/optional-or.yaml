@@ -3,6 +3,7 @@ id: 22b5ff6c-8f28-47c9-ab71-8fbc82791878
 slug: "optional-or"
 title: "Optional.or() fallback"
 category: "streams"
+navigationOrder: 57000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "streams/optional-ifpresentorelse"
-next: "streams/predicate-not"
 related:
 - "streams/stream-iterate-predicate"
 - "streams/stream-gatherers"

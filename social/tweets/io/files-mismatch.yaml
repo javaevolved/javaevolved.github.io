@@ -1,0 +1,10 @@
+text: |-
+  ☕ Files.mismatch()
+  
+  Compare two files efficiently without loading them into memory.
+  
+  Manual Byte Compare → Files.mismatch() (JDK 12+)
+  
+  🔗 https://javaevolved.github.io/io/files-mismatch.html
+  
+  #Java #JavaEvolved

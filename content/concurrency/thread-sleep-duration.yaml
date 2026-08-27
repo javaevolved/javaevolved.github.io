@@ -3,6 +3,7 @@ id: d19e2c63-defa-4792-be7e-56ec4ced993c
 slug: "thread-sleep-duration"
 title: "Thread.sleep with Duration"
 category: "concurrency"
+navigationOrder: 65000
 difficulty: "beginner"
 jdkVersion: "19"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 19 (Sept 2022)"
-prev: "concurrency/executor-try-with-resources"
-next: "concurrency/process-api"
 related:
 - "concurrency/stable-values"
 - "concurrency/concurrent-http-virtual"

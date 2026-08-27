@@ -1,0 +1,10 @@
+text: |-
+  ☕ Primitive types in patterns
+  
+  Pattern matching now works with primitive types, not just objects.
+  
+  Manual Range Checks → Primitive Patterns (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/language/primitive-types-in-patterns.html
+  
+  #Java #JavaEvolved

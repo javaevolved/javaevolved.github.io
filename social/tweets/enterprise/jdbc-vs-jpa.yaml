@@ -1,0 +1,10 @@
+text: |-
+  ☕ JDBC versus JPA
+  
+  Replace verbose JDBC boilerplate with JPA's object-relational mapping and EntityManager.
+  
+  JDBC → JPA EntityManager (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/jdbc-vs-jpa.html
+  
+  #Java #JavaEvolved

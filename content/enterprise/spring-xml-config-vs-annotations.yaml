@@ -3,6 +3,7 @@ id: ba351e98-dd21-4c47-a6a0-547233992ac1
 slug: "spring-xml-config-vs-annotations"
 title: "Spring XML Bean Config vs Annotation-Driven"
 category: "enterprise"
+navigationOrder: 131000
 difficulty: "intermediate"
 jdkVersion: "17"
 oldLabel: "Spring (XML)"
@@ -79,8 +80,6 @@ support:
   state: "available"
   description: "Widely available since Spring Boot 1.0 (April 2014); Spring Boot 3\
     \ requires Java 17+"
-prev: "enterprise/jdbc-resultset-vs-jpa-criteria"
-next: "enterprise/jdbc-vs-jooq"
 related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jndi-lookup-vs-cdi-injection"

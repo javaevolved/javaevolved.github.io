@@ -1,0 +1,10 @@
+text: |-
+  ☕ Duration and Period
+  
+  Calculate time differences with type-safe Duration and Period.
+  
+  Millisecond Math → Duration / Period (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/datetime/duration-and-period.html
+  
+  #Java #JavaEvolved

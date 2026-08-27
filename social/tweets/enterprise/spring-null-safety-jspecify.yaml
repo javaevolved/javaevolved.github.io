@@ -1,0 +1,10 @@
+text: |-
+  ☕ Spring Null Safety with JSpecify
+  
+  Spring 7 adopts JSpecify annotations, making non-null the default and reducing annota…
+  
+  Spring @NonNull/@Nullable → JSpecify @NullMarked (JDK 17+)
+  
+  🔗 https://javaevolved.github.io/enterprise/spring-null-safety-jspecify.html
+  
+  #Java #JavaEvolved

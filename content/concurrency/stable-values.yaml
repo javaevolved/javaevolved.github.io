@@ -3,6 +3,7 @@ id: f26967f9-4e25-452a-b727-17e98f62f9cc
 slug: "stable-values"
 title: "Stable values"
 category: "concurrency"
+navigationOrder: 62000
 difficulty: "advanced"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -44,8 +45,6 @@ whyModernWins:
 support:
   state: "preview"
   description: "Preview in JDK 25 (JEP 502). Requires --enable-preview."
-prev: "concurrency/scoped-values"
-next: "concurrency/completablefuture-chaining"
 related:
 - "concurrency/virtual-threads"
 - "concurrency/structured-concurrency"

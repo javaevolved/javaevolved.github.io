@@ -1,0 +1,10 @@
+text: |-
+  ☕ EJB Timer vs Jakarta Scheduler
+  
+  Replace heavyweight EJB timers with Jakarta Concurrency's ManagedScheduledExecutor…
+  
+  EJB TimerService → ManagedScheduledExecutorService (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/ejb-timer-vs-jakarta-scheduler.html
+  
+  #Java #JavaEvolved

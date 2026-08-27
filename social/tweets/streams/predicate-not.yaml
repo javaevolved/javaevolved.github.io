@@ -1,0 +1,10 @@
+text: |-
+  ☕ Predicate.not() for negation
+  
+  Use Predicate.not() to negate method references cleanly instead of writing lambda wrappers.
+  
+  Lambda negation → Predicate.not() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/streams/predicate-not.html
+  
+  #Java #JavaEvolved

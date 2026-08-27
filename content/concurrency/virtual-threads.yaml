@@ -3,6 +3,7 @@ id: 9f4e06bf-c694-49b3-a40b-7a0aef7a5df8
 slug: "virtual-threads"
 title: "Virtual threads"
 category: "concurrency"
+navigationOrder: 59000
 difficulty: "beginner"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "streams/optional-or"
-next: "concurrency/structured-concurrency"
 related:
 - "concurrency/thread-sleep-duration"
 - "concurrency/scoped-values"

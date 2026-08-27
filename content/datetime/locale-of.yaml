@@ -3,6 +3,7 @@ id: 361b53ba-ec9d-45a1-95e5-8c4b3aa7731a
 slug: "locale-of"
 title: "Locale constructors to Locale.of()"
 category: "datetime"
+navigationOrder: 99000
 difficulty: "beginner"
 jdkVersion: "19"
 oldLabel: "Deprecated constructor"
@@ -31,8 +32,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 19 (September 2022)"
-prev: "datetime/hex-format"
-next: "security/pem-encoding"
 related:
 - "datetime/date-formatting"
 - "datetime/java-time-basics"

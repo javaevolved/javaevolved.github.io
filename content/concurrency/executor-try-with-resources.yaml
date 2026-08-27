@@ -3,6 +3,7 @@ id: 504dc724-f73d-4b16-8be0-41098927b23a
 slug: "executor-try-with-resources"
 title: "ExecutorService auto-close"
 category: "concurrency"
+navigationOrder: 64000
 difficulty: "beginner"
 jdkVersion: "19"
 oldLabel: "Java 8"
@@ -42,8 +43,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 19 (Sept 2022)"
-prev: "concurrency/completablefuture-chaining"
-next: "concurrency/thread-sleep-duration"
 related:
 - "concurrency/completablefuture-chaining"
 - "concurrency/virtual-threads"

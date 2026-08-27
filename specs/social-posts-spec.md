@@ -5,9 +5,9 @@ Post one pattern twice a week to X/Twitter, covering all 113+ patterns. Fully au
 
 ## Approach
 Use a **GitHub Actions scheduled workflow** that:
-1. Reads a pre-shuffled queue file (`social/queue.txt`) listing all pattern keys
+1. Reconciles a pre-shuffled pending queue (`social/queue.txt`)
 2. Each Monday and Thursday, picks the next unposted pattern, posts to X/Twitter
-3. Commits the updated state back to the repo to track progress
+3. Removes the posted entry and records it in `social/state.yaml`
 4. When all patterns are exhausted, reshuffles and starts over
 
 ### Why a queue file?
@@ -16,7 +16,7 @@ Use a **GitHub Actions scheduled workflow** that:
 - Auditable: git history shows what was posted when
 
 ### Pre-drafted tweets
-All tweet copy is pre-generated into `social/tweets.yaml` so it can be reviewed and edited before posting. The queue generator builds tweets from content YAML fields and validates they fit within 280 characters.
+Each tweet is stored in `social/tweets/{category}/{slug}.yaml` so pattern pull requests edit only their own draft. The queue generator builds a draft from content fields and validates it fits within 280 characters.
 
 ## Post Format
 ```
@@ -36,21 +36,21 @@ All tweet copy is pre-generated into `social/tweets.yaml` so it can be reviewed 
 ### 1. Queue & Tweet Generator
 **File:** `html-generators/generatesocialqueue.java`
 
-JBang script that reads all content files, shuffles them, and writes:
-- `social/queue.txt` — one `category/slug` per line (posting order)
-- `social/tweets.yaml` — pre-drafted tweet text for each pattern, keyed by `category/slug`
-- `social/state.yaml` — posting state (`currentIndex`, `lastPostedKey`, `lastTweetId`, `lastPostedAt`)
+JBang script with three modes:
+- Default — reconcile `social/queue.txt`, preserving pending order, pruning deleted patterns, and appending new patterns.
+- `--file content/{category}/{slug}.yaml` — generate that pattern's `social/tweets/{category}/{slug}.yaml` draft.
+- `--reshuffle` — start a fresh cycle containing every pattern.
 
-On re-run: detects new patterns (appends to end), prunes deleted patterns, preserves existing order and manual tweet edits. Use `--reshuffle` to force a full reshuffle.
+`social/state.yaml` tracks `postedKeys` for the current cycle plus the last successful post metadata. A new cycle starts automatically after the pending queue is exhausted.
 
 ### 2. Post Script
 **File:** `html-generators/socialpost.java`
 
 JBang script that:
-- Reads state from `social/state.yaml`
-- Looks up the pre-drafted tweet text from `social/tweets.yaml`
+- Reads the first entry from the pending queue
+- Looks up its pre-drafted text under `social/tweets/{category}/`
 - Posts to X/Twitter via API v2 (OAuth 1.0a with HMAC-SHA1 signing)
-- Updates state only after confirmed API success
+- Adds the key to `postedKeys` and removes it from the pending queue only after confirmed API success
 - Supports `--dry-run` to preview without posting
 
 ### 3. GitHub Actions Workflow
@@ -59,7 +59,7 @@ JBang script that:
 - Schedule: every Monday and Thursday at 14:00 UTC (10 AM ET)
 - Manual dispatch support (`workflow_dispatch`)
 - Concurrency group prevents double-posts
-- Commits updated state back to repo
+- Reconciles the queue before posting and commits updated queue/state back to the repo
 
 ## Required GitHub Secrets
 | Secret | Purpose |
@@ -72,11 +72,11 @@ JBang script that:
 ## Design Decisions
 - **Twitter/X only** — Bluesky support can be added later
 - **Text-only posts** with URL — platform unfurls the OG card automatically from `og:image` meta tags
-- **Pre-drafted tweets** — generated into `social/tweets.yaml` for review; editable before posting
+- **Pre-drafted tweets** — one reviewable file per pattern, preventing aggregate-file merge conflicts
 - **Random order** via pre-shuffled queue for variety across categories
 - **Reshuffles** when all patterns are exhausted
 - **JBang/Java for posting** — consistent with the rest of the project; safer for OAuth 1.0a signing than shell
-- **State tracked** via `social/state.yaml` with `currentIndex`, `lastPostedKey`, `lastTweetId`, `lastPostedAt`
+- **State tracked** via `social/state.yaml` with `postedKeys`, `lastPostedKey`, `lastTweetId`, `lastPostedAt`
 - **Social files in `social/`** (not `content/`) to avoid triggering site deploys
-- **New patterns** appended to end of queue on re-run; deleted patterns pruned
+- **New patterns** appended to the pending queue by serialized automation; deleted pending patterns pruned
 - **Tweet length validation** — generator truncates summaries to fit 280 chars

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Unnamed variables with _
+  
+  Use _ to signal intent when a variable is intentionally unused.
+  
+  Unused Variable → _ Placeholder (JDK 22+)
+  
+  🔗 https://javaevolved.github.io/language/unnamed-variables.html
+  
+  #Java #JavaEvolved

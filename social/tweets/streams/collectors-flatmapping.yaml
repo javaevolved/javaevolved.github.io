@@ -1,0 +1,10 @@
+text: |-
+  ☕ Collectors.flatMapping()
+  
+  Use flatMapping() to flatten inside a grouping collector.
+  
+  Nested flatMap → flatMapping() (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/streams/collectors-flatmapping.html
+  
+  #Java #JavaEvolved

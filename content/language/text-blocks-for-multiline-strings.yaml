@@ -3,6 +3,7 @@ id: fb6fa907-c2f1-4265-bac7-4eb5370afe23
 slug: "text-blocks-for-multiline-strings"
 title: "Text blocks for multiline strings"
 category: "language"
+navigationOrder: 2000
 difficulty: "beginner"
 jdkVersion: "15"
 oldLabel: "Java 8"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 15 (Sept 2020)"
-prev: "language/type-inference-with-var"
-next: "language/switch-expressions"
 related:
 - "language/switch-expressions"
 - "language/pattern-matching-instanceof"

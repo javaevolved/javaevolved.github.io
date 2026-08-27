@@ -3,6 +3,7 @@ id: d54a4e9f-74b9-4579-84a3-2541fe7b4272
 slug: "legacy-synchronized-collections"
 title: "Legacy synchronized collections to modern alternatives"
 category: "collections"
+navigationOrder: 36000
 difficulty: "intermediate"
 jdkVersion: "5"
 oldLabel: "Legacy synchronized collection"
@@ -32,8 +33,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 5 (September 2004)"
-prev: "collections/unmodifiable-collectors"
-next: "collections/map-compute-and-merge"
 related:
 - "collections/immutable-map-creation"
 - "collections/copying-collections-immutably"

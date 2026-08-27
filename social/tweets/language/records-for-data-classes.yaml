@@ -1,0 +1,10 @@
+text: |-
+  ☕ Records for data classes
+  
+  One line replaces 30+ lines of boilerplate for immutable data carriers.
+  
+  Verbose POJO → record (JDK 16+)
+  
+  🔗 https://javaevolved.github.io/language/records-for-data-classes.html
+  
+  #Java #JavaEvolved

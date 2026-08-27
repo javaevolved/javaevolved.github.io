@@ -1,0 +1,10 @@
+text: |-
+  ☕ Math.clamp()
+  
+  Clamp a value between bounds with a single clear call.
+  
+  Nested min/max → Math.clamp() (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/datetime/math-clamp.html
+  
+  #Java #JavaEvolved

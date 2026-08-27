@@ -10,8 +10,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 static final Path CONTENT_DIR = Path.of("content");
 static final Path LOCALES_FILE = Path.of("html-generators/locales.properties");
-static final Path QUEUE_FILE = Path.of("social/queue.txt");
-static final Path TWEETS_FILE = Path.of("social/tweets.yaml");
+static final Path TWEETS_DIR = Path.of("social/tweets");
 static final ObjectMapper YAML = new ObjectMapper(new YAMLFactory());
 static final ObjectMapper JSON = new ObjectMapper();
 static final Set<String> CONTENT_EXTENSIONS = Set.of("yaml", "yml", "json");
@@ -23,23 +22,13 @@ static final Set<String> BENEFIT_FIELDS = Set.of("icon", "title", "desc");
 
 void main(String... args) throws Exception {
     var files = parseFiles(args);
-    if (files.isEmpty()) {
-        IO.println("No added patterns to validate.");
-        return;
-    }
-
     var errors = new ArrayList<String>();
     var allPatterns = loadPatterns(errors);
     var locales = loadLocales();
-    var queue = Files.readAllLines(QUEUE_FILE).stream()
-        .map(String::strip)
-        .filter(line -> !line.isEmpty())
-        .toList();
-    var tweetLines = Files.readAllLines(TWEETS_FILE);
-    var tweets = YAML.readTree(TWEETS_FILE.toFile());
+    validateSocialDrafts(allPatterns, errors);
 
     for (var file : files) {
-        validatePattern(file, allPatterns, locales, queue, tweetLines, tweets, errors);
+        validatePattern(file, allPatterns, locales, errors);
     }
 
     if (!errors.isEmpty()) {
@@ -47,7 +36,8 @@ void main(String... args) throws Exception {
         errors.forEach(error -> System.err.println("  - " + error));
         throw new IllegalStateException(errors.size() + " validation error(s)");
     }
-    IO.println("Validated %d new pattern(s).".formatted(files.size()));
+    IO.println("Validated %d new pattern(s) and %d social draft(s)."
+        .formatted(files.size(), allPatterns.size()));
 }
 
 List<Path> parseFiles(String[] args) throws Exception {
@@ -133,7 +123,6 @@ List<String> loadLocales() throws IOException {
 }
 
 void validatePattern(Path file, Map<String, JsonNode> allPatterns, List<String> locales,
-                     List<String> queue, List<String> tweetLines, JsonNode tweets,
                      List<String> errors) throws IOException {
     if (!Files.isRegularFile(file)) {
         errors.add("added pattern file is missing: " + file);
@@ -155,9 +144,8 @@ void validatePattern(Path file, Map<String, JsonNode> allPatterns, List<String> 
 
     validateProof(file, category, slug, errors);
     validateTranslations(category, slug, locales, errors);
-    validateNavigation(key, node, allPatterns, errors);
+    validateNavigationOrder(key, node, errors);
     validateRelated(key, node, allPatterns, errors);
-    validateSocial(key, queue, tweetLines, tweets, errors);
 }
 
 String extension(Path file) {
@@ -238,57 +226,14 @@ void validateTranslation(String locale, Path file, List<String> errors) throws I
     }
 }
 
-void validateNavigation(String key, JsonNode node, Map<String, JsonNode> allPatterns,
-                        List<String> errors) {
-    var impacted = new LinkedHashSet<String>();
-    impacted.add(key);
-    Optional.ofNullable(text(node, "prev")).ifPresent(impacted::add);
-    Optional.ofNullable(text(node, "next")).ifPresent(impacted::add);
-
-    for (var entry : allPatterns.entrySet()) {
-        var candidate = entry.getValue();
-        if (impacted.contains(entry.getKey())
-                || impacted.contains(text(candidate, "prev"))
-                || impacted.contains(text(candidate, "next"))) {
-            validateNavigationNode(entry.getKey(), candidate, allPatterns, errors);
-        }
+void validateNavigationOrder(String key, JsonNode node, List<String> errors) {
+    if (node.has("prev") || node.has("next")) {
+        errors.add(key + " must not define legacy prev or next fields");
     }
-}
-
-void validateNavigationNode(String key, JsonNode node, Map<String, JsonNode> allPatterns,
-                            List<String> errors) {
-    var previous = text(node, "prev");
-    var next = text(node, "next");
-    if (node.get("prev") == null || node.get("next") == null) {
-        errors.add(key + " must define both prev and next fields; use null at a chain endpoint");
-        return;
-    }
-    if (previous == null && next == null && allPatterns.size() > 1) {
-        errors.add(key + " cannot be disconnected from the navigation chain");
-    }
-    if (previous != null && previous.equals(next)) {
-        errors.add(key + " prev and next must reference different patterns");
-    }
-    for (var direction : List.of("prev", "next")) {
-        if (node.get(direction).isNull()) continue;
-        var targetKey = text(node, direction);
-        if (targetKey == null) {
-            errors.add(key + " " + direction + " must be a pattern key or null");
-            continue;
-        }
-        if (targetKey.equals(key)) {
-            errors.add(key + " " + direction + " must not reference itself");
-            continue;
-        }
-        var target = allPatterns.get(targetKey);
-        if (target == null) {
-            errors.add(key + " " + direction + " target does not exist: " + targetKey);
-            continue;
-        }
-        var reciprocal = direction.equals("prev") ? "next" : "prev";
-        if (!key.equals(text(target, reciprocal))) {
-            errors.add(targetKey + " must set " + reciprocal + " to " + key);
-        }
+    var order = node.get("navigationOrder");
+    if (order == null || !order.isIntegralNumber()
+            || !order.canConvertToInt() || order.intValue() < 0) {
+        errors.add(key + " must define a non-negative integer navigationOrder");
     }
 }
 
@@ -313,21 +258,46 @@ void validateRelated(String key, JsonNode node, Map<String, JsonNode> allPattern
     }
 }
 
-void validateSocial(String key, List<String> queue, List<String> tweetLines,
-                    JsonNode tweets, List<String> errors) {
-    var queueCount = queue.stream().filter(key::equals).count();
-    if (queueCount != 1) {
-        errors.add(key + " must appear exactly once in social/queue.txt (found " + queueCount + ")");
+void validateSocialDrafts(Map<String, JsonNode> allPatterns, List<String> errors)
+        throws IOException {
+    for (var key : allPatterns.keySet()) {
+        var parts = key.split("/", 2);
+        validateSocial(parts[0], parts[1], errors);
     }
-    var tweetCount = tweetLines.stream().filter(line -> line.equals(key + ": |-")).count();
-    if (tweetCount != 1) {
-        errors.add(key + " must appear exactly once in social/tweets.yaml (found " + tweetCount + ")");
+    if (!Files.isDirectory(TWEETS_DIR)) return;
+    try (var files = Files.walk(TWEETS_DIR)) {
+        for (var path : files.filter(Files::isRegularFile).toList()) {
+            var relative = TWEETS_DIR.relativize(path);
+            if (relative.getNameCount() != 2 || !path.getFileName().toString().endsWith(".yaml")) {
+                errors.add("unexpected social draft path: " + path);
+                continue;
+            }
+            var slug = path.getFileName().toString().replaceFirst("\\.yaml$", "");
+            var key = relative.getName(0) + "/" + slug;
+            if (!allPatterns.containsKey(key)) {
+                errors.add("social draft has no matching pattern: " + path);
+            }
+        }
     }
-    var tweet = tweets.get(key);
+}
+
+void validateSocial(String category, String slug, List<String> errors) throws IOException {
+    var path = TWEETS_DIR.resolve(category).resolve(slug + ".yaml");
+    if (!Files.isRegularFile(path, LinkOption.NOFOLLOW_LINKS)) {
+        errors.add("missing tweet draft: " + path);
+        return;
+    }
+    var draft = YAML.readTree(path.toFile());
+    var fields = new LinkedHashSet<String>();
+    draft.fieldNames().forEachRemaining(fields::add);
+    if (!fields.equals(Set.of("text"))) {
+        errors.add(path + " must contain only the text field");
+    }
+    var tweet = draft.get("text");
     if (tweet == null || !tweet.isTextual() || tweet.asText().isBlank()) {
-        errors.add("missing tweet for " + key + " in social/tweets.yaml");
+        errors.add(path + " must define non-empty text");
     } else if (tweet.asText().length() > 280) {
-        errors.add("tweet for " + key + " exceeds 280 characters");
+        errors.add(path + " exceeds 280 characters");
     }
 }
 

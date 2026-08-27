@@ -3,6 +3,7 @@ id: 96fc59e8-7ac1-429b-8195-2aa6003e757b
 slug: "scoped-values"
 title: "Scoped values"
 category: "concurrency"
+navigationOrder: 61000
 difficulty: "advanced"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -42,8 +43,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 25 LTS (JEP 506, Sept 2025)."
-prev: "concurrency/structured-concurrency"
-next: "concurrency/stable-values"
 related:
 - "concurrency/virtual-threads"
 - "concurrency/structured-concurrency"

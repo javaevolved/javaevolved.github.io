@@ -1,0 +1,10 @@
+text: |-
+  ☕ Sealed classes for type hierarchies
+  
+  Restrict which classes can extend a type — enabling exhaustive switches.
+  
+  Open Hierarchy → sealed permits (JDK 17+)
+  
+  🔗 https://javaevolved.github.io/language/sealed-classes.html
+  
+  #Java #JavaEvolved

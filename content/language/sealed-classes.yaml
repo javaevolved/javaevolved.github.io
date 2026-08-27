@@ -3,6 +3,7 @@ id: 89fe2c46-7b17-4a79-94ec-f3d6dc72c1ed
 slug: "sealed-classes"
 title: "Sealed classes for type hierarchies"
 category: "language"
+navigationOrder: 6000
 difficulty: "intermediate"
 jdkVersion: "17"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 17 LTS (Sept 2021)"
-prev: "language/records-for-data-classes"
-next: "language/record-patterns"
 related:
 - "language/switch-expressions"
 - "language/module-import-declarations"

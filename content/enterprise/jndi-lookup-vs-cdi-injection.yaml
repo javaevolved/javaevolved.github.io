@@ -3,6 +3,7 @@ id: 54b095f1-9ca0-4d08-b151-dcecfac87c31
 slug: "jndi-lookup-vs-cdi-injection"
 title: "JNDI Lookup vs CDI Injection"
 category: "enterprise"
+navigationOrder: 124000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -62,8 +63,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since Jakarta EE 8 / Java 11"
-prev: "enterprise/ejb-timer-vs-jakarta-scheduler"
-next: "enterprise/manual-transaction-vs-declarative"
 related:
 - "enterprise/ejb-vs-cdi"
 - "enterprise/jdbc-vs-jpa"

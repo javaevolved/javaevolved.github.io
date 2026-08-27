@@ -25,7 +25,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
 
 static final String SOCIAL_DIR = "social";
 static final String QUEUE_FILE = SOCIAL_DIR + "/queue.txt";
-static final String TWEETS_FILE = SOCIAL_DIR + "/tweets.yaml";
+static final String TWEETS_DIR = SOCIAL_DIR + "/tweets";
 static final String STATE_FILE = SOCIAL_DIR + "/state.yaml";
 static final String TWITTER_API_URL = "https://api.twitter.com/2/tweets";
 
@@ -40,30 +40,18 @@ static final ObjectMapper JSON_MAPPER = new ObjectMapper();
 void main(String... args) throws Exception {
     boolean dryRun = List.of(args).contains("--dry-run");
 
-    // 1. Load queue, tweets, state
-    var queue = loadQueue();
-    var tweets = loadTweets();
+    // 1. Load pending queue and state
+    var queue = new ArrayList<>(loadQueue());
     var state = loadState();
+    var posted = new ArrayList<>(loadPostedKeys(state));
+    System.out.println("Queue has " + queue.size() + " pending entries");
 
-    int currentIndex = ((Number) state.get("currentIndex")).intValue();
-    System.out.println("Queue has " + queue.size() + " entries, current index: " + currentIndex);
-
-    // 2. Check if queue is exhausted
-    if (currentIndex > queue.size()) {
-        System.out.println("Queue exhausted — reshuffle needed.");
-        System.out.println("Run: jbang html-generators/generatesocialqueue.java --reshuffle");
-        System.exit(1);
+    // 2. Get the first pending pattern and its draft
+    var key = queue.getFirst();
+    if (posted.contains(key)) {
+        throw new IllegalStateException("Pending pattern is already marked posted: " + key);
     }
-
-    // 3. Get the current pattern key and tweet text
-    var key = queue.get(currentIndex - 1); // 1-based index
-    var tweetText = tweets.get(key);
-
-    if (tweetText == null) {
-        System.err.println("ERROR: No tweet text found for key: " + key);
-        System.err.println("Regenerate tweets: jbang html-generators/generatesocialqueue.java");
-        System.exit(1);
-    }
+    var tweetText = loadTweet(key);
 
     System.out.println("Pattern: " + key);
     System.out.println("Tweet (" + tweetText.length() + " chars):");
@@ -86,13 +74,17 @@ void main(String... args) throws Exception {
     var tweetId = postTweet(tweetText, consumerKey, consumerSecret, accessToken, accessTokenSecret);
     System.out.println("Posted! Tweet ID: " + tweetId);
 
-    // 6. Update state only after success
-    state.put("currentIndex", currentIndex + 1);
+    // 6. Record success before removing the pending entry. If the queue write
+    // fails, reconciliation will remove the posted key before the next run.
+    posted.add(key);
     state.put("lastPostedKey", key);
     state.put("lastTweetId", tweetId);
     state.put("lastPostedAt", java.time.Instant.now().toString());
+    state.put("postedKeys", posted);
     YAML_WRITER.writerWithDefaultPrettyPrinter().writeValue(Path.of(STATE_FILE).toFile(), state);
-    System.out.println("State updated: index now " + (currentIndex + 1));
+    queue.removeFirst();
+    Files.writeString(Path.of(QUEUE_FILE), String.join("\n", queue) + "\n");
+    System.out.println("State updated: " + queue.size() + " pending entries remain");
 }
 
 // --- Twitter API v2 with OAuth 1.0a ---
@@ -186,14 +178,37 @@ List<String> loadQueue() throws Exception {
     return lines;
 }
 
-@SuppressWarnings("unchecked")
-Map<String, String> loadTweets() throws Exception {
-    return YAML_MAPPER.readValue(Path.of(TWEETS_FILE).toFile(), LinkedHashMap.class);
+String loadTweet(String key) throws Exception {
+    var parts = key.split("/", 2);
+    if (parts.length != 2) {
+        throw new IllegalArgumentException("Invalid pattern key in queue: " + key);
+    }
+    var path = Path.of(TWEETS_DIR, parts[0], parts[1] + ".yaml");
+    if (!Files.isRegularFile(path)) {
+        throw new IllegalStateException("Missing tweet draft: " + path);
+    }
+    var text = YAML_MAPPER.readTree(path.toFile()).path("text");
+    if (!text.isTextual() || text.asText().isBlank()) {
+        throw new IllegalStateException(path + " must define non-empty text");
+    }
+    if (text.asText().length() > 280) {
+        throw new IllegalStateException(path + " exceeds 280 characters");
+    }
+    return text.asText();
 }
 
 @SuppressWarnings("unchecked")
 Map<String, Object> loadState() throws Exception {
     return YAML_MAPPER.readValue(Path.of(STATE_FILE).toFile(), LinkedHashMap.class);
+}
+
+List<String> loadPostedKeys(Map<String, Object> state) {
+    var value = state.get("postedKeys");
+    if (!(value instanceof List<?> values)
+            || values.stream().anyMatch(item -> !(item instanceof String))) {
+        throw new IllegalArgumentException("social/state.yaml postedKeys must be a string list");
+    }
+    return values.stream().map(String.class::cast).toList();
 }
 
 String requireEnv(String name) {

@@ -3,6 +3,7 @@ id: 8369861b-2035-450c-b9c7-e882b1e0fc14
 slug: "compact-object-headers"
 title: "Compact object headers"
 category: "tooling"
+navigationOrder: 112000
 difficulty: "advanced"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 25 LTS (JEP 519, Sept 2025)."
-prev: "tooling/stack-walker"
-next: "tooling/built-in-http-server"
 related:
 - "tooling/jshell-prototyping"
 - "tooling/single-file-execution"

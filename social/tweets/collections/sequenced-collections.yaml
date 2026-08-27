@@ -1,0 +1,10 @@
+text: |-
+  ☕ Sequenced collections
+  
+  Access first/last elements and reverse views with clean API methods.
+  
+  Index Arithmetic → getFirst/getLast (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/collections/sequenced-collections.html
+  
+  #Java #JavaEvolved

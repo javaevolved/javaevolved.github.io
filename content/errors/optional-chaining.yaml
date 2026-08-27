@@ -3,6 +3,7 @@ id: 1daf2b09-44c9-4f4d-aa61-de99c038d9e8
 slug: "optional-chaining"
 title: "Optional chaining"
 category: "errors"
+navigationOrder: 87000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 8+ (improved in 9+)"
-prev: "errors/helpful-npe"
-next: "errors/require-nonnull-else"
 related:
 - "errors/helpful-npe"
 - "errors/multi-catch"

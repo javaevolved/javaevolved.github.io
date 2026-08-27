@@ -3,6 +3,7 @@ id: eeace38f-2b4d-441b-b7ee-92b6a5d2658c
 slug: "record-patterns"
 title: "Record patterns (destructuring)"
 category: "language"
+navigationOrder: 7000
 difficulty: "intermediate"
 jdkVersion: "21"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 21 LTS (Sept 2023)"
-prev: "language/sealed-classes"
-next: "language/unnamed-variables"
 related:
 - "language/diamond-operator"
 - "language/records-for-data-classes"

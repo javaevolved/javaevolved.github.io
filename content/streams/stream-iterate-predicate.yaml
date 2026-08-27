@@ -3,6 +3,7 @@ id: 963d295f-188b-45b8-9fbb-c64cbc36958c
 slug: "stream-iterate-predicate"
 title: "Stream.iterate() with predicate"
 category: "streams"
+navigationOrder: 49000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "streams/stream-of-nullable"
-next: "streams/stream-takewhile-dropwhile"
 related:
 - "streams/virtual-thread-executor"
 - "streams/optional-or"

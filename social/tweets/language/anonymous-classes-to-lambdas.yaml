@@ -1,0 +1,10 @@
+text: |-
+  ☕ Anonymous classes to lambdas and method references
+  
+  Replace single-method anonymous classes with concise lambdas and method references.
+  
+  Anonymous class → Method reference (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/language/anonymous-classes-to-lambdas.html
+  
+  #Java #JavaEvolved

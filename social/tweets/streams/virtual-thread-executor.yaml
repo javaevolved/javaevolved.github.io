@@ -1,0 +1,10 @@
+text: |-
+  ☕ Virtual thread executor
+  
+  Use virtual thread executors for unlimited lightweight concurrency.
+  
+  Fixed Thread Pool → Virtual Thread Executor (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/streams/virtual-thread-executor.html
+  
+  #Java #JavaEvolved

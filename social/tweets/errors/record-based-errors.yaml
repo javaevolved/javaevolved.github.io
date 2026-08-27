@@ -1,0 +1,10 @@
+text: |-
+  ☕ Record-based error responses
+  
+  Use records for concise, immutable error response types.
+  
+  Map or Verbose Class → Error Records (JDK 16+)
+  
+  🔗 https://javaevolved.github.io/errors/record-based-errors.html
+  
+  #Java #JavaEvolved

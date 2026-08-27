@@ -3,6 +3,7 @@ id: 1abbda8c-c7e3-42d1-874e-978403c51325
 slug: "completablefuture-chaining"
 title: "CompletableFuture chaining"
 category: "concurrency"
+navigationOrder: 63000
 difficulty: "intermediate"
 jdkVersion: "8"
 oldLabel: "Pre-Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 8 (March 2014)"
-prev: "concurrency/stable-values"
-next: "concurrency/executor-try-with-resources"
 related:
 - "concurrency/stable-values"
 - "concurrency/scoped-values"

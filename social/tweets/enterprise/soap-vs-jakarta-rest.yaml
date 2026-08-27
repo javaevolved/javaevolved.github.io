@@ -1,0 +1,10 @@
+text: |-
+  ☕ SOAP Web Services vs Jakarta REST
+  
+  Replace heavyweight SOAP/WSDL endpoints with clean Jakarta REST resources returning JSON.
+  
+  JAX-WS / SOAP → Jakarta REST / JSON (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/soap-vs-jakarta-rest.html
+  
+  #Java #JavaEvolved

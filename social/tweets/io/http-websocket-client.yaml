@@ -1,0 +1,10 @@
+text: |-
+  ☕ WebSocket clients with java.net.http
+  
+  Use the standard asynchronous WebSocket client instead of adding a third-party dependency.
+  
+  Third-party WebSocket client → java.net.http.WebSocket (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/io/http-websocket-client.html
+  
+  #Java #JavaEvolved

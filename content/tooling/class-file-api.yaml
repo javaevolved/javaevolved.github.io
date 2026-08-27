@@ -3,6 +3,7 @@ id: 25fec0a0-53ed-4b30-b30c-6f5a80feb1c2
 slug: "class-file-api"
 title: "Class-file parsing with the standard API"
 category: "tooling"
+navigationOrder: 114000
 difficulty: "advanced"
 jdkVersion: "24"
 oldLabel: "Third-party bytecode parser"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Finalized in JDK 24 (JEP 484, March 2025)."
-prev: "tooling/built-in-http-server"
-next: "tooling/aot-class-preloading"
 related:
 - "tooling/aot-class-preloading"
 - "tooling/compact-object-headers"

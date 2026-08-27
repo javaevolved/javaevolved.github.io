@@ -1,0 +1,10 @@
+text: |-
+  ☕ Diamond with anonymous classes
+  
+  Diamond operator now works with anonymous classes too.
+  
+  Repeat Type Args → Diamond <> (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/language/diamond-operator.html
+  
+  #Java #JavaEvolved

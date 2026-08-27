@@ -3,6 +3,7 @@ id: fe4cbd51-2be6-4d7b-86c5-0ce82ce9bf10
 slug: "map-compute-and-merge"
 title: "Atomic map updates with compute and merge"
 category: "collections"
+navigationOrder: 37000
 difficulty: "intermediate"
 jdkVersion: "8"
 oldLabel: "Manual lookup and update"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 8 (March 2014)"
-prev: "collections/legacy-synchronized-collections"
-next: "strings/string-isblank"
 related:
 - "collections/legacy-synchronized-collections"
 - "collections/immutable-map-creation"

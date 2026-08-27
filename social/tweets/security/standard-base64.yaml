@@ -1,0 +1,10 @@
+text: |-
+  ☕ Standard Base64 encoding and decoding
+  
+  Use java.util.Base64 instead of internal JDK classes or third-party codecs.
+  
+  sun.misc encoder → Standard Base64 API (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/security/standard-base64.html
+  
+  #Java #JavaEvolved

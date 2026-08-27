@@ -3,6 +3,7 @@ id: 1cda30b5-de48-4167-bfb0-8021e259b181
 slug: "require-nonnull-else"
 title: "Objects.requireNonNullElse()"
 category: "errors"
+navigationOrder: 88000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -36,8 +37,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "errors/optional-chaining"
-next: "errors/multi-catch"
 related:
 - "errors/helpful-npe"
 - "errors/record-based-errors"

@@ -247,7 +247,7 @@ Every field in a slug definition file falls into one of three categories:
 | Category | Fields | Rule |
 |---|---|---|
 | **Translate** (include in translation file) | `title`, `summary`, `explanation`, `oldApproach`, `modernApproach`, `whyModernWins` (full array), `support.description` | These are the **only** fields present in a translation file |
-| **English source of truth** (never in translation file) | `id`, `slug`, `category`, `difficulty`, `jdkVersion`, `oldLabel`, `modernLabel`, `oldCode`, `modernCode`, `prev`, `next`, `related`, `docs` | Always taken from the English content file; any values in the translation file are ignored |
+| **English source of truth** (never in translation file) | `id`, `slug`, `category`, `navigationOrder`, `difficulty`, `jdkVersion`, `oldLabel`, `modernLabel`, `oldCode`, `modernCode`, `related`, `docs` | Always taken from the English content file; any values in the translation file are ignored |
 | **Translated via UI strings** | `difficulty`, `support.state` | Enum values stay in English; display names resolved from `translations/strings/{locale}.yaml` at build time |
 
 **Why enum fields use UI strings instead of content translation:**
@@ -479,7 +479,7 @@ New English slug  →  AI prompt  →  Translated YAML file  →  Schema validat
    - whyModernWins (full array with icon, title, desc)
    - support.description (inside a "support" object)
    Do NOT include: slug, id, category, difficulty, jdkVersion, oldLabel,
-   modernLabel, oldCode, modernCode, docs, related, prev, next, support.state.
+   modernLabel, oldCode, modernCode, docs, related, navigationOrder, support.state.
    Return valid YAML only.
    ```
    See the **Field Translation Reference** table above for the full rationale.

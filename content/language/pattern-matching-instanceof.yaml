@@ -3,6 +3,7 @@ id: a3a86fc1-adb0-4715-9847-11e68efa117f
 slug: "pattern-matching-instanceof"
 title: "Pattern matching for instanceof"
 category: "language"
+navigationOrder: 4000
 difficulty: "beginner"
 jdkVersion: "16"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 16 (March 2021)"
-prev: "language/switch-expressions"
-next: "language/records-for-data-classes"
 related:
 - "language/compact-source-files"
 - "language/type-inference-with-var"

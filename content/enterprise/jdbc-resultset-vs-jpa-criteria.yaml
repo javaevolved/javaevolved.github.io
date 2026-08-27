@@ -3,6 +3,7 @@ id: 70e5cbb0-d5f9-474f-b302-0e6494433bab
 slug: "jdbc-resultset-vs-jpa-criteria"
 title: "JDBC ResultSet Mapping vs JPA Criteria API"
 category: "enterprise"
+navigationOrder: 130000
 difficulty: "advanced"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -64,8 +65,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since Jakarta EE 8 / Java 11"
-prev: "enterprise/singleton-ejb-vs-cdi-application-scoped"
-next: "enterprise/spring-xml-config-vs-annotations"
 related:
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/jpa-vs-jakarta-data"

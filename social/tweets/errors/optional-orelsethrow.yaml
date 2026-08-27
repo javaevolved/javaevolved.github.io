@@ -1,0 +1,10 @@
+text: |-
+  ☕ Optional.orElseThrow() without supplier
+  
+  Use Optional.orElseThrow() as a clearer, intent-revealing alternative to get().
+  
+  get() or orElseThrow(supplier) → orElseThrow() (JDK 10+)
+  
+  🔗 https://javaevolved.github.io/errors/optional-orelsethrow.html
+  
+  #Java #JavaEvolved

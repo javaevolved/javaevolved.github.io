@@ -1,0 +1,10 @@
+text: |-
+  ☕ Modern HTTP client
+  
+  Use the built-in HttpClient for clean, modern HTTP requests.
+  
+  HttpURLConnection → HttpClient (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/io/http-client.html
+  
+  #Java #JavaEvolved

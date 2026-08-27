@@ -1,0 +1,10 @@
+text: |-
+  ☕ Static members in inner classes
+  
+  Define static members in inner classes without requiring static nested…
+  
+  Must use static nested class → Static members in inner classes (JDK 16+)
+  
+  🔗 https://javaevolved.github.io/language/static-members-in-inner-classes.html
+  
+  #Java #JavaEvolved

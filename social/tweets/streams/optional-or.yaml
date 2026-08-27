@@ -1,0 +1,10 @@
+text: |-
+  ☕ Optional.or() fallback
+  
+  Chain Optional fallbacks without nested checks.
+  
+  Nested Fallback → .or() chain (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/streams/optional-or.html
+  
+  #Java #JavaEvolved

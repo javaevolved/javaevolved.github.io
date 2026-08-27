@@ -3,6 +3,7 @@ id: aaed81eb-f945-497e-b7eb-85c0962f1fe9
 slug: "aot-class-preloading"
 title: "AOT class preloading"
 category: "tooling"
+navigationOrder: 115000
 difficulty: "advanced"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -41,8 +42,6 @@ support:
   state: "available"
   description: "Available as a standard feature in JDK 25 LTS (JEPs 514/515, Sept\
     \ 2025)."
-prev: "tooling/class-file-api"
-next: "tooling/junit6-with-jspecify"
 related:
 - "tooling/jshell-prototyping"
 - "tooling/single-file-execution"

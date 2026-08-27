@@ -1,0 +1,10 @@
+text: |-
+  ☕ Spring XML Bean Config vs Annotation-Driven
+  
+  Replace verbose Spring XML bean definitions with concise annotation-dri…
+  
+  XML Bean Definitions → Annotation-Driven Beans (JDK 17+)
+  
+  🔗 https://javaevolved.github.io/enterprise/spring-xml-config-vs-annotations.html
+  
+  #Java #JavaEvolved

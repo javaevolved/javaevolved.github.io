@@ -3,6 +3,7 @@ id: 9a27cf95-647d-49fd-a523-80ef7fdc4215
 slug: "jdbc-vs-jpa"
 title: "JDBC versus JPA"
 category: "enterprise"
+navigationOrder: 121000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -57,8 +58,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since Jakarta EE 8 / Java 11"
-prev: "enterprise/ejb-vs-cdi"
-next: "enterprise/jpa-vs-jakarta-data"
 related:
 - "enterprise/servlet-vs-jaxrs"
 - "enterprise/ejb-vs-cdi"

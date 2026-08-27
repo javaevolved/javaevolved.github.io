@@ -3,6 +3,7 @@ id: 7eafcb07-f9ed-49cb-bc68-0bf24eb9b675
 slug: "ejb-vs-cdi"
 title: "EJB versus CDI"
 category: "enterprise"
+navigationOrder: 120000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Java EE"
@@ -53,8 +54,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since Jakarta EE 8 / Java 11"
-prev: "enterprise/servlet-vs-jaxrs"
-next: "enterprise/jdbc-vs-jpa"
 related:
 - "enterprise/servlet-vs-jaxrs"
 - "enterprise/jdbc-vs-jpa"

@@ -3,6 +3,7 @@ id: a278dac4-599c-4148-96bb-4e9b9ec23b3f
 slug: "jpa-vs-jakarta-data"
 title: "JPA versus Jakarta Data"
 category: "enterprise"
+navigationOrder: 122000
 difficulty: "intermediate"
 jdkVersion: "21"
 oldLabel: "Jakarta EE 8+"
@@ -56,8 +57,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since Jakarta EE 11 / Java 21 (2024)"
-prev: "enterprise/jdbc-vs-jpa"
-next: "enterprise/ejb-timer-vs-jakarta-scheduler"
 related:
 - "enterprise/jdbc-vs-jpa"
 - "enterprise/ejb-vs-cdi"

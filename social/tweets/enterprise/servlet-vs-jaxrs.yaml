@@ -1,0 +1,10 @@
+text: |-
+  ☕ Servlet versus JAX-RS
+  
+  Replace verbose HttpServlet boilerplate with declarative JAX-RS resource classes.
+  
+  HttpServlet → JAX-RS Resource (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/enterprise/servlet-vs-jaxrs.html
+  
+  #Java #JavaEvolved

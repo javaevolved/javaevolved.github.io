@@ -3,6 +3,7 @@ id: 1e1f7ac8-24b5-4771-b26e-5ef026ca3edf
 slug: "compact-canonical-constructor"
 title: "Compact canonical constructor"
 category: "language"
+navigationOrder: 24000
 difficulty: "intermediate"
 jdkVersion: "16"
 oldLabel: "Java 16"
@@ -47,8 +48,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 16 (March 2021)"
-prev: "language/static-members-in-inner-classes"
-next: "language/call-c-from-java"
 related:
 - "language/records-for-data-classes"
 - "language/flexible-constructor-bodies"

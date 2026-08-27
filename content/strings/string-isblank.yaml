@@ -3,6 +3,7 @@ id: 72013dbb-bf60-4536-9c25-8f874a6b66b4
 slug: "string-isblank"
 title: "String.isBlank()"
 category: "strings"
+navigationOrder: 41000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -32,8 +33,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "collections/map-compute-and-merge"
-next: "strings/string-strip"
 related:
 - "strings/string-formatted"
 - "strings/string-strip"

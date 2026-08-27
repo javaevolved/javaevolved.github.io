@@ -1,0 +1,10 @@
+text: |-
+  ☕ Reading files
+  
+  Read an entire file into a String with one line.
+  
+  BufferedReader → Files.readString() (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/io/reading-files.html
+  
+  #Java #JavaEvolved

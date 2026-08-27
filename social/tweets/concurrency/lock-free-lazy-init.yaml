@@ -1,0 +1,10 @@
+text: |-
+  ☕ Lock-free lazy initialization
+  
+  Replace double-checked locking with StableValue for lazy singletons.
+  
+  synchronized + volatile → StableValue (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/concurrency/lock-free-lazy-init.html
+  
+  #Java #JavaEvolved

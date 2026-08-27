@@ -1,0 +1,10 @@
+text: |-
+  ☕ Pattern matching for instanceof
+  
+  Combine type check and cast in one step with pattern matching.
+  
+  instanceof + Cast → Pattern Variable (JDK 16+)
+  
+  🔗 https://javaevolved.github.io/language/pattern-matching-instanceof.html
+  
+  #Java #JavaEvolved

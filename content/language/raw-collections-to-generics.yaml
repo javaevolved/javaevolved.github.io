@@ -3,6 +3,7 @@ id: 81fd0ae3-6d56-412a-a085-90d87c84f6fe
 slug: "raw-collections-to-generics"
 title: "Raw collections to generic types"
 category: "language"
+navigationOrder: 12000
 difficulty: "beginner"
 jdkVersion: "5"
 oldLabel: "Java 1.4"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Generics have been available since JDK 5 (September 2004)."
-prev: "language/diamond-operator"
-next: "language/private-interface-methods"
 related:
 - "language/diamond-operator"
 - "language/type-inference-with-var"

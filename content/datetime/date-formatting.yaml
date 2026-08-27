@@ -3,6 +3,7 @@ id: 1d3de988-2e5c-44a7-8fd4-f8d589406f1b
 slug: "date-formatting"
 title: "Date formatting"
 category: "datetime"
+navigationOrder: 95000
 difficulty: "beginner"
 jdkVersion: "8"
 oldLabel: "Pre-Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 8 (March 2014)"
-prev: "datetime/duration-and-period"
-next: "datetime/instant-precision"
 related:
 - "datetime/instant-precision"
 - "datetime/java-time-basics"

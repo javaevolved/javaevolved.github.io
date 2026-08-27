@@ -1,0 +1,10 @@
+text: |-
+  ☕ PEM encoding/decoding
+  
+  Encode and decode PEM-formatted cryptographic objects natively.
+  
+  Manual Base64 + Headers → PEM API (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/security/pem-encoding.html
+  
+  #Java #JavaEvolved

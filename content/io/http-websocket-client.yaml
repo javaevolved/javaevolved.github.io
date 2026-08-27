@@ -3,6 +3,7 @@ id: "efd29a06-ffe7-4c3e-ba0f-627eee35b1a2"
 slug: "http-websocket-client"
 title: "WebSocket clients with java.net.http"
 category: "io"
+navigationOrder: 73000
 difficulty: "intermediate"
 jdkVersion: "11"
 oldLabel: "Third-party library"
@@ -48,8 +49,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (September 2018)"
-prev: "io/http-client"
-next: "io/url-constructors-to-uri"
 related:
 - "io/http-client"
 - "concurrency/completablefuture-chaining"

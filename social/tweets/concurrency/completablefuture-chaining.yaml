@@ -1,0 +1,10 @@
+text: |-
+  ☕ CompletableFuture chaining
+  
+  Chain async operations without blocking, using CompletableFuture.
+  
+  Blocking Future.get() → CompletableFuture (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/concurrency/completablefuture-chaining.html
+  
+  #Java #JavaEvolved

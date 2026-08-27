@@ -1,0 +1,10 @@
+text: |-
+  ☕ Optional.ifPresentOrElse()
+  
+  Handle both present and empty cases of Optional in one call.
+  
+  if/else on Optional → ifPresentOrElse() (JDK 9+)
+  
+  🔗 https://javaevolved.github.io/streams/optional-ifpresentorelse.html
+  
+  #Java #JavaEvolved

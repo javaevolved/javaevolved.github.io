@@ -3,6 +3,7 @@ id: 9d441016-467a-4c05-948d-aab86f1981f7
 slug: "spring-null-safety-jspecify"
 title: "Spring Null Safety with JSpecify"
 category: "enterprise"
+navigationOrder: 134000
 difficulty: "intermediate"
 jdkVersion: "17"
 oldLabel: "Spring 5/6"
@@ -76,8 +77,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since Spring Framework 7.0 (requires Java 17+)"
-prev: "enterprise/jdbc-resultset-vs-jpa-criteria"
-next: "enterprise/spring-boot-mvc-config"
 related:
 - "errors/helpful-npe"
 - "errors/optional-orelsethrow"

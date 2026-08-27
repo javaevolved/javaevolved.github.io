@@ -3,6 +3,7 @@
   "slug": "your-slug-here",
   "title": "Your Pattern Title",
   "category": "language",
+  "navigationOrder": 1000,
   "difficulty": "beginner",
   "jdkVersion": "17",
   "oldLabel": "Java 8",
@@ -34,8 +35,6 @@
     "state": "available",
     "description": "Widely available since JDK 17 (September 2021)"
   },
-  "prev": "category/previous-slug",
-  "next": "category/next-slug",
   "related": [
     "category/related-slug-1",
     "category/related-slug-2",

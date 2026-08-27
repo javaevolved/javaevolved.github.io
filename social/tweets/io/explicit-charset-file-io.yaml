@@ -1,0 +1,10 @@
+text: |-
+  ☕ Default-charset file I/O to explicit StandardCharsets
+  
+  Use Files readers and writers with StandardCharsets constants instead of…
+  
+  Platform-default charset → Explicit standard charset (JDK 7+)
+  
+  🔗 https://javaevolved.github.io/io/explicit-charset-file-io.html
+  
+  #Java #JavaEvolved

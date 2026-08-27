@@ -3,6 +3,7 @@ id: b8c1f34e-1d3d-46c7-a5bc-7279f1069537
 slug: "primitive-types-in-patterns"
 title: "Primitive types in patterns"
 category: "language"
+navigationOrder: 16000
 difficulty: "advanced"
 jdkVersion: "25"
 oldLabel: "Java 8"
@@ -45,8 +46,6 @@ whyModernWins:
 support:
   state: "preview"
   description: "Preview in JDK 25 (third preview, JEP 507). Requires --enable-preview."
-prev: "language/guarded-patterns"
-next: "language/module-import-declarations"
 related:
 - "language/type-inference-with-var"
 - "language/text-blocks-for-multiline-strings"

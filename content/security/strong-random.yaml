@@ -3,6 +3,7 @@ id: f5c9394d-eb6e-404d-a720-abe96f172179
 slug: "strong-random"
 title: "Strong random generation"
 category: "security"
+navigationOrder: 103000
 difficulty: "beginner"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "security/key-derivation-functions"
-next: "security/tls-default"
 related:
 - "security/pem-encoding"
 - "security/key-derivation-functions"

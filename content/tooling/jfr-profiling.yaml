@@ -3,6 +3,7 @@ id: b20cf15e-8d39-4e3d-be23-d91b281fb3fd
 slug: "jfr-profiling"
 title: "JFR for profiling"
 category: "tooling"
+navigationOrder: 110000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -39,8 +40,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9/11 (open-sourced in 11)"
-prev: "tooling/multi-file-source"
-next: "tooling/stack-walker"
 related:
 - "tooling/multi-file-source"
 - "tooling/jshell-prototyping"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Reverse list iteration
+  
+  Iterate over a list in reverse order with a clean for-each loop.
+  
+  Manual ListIterator → reversed() (JDK 21+)
+  
+  🔗 https://javaevolved.github.io/collections/reverse-list-iteration.html
+  
+  #Java #JavaEvolved

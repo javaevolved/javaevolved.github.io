@@ -3,6 +3,7 @@ id: 4fdd8368-8dbe-4cb4-b1de-89bb98bc47db
 slug: "string-repeat"
 title: "String.repeat()"
 category: "strings"
+navigationOrder: 43000
 difficulty: "beginner"
 jdkVersion: "11"
 oldLabel: "Java 8"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 11 (Sept 2018)"
-prev: "strings/string-strip"
-next: "strings/string-indent-transform"
 related:
 - "strings/string-isblank"
 - "strings/string-formatted"

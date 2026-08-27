@@ -3,6 +3,7 @@ id: a04b95a4-d198-4e96-ac9b-870ec57fdeb9
 slug: "collectors-teeing"
 title: "Collectors.teeing()"
 category: "collections"
+navigationOrder: 32000
 difficulty: "intermediate"
 jdkVersion: "12"
 oldLabel: "Java 8"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 12 (March 2019)"
-prev: "collections/sequenced-collections"
-next: "collections/stream-toarray-typed"
 related:
 - "collections/copying-collections-immutably"
 - "collections/unmodifiable-collectors"

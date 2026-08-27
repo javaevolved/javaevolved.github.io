@@ -3,6 +3,7 @@ id: bd626f9b-c4d8-4004-913e-4613fb958e14
 slug: "private-interface-methods"
 title: "Private interface methods"
 category: "language"
+navigationOrder: 13000
 difficulty: "intermediate"
 jdkVersion: "9"
 oldLabel: "Java 8"
@@ -49,8 +50,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 9 (Sept 2017)"
-prev: "language/raw-collections-to-generics"
-next: "language/pattern-matching-switch"
 related:
 - "language/compact-source-files"
 - "language/flexible-constructor-bodies"

@@ -3,6 +3,7 @@ id: a1ac8e52-14cf-49be-a22a-be72de7caa4e
 slug: "comparator-factories"
 title: "Comparator factories and fluent ordering"
 category: "collections"
+navigationOrder: 40000
 difficulty: "beginner"
 jdkVersion: "8"
 oldLabel: "Anonymous comparator"
@@ -35,8 +36,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Available since JDK 8 (March 2014)"
-prev: "collections/collection-bulk-operations"
-next: null
 related:
 - "collections/collection-bulk-operations"
 - "collections/reverse-list-iteration"

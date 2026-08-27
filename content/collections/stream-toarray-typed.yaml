@@ -3,6 +3,7 @@ id: 5af66a72-0bcb-4c3a-9237-678c149ccef3
 slug: "stream-toarray-typed"
 title: "Typed stream toArray"
 category: "collections"
+navigationOrder: 33000
 difficulty: "beginner"
 jdkVersion: "8"
 oldLabel: "Pre-Streams"
@@ -40,8 +41,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 8 (March 2014)"
-prev: "collections/collectors-teeing"
-next: "collections/reverse-list-iteration"
 related:
 - "collections/collectors-teeing"
 - "collections/map-entry-factory"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Single-file execution
+  
+  Run single-file Java programs directly without javac.
+  
+  Two-Step Compile → Direct Launch (JDK 11+)
+  
+  🔗 https://javaevolved.github.io/tooling/single-file-execution.html
+  
+  #Java #JavaEvolved

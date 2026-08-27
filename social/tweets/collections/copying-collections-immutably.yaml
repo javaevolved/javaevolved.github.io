@@ -1,0 +1,10 @@
+text: |-
+  ☕ Copying collections immutably
+  
+  Create an immutable copy of any collection in one call.
+  
+  Manual Copy + Wrap → List.copyOf() (JDK 10+)
+  
+  🔗 https://javaevolved.github.io/collections/copying-collections-immutably.html
+  
+  #Java #JavaEvolved

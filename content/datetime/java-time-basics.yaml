@@ -3,6 +3,7 @@ id: af22c838-38b0-430a-bcdf-a66924d38e46
 slug: "java-time-basics"
 title: "java.time API basics"
 category: "datetime"
+navigationOrder: 93000
 difficulty: "beginner"
 jdkVersion: "8"
 oldLabel: "Pre-Java 8"
@@ -38,8 +39,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 8 (March 2014)"
-prev: "errors/record-based-errors"
-next: "datetime/duration-and-period"
 related:
 - "datetime/instant-precision"
 - "datetime/duration-and-period"

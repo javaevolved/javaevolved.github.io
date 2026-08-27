@@ -141,7 +141,7 @@ static Map<String, String> loadStrings(String locale) throws IOException {
     return merged;
 }
 
-static final Set<String> EXCLUDED_KEYS = Set.of("_path", "prev", "next", "related");
+static final Set<String> EXCLUDED_KEYS = Set.of("_path", "navigationOrder", "related");
 
 record Snippet(JsonNode node) {
     String get(String f)    { return node.get(f).asText(); }
@@ -159,16 +159,20 @@ record Snippet(JsonNode node) {
     String oldApproach()    { return get("oldApproach"); }
     String modernApproach() { return get("modernApproach"); }
     String explanation()    { return get("explanation"); }
+    int navigationOrder()   {
+        var order = node.get("navigationOrder");
+        if (order == null || !order.isIntegralNumber()
+                || !order.canConvertToInt() || order.intValue() < 0) {
+            throw new IllegalArgumentException(
+                "Missing or invalid non-negative navigationOrder in " + key());
+        }
+        return order.intValue();
+    }
     String supportState()   { return node.get("support").get("state").asText(); }
     String supportDesc()    { return node.get("support").get("description").asText(); }
     String key()            { return category() + "/" + slug(); }
     String catDisplay()     { return CATEGORY_DISPLAY.get(category()); }
     JsonNode whyModernWins() { return node.get("whyModernWins"); }
-
-    Optional<String> optText(String f) {
-        var n = node.get(f);
-        return n != null && !n.isNull() ? Optional.of(n.asText()) : Optional.empty();
-    }
 
     List<String> related() {
         var rel = node.get("related");
@@ -331,7 +335,7 @@ void buildLocale(String locale, Templates templates, SequencedMap<String, Snippe
 }
 
 SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
-    SequencedMap<String, Snippet> snippets = new LinkedHashMap<>();
+    var loaded = new ArrayList<Snippet>();
     var ids = new HashSet<String>();
     for (var cat : CATEGORY_DISPLAY.sequencedKeySet()) {
         var catDir = Path.of(CONTENT_DIR, cat);
@@ -353,9 +357,13 @@ SequencedMap<String, Snippet> loadAllSnippets() throws IOException {
                 throw new IllegalArgumentException("Duplicate UUID id \"" + id + "\" in " + path);
             }
             var snippet = new Snippet(json);
-            snippets.put(snippet.key(), snippet);
+            snippet.navigationOrder();
+            loaded.add(snippet);
         }
     }
+    loaded.sort(Comparator.comparingInt(Snippet::navigationOrder).thenComparing(Snippet::key));
+    SequencedMap<String, Snippet> snippets = new LinkedHashMap<>();
+    loaded.forEach(snippet -> snippets.put(snippet.key(), snippet));
     return snippets;
 }
 
@@ -416,14 +424,21 @@ String supportBadgeClass(String state) {
     };
 }
 
-String renderNavArrows(Snippet snippet, String locale) {
+String renderNavArrows(Snippet snippet, Map<String, Snippet> all, String locale) {
     var prefix = locale.equals("en") ? "" : "/" + locale;
-    var prev = snippet.optText("prev")
-            .map(p -> "<a href=\"%s/%s.html\" aria-label=\"Previous pattern\">←</a>".formatted(prefix, p))
-            .orElse("<span class=\"nav-arrow-disabled\">←</span>");
-    var next = snippet.optText("next")
-            .map(n -> "<a href=\"%s/%s.html\" aria-label=\"Next pattern\">→</a>".formatted(prefix, n))
-            .orElse("");
+    var keys = new ArrayList<>(all.keySet());
+    var index = keys.indexOf(snippet.key());
+    if (index < 0) {
+        throw new IllegalArgumentException("Pattern missing from navigation: " + snippet.key());
+    }
+    var prev = index > 0
+            ? "<a href=\"%s/%s.html\" aria-label=\"Previous pattern\">←</a>"
+                .formatted(prefix, keys.get(index - 1))
+            : "<span class=\"nav-arrow-disabled\">←</span>";
+    var next = index + 1 < keys.size()
+            ? "<a href=\"%s/%s.html\" aria-label=\"Next pattern\">→</a>"
+                .formatted(prefix, keys.get(index + 1))
+            : "";
     return prev + "\n          " + next;
 }
 
@@ -642,7 +657,7 @@ String generateHtml(Templates tpl, Snippet s, Map<String, Snippet> all, Map<Stri
             Map.entry("flatUrl", "%s/%s.html".formatted(BASE_URL, s.slug())),
             Map.entry("titleJson", jsonEscape(s.title())), Map.entry("summaryJson", jsonEscape(s.summary())),
             Map.entry("categoryDisplayJson", jsonEscape(s.catDisplay())),
-            Map.entry("navArrows", renderNavArrows(s, locale)),
+            Map.entry("navArrows", renderNavArrows(s, all, locale)),
             Map.entry("whyCards", renderWhyCards(tpl.whyCard(), s.whyModernWins())),
             Map.entry("docLinks", renderDocLinks(tpl.docLink(), s.node().withArray("docs"))),
             Map.entry("proofSection", renderProofSection(s, extraTokens)),

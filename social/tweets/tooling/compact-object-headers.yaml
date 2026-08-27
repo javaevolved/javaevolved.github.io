@@ -1,0 +1,10 @@
+text: |-
+  ☕ Compact object headers
+  
+  Cut object header size in half for better memory density and cache usage.
+  
+  128-bit Headers → 64-bit Headers (JDK 25+)
+  
+  🔗 https://javaevolved.github.io/tooling/compact-object-headers.html
+  
+  #Java #JavaEvolved

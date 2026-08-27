@@ -3,6 +3,7 @@ id: 453cca55-87e3-4b5e-a1e0-32f76f6339c0
 slug: "helpful-npe"
 title: "Helpful NullPointerExceptions"
 category: "errors"
+navigationOrder: 86000
 difficulty: "beginner"
 jdkVersion: "14"
 oldLabel: "Java 8"
@@ -37,8 +38,6 @@ whyModernWins:
 support:
   state: "available"
   description: "Widely available since JDK 14 (March 2020)"
-prev: "io/deserialization-filters"
-next: "errors/optional-chaining"
 related:
 - "errors/null-in-switch"
 - "errors/multi-catch"

@@ -1,0 +1,10 @@
+text: |-
+  ☕ Collection bulk operations instead of mutation loops
+  
+  Use removeIf(), replaceAll(), and List.sort() for direct collection…
+  
+  Manual iterator removal → Collection.removeIf() (JDK 8+)
+  
+  🔗 https://javaevolved.github.io/collections/collection-bulk-operations.html
+  
+  #Java #JavaEvolved

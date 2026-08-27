@@ -1,0 +1,10 @@
+text: |-
+  ☕ SecurityManager checks to explicit authorization
+  
+  Replace disabled SecurityManager checks with explicit application authori…
+  
+  SecurityManager checks → Explicit authorization (JDK 24+)
+  
+  🔗 https://javaevolved.github.io/security/security-manager-migration.html
+  
+  #Java #JavaEvolved
