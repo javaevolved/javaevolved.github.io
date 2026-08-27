@@ -1,0 +1,17 @@
+title: 安全でないスレッド終了から協調的キャンセルへ
+oldApproach: Thread.stop()
+modernApproach: Future.cancel(true)
+summary: "Thread.stop() や場当たり的な共有フラグを、割り込みを考慮したタスクキャンセルに置き換える。"
+explanation: "Thread.stop() は、モニタを保持している最中や共有状態を更新している最中にコードを終了させる可能性があり、オブジェクトが破損したままになることがあります。現代的なキャンセルは協調的です。割り込みでFutureをキャンセルし、可能な限りInterruptedExceptionを伝播させ、伝播できない場合は割り込み状態を復元し、安全なキャンセルポイントに到達するようタスクを設計します。"
+whyModernWins:
+- icon: "🛡"
+  title: 不変条件を維持
+  desc: "タスクはキャンセル用に設計されたコードパスでのみ停止します。"
+- icon: "🧩"
+  title: 標準的な制御
+  desc: "Futureは実行、完了、キャンセルをまとめて表現します。"
+- icon: "🔗"
+  title: 組み合わせ可能
+  desc: "割り込みはブロッキングキュー、ロック、executor、仮想スレッドと連携します。"
+support:
+  description: "FutureとExecutorServiceはJDK 5（2004年9月）から利用可能です。"

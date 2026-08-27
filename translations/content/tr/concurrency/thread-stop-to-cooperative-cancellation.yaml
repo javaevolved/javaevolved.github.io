@@ -1,0 +1,18 @@
+---
+title: Güvenli olmayan iş parçacığı sonlandırmadan işbirlikçi iptale
+oldApproach: Thread.stop()
+modernApproach: Future.cancel(true)
+summary: "Thread.stop() ve geçici paylaşılan bayrakları, kesintiye duyarlı görev iptaliyle değiştirin."
+explanation: "Thread.stop(), monitörlere sahipken veya paylaşılan durumu güncellerken kodu sonlandırabilir ve nesneleri hasarlı bırakabilir. Modern iptal işbirlikçidir. Future'ı kesinti ile iptal edin, mümkün olduğunda InterruptedException'ı yayın, yayılamadığında kesinti durumunu geri yükleyin ve görevi güvenli iptal noktalarına ulaşacak şekilde tasarlayın."
+whyModernWins:
+- icon: "🛡"
+  title: "Değişmezleri korur"
+  desc: "Görevler yalnızca iptal için tasarlanmış kod yollarında durur."
+- icon: "🧩"
+  title: "Standart kontrol"
+  desc: "Future, yürütmeyi, tamamlanmayı ve iptali birlikte temsil eder."
+- icon: "🔗"
+  title: "Bileşenlenebilir"
+  desc: "Kesinti, engelleyen kuyruklar, kilitler, executor'lar ve sanal iş parçacıklarıyla çalışır."
+support:
+  description: "Future ve ExecutorService JDK 5'ten (Eylül 2004) beri kullanılabilir."

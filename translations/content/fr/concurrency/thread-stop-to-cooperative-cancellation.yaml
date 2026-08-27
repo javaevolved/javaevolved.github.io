@@ -1,0 +1,18 @@
+---
+title: De l'arrêt non sécurisé des threads à l'annulation coopérative
+oldApproach: Thread.stop()
+modernApproach: Future.cancel(true)
+summary: Remplacez Thread.stop() et les indicateurs partagés ad hoc par une annulation de tâche consciente des interruptions.
+explanation: Thread.stop() peut arrêter le code alors qu'il détient des moniteurs ou met à jour un état partagé, laissant des objets endommagés. L'annulation moderne est coopérative. Annulez le Future avec interruption, propagez InterruptedException lorsque possible, restaurez le statut d'interruption lorsque cela n'est pas possible, et concevez la tâche pour atteindre des points d'annulation sûrs.
+whyModernWins:
+- icon: "🛡"
+  title: Préserve les invariants
+  desc: Les tâches ne s'arrêtent qu'aux points de code conçus pour l'annulation.
+- icon: "🧩"
+  title: Contrôle standard
+  desc: Future représente ensemble l'exécution, l'achèvement et l'annulation.
+- icon: "🔗"
+  title: Composable
+  desc: L'interruption fonctionne avec les files bloquantes, les verrous, les executors et les threads virtuels.
+support:
+  description: Future et ExecutorService sont disponibles depuis JDK 5 (sept. 2004).
