@@ -229,7 +229,7 @@
 
     const updateShowAllButton = () => {
       if (!showAllButton) return;
-      showAllButton.textContent = showingAll
+      showAllButton.querySelector('.show-all-btn-text').textContent = showingAll
         ? showAllButton.dataset.hideLabel
         : showAllButton.dataset.showLabel;
     };
