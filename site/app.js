@@ -210,6 +210,8 @@
 
     let activeCategory = null;
     let activeJdk = null;
+    let hasSelection = false;
+    let showingAll = false;
 
     // LTS cycle ranges: each entry covers all versions introduced since the previous LTS
     const LTS_RANGES = {
@@ -220,6 +222,17 @@
     };
 
     const noResultsMsg = document.getElementById('noResultsMessage');
+    const startMessage = document.getElementById('patternStartMessage');
+    const showAllButton = document.getElementById('showAllButton');
+    const isDiscoveryHome = !!showAllButton;
+    hasSelection = !isDiscoveryHome;
+
+    const updateShowAllButton = () => {
+      if (!showAllButton) return;
+      showAllButton.textContent = showingAll
+        ? showAllButton.dataset.hideLabel
+        : showAllButton.dataset.showLabel;
+    };
 
     const applyFilters = () => {
       let visibleCount = 0;
@@ -231,13 +244,17 @@
           const range = LTS_RANGES[activeJdk];
           matchesJdk = range && version >= range[0] && version <= range[1];
         }
-        const visible = matchesCategory && matchesJdk;
+        const visible = hasSelection && matchesCategory && matchesJdk;
         card.classList.toggle('filter-hidden', !visible);
         if (visible) visibleCount++;
       });
 
+      if (startMessage) {
+        startMessage.hidden = hasSelection;
+      }
+
       if (noResultsMsg) {
-        noResultsMsg.style.display = visibleCount === 0 ? '' : 'none';
+        noResultsMsg.style.display = hasSelection && visibleCount === 0 ? '' : 'none';
       }
 
       if (window.updateViewToggleState) {
@@ -246,7 +263,7 @@
     };
 
     // Generic helper to wire up a dropdown
-    const initDropdown = (dropdownEl, onSelect) => {
+    const initDropdown = (dropdownEl, dataAttribute, onSelect) => {
       if (!dropdownEl) return;
       const toggleBtn = dropdownEl.querySelector('.jdk-dropdown-toggle');
       const labelEl = dropdownEl.querySelector('.jdk-label');
@@ -298,7 +315,7 @@
       });
 
       return { closeDropdown, setActive: (value) => {
-        const target = list.querySelector(`li[data-filter="${value}"]`);
+        const target = list.querySelector(`li[data-${dataAttribute}="${value}"]`);
         if (target) {
           selectItem(target);
           toggleBtn.classList.toggle('has-filter', value !== 'all');
@@ -310,9 +327,12 @@
 
     // Category dropdown
     const categoryDropdown = document.getElementById('categoryDropdown');
-    const catDropdownCtrl = initDropdown(categoryDropdown, (li, toggleBtn) => {
+    const catDropdownCtrl = initDropdown(categoryDropdown, 'filter', (li, toggleBtn) => {
       const category = li.dataset.filter;
+      hasSelection = true;
       activeCategory = category !== 'all' ? category : null;
+      showingAll = !activeCategory && !activeJdk;
+      updateShowAllButton();
       toggleBtn.classList.toggle('has-filter', !!activeCategory);
       if (activeCategory) {
         history.replaceState(null, '', '#' + activeCategory);
@@ -324,23 +344,46 @@
 
     // JDK dropdown
     const jdkDropdown = document.getElementById('jdkDropdown');
-    initDropdown(jdkDropdown, (li, toggleBtn) => {
+    const jdkDropdownCtrl = initDropdown(jdkDropdown, 'jdk-filter', (li, toggleBtn) => {
       const version = li.dataset.jdkFilter;
+      hasSelection = true;
       activeJdk = version !== 'all' ? version : null;
+      showingAll = !activeCategory && !activeJdk;
+      updateShowAllButton();
       toggleBtn.classList.toggle('has-filter', !!activeJdk);
       applyFilters();
     });
 
+    if (showAllButton) {
+      showAllButton.addEventListener('click', () => {
+        activeCategory = null;
+        activeJdk = null;
+        if (catDropdownCtrl) catDropdownCtrl.setActive('all');
+        if (jdkDropdownCtrl) jdkDropdownCtrl.setActive('all');
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        showingAll = !showingAll;
+        hasSelection = showingAll;
+        updateShowAllButton();
+        applyFilters();
+      });
+    }
+
     // Apply filter from a given category string (or "all" / empty for no filter)
     const applyHashFilter = (category) => {
       if (category && catDropdownCtrl && catDropdownCtrl.setActive(category)) {
+        hasSelection = true;
         activeCategory = category;
+        showingAll = false;
+        updateShowAllButton();
         applyFilters();
         const section = document.getElementById('all-comparisons');
         if (section) section.scrollIntoView({ behavior: 'smooth' });
       } else if (catDropdownCtrl) {
         catDropdownCtrl.setActive('all');
         activeCategory = null;
+        hasSelection = !isDiscoveryHome;
+        showingAll = false;
+        updateShowAllButton();
         applyFilters();
       } else {
         // No filter dropdowns (e.g. topic pages) — show all cards
@@ -348,7 +391,7 @@
       }
     };
 
-    // On load, apply filter from URL hash or default to "All"
+    // On load, a category hash reveals its matches; otherwise keep the discovery state.
     applyHashFilter(window.location.hash.slice(1));
 
     // Also react to browser back/forward hash changes

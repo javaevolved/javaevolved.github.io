@@ -3,8 +3,7 @@ site:
   tagline: জাভাতে এসেছে নতুন দিগন্ত, আপনার কোডও হোক প্রাণবন্ত
   tagline_line1: জাভাতে এসেছে নতুন দিগন্ত,
   tagline_line2: আপনার কোডও হোক প্রাণবন্ত।
-  description: আধুনিক জাভা কোড সংকলন। প্রতিটি পুরনো প্যাটার্ন ও তার পরিচ্ছন্ন বিকল্পের পাশাপাশি তুলনা।।
-  heroSnippetCount: ✦ {{snippetCount}} আধুনিক প্যাটার্ন · Java 8 → Java 25
+  description: "{{snippetCount}}টি আধুনিক জাভা কোড স্নিপেটের সংকলন। প্রতিটি পুরনো প্যাটার্ন ও তার পরিচ্ছন্ন বিকল্পের পাশাপাশি তুলনা।"
   heroOld: পুরনো
   heroModern: আধুনিক
   allComparisons: সব তুলনা
@@ -34,6 +33,9 @@ filters:
   all: সব
   jdk: 'JDK:'
   category: 'বিভাগ:'
+  showAll: সব দেখান
+  hideAll: সব লুকান
+  browsePrompt: সবচেয়ে প্রাসঙ্গিক Java প্যাটার্ন খুঁজতে একটি বিভাগ বা JDK সংস্করণ বেছে নিন।
   noResults: এই ফিল্টারের জন্য কোনো কোড প্যাটার্ন পাওয়া যায়নি।
 difficulty:
   beginner: প্রাথমিক

@@ -3,9 +3,8 @@ site:
   tagline: Java hat sich weiterentwickelt. Dein Code auch.
   tagline_line1: Java hat sich weiterentwickelt.
   tagline_line2: Dein Code auch.
-  description: Eine Sammlung moderner Java-Code-Snippets. Jedes alte Java-Muster neben
+  description: Eine Sammlung von {{snippetCount}} modernen Java-Code-Snippets. Jedes alte Java-Muster neben
     seiner sauberen, modernen Entsprechung — Seite an Seite.
-  heroSnippetCount: ✦ {{snippetCount}} moderne Muster · Java 8 → Java 25
   heroOld: Alt
   heroModern: Modern
   allComparisons: Alle Vergleiche
@@ -33,6 +32,10 @@ sections:
 filters:
   show: 'Anzeigen:'
   all: Alle
+  category: 'Kategorie:'
+  showAll: Alle anzeigen
+  hideAll: Alle ausblenden
+  browsePrompt: Wähle eine Kategorie oder JDK-Version, um die relevantesten Java-Muster zu finden.
   noResults: Keine Code-Muster für diesen Filter gefunden.
 difficulty:
   beginner: Einsteiger

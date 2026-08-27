@@ -286,20 +286,6 @@ nav {
   margin: 0 auto;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--accent);
-  background: rgba(251, 146, 60, .1);
-  border: 1px solid rgba(251, 146, 60, .2);
-  padding: 5px 14px;
-  border-radius: 999px;
-  margin-bottom: 24px;
-}
-
 .hero h1 {
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 800;
@@ -453,20 +439,6 @@ nav {
   margin-bottom: 12px;
 }
 
-.section-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--accent);
-  background: rgba(251, 146, 60, .08);
-  border: 1px solid rgba(251, 146, 60, .15);
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: 16px;
-}
-
 /* ---------- Tips / Card Grid ---------- */
 .tips-grid {
   display: grid;
@@ -484,6 +456,62 @@ nav {
   padding: 3rem 1rem;
   font-size: 1.1rem;
   width: 100%;
+}
+
+.pattern-start-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 540px;
+  margin: 32px auto 0;
+  padding: 36px 24px;
+  text-align: center;
+  color: var(--text);
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.pattern-start-message[hidden] {
+  display: none;
+}
+
+.pattern-start-message p {
+  max-width: 42ch;
+  margin: 12px 0 0;
+  line-height: 1.6;
+}
+
+.pattern-start-icon {
+  color: var(--accent);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.show-all-btn {
+  padding: 10px 20px;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.show-all-btn:hover {
+  transform: translateY(-2px);
+  background: var(--surface-2);
+  border-color: var(--border-light);
+}
+
+.show-all-btn:focus-visible,
+.jdk-dropdown-toggle:focus-visible,
+.view-toggle-btn:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
 }
 
 .tip-card {
@@ -695,6 +723,7 @@ nav {
 /* ---------- View Toggle Button ---------- */
 .view-toggle-wrap {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -2086,8 +2115,11 @@ footer a:hover {
   margin-bottom: 8px;
 }
 .copilot-icon {
-  font-size: 1.8rem;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
+  color: var(--text);
+  fill: currentColor;
 }
 .copilot-callout-text {
   flex: 1;
@@ -2101,18 +2133,23 @@ footer a:hover {
   flex-shrink: 0;
 }
 .copilot-callout-links a {
+  display: inline-flex;
+  align-items: center;
   white-space: nowrap;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.85rem;
+  padding: 5px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 .copilot-callout-links a:hover {
-  opacity: 0.85;
+  color: var(--blue);
+  border-color: var(--blue);
+  background: var(--surface);
 }
 @media (max-width: 640px) {
   .copilot-callout-inner {
@@ -2121,7 +2158,7 @@ footer a:hover {
   }
   .copilot-callout-links {
     flex-direction: column;
-    width: 100%;
+    align-self: center;
   }
   .copilot-callout-links a {
     text-align: center;
@@ -2165,8 +2202,13 @@ footer a:hover {
   border-color: var(--accent);
   color: #fff;
 }
-.share-li { font-family: Georgia, serif; font-weight: 800; font-size: 0.85rem; }
-.share-reddit { font-size: 1.1rem; }
+.share-li svg,
+.share-bsky svg,
+.share-reddit svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
 
 /* ============================
    Contribute Dropdown

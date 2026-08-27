@@ -3,8 +3,7 @@ site:
   tagline: Java 已进化。您的代码也可以。
   tagline_line1: Java 已进化。
   tagline_line2: 您的代码也可以。
-  description: 现代 Java 代码片段集合。每个旧 Java 模式与其简洁的现代替代方案并排展示。
-  heroSnippetCount: ✦ {{snippetCount}} 个现代模式 · Java 8 → Java 25
+  description: 由 {{snippetCount}} 个现代 Java 代码片段组成的集合。每个旧 Java 模式与其简洁的现代替代方案并排展示。
   heroOld: 旧版
   heroModern: 现代
   allComparisons: 所有对比
@@ -32,6 +31,10 @@ sections:
 filters:
   show: '显示：'
   all: 全部
+  category: '类别：'
+  showAll: 显示全部
+  hideAll: 隐藏全部
+  browsePrompt: 选择类别或 JDK 版本，查找最相关的 Java 模式。
   noResults: 未找到与此筛选条件匹配的代码模式。
 difficulty:
   beginner: 入门

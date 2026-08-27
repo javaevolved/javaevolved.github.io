@@ -2,8 +2,7 @@ site:
   tagline: Java는 진화했습니다. 당신의 코드도 그럴 수 있습니다.
   tagline_line1: Java는 진화했습니다.
   tagline_line2: 당신의 코드도 그럴 수 있습니다.
-  description: 모던 Java 코드 스니펫 모음. 오래된 Java 패턴과 깔끔하고 모던한 대체 코드를 나란히 비교합니다.
-  heroSnippetCount: ✦ {{snippetCount}}개의 모던 패턴 · Java 8 → Java 25
+  description: "{{snippetCount}}개의 모던 Java 코드 스니펫 모음. 오래된 Java 패턴과 깔끔하고 모던한 대체 코드를 나란히 비교합니다."
   heroOld: 이전
   heroModern: 모던
   allComparisons: 모든 비교
@@ -31,6 +30,10 @@ sections:
 filters:
   show: '표시:'
   all: 전체
+  category: '카테고리:'
+  showAll: 모두 표시
+  hideAll: 모두 숨기기
+  browsePrompt: 카테고리 또는 JDK 버전을 선택하여 가장 관련 있는 Java 패턴을 찾아보세요.
   noResults: 이 필터에 해당하는 코드 패턴이 없습니다.
 difficulty:
   beginner: 초급

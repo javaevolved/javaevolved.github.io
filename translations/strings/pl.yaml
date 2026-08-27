@@ -3,8 +3,7 @@ site:
   tagline: Java ewoluowała. Twój kod też może.
   tagline_line1: Java ewoluowała.
   tagline_line2: Twój kod też może.
-  description: Zbiór nowoczesnych snippetów Java. Każdy stary wzorzec Java obok jego czystego, nowoczesnego odpowiednika.
-  heroSnippetCount: ✦ {{snippetCount}} nowoczesnych wzorców · Java 8 → Java 25
+  description: Zbiór {{snippetCount}} nowoczesnych snippetów Java. Każdy stary wzorzec Java obok jego czystego, nowoczesnego odpowiednika.
   heroOld: Stare
   heroModern: Nowe
   allComparisons: Wszystkie porównania
@@ -32,6 +31,10 @@ sections:
 filters:
   show: 'Pokaż:'
   all: Wszystkie
+  category: 'Kategoria:'
+  showAll: Pokaż wszystkie
+  hideAll: Ukryj wszystkie
+  browsePrompt: Wybierz kategorię lub wersję JDK, aby znaleźć najbardziej odpowiednie wzorce Java.
   noResults: Nie znaleziono wzorców kodu dla tego filtra.
 difficulty:
   beginner: Początkujący
