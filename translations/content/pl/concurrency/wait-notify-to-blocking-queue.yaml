@@ -1,0 +1,21 @@
+title: Kolejki wait/notify na BlockingQueue
+oldApproach: Ręczne wait i notify
+modernApproach: BlockingQueue
+summary: Zastąp ręcznie napisaną koordynację producent-konsument za pomocą BlockingQueue.
+explanation: Poprawny kod wait/notify wymaga wspólnego monitora, pętli warunkowych,
+  dopasowanych powiadomień oraz starannej obsługi przerwań. BlockingQueue hermetyzuje
+  te reguły i udostępnia operacje blokujące, z limitem czasu oraz nieblokujące dla
+  przepływów producent-konsument. Wywołania takie jak put() i take() pozostają przerywalne.
+whyModernWins:
+  - icon: 🛡
+    title: Bezpieczniejsza koordynacja
+    desc: Kolejka przejmuje blokowanie i sygnalizację warunków.
+  - icon: 👁
+    title: Jasna intencja
+    desc: put() i take() bezpośrednio wyrażają zachowanie producent-konsument.
+  - icon: 🎛
+    title: Wbudowane zasady
+    desc: Wybierz ograniczoną pojemność, sprawiedliwość, limity czasu lub operacje
+      nieblokujące.
+support:
+  description: Szeroko dostępne od JDK 5 (2004)

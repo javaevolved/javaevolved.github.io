@@ -1,0 +1,55 @@
+---
+id: "6d265fc2-1b92-417b-a1dd-9150d4985a1b"
+slug: "wait-notify-to-blocking-queue"
+title: "Wait and notify queues to BlockingQueue"
+category: "concurrency"
+difficulty: "intermediate"
+jdkVersion: "5"
+oldLabel: "Manual wait and notify"
+modernLabel: "BlockingQueue"
+oldApproach: "Manual wait and notify"
+modernApproach: "BlockingQueue"
+oldCode: |-
+  synchronized (queue) {
+      while (queue.isEmpty()) {
+          queue.wait();
+      }
+      Job job = queue.removeFirst();
+      process(job);
+  }
+modernCode: |-
+  BlockingQueue<Job> queue = new LinkedBlockingQueue<>();
+
+  Job job = queue.take();
+  process(job);
+summary: "Replace hand-written producer-consumer coordination with BlockingQueue."
+explanation: "Correct wait/notify code requires a shared monitor, condition loops,\
+  \ matching notifications, and careful interruption handling. BlockingQueue encapsulates\
+  \ those rules and provides blocking, timed, and non-blocking operations for producer-consumer\
+  \ workflows. Calls such as put() and take() remain interruptible."
+whyModernWins:
+- icon: "🛡"
+  title: "Safer coordination"
+  desc: "The queue owns the locking and condition signaling."
+- icon: "👁"
+  title: "Clear intent"
+  desc: "put() and take() directly express producer-consumer behavior."
+- icon: "🎛"
+  title: "Built-in policies"
+  desc: "Choose bounded capacity, fairness, timeouts, or non-blocking operations."
+support:
+  state: "available"
+  description: "Widely available since JDK 5 (2004)"
+prev: "concurrency/lock-free-lazy-init"
+next: "concurrency/thread-stop-to-cooperative-cancellation"
+related:
+- "concurrency/executor-try-with-resources"
+- "concurrency/structured-concurrency"
+- "concurrency/virtual-threads"
+tags:
+- concurrency
+docs:
+- title: "BlockingQueue"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/BlockingQueue.html"
+- title: "LinkedBlockingQueue"
+  href: "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html"

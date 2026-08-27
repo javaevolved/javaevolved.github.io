@@ -1,0 +1,21 @@
+title: Filas com wait e notify para BlockingQueue
+oldApproach: wait e notify manuais
+modernApproach: BlockingQueue
+summary: Substitua a coordenação produtor-consumidor escrita à mão por BlockingQueue.
+explanation: Código correto de wait/notify exige um monitor compartilhado, laços
+  de condição, notificações correspondentes e tratamento cuidadoso de interrupção.
+  BlockingQueue encapsula essas regras e oferece operações bloqueantes, com tempo
+  limite e não bloqueantes para fluxos produtor-consumidor. Chamadas como put() e
+  take() continuam interrompíveis.
+whyModernWins:
+- icon: 🛡
+  title: Coordenação mais segura
+  desc: A fila é responsável pelo bloqueio e pela sinalização de condições.
+- icon: 👁
+  title: Intenção clara
+  desc: put() e take() expressam diretamente o comportamento produtor-consumidor.
+- icon: 🎛
+  title: Políticas integradas
+  desc: Escolha capacidade limitada, justiça, tempos limite ou operações não bloqueantes.
+support:
+  description: Amplamente disponível desde o JDK 5 (2004)

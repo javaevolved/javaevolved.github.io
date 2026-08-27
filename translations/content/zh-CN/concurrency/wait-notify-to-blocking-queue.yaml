@@ -1,0 +1,17 @@
+title: 将 wait/notify 队列改为 BlockingQueue
+oldApproach: 手动 wait 和 notify
+modernApproach: BlockingQueue
+summary: "用 BlockingQueue 取代手写的生产者-消费者协调代码。"
+explanation: "正确的 wait/notify 代码需要共享监视器、条件循环、匹配的通知以及对中断的仔细处理。BlockingQueue 封装了这些规则，为生产者-消费者场景提供阻塞、限时和非阻塞操作。put() 和 take() 等调用仍然可被中断。"
+whyModernWins:
+- icon: 🛡
+  title: 更安全的协调
+  desc: "队列自身负责加锁和条件通知。"
+- icon: 👁
+  title: 意图清晰
+  desc: "put() 和 take() 直接表达生产者-消费者行为。"
+- icon: 🎛
+  title: 内置策略
+  desc: "可选择有界容量、公平性、超时或非阻塞操作。"
+support:
+  description: 自 JDK 5 起广泛可用（2004 年）

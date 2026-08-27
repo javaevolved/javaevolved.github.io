@@ -1,0 +1,22 @@
+title: Files wait/notify vers BlockingQueue
+oldApproach: wait et notify manuels
+modernApproach: BlockingQueue
+summary: Remplacez la coordination producteur-consommateur écrite à la main par BlockingQueue.
+explanation: Un code wait/notify correct nécessite un moniteur partagé, des boucles
+  de condition, des notifications correspondantes et une gestion soigneuse de l'interruption.
+  BlockingQueue encapsule ces règles et fournit des opérations bloquantes, temporisées
+  et non bloquantes pour les flux producteur-consommateur. Les appels comme put()
+  et take() restent interruptibles.
+whyModernWins:
+- icon: 🛡
+  title: Coordination plus sûre
+  desc: La file gère le verrouillage et la signalisation des conditions.
+- icon: 👁
+  title: Intention claire
+  desc: put() et take() expriment directement le comportement producteur-consommateur.
+- icon: 🎛
+  title: Politiques intégrées
+  desc: Choisissez une capacité bornée, l'équité, des délais ou des opérations non
+    bloquantes.
+support:
+  description: Disponible depuis JDK 5 (2004)
