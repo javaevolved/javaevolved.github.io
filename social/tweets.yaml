@@ -1314,7 +1314,7 @@ io/explicit-charset-file-io: |-
   Use Files readers and writers with StandardCharsets constants instead of…
 
   Platform-default charset → Explicit standard charset (JDK 7+)
-  🔗 https://javaevolved.github.io/io/explicit-charset-file-io.html
+
   🔗 https://javaevolved.github.io/io/explicit-charset-file-io.html
 
   #Java #JavaEvolved
