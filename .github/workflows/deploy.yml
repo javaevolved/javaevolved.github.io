@@ -36,32 +36,13 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Detect changed paths
+      - name: Prepare generation
         id: changes
         run: |
-          # OG images are gitignored and must always be regenerated
+          # Generated HTML and OG images are gitignored, so every deployment
+          # must recreate them before replacing the current Pages artifact.
+          echo "generate=true" >> "$GITHUB_OUTPUT"
           echo "og=true" >> "$GITHUB_OUTPUT"
-
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            echo "generate=true" >> "$GITHUB_OUTPUT"
-          elif [[ "${{ github.event_name }}" == "workflow_run" ]]; then
-            # Generator JAR was rebuilt — regenerate HTML
-            echo "generate=true" >> "$GITHUB_OUTPUT"
-          else
-            # Push event — check which files changed
-            CHANGED=$(git diff --name-only HEAD~1 HEAD)
-            echo "Changed files:"
-            echo "$CHANGED"
-
-            NEEDS_GENERATE=false
-
-            if echo "$CHANGED" | grep -qE '^(content/|translations/|templates/|html-generators/tags\.properties|html-generators/categories\.properties)'; then
-              NEEDS_GENERATE=true
-            fi
-
-            echo "generate=$NEEDS_GENERATE" >> "$GITHUB_OUTPUT"
-          fi
-          echo "Summary: generate=${{ steps.changes.outputs.generate || 'pending' }}, og=${{ steps.changes.outputs.og || 'pending' }}"
 
       - uses: actions/setup-java@v6
         if: steps.changes.outputs.generate == 'true' || steps.changes.outputs.og == 'true'
@@ -116,6 +97,9 @@ jobs:
             export PATH="$HOME/.jbang/bin:$PATH"
           fi
           jbang html-generators/generateog.java
+
+      - name: Verify Pages artifact
+        run: test -s site/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
