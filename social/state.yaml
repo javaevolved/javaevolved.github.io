@@ -1,6 +1,6 @@
-lastPostedKey: collections/map-entry-factory
-lastTweetId: 2093117587542729021
-lastPostedAt: 2026-08-27T23:24:55.943485145Z
+lastPostedKey: concurrency/scoped-values
+lastTweetId: 2094512026853023840
+lastPostedAt: 2026-08-31T19:45:56.194348228Z
 postedKeys:
 - language/guarded-patterns
 - datetime/math-clamp
@@ -37,3 +37,4 @@ postedKeys:
 - streams/stream-tolist
 - strings/string-lines
 - collections/map-entry-factory
+- concurrency/scoped-values
