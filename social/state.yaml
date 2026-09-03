@@ -1,6 +1,6 @@
-lastPostedKey: concurrency/scoped-values
-lastTweetId: 2094512026853023840
-lastPostedAt: 2026-08-31T19:45:56.194348228Z
+lastPostedKey: language/markdown-javadoc-comments
+lastTweetId: 2095563614417535466
+lastPostedAt: 2026-09-03T17:24:34.214724621Z
 postedKeys:
 - language/guarded-patterns
 - datetime/math-clamp
@@ -38,3 +38,4 @@ postedKeys:
 - strings/string-lines
 - collections/map-entry-factory
 - concurrency/scoped-values
+- language/markdown-javadoc-comments
